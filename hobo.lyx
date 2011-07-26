@@ -1,0 +1,386 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 0
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle empty
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Rapid Rails 3 with Hobo
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Getting Started
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "p0ch0preface.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+INTRODUCTION AND INSTALLATION
+\end_layout
+
+\begin_layout Chapter
+INTRODUCTION
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "p1ch1intro.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+CHAPTER 2 – INSTALLATION
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "p1ch2installation.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+TUTORIALS
+\end_layout
+
+\begin_layout Chapter
+INTRODUCTORY TUTORIALS
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "p2c3basictut.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+INTERMEDIATE TUTORIALS
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "p2c4inttut.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+ADVANCED TUTORIALS
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "p2c5advtut.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+DEPLOYING YOUR APPLICATIONS
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "p2c6deployment.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+HOBO UNDER THE HOOD
+\end_layout
+
+\begin_layout Chapter
+HOBO GENERATORS
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hobogenerators.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Chapter
+THE HOBO PERMISSIONS SYSTEM
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hobopermissions.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Chapter
+HOBO CONTROLLERS AND ROUTING
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hobocontrollers.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+HOBO LIFECYCLES
+\end_layout
+
+\begin_layout Standard
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hobolifecycles.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Chapter
+HOBO VIEW HINTS AND LOCALES
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hoboviewhints.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+HOBO SCOPES
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hoboscopes.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+THE HOBO DRYML GUIDE
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hobodrymlguide.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Appendices
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+
+\end_layout
+
+\begin_layout Chapter
+THE HOBO RAPID TAG LIBRARY
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "hoborapidtaglibrary.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Index
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

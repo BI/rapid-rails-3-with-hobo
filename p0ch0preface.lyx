@@ -1,0 +1,578 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\master hobo.lyx
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle empty
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+AUTHORS
+\end_layout
+
+\begin_layout Standard
+Owen Dall 
+\end_layout
+
+\begin_layout Standard
+Owen Dall has been Chief Systems Architect for Barquin International for
+ the past seven years.
+ During that time he has led a data warehousing, business intelligence,
+ and web systems practice and has become an evangelist for agile development
+ methodologies.
+ His search for replacements to Java web frameworks led him to Hobo open
+ source environment for Ruby on Rails (RoR) in late 2007.  In his 25+ years
+ software development experience, he has authored several software packages
+ used by diverse clients in both the private and public sectors.  
+\end_layout
+
+\begin_layout Standard
+Jeff Lapides 
+\end_layout
+
+\begin_layout Standard
+Jeff Lapides was educated as a physicist and has worked as a CIO and senior
+ operating executive in a large public corporation.
+ For most of the past decade, he consulted with private industry in information
+ technology, business management and science.
+ He is currently engaged at a nationally ranked research university where
+ he develops relationships between research scientists in engineering, informati
+on technology, physical and life sciences and foundations and corporations.
+\end_layout
+
+\begin_layout Standard
+Tom Locke 
+\end_layout
+
+\begin_layout Standard
+Tom is the founder and original developer of the Hobo project.
+ He is also co-founder of Artisan Technology, a software and web development
+ company exploring commercial opportunities around Hobo and other open-source
+ projects.
+ Prior to founding Artisan Technology Tom has been a freelance software
+ developer for over ten years, and has been experimenting with innovative
+ and agile approaches to web development since as early as 1996.
+\end_layout
+
+\begin_layout Standard
+Bryan Larsen
+\end_layout
+
+\begin_layout Standard
+Bryan sold his first video game in 1987 and has never stopped.
+  Joining the ranks of fathers this year has slowed him down, but he's still
+ having fun.
+  He lives in Ottawa with his wife and daughter.
+ Bryan is a key contributor to Hobo and has nursed it along to a mature
+ 1.0 version.
+ 
+\end_layout
+
+\begin_layout Standard
+Domizio Demichelis
+\end_layout
+
+\begin_layout Standard
+Domizio is a free-lance application designer and developer who played the
+ lead role in migrating from Hobo 1.0 for Rails 2 to Hobo 1.3 for Rails 3.
+ He also created the new Hobo Generation Wizard.
+ 
+\end_layout
+
+\begin_layout Standard
+Venka Ashtakala
+\end_layout
+
+\begin_layout Standard
+Venka is a Software Engineering Consultant with over 10 years experience
+ in the Information Technology industry.   His expertise lies in the fields
+ of rapid development of data driven web solutions, search, reporting and
+ data warehousing solutions for both structured and non structured data
+ and implementing the latest in open source technologies. He has consulted
+ on a variety of projects in both the Private and Public sectors, most recently
+ with the National Institute of Food and Agriculture.
+\end_layout
+
+\begin_layout Standard
+CONTRIBUTORS
+\end_layout
+
+\begin_layout Standard
+Tola Awofolu
+\end_layout
+
+\begin_layout Standard
+Tola is a software engineer with over seven years of experience with standalone
+ Java and Java web development frameworks.
+ She’s been working with Ruby on Rails and Hobo for over a year as part
+ of the Barquin International team at USDA on two major projects.
+ She is a protégé of Tom Locke and Bryan Larsen and has become Barquin Internati
+onal’s leading Ruby developer.
+\end_layout
+
+\begin_layout Standard
+Tiago Franco
+\end_layout
+
+\begin_layout Standard
+Tiago Franco is a Project and Technical Manager working in Software development
+ for more than ten years, currently working for the Aerospace & Defense
+ market.
+ He's been working with Ruby on Rails since 2006, and adopted Hobo in 2008
+ to re-design Cavortify.com.
+\end_layout
+
+\begin_layout Standard
+Marcelo Giorgi
+\end_layout
+
+\begin_layout Standard
+Marcelo is a software engineer with over seven years of experience with
+ standalone Java and Java web development frameworks.
+ He’s been working with Ruby on Rails for more than two years, and had the
+ opportunity to work with (and make some contributions to) Hobo during last
+ year.
+ 
+\end_layout
+
+\begin_layout Standard
+Matt Jones
+\end_layout
+
+\begin_layout Standard
+Matt is a software engineer who can remember when Real Web Programmers wrote
+ NPH CGI scripts to be loaded up in Mosaic.
+ When he’s not building Hobo applications, he’s often found hunting Rails
+ bugs or helping new users on rails-talk and hobo-users.
+ He also has the dubious honor of being the unofficial maintainer of the
+ Rails 2.x-era “config.gem” mechanism, earned after fixing the borked 2.1 series
+ version to work better with Hobo.
+\end_layout
+
+\begin_layout Standard
+.
+ PREFACE TO THE HOBO 1.3 VERSION FOR RAILS 3
+\end_layout
+
+\begin_layout Standard
+It has been a little over a year since we published the first PDF books
+ “Rapid Rails with Hobo” and “Hobo at Work”.
+ We are pleased that there have been over 20,000 downloads since that time.
+\end_layout
+
+\begin_layout Standard
+The current “Rapid Rails 3 with Hobo” combines both “Rapid Rails with Hobo”
+ and “Hobo at Work”.
+ We felt that having all of the material in one indexed volume would prove
+ more valuable.
+\end_layout
+
+\begin_layout Standard
+There has been such a dramatic change in the structure of Hobo since version
+ 1.0 we really should have called it Hobo 3.0! Each major feature of Hobo
+ can now be used independently and has been re-factored to work seamlessly
+ with Rails 3.
+\end_layout
+
+\begin_layout Standard
+Domizio Demichelis did a fantastic job with the new Hobo Setup Wizard as
+ well the heavy lifting on almost every new feature in Hobo 1.3.
+ It has been gratifying to see another extremely talented and seasoned contribut
+or following in the footsteps of Tom Locke, James Garlick, Bryan Larsen
+ and Matt Jones.
+ 
+\end_layout
+
+\begin_layout Standard
+It is also very gratifying to see the self-sustaining Hobo User community
+ and those talented Hoboists who volunteer their time to answer questions
+ and provide insight.
+ If you look at the member statistics you will see the top five all time
+ posters (at least since we switched to using Google Groups in June of 2008)
+ include Kevin Porter, Tom Locke, Matt Jones, Bryan Larsen, and Tiago Franco.
+\end_layout
+
+\begin_layout Standard
+At Barquin International, the last year has been a fruitful one for Hobo.
+ We have four major mission-critical applications that have Hobo as a critical
+ component.
+ We have been fortunate to have the skills of Tom Locke and his crew at
+ Artisan to support us, including Bryan Larsen, Gustav Paul, and Angus Miller,
+ and our internal Barquin Hoboists Venka Ashtakala and Jack Compton.
+ They have been critical to our success with the National Institute of Food
+ and Agriculture (NIFA) Applications Portal (http://portal.nifa.usda.gov) and
+ the Leadership Management Dashboard (LMD), as well as other initiatives
+ that will be revealed later this year.
+ 
+\end_layout
+
+\begin_layout Standard
+So, please stop by Hobo Central (http://hobocentral.net) and join the growing
+ community of developers who are having a great deal of fun while providing
+ their clients with the huge benefits of a state-of-the art agile development
+ framework!
+\end_layout
+
+\begin_layout Standard
+Owen Dall Annapolis, Maryland March 2011 
+\end_layout
+
+\begin_layout Standard
+PREFACE TO THE HOBO 1.0 VERSION FOR RAILS 2
+\end_layout
+
+\begin_layout Standard
+What was our goal?
+\end_layout
+
+\begin_layout Standard
+I starting writing this preface almost exactly a year ago, but put it aside
+ while Jeff and I toiled over iterations of the book outline.
+ While building and rebuilding the outline of what we thought were the book’s
+ requirements, we soon realized that it would take much more focus and energy
+ than we anticipated completing this project.
+ Our goal seemed simple enough:
+\end_layout
+
+\begin_layout Standard
+“Create a full set of rock-solid instructions and tutorials so that even
+ a novice developer can create, revise, and deploy non-trivial data-rich
+ Web 2.0 applications.
+ The user must have fun while learning, and develop the confidence to take
+ the next step of diving in to learn more about Hobo, Rails and the elegant
+ and powerful object-oriented language behind these frameworks - Ruby.”
+\end_layout
+
+\begin_layout Standard
+Right.
+ Well, you know how these things go.
+ OK, so we bit off more than we could chew, at least in the timeframe we
+ envisioned.
+ So instead of three months it took a year…at least it comes out synchronized
+ with the release of Hobo 1.0! 
+\end_layout
+
+\begin_layout Standard
+So--we hope we have been at least partially successful.
+ We have had a few “beta” testers of early versions that have made it through
+ without serious injury.
+ More recently it has been reports of minor typos and suggested phrasing
+ enhancements.
+ Letting this simmer for a while has been a good thing.
+\end_layout
+
+\begin_layout Standard
+I hope you are grateful that we parsed off the last 200+ pages into a more
+ advanced companion book with the title “Hobo at Work”.
+ 
+\end_layout
+
+\begin_layout Standard
+A brief history
+\end_layout
+
+\begin_layout Standard
+The search for a new web development framework began with my frustration
+ with the learning curve and the lack of agility I experienced with the
+ current open source frameworks at the time.
+ A major client had stipulated that we were to use a totally open source
+ technology stack.
+ In the early 2000’s that meant to us Linux, JBoss, Hibernate, MySQL, and
+ Java web frameworks such as Struts.
+ We eventually moved “up” to using Java Server Faces (JSF).
+ The learning curve was steep for our new programmers who were learning
+ on the job.
+ 
+\end_layout
+
+\begin_layout Standard
+This was particularly frustrating to me as I had experience with the “agile”
+ tools of the 1980’s and 1990’s, which included Revelation and PowerBuilder,
+ client-server technologies that didn’t manage to survive into the Internet
+ age.
+ With Revelation we could build an application prototype that included complex
+ business logic while sitting in front of a client.
+ We didn’t call it Agile Development.
+ We just did it.
+ We built dozens of mission-critical applications and many shrink-wrapped
+ tools.
+ Things were good.
+ Then they weren’t.
+ The dinosaurs didn’t survive the meteor that hit with the World Wide Web.
+\end_layout
+
+\begin_layout Standard
+So, as the development team lead at one of our major sites as well as the
+ chief systems architect of our small company, I thought it was my duty
+ to start looking for another solution in earnest.
+ 
+\end_layout
+
+\begin_layout Standard
+It was in the middle of 2006 that I had a long discussion with Venka Ashtakala
+ about this new quest.
+ (Venka and I had survived two unsuccessful framework searches together
+ starting in 1998.
+ The first was as Alpha testers of the PowerBuilder web converter.
+ Our goal was to migrate a very successful client-server budgeting system
+ used by a large number state and local governments to the web.
+ That experiment was a disaster at the time, so we dropped it.) 
+\end_layout
+
+\begin_layout Standard
+A few days after our initial discussion he emailed me about a relatively
+ new framework called “Ruby on Rails” that had gotten some good press.
+ He heard of a few guys who vouched for it, but couldn’t find any “mission
+ critical” apps we could use as references.
+ I was intrigued.
+ I did a search and found the first edition of “Agile Development with Rails”,
+ and tried it out.
+\end_layout
+
+\begin_layout Standard
+My first simple application worked, but I have to admit it looked very plain
+ and uninspiring to me.
+ I was a designer and architect, and didn’t want to code HTML and JavaScript.
+ I didn’t want to go backward.
+ “I am too old for this!” was my mantra at the time.
+ I couldn’t understand why the framework didn’t take care of basic things
+ I had been using for over 20 years.
+ Among other things, I was looking for a data-driven navigation system,
+ user authentication, and a decent user interface baked in.
+ 
+\end_layout
+
+\begin_layout Standard
+I dropped the search for almost a year.
+ I stumbled on a link on one of the major Oracle sites about interesting
+ add-ons to Rails, which led to a post by the renowned Ruby evangelist,
+ Peter Cooper, in January of 2007.
+ Here are two short quotes.
+\end_layout
+
+\begin_layout Standard
+“You may have thought Ruby on Rails was enough to get Web applications developed
+ quickly, but enter Hobo.
+ Hobo makes the process of creating Web applications and prototypes even
+ quicker.
+ For example, out of the box, with no lines of code written, you get a dummy
+ app with a user signup, login, and authentication system.
+\end_layout
+
+\begin_layout Standard
+…There's quite a lot to Hobo, so you'll want to go through its comprehensive
+ official site and watch the Hobo screen cast to get a real feel for it
+ where a classified ads app is created within minutes.”
+\end_layout
+
+\begin_layout Standard
+I watched the screen cast three times.
+ I was blown away.
+ I had finally found someone who got it.
+ It was Tom Locke.
+ 
+\end_layout
+
+\begin_layout Standard
+Following an open source project was something totally new to me.
+ I owned my own software business for a dozen years.
+ We used proprietary tools that had hefty license fees for each installation.
+ I couldn’t see the source code.
+ Oracle and Microsoft weren’t giving me the code to their database servers,
+ applications servers, or WYSIWYG design tools.
+ I paid support and expected THEM to fix the problems we invariably discovered
+ building our vertical applications in the 1980’s and 1990’s.
+ 
+\end_layout
+
+\begin_layout Standard
+The closest I came to the open source world was being a senior member of
+ the Revelation Roundtable, a board of key developers and integrators for
+ the Revelation and Advanced Revelation development tools.
+ A few of our products were shrink-wrapped add-ons for other developers.
+ This gave us clout for recommending priorities for new development and
+ the ability to get the president on the phone if one of my very high profile
+ customers was having an issue.
+\end_layout
+
+\begin_layout Standard
+So posting to a forum and waiting for an answer to my (probably) stupid
+ question didn’t come easy to me.
+ This was the thing (I thought) for generation X, not an aging survivor
+ of decades of software wars.
+ 
+\end_layout
+
+\begin_layout Standard
+It was a welcome and pleasant surprise to find supportive, generous, and
+ incredibly talented people willing to help.
+ Even Tom Locke would answer my questions, patiently.
+ Later I was lucky enough to spend time with Tom in person on a number of
+ occasions, which increased my respect for his vision and capabilities.
+\end_layout
+
+\begin_layout Standard
+In Early 2008 an opportunity arose at one of our major clients, The National
+ Institute for Food and Agriculture (Formerly CSREES), to migrate a legacy
+ app to the web.
+ I invited the CIO, Michel Desbois (a forward-looking open source advocate)
+ to experience a demo of building an application using Hobo.
+ My position at NIFA was Chief Systems Architect of the Barquin team, not
+ one of our senior developers.
+ So Michel was intrigued that I was going to sit with him without a coder
+ coaching.
+\end_layout
+
+\begin_layout Standard
+That demo led to a small “proof of concept” task to build a Topic Classification
+ system for agriculture research projects using Hobo and Oracle as a back
+ end.
+ Michel took a risk and started the ball rolling for us with Hobo.
+ 
+\end_layout
+
+\begin_layout Standard
+As this project moved forward, and additional Barquin team members became
+ interested in learning, it became more and more urgent to have a solid
+ resource for training not only developers, but also our requirements analysts
+ and designers.
+ We were building wireframes using software (e.g., Axure) that built great
+ documentation.
+ It even generated HTML pages so you could simulate the page flow of an
+ application.
+ 
+\end_layout
+
+\begin_layout Standard
+Unfortunately these became throwaway artifacts, as there was no way of generatin
+g a database driven application.
+ What we needed was a prototyping tool designers could use and then pass
+ on to developers.
+ Hobo appeared to be the best solution for both prototyping and mission-critical
+ web development.
+ Here is what I reported in May of 2008 about Barquin International’s decision
+ to provide some seed money to Hobo:
+\end_layout
+
+\begin_layout Standard
+"This is the first time in over a decade I have been excited about the potential
+ in a new development framework," explains Owen Dall, Chief Systems Architect
+ for Barquin International, "Although Hobo is already a brilliant and significan
+t enhancement to Rails, we are looking forward to the great leap forward
+ we know is coming…” 
+\end_layout
+
+\begin_layout Standard
+More recently we have two significant development efforts underway using
+ Hobo that we will put in production this year.
+ The new Leadership and Management Dashboard (LMD) led by Joe Barbano, the
+ NIFA Reporting Portal, and the REEport (Research, Education and Economics
+ Reporting) project lifecycle reporting system under the direction of John
+ Mingee.
+ Dennis Unglesbee, Director of the NIFA Applications Division, has had overall
+ lead responsibility for all of these endeavors.
+\end_layout
+
+\begin_layout Standard
+Anyone who thinks government cannot be agile should come on by and have
+ coffee with the NIFA application development project managers.
+ NIFA has become an innovative “skunk works” that, IMHO, should become a
+ model for public/private collaboration.
+\end_layout
+
+\begin_layout Standard
+A Challenge
+\end_layout
+
+\begin_layout Standard
+How fast could you build an application with the following set of requirements
+ using your current development tool, and have it running, without touching
+ the database engine? Books have been disappearing from your team’s bookshelves.
+ You have been asked to quickly develop a web application that will maintain
+ this library and always know who has what copy of which book.
+ Each book title may have any number of copies.
+ Only the administrator, who will be the first one to log in, can enter
+ or edit book titles and details about each copy.
+ There will be an automatic signup and login capability accessible from
+ the home page that allows each member of your team to join in, check a
+ book out, or find out who has it so you can track him or her down in the
+ lunch room.
+ There is a built-in text search facility that will allow you to search
+ by book name or description.
+ Basic Application documentation is generated for you automatically so you
+ can show your team leader what is behind the curtain.
+ (Now write your estimates down before reading the rest of this page)
+\end_layout
+
+\begin_layout Standard
+OK.
+ Time’s up.
+ By the time you consolidated your estimates you would already be up and
+ running with this application using Hobo.
+ 
+\end_layout
+
+\begin_layout Standard
+Owen Dall Annapolis, Maryland February, 2010 
+\end_layout
+
+\end_body
+\end_document

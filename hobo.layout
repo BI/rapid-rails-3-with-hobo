@@ -1,0 +1,82 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[book]{hellobook}
+Input stdclass.inc
+
+# %%% Code Environment
+Style Code
+  LatexType             Environment
+  LatexName             code_l
+  LeftMargin						MMMMM
+  TopSep								0.7
+  ParSep                0.7
+  BottomSep							0.7
+  Align									Block
+  AlignPossible					Block
+
+
+  Font
+    Family              Typewriter
+    Shape								Upright
+		Series							Medium
+		Size								Normal
+  EndFont
+  Preamble
+        \newenvironment{code_l}
+                {
+								\setlength{\parindent}{0in}
+								\setlength{\parsep}{0.2in}
+								\\ttfamily
+                \par
+                }
+  EndPreamble
+End
+
+# %%% Note Environment
+Style Note
+  LatexType             Environment
+  LatexName             note_l
+  LeftMargin            MMMMM
+  RightMargin           MMMMM
+  ParIndent             MM
+  TopSep                0.7
+  ItemSep               0.7
+  ParSep                0.7
+  BottomSep             0.7
+  Align                 Block
+  AlignPossible         Block
+
+  Font 
+   Family               Sans
+   Shape                Upright
+   Series               Medium
+   Size                 Normal
+  EndFont
+
+  LabelFont
+   Family               Sans
+   Shape                Upright
+   Series               Bold
+   Size                 Largest
+  EndFont
+
+
+  Preamble
+        \newenvironment{note_l}
+                {
+                \begin{list}{}
+                        {
+                        \setlength{\leftmargin}{1in}
+                        \setlength{\rightmargin}{\leftmargin}
+                        \setlength{\parindent}{0in}
+                        \setlength{\parsep}{0.2in}
+                        \ttfamily
+                        }
+                \item[]
+                }
+                {
+                \\
+                \par
+                \end{list}
+                }
+  EndPreamble
+End
