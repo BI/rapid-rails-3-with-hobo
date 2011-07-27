@@ -68,6 +68,16 @@ logicalmkup
 Rapid Rails 3 with Hobo
 \end_layout
 
+\begin_layout Date
+o
+\begin_inset Graphics
+	filename cover.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents

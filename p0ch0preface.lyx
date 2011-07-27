@@ -64,11 +64,11 @@ logicalmkup
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Section*
 AUTHORS
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Owen Dall 
 \end_layout
 
@@ -84,7 +84,7 @@ Owen Dall has been Chief Systems Architect for Barquin International for
  used by diverse clients in both the private and public sectors.  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Jeff Lapides 
 \end_layout
 
@@ -98,7 +98,7 @@ Jeff Lapides was educated as a physicist and has worked as a CIO and senior
 on technology, physical and life sciences and foundations and corporations.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Tom Locke 
 \end_layout
 
@@ -112,7 +112,7 @@ Tom is the founder and original developer of the Hobo project.
  and agile approaches to web development since as early as 1996.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Bryan Larsen
 \end_layout
 
@@ -126,7 +126,7 @@ Bryan sold his first video game in 1987 and has never stopped.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Domizio Demichelis
 \end_layout
 
@@ -137,7 +137,7 @@ Domizio is a free-lance application designer and developer who played the
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Venka Ashtakala
 \end_layout
 
@@ -151,11 +151,11 @@ Venka is a Software Engineering Consultant with over 10 years experience
  with the National Institute of Food and Agriculture.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section*
 CONTRIBUTORS
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Tola Awofolu
 \end_layout
 
@@ -168,7 +168,7 @@ Tola is a software engineer with over seven years of experience with standalone
 onal’s leading Ruby developer.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Tiago Franco
 \end_layout
 
@@ -180,7 +180,7 @@ Tiago Franco is a Project and Technical Manager working in Software development
  to re-design Cavortify.com.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Marcelo Giorgi
 \end_layout
 
@@ -193,7 +193,7 @@ Marcelo is a software engineer with over seven years of experience with
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Matt Jones
 \end_layout
 
@@ -207,9 +207,8 @@ Matt is a software engineer who can remember when Real Web Programmers wrote
  version to work better with Hobo.
 \end_layout
 
-\begin_layout Standard
-.
- PREFACE TO THE HOBO 1.3 VERSION FOR RAILS 3
+\begin_layout Section*
+PREFACE TO THE HOBO 1.3 VERSION FOR RAILS 3
 \end_layout
 
 \begin_layout Standard
@@ -271,15 +270,50 @@ So, please stop by Hobo Central (http://hobocentral.net) and join the growing
  framework!
 \end_layout
 
-\begin_layout Standard
-Owen Dall Annapolis, Maryland March 2011 
+\begin_layout Quotation
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Owen Dall
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Annapolis, Maryland
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+March 2011 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 PREFACE TO THE HOBO 1.0 VERSION FOR RAILS 2
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 What was our goal?
 \end_layout
 
@@ -293,12 +327,21 @@ I starting writing this preface almost exactly a year ago, but put it aside
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 “Create a full set of rock-solid instructions and tutorials so that even
  a novice developer can create, revise, and deploy non-trivial data-rich
  Web 2.0 applications.
  The user must have fun while learning, and develop the confidence to take
  the next step of diving in to learn more about Hobo, Rails and the elegant
  and powerful object-oriented language behind these frameworks - Ruby.”
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -325,7 +368,7 @@ I hope you are grateful that we parsed off the last 200+ pages into a more
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 A brief history
 \end_layout
 
@@ -408,7 +451,7 @@ I dropped the search for almost a year.
  Here are two short quotes.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Quotation
 “You may have thought Ruby on Rails was enough to get Web applications developed
  quickly, but enter Hobo.
  Hobo makes the process of creating Web applications and prototypes even
@@ -417,7 +460,7 @@ I dropped the search for almost a year.
  app with a user signup, login, and authentication system.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Quotation
 …There's quite a lot to Hobo, so you'll want to go through its comprehensive
  official site and watch the Hobo screen cast to get a real feel for it
  where a classified ads app is created within minutes.”
@@ -426,7 +469,17 @@ I dropped the search for almost a year.
 \begin_layout Standard
 I watched the screen cast three times.
  I was blown away.
- I had finally found someone who got it.
+ I had finally found someone who 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+got it
+\end_layout
+
+\end_inset
+
+.
  It was Tom Locke.
  
 \end_layout
@@ -504,15 +557,24 @@ As this project moved forward, and additional Barquin team members became
 \begin_layout Standard
 Unfortunately these became throwaway artifacts, as there was no way of generatin
 g a database driven application.
- What we needed was a prototyping tool designers could use and then pass
+ 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+What we needed was a prototyping tool designers could use and then pass
  on to developers.
+\end_layout
+
+\end_inset
+
  Hobo appeared to be the best solution for both prototyping and mission-critical
  web development.
  Here is what I reported in May of 2008 about Barquin International’s decision
  to provide some seed money to Hobo:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Quotation
 "This is the first time in over a decade I have been excited about the potential
  in a new development framework," explains Owen Dall, Chief Systems Architect
  for Barquin International, "Although Hobo is already a brilliant and significan
@@ -538,28 +600,61 @@ Anyone who thinks government cannot be agile should come on by and have
  model for public/private collaboration.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 A Challenge
 \end_layout
 
 \begin_layout Standard
 How fast could you build an application with the following set of requirements
- using your current development tool, and have it running, without touching
- the database engine? Books have been disappearing from your team’s bookshelves.
+ using your current development tool, and have it running, 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+without touching the database engine?
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Books have been disappearing from your team’s bookshelves.
  You have been asked to quickly develop a web application that will maintain
  this library and always know who has what copy of which book.
- Each book title may have any number of copies.
+ 
+\end_layout
+
+\begin_layout Itemize
+Each book title may have any number of copies.
  Only the administrator, who will be the first one to log in, can enter
  or edit book titles and details about each copy.
- There will be an automatic signup and login capability accessible from
- the home page that allows each member of your team to join in, check a
- book out, or find out who has it so you can track him or her down in the
- lunch room.
- There is a built-in text search facility that will allow you to search
- by book name or description.
- Basic Application documentation is generated for you automatically so you
+ 
+\end_layout
+
+\begin_layout Itemize
+There will be an automatic signup and login capability accessible from the
+ home page that allows each member of your team to join in, check a book
+ out, or find out who has it so you can track him or her down in the lunch
+ room.
+ 
+\end_layout
+
+\begin_layout Itemize
+There is a built-in text search facility that will allow you to search by
+ book name or description.
+ 
+\end_layout
+
+\begin_layout Itemize
+Basic Application documentation is generated for you automatically so you
  can show your team leader what is behind the curtain.
- (Now write your estimates down before reading the rest of this page)
+ 
+\end_layout
+
+\begin_layout Standard
+(Now write your estimates down before reading the rest of this page)
 \end_layout
 
 \begin_layout Standard
@@ -570,8 +665,43 @@ OK.
  
 \end_layout
 
-\begin_layout Standard
-Owen Dall Annapolis, Maryland February, 2010 
+\begin_layout Quotation
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Owen Dall
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Annapolis, Maryland
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+February, 2010
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_body
