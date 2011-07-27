@@ -257,17 +257,29 @@ At Barquin International, the last year has been a fruitful one for Hobo.
  Artisan to support us, including Bryan Larsen, Gustav Paul, and Angus Miller,
  and our internal Barquin Hoboists Venka Ashtakala and Jack Compton.
  They have been critical to our success with the National Institute of Food
- and Agriculture (NIFA) Applications Portal (http://portal.nifa.usda.gov) and
- the Leadership Management Dashboard (LMD), as well as other initiatives
+ and Agriculture (NIFA) Applications Portal (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://portal.nifa.usda.gov"
+
+\end_inset
+
+) and the Leadership Management Dashboard (LMD), as well as other initiatives
  that will be revealed later this year.
  
 \end_layout
 
 \begin_layout Standard
-So, please stop by Hobo Central (http://hobocentral.net) and join the growing
- community of developers who are having a great deal of fun while providing
- their clients with the huge benefits of a state-of-the art agile development
- framework!
+So, please stop by Hobo Central (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://hobocentral.net"
+
+\end_inset
+
+) and join the growing community of developers who are having a great deal
+ of fun while providing their clients with the huge benefits of a state-of-the
+ art agile development framework!
 \end_layout
 
 \begin_layout Quotation
