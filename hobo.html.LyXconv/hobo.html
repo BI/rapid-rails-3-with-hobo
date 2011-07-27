@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="http://www.nongnu.org/elyxer/"/>
+<meta name="create-date" content="2011-07-27"/>
+<link rel="stylesheet" href="http://www.nongnu.org/elyxer/lyx.css" type="text/css" media="screen"/>
+<title>Rapid Rails 3 with Hobo</title>
+</head>
+<body>
+<div id="globalWrapper">
+<h1 class="title">
+Rapid Rails 3 with Hobo
+</h1>
+<h2 class="Date">
+o<img class="embedded" src="cover.png" alt="figure cover.png" style="max-width: 740px; max-height: 901px; "/>
+
+</h2>
+<div class="fulltoc">
+<div class="tocheader">
+Table of Contents
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-1">Chapter: Preface</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section--1">Section: AUTHORS</a>
+</div>
+<div class="tocindent">
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--1">Subsubsection: Owen Dall </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--2">Subsubsection: Jeff Lapides </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--3">Subsubsection: Tom Locke </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--4">Subsubsection: Bryan Larsen</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--5">Subsubsection: Domizio Demichelis</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--6">Subsubsection: Venka Ashtakala</a>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--2">Section: CONTRIBUTORS</a>
+</div>
+<div class="tocindent">
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--7">Subsubsection: Tola Awofolu</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--8">Subsubsection: Tiago Franco</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--9">Subsubsection: Marcelo Giorgi</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--10">Subsubsection: Matt Jones</a>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--3">Section: PREFACE TO THE HOBO 1.3 VERSION FOR RAILS 3</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--4">Section: PREFACE TO THE HOBO 1.0 VERSION FOR RAILS 2</a>
+</div>
+<div class="tocindent">
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--11">Subsubsection: What was our goal?</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--12">Subsubsection: A brief history</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--13">Subsubsection: A Challenge</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Part-1">Part 1: Section I - INTRODUCTION AND INSTALLATION</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-1">Chapter: Preface</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section--5">Section: What is Hobo?</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection--1">Subsection: Background</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection--2">Subsection: The Difference</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection--3">Subsection: The Future</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--14">Subsubsection: Bigger library</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--15">Subsubsection: Performance improvements</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--16">Subsubsection: Less magic</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--17">Subsubsection: Even higher level</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection--4">Subsection: Fundamentals</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection--5">Subsection: Levels of Abstraction </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection--6">Subsection: Rails and Hobo</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection--7">Subsection: Hobo Enhancement Summary</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--18">Subsubsection: Fields </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--19">Subsubsection: Indexes </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--20">Subsubsection: Validations </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--21">Subsubsection: Views </a>
+</div>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-2">Chapter 2: Chaper 2 – INSTALLATION</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Part-2">Part 2: Section II - TUTORIALS</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-3">Chapter 3: Chapter 3 - INTRODUCTORY TUTORIALS</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-4">Chapter 4: Chapter 4 - INTERMEDIATE TUTORIALS</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-5">Chapter 5: Chapter 5 - ADVANCED TUTORIALS</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-6">Chapter 6: Chapter 6 - DEPLOYING YOUR APPLICATIONS</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Part-3">Part 3: Section III - HOBO UNDER THE HOOD</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-7">Chapter 7: Chapter 7 - HOBO GENERATORS</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-8">Chapter 8: Chapter 8 - THE HOBO PERMISSIONS SYSTEM</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-9">Chapter 9: Chapter 9 - HOBO CONTROLLERS AND ROUTING</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-10">Chapter 10: Chapter 10 - HOBO LIFECYCLES</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-11">Chapter 11: Chapter 11 - HOBO VIEW HINTS AND LOCALES</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-12">Chapter 12: Chapter 12 - HOBO SCOPES</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-13">Chapter 13: Chapter 13 - THE HOBO DRYML GUIDE</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-14">Chapter 14: Chapter 14 - THE HOBO RAPID TAG LIBRARY</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-15">Chapter 15: INDEX</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#Index">Index</a>
+</div>
+
+</div>
+<div class="fulltoc">
+<div class="tocheader">
+List of Figures
+</div>
+<div class="toc">
+<a class="Link" href="#Figure-1.1">Figure 1.1: Data flow for a typical Application using a MVC framework</a>
+</div>
+<div class="toc">
+<a class="Link" href="#Figure-1.2">Figure 1.2: Data flow for a Rails application</a>
+</div>
+<div class="toc">
+<a class="Link" href="#Figure-1.3">Figure 1.3: Data flow for a Hobo application</a>
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-1"></a>Preface
+</h1>
+<div class="Unindented">
+<h2 class="Section-">
+<a class="toc" name="toc-Section--1"></a>AUTHORS
+</h2>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--1"></a>Owen Dall 
+</h4>
+<div class="Unindented">
+Owen Dall has been Chief Systems Architect for Barquin International for the past seven years. During that time he has led a data warehousing, business intelligence, and web systems practice and has become an evangelist for agile development methodologies. His search for replacements to Java web frameworks led him to Hobo open source environment for Ruby on Rails (RoR) in late 2007.  In his 25+ years software development experience, he has authored several software packages used by diverse clients in both the private and public sectors.  
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--2"></a>Jeff Lapides 
+</h4>
+<div class="Unindented">
+Jeff Lapides was educated as a physicist and has worked as a CIO and senior operating executive in a large public corporation. For most of the past decade, he consulted with private industry in information technology, business management and science. He is currently engaged at a nationally ranked research university where he develops relationships between research scientists in engineering, information technology, physical and life sciences and foundations and corporations.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--3"></a>Tom Locke 
+</h4>
+<div class="Unindented">
+Tom is the founder and original developer of the Hobo project. He is also co-founder of Artisan Technology, a software and web development company exploring commercial opportunities around Hobo and other open-source projects. Prior to founding Artisan Technology Tom has been a freelance software developer for over ten years, and has been experimenting with innovative and agile approaches to web development since as early as 1996.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--4"></a>Bryan Larsen
+</h4>
+<div class="Unindented">
+Bryan sold his first video game in 1987 and has never stopped.  Joining the ranks of fathers this year has slowed him down, but he’s still having fun.  He lives in Ottawa with his wife and daughter. Bryan is a key contributor to Hobo and has nursed it along to a mature 1.0 version. 
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--5"></a>Domizio Demichelis
+</h4>
+<div class="Unindented">
+Domizio is a free-lance application designer and developer who played the lead role in migrating from Hobo 1.0 for Rails 2 to Hobo 1.3 for Rails 3. He also created the new Hobo Generation Wizard. 
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--6"></a>Venka Ashtakala
+</h4>
+<div class="Unindented">
+Venka is a Software Engineering Consultant with over 10 years experience in the Information Technology industry.   His expertise lies in the fields of rapid development of data driven web solutions, search, reporting and data warehousing solutions for both structured and non structured data and implementing the latest in open source technologies. He has consulted on a variety of projects in both the Private and Public sectors, most recently with the National Institute of Food and Agriculture.
+</div>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--2"></a>CONTRIBUTORS
+</h2>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--7"></a>Tola Awofolu
+</h4>
+<div class="Unindented">
+Tola is a software engineer with over seven years of experience with standalone Java and Java web development frameworks. She’s been working with Ruby on Rails and Hobo for over a year as part of the Barquin International team at USDA on two major projects. She is a protégé of Tom Locke and Bryan Larsen and has become Barquin International’s leading Ruby developer.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--8"></a>Tiago Franco
+</h4>
+<div class="Unindented">
+Tiago Franco is a Project and Technical Manager working in Software development for more than ten years, currently working for the Aerospace &amp; Defense market. He’s been working with Ruby on Rails since 2006, and adopted Hobo in 2008 to re-design Cavortify.com.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--9"></a>Marcelo Giorgi
+</h4>
+<div class="Unindented">
+Marcelo is a software engineer with over seven years of experience with standalone Java and Java web development frameworks. He’s been working with Ruby on Rails for more than two years, and had the opportunity to work with (and make some contributions to) Hobo during last year. 
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--10"></a>Matt Jones
+</h4>
+<div class="Unindented">
+Matt is a software engineer who can remember when Real Web Programmers wrote NPH CGI scripts to be loaded up in Mosaic. When he’s not building Hobo applications, he’s often found hunting Rails bugs or helping new users on rails-talk and hobo-users. He also has the dubious honor of being the unofficial maintainer of the Rails 2.x-era “config.gem” mechanism, earned after fixing the borked 2.1 series version to work better with Hobo.
+</div>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--3"></a>PREFACE TO THE HOBO 1.3 VERSION FOR RAILS 3
+</h2>
+<div class="Unindented">
+It has been a little over a year since we published the first PDF books “Rapid Rails with Hobo” and “Hobo at Work”. We are pleased that there have been over 20,000 downloads since that time.
+</div>
+<div class="Indented">
+The current “Rapid Rails 3 with Hobo” combines both “Rapid Rails with Hobo” and “Hobo at Work”. We felt that having all of the material in one indexed volume would prove more valuable.
+</div>
+<div class="Indented">
+There has been such a dramatic change in the structure of Hobo since version 1.0 we really should have called it Hobo 3.0! Each major feature of Hobo can now be used independently and has been re-factored to work seamlessly with Rails 3.
+</div>
+<div class="Indented">
+Domizio Demichelis did a fantastic job with the new Hobo Setup Wizard as well the heavy lifting on almost every new feature in Hobo 1.3. It has been gratifying to see another extremely talented and seasoned contributor following in the footsteps of Tom Locke, James Garlick, Bryan Larsen and Matt Jones. 
+</div>
+<div class="Indented">
+It is also very gratifying to see the self-sustaining Hobo User community and those talented Hoboists who volunteer their time to answer questions and provide insight. If you look at the member statistics you will see the top five all time posters (at least since we switched to using Google Groups in June of 2008) include Kevin Porter, Tom Locke, Matt Jones, Bryan Larsen, and Tiago Franco.
+</div>
+<div class="Indented">
+At Barquin International, the last year has been a fruitful one for Hobo. We have four major mission-critical applications that have Hobo as a critical component. We have been fortunate to have the skills of Tom Locke and his crew at Artisan to support us, including Bryan Larsen, Gustav Paul, and Angus Miller, and our internal Barquin Hoboists Venka Ashtakala and Jack Compton. They have been critical to our success with the National Institute of Food and Agriculture (NIFA) Applications Portal (<a class="URL" href="http://portal.nifa.usda.gov">http://portal.nifa.usda.gov</a>) and the Leadership Management Dashboard (LMD), as well as other initiatives that will be revealed later this year. 
+</div>
+<div class="Indented">
+So, please stop by Hobo Central (<a class="URL" href="http://hobocentral.net">http://hobocentral.net</a>) and join the growing community of developers who are having a great deal of fun while providing their clients with the huge benefits of a state-of-the art agile development framework!
+</div>
+<blockquote class="Quotation">
+<span>Owen Dall</span><br/>
+<span>Annapolis, Maryland</span><br/>
+<span>March 2011 </span>
+</blockquote>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--4"></a>PREFACE TO THE HOBO 1.0 VERSION FOR RAILS 2
+</h2>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--11"></a>What was our goal?
+</h4>
+<div class="Unindented">
+I starting writing this preface almost exactly a year ago, but put it aside while Jeff and I toiled over iterations of the book outline. While building and rebuilding the outline of what we thought were the book’s requirements, we soon realized that it would take much more focus and energy than we anticipated completing this project. Our goal seemed simple enough:
+</div>
+<div class="Indented">
+<span>“Create a full set of rock-solid instructions and tutorials so that even a novice developer can create, revise, and deploy non-trivial data-rich Web 2.0 applications. The user must have fun while learning, and develop the confidence to take the next step of diving in to learn more about Hobo, Rails and the elegant and powerful object-oriented language behind these frameworks - Ruby.”</span>
+</div>
+<div class="Indented">
+Right. Well, you know how these things go. OK, so we bit off more than we could chew, at least in the timeframe we envisioned. So instead of three months it took a year…at least it comes out synchronized with the release of Hobo 1.0! 
+</div>
+<div class="Indented">
+So--we hope we have been at least partially successful. We have had a few “beta” testers of early versions that have made it through without serious injury. More recently it has been reports of minor typos and suggested phrasing enhancements. Letting this simmer for a while has been a good thing.
+</div>
+<div class="Indented">
+I hope you are grateful that we parsed off the last 200+ pages into a more advanced companion book with the title “Hobo at Work”. 
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--12"></a>A brief history
+</h4>
+<div class="Unindented">
+The search for a new web development framework began with my frustration with the learning curve and the lack of agility I experienced with the current open source frameworks at the time. A major client had stipulated that we were to use a totally open source technology stack. In the early 2000’s that meant to us Linux, JBoss, Hibernate, MySQL, and Java web frameworks such as Struts. We eventually moved “up” to using Java Server Faces (JSF). The learning curve was steep for our new programmers who were learning on the job. 
+</div>
+<div class="Indented">
+This was particularly frustrating to me as I had experience with the “agile” tools of the 1980’s and 1990’s, which included Revelation and PowerBuilder, client-server technologies that didn’t manage to survive into the Internet age. With Revelation we could build an application prototype that included complex business logic while sitting in front of a client. We didn’t call it Agile Development. We just did it. We built dozens of mission-critical applications and many shrink-wrapped tools. Things were good. Then they weren’t. The dinosaurs didn’t survive the meteor that hit with the World Wide Web.
+</div>
+<div class="Indented">
+So, as the development team lead at one of our major sites as well as the chief systems architect of our small company, I thought it was my duty to start looking for another solution in earnest. 
+</div>
+<div class="Indented">
+It was in the middle of 2006 that I had a long discussion with Venka Ashtakala about this new quest. (Venka and I had survived two unsuccessful framework searches together starting in 1998. The first was as Alpha testers of the PowerBuilder web converter. Our goal was to migrate a very successful client-server budgeting system used by a large number state and local governments to the web. That experiment was a disaster at the time, so we dropped it.) 
+</div>
+<div class="Indented">
+A few days after our initial discussion he emailed me about a relatively new framework called “Ruby on Rails” that had gotten some good press. He heard of a few guys who vouched for it, but couldn’t find any “mission critical” apps we could use as references. I was intrigued. I did a search and found the first edition of “Agile Development with Rails”, and tried it out.
+</div>
+<div class="Indented">
+My first simple application worked, but I have to admit it looked very plain and uninspiring to me. I was a designer and architect, and didn’t want to code HTML and JavaScript. I didn’t want to go backward. “I am too old for this!” was my mantra at the time. I couldn’t understand why the framework didn’t take care of basic things I had been using for over 20 years. Among other things, I was looking for a data-driven navigation system, user authentication, and a decent user interface baked in. 
+</div>
+<div class="Indented">
+I dropped the search for almost a year. I stumbled on a link on one of the major Oracle sites about interesting add-ons to Rails, which led to a post by the renowned Ruby evangelist, Peter Cooper, in January of 2007. Here are two short quotes.
+</div>
+<blockquote class="Quotation">
+“You may have thought Ruby on Rails was enough to get Web applications developed quickly, but enter Hobo. Hobo makes the process of creating Web applications and prototypes even quicker. For example, out of the box, with no lines of code written, you get a dummy app with a user signup, login, and authentication system.<br/>
+…There’s quite a lot to Hobo, so you’ll want to go through its comprehensive official site and watch the Hobo screen cast to get a real feel for it where a classified ads app is created within minutes.”
+</blockquote>
+<div class="Unindented">
+I watched the screen cast three times. I was blown away. I had finally found someone who <span>got it</span>. It was Tom Locke. 
+</div>
+<div class="Indented">
+Following an open source project was something totally new to me. I owned my own software business for a dozen years. We used proprietary tools that had hefty license fees for each installation. I couldn’t see the source code. Oracle and Microsoft weren’t giving me the code to their database servers, applications servers, or WYSIWYG design tools. I paid support and expected THEM to fix the problems we invariably discovered building our vertical applications in the 1980’s and 1990’s. 
+</div>
+<div class="Indented">
+The closest I came to the open source world was being a senior member of the Revelation Roundtable, a board of key developers and integrators for the Revelation and Advanced Revelation development tools. A few of our products were shrink-wrapped add-ons for other developers. This gave us clout for recommending priorities for new development and the ability to get the president on the phone if one of my very high profile customers was having an issue.
+</div>
+<div class="Indented">
+So posting to a forum and waiting for an answer to my (probably) stupid question didn’t come easy to me. This was the thing (I thought) for generation X, not an aging survivor of decades of software wars. 
+</div>
+<div class="Indented">
+It was a welcome and pleasant surprise to find supportive, generous, and incredibly talented people willing to help. Even Tom Locke would answer my questions, patiently. Later I was lucky enough to spend time with Tom in person on a number of occasions, which increased my respect for his vision and capabilities.
+</div>
+<div class="Indented">
+In Early 2008 an opportunity arose at one of our major clients, The National Institute for Food and Agriculture (Formerly CSREES), to migrate a legacy app to the web. I invited the CIO, Michel Desbois (a forward-looking open source advocate) to experience a demo of building an application using Hobo. My position at NIFA was Chief Systems Architect of the Barquin team, not one of our senior developers. So Michel was intrigued that I was going to sit with him without a coder coaching.
+</div>
+<div class="Indented">
+That demo led to a small “proof of concept” task to build a Topic Classification system for agriculture research projects using Hobo and Oracle as a back end. Michel took a risk and started the ball rolling for us with Hobo. 
+</div>
+<div class="Indented">
+As this project moved forward, and additional Barquin team members became interested in learning, it became more and more urgent to have a solid resource for training not only developers, but also our requirements analysts and designers. We were building wireframes using software (e.g., Axure) that built great documentation. It even generated HTML pages so you could simulate the page flow of an application. 
+</div>
+<div class="Indented">
+Unfortunately these became throwaway artifacts, as there was no way of generating a database driven application. <span>What we needed was a prototyping tool designers could use and then pass on to developers.</span> Hobo appeared to be the best solution for both prototyping and mission-critical web development. Here is what I reported in May of 2008 about Barquin International’s decision to provide some seed money to Hobo:
+</div>
+<blockquote class="Quotation">
+"This is the first time in over a decade I have been excited about the potential in a new development framework," explains Owen Dall, Chief Systems Architect for Barquin International, "Although Hobo is already a brilliant and significant enhancement to Rails, we are looking forward to the great leap forward we know is coming…” 
+</blockquote>
+<div class="Unindented">
+More recently we have two significant development efforts underway using Hobo that we will put in production this year. The new Leadership and Management Dashboard (LMD) led by Joe Barbano, the NIFA Reporting Portal, and the REEport (Research, Education and Economics Reporting) project lifecycle reporting system under the direction of John Mingee. Dennis Unglesbee, Director of the NIFA Applications Division, has had overall lead responsibility for all of these endeavors.
+</div>
+<div class="Indented">
+Anyone who thinks government cannot be agile should come on by and have coffee with the NIFA application development project managers. NIFA has become an innovative “skunk works” that, IMHO, should become a model for public/private collaboration.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--13"></a>A Challenge
+</h4>
+<div class="Unindented">
+How fast could you build an application with the following set of requirements using your current development tool, and have it running, <span>without touching the database engine?</span> 
+</div>
+<ul>
+<li>
+Books have been disappearing from your team’s bookshelves. You have been asked to quickly develop a web application that will maintain this library and always know who has what copy of which book. 
+</li>
+<li>
+Each book title may have any number of copies. Only the administrator, who will be the first one to log in, can enter or edit book titles and details about each copy. 
+</li>
+<li>
+There will be an automatic signup and login capability accessible from the home page that allows each member of your team to join in, check a book out, or find out who has it so you can track him or her down in the lunch room. 
+</li>
+<li>
+There is a built-in text search facility that will allow you to search by book name or description. 
+</li>
+<li>
+Basic Application documentation is generated for you automatically so you can show your team leader what is behind the curtain. 
+</li>
+
+</ul>
+<div class="Unindented">
+(Now write your estimates down before reading the rest of this page)
+</div>
+<div class="Indented">
+OK. Time’s up. By the time you consolidated your estimates you would already be up and running with this application using Hobo. 
+</div>
+<blockquote class="Quotation">
+<span>Owen Dall</span> <br/>
+<span>Annapolis, Maryland</span> <br/>
+<span>February, 2010</span> 
+</blockquote>
+
+</div>
+<h1 class="Part">
+<a class="toc" name="toc-Part-1">Part 1.</a> Section I - INTRODUCTION AND INSTALLATION
+</h1>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-1">1</a> Chapter 1 - INTRODUCTION
+</h1>
+<div class="Unindented">
+<h2 class="Section-">
+<a class="toc" name="toc-Section--5"></a>What is Hobo?
+</h2>
+<div class="Unindented">
+By Tom Locke
+</div>
+<div class="Indented">
+Hobo is a software framework that radically reduces the effort required to develop database-driven, interactive web sites and web-based applications. Strictly speaking it’s more of a “half-framework” — Hobo builds on the amazingly successful Ruby on Rails and that’s where much of the functionality comes from. The original motivation for the Hobo project can be summed up pretty succinctly with a single sentiment: “Do I really have to code all this stuff up again?".
+</div>
+<div class="Indented">
+In other words Hobo is about not re-inventing the wheel. In software-engineer-speak, we call that code reuse. If you mention that term in a room full of experienced programmers you’ll probably find yourself the recipient of various frowns and sighs; you might even get laughed at. It all sounds so simple - if you’ve done it before just go dig out that code and use it again. The trouble is, the thing you want to do this time is just a bit different, here and there, from what you did last time. That innocuous sounding “just a bit different” turns out to be a twelve-headed beast that eats up 150% of your budget and stomps all over your deadline. Re-use, it turns out, is a very tough problem. Real programmers know this. Real programmers code it up from scratch.
+</div>
+<div class="Indented">
+Except they don’t. Ask any programmer to list the existing software technologies they drew upon to create their Amazing New Thing and you had better have a lot of time to spare. Modern programming languages ship with huge class libraries, we rely on databases that have unthinkable amounts of engineering time invested in them, and our web browsers have been growing more and more sophisticated for years. Nowadays we also draw upon very sophisticated online services, for example web based mapping and geo-location, and we add features to our products that would otherwise have been far beyond our reach.
+</div>
+<div class="Indented">
+So it turns out the quest for re-use has been a great success after all—we just have to change our perspective slightly, and look at the infrastructure our application is built on rather than the application code itself. This is probably because our attitude to infrastructure is different—you like it or lump it. If your mapping service doesn’t provide a certain feature, you just do without. You can’t dream of coding up your own mapping service, and some maps is better than no maps. 
+</div>
+<div class="Indented">
+<span>We’ve traded flexibility for reach, and boy is it a good trade.</span>
+</div>
+<div class="Indented">
+Programmers get to stand on the shoulders of giants. Small teams with relatively tiny budgets can now successfully take on projects that would have been unthinkable a decade ago. How far can this trend continue? Can team sizes be reduced to one? Can timelines be measured in days or weeks instead of months and years? The answer is yes, if you are willing to trade flexibility for reach.
+</div>
+<div class="Indented">
+In part, this is what Hobo is about. If you’re prepared for your app to sit firmly inside the box of Hobo’s “standard database app”, you can be up and running with startlingly little effort. So little, in fact, that you can just about squeeze by without even knowing how to program. But that’s only one part of Hobo. The other part comes from the fact that nobody likes to be boxed in. What if I am a programmer, or I have access to programmers? What if I don’t mind spending more time on this project? 
+</div>
+<div class="Indented">
+We would like this “flexibility for reach” tradeoff to be a bit more fluid. Can I buy back some flexibility by adding more programming skills and more time? In the past this has been a huge problem. Lots of products have made it incredibly easy to create a simple database app, but adding flexibility has been an all-or-nothing proposition. You could either stick with the out-of-the-box application, or jump off the “scripting extensions” cliff, at which point things get awfully similar to coding the app from scratch.
+</div>
+<div class="Indented">
+This, we believe, is where Hobo is a real step forward. Hobo is all about choosing the balance between flexibility and reach that works for your particular project. You can start with the out-of-the box solution and have something up and running in your first afternoon. You can then identify the things you’d like to tweak and decide if you want to invest programming effort in them. You can do this, bit by bit, on any aspect of your application, from tiny touches to the user-interface, all the way up to full-blown custom features.
+</div>
+<div class="Indented">
+In the long run, and we’re very much still on the journey, we hope you will never again have to say “Do I really have to code all this up again?”, because you’ll only ever be coding the things that are unique to this particular project. To be honest that’s probably a bit of a utopian dream, and some readers will probably be scoffing at this point—you’ve heard it all before. But if we can make some progress, any progress in that direction, that’s got to be good, right? Well we think we’ve made a ton of progress already, and there’s plenty more to come!
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--1"></a>Background
+</h3>
+<div class="Unindented">
+A brief look at the history leading up to Hobo might be helpful to put things in context. We’ll start back in ancient times — 2004. At that time the web development scene was hugely dominated by Java with its “enterprise” frameworks like EJB, Struts and Hibernate. It would be easy, at this point, to launch into a lengthy rant about over-engineered technology that was designed by committee and is painful to program with. But that has all been done before. Suffice it to say that many programmers felt that they were spending way to much time writing repetitive “boilerplate” code and the dreaded XML configuration files, instead of focusing on the really creative stuff that was unique to their project. Not fun and definitely not efficient.
+</div>
+<div class="Indented">
+One fellow managed to voice his concerns much more loudly than anyone else, by showing a better way. In 2004 David Heinemeier Hansson released a different kind of framework for building web apps, using a then little-known language called Ruby. A video was released in which Hansson created a working database-driven Weblog application from scratch in less than 15 minutes. That video was impressive enough to rapidly circulate the globe, and before anyone really even knew what it was, the Ruby on Rails framework was famous.
+</div>
+<div class="Indented">
+Like most technologies that grow rapidly on a wave of hype, Rails (as it is known for short) was often dismissed as a passing fad. Five years later the record shows otherwise. Rails is now supported by all of the major software companies and powers many household-name websites.
+</div>
+<div class="Indented">
+So what was, and is, so special about Ruby on Rails? There are a thousand tiny answers to that question, but they all pretty much come down to one overarching attitude. Rails is, to quote its creator, opinionated software. The basic idea is very simple: instead of starting with a blank slate and requiring the programmer to specify every little detail, Rails starts with a strong set of opinions about how things should work, conventions which “just work” 95% of the time. “Convention over Configuration” is the mantra. If you find yourself in the 5% case where these conventions don’t fit, you can usually code your way out of trouble with a bit of extra effort. For the other 95% Rails just saved you a ton of boring, repetitive work.
+</div>
+<div class="Indented">
+In the previous section we talked about trading flexibility for reach. Convention over configuration is pretty much the same deal: don’t require the programmer to make every little choice; make some assumptions and move swiftly on. The thinking behind Hobo is very much inspired by Rails. We’re finding out just how far the idea of convention over configuration can be pushed. For my part, the experience of learning Rails was a real eye-opener, but I immediately wanted more.
+</div>
+<div class="Indented">
+I found that certain aspects of Rails development were a real joy. The “conventions”—the stuff that Rails did for you—were so strong that you were literally just saying what you wanted, and Rails would just make it happen. We call this “declarative programming”. Instead of spelling out the details of a process that would achieve the desired result, you just declare what you want, and the framework makes it happen: “what” not “how”.
+</div>
+<div class="Indented">
+The trouble was that Rails achieved these heights in some areas, but not all. In particular, when it came to building the user interface to your application, you found yourself having to spell things out the long way.
+</div>
+<div class="Indented">
+It turned out this was very much a conscious decision in the design of Ruby on Rails. David Heinemeier Hansson had seen too many projects bitten by what he saw as the “mirage” of high-level components:
+</div>
+<div class="Indented">
+<div class="Shaded">
+<span>I worked in a J2EE shop for seven months that tried to pursue the component pipe dream for community tools with chats, user management, forums, calendars. The whole shebang. And I saw how poorly it adapted to different needs of the particular projects.</span><span>On the surface, the dream of components sounds great and cursory overviews of new projects also appear to be “a perfect fit”. But they never are. Reuse is hard. Parameterized reuse is even harder. And in the end, you’re left with all the complexity of a Swiss army knife that does everything for no one at great cost and pain.</span>
+</div>
+
+</div>
+<div class="Indented">
+I must say I find it easy to agree with this perspective, and many projects did seem, in hindsight, to have been chasing a mirage. But it’s also a hugely dissatisfying position. Surely we don’t have to resign ourselves to re-inventing the wheel forever? So while the incredibly talented team behind Rails has been making the foundations stronger, we’ve been trying to find out how high we can build on top of those foundations. Rather than a problem, we see a question — why do these ideas work so well in some parts of Rails but not others? What new ideas do we need to be able to take convention over configuration and declarative programming to higher and higher levels? Over the last couple of years we’ve come up with some pretty interesting answers to those questions.
+</div>
+<div class="Indented">
+In fact one answer seems to be standing out as the key. It’s been hinted at already, but it will become clearer in the next section when we compare Hobo to some other seemingly similar projects.
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--2"></a>The Difference
+</h3>
+<div class="Unindented">
+There are a number of projects out there that bear an external resemblance to Hobo. To name a few, in the Rails world we have Active Scaffold and Streamlined, and the Python language has Django, a web framework with some similar features.
+</div>
+<div class="Indented">
+There is some genuine overlap between these projects and Hobo. All of them (including Hobo) can be used to create so called “admin interfaces”. That is, they are very good at providing a straightforward user-interface for creating, editing and deleting records in our various database tables. The idea is that the site administrator, who has a good understanding of how everything works, does not need a custom crafted user-interface in order to perform all manner of behind-the-scenes maintenance tasks. A simple example might be editing the price of a product in a store. In other words, the admin interface is a known quantity: they are all largely the same.
+</div>
+<div class="Indented">
+Active Scaffold, Streamlined, Django and Hobo can all provide working admin sites like these with very little or even no programming effort. This is extremely useful, but Hobo goes much further. The big difference is that the benefits Hobo provides apply to the whole application, not just the admin interface, and this difference comes from Hobo’s approach to customization.
+</div>
+<div class="Indented">
+Broadly speaking, these “admin site builder” projects provide you a very complete and useful out-of-the-box solution. There will be a great number of options that can be tweaked and changed, but these will only refine rather than reinvent the end result. Once you’ve seen one of these admin-sites, you’ve pretty much seen them all. That’s exactly why these tools are used for admin sites - it generally just doesn’t matter if your admin site is very alike any other. The same is far from true for the user-facing pieces of your application—those need to be carefully crafted to suit the needs of your users. 
+</div>
+<div class="Indented">
+Hobo has a very different approach. Instead of providing options, Hobo provides a powerful parameterization mechanism that lets you reach in and completely replace any piece of the generated user-interface, from the tiny to the large.
+</div>
+<div class="Indented">
+This difference leads to something very significant: it gets you out of making a difficult all-or-nothing decision. An admin site builder does one thing well, but stops there. For every piece of your site you need to decide: admin interface or custom code? With Hobo you can start off using the out-of-the-box UI as a rough prototype, and then gradually replace as much or as little as you need in order to get the exact user experience you are after.
+</div>
+<div class="Indented">
+Once again we find ourselves back at the original idea: making a tradeoff between flexibility and reach. The crucial difference with Hobo, is that you get to make this trade-off in a very fine-grained way. Instead of all-or-nothing decisions (admin-site-builder vs. custom-code), you make a stream of tiny decisions. Should I stick with Hobo’s automatically generated form? Sidebar? Button? How long would it take me to replace that with something better? Is it worth it?
+</div>
+<div class="Indented">
+There is a wide spectrum of possibilities, ranging from a complete out-of-the-box solution at one end to a fully tailored application at the other. Hobo lets you pick any point on this spectrum according to whatever makes sense right now. Not only that but you don’t have to pick a point for the app as a whole. You get to make this decision for each page, and even each small piece of each page.
+</div>
+<div class="Indented">
+The previous section posed the question: “how can the ideas of declarative programming be taken to higher and higher levels?”. We mentioned before that one particular answer to this question has stood out as crucial: it is the approach we have taken to customization. It’s not what your components can do, it’s how they can be changed that matters. This makes sense—software development is a creative activity. Developers need to take what you’re giving them and do something new with it.
+</div>
+<div class="Indented">
+It is this difficulty of customization that lies at the heart of concerns with high-level components: David Heinemeier Hansson again:
+</div>
+<div class="Indented">
+<div class="Shaded">
+<span>…high-level components are a mirage: By the time they become interesting, their fitting will require more work than creating something from scratch.</span>
+</div>
+
+</div>
+<div class="Indented">
+The typical story goes like this: you need to build something that “surely someone must have done before?”; you find a likely candidate - maybe an open-source plugin or an application that you think you can integrate; then as you start the work of adjusting it to your needs it slowly becomes apparent that it’s going to be far harder than you had anticipated. Eventually you end up wishing you had built the thing yourself in the first place.
+</div>
+<div class="Indented">
+To the optimistic however, a problem is just an opportunity waiting to be taken. We’re hitting a limit on the size of the components we can build—too big and the effort to tailor them makes it counterproductive. Turn that around and you get this: if you can find a way to make customization easier, then you can build bigger components. If it’s the “fitting” that’s the problem, let’s make them easier to fit! That’s exactly what we’re doing.
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--3"></a>The Future
+</h3>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--14"></a>Bigger library
+</h4>
+<div class="Unindented">
+Obviously the whole point in discovering the secrets of how to build high-level components, is that you want to build some high level components! In other words there are two distinct aspects to the Hobo project: getting the underlying technology right, and then building some cool stuff with it. Hobo 1.3 will ship with a decent library of useful “building blocks” to get your app up and running quickly, but there’s so much more we’d like to see. This is where the magic of open-source needs to come into play. The better Hobo gets, the more developers will want to jump on board, and the bigger the library will grow.
+</div>
+<div class="Indented">
+Although the underlying framework is the most technically challenging part of the project, in the long run there’s much more work to be done in the libraries. And writing the code is just part of the story. All these contributions will need to be documented and catalogued too. 
+</div>
+<div class="Indented">
+We’ve started putting the infrastructure in place with “The Hobo Cookbook” website (<a class="URL" href="http://cookbook.hobocentral.net">http://cookbook.hobocentral.net</a>) - a central home for both the “official” and user-contributed documentation.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--15"></a>Performance improvements
+</h4>
+<div class="Unindented">
+It would be remiss not to mention that all these wonderful productivity gains do come at a cost - a Hobo application does have an extra performance overhead compared to a “normal” Rails application. Experience has shown it’s not really a big problem - many people are using Hobo to prototype, or to create a very niche application for a small audience. In these cases the performance overhead just doesn’t matter. If you do have a more serious application that may need to scale, there are well known techniques to apply, such as prudent use of caching.
+</div>
+<div class="Indented">
+The argument is pretty much the same as that told by early Rails coders to their Java based critics. It’s much better to save a ton of development time, even if it costs you some of your raw performance. The time saved can be used to work on performance improvements in the architecture of the app. You typically end up with an app that’s actually faster than something built in a lower-level, “faster” language.
+</div>
+<div class="Indented">
+Another way to look at it—it was about four our five years ago that Rails was getting a lot of pushback about performance. In those four or five years, Moore’s Law has made our servers somewhere between five and ten times faster. If Rails was fast enough in 2005 (it was), Hobo is certainly fast enough today.
+</div>
+<div class="Indented">
+Having said all that, it’s always nice to give people more performance out-of-the-box and postpone the day that they have to resort to app-specific efforts. Just as Rails has focused a lot on performance in the last couple of years, this is definitely an area that we will focus on in the future.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--16"></a>Less magic
+</h4>
+<div class="Unindented">
+One of the most common criticisms leveled against Hobo is that it is “too magic”. This tends to come from very experienced developers who like to know exactly how everything is working. Because Hobo gives you so much out-of-the-box, it’s inevitable that you’ll be scratching your head a bit about where it all comes from in the early days. Fortunately this is mostly just a matter of the learning curve. Once you’ve oriented yourself, it’s pretty easy to understand where the various features come from, and hence where to look when you need to customize.
+</div>
+<div class="Indented">
+As Hobo has developed, we’ve definitely learnt how important it is to make things as clear and transparent as we can. The changes from Hobo 0.7 to 0.8 removed a great deal of hard to understand “magical” code. This is definitely a trend that will continue. We’re very confident that future versions will be able to do even more for you, while at the same time being easier to understand. It’s a challenge—we like challenges!
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--17"></a>Even higher level
+</h4>
+<div class="Unindented">
+One of the really interesting things we’ve learnt through releasing Hobo as open source, has been that it has a very strong appeal to beginners. It is very common for a post to the “hobo users” discussion group to start “I am new to web programming” or “This is my first attempt to create a web app”. It seems that, with Hobo, people can see that a finished result is within their reach. That is a powerful motivator.
+</div>
+<div class="Indented">
+Now that we’ve seen that appeal, it’s really interesting to find out how far we can push it. We’ve already seen simple Hobo applications created by people that don’t really know computer programming at all. Right now these people are really rather limited, but perhaps they can go further.
+</div>
+<div class="Indented">
+Hobo has ended up serving two very different audiences: experienced programmers looking for higher productivity, and beginners looking to achieve things they otherwise couldn’t. Trying to serve both audiences might sound like a mistake, but in fact it captures what Hobo is all about. Our challenge is to allow the programmer to choose his or her own position on a continuous spectrum from “incredibly easy” to “perfectly customized”.
+</div>
+<div class="Indented">
+Hopefully this introduction has whetted your appetite and you’re keen to roll up your sleeves and find out how it all works. While this section has been a bit on the philosophical side, the rest of the book is eminently practical. From now on we’ll dispense with all the highbrow pontificating and teach you how to make stuff. Enjoy!
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--4"></a>Fundamentals
+</h3>
+<div class="Unindented">
+The Hobo developers have taken the DRY<a class="IndexReference" name="entry-DRY-0" href="#index-DRY">↓</a> (Don’t Repeat Yourself) paradigm to a new level by identifying repetitive architectural patterns in data-driven web sites and particularly within Rails applications. 
+</div>
+<ul>
+<li>
+Rapid implementation of dynamic AJAX interfaces in your application with no extra programming. Switchable themes. Customize and tweak your application structure and layout to meet any design goals.
+</li>
+<li>
+Powerful mark-up language, DRYML, combines rapid development with ultimate design flexibility. 
+</li>
+
+</ul>
+<div class="Unindented">
+The DRY paradigm is all about finding the right <span>level of abstraction</span> for the building blocks of an application in order to reduce cookie-cutter repetitive programming. 
+</div>
+<div class="Indented">
+Rails starts with a Model-View-Controller (MVC) architecture built with Ruby code, using the metaprogramming power that Ruby provides. 
+</div>
+<div class="Indented">
+Hobo takes this paradigm further and it does it in two directions. It provides rapid prototyping with modules that provide an integrated user login and permissions system, automated page generation, automated routing, built-in style sheets, and an automated database migration and synchronization system. Hobo also provides a powerful markup language called DRYML that provides an almost limitless method for building custom tags at ever-higher levels of abstraction.
+</div>
+<div class="Indented">
+Sometimes these patterns are at a very high level such as the need for a user login capability and sometimes they are at a lower level such the requirement to grab a set of records for display.
+</div>
+<div class="Indented">
+The Hobo framework philosophy is that many of the features of a data-driven site should be able to be declared and need no other coding, at least for the first set of iterations. Let’s take a database query as an example. The developers of Rails realized that many queries had similar structures and therefore there should be no need to code complex SQL queries. Rails implements find methods to deal with this challenge. But—in the view template—you still need to write the code to loop through the records when you need to display them.
+</div>
+<div class="Indented">
+The Hobo view is that this is a ubiquitous repetitive pattern that should be addressed. So Hobo lets you just declare that you want to display a collection of records in a single command.
+</div>
+<div class="Indented">
+As we have mentioned many times before, Hobo provides a new language called DRYML (Don’t Repeat Yourself Markup Language) to develop menus, views, forms, and page navigation. The components of DRYML, as you would expect, are tags. Hobo comes with a library of predefined DRYML tags called the Rapid Tag Library. This library is used to render the default menus, pages, and forms you have used in the tutorials. 
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--5"></a>Levels of Abstraction 
+</h3>
+<div class="Unindented">
+As we discussed above, finding the right level of abstraction in implementing coding constructs is the key to programming productivity and application maintainability. But anyone who has ever coded knows that programming is a messy business. Sometimes it is just easier to code at a low level of abstraction. This is the dominant way of developing applications today. It is simpler not to create reusable components or snippets because something always seems to need changing. You think you will waste more time fixing your components than just starting over.
+</div>
+<div class="Indented">
+The approach that Rails takes, and Hobo even more so, is to have code that lets multiple levels of abstractions coexist in the code. This is potentially the best of both approaches. 
+</div>
+<div class="Indented">
+<span>Build higher and higher levels of abstraction in your tool set but maintain the ability to code at a detail level for development flexibility. </span>
+</div>
+<div class="Indented">
+Wherever possible, Hobo provides additional capabilities over Rails for declaring what you want rather than forcing you to write procedural code. It is therefore important to understand what is going on procedurally behind the scenes in both Rails and Hobo so you know what to do. 
+</div>
+<div class="Indented">
+In this chapter we will emphasize which component--model, view or controller--is doing what, and when it is doing it. We will also emphasize what the various Hobo constructs are doing and how within the architecture of Rails.
+</div>
+<div class="Indented">
+We are going to go through the Hobo approach at a couple of levels but first we will list them and give a brief introduction.
+</div>
+<div class="Indented">
+Now we are going to approach the major topics at a shallow level first and then circle back and go in deeper after we get a few things out of the way first.
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--6"></a>Rails and Hobo
+</h3>
+<div class="Unindented">
+Hobo is a set of Rails plug-ins, which means that Hobo adds additional custom code to Rails, and coexists with Rails. So, essentially a Hobo application is a Rails application with additional capabilities. However, these additional capabilities are substantial, and can be conceptualized into two categories: 
+</div>
+<ol>
+<li>
+Operational (“Run Time”) Enhancements 
+</li>
+<li>
+Developer Tool Enhancements
+</li>
+
+</ol>
+<div class="Unindented">
+<span>Operational Enhancements.</span> Take a look at the data flow for a typical operating application built with a Model-View-Controller (MVC) framework:
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-1.1"> </a><div class="figure" style="max-width: 90%;">
+<img class="figure" src="figures/figure1.png" alt="figure figures/figure1.png" style="max-width: 741px; max-height: 466px; "/>
+<div class="caption">
+Figure 1.1 Data flow for a typical Application using a MVC framework
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+Now let’s look at how Rails and Hobo fit into the MVC framework:
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-1.2"> </a><div class="figure" style="max-width: 90%;">
+<img class="figure" src="figures/figure2.png" alt="figure figures/figure2.png" style="max-width: 741px; max-height: 466px; "/>
+<div class="caption">
+Figure 1.2 Data flow for a Rails application
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-1.3"> </a><div class="figure" style="max-width: 90%;">
+<img class="figure" src="figures/figure3.png" alt="figure figures/figure3.png" style="max-width: 750px; max-height: 486px; "/>
+<div class="caption">
+Figure 1.3 Data flow for a Hobo application
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+Here are a few talking points:
+</div>
+<ul>
+<li>
+The Hobo Model Controller takes the place of the Action Controller in Rails. 
+</li>
+<li>
+The Hobo Model Controller has access to information from both Hobo Permissions and Hobo Lifecycles that allow it to decide what should be displayed and for whom. 
+</li>
+<li>
+Hobo Rapid pages are rendered using DRYML, which is passed to the DRYML “processor” that translates more declarative DRYML into standard Rails eRB (embedded Ruby) that is then rendered with Action View in Rails.
+</li>
+
+</ul>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--7"></a>Hobo Enhancement Summary
+</h3>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--18"></a>Fields 
+</h4>
+<div class="Unindented">
+A big difference between Hobo and Rails is that in Hobo fields are declared in the model, whereas in Rails they are declared in the migrations. In our opinion it is more intuitive and DRY to maintain all of the model code in one place, creating or changing the database design by editing the <span>model</span>, letting Hobo build the migration code necessary to make any required changes. You can look in one place to see everything about a model. You don’t need to jump to the <span>schema.rb</span> file.
+</div>
+<div class="Indented">
+The Hobo “resource” generator creates models, controllers, and views:
+</div>
+<pre class="LyX-Code">
+<span>&gt; hobo generate resource</span> [parameters]
+</pre>
+<div class="Unindented">
+Any changes to field definitions or associations in the model can be propagated throughout the application with the Hobo “migration” generator:
+</div>
+<pre class="LyX-Code">
+<span>&gt; hobo generate migration</span> [parameters]
+</pre>
+<div class="Unindented">
+There is no need to edit the migration file. The migration generator handles this for you.
+</div>
+<div class="Indented">
+If you only need to create a model without other resources, use the Hobo model generator:
+</div>
+<pre class="LyX-Code">
+<span>&gt; hobo generate model</span> [parameters]
+</pre>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--19"></a>Indexes 
+</h4>
+<div class="Unindented">
+This is one of the newest additions to Hobo thanks to Matt Jones. This feature provides for automatic field generation for the foreign keys of related models, and an easy-to-use declarative syntax to specified single and multi-part keys with a model definition.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--20"></a>Validations 
+</h4>
+<div class="Unindented">
+As we have discussed elsewhere in the book, Hobo provides some useful in-line shortcuts for the simplest validations that Rails does not provide. See in red below:
+</div>
+<pre class="LyX-Code">
+<div class="Shadowbox">
+<pre class="LyX-Code">
+fields do 
+  name :string, <span class="red">:required, :unique, :length =&gt; 32 </span>
+end 
+</pre>
+
+</div>
+
+</pre>
+<div class="Unindented">
+Use standard rails validations outside the <span>fields…do</span> block. This works the same as in Rails so we will not add anything new at this point.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--21"></a>Views 
+</h4>
+<div class="Unindented">
+Views take the most time to develop in any application and Hobo provides more tools here than in the other two modules to meet that challenge. In fact, it provides an entire language to use to develop view templates (a Rails web page).
+</div>
+<div class="Indented">
+Hobo views are developed entirely differently than in Rails. Once you define your models and controllers, Hobo is capable of automatically generating an entire set of views on the fly. This means that at the beginning of your development process you do not have to code a view template at all. Hobo automatically creates them whenever the user requests that data be rendered.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--1"></a>DRYML Tags. 
+</div>
+<div class="Unindented">
+Hobo constructs view templates using Hobo’s mark-up language, called Don’t Repeat Yourself Markup Language. The tags are reusable components that perform specific processes defined in Ruby. 
+</div>
+<div class="Indented">
+You build DRYML tags using a definition language and you use the tags to build data-driven view templates in an XML-like syntax. You can create your own tags and build tags from other tags. Hobo comes with its own library of fundamental tags called the Rapid Library.
+</div>
+<div class="Indented">
+For those of you with a Rails background, you can think of these as similar to Rails "helpers", but they are used with an easier XML syntax rather than with [Ruby embedded in the templates.]
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--2"></a>Rapid Tag Library. 
+</div>
+<div class="Unindented">
+This library is a set of tags that deal with all aspects of view template specification. It includes tags for links, forms, input controls, navigation, logic and much more. They are DRYML tags in that they are defined with the DRYML definition language. Many rapid tags call other Rapid tags implicitly. For example, you may never see a Rapid &lt;input&gt; called explicitly in the auto-generated tags described below. 
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--3"></a>Rapid Generator. 
+</div>
+<div class="Unindented">
+This generator is a real time generator as opposed to the code generators we usually talk about in Rails development. Rapid creates a set of auto-generated tags that are defined by model fields and model relationships. Rapid uses these auto-generated tags to render individual view templates.
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-2">2</a> Chaper 2 – INSTALLATION
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Part">
+<a class="toc" name="toc-Part-2">Part 2.</a> Section II - TUTORIALS
+</h1>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-3">3</a> Chapter 3 - INTRODUCTORY TUTORIALS
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-4">4</a> Chapter 4 - INTERMEDIATE TUTORIALS
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-5">5</a> Chapter 5 - ADVANCED TUTORIALS
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-6">6</a> Chapter 6 - DEPLOYING YOUR APPLICATIONS
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Part">
+<a class="toc" name="toc-Part-3">Part 3.</a> Section III - HOBO UNDER THE HOOD
+</h1>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-7">7</a> Chapter 7 - HOBO GENERATORS
+</h1>
+<div class="Unindented">
+
+</div>
+<div class="Indented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<div class="Indented">
+
+</div>
+<div class="Indented">
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-8">8</a> Chapter 8 - THE HOBO PERMISSIONS SYSTEM
+</h1>
+<div class="Unindented">
+
+</div>
+<div class="Indented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<div class="Indented">
+
+</div>
+<div class="Indented">
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-9">9</a> Chapter 9 - HOBO CONTROLLERS AND ROUTING
+</h1>
+<div class="Unindented">
+
+</div>
+<div class="Indented">
+
+</div>
+<div class="Indented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-10">10</a> Chapter 10 - HOBO LIFECYCLES
+</h1>
+<div class="Unindented">
+  
+</div>
+<div class="Indented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<div class="Indented">
+
+</div>
+<div class="Indented">
+
+</div>
+<div class="Indented">
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-11">11</a> Chapter 11 - HOBO VIEW HINTS AND LOCALES
+</h1>
+<div class="Unindented">
+
+</div>
+<div class="Indented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-12">12</a> Chapter 12 - HOBO SCOPES
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-13">13</a> Chapter 13 - THE HOBO DRYML GUIDE
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-14">14</a> Chapter 14 - THE HOBO RAPID TAG LIBRARY
+</h1>
+<div class="Unindented">
+<div class="Unindented">
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-15">15</a> INDEX
+</h1>
+<a class="toc" name="Index"></a><h1 class="index">Index</h1><p class="printindex">
+<a class="printindex" name="index-DRY"></a>DRY: <a class="IndexArrow" href="#entry-DRY-0">↑</a>
+</p>
+
+<hr class="footer"/>
+<div class="footer" id="generated-by">
+Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.0.0 (2010-07-21)</a> on <span class="create-date">2011-07-27T13:18:43.214678</span>
+</div>
+</div>
+</body>
+</html>
