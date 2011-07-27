@@ -30,7 +30,16 @@ logicalmkup
 \float_placement H
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_amsmath 0
@@ -48,14 +57,14 @@ logicalmkup
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 0
+\secnumdepth -1
 \tocdepth 2
 \paragraph_separation skip
 \defskip medskip
 \quotes_language english
 \papercolumns 1
-\papersides 1
-\paperpagestyle empty
+\papersides 2
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -96,8 +105,8 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Part*
-Getting Started
+\begin_layout Chapter
+Preface
 \end_layout
 
 \begin_layout Standard
@@ -111,11 +120,11 @@ filename "p0ch0preface.lyx"
 \end_layout
 
 \begin_layout Part
-INTRODUCTION AND INSTALLATION
+Section I - INTRODUCTION AND INSTALLATION
 \end_layout
 
 \begin_layout Chapter
-INTRODUCTION
+Chapter 1 - INTRODUCTION
 \end_layout
 
 \begin_layout Standard
@@ -129,7 +138,7 @@ filename "p1ch1intro.lyx"
 \end_layout
 
 \begin_layout Chapter
-CHAPTER 2 – INSTALLATION
+Chaper 2 – INSTALLATION
 \end_layout
 
 \begin_layout Standard
@@ -143,11 +152,11 @@ filename "p1ch2installation.lyx"
 \end_layout
 
 \begin_layout Part
-TUTORIALS
+Section II - TUTORIALS
 \end_layout
 
 \begin_layout Chapter
-INTRODUCTORY TUTORIALS
+Chapter 3 - INTRODUCTORY TUTORIALS
 \end_layout
 
 \begin_layout Standard
@@ -161,7 +170,7 @@ filename "p2c3basictut.lyx"
 \end_layout
 
 \begin_layout Chapter
-INTERMEDIATE TUTORIALS
+Chapter 4 - INTERMEDIATE TUTORIALS
 \end_layout
 
 \begin_layout Standard
@@ -175,7 +184,7 @@ filename "p2c4inttut.lyx"
 \end_layout
 
 \begin_layout Chapter
-ADVANCED TUTORIALS
+Chapter 5 - ADVANCED TUTORIALS
 \end_layout
 
 \begin_layout Standard
@@ -189,7 +198,7 @@ filename "p2c5advtut.lyx"
 \end_layout
 
 \begin_layout Chapter
-DEPLOYING YOUR APPLICATIONS
+Chapter 6 - DEPLOYING YOUR APPLICATIONS
 \end_layout
 
 \begin_layout Standard
@@ -203,11 +212,11 @@ filename "p2c6deployment.lyx"
 \end_layout
 
 \begin_layout Part
-HOBO UNDER THE HOOD
+Section III - HOBO UNDER THE HOOD
 \end_layout
 
 \begin_layout Chapter
-HOBO GENERATORS
+Chapter 7 - HOBO GENERATORS
 \end_layout
 
 \begin_layout Standard
@@ -233,7 +242,7 @@ filename "hobogenerators.lyx"
 \end_layout
 
 \begin_layout Chapter
-THE HOBO PERMISSIONS SYSTEM
+Chapter 8 - THE HOBO PERMISSIONS SYSTEM
 \end_layout
 
 \begin_layout Standard
@@ -259,7 +268,7 @@ filename "hobopermissions.lyx"
 \end_layout
 
 \begin_layout Chapter
-HOBO CONTROLLERS AND ROUTING
+Chapter 9 - HOBO CONTROLLERS AND ROUTING
 \end_layout
 
 \begin_layout Standard
@@ -281,7 +290,7 @@ filename "hobocontrollers.lyx"
 \end_layout
 
 \begin_layout Chapter
-HOBO LIFECYCLES
+Chapter 10 - HOBO LIFECYCLES
 \end_layout
 
 \begin_layout Standard
@@ -311,7 +320,7 @@ filename "hobolifecycles.lyx"
 \end_layout
 
 \begin_layout Chapter
-HOBO VIEW HINTS AND LOCALES
+Chapter 11 - HOBO VIEW HINTS AND LOCALES
 \end_layout
 
 \begin_layout Standard
@@ -329,7 +338,7 @@ filename "hoboviewhints.lyx"
 \end_layout
 
 \begin_layout Chapter
-HOBO SCOPES
+Chapter 12 - HOBO SCOPES
 \end_layout
 
 \begin_layout Standard
@@ -343,7 +352,7 @@ filename "hoboscopes.lyx"
 \end_layout
 
 \begin_layout Chapter
-THE HOBO DRYML GUIDE
+Chapter 13 - THE HOBO DRYML GUIDE
 \end_layout
 
 \begin_layout Standard
@@ -356,17 +365,8 @@ filename "hobodrymlguide.lyx"
 
 \end_layout
 
-\begin_layout Part
-Appendices
-\end_layout
-
-\begin_layout Standard
-\start_of_appendix
-
-\end_layout
-
 \begin_layout Chapter
-THE HOBO RAPID TAG LIBRARY
+Chapter 14 - THE HOBO RAPID TAG LIBRARY
 \end_layout
 
 \begin_layout Standard
@@ -380,7 +380,7 @@ filename "hoborapidtaglibrary.lyx"
 \end_layout
 
 \begin_layout Chapter
-Index
+INDEX
 \end_layout
 
 \begin_layout Standard
