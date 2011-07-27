@@ -554,8 +554,14 @@ Although the underlying framework is the most technically challenging part
 
 \begin_layout Standard
 We’ve started putting the infrastructure in place with “The Hobo Cookbook”
- website (http://cookbook.hobocentral.net) - a central home for both the “official
-” and user-contributed documentation.
+ website (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://cookbook.hobocentral.net"
+
+\end_inset
+
+) - a central home for both the “official” and user-contributed documentation.
 \end_layout
 
 \begin_layout Subsubsection*
