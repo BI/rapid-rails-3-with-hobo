@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -297,7 +298,7 @@ has_inner_box 1
 inner_pos "t"
 use_parbox 0
 use_makebox 0
-width "100col%"
+width "90col%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -475,7 +476,7 @@ has_inner_box 1
 inner_pos "t"
 use_parbox 0
 use_makebox 0
-width "100col%"
+width "90col%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -885,6 +886,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename figures/figure1.png
+	width 90col%
 
 \end_inset
 
@@ -925,6 +927,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename figures/figure2.png
+	width 90col%
 
 \end_inset
 
@@ -957,6 +960,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename figures/figure3.png
+	width 90col%
 
 \end_inset
 
@@ -1045,7 +1049,16 @@ The Hobo “resource” generator creates models, controllers, and views:
 \end_layout
 
 \begin_layout LyX-Code
-> hobo generate resource [parameters]
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+> hobo generate resource
+\end_layout
+
+\end_inset
+
+ [parameters]
 \end_layout
 
 \begin_layout Standard
@@ -1054,7 +1067,16 @@ Any changes to field definitions or associations in the model can be propagated
 \end_layout
 
 \begin_layout LyX-Code
-> hobo generate migration [parameters]
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+> hobo generate migration
+\end_layout
+
+\end_inset
+
+ [parameters]
 \end_layout
 
 \begin_layout Standard
@@ -1068,7 +1090,16 @@ If you only need to create a model without other resources, use the Hobo
 \end_layout
 
 \begin_layout LyX-Code
-> hobo generate model [parameters]
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+> hobo generate model
+\end_layout
+
+\end_inset
+
+ [parameters]
 \end_layout
 
 \begin_layout Subsubsection*

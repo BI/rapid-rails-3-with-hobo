@@ -43,6 +43,7 @@ logicalmkup
 \paperorientation portrait
 \suppress_date true
 \use_refstyle 0
+\boxbgcolor #e0e0e8
 \index Index
 \shortcut idx
 \color #008000
