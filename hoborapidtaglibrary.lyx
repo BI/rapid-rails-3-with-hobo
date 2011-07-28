@@ -43,6 +43,7 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e7e7e7
 \index Index
 \shortcut idx
 \color #008000
@@ -65,7 +66,4683 @@ logicalmkup
 \begin_body
 
 \begin_layout Standard
+This section of the book serves as reference for all of the pre-defined
+ DRYML tags used by Hobo to provide the “magic” rendering of pages and forms
+ without you coding.
+ You can learn how to extend and use these tags to customize your applications.
+ 
+\end_layout
 
+\begin_layout Standard
+Look at the figure below that shows the contents of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+rapid.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch14rapid.dryml.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+rapid.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You see how the rapid.dryml file includes the following source files, in
+ alphabetical order: 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_core.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_document_tags.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_pages.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_editng.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_forms.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_navigation.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_plus.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_generics.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_lifecycles.dryml 
+\end_layout
+
+\begin_layout LyX-Code
+rapid_support.dryml
+\end_layout
+
+\begin_layout Section*
+Rapid Tag Library Index
+\end_layout
+
+\begin_layout Standard
+The following categories will be described in detail in the rest of this
+ chapter: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="80col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Core
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Core DRYML tags.
+ These are included implicitly and are always available.
+ Contains mainly control-flow tags.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+This taglib does not define tags - it just includes all the other taglibs.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Core
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Core Rapid tags and tags that don’t belong to other categories.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Document Tags
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Extra tags for semantic markup.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Editing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Editing provides “in-place” or “AJAX” editors for various basic data
+ types.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Forms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Forms provides various tags that make it quick and easy to produce
+ working new or edit forms.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Generics
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Generics provides tags that provide generic renderings that can adapt
+ to the model being rendered.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Lifecycles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Contains view-layer support for Hobo’s lifecycles.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Navigation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Support for navigation links, account navigation (log in, out etc.) and paginatio
+n navigation.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Pages
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid-Pages provides tags for working with entire pages.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Plus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tags that define higher level interactive ‘widgets’
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Summary
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A collection of tags that allow an application outline or summary to be
+ created.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Support
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid Support is the home for some tags that are useful in defining other
+ tags.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid User Pages
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rapid User Pages contains tags that implement the basics of Hobo’s user
+ management: log in, sign up, forgot password etc.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset CommandInset href
+LatexCommand href
+name "Core"
+target "http://cookbook.hobocentral.net/api_taglibs/core"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Core DRYML tags.
+ These are included implicitly and are always available.
+ Contains mainly control-flow tags.
+\end_layout
+
+\begin_layout LyX-Code
+<call-tag> 
+\end_layout
+
+\begin_layout LyX-Code
+<wrap> 
+\end_layout
+
+\begin_layout LyX-Code
+<partial> 
+\end_layout
+
+\begin_layout LyX-Code
+<repeat> 
+\end_layout
+
+\begin_layout LyX-Code
+<do> 
+\end_layout
+
+\begin_layout LyX-Code
+<with> 
+\end_layout
+
+\begin_layout LyX-Code
+<if> 
+\end_layout
+
+\begin_layout LyX-Code
+<else> 
+\end_layout
+
+\begin_layout LyX-Code
+<unless>
+\end_layout
+
+\begin_layout Subsubsection*
+<call-tag> 
+\end_layout
+
+\begin_layout Quote
+Call the tag given by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tag
+\end_layout
+
+\end_inset
+
+ attribute.
+ This lets you call tags dynamically based on some runtime value.
+ It’s the DRYML equivalent of Ruby’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+send
+\end_layout
+
+\end_inset
+
+ method.
+\end_layout
+
+\begin_layout Subsubsection*
+<wrap> 
+\end_layout
+
+\begin_layout Quote
+Wrap the body in the tag specified by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tag
+\end_layout
+
+\end_inset
+
+ attribute, if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+when
+\end_layout
+
+\end_inset
+
+ is true.
+ Using regular DRYML conditional logic it is rather awkward to conditionally
+ wrap some tag in another tag.
+ This tag makes it easy to do that.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+For example, you might want to wrap an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<img>
+\end_layout
+
+\end_inset
+
+ tag in an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag but only under certain conditions.
+ Say the current context has an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+href
+\end_layout
+
+\end_inset
+
+ attribute that may or may not be nil.
+ We want to wrap the img in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+href
+\end_layout
+
+\end_inset
+
+ is not nil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "110col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+\noindent
+\align left
+<wrap when="&this.href.present?" tag="a" href="&this.href"> 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+\align left
+  <img src="&this.img_filename"/> 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+\align left
+</wrap>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<partial> 
+\end_layout
+
+\begin_layout Quote
+DRYML version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+render(:partial => 'my_partial')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "110col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<partial name="my-partial" locals="&{:x => 10, :y => 20}"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<repeat> 
+\end_layout
+
+\begin_layout Quote
+Repeat a section of mark-up.
+ The context should be a collection (anything that responds to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+each
+\end_layout
+
+\end_inset
+
+).
+ The content of the call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ will be repeated for each item in the collection, and the context will
+ be set to each item in turn.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+join: The value of this attribute, if given, will be inserted between each
+ of the items (e.g.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+join=", "
+\end_layout
+
+\end_inset
+
+ is very common).
+\end_layout
+
+\begin_layout Subsubsection*
+<do> 
+\end_layout
+
+\begin_layout Quote
+The ‘do nothing’ tag.
+ Used to add parameters or change context without adding any markup
+\end_layout
+
+\begin_layout Subsubsection*
+<with> 
+\end_layout
+
+\begin_layout Standard
+Alias of do
+\end_layout
+
+\begin_layout Subsubsection*
+<if> 
+\end_layout
+
+\begin_layout Quote
+DRYML’s ‘if’ test
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<if test="&current_user.administrator?">
+\end_layout
+
+\begin_layout LyX-Code
+  Logged in as administrator
+\end_layout
+
+\begin_layout LyX-Code
+</if> 
+\end_layout
+
+\begin_layout LyX-Code
+<else>
+\end_layout
+
+\begin_layout LyX-Code
+  Logged in as normal user
+\end_layout
+
+\begin_layout LyX-Code
+</else>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ tests for non-blank vs.
+ blank (as defined by ActiveSupport), not true vs.
+ false.
+ If you do not give the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+test
+\end_layout
+
+\end_inset
+
+ attribute, uses the current context instead.
+ This allows a nice trick like this:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<if:comments>...</if>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This has the double effect of changing the context to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.comments
+\end_layout
+
+\end_inset
+
+, and only evaluating the body if there are comments (because an empty collectio
+n is considered blank)
+\end_layout
+
+\begin_layout Subsubsection*
+<else> 
+\end_layout
+
+\begin_layout Quote
+General purpose 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+else
+\end_layout
+
+\end_inset
+
+ clause.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+ works with various tags such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ (the else clause will be output if the collection was empty).
+ It simply outputs its content if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::Dryml.last_if
+\end_layout
+
+\end_inset
+
+ is false.
+ This is pretty much a crazy hack, which violates many good principles of
+ language design, but it’s very useful : )
+\end_layout
+
+\begin_layout Subsubsection*
+<unless> 
+\end_layout
+
+\begin_layout Quote
+Same behavior as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+, except the test is negated.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Rapid Core
+\end_layout
+
+\begin_layout Standard
+Core Rapid tags and tags that don’t belong to other categories.
+\end_layout
+
+\begin_layout LyX-Code
+<dev-user-changer> 
+\end_layout
+
+\begin_layout LyX-Code
+<field-list> 
+\end_layout
+
+\begin_layout LyX-Code
+<nil-view> 
+\end_layout
+
+\begin_layout LyX-Code
+<table> 
+\end_layout
+
+\begin_layout LyX-Code
+<image> 
+\end_layout
+
+\begin_layout LyX-Code
+<spinner> 
+\end_layout
+
+\begin_layout LyX-Code
+<hobo-rapid-javascripts> 
+\end_layout
+
+\begin_layout LyX-Code
+<name> 
+\end_layout
+
+\begin_layout LyX-Code
+<type-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<collection-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<a> 
+\end_layout
+
+\begin_layout LyX-Code
+<count> 
+\end_layout
+
+\begin_layout LyX-Code
+<theme-stylesheet> 
+\end_layout
+
+\begin_layout LyX-Code
+<You> 
+\end_layout
+
+\begin_layout LyX-Code
+<Your> 
+\end_layout
+
+\begin_layout LyX-Code
+<A-or-An> 
+\end_layout
+
+\begin_layout LyX-Code
+<comma-list> 
+\end_layout
+
+\begin_layout LyX-Code
+<collection-list> 
+\end_layout
+
+\begin_layout LyX-Code
+<collection-view> 
+\end_layout
+
+\begin_layout LyX-Code
+<links-for-collection> 
+\end_layout
+
+\begin_layout LyX-Code
+<view>
+\end_layout
+
+\begin_layout Subsubsection*
+<dev-user-changer> 
+\end_layout
+
+\begin_layout Quote
+Development mode only - a menu to change the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+current_user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<field-list> 
+\end_layout
+
+\begin_layout Quote
+Renders a table with one row per field, where each row contains a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<th>
+\end_layout
+
+\end_inset
+
+ with the field name, and a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<td>
+\end_layout
+
+\end_inset
+
+ with (by default) a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ of the field.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+#{this_field.to_s.sub('?', '')}-label 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+label 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+#{this_field.to_s.sub('?', '')}-view 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+view 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+#{this_field.to_s.sub('?', '')}-tag 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+input-help 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+fields: Comma separated list of field names to display.
+ Defaults to the fields returned by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+standard_fields
+\end_layout
+
+\end_inset
+
+ helper.
+ That is, all fields apart from IDs and timestamps.
+ 
+\end_layout
+
+\begin_layout Itemize
+force-all: All non-viewable fields will be skipped unless this attribute
+ is given 
+\end_layout
+
+\begin_layout Itemize
+skip: Comma separated list of fields to exclude 
+\end_layout
+
+\begin_layout Itemize
+tag: The name of a tag to use inside the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<td>
+\end_layout
+
+\end_inset
+
+ to display the value.
+ Defaults to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+view
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+show-non-editable: By default, if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tag
+\end_layout
+
+\end_inset
+
+ is set to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+input
+\end_layout
+
+\end_inset
+
+, fields for which the current user does not have edit permission will be
+ skipped (the entire row is skipped).
+ Set this attribute to keep them.
+ (Note that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ automatically degrades to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ if the user does not have edit permission.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<field-list fields="first-name, last-name, city"> 
+\end_layout
+
+\begin_layout LyX-Code
+  <first-name-label:>Given Name</first-name-label:>
+\end_layout
+
+\begin_layout LyX-Code
+  <last-name-label:>Family Name</last-name-label:>
+\end_layout
+
+\begin_layout LyX-Code
+  <city-view:><name-one/></city-view:>
+\end_layout
+
+\begin_layout LyX-Code
+</field-list>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<nil-view> 
+\end_layout
+
+\begin_layout Quote
+Used to render nil values.
+ By default renders “(Not Available)”
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Redefine in your app to have nil values displayed differently, e.g.:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="nil-view">-</def>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<table> 
+\end_layout
+
+\begin_layout Quote
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table>
+\end_layout
+
+\end_inset
+
+ is extended in Rapid to provide a shorthand way to output a set of fields
+ for a given collection.
+ This is enabled using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
+\end_layout
+
+\end_inset
+
+ attribute (without the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
+\end_layout
+
+\end_inset
+
+ attribute this is just the regular HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table>
+\end_layout
+
+\end_inset
+
+ tag)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+thead 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+field-heading-row 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+#{scope.field_name}-heading 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+tbody 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tr 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+#{this_field.to_s.sub('?', '').gsub('.', '-')}-view 
+\end_layout
+
+\begin_layout Itemize
+controls 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+edit-link 
+\end_layout
+
+\begin_layout Itemize
+delete-button 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+tfoot 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+If the context is an array of blog posts…
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<table fields="name, created_at, description"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This will output a header row containing “Name”, “Created At” and “Description”
+ followed by a row for each record in the collection.
+ By default, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view/>
+\end_layout
+
+\end_inset
+
+ tag is called for each field in the row.
+ This can be altered with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field-tag
+\end_layout
+
+\end_inset
+
+ attribute, e.g.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<table fields="name, created_at, description"
+\end_layout
+
+\begin_layout LyX-Code
+    field-tag="input"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This will use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input/>
+\end_layout
+
+\end_inset
+
+ as the tag in each table cell instead of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Additional Notes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table>
+\end_layout
+
+\end_inset
+
+ provides parameters based on the names of the fields which can be used
+ to further customize the output.
+ For each field a heading parameter is provided, e.g.
+ name-heading, created-at-heading, description-heading.
+ These can be used to customize the headings:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "105col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<table fields="name, created_at, description">   
+\end_layout
+
+\begin_layout LyX-Code
+  <created-at-heading:>Creation Date</created-at-heading:> 
+\end_layout
+
+\begin_layout LyX-Code
+</table>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, “view” parameters are provided as an additional way to customize
+ the table cells of the table body, e.g.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name-view, created-at-view, description-view:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<table fields="name, created_at, description">
+\end_layout
+
+\begin_layout LyX-Code
+  <created-at-view:>
+\end_layout
+
+\begin_layout LyX-Code
+    <view format="%d %B %Y"/>
+\end_layout
+
+\begin_layout LyX-Code
+  </created-at-view:> 
+\end_layout
+
+\begin_layout LyX-Code
+</table>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By adding an empty 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+controls
+\end_layout
+
+\end_inset
+
+ parameter, the default controls column is enabled adding an edit link and
+ delete button for each table row:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<table fields="name, created_at, description"> 
+\end_layout
+
+\begin_layout LyX-Code
+  <controls:/> 
+\end_layout
+
+\begin_layout LyX-Code
+</table>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The controls can be further customized using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit-link:
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+delete-button:
+\end_layout
+
+\end_inset
+
+ parameters or by providing completely new content for the control column,
+ e.g:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<table fields="name, created_at, description">
+\end_layout
+
+\begin_layout LyX-Code
+  <controls:>my controls!</controls:> 
+\end_layout
+
+\begin_layout LyX-Code
+</table>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<image> 
+\end_layout
+
+\begin_layout Quote
+Provides a short-hand way of displaying images in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+public/images
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<image src="hobo.png"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+-> 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<img src="/images/hobo.png"/>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<image src="blog/funny.jpg" alt="Funny Scene"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+-> 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<img src="/images/blog/funny.jpg" alt="Funny Scene"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<spinner> 
+\end_layout
+
+\begin_layout Quote
+Renders an AJAX-progress ‘spinner’ using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+spinner.gif
+\end_layout
+
+\end_inset
+
+ from the current theme, with a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class='hidden'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<hobo-rapid-javascripts> 
+\end_layout
+
+\begin_layout Quote
+Renders some standard JavaScript code that various features of the Rapid
+ library rely on.
+ This tag would typically be called from your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag.
+ The default Rapid pages include this already.
+\end_layout
+
+\begin_layout Subsubsection*
+<name> 
+\end_layout
+
+\begin_layout Quote
+Renders the name of the current context using a variety of methods.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Details
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Equivalent to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nil-view>
+\end_layout
+
+\end_inset
+
+ if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+nil
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Equivalent to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<count>
+\end_layout
+
+\end_inset
+
+ if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ is an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Array
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Equivalent to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<type-name>
+\end_layout
+
+\end_inset
+
+ if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ is a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+If the context has a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name_attribute
+\end_layout
+
+\end_inset
+
+ defined, then equivalent to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view:abc/>
+\end_layout
+
+\end_inset
+
+ (where 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+abc
+\end_layout
+
+\end_inset
+
+ is the name attribute) 
+\end_layout
+
+\begin_layout Itemize
+Finally falls back to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.to_s
+\end_layout
+
+\end_inset
+
+ (html escaped), but only if the user has view permission for this 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+if-present: if given, nothing at all will be rendered for nil values (as
+ opposed to rendering 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nil-view>
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsubsection*
+<type-name> 
+\end_layout
+
+\begin_layout Quote
+Renders a human readable version of the type of the context 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Details
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ is already a class, the name of that class is used 
+\end_layout
+
+\begin_layout Itemize
+Otherwise, first 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.member_class
+\end_layout
+
+\end_inset
+
+ (for collections), then 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.class
+\end_layout
+
+\end_inset
+
+ are tried 
+\end_layout
+
+\begin_layout Itemize
+By default the name is titleised and singular.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+plural: pluralize the name 
+\end_layout
+
+\begin_layout Itemize
+lowercase: render the name in all lower case 
+\end_layout
+
+\begin_layout Itemize
+dasherize: render the name in lower case with dashes instead of spaces.
+\end_layout
+
+\begin_layout Subsubsection*
+<collection-name> 
+\end_layout
+
+\begin_layout Quote
+Renders a human readable name of a collection 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Details
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Uses 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.origin_attribute
+\end_layout
+
+\end_inset
+
+ as the name.
+ 
+\end_layout
+
+\begin_layout Itemize
+Falls back to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<type-name>
+\end_layout
+
+\end_inset
+
+ otherwise.
+ 
+\end_layout
+
+\begin_layout Itemize
+By default the name is titleised and plural.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+singular: singularize the name 
+\end_layout
+
+\begin_layout Itemize
+lowercase: render the name in all lower case 
+\end_layout
+
+\begin_layout Itemize
+satirize: render the name in lower case with dashes instead of spaces.
+\end_layout
+
+\begin_layout Subsubsection*
+<a> 
+\end_layout
+
+\begin_layout Quote
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ is extended in Rapid to automatically provide URLs for Hobo model routes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The tag behaves as a regular HTML link or anchor if either the href or name
+ attribute is given:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<a href="/admin">Admin</a>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> Output is exactly as provided, untouched by Rapid
+\end_layout
+
+\begin_layout Standard
+If no href or name is given then the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+context
+\end_layout
+
+\end_inset
+
+ is used to determine the link URL.
+ The helper method 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+object_url
+\end_layout
+
+\end_inset
+
+ is used to construct the URL using restful routing: If the context is a
+ class then the link will be an index page:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<a with="&BlogPost">My Blog</a>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> <a href="/blog_posts">My Blog</a>
+\end_layout
+
+\begin_layout Standard
+If the context is a hobo model instance then the link will be a show page:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<% blog_post = BlogPost.find(1) %> 
+\end_layout
+
+\begin_layout LyX-Code
+<a with="&blog_post">My Blog Post</a>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> <a href="/blog_posts/1">My Blog Post</a>
+\end_layout
+
+\begin_layout Standard
+An action can be provided for an alternative show page:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<a with="&blog_post" action="edit">Edit Post</a>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> <a href="/blog_posts/1/edit">Edit Post</a>
+\end_layout
+
+\begin_layout Standard
+Or a new page if the context is a class:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<a with="&BlogPost" action="new">New Blog Post</a>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> <a href="/blog_posts/new">New Blog Post</a>
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Additional Features 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If the constructed route does not exist then the link will not be created,
+ but the content of the link will still be output.
+ E.g.
+ when 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/blog_posts
+\end_layout
+
+\end_inset
+
+ does not exist (because the hobo model controller does not exist or the
+ index action is disabled):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<a with="&BlogPost">My Blog</a>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> My Blog
+\end_layout
+
+\begin_layout Standard
+when the show action 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/blog_posts/:id
+\end_layout
+
+\end_inset
+
+ does not exist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<a with="&blog_post">My Blog Post</a>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> My Blog Post
+\end_layout
+
+\begin_layout Standard
+If no content text is provided then 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ will use the name method on the context to provide the text.
+ E.g.
+\end_layout
+
+\begin_layout Standard
+<a with="&blog_post"/>
+\end_layout
+
+\begin_layout Standard
+-> <a href="/blog_posts/1">My First Blog Post</a>`
+\end_layout
+
+\begin_layout Standard
+<a with="&BlogPost"/>
+\end_layout
+
+\begin_layout Standard
+-> <a href="/blog_posts">Blog Posts</a>`
+\end_layout
+
+\begin_layout Standard
+If action="new" then <a> will check that the current user has permission
+ to create the object Several useful classes are added automatically to
+ the output <a>.
+\end_layout
+
+\begin_layout Standard
+Attributes action: If “new”, triggers the special behavior listed above.
+ Otherwise, contains the action to be performed on the context.
+ If neither action nor method are specified, the action will be “index”
+ or “show”, as appropriate.
+ to: Use this item as the target instead of the current context.
+ params, query-params: These are appended to the target as a query string
+ after a ”?”.
+ href, name: If either of these attributes are present, the smart features
+ of this tag are turned off.
+ format: this adds “.#{format}” to the end of the url sub-site: routes the
+ URL using the sub-site force: overrides the permission check if action
+ is “new” method: “get”, “put”, “post” or “delete”.
+ “get” is the default
+\end_layout
+
+\begin_layout Standard
+<count> A convenience tag used to output a count and a correctly pluralized
+ label.
+ Works with any kind of collection such as an ActiveRecord association or
+ an array.
+\end_layout
+
+\begin_layout Standard
+Usage
+\end_layout
+
+\begin_layout Standard
+<count:comments/>
+\end_layout
+
+\begin_layout Standard
+-> <span class="count">1 Comment</span>
+\end_layout
+
+\begin_layout Standard
+<count:viewings/>
+\end_layout
+
+\begin_layout Standard
+-> <span class="count">3 Viewings</span>
+\end_layout
+
+\begin_layout Standard
+The label can be customized using the label attribute, e.g.
+\end_layout
+
+\begin_layout Standard
+<count:comments label="blog post comment"/> 
+\end_layout
+
+\begin_layout Standard
+-> <span class="count">12 blog post comments</span>
+\end_layout
+
+\begin_layout Standard
+Additional Notes Use the prefix attribute to insert words before the count.
+ If the prefix is “are” or “is” then it will be pluralized if needed:
+\end_layout
+
+\begin_layout Standard
+There <count:comments prefix="are"/>
+\end_layout
+
+\begin_layout Standard
+-> There <span class="count">is 1 Comment</span>
+\end_layout
+
+\begin_layout Standard
+There <count:viewings prefix="are"/> 
+\end_layout
+
+\begin_layout Standard
+-> There <span class="count">are 3 Viewings</span>
+\end_layout
+
+\begin_layout Standard
+Use the lowercase attribute to force the generated label to be lowercase:
+\end_layout
+
+\begin_layout Standard
+<count:comments lowercase/>
+\end_layout
+
+\begin_layout Standard
+-> <span class="count">1 comment</span>
+\end_layout
+
+\begin_layout Standard
+Use the if-any attribute to output nothing if the count is zero.
+ This can be followed by an <else> tag to handle the empty case:
+\end_layout
+
+\begin_layout Standard
+<count:comments if-any/><else>There are no comments</else>
+\end_layout
+
+\begin_layout Standard
+<theme-stylesheet> Renders a <link rel="Stylesheet" type="text/css"> to
+ include the default stylesheet for the selected theme (select with <set-theme>).
+ Included in the default pages.
+\end_layout
+
+\begin_layout Standard
+<You> Equivalent to <you titleize/>.
+ Yes it’s an abuse of Ruby naming conventions, but it’s so cute.
+ 
+\end_layout
+
+\begin_layout Standard
+<Your> Capitalized version of <your>
+\end_layout
+
+\begin_layout Standard
+<A-or-An> Capitalizd version of <a-or-an>
+\end_layout
+
+\begin_layout Standard
+<comma-list>
+\end_layout
+
+\begin_layout Standard
+Renders a collection of string joined with “, “, or some other string passed
+ in the join attribute <view> calls this tag when called for a has_many
+ collection.
+ By default calls:
+\end_layout
+
+\begin_layout Standard
+<links-for-collection/>
+\end_layout
+
+\begin_layout Standard
+<links-for-collection> Renders a comma separated list of links (<a>), or
+ “(none)” if the list is empty
+\end_layout
+
+\begin_layout Standard
+<view> Provides a read-only view tailored to the type of the object being
+ viewed.
+ <view> is a polymorphic tag which means that there are a variety of definitions
+, each one written for a particular type.
+ For example there are views for Date, Time, Numeric, String and Boolean.
+ The type specific view is enclosed in a wrapper tag (typically a <span>
+ or <div>) with some useful classes automatically added.
+\end_layout
+
+\begin_layout Standard
+Usage Assuming the context is a blog post… Viewing a DateTime field:
+\end_layout
+
+\begin_layout Standard
+<view:created_at/>
+\end_layout
+
+\begin_layout Standard
+-> <span class="view blog-post-created-at">June 09, 2008 15:36</span>
+\end_layout
+
+\begin_layout Standard
+Viewing a String field:
+\end_layout
+
+\begin_layout Standard
+<view:title/>
+\end_layout
+
+\begin_layout Standard
+-> <span class="view blog-post-title">My First Blog Post</span>
+\end_layout
+
+\begin_layout Standard
+Viewing an Integer field:
+\end_layout
+
+\begin_layout Standard
+<view:comment_count/>
+\end_layout
+
+\begin_layout Standard
+-> <span class="view blog-post-comment-count">4</span>
+\end_layout
+
+\begin_layout Standard
+Viewing the blog post itself results in a link to the blog post (using Rapid’s
+ <a> tag):
+\end_layout
+
+\begin_layout Standard
+<view/>
+\end_layout
+
+\begin_layout Standard
+-> <span class="view model:blog-post-1"> <a href="/blog_posts/1">My First
+ Blog Post</a> </span>
+\end_layout
+
+\begin_layout Standard
+Additional Notes The wrapper tag is <span> unless the field type is Text
+ (different to String) where it is <div>.
+ Use the inline or block attributes to force a <span> or a <div>, e.g.,:
+\end_layout
+
+\begin_layout Standard
+<view:body/> -> <div class="view blog-post-body">This is my blog post body</div>
+ <view:body inline/> 
+\end_layout
+
+\begin_layout Standard
+-> <span class="view blog-post-body">This is my blog post body</span>
+\end_layout
+
+\begin_layout Standard
+<view:created_at block/>
+\end_layout
+
+\begin_layout Standard
+-> <div class="view blog-post-created-at">June 09, 2008 15:36</div>
+\end_layout
+
+\begin_layout Standard
+Use the no-wrapper attribute to remove the wrapper tag completely.
+ e.g.
+\end_layout
+
+\begin_layout Standard
+<view:created_at no-wrapper/>
+\end_layout
+
+\begin_layout Standard
+-> June 09, 2008 15:36
+\end_layout
+
+\begin_layout Standard
+<view for='ActiveRecord::Base'> Renders a link (<a>) to this
+\end_layout
+
+\begin_layout Standard
+<view for='Date'> Renders this.to_s(:long), or this.strftime(format) if the
+ format attribute is given
+\end_layout
+
+\begin_layout Standard
+<view for='Time'> Renders this.to_s(:long), or this.strftime(format) if the
+ format attribute is given
+\end_layout
+
+\begin_layout Standard
+<view for='ActiveSupport::TimeWithZone'> Renders this.to_s(:long), or this.strftim
+e(format) if the format attribute is given
+\end_layout
+
+\begin_layout Standard
+<view for='Numeric'> Renders this.to_s, or format % this if the format attribute
+ is given
+\end_layout
+
+\begin_layout Standard
+<view for='string'> Renders this with HTML escaping and newlines replaced
+ with <br> tags <view for='boolean'> Renders ‘Yes’ for true and ‘No’ for
+ false
+\end_layout
+
+\begin_layout Standard
+Rapid Document Tags
+\end_layout
+
+\begin_layout Standard
+Extra tags for semantic markup.
+\end_layout
+
+\begin_layout Standard
+<section-group> <section> <aside> <header> <footer>
+\end_layout
+
+\begin_layout Standard
+<section-group> Used as a semantic wrapper around a group of sections and
+ asides.
+ CSS layouts can be provided based on this structure.
+\end_layout
+
+\begin_layout Standard
+Parameters default Usage
+\end_layout
+
+\begin_layout Standard
+<section-group> <section>My First Section</section> <section>My Second Section</
+section> <aside>My Aside</aside> </section-group>
+\end_layout
+
+\begin_layout Standard
+<section> A proposed HTML 5 tag for representing a generic document or applicati
+on section.
+ Slightly more semantic than <div> for indicating document structure.
+ For the time being, <section> is output as <div class="section">.
+ In Hobo, <section> also has one other important behavior which is different
+ to using <div> directly, when the content of the section is empty, the
+ wrapper tag will disappear:
+\end_layout
+
+\begin_layout Standard
+<section>My Section</section> <div class="section">My Section</div> <section><%
+ # empty %></section>
+\end_layout
+
+\begin_layout Standard
+-> (nothing is generated)
+\end_layout
+
+\begin_layout Standard
+<aside> A proposed HTML 5 semantic tag.
+ Outputs <div class="aside"> and works in the same way as <section> with
+ empty content.
+\end_layout
+
+\begin_layout Standard
+<header> A proposed HTML 5 semantic tag.
+ Outputs <div class="header"> and works in the same way as <section> with
+ empty content.
+\end_layout
+
+\begin_layout Standard
+<footer> A proposed HTML 5 semantic tag.
+ Outputs <div class="footer"> and works in the same way as <section> with
+ empty content.
+ Rapid Editing
+\end_layout
+
+\begin_layout Standard
+Rapid Editing provides “in-place” or “AJAX” editors for various basic data
+ types.
+\end_layout
+
+\begin_layout Standard
+This area of Hobo has had less attention that the non-AJAX forms of late,
+ so it’s lagging a little.
+ There may be some rough edges.
+ For example, the tags in this library do not (yet!) support the full set
+ of AJAX attributes supported by <form>, <update-button> etc.
+\end_layout
+
+\begin_layout Standard
+<has-many-editor> <belongs-to-editor> <select-one-editor> <string-select-editor>
+ <boolean-checkbox-editor> <integer-select-editor> <editor>
+\end_layout
+
+\begin_layout Standard
+<has-many-editor> Not implemented - you just get links to the items in the
+ collection
+\end_layout
+
+\begin_layout Standard
+<belongs-to-editor> Polymorphic hook for defining type specific AJAX editors
+ for belongs_to associations.
+ The default is <select-one-editor>
+\end_layout
+
+\begin_layout Standard
+<select-one-editor> Provides a <select> menu with an AJAX callback to update
+ a belongs_to relationship when changed.
+ By default the menu contains every record in the target model’s table.
+ Attributes include-none: Should the menu include a “none” option (true/false).
+ Defaults: false, or true if the association is nil at render-time.
+ blank-message: The text for the “none” option.
+ Default: “(No Product)” (or whatever the model name is) sort: Sort the
+ options (true/false)? Default: false update: one or more DOM ID’s (comma
+ separated string or an array) to be updated as part of the AJAX call.
+\end_layout
+
+\begin_layout Standard
+NOTE: Yes that is a DOM ID, not a part name.
+ A common source of confusion because by default the part name and DOM ID
+ are the same.
+\end_layout
+
+\begin_layout Standard
+<string-select-editor> Provides a <select> menu with an AJAX callback to
+ update a string field when changed.
+ Attributes values: The values for the menu options.
+ Required Labels: A hash that can be used to customize the labels for the
+ menu.
+ Any value that does not have a corresponding key in this hash will have
+ its label generated by value.titleize titleize: Set to false to have the
+ default labels be the same as the values.
+ Default: true - the labels are generated by value.titleize update: one or
+ more DOM ID’s (comma separated string or an array) to be updated as part
+ of the AJAX call.
+\end_layout
+
+\begin_layout Standard
+NOTE: Yes that is a DOM ID and not a part name.
+ A common source of confusion because by default the part name and DOM ID
+ are the same.
+\end_layout
+
+\begin_layout Standard
+<boolean-checkbox-editor> A checkbox with an AJAX callback to update a boolean
+ field when clicked.
+\end_layout
+
+\begin_layout Standard
+Attributes update: one or more DOM ID’s (comma separated string or an array)
+ to be updated as part of the AJAX call.
+ NOTE: yes that’s DOM ID’s not part-names.
+ A common source of confusion because by default the part name and DOM ID
+ are the same.
+ message: A message to display in the AJAX-progress spinner.
+ Default: “Saving…”
+\end_layout
+
+\begin_layout Standard
+<integer-select-editor> Provides a <select> menu with an AJAX callback to
+ update an integer field when changed.
+\end_layout
+
+\begin_layout Standard
+Attributes min: The minimum end of the range of numbers to include max:
+ A male name, short for Maximilian options: An array of numbers to use if
+ min..max is not enough for your needs.
+ nil-option: Label to give if the current value is nil.
+ Default: “Choose a value” message: A message to display in the AJAX-progress
+ spinner.
+ Default: “Saving…” update: one or more DOM ID’s (comma separated string
+ or an array) to be updated as part of the AJAX call.
+\end_layout
+
+\begin_layout Standard
+NOTE: Yes that is a DOM ID, not a part name.
+ A common source of confusion because by default the part name and DOM ID
+ are the same.
+\end_layout
+
+\begin_layout Standard
+<editor> Polymorphic tag that selects an appropriate in-place-editor according
+ to the type of the thing being edited.
+ <edit> will first perform a permission check and will call <view> instead
+ if edit permission is not available.
+\end_layout
+
+\begin_layout Standard
+<editor for='HoboFields::EnumString'> Provides an editor that uses a <select>
+ menu.
+ Uses the <string-select-editor> tag.
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='HoboFields::EnumString'> <string-select-editor merge
+ values='&this_type.values'/> </def>
+\end_layout
+
+\begin_layout Standard
+<editor for='string'> Provides a simple Scriptaculous in-place-editor that
+ uses an <input type='text'>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='string'><%= in_place_editor attributes %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='text'> Provides a simple Scriptaculous in-place-editor that
+ uses a <textarea>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='text'><%= in_place_editor attributes %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='html'> Provides a simple Scriptaculous in-place-editor that
+ uses a <textarea>.
+ A JavaScript hook is available in order to replace the simple textarea
+ with a rich-text editor.
+ For an example, see the hoboyui plugin
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='html'><%= in_place_editor attributes %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='datetime'> Provides a simple Scriptaculous in-place-editor
+ that uses an <input type='text'>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='datetime'><%= in_place_editor attributes %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='date'> Provides a simple Scriptaculous in-place-editor that
+ uses an <input type='text'>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='date'><%= in_place_editor attributes %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='integer'> Provides a simple Scriptaculous in-place-editor that
+ uses an <input type='integer'>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='integer'><%= in_place_editor attributes %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='float'> Provides a simple Scriptaculous in-place-editor that
+ uses an <input type='text'>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='float'><%= in_place_editor attributes %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='password'> Raises an error - passwords cannot be edited in
+ place
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='password'><% raise HoboError, "passwords cannot be
+ edited in place" %></def>
+\end_layout
+
+\begin_layout Standard
+<editor for='boolean'> calls <boolean-checkbox-editor>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='boolean'><boolean-checkbox-editor merge-attrs/></def>
+ <editor for='big_integer'> Provides a simple Scriptaculous in-place-editor
+ that uses an <input type='text'>
+\end_layout
+
+\begin_layout Standard
+<def tag='editor' for='big_integer'><%= in_place_editor attributes %></def>
+ <editor for='BigDecimal'> Provides a simple Scriptaculous in-place-editor
+ that uses an <input type='BigDecimal'> <def tag='editor' for='BigDecimal'><%=
+ in_place_editor attributes %></def> Rapid Forms 
+\end_layout
+
+\begin_layout Standard
+Rapid Forms provides various tags that make it quick and easy to produce
+ working new or edit forms.
+\end_layout
+
+\begin_layout Standard
+<or-cancel> <form> <submit> <remote-method-button> <update-button> <delete-butto
+n> <create-button> <select-one> <name-one> <select-input> <error-messages>
+ <select-many> <after-submit> <select-menu> <check-many> <hidden-id-field>
+ <input-many> <input-all> <input> <collection-input>
+\end_layout
+
+\begin_layout Standard
+<or-cancel> Renders the common “or (Cancel)” for a form.
+ Attributes are merged into the link (<a>Cancel</a>), making it easy to
+ customize the destination of the cancel link.
+ By default it will link to this or this.class.
+\end_layout
+
+\begin_layout Standard
+<form> <form> has been extended in Rapid to make it easier to construct
+ and use forms with Hobo models.
+ In addition to the base <form> tag, a form with contents is generated for
+ each Hobo model.
+ These are found in app/views/taglibs/auto/rapid/forms.dryml.
+\end_layout
+
+\begin_layout Standard
+Usage <form> can be used as a regular HTML tag:
+\end_layout
+
+\begin_layout Standard
+<form action="/blog_posts/1" method="POST"> ...
+ </form> If no action attribute is provided then the context is used to
+ construct an appropriate action using restful routing:
+\end_layout
+
+\begin_layout Standard
+If the context is a new record then the form action will be a POST to the
+ create action:
+\end_layout
+
+\begin_layout Standard
+<form with="&BlogPost.new">...</form>
+\end_layout
+
+\begin_layout Standard
+-> <form action="/blog_posts" method="POST">...</form>
+\end_layout
+
+\begin_layout Standard
+If the context is a saved record then the form action will be a PUT to the
+ update action.
+ This is handled in a special way by Rails due to current browsers not supportin
+g PUT, the method is set to POST with a hidden input called _method with
+ a value of PUT.
+ Hobo adds this automatically:
+\end_layout
+
+\begin_layout Standard
+<% blog_post = BlogPost.find(1) %> <form with="&blog_post"> ...
+ </form>
+\end_layout
+
+\begin_layout Standard
+-> <form action="/blog_posts/1" method="POST"> <input id="_method" type="hidden"
+ value="PUT" name="_method"/> ...
+ </form>
+\end_layout
+
+\begin_layout Standard
+AJAX based submission can be enabled by simply adding an update attribute.
+ e.g.
+ <div part="comments"><collection:comments/></div> -> <form with="&Comment.new"
+ update="comments"/>
+\end_layout
+
+\begin_layout Standard
+<form> supports all of the standard AJAX attributes.
+\end_layout
+
+\begin_layout Standard
+Additional Notes Hobo automatically inserts an auth_token hidden field if
+ forgery protection is enabled Hobo inserts a page_path hidden field in
+ create / update forms which it uses to re-render the correct page if a
+ validation error occurs.
+ <form> supports all of the standard AJAX attributes - (see the main taglib
+ docs for Rapid Forms) Attributes reset-form: Clear the form after submission
+ (only makes sense for AJAX forms) refocus-form: Refocus the first form-field
+ after submission (only makes sense for AJAX forms)
+\end_layout
+
+\begin_layout Standard
+<submit> A shortcut for generating a submit button.
+\end_layout
+
+\begin_layout Standard
+Usage
+\end_layout
+
+\begin_layout Standard
+<submit label="Go!"/>
+\end_layout
+
+\begin_layout Standard
+-> <input type="submit" value="Go!" class="button submit-button"/>
+\end_layout
+
+\begin_layout Standard
+<submit image="/images/go.png"/>
+\end_layout
+
+\begin_layout Standard
+-> <input type="image" src="/images/go.png" class="button submit-button"/>
+\end_layout
+
+\begin_layout Standard
+<remote-method-button> Provides either an AJAX or non-AJAX button to invoke
+ a “remote method” or “web method” declared in the controller.
+ Web Methods provide support for the RPC model of client-server interaction,
+ in contrast to the REST model.
+ The preference in Rails is to use REST as much as possible, but we are
+ pragmatists, and sometimes you just to need a remote procedure call.
+\end_layout
+
+\begin_layout Standard
+The URL that the call is POSTed to is the object_url of this, plus the method
+ name <remote-method-button> supports all of the standard AJAX attributes
+ (see the main taglib documentation for Rapid Forms).
+ If any AJAX attributes are given, the button becomes an AJAX button.
+ If not, it causes a normal form submission and page reload.
+\end_layout
+
+\begin_layout Standard
+Attributes method: the name of the web-method to call label: the label on
+ the button
+\end_layout
+
+\begin_layout Standard
+<update-button> Provides an AJAX button to send a RESTful update or “PUT”
+ to the server.
+ i.e., to update one or more fields of a record.
+ Note that unlike similar tags, <update-button> does not support both AJAX
+ and non-AJAX modes at this time.
+ It only does AJAX.
+ <update-button> supports all of the standard AJAX attributes (see the main
+ taglib documentation for Rapid Forms).
+\end_layout
+
+\begin_layout Standard
+Attributes label: The label on the button.
+ fields: A hash with new field values pairs to update the resource with.
+ The items in the hash will be converted to HTTP parameters.
+ params: Another hash with additional HTTP parameters to include in the
+ AJAX request
+\end_layout
+
+\begin_layout Standard
+<delete-button> Provides either an AJAX or non-AJAX delete button to send
+ a RESTful “DELETE”.
+ The context should be a record for which you to want provide a delete button.
+\end_layout
+
+\begin_layout Standard
+The Rapid Library has a convention of marking (in the output HTML, using
+ a special CSS class) elements as “object elements”, with the class and
+ ID of the ActiveRecord object that they represent.
+ <delete-button> assumes it is placed inside such an element, and will automatic
+ally find the right element to remove (fade out) from the DOM.
+ The <collection> tag adds this metadata (CSS class) automatically, so <delete-b
+utton> works well when used inside a <collection>.
+ This is a Clever Trick, which needs to be revisited and perhaps simplified.
+ If used within a <collection>, <delete-button> also knows how to add an
+ “empty message” such as “no comments to display” when you delete the last
+ item.
+ Clever Tricks abound.
+ Current limitation: There is no support for the AJAX callbacks at this
+ time.
+ All the standard AJAX attributes except the callbacks are supported (see
+ the main taglib documentation for Rapid Forms).
+\end_layout
+
+\begin_layout Standard
+Attributes label: The label for the button.
+ Default: “Remove” in-place: delete in place (AJAX)? Default: true, or false
+ if the record to be deleted is the same as the top level context of the
+ page image: URL of an image for the button.
+ Changes the rendered tag from: <input type='button'> to <input type='image'
+ src='...'> fade: Perform the fade effect (true/false)? Default: true
+\end_layout
+
+\begin_layout Standard
+<create-button> Provides an AJAX create button that will send a RESTful
+ “POST” to the server to create a new resource.
+ All of the standard AJAX attributes are supported (see the main taglib
+ documentation for Rapid Forms).
+\end_layout
+
+\begin_layout Standard
+Attributes model: The class to instantiate, pass either the class name or
+ the class object.
+\end_layout
+
+\begin_layout Standard
+<select-one> A <select> menu from which the user can choose the target record
+ for a belongs_to association.
+ This is the default input that Rapid uses for belongs_to associations.
+ The menu is constructed using the to_s representation of the records.
+\end_layout
+
+\begin_layout Standard
+Attributes include-none - whether to include a ‘none’ option (i.e.
+ set the foreign key to null).
+ Defaults to false blank-message - the message for the ‘none’ option.
+ Defaults to “(No <model-name>)”, e.g.
+ “(No Product)” options - an array of records to include in the menu.
+ Defaults to the all the records in the target table that match any :conditions
+ declared on the belongs_to (subject to limit) limit - if options is not
+ specified, this limits the number of records.
+ Default: 100 text_method - The method to call on each record to get the
+ text for the option.
+ Multiple methods are supported, i.e., “institution.name”
+\end_layout
+
+\begin_layout Standard
+See Also For situations where there are too many target records to practically
+ include in a menu, <name-one> provides an autocompleter which would be
+ more suitable.
+\end_layout
+
+\begin_layout Standard
+<name-one> An <input type="text"> with auto-completion.
+ Allows the user to chose the target of a belongs_to association by name.
+ This tag relies on an autocompleter being defined in a controller.
+ A simple example:
+\end_layout
+
+\begin_layout Standard
+<form with="&ProjectMembership.new"> <name-one:user> </form>
+\end_layout
+
+\begin_layout Standard
+class ProjectMembership < ActiveRecord::Base hobo_model belongs_to :user
+ end
+\end_layout
+
+\begin_layout Standard
+class User < ActiveRecord::Base hobo_user_model has_many :project_memberships,
+ :accessible => true, :dependent => :destroy end
+\end_layout
+
+\begin_layout Standard
+class UsersController < ApplicationController autocomplete end
+\end_layout
+
+\begin_layout Standard
+The route used by the autocompleter looks something like /users/complete_name.
+ The first part of this route is specified by the complete-target attribute,
+ and the second part is specified by the completer attribute.
+ 
+\end_layout
+
+\begin_layout Standard
+complete-target specifies the controller for the route.
+ It can be specified by either supplying a model class or a model.
+ If a model is supplied, the id of the model is passed as a parameter to
+ the controller.
+ (?id=7, for example) The default for this attribute is the class of the
+ context.
+ In other words, the class that contains the has_many / has_one, not the
+ class with the belongs_to.
+ 
+\end_layout
+
+\begin_layout Standard
+completer specifies the action for the route.
+ name-one prepends complete_ to the value given here.
+ This should be exactly the same as the first parameter to autocomplete
+ in your controller.
+ As an example: autocomplete :email_address would correspond to completer="email
+_address".
+ The default for this attribute is the name field for the model being searched,
+ which is usually name, but not always.
+ The query string is passed to the controller in the query parameter.
+ (?query=hello for example).
+\end_layout
+
+\begin_layout Standard
+<select-input> A <select> menu input.
+ This tag differs from <select-menu> only in that it adds the correct name
+ attribute for the current field, and selected default to this.
+ Attributes options - an array of options suitable to be passed to the Rails
+ options_for_select helper.
+ selected - the value (from the options array) that should be initially
+ selected.
+ Defaults to this first-option - a string to be used for an extra option
+ in the first position.
+ E.g.
+ “Please choose…” first-value - the value to be used with the first-option.
+ Typically not used, meaning the option has a blank value.
+\end_layout
+
+\begin_layout Standard
+<error-messages> Renders a readable list of error messages following a form
+ submission.
+ Expects the errors to be in this.errors.
+ Renders nothing if there are no errors.
+ Parameters heading ul li 
+\end_layout
+
+\begin_layout Standard
+<select-many> An input for has_many :through associations that lets the
+ user chose the items from a <select> menu.
+\end_layout
+
+\begin_layout Standard
+To use this tag, the model of the items the user is choosing must have unique
+ names, and the Parameters proto-item proto-hidden proto-remove-button item
+ hidden remove-button 
+\end_layout
+
+\begin_layout Standard
+<after-submit> Used inside a form to specify where to redirect after successful
+ submission.
+ This works by inserting a hidden field called after_submit which is used
+ by Hobo if present to perform a redirect after the form submission.
+\end_layout
+
+\begin_layout Standard
+Usage Use the stay-here attribute to remain on the current page: <form>
+ <after-submit stay-here/> ...
+ </form> Use the go-back option to return to the previous page: <form> <after-su
+bmit go-back/> ...
+ </form> Use the uri option to specify a redirect location: <form> <after-submit
+ uri="/admin"/> ...
+ </form>
+\end_layout
+
+\begin_layout Standard
+<select-menu> A simple wrapper around the <select> tag and options_for_select
+ helper
+\end_layout
+
+\begin_layout Standard
+Parameters default 
+\end_layout
+
+\begin_layout Standard
+Attributes options - an array of options suitable to be passed to the Rails
+ options_for_select helper.
+ selected - the value (from the options array) that should be initially
+ selected.
+ Defaults to this first-option - a string to be used for an extra option
+ in the first position.
+ E.g.
+ “Please choose…” first-value - the value to be used with the first-option.
+ Typically not used, meaning the option has a blank value.
+\end_layout
+
+\begin_layout Standard
+<check-many> Renders a <ul> list of checkboxes, one for each of the potential
+ target in a has_many association.
+ The user can check the items they wish to have associated.
+ A typical use might be selecting categories for a blog post.
+\end_layout
+
+\begin_layout Standard
+Parameters default li name Attributes options - an array of models that
+ may be added to the collection disabled - if true, sets the disabled flag
+ on all check boxes.
+\end_layout
+
+\begin_layout Standard
+<hidden-id-field> Renders an <input type='hidden'> for the id field of the
+ current context
+\end_layout
+
+\begin_layout Standard
+<input-many> Creates a sub-section of the form which the user can repeat
+ using (+) and (-) buttons, in order to allow an entire has_many collection
+ to be created/edited in a single form.
+ This tag is very different from tags like <select-many> and <check-many>
+ in that: Those tags are used to chose existing records to include in the
+ association, while <input-many> is used to actually create or edit the
+ records in the association.
+\end_layout
+
+\begin_layout Standard
+Parameters default remove-item add-item default add-item 
+\end_layout
+
+\begin_layout Standard
+Example Say you are creating a new Category in your online shop, and you
+ want to create some initial products in the same form, you can add the
+ following to your form:
+\end_layout
+
+\begin_layout Standard
+<input-many:products><field-list fields="name, price"/></input-many>
+\end_layout
+
+\begin_layout Standard
+The body of the tag will be repeated for each of the current records in
+ the collection, or will just appear once (with blank fields) if the collection
+ is empty.
+\end_layout
+
+\begin_layout Standard
+Attributes fields: If you do not specify any content for the input-many,
+ a <field-list> is rendered.
+ This attribute is passed through to the <field-list>
+\end_layout
+
+\begin_layout Standard
+<input-all> Renders a sub-section of a form with fields for every record
+ in a has_many association.
+ This is similar to <input-many> except there is no ability to add and remove
+ items (i.e.
+ no (+) and (-) buttons).
+\end_layout
+
+\begin_layout Standard
+<input> Provides an editable control tailored to the type of the object
+ in context.
+ <input> tags should be used within a <form>.
+ <input> is a polymorphic tag which means that there are a variety of definition
+s, each one written for a particular type.
+ For example there are inputs for text, boolean, password, date, datetime,
+ integer, float, string and more.
+\end_layout
+
+\begin_layout Standard
+Usage The tag behaves as a regular HTML input if the type attribute is given:
+\end_layout
+
+\begin_layout Standard
+<input type="text" name="my_input"/>
+\end_layout
+
+\begin_layout Standard
+-> Output is exactly as provided, untouched by Rapid
+\end_layout
+
+\begin_layout Standard
+If no type attribute is given then the context is used.
+ For example if the context is a blog post:
+\end_layout
+
+\begin_layout Standard
+<input:title/>
+\end_layout
+
+\begin_layout Standard
+-> <input id="blog_post[name]" class="string blog-post-name" type="text"
+ value="My Blog Post" name="blog_post[name]"/>
+\end_layout
+
+\begin_layout Standard
+<input:created_at/>
+\end_layout
+
+\begin_layout Standard
+<select id="blog_post_created_at_year" name="blog_post[created_at][year]">
+ ...
+ </select>
+\end_layout
+
+\begin_layout Standard
+<select id="blog_post_created_at_month" name="blog_post[created_at][month]">
+ ...
+ </select>
+\end_layout
+
+\begin_layout Standard
+<select id="blog_post_created_at_day" name="blog_post[created_at][day]">
+ ...
+ </select>
+\end_layout
+
+\begin_layout Standard
+<input:description/>
+\end_layout
+
+\begin_layout Standard
+<textarea class="text blog-post-description" id="blog_post[description]"
+ name="blog_post[description]"> ...
+ </textarea>
+\end_layout
+
+\begin_layout Standard
+If the context is a belongs_to association, the <select-one> tag is used.
+\end_layout
+
+\begin_layout Standard
+If the context is a has_many :through association, the polymorphic <collection-i
+nput> tag is used.
+\end_layout
+
+\begin_layout Standard
+Attributes no-edit: control what happens if can_edit? is false.
+ Can be one of: view: render the current value using the <view> tag disable:
+ render the input as normal, but add HTML’s disabled attribute skip: render
+ nothing at all ignore: render the input normally.
+ That is, don’t even perform the edit check.
+\end_layout
+
+\begin_layout Standard
+<input for='HoboFields::EnumString'> A <select> menu containing the values
+ of an ‘enum string’.
+\end_layout
+
+\begin_layout Standard
+Attributes labels - A hash that gives custom labels for the values of the
+ enum.
+ Any values that do not have corresponding keys in this hash will get value.title
+ize as the label.
+ titleize - Set to false to have the value itself (rather than value.titleize)
+ be the default label.
+ Default: true first-option - a string to be used for an extra option in
+ the first position.
+ E.g.
+ “Please choose…” first-value - the value to be used with the first-option.
+ Typically not used, meaning the option has a blank value.
+\end_layout
+
+\begin_layout Standard
+<input for='text'> A <textarea> input
+\end_layout
+
+\begin_layout Standard
+<input for='boolean'> A checkbox plus a hidden-field.
+ The hidden field trick comes from Rails - it means that when the checkbox
+ is not checked, the parameter name is still submitted, with a ‘0’ value
+ (the value is ‘1’ when the checkbox is checked)
+\end_layout
+
+\begin_layout Standard
+<input for='password'> A password input - <input type='password'>
+\end_layout
+
+\begin_layout Standard
+<input for='date'> A date picker, using the select_date helper from Rails
+\end_layout
+
+\begin_layout Standard
+Attributes order: The order of the year, month and day menus.
+ A comma separated string or an array.
+ Default: “year, month, day”
+\end_layout
+
+\begin_layout Standard
+Any other attributes are passed through to the select_date helper.
+ The menus default to the current date if the current value is nil.
+\end_layout
+
+\begin_layout Standard
+<input for='time'> A date/time picker, using the select_date helper from
+ Rails
+\end_layout
+
+\begin_layout Standard
+Attributes order: The order of the year, month and date menus.
+ A comma separated string or an array.
+ Default: “year, month, day, hour, minute, second”
+\end_layout
+
+\begin_layout Standard
+Any other attributes are passed through to the select_date helper.
+ The menus default to the current time if the current value is nil.
+\end_layout
+
+\begin_layout Standard
+<input for='datetime'> A date/time picker, using the select_datetime helper
+ from Rails
+\end_layout
+
+\begin_layout Standard
+Attributes order: The order of the year, month and date menus.
+ A comma separated string or an array.
+ Default: “year, month, day, hour, minute”
+\end_layout
+
+\begin_layout Standard
+Any other attributes are passed through to the select_datetime helper.
+ The menus default to the current time if the current value is nil.
+\end_layout
+
+\begin_layout Standard
+<input for='integer'> An <input type='text'> input.
+\end_layout
+
+\begin_layout Standard
+<input for='float'> An <input type='text'> input.
+\end_layout
+
+\begin_layout Standard
+<input for='string'> An <input type='text'> input.
+\end_layout
+
+\begin_layout Standard
+<input for='big_integer'> An <input type='text'> input.
+\end_layout
+
+\begin_layout Standard
+<input for='Paperclip::Attachment'>
+\end_layout
+
+\begin_layout Standard
+<input for='BigDecimal'> An <input type='text'> input.
+ <collection-input> This tag is called by <input> when the context is a
+ has_many :through collection.
+ By default a <select-many> is used, but this can be customized on a per-type
+ basis.
+ For example, say you would like the <check-many> tag used to edit collections
+ a Category model in your application: <def tag="collection-input" for="Category
+"><check-many merge/></def>
+\end_layout
+
+\begin_layout Standard
+collection-input for='ActiveRecord::Base'> The default <collection-input>
+ - calls <select-many>
+\end_layout
+
+\begin_layout Standard
+Rapid Generics
+\end_layout
+
+\begin_layout Standard
+Rapid Generics provides tags that provide generic renderings that can adapt
+ to the model being rendered.
+ At the moment this library provides cards and collections of cards.
+\end_layout
+
+\begin_layout Standard
+<card> <search-card> <empty-collection-message> <collection> <record-flags>
+\end_layout
+
+\begin_layout Standard
+<card> A ‘card’ is a representation of an sub-object within a page, such
+ as a comment on a blog-post, or a single product in a list of products.
+ This definition is just the very basic framework which gives the basis
+ for the automatic cards that get generated.
+ See app/views/taglibs/auto/rapid/cards.dryml for the cards that have been
+ generated for your specific application.
+\end_layout
+
+\begin_layout Standard
+Parameters default header body 
+\end_layout
+
+\begin_layout Standard
+<search-card> A special card which is used by live-search to render the
+ results.
+ By default this just calls card, but you can define your own search cards
+ with <def tag='search-card' for="MyModel"> to customize search results
+ for that model.
+\end_layout
+
+\begin_layout Standard
+<empty-collection-message> Renders a message such as “No products to display”.
+ If the collection (this) is empty, style="display:none" is added.
+ This means the message is still present and can be revealed with JavaScript
+ if all items in the collection are removed with AJAX remove buttons.
+\end_layout
+
+\begin_layout Standard
+Parameters default 
+\end_layout
+
+\begin_layout Standard
+<collection> Repeats the body of the tag inside a <ul> list with one item
+ for each object in the collection (this).
+ If no body is given, renders a <card> inside the <li>.
+ The <li> tags are automatically given a ‘model ID’ CSS class, which means
+ the AJAX <remove-button> will automatically be able to remove items from
+ the collection.
+ Also adds ‘even’ and ‘odd’ CSS classes.
+\end_layout
+
+\begin_layout Standard
+Parameters item default card empty-message 
+\end_layout
+
+\begin_layout Standard
+<record-flags> Renders a comma-separated list of any fields passed in the
+ fields attribute that are true (in the Ruby sense).
+ For example, if a forum post had a boolean field sticky, this tag can be
+ used to automatically label sticky posts “Sticky”.
+ Similarly, you could automatically add an “Administrator” label to the
+ user’s home page (this is seen in the default Hobo app).
+ Rapid Lifecycles
+\end_layout
+
+\begin_layout Standard
+Contains view-layer support for Hobo’s lifecycles.
+ Note that lifecycle forms are generated automatically in app/views/taglibs/auto
+/rapid/forms.dryml - this library contains only lifecycle push-buttons.
+\end_layout
+
+\begin_layout Standard
+<transition-button> <transition-buttons>
+\end_layout
+
+\begin_layout Standard
+<transition-button> A push-button to invoke a lifecycle transition either
+ as a page-reload or as an AJAX call.
+ Attributes transition - the name of the transition to invoke.
+ Required update - one or more DOM IDs of AJAX parts to update after the
+ transition label - the label on the button.
+ Defaults to the name of the transition
+\end_layout
+
+\begin_layout Standard
+All of the standard AJAX attributes are also supported.
+\end_layout
+
+\begin_layout Standard
+<transition-buttons> Renders a div containing transition buttons for every
+ transition available to the current user.
+ For example, you could use this on a Friendship card: the person invited
+ to have friendship would automatically see ‘Accept’ and ‘Decline’ buttons,
+ while the person initiating the invite would see ‘Retract’.
+ Rapid Navigation
+\end_layout
+
+\begin_layout Standard
+Support for navigation links, account navigation (log in, out etc.) and paginatio
+n navigation.
+\end_layout
+
+\begin_layout Standard
+<navigation> <nav-item> <account-nav> <page-nav>
+\end_layout
+
+\begin_layout Standard
+<navigation> General purpose navigation bar.
+ Renders a <ul class="navigation">.
+ This tag is intended to be used in conjunction with <nav-item>.
+ The main feature of this pair of tags (over, say, just using a plain <ul>
+ list), is that it’s easy to have a ‘current’ CSS class added to the appropriate
+ nav item (so you can highlight the page/section the user is)
+\end_layout
+
+\begin_layout Standard
+The main navigation in the default hobo app is implemented with <navigation>
+ but this tag is also appropriate for any sub-navigation.
+\end_layout
+
+\begin_layout Standard
+Parameters default Attributes current - the textual content of the nav item
+ that should have the ‘current’ CSS class added (see example) Example The
+ normal usage is to define your own navigation tag that calls <navigation>.
+\end_layout
+
+\begin_layout Standard
+<def tag="sub-nav"> <navigation merge> <nav-item>Red</nav-item> <nav-item>Green<
+/nav-item> <nav-item>Blue</nav-item> </navigation> </def>
+\end_layout
+
+\begin_layout Standard
+Then in your pages you can call the tag like this On the ‘red’ page: <sub-nav
+ current="red"/> On the ‘green’ page: <sub-nav current="green"/> and so
+ on.
+\end_layout
+
+\begin_layout Standard
+<nav-item> Renders a single item in a <navigation> menu.
+ 
+\end_layout
+
+\begin_layout Standard
+<account-nav> Account Navigation (log in / out / signup) When logged in,
+ this renders: “Logged in as …” Link to account page Log out link
+\end_layout
+
+\begin_layout Standard
+When not logged in, renders: Log in link Sign up link This is a simple tag
+ - just look at the source if you need to know more detail.
+\end_layout
+
+\begin_layout Standard
+Parameters ul dev-user-changer logged-in-as account log-out log-in sign-up
+ 
+\end_layout
+
+\begin_layout Standard
+<page-nav> A simple wrapper around the will_paginate helper.
+ All options to will_paginate are available as attributes Rapid Pages
+\end_layout
+
+\begin_layout Standard
+Rapid-Pages provides tags for working with entire pages.
+\end_layout
+
+\begin_layout Standard
+<page> <page-scripts> <permission-denied-page> <not-found-site> <doc-type>
+ <html> <if-ie> <stylesheet> <javascript> <flash-message> <flash-messages>
+ <ajax-progress>
+\end_layout
+
+\begin_layout Standard
+<page> The basic page structure for all the pages in a Hobo Rapid application.
+ Providing the doctype, page title, standard stylesheet JavaScript includes,
+ the AJAX progress spinner, default header with app-name, account navigation,
+ main navigation, and live search, empty section for the page content, flash
+ message (if any) and an empty page footer.
+ The easiest way to see what this tag does is to look at the source.
+\end_layout
+
+\begin_layout Standard
+Parameters head title stylesheets app-stylesheet scripts JavaScript fix-ie6
+ custom-scripts application-JavaScript body AJAX-progress header account-nav
+ app-name live-search main-nav content footer page-scripts Attributes title
+ - the page title, will have “: <app-name>” appended full-title - the full
+ page title.
+ Set this if you do not want the app name suffix.
+ <page-scripts> Renders dynamically generated JavaScript required by hobo-rapid.j
+s, including the information required to perform automatic part updates
+\end_layout
+
+\begin_layout Standard
+Parameters default 
+\end_layout
+
+\begin_layout Standard
+<permission-denied-page> The page rendered by default in the case of a permissio
+n-denied error
+\end_layout
+
+\begin_layout Standard
+Parameters content content-header heading Attributes message - The main
+ message to display.
+ Defaults to “That operation is not allowed”
+\end_layout
+
+\begin_layout Standard
+<not-found-page> The page rendered by default in the case of a not-found
+ error
+\end_layout
+
+\begin_layout Standard
+Parameters content content-header heading Attributes message - The main
+ message to display.
+ Defaults to “The page you were looking for could not be found”
+\end_layout
+
+\begin_layout Standard
+<doctype> Renders one of five HTML DOCTYPE declarations, according to the
+ version attribute.
+ Attributes ‘version’ - the doctype version, must be one of: HTML 4.01 STRICT
+ HTML 4.01 TRANSITIONAL XHTML 1.0 STRICT XHTML 1.0 TRANSITIONAL XHTML 1.1 <html>
+ Renders an <html> tag along with the DOCTYPE specified in the doctype attribute.
+ Parameters default Attributes doctype - the version of the DOCTYPE required.
+ See the version attribute to <doctype>
+\end_layout
+
+\begin_layout Standard
+<if-ie> Renders a conditional comment in order to have some content ignored
+ by all browsers other than Internet Explorer
+\end_layout
+
+\begin_layout Standard
+Parameters default Example
+\end_layout
+
+\begin_layout Standard
+<if-ie version="lt IE 7"> ...
+ </if-ie>
+\end_layout
+
+\begin_layout Standard
+<stylesheet> Simple wrapper for the stylesheet_link_tag helper.
+ The name attribute can be a comma-separated list of stylesheet names.
+\end_layout
+
+\begin_layout Standard
+<JavaScript> Simple wrapper for the javascript_include_tag helper.
+ The name attribute can be a comma-separated list of script file names.
+\end_layout
+
+\begin_layout Standard
+<flash-message> Renders a Rails flash message wrapped in a <div> tag
+\end_layout
+
+\begin_layout Standard
+Attributes type - which flash message to display.
+ Defaults to :notice
+\end_layout
+
+\begin_layout Standard
+CSS Classes The flash is output in a <div class="flash notice">, where notice
+ is the type specified.
+\end_layout
+
+\begin_layout Standard
+<flash-messages> Renders <flash-message> for every flash type given in the
+ names attribute (comma separated), or for all flash messages that have
+ been set if names is not given.
+\end_layout
+
+\begin_layout Standard
+<ajax-progress> Renders: <div id="ajax-progress"> <div> <span id="ajax-progress-
+text"> </span> </div> </div>
+\end_layout
+
+\begin_layout Standard
+The theme will style this as an AJAX progress ‘spinner’
+\end_layout
+
+\begin_layout Standard
+Rapid Plus
+\end_layout
+
+\begin_layout Standard
+Tags that define higher level interactive ‘widgets’
+\end_layout
+
+\begin_layout Standard
+<live-search> Provides an AJAX-powered find-as-you-type live search field
+ which is hooked up to Hobo’s site-side search feature.
+ At the moment this tag is not very flexible.
+ It is not easy to use if for anything other than Hobo’s site-wide search.
+\end_layout
+
+\begin_layout Standard
+Parameters close-button 
+\end_layout
+
+\begin_layout Standard
+<filter-menu> A <select> menu intended to act as a filter for index pages.
+\end_layout
+
+\begin_layout Standard
+Attributes param-name - the name of the HTTP parameter to use for the filter
+ options - an array of options for the menu.
+ no-filter - The text of the first option which indicates no filter is in
+ effect.
+ Defaults to ‘All’
+\end_layout
+
+\begin_layout Standard
+<table-plus> An enhanced version of Rapid’s <table> that has support for
+ column sorting, searching and pagination.
+ This tag calls <table merge-params>, so the parameters for <table> are
+ also available.
+ An worked example of this tag is available in the Agility Tutorial
+\end_layout
+
+\begin_layout Standard
+Parameters header search-form search-submit #{scope.field-name}-heading #{scope.fi
+eld-name}-heading-link up-arrow down-arrow empty-message page-nav 
+\end_layout
+
+\begin_layout Standard
+<sortable-collection> An enhanced version of Rapid’s <collection> tag that
+ supports drag-and-drop re-ordering.
+ Each item in the collection has a <div class="ordering-handle" param="handle">
+ added, which can be used to drag the item up and down.
+\end_layout
+
+\begin_layout Standard
+Parameters item handle default card Attributes sortable-options - a hash
+ of options to pass to the sortable_element helper.
+ Default are: { :constraint => :vertical, :overlap => :vertical, :scroll
+ => :window, :handle => 'ordering-handle', :complete => [visual_effect(:highligh
+t, attributes[:id])] }
+\end_layout
+
+\begin_layout Standard
+Controller support This tag assumes the controller has a reorder action.
+ This action is added automatically by Hobo’s model-controller if the model
+ declares acts_as_list.
+ See also drag and drop reordering in the Controllers and routing section
+ of this book.
+\end_layout
+
+\begin_layout Standard
+<preview-with-more> Captures the common pattern of a list of “the first
+ few” cards, along with a link to the rest.
+\end_layout
+
+\begin_layout Standard
+Parameters default heading more collection 
+\end_layout
+
+\begin_layout Standard
+<gravatar> Renders a gravatar (see gravatar.com) image in side a link to
+ this.
+ Requires this to have an email_address field.
+ Normally called with a user record in context.
+\end_layout
+
+\begin_layout Standard
+Attributes size - Size in pixels of the image.
+ Defaults to 80.
+ rating - The rating allowed.
+ Defaults to ‘g’.
+ See gravatar for information on ratings.
+\end_layout
+
+\begin_layout Standard
+Rapid Summary
+\end_layout
+
+\begin_layout Standard
+These are a collection of tags that allow a application outline or summary
+ to be created.
+ 
+\end_layout
+
+\begin_layout Standard
+There are several items that are parents with multiple children.
+ They all start with the “<with-“ prefix:
+\end_layout
+
+\begin_layout Standard
+<with-gems> <with-plugins> <with-environments> <with-models> <with-model-columns
+> <with-model-associations>
+\end_layout
+
+\begin_layout Standard
+Note that Hobo creates the file /app/views/front/summary.dryml automatically
+ for you:
+\end_layout
+
+\begin_layout Standard
+Figure 300: The contents of the "summary.dryml" file
+\end_layout
+
+\begin_layout Standard
+Figure 301: Sample view of the first section of an application summary page
+\end_layout
+
+\begin_layout Standard
+Below is a complete listing of the default app/views/front/summary.dryml
+ file.
+ It serves as clear documentation for this tag library.
+\end_layout
+
+\begin_layout Standard
+<page> <content:> <div class="content-body"> <h2>Application Summary</h2>
+\end_layout
+
+\begin_layout Standard
+<table class="app-summary"> <tr> <th></th><th></th></tr> <tr> <td>Application
+ Name</td> <td><app-name/></td></tr> <tr> <td>Application Location</td><td><rail
+s-root/></td></tr> <tr> <td>Rails Version</td> <td><rails-version/></td></tr>
+ <tr> <td>Rails Location</td> <td><rails-location/></td></tr> <tr> <td>Mode</td>
+ <td><rails-env/></td> </tr> </table>
+\end_layout
+
+\begin_layout Standard
+<h3>Change Control</h3> <table class="app-summary"> <tr> <th></th><th></th></tr>
+ <tr> <td>Method</td>td><cms-method/></td> </tr> <if test="&cms_method.strip=='gi
+t'"> <tr> <td>Version</td> <td><cms-version/></td> </tr> <tr> <td>Date</td>
+ <td><cms-last-commit-time/></td> </tr> <tr> <td>Branch</td> <td><cms-branch/></
+td> </tr> <tr> <td>Clean?</td> <td><cms-clean/></td></tr> </if> </table>
+\end_layout
+
+\begin_layout Standard
+<h3>Gems</h3> <table class="app-summary"> <with-gems> <tr if="&first_item?"><th>
+</th><th>Required</th><th>Installed</th><th>Status</th><th>Dependencies</th></tr
+> <tr> <td><gem-name/></td> <td><gem-version-required/></td> <td><gem-version/><
+/td> <td><gem-frozen/></td> <td><gem-dependencies/></td> </tr> </with-gems>
+ </table>
+\end_layout
+
+\begin_layout Standard
+<h3>Plugins</h3> <table class="app-summary"> <with-plugins> <tr if="&first_item?
+"><th></th><th>Location</th><th>Method</th><th>Clean?</th><th>Version</th></tr>
+ <tr> <td><plugin-name/></td> <td><plugin-location/></td> <td><plugin-method/></
+td> <td><plugin-clean/></td> <td><plugin-version/></td> </tr> </with-plugins>
+ </table>
+\end_layout
+
+\begin_layout Standard
+<h3>Environments</h3> <table class="app-summary"> <tr><th></th><th colspan='2'>d
+atabase</th></tr> <with-environments> <tr> <td><environment-name /></td>
+ <td><database-type /></td> <td><database-name /></td> </tr> </with-environments
+> </table>
+\end_layout
+
+\begin_layout Standard
+<h2>Models</h2> <table class="app-summary"> <tr><th>Class</th><th>Table</th></tr
+> <with-models> <tr> <td><model-name/></td> <td><model-table-name/></td>
+ </tr> </with-models> </table> <with-models> <h3 if="&this.try.table_name"><model-
+name /></h3> <table class="app-summary"> <with-model-columns> <tr if="&first_ite
+m?"><th>Column</th><th>Type</th></tr> <tr> <td><model-column-name/></td>
+ <td><model-column-type/></td> </tr> </with-model-columns> </table> <table
+ class="app-summary"> <with-model-associations> <tr if="&first_item?"><th>Associ
+ation</th><th>Macro</th><th>Class</th></tr> <tr> <td><model-association-name/></
+td> <td><model-association-macro/></td> <td><model-association-class-name/></td>
+ </tr> </with-model-associations> </table> </with-models> </div> </content:>
+ </page> 
+\end_layout
+
+\begin_layout Standard
+<rails-version> Version of Rails.
+ Same as Rails.version
+\end_layout
+
+\begin_layout Standard
+<rails-location> returns “vendor” or “gem”
+\end_layout
+
+\begin_layout Standard
+<rails-root> RAILS_ROOT 
+\end_layout
+
+\begin_layout Standard
+<rails-env> RAILS_ENV
+\end_layout
+
+\begin_layout Standard
+<hobo-version> Hobo::VERSION
+\end_layout
+
+\begin_layout Standard
+<cms-method> Which change management system is in use: “git” “subversion”
+ “other”
+\end_layout
+
+\begin_layout Standard
+<cms-clean> calls git-clean or svn-clean as appropriate.
+ svn-clean not yet written.
+\end_layout
+
+\begin_layout Standard
+<cms-last-commit-time> Calls git-last-commit-time or svn-last-commit-time
+ as appropriate.
+ svn-last-commit-time not yet written.
+\end_layout
+
+\begin_layout Standard
+<cms-version> calls git-version or svn-version as appropriate.
+ svn-version not yet written.
+\end_layout
+
+\begin_layout Standard
+<cms-branch> calls git-branch or svn-branch as appropriate.
+ svn-branch not yet written.
+\end_layout
+
+\begin_layout Standard
+<git-branch> The git branch currently in use
+\end_layout
+
+\begin_layout Standard
+<git-version> The git version currently in use
+\end_layout
+
+\begin_layout Standard
+<git-clean> Returns ‘clean’ if there are no modified files, ‘modified’ otherwise.
+\end_layout
+
+\begin_layout Standard
+<git-last-commit-time> the time & date of the last commit
+\end_layout
+
+\begin_layout Standard
+<with-gems> Repeats on Rails.configuration.gems, including dependent gems
+\end_layout
+
+\begin_layout Standard
+<gem-name> Inside <with-gems>, returns the gem name
+\end_layout
+
+\begin_layout Standard
+<gem-version-required> Inside <with-gems>, returns the version required
+\end_layout
+
+\begin_layout Standard
+<gem-version> Inside <with-gems>, returns the version installed
+\end_layout
+
+\begin_layout Standard
+<gem-frozen> Inside <with-gems>, returns ‘frozen’, ‘installed’ or ‘missing’
+\end_layout
+
+\begin_layout Standard
+<gem-dependencies> Inside <with-gems>, returns the gem dependencies
+\end_layout
+
+\begin_layout Standard
+<with-plugins> Repeats on the plugins used by the application
+\end_layout
+
+\begin_layout Standard
+<plugin-name> within <with-plugins>, returns the plugin name
+\end_layout
+
+\begin_layout Standard
+<plugin-location> within <with-plugins>, returns the plugin location (directory)
+\end_layout
+
+\begin_layout Standard
+<plugin-method> Within <with-plugins>, try and determine the method that
+ was used to install the plugin.
+ Returns “braid”, “symlink”, “git-submodule” or “other”
+\end_layout
+
+\begin_layout Standard
+<plugin-clean> Within <with-plugins>, determine if the plugin has been modified.
+ Returns “clean” or “modified”.
+ Returns a blank string if this information is not available.
+ 
+\end_layout
+
+\begin_layout Standard
+<plugin-version> Within <with-plugins>, determine if the plugin version.
+ Returns a blank string if this information is not available.
+ 
+\end_layout
+
+\begin_layout Standard
+<with-environments> Repeats on the available execution environments, which
+ are usually ‘development’, ‘test’ and ‘production’
+\end_layout
+
+\begin_layout Standard
+<environment-name> Within <with-environments>, the environment name in context
+\end_layout
+
+\begin_layout Standard
+<database-type> Within <with-environments>, the database type in context
+ <database-name> Within <with-environments>, the database name in context
+\end_layout
+
+\begin_layout Standard
+<with-models> Repeats on available models.
+ Does not return models defined in libraries or plugins.
+ <model-name> Within <with-models>, returns the internal model name.
+\end_layout
+
+\begin_layout Standard
+<model-table-name> Within <with-models>, returns the model’s physical table
+ name.
+\end_layout
+
+\begin_layout Standard
+<with-model-columns> Repeats on the columns within a model.
+\end_layout
+
+\begin_layout Standard
+<model-column-type> Within <with-model-columns>, returns the column type.
+\end_layout
+
+\begin_layout Standard
+<model-column-name> Within <with-model-columns>, returns the column type.
+\end_layout
+
+\begin_layout Standard
+<with-model-associations> Given a model, repeats on the associations.
+\end_layout
+
+\begin_layout Standard
+<model-association-name> Within <with-model-associations>, returns the associati
+on name.
+ <model-association-macro> Within <with-model-associations>, returns the
+ association type.
+\end_layout
+
+\begin_layout Standard
+<model-association-class-name> Within <with-model-associations>, returns
+ the association class name.
+\end_layout
+
+\begin_layout Standard
+Rapid Support 
+\end_layout
+
+\begin_layout Standard
+Rapid Support is the home for some tags that are useful in defining other
+ tags.
+\end_layout
+
+\begin_layout Standard
+<with-fields> <with-field-names>
+\end_layout
+
+\begin_layout Standard
+<with-fields> Call with the context set to a record.
+ Repeats the content of the tag with this and this_field set to the value
+ and name of each of the record’s fields in turn.
+ E.g.
+ this is useful for generating a form containing each of the fields.
+ Tags like <field-list> and <table> forward their attributes to this tag
+ and also have the features described here.
+ For example, the fields attribute to <field-list> supports the same options
+ as described here.
+\end_layout
+
+\begin_layout Standard
+Parameters default default Attributes fields - set to one of: A model class
+ - equivalent to listing all of the regular ‘content columns’ of that model
+ ’*’ - equivalent to listing all of the regular ‘content columns’ of the
+ current record A comma separated list of field names.
+ Defaults to ’*’ associations - set to has_many to select the associations
+ has_many relationships used as the “fields”.
+ Do not also give the fields attribute.
+ skip - comma separated list of field names to omit.
+ skip-associations - set to has-many to omit all has_many associations.
+ include-timestamps - whether or not to include the standard ActiveRecord
+ timestamp fields such as created_at and updated_at.
+ Defaults to false.
+ force-all - by default fields are skipped if the current user does not
+ have view permission.
+ Set force-all to true to skip this permission check and include all the
+ fields.
+\end_layout
+
+\begin_layout Standard
+<with-field-names> Call with the context set to a model class.
+ Repeats the content of the tag with this set name of each of the model’s
+ fields in turn.
+ For example, this tag is used when generating the heading row in: <table
+ fields='...'/>.
+\end_layout
+
+\begin_layout Standard
+Attributes fields - set to one of:
+\end_layout
+
+\begin_layout Standard
+A model class - equivalent to listing all of the regular ‘content columns’
+ of that model ’*’ - equivalent to listing all of the regular ‘content columns’
+ of the current record A comma separated list of field names.
+ Defaults to ’*’ skip - comma separated list of field names to omit.
+ skip-associations - set to has-many to omit all has_many associations.
+ include-timestamps - whether or not to include the standard ActiveRecord
+ timestamp fields such as created_at and updated_at.
+ Defaults to false.
+\end_layout
+
+\begin_layout Standard
+Rapid User Pages 
+\end_layout
+
+\begin_layout Standard
+Rapid User Pages contains tags that implement the basics of Hobo’s user
+ management: log in, sign up, forgot password etc.
+\end_layout
+
+\begin_layout Standard
+<simple-page> <login-page> <forgot-password-page> <forgot-password-email-sent-pa
+ge> <account-disabled-page> <account-page>
+\end_layout
+
+\begin_layout Standard
+<simple-page> Some of the user pages use a simplified layout that does not
+ feature things like the main nav and live-search.
+ This tag defines that page
+\end_layout
+
+\begin_layout Standard
+<login-page> Simple log-in page
+\end_layout
+
+\begin_layout Standard
+Parameters body content content-header heading content-body form labeled-item-li
+st login-label login-input password-label password-input remember-me remember-me
+-label remember-me-input actions submit forgot-password 
+\end_layout
+
+\begin_layout Standard
+<forgot-password-page> The page that initiates the forgotten password process.
+ Contains a single text-input where the user can provide their email address
+\end_layout
+
+\begin_layout Standard
+Parameters body content content-header heading content-body form list-item-list
+ email-address-label email-address-input actions submit 
+\end_layout
+
+\begin_layout Standard
+<forgot-password-email-sent-page> Second page in the forgotten password
+ process.
+ Informs the user that the email has been sent “If the e-mail address you
+ entered is in our records”.
+ This is to avoid a privacy concern that the forgotten-password mechanism
+ can be otherwise used to tell if a given email is associated with an account
+ or not.
+\end_layout
+
+\begin_layout Standard
+Parameters body content content-header h2 content-body message 
+\end_layout
+
+\begin_layout Standard
+<account-disabled-page> The page that is displayed on attempting to log
+ in to an account that has been disabled.
+\end_layout
+
+\begin_layout Standard
+Parameters body content content-header h2 content-body 
+\end_layout
+
+\begin_layout Standard
+<account-page> Basic account page that provides the ability for the user
+ to change their email address and password.
+\end_layout
+
+\begin_layout Standard
+Parameters body content content-header heading content-body error-messages
+ form field-list actions submit 
 \end_layout
 
 \end_body
