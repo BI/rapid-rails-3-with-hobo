@@ -50,8 +50,8 @@ logicalmkup
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -547,7 +547,7 @@ Core DRYML tags.
 <call-tag> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Call the tag given by the 
 \begin_inset Flex Code
 status collapsed
@@ -577,7 +577,7 @@ send
 <wrap> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Wrap the body in the tag specified by the 
 \begin_inset Flex Code
 status collapsed
@@ -714,7 +714,7 @@ status open
 <partial> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 DRYML version of 
 \begin_inset Flex Code
 status collapsed
@@ -768,7 +768,7 @@ status open
 <repeat> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Repeat a section of mark-up.
  The context should be a collection (anything that responds to 
 \begin_inset Flex Code
@@ -828,7 +828,7 @@ join=", "
 <do> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 The ‘do nothing’ tag.
  Used to add parameters or change context without adding any markup
 \end_layout
@@ -994,7 +994,7 @@ n is considered blank)
 <else> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 General purpose 
 \begin_inset Flex Code
 status collapsed
@@ -1056,7 +1056,7 @@ Hobo::Dryml.last_if
 <unless> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Same behavior as 
 \begin_inset Flex Code
 status collapsed
@@ -1167,7 +1167,7 @@ Core Rapid tags and tags that don’t belong to other categories.
 <dev-user-changer> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Development mode only - a menu to change the 
 \begin_inset Flex Code
 status collapsed
@@ -1185,7 +1185,7 @@ current_user
 <field-list> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Renders a table with one row per field, where each row contains a 
 \begin_inset Flex Code
 status collapsed
@@ -1431,7 +1431,7 @@ status open
 <nil-view> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Used to render nil values.
  By default renders “(Not Available)”
 \end_layout
@@ -1480,7 +1480,7 @@ status open
 <table> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 \begin_inset Flex Code
 status collapsed
 
@@ -2082,7 +2082,7 @@ status collapsed
 <name> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Renders the name of the current context using a variety of methods.
 \end_layout
 
@@ -2281,7 +2281,7 @@ status collapsed
 <type-name> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Renders a human readable version of the type of the context 
 \end_layout
 
@@ -2370,7 +2370,7 @@ dasherize: render the name in lower case with dashes instead of spaces.
 <collection-name> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 Renders a human readable name of a collection 
 \end_layout
 
@@ -2451,7 +2451,7 @@ satirize: render the name in lower case with dashes instead of spaces.
 <a> 
 \end_layout
 
-\begin_layout Quote
+\begin_layout Standard
 \begin_inset Flex Code
 status collapsed
 
@@ -2774,167 +2774,672 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <a with="&blog_post"/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> <a href="/blog_posts/1">My First Blog Post</a>`
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <a with="&BlogPost"/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> <a href="/blog_posts">Blog Posts</a>`
 \end_layout
 
 \begin_layout Standard
-If action="new" then <a> will check that the current user has permission
- to create the object Several useful classes are added automatically to
- the output <a>.
+If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+action="new"
+\end_layout
+
+\end_inset
+
+ then 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ will check that the current user has permission to create the object Several
+ useful classes are added automatically to the output 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Attributes action: If “new”, triggers the special behavior listed above.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+action: If “new”, triggers the special behavior listed above.
  Otherwise, contains the action to be performed on the context.
- If neither action nor method are specified, the action will be “index”
- or “show”, as appropriate.
- to: Use this item as the target instead of the current context.
- params, query-params: These are appended to the target as a query string
+ If neither 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+action
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+nor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+method
+\end_layout
+
+\end_inset
+
+ are specified, the action will be “index” or “show”, as appropriate.
+ 
+\end_layout
+
+\begin_layout Itemize
+to: Use this item as the target instead of the current context.
+ 
+\end_layout
+
+\begin_layout Itemize
+params, query-params: These are appended to the target as a query string
  after a ”?”.
- href, name: If either of these attributes are present, the smart features
+ 
+\end_layout
+
+\begin_layout Itemize
+href, name: If either of these attributes are present, the smart features
  of this tag are turned off.
- format: this adds “.#{format}” to the end of the url sub-site: routes the
- URL using the sub-site force: overrides the permission check if action
- is “new” method: “get”, “put”, “post” or “delete”.
+ 
+\end_layout
+
+\begin_layout Itemize
+format: this adds “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.#{format}
+\end_layout
+
+\end_inset
+
+” to the end of the url 
+\end_layout
+
+\begin_layout Itemize
+sub-site: routes the URL using the sub-site 
+\end_layout
+
+\begin_layout Itemize
+force: overrides the permission check if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+action
+\end_layout
+
+\end_inset
+
+ is “new” 
+\end_layout
+
+\begin_layout Itemize
+method: “get”, “put”, “post” or “delete”.
  “get” is the default
 \end_layout
 
-\begin_layout Standard
-<count> A convenience tag used to output a count and a correctly pluralized
- label.
- Works with any kind of collection such as an ActiveRecord association or
- an array.
+\begin_layout Subsubsection*
+<count> 
 \end_layout
 
 \begin_layout Standard
+A convenience tag used to output a count and a correctly pluralized label.
+ Works with any kind of collection such as an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord
+\end_layout
+
+\end_inset
+
+ association or an array.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 Usage
 \end_layout
 
-\begin_layout Standard
-<count:comments/>
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<count:comments/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> <span class="count">1 Comment</span>
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <count:viewings/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> <span class="count">3 Viewings</span>
 \end_layout
 
 \begin_layout Standard
-The label can be customized using the label attribute, e.g.
+The label can be customized using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+label
+\end_layout
+
+\end_inset
+
+ attribute, e.g.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <count:comments label="blog post comment"/> 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> <span class="count">12 blog post comments</span>
 \end_layout
 
 \begin_layout Standard
-Additional Notes Use the prefix attribute to insert words before the count.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Additional Notes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+prefix
+\end_layout
+
+\end_inset
+
+ attribute to insert words before the count.
  If the prefix is “are” or “is” then it will be pluralized if needed:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 There <count:comments prefix="are"/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> There <span class="count">is 1 Comment</span>
 \end_layout
 
 \begin_layout Standard
-There <count:viewings prefix="are"/> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+There <count:viewings prefix="are"/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
 -> There <span class="count">are 3 Viewings</span>
 \end_layout
 
 \begin_layout Standard
-Use the lowercase attribute to force the generated label to be lowercase:
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lowercase
+\end_layout
+
+\end_inset
+
+ attribute to force the generated label to be lowercase:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <count:comments lowercase/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> <span class="count">1 comment</span>
 \end_layout
 
 \begin_layout Standard
-Use the if-any attribute to output nothing if the count is zero.
- This can be followed by an <else> tag to handle the empty case:
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if-any
+\end_layout
+
+\end_inset
+
+ attribute to output nothing if the count is zero.
+ This can be followed by an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+ tag to handle the empty case:
 \end_layout
 
 \begin_layout Standard
-<count:comments if-any/><else>There are no comments</else>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<count:comments if-any/>
+\end_layout
+
+\begin_layout LyX-Code
+<else>There are no comments</else>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<theme-stylesheet> 
 \end_layout
 
 \begin_layout Standard
-<theme-stylesheet> Renders a <link rel="Stylesheet" type="text/css"> to
- include the default stylesheet for the selected theme (select with <set-theme>).
+Renders a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<link rel="Stylesheet" type="text/css">
+\end_layout
+
+\end_inset
+
+ to include the default stylesheet for the selected theme (select with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-theme>
+\end_layout
+
+\end_inset
+
+).
  Included in the default pages.
 \end_layout
 
+\begin_layout Subsubsection*
+<You> 
+\end_layout
+
 \begin_layout Standard
-<You> Equivalent to <you titleize/>.
+Equivalent to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<you titleize/>
+\end_layout
+
+\end_inset
+
+.
  Yes it’s an abuse of Ruby naming conventions, but it’s so cute.
  
 \end_layout
 
-\begin_layout Standard
-<Your> Capitalized version of <your>
+\begin_layout Subsubsection*
+<Your> 
 \end_layout
 
 \begin_layout Standard
-<A-or-An> Capitalizd version of <a-or-an>
+Capitalized version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<your>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<A-or-An> 
 \end_layout
 
 \begin_layout Standard
+Capitalized version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a-or-an>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 <comma-list>
 \end_layout
 
 \begin_layout Standard
 Renders a collection of string joined with “, “, or some other string passed
- in the join attribute <view> calls this tag when called for a has_many
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+join
+\end_layout
+
+\end_inset
+
+ attribute 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ calls this tag when called for a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
  collection.
  By default calls:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <links-for-collection/>
 \end_layout
 
-\begin_layout Standard
-<links-for-collection> Renders a comma separated list of links (<a>), or
- “(none)” if the list is empty
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<links-for-collection> 
 \end_layout
 
 \begin_layout Standard
-<view> Provides a read-only view tailored to the type of the object being
- viewed.
+Renders a comma separated list of links (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+), or “(none)” if the list is empty
+\end_layout
+
+\begin_layout Subsubsection*
+<view> 
+\end_layout
+
+\begin_layout Standard
+Provides a read-only view tailored to the type of the object being viewed.
  <view> is a polymorphic tag which means that there are a variety of definitions
 , each one written for a particular type.
  For example there are views for Date, Time, Numeric, String and Boolean.
@@ -2950,7 +3455,7 @@ Usage Assuming the context is a blog post… Viewing a DateTime field:
 <view:created_at/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 -> <span class="view blog-post-created-at">June 09, 2008 15:36</span>
 \end_layout
 
@@ -2962,7 +3467,7 @@ Viewing a String field:
 <view:title/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 -> <span class="view blog-post-title">My First Blog Post</span>
 \end_layout
 
@@ -2974,7 +3479,7 @@ Viewing an Integer field:
 <view:comment_count/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 -> <span class="view blog-post-comment-count">4</span>
 \end_layout
 
@@ -2987,7 +3492,7 @@ Viewing the blog post itself results in a link to the blog post (using Rapid’s
 <view/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 -> <span class="view model:blog-post-1"> <a href="/blog_posts/1">My First
  Blog Post</a> </span>
 \end_layout
@@ -2999,11 +3504,18 @@ Additional Notes The wrapper tag is <span> unless the field type is Text
 \end_layout
 
 \begin_layout Standard
-<view:body/> -> <div class="view blog-post-body">This is my blog post body</div>
- <view:body inline/> 
+<view:body/> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+-> <div class="view blog-post-body">This is my blog post body</div> 
+\end_layout
+
+\begin_layout LyX-Code
+<view:body inline/> 
+\end_layout
+
+\begin_layout LyX-Code
 -> <span class="view blog-post-body">This is my blog post body</span>
 \end_layout
 
@@ -3011,7 +3523,7 @@ Additional Notes The wrapper tag is <span> unless the field type is Text
 <view:created_at block/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 -> <div class="view blog-post-created-at">June 09, 2008 15:36</div>
 \end_layout
 
@@ -3067,22 +3579,79 @@ Extra tags for semantic markup.
 \end_layout
 
 \begin_layout Standard
-<section-group> <section> <aside> <header> <footer>
+<section-group> 
 \end_layout
 
 \begin_layout Standard
-<section-group> Used as a semantic wrapper around a group of sections and
- asides.
+<section> 
+\end_layout
+
+\begin_layout Standard
+<aside> 
+\end_layout
+
+\begin_layout Standard
+<header> 
+\end_layout
+
+\begin_layout Standard
+<footer>
+\end_layout
+
+\begin_layout Standard
+<section-group> 
+\end_layout
+
+\begin_layout Standard
+Used as a semantic wrapper around a group of sections and asides.
  CSS layouts can be provided based on this structure.
 \end_layout
 
 \begin_layout Standard
-Parameters default Usage
+Parameters 
 \end_layout
 
 \begin_layout Standard
-<section-group> <section>My First Section</section> <section>My Second Section</
-section> <aside>My Aside</aside> </section-group>
+default 
+\end_layout
+
+\begin_layout Standard
+Usage
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<section-group> 
+\end_layout
+
+\begin_layout LyX-Code
+  <section>My First Section</section> 
+\end_layout
+
+\begin_layout LyX-Code
+  <section>My Second Section</section> 
+\end_layout
+
+\begin_layout LyX-Code
+  <aside>My Aside</aside> </section-group>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
