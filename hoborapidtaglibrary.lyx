@@ -3440,56 +3440,244 @@ status collapsed
 
 \begin_layout Standard
 Provides a read-only view tailored to the type of the object being viewed.
- <view> is a polymorphic tag which means that there are a variety of definitions
-, each one written for a particular type.
- For example there are views for Date, Time, Numeric, String and Boolean.
- The type specific view is enclosed in a wrapper tag (typically a <span>
- or <div>) with some useful classes automatically added.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ is a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+polymorphic
+\end_layout
+
+\end_inset
+
+ tag which means that there are a variety of definitions, each one written
+ for a particular type.
+ For example there are views for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Time
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Numeric
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Boolean
+\end_layout
+
+\end_inset
+
+.
+ The type specific view is enclosed in a wrapper tag (typically a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span>
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+) with some useful classes automatically added.
 \end_layout
 
 \begin_layout Standard
-Usage Assuming the context is a blog post… Viewing a DateTime field:
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Assuming the context is a blog post… Viewing a DateTime field:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <view:created_at/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout LyX-Code
 -> <span class="view blog-post-created-at">June 09, 2008 15:36</span>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Viewing a String field:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <view:title/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout LyX-Code
 -> <span class="view blog-post-title">My First Blog Post</span>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Viewing an Integer field:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <view:comment_count/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout LyX-Code
 -> <span class="view blog-post-comment-count">4</span>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Viewing the blog post itself results in a link to the blog post (using Rapid’s
- <a> tag):
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag):
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <view/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout LyX-Code
@@ -3498,21 +3686,151 @@ Viewing the blog post itself results in a link to the blog post (using Rapid’s
 \end_layout
 
 \begin_layout Standard
-Additional Notes The wrapper tag is <span> unless the field type is Text
- (different to String) where it is <div>.
- Use the inline or block attributes to force a <span> or a <div>, e.g.,:
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Additional Notes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The wrapper tag is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span>
+\end_layout
+
+\end_inset
+
+ unless the field type is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+
+ (different to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+
+) where it is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+.
+ Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+inline
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+block
+\end_layout
+
+\end_inset
+
+ attributes to force a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span>
+\end_layout
+
+\end_inset
+
+ or a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+, e.g.,:
 \end_layout
 
 \begin_layout Standard
-<view:body/> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<view:body/>
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout LyX-Code
 -> <div class="view blog-post-body">This is my blog post body</div> 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
 \begin_layout LyX-Code
-<view:body inline/> 
+<view:body inline/>
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -3520,57 +3838,281 @@ Additional Notes The wrapper tag is <span> unless the field type is Text
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <view:created_at block/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout LyX-Code
 -> <div class="view blog-post-created-at">June 09, 2008 15:36</div>
 \end_layout
 
-\begin_layout Standard
-Use the no-wrapper attribute to remove the wrapper tag completely.
+\begin_layout Itemize
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+no-wrapper
+\end_layout
+
+\end_inset
+
+ attribute to remove the wrapper tag completely.
  e.g.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <view:created_at no-wrapper/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> June 09, 2008 15:36
 \end_layout
 
-\begin_layout Standard
-<view for='ActiveRecord::Base'> Renders a link (<a>) to this
+\begin_layout Subsubsection*
+<view for='ActiveRecord::Base'> 
 \end_layout
 
 \begin_layout Standard
-<view for='Date'> Renders this.to_s(:long), or this.strftime(format) if the
- format attribute is given
+Renders a link (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+) to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<view for='Date'> 
 \end_layout
 
 \begin_layout Standard
-<view for='Time'> Renders this.to_s(:long), or this.strftime(format) if the
- format attribute is given
+Renders 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.to_s(:long)
+\end_layout
+
+\end_inset
+
+, or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.strftime(format)
+\end_layout
+
+\end_inset
+
+ if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+format
+\end_layout
+
+\end_inset
+
+ attribute is given
+\end_layout
+
+\begin_layout Subsubsection*
+<view for='Time'> 
 \end_layout
 
 \begin_layout Standard
-<view for='ActiveSupport::TimeWithZone'> Renders this.to_s(:long), or this.strftim
-e(format) if the format attribute is given
+Renders 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.to_s(:long)
+\end_layout
+
+\end_inset
+
+, or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.strftime(format)
+\end_layout
+
+\end_inset
+
+ if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+format
+\end_layout
+
+\end_inset
+
+ attribute is given
+\end_layout
+
+\begin_layout Subsubsection*
+<view for='ActiveSupport::TimeWithZone'>
 \end_layout
 
 \begin_layout Standard
-<view for='Numeric'> Renders this.to_s, or format % this if the format attribute
- is given
+Renders 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.to_s(:long)
+\end_layout
+
+\end_inset
+
+, or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.strftime(format)
+\end_layout
+
+\end_inset
+
+ if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+format
+\end_layout
+
+\end_inset
+
+ attribute is given
+\end_layout
+
+\begin_layout Subsubsection*
+<view for='Numeric'> 
 \end_layout
 
 \begin_layout Standard
-<view for='string'> Renders this with HTML escaping and newlines replaced
- with <br> tags <view for='boolean'> Renders ‘Yes’ for true and ‘No’ for
- false
+Renders 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.to_s
+\end_layout
+
+\end_inset
+
+, or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+format % this
+\end_layout
+
+\end_inset
+
+ if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+format
+\end_layout
+
+\end_inset
+
+ attribute is given
+\end_layout
+
+\begin_layout Subsubsection*
+<view for='string'> 
 \end_layout
 
 \begin_layout Standard
+Renders this with HTML escaping and newlines replaced with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<br>
+\end_layout
+
+\end_inset
+
+ tags 
+\end_layout
+
+\begin_layout Subsubsection*
+<view for='boolean'> 
+\end_layout
+
+\begin_layout Standard
+Renders ‘Yes’ for true and ‘No’ for false
+\end_layout
+
+\begin_layout Subsection*
 Rapid Document Tags
 \end_layout
 
@@ -3578,27 +4120,27 @@ Rapid Document Tags
 Extra tags for semantic markup.
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <section-group> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <section> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <aside> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <header> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <footer>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 <section-group> 
 \end_layout
 
@@ -3608,15 +4150,33 @@ Used as a semantic wrapper around a group of sections and asides.
 \end_layout
 
 \begin_layout Standard
-Parameters 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
 default 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 Usage
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3654,42 +4214,213 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-<section> A proposed HTML 5 tag for representing a generic document or applicati
-on section.
- Slightly more semantic than <div> for indicating document structure.
- For the time being, <section> is output as <div class="section">.
- In Hobo, <section> also has one other important behavior which is different
- to using <div> directly, when the content of the section is empty, the
- wrapper tag will disappear:
+\begin_layout Subsubsection*
+<section> 
 \end_layout
 
 \begin_layout Standard
-<section>My Section</section> <div class="section">My Section</div> <section><%
- # empty %></section>
+A proposed HTML 5 tag for representing a generic document or application
+ section.
+ Slightly more semantic than 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+ for indicating document structure.
+ For the time being, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section>
+\end_layout
+
+\end_inset
+
+ is output as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="section">
+\end_layout
+
+\end_inset
+
+.
+ In Hobo, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section>
+\end_layout
+
+\end_inset
+
+ also has one other important behavior which is different to using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+ directly, when the content of the section is empty, the wrapper tag will
+ disappear:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+<section>My Section</section>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+  <div class="section">My Section</div> 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+<section><% # empty %></section>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> (nothing is generated)
 \end_layout
 
-\begin_layout Standard
-<aside> A proposed HTML 5 semantic tag.
- Outputs <div class="aside"> and works in the same way as <section> with
- empty content.
+\begin_layout Subsubsection*
+<aside> 
 \end_layout
 
 \begin_layout Standard
-<header> A proposed HTML 5 semantic tag.
- Outputs <div class="header"> and works in the same way as <section> with
- empty content.
+A proposed HTML 5 semantic tag.
+ Outputs 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="aside">
+\end_layout
+
+\end_inset
+
+ and works in the same way as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section>
+\end_layout
+
+\end_inset
+
+ with empty content.
+\end_layout
+
+\begin_layout Subsubsection*
+<header> 
 \end_layout
 
 \begin_layout Standard
-<footer> A proposed HTML 5 semantic tag.
- Outputs <div class="footer"> and works in the same way as <section> with
- empty content.
- Rapid Editing
+A proposed HTML 5 semantic tag.
+ Outputs 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="header">
+\end_layout
+
+\end_inset
+
+ and works in the same way as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section>
+\end_layout
+
+\end_inset
+
+ with empty content.
+\end_layout
+
+\begin_layout Subsubsection*
+<footer> 
+\end_layout
+
+\begin_layout Standard
+A proposed HTML 5 semantic tag.
+ Outputs 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="footer">
+\end_layout
+
+\end_inset
+
+ and works in the same way as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section>
+\end_layout
+
+\end_inset
+
+ with empty content.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Rapid Editing
 \end_layout
 
 \begin_layout Standard
@@ -3702,46 +4433,200 @@ This area of Hobo has had less attention that the non-AJAX forms of late,
  so it’s lagging a little.
  There may be some rough edges.
  For example, the tags in this library do not (yet!) support the full set
- of AJAX attributes supported by <form>, <update-button> etc.
+ of AJAX attributes supported by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<update-button>
+\end_layout
+
+\end_inset
+
+ etc.
+\end_layout
+
+\begin_layout LyX-Code
+<has-many-editor> 
+\end_layout
+
+\begin_layout LyX-Code
+<belongs-to-editor> 
+\end_layout
+
+\begin_layout LyX-Code
+<select-one-editor>
+\end_layout
+
+\begin_layout LyX-Code
+<string-select-editor>
+\end_layout
+
+\begin_layout LyX-Code
+<boolean-checkbox-editor>
+\end_layout
+
+\begin_layout LyX-Code
+<integer-select-editor>
+\end_layout
+
+\begin_layout LyX-Code
+<editor>
+\end_layout
+
+\begin_layout Subsubsection*
+<has-many-editor> 
 \end_layout
 
 \begin_layout Standard
-<has-many-editor> <belongs-to-editor> <select-one-editor> <string-select-editor>
- <boolean-checkbox-editor> <integer-select-editor> <editor>
+Not implemented - you just get links to the items in the collection
+\end_layout
+
+\begin_layout Subsubsection*
+<belongs-to-editor> 
 \end_layout
 
 \begin_layout Standard
-<has-many-editor> Not implemented - you just get links to the items in the
- collection
+Polymorphic hook for defining type specific AJAX editors for belongs_to
+ associations.
+ The default is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select-one-editor>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<select-one-editor> 
 \end_layout
 
 \begin_layout Standard
-<belongs-to-editor> Polymorphic hook for defining type specific AJAX editors
- for belongs_to associations.
- The default is <select-one-editor>
+Provides a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
 \end_layout
 
-\begin_layout Standard
-<select-one-editor> Provides a <select> menu with an AJAX callback to update
- a belongs_to relationship when changed.
+\end_inset
+
+ menu with an AJAX callback to update a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ relationship when changed.
  By default the menu contains every record in the target model’s table.
- Attributes include-none: Should the menu include a “none” option (true/false).
- Defaults: false, or true if the association is nil at render-time.
- blank-message: The text for the “none” option.
- Default: “(No Product)” (or whatever the model name is) sort: Sort the
- options (true/false)? Default: false update: one or more DOM ID’s (comma
- separated string or an array) to be updated as part of the AJAX call.
+ 
 \end_layout
 
 \begin_layout Standard
-NOTE: Yes that is a DOM ID, not a part name.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+include-none: Should the menu include a “none” option (true/false).
+ Defaults: false, or true if the association is nil at render-time.
+ 
+\end_layout
+
+\begin_layout Itemize
+blank-message: The text for the “none” option.
+ Default: “(No Product)” (or whatever the model name is) 
+\end_layout
+
+\begin_layout Itemize
+sort: Sort the options (true/false)? Default: false 
+\end_layout
+
+\begin_layout Itemize
+update: one or more DOM ID’s (comma separated string or an array) to be
+ updated as part of the AJAX call.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+NOTE: Yes that is a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+DOM ID
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+not a
+\end_layout
+
+\end_inset
+
+ part name.
  A common source of confusion because by default the part name and DOM ID
  are the same.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<string-select-editor> 
+\end_layout
+
 \begin_layout Standard
-<string-select-editor> Provides a <select> menu with an AJAX callback to
- update a string field when changed.
+Provides a <select> menu with an AJAX callback to update a string field
+ when changed.
  Attributes values: The values for the menu options.
  Required Labels: A hash that can be used to customize the labels for the
  menu.
