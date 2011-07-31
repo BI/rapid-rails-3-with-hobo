@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #c8c8ff
 \index Index
 \shortcut idx
 \color #008000
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -65,7 +67,844 @@ logicalmkup
 \begin_body
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
+\begin_layout Plain Layout
+Note: This Book is for Hobo version 1.3 which is only compatible with Rails
+ version 3.
+ If you are using Rails 2, please use the previously published book, “Rapid
+ Rails with Hobo.”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Introductory Concepts and Comments 
+\end_layout
+
+\begin_layout Standard
+To encourage the widest audience possible, the following instructions are
+ tailored for Windows, which is still the most commonly used operating system
+ in the enterprise.
+ It has been our experience that Mac and Linux users can translate much
+ more easily to Windows vernacular than Windows users to Mac OS X or Linux.
+ 
+\end_layout
+
+\begin_layout Standard
+Although we include detailed instructions for configuring MySQL and Oracle
+ databases with Hobo, we encourage you to start the tutorials using the
+ lightweight and self-configuring database engine, SQLite3, which is the
+ default engine used by Hobo and Rails when in development mode.
+ This allows you to focus on learning Hobo, not configuring a database.
+ 
+\end_layout
+
+\begin_layout Standard
+Most books and online tutorials on Ruby and Rails are tailored to Mac users,
+ and pay lip service to Windows, assuming the reader is already facile with
+ web development tools and uses the MacBook Pro as the “weapon of choice”.
+ This book also assumes that many of you are trying out Hobo, Ruby, and
+ Rails for the first time and that a large percentage will also be using
+ either Windows XP, Vista, or Windows 7 on a day-to-day basis.
+ We don’t want that minor factor to limit your development enjoyment.
+ Mac and Linux users may also easily read this book, as we have provided
+ the necessary references for installation instructions in these environments.
+ 
+\end_layout
+
+\begin_layout Standard
+So--get your favorite web browser fired up, have a good cup of coffee handy,
+ and follow the instructions below.
+ 
+\end_layout
+
+\begin_layout Section*
+Installing Ruby, Rails and Hobo 
+\end_layout
+
+\begin_layout Itemize
+If you already have Ruby and Rails version 3 installed, you can skip to
+ step #3.
+ 
+\end_layout
+
+\begin_layout Itemize
+If you have a Mac with OS X Snow Leopard, Ruby 1.8.7 and Rails 2.3.5 are pre-install
+ed.
+ You can also skip to step #3 
+\end_layout
+
+\begin_layout Itemize
+If you are using a PC with Linux, see this link for installing Ruby and
+ Rails on Ubuntu and Debian Linux, and then skip to step #3: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://wiki.rubyonrails.org/getting-started/installation/linux-ubuntu"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+If you are using a PC with Windows XP or Windows 7, and are new to Ruby
+ and Rails, Start with Step #1 below: 
+\end_layout
+
+\begin_layout Paragraph*
+Step 1.
+ 
+\end_layout
+
+\begin_layout Standard
+Download the “Rails Installer” Kit from 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://railsinstaller.org"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure4.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Download Site for the Rails Installer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Step 2.
+ 
+\end_layout
+
+\begin_layout Standard
+Double-click on the file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+railsinstaller-1.0.4.exe
+\end_layout
+
+\end_inset
+
+ (as of February 14, 2011) to run the installer.
+ 
+\end_layout
+
+\begin_layout Standard
+The following will be installed for you through the visual wizard:
+\end_layout
+
+\begin_layout Itemize
+Ruby 1.8.7-p330 
+\end_layout
+
+\begin_layout Itemize
+Rails 3.0.3
+\end_layout
+
+\begin_layout Itemize
+Git 1.7.3.1
+\end_layout
+
+\begin_layout Itemize
+SQLite 3.7.3
+\end_layout
+
+\begin_layout Itemize
+DevKit
+\end_layout
+
+\begin_layout Standard
+(Again, these versions will change over time.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure5.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Rails Installer Setup Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 5: Rails Installer Setup Wizard
+\end_layout
+
+\begin_layout Standard
+Pressing the “Next” button will start the installation.
+ You will be prompted at each step to provide configuration information.
+\end_layout
+
+\begin_layout Standard
+The first configuration you will be prompted for is an installation directory.
+ A default one is provided to you, but in this tutorial we chose the option
+ to install all in the folder:
+\end_layout
+
+\begin_layout LyX-Code
+C:
+\backslash
+Rails3
+\end_layout
+
+\begin_layout Standard
+Figure 6: 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Choose the Installation Directory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the installation is complete, you will see a new menu option called
+ “RailsInstaller” and four sub-menus similar to the following: 
+\end_layout
+
+\begin_layout Standard
+If you select the sub-menu option “Command Prompt with Ruby and Rails” you
+ will see a command window that appears as follows:
+\end_layout
+
+\begin_layout Standard
+Note that a default “Sites” folder was created for you, and that there is
+ even a sample Rails 3 application included:
+\end_layout
+
+\begin_layout Standard
+Figure 7: Rails Installer Sample Application Folder
+\end_layout
+
+\begin_layout Standard
+Selecting the Interactive Ruby sub-menu brings up a console similar to the
+ following:
+\end_layout
+
+\begin_layout Standard
+For more information, please check out the following link:
+\end_layout
+
+\begin_layout Standard
+http://www.ruby-lang.org/en/documentation/quickstart/
+\end_layout
+
+\begin_layout Standard
+Selecting the RubyGems Documentation Server sub-menu option will start a
+ web server on port 8808 that provides hyperlinked information about each
+ gem you have installed:
+\end_layout
+
+\begin_layout Standard
+For more information, please check out the following link:
+\end_layout
+
+\begin_layout Standard
+http://docs.rubygems.org/ Click on the “Command Prompt with Ruby and Rails”
+ and type in the following command:
+\end_layout
+
+\begin_layout Standard
+C:
+\backslash
+Sites> gem env
+\end_layout
+
+\begin_layout Standard
+The “gem env” (gem environment) provides information that will later be
+ useful for debugging.
+ 
+\end_layout
+
+\begin_layout Standard
+Now type the “gem list” command:
+\end_layout
+
+\begin_layout Standard
+C:
+\backslash
+Sites> gem list
+\end_layout
+
+\begin_layout Standard
+The “gem list” command provides information about which ruby gems (modules)
+ are installed and what versions are available.
+\end_layout
+
+\begin_layout Standard
+Figure 8: List of Ruby Gems installed by the Rails Installer
+\end_layout
+
+\begin_layout Standard
+Now test to see the SQLite3 is available.
+ From the command line type “sqlite3”:
+\end_layout
+
+\begin_layout Standard
+Figure 9: Testing SQLite3
+\end_layout
+
+\begin_layout Standard
+For a nice introduction to the use of SQLite3, access the following link:
+\end_layout
+
+\begin_layout Standard
+http://www.sqlite.org/quickstart.html Note that the Rails Installer comes with
+ a sample application in the Sites/sample directory:
+\end_layout
+
+\begin_layout Standard
+Figure 10: The Sample Rails 3 app included by Rails Installer 
+\end_layout
+
+\begin_layout Standard
+Step 3.
+ Install Hobo.
+ 
+\end_layout
+
+\begin_layout Standard
+Type the following command at the command prompt: C:
+\backslash
+Sites> gem install hobo -v 1.3.0.pre26 --pre 
+\end_layout
+
+\begin_layout Standard
+Note: In the screen shots captured here we used a recent pre-release version
+ of Hobo.
+ Notice we were required to use the “—pre” command option to install it.
+\end_layout
+
+\begin_layout Standard
+When Hobo 1.3.0 is officially released, the installation command will be:
+ 
+\end_layout
+
+\begin_layout Standard
+C:
+\backslash
+Sites> gem install hobo -v 1.3.0
+\end_layout
+
+\begin_layout Standard
+Check your installation by using the “gem list” command to show all Ruby
+ gems that have been installed: 
+\end_layout
+
+\begin_layout Standard
+C:
+\backslash
+Sites> gem list 
+\end_layout
+
+\begin_layout Standard
+Figure 11: Sample console output from the "gem list" command after installing
+ Hobo
+\end_layout
+
+\begin_layout Standard
+Note: In the example above, 3.0.4 was installed by Hobo 1.3.0, as Rails 3.0.4
+ was defined as a dependency.
+ This may differ over time.
+\end_layout
+
+\begin_layout Standard
+If you find the need to start completely fresh, select the Uninstall RaisInstall
+er sub-menu option.
+ 
+\end_layout
+
+\begin_layout Standard
+Step 4.
+ Choose and configure a text editor (optional) You can work through the
+ tutorials in this book using Textpad or your favorite editor.
+ However, For years TextMate (http://macromates.com/) for the Mac has been
+ the most popular light-weight editor for Ruby and Rails, and offers many
+ productivity features.
+ There is an inexpensive “clone” for Windows called “E” that is very good
+ facsimile of TextMate.
+ You can download a 30-day evaluation version from http://www.e-texteditor.com/:
+\end_layout
+
+\begin_layout Standard
+Also take a look at two popular full Integrated Development environments
+ you might find useful:
+\end_layout
+
+\begin_layout Standard
+http://www.aptana.com/products/radrails http://netbeans.org/features/ruby/index.html
+\end_layout
+
+\begin_layout Standard
+Now you are ready to start using Hobo with the default database engine for
+ Rails and Hobo—SQLite.
+ Skip to Chapter 3 (Introductory Tutorials) unless you prefer to use MySQL
+ or Oracle.
+ Instructions for installation of these database engines are next.
+ Using MySQL with Hobo
+\end_layout
+
+\begin_layout Standard
+Step 1: Download and install MySQL For Mac OS X user, please see the following
+ URL: http://dev.mysql.com/doc/mysql-macosx-excerpt/5.0/en/mac-os-x-installation.htm
+l For Linux users: http://dev.mysql.com/doc/refman/5.0/en/linux-rpm.html For
+ Windows users: http://dev.mysql.com/downloads/mysql/#downloads
+\end_layout
+
+\begin_layout Standard
+Although the Community Server is free, you will need to create an account
+ before you download.
+ After creating an account, you will be directed to the download page:
+\end_layout
+
+\begin_layout Standard
+Click on one of the mirror sites to begin the download.
+ Then click the “Run” button when prompted to begin the installation:
+\end_layout
+
+\begin_layout Standard
+Choose the “Custom” option when prompted:
+\end_layout
+
+\begin_layout Standard
+Figure 15: Choose the “Custom” setup type Next choose the locations for
+ the server code and data files.
+ Note the default location in Windows is: C:
+\backslash
+Program Files
+\backslash
+MySQL
+\backslash
+MySQL Server 5.5
+\backslash
+
+\end_layout
+
+\begin_layout Standard
+We suggest a directory path that is more succinct:
+\end_layout
+
+\begin_layout Standard
+Figure 16: Specify the destination folder "C:
+\backslash
+MySQL" for the server software
+\end_layout
+
+\begin_layout Standard
+Specify the location of the data files used by MySQL databases:
+\end_layout
+
+\begin_layout Standard
+Figure 17: Specify the destination folder "C:
+\backslash
+MySQL
+\backslash
+data" to hold MySQL data
+\end_layout
+
+\begin_layout Standard
+Click “OK” to continue:
+\end_layout
+
+\begin_layout Standard
+Then Click “Next” to launch the MySQL Instance Configuration Wizard:
+\end_layout
+
+\begin_layout Standard
+Figure 18: The MySQL Instance Configuration Wizard
+\end_layout
+
+\begin_layout Standard
+Now click “Finish”:
+\end_layout
+
+\begin_layout Standard
+The next step is to choose instance configuration option.
+ We recommend choosing the “Standard Configuration” option.
+\end_layout
+
+\begin_layout Standard
+Click “Next” to obtain further configuration options.
+ Select both “Install As Windows Service” and “Include Bin Directory in
+ Windows PATH”:
+\end_layout
+
+\begin_layout Standard
+To make the application creation process for MySQL similar to using SQLite,
+ un-click the default checkbox for “Modify Security Settings.” (This will
+ remove the need to provide the MySQL “root” user password when using the
+ Hobo setup wizard:
+\end_layout
+
+\begin_layout Standard
+Click “Next” to continue.
+ A status window similar to the following will be displayed:
+\end_layout
+
+\begin_layout Standard
+Click “Finish” to complete the installation.
+\end_layout
+
+\begin_layout Standard
+You should now see a new “MySQL” menu item in, from which you can launch
+ the MySQL Command Line Client:
+\end_layout
+
+\begin_layout Standard
+The Command Line Client will appear similar to the following: 
+\end_layout
+
+\begin_layout Standard
+Because we opted to use the default MySQL security settings in our installation
+ (no password requirement for the “root” user), simply press [Enter] when
+ prompted for a password to access the MySQL command prompt:
+\end_layout
+
+\begin_layout Standard
+Step 2: Install the Ruby Gem for MySQL 5.5 The next step is to install the
+ following Ruby gem for connecting to MySQL 5.5: C:
+\backslash
+Sites
+\backslash
+tutorials> gem install mysql2 -v 0.2.7 -- '--with-mysql-lib="C;
+\backslash
+MySQL
+\backslash
+include"' If you installed MySQL in a different location you may have to
+ adjust the previous command to reflect the appropriate location in your
+ system.
+ You may run into the issue in Windows systems with having the “libmysql.dll”
+ file in a path that the mysql2 Ruby gem can access:
+\end_layout
+
+\begin_layout Standard
+You will find this DLL in the following MySQL directory:
+\end_layout
+
+\begin_layout Standard
+Copy this file and place it in the Ruby “bin” directory:
+\end_layout
+
+\begin_layout Standard
+Step 3: Generate a Hobo MySQL Application from the Command Line Now you
+ can generate a Hobo MySQL app using the following command: C:
+\backslash
+Sites
+\backslash
+tutorials> hobo new one_table –setup –d mysql
+\end_layout
+
+\begin_layout Standard
+This will create the “one_table” application and run the migrations necessary
+ for the default “user” Hobo user model.
+ Now edit the database.yml file to see what was created automatically: 
+\end_layout
+
+\begin_layout Standard
+Figure 19: The automatically created database.yml file
+\end_layout
+
+\begin_layout Standard
+Notice it is pre-filled with the proper parameter structure for MySQL.
+ Fire up your MySQL command line again and use the “show databases” command
+ to see what was created:
+\end_layout
+
+\begin_layout Standard
+Notice that Hobo and Rails make some assumptions about the naming of the
+ development and test database names.
+ You can change these as needed, but is useful to understand the default
+ convention used Rails, which is what Hobo uses.
+ Using Oracle with Hobo
+\end_layout
+
+\begin_layout Standard
+We will discuss the following two configuration options: 1.
+ Use an existing Oracle database 2.
+ Download and install a fresh Oracle database For either of these options
+ you will first need to install the following two ruby gems: C:
+\backslash
+Sites
+\backslash
+tutorials> gem install ruby-oci8 C:
+\backslash
+Sites
+\backslash
+tutorials> gem install activerecord-oracle_enhanced-adapter 
+\end_layout
+
+\begin_layout Standard
+Figure 20: Console output after installing Oracle gems for Ruby and Rails
+\end_layout
+
+\begin_layout Standard
+Option 1 This is the typical scenario in a development shop that is already
+ using Oracle and you have the Oracle client software already configured
+ for other tools such as SQL Plus, Toad, or SQL Developer.
+ You probably have different database “instances” for development, test,
+ and production systems.
+ If you are lucky you might even have rights to create a new database user
+ (i.e., schema) in your development environment.
+ In most large shops you will probably need to request that the database
+ administrator (DBA) create one for you.
+ Note: The terms “user” and “schema” really are referring to the same thing
+ and are often used interchangeably by experienced Oracle developers.
+ There is a long history to this that will confuse users of other database
+ engines where users and schemas are not equivalent.
+\end_layout
+
+\begin_layout Standard
+As you learned in earlier tutorials, the database.yml file is the place to
+ configure your database connections.
+ Creating a new application using the hobo command with the “d” switch allows
+ you to stipulate which database you will be using, and allows Hobo and
+ Rails to build a database.yml template tailored to your database.
+ C:
+\backslash
+Sites
+\backslash
+tutorials> hobo new two_table –d oracle 
+\end_layout
+
+\begin_layout Standard
+This is what the database.yml file looks like without modification:
+\end_layout
+
+\begin_layout Standard
+Figure 21: The generated database.yml file for Oracle
+\end_layout
+
+\begin_layout Standard
+Since we recommended using the “oracle_enhanced” adapter, we will need to
+ replace the plain “oracle” with “oracle_enhanced” Also, when we used SQLite
+ as the default database, Hobo and Rails automatically created a database
+ called “two_table_development”.
+ When you use an existing Oracle database, you will need to enter that database
+ name instead of “two_table_development” and create an Oracle user (schema)
+ called “two_table_development”.
+ The changed entries in the database.yml file will look like the following:
+ development: adapter: oracle_enhanced database: our_development_server_name
+ username: two_table_development password: hobo
+\end_layout
+
+\begin_layout Standard
+Once you update the database.yml file, and save it, you can then run the
+ database migrations (“hobo g migration”) as you will see in Tutorial 1.
+ 
+\end_layout
+
+\begin_layout Standard
+Option 2 In this part of the tutorial we will walk you through the steps
+ of downloading, installing, and configuring Oracle 10g XE (Express Edition),
+ which is a fully functional version of Oracle with no licensing requirements.
+ It comes with administration tools accessible via a web browser.
+ 
+\end_layout
+
+\begin_layout Standard
+Register for a free membership in the Oracle Technology Network (OTN) and
+ then go to the following URL to download Oracle Database 10g Release 2
+ Express Edition for Windows:
+\end_layout
+
+\begin_layout Standard
+http://www.oracle.com/technology/software/products/database/xe/htdocs/102xewinsoft.
+html
+\end_layout
+
+\begin_layout Standard
+Figure 22: Oracle database install download site
+\end_layout
+
+\begin_layout Standard
+Figure 23: Running the Oracle XE installation
+\end_layout
+
+\begin_layout Standard
+Figure 24: Specifying the database passwords
+\end_layout
+
+\begin_layout Standard
+Figure 25: Launch the Database home page 
+\end_layout
+
+\begin_layout Standard
+Figure 26: Log is as SYS to configure your database
+\end_layout
+
+\begin_layout Standard
+Figure 27: Creating a schema/user to use with Hobo
+\end_layout
+
+\begin_layout Standard
+Figure 28: The tnsnames.ora file created during installation
+\end_layout
+
+\begin_layout Standard
+Note that you will be using the “XE” instance unless you change the name.
+ C:
+\backslash
+Sites
+\backslash
+tutorials> hobo new two_table –d oracle Note: The following instructions
+ and screen shots will make sense AFTER you work through the introductory
+ tutorials.
+\end_layout
+
+\begin_layout Standard
+Figure 29: Log into Oracle to view the created table
+\end_layout
+
+\begin_layout Standard
+Figure 30: Access the Oracle Object Browser
+\end_layout
+
+\begin_layout Standard
+Figure 31: Review the User table from within Oracle
+\end_layout
+
+\begin_layout Standard
+Figure 32: Review the Indexes view for Users
+\end_layout
+
+\begin_layout Standard
+Figure 33: Review the Constraints view for User
+\end_layout
+
+\begin_layout Standard
+Installation Summary What you have now is: The Ruby language interpreter,
+ which in this case is a Windows executable.
+ This engine is called MRI for “Matz’s Ruby Interpreter”.
+ http://en.wikipedia.org/wiki/Ruby_MRI.
+ There are a variety of other interpreters and implementations available,
+ including JRuby http://jruby.org/ and Enterprise Ruby (http://www.rubyenterprisee
+dition.com/), which the authors have used successfully with Hobo.
+ The upcoming MagLev (http://maglev.gemstone.com/status/index.html) implementation
+ looks very promising for large-scale applications.
+ The Ruby on Rails (RoR) Model-View-Controller (MVC) framework which is
+ written using Ruby.
+ The Hobo framework which enhances, and in some cases replaces, RoR functionalit
+y, particularly on the View and Controller portions of the (MVC) web development
+ framework.
+ Hobo is written in Ruby.
+ One of Hobo’s secret weapons is the powerful and succinct DRYML (Don’t
+ Repeat Yourself Markup Language).
+ The SQLite3 database and related Ruby gem (sqlite3-ruby) that makes prototyping
+ quick and painless.
+ SQLite3 is a robust and widely used database engine for embedded systems
+ and is the repository used by the Firefox browser.
+ The Webrick HTTP/web server written in Ruby.
+ This is a basic server for desktop development work.
+ Another popular one is Mongrel (Ruby 1.8 only) and Thin.
+ For production implementation there are a variety of options, including
+ the popular Phusion Passenger (aka “mod_rails”), which can be used in conjuncti
+on with the Apache HTTP server.
+ http://www.modrails.com/.
+ With JRuby you can run on Tomcat, JBoss, Glassfish, etc.
+ A variety of add-on gems (ruby modules or “libraries”) that each framework
+ has included as “dependencies”.
+ For example, will_paginate is used by Hobo for pagination of lists on web
+ pages.
+ Now you are ready for the tutorials!
 \end_layout
 
 \end_body
