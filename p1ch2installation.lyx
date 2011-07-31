@@ -318,10 +318,29 @@ The first configuration you will be prompted for is an installation directory.
  to install all in the folder:
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
 \begin_layout LyX-Code
 C:
 \backslash
 Rails3
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
