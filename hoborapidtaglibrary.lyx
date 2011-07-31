@@ -3893,7 +3893,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Code
+\begin_layout LyX-Code
 <view:created_at no-wrapper/>
 \end_layout
 
@@ -4206,7 +4206,11 @@ status open
 \end_layout
 
 \begin_layout LyX-Code
-  <aside>My Aside</aside> </section-group>
+  <aside>My Aside</aside> 
+\end_layout
+
+\begin_layout LyX-Code
+</section-group>
 \end_layout
 
 \end_inset
@@ -4291,7 +4295,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout LyX-Code
 <section>My Section</section>
 \end_layout
 
@@ -4301,7 +4305,7 @@ status open
 \end_layout
 
 \begin_layout LyX-Code
-  <div class="section">My Section</div> 
+  -> <div class="section">My Section</div> 
 \end_layout
 
 \begin_layout Standard
@@ -4891,7 +4895,7 @@ Polymorphic tag that selects an appropriate in-place-editor according to
 status collapsed
 
 \begin_layout Plain Layout
-<edit>
+<editor>
 \end_layout
 
 \end_inset
@@ -4996,7 +5000,7 @@ status collapsed
 \begin_inset CommandInset href
 LatexCommand href
 name "hoboyui"
-target "http://github.com/tablatom/hoboyui plugin"
+target "http://github.com/tablatom/hoboyui_plugin"
 
 \end_inset
 
@@ -5670,7 +5674,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout LyX-Code
 <submit image="/images/go.png"/>
 \end_layout
 
@@ -5752,263 +5756,1528 @@ method: the name of the web-method to call label: the label on the button
 \begin_layout Standard
 Provides an AJAX button to send a RESTful update or “PUT” to the server.
  i.e., to update one or more fields of a record.
- Note that unlike similar tags, <update-button> does not support both AJAX
- and non-AJAX modes at this time.
+ Note that unlike similar tags, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<update-button>
+\end_layout
+
+\end_inset
+
+ does not support both AJAX and non-AJAX modes at this time.
  It only does AJAX.
- <update-button> supports all of the standard AJAX attributes (see the main
- taglib documentation for Rapid Forms).
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<update-button>
+\end_layout
+
+\end_inset
+
+ supports all of the standard AJAX attributes (see the main taglib documentation
+ for Rapid Forms).
 \end_layout
 
 \begin_layout Standard
-Attributes label: The label on the button.
- fields: A hash with new field values pairs to update the resource with.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Attributes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+label: The label on the button.
+ 
+\end_layout
+
+\begin_layout Itemize
+fields: A hash with new field values pairs to update the resource with.
  The items in the hash will be converted to HTTP parameters.
- params: Another hash with additional HTTP parameters to include in the
- AJAX request
+ 
+\end_layout
+
+\begin_layout Itemize
+params: Another hash with additional HTTP parameters to include in the AJAX
+ request
+\end_layout
+
+\begin_layout Subsubsection*
+<delete-button> 
 \end_layout
 
 \begin_layout Standard
-<delete-button> Provides either an AJAX or non-AJAX delete button to send
- a RESTful “DELETE”.
+Provides either an AJAX or non-AJAX delete button to send a RESTful “DELETE”.
  The context should be a record for which you to want provide a delete button.
 \end_layout
 
 \begin_layout Standard
 The Rapid Library has a convention of marking (in the output HTML, using
  a special CSS class) elements as “object elements”, with the class and
- ID of the ActiveRecord object that they represent.
- <delete-button> assumes it is placed inside such an element, and will automatic
-ally find the right element to remove (fade out) from the DOM.
- The <collection> tag adds this metadata (CSS class) automatically, so <delete-b
-utton> works well when used inside a <collection>.
+ ID of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord
+\end_layout
+
+\end_inset
+
+ object that they represent.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<delete-button>
+\end_layout
+
+\end_inset
+
+ assumes it is placed inside such an element, and will automatically find
+ the right element to remove (fade out) from the DOM.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag adds this metadata (CSS class) automatically, so 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<delete-button>
+\end_layout
+
+\end_inset
+
+ works well when used inside a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+.
  This is a Clever Trick, which needs to be revisited and perhaps simplified.
- If used within a <collection>, <delete-button> also knows how to add an
- “empty message” such as “no comments to display” when you delete the last
- item.
+ If used within a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<delete-button>
+\end_layout
+
+\end_inset
+
+ also knows how to add an “empty message” such as “no comments to display”
+ when you delete the last item.
  Clever Tricks abound.
- Current limitation: There is no support for the AJAX callbacks at this
- time.
- All the standard AJAX attributes except the callbacks are supported (see
- the main taglib documentation for Rapid Forms).
+ 
 \end_layout
 
 \begin_layout Standard
-Attributes label: The label for the button.
- Default: “Remove” in-place: delete in place (AJAX)? Default: true, or false
- if the record to be deleted is the same as the top level context of the
- page image: URL of an image for the button.
- Changes the rendered tag from: <input type='button'> to <input type='image'
- src='...'> fade: Perform the fade effect (true/false)? Default: true
+Current limitation: There is no support for the AJAX callbacks at this time.
+ All the standard AJAX attributes 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+except the callbacks
+\end_layout
+
+\end_inset
+
+ are supported (see the main taglib documentation for Rapid Forms).
 \end_layout
 
 \begin_layout Standard
-<create-button> Provides an AJAX create button that will send a RESTful
- “POST” to the server to create a new resource.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+label: The label for the button.
+ Default: “Remove” 
+\end_layout
+
+\begin_layout Itemize
+in-place: delete in place (AJAX)? Default: true, or false if the record
+ to be deleted is the same as the top level context of the page 
+\end_layout
+
+\begin_layout Itemize
+image: URL of an image for the button.
+ Changes the rendered tag from: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='button'>
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='image' src='...'>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+fade: Perform the fade effect (true/false)? Default: true
+\end_layout
+
+\begin_layout Subsubsection*
+<create-button> 
+\end_layout
+
+\begin_layout Standard
+Provides an AJAX create button that will send a RESTful “POST” to the server
+ to create a new resource.
  All of the standard AJAX attributes are supported (see the main taglib
  documentation for Rapid Forms).
 \end_layout
 
 \begin_layout Standard
-Attributes model: The class to instantiate, pass either the class name or
- the class object.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Attributes 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<select-one> A <select> menu from which the user can choose the target record
- for a belongs_to association.
- This is the default input that Rapid uses for belongs_to associations.
- The menu is constructed using the to_s representation of the records.
+model: The class to instantiate, pass either the class name or the class
+ object.
+\end_layout
+
+\begin_layout Subsubsection*
+<select-one> 
 \end_layout
 
 \begin_layout Standard
-Attributes include-none - whether to include a ‘none’ option (i.e.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ menu from which the user can choose the target record for a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ association.
+ This is the default input that Rapid uses for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ associations.
+ The menu is constructed using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+to_s
+\end_layout
+
+\end_inset
+
+ representation of the records.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+include-none: whether to include a ‘none’ option (i.e.
  set the foreign key to null).
- Defaults to false blank-message - the message for the ‘none’ option.
- Defaults to “(No <model-name>)”, e.g.
- “(No Product)” options - an array of records to include in the menu.
- Defaults to the all the records in the target table that match any :conditions
- declared on the belongs_to (subject to limit) limit - if options is not
- specified, this limits the number of records.
- Default: 100 text_method - The method to call on each record to get the
- text for the option.
+ Defaults to false 
+\end_layout
+
+\begin_layout Itemize
+blank-message: the message for the ‘none’ option.
+ Defaults to “(No 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<model-name>
+\end_layout
+
+\end_inset
+
+)”, e.g.
+ “(No Product)” 
+\end_layout
+
+\begin_layout Itemize
+options: an array of records to include in the menu.
+ Defaults to the all the records in the target table that match any 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:conditions
+\end_layout
+
+\end_inset
+
+ declared on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ (subject to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+limit
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+limit: if options is not specified, this limits the number of records.
+ Default: 100 
+\end_layout
+
+\begin_layout Itemize
+text_method: The method to call on each record to get the text for the option.
  Multiple methods are supported, i.e., “institution.name”
 \end_layout
 
 \begin_layout Standard
-See Also For situations where there are too many target records to practically
- include in a menu, <name-one> provides an autocompleter which would be
- more suitable.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+See Also
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<name-one> An <input type="text"> with auto-completion.
- Allows the user to chose the target of a belongs_to association by name.
+For situations where there are too many target records to practically include
+ in a menu, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name-one>
+\end_layout
+
+\end_inset
+
+ provides an autocompleter which would be more suitable.
+\end_layout
+
+\begin_layout Subsubsection*
+<name-one> 
+\end_layout
+
+\begin_layout Standard
+An 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type="text">
+\end_layout
+
+\end_inset
+
+ with auto-completion.
+ Allows the user to chose the target of a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ association by name.
  This tag relies on an autocompleter being defined in a controller.
  A simple example:
 \end_layout
 
 \begin_layout Standard
-<form with="&ProjectMembership.new"> <name-one:user> </form>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<form with="&ProjectMembership.new">
+\end_layout
+
+\begin_layout LyX-Code
+  <name-one:user> 
+\end_layout
+
+\begin_layout LyX-Code
+</form>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-class ProjectMembership < ActiveRecord::Base hobo_model belongs_to :user
- end
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+class ProjectMembership < ActiveRecord::Base 
+\end_layout
+
+\begin_layout LyX-Code
+  hobo_model belongs_to :user 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-class User < ActiveRecord::Base hobo_user_model has_many :project_memberships,
- :accessible => true, :dependent => :destroy end
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+class User < ActiveRecord::Base 
+\end_layout
+
+\begin_layout LyX-Code
+  hobo_user_model has_many :project_memberships, :accessible => true, :dependent
+ => :destroy 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-class UsersController < ApplicationController autocomplete end
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+class UsersController < ApplicationController 
+\end_layout
+
+\begin_layout LyX-Code
+  autocomplete 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The route used by the autocompleter looks something like /users/complete_name.
- The first part of this route is specified by the complete-target attribute,
- and the second part is specified by the completer attribute.
+The route used by the autocompleter looks something like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/users/complete_name
+\end_layout
+
+\end_inset
+
+.
+ The first part of this route is specified by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+complete-target
+\end_layout
+
+\end_inset
+
+ attribute, and the second part is specified by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+completer
+\end_layout
+
+\end_inset
+
+ attribute.
  
 \end_layout
 
 \begin_layout Standard
-complete-target specifies the controller for the route.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+complete-target
+\end_layout
+
+\end_inset
+
+ specifies the controller for the route.
  It can be specified by either supplying a model class or a model.
  If a model is supplied, the id of the model is passed as a parameter to
  the controller.
- (?id=7, for example) The default for this attribute is the class of the
- context.
- In other words, the class that contains the has_many / has_one, not the
- class with the belongs_to.
+ (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+?id=7
+\end_layout
+
+\end_inset
+
+, for example) The default for this attribute is the class of the context.
+ In other words, the class that contains the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ / 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_one
+\end_layout
+
+\end_inset
+
+, not the class with the belongs_to.
  
 \end_layout
 
 \begin_layout Standard
-completer specifies the action for the route.
- name-one prepends complete_ to the value given here.
- This should be exactly the same as the first parameter to autocomplete
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+completer
+\end_layout
+
+\end_inset
+
+ specifies the action for the route.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name-one
+\end_layout
+
+\end_inset
+
+ prepends 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+complete_
+\end_layout
+
+\end_inset
+
+ to the value given here.
+ This should be exactly the same as the first parameter to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+autocomplete
+\end_layout
+
+\end_inset
+
  in your controller.
- As an example: autocomplete :email_address would correspond to completer="email
-_address".
+ As an example: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+autocomplete :email_address
+\end_layout
+
+\end_inset
+
+ would correspond to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+completer="email_address"
+\end_layout
+
+\end_inset
+
+.
  The default for this attribute is the name field for the model being searched,
- which is usually name, but not always.
- The query string is passed to the controller in the query parameter.
- (?query=hello for example).
+ which is usually 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+, but not always.
+ The query string is passed to the controller in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+query
+\end_layout
+
+\end_inset
+
+ parameter.
+ (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+?query=hello
+\end_layout
+
+\end_inset
+
+ for example).
+\end_layout
+
+\begin_layout Subsubsection*
+<select-input> 
 \end_layout
 
 \begin_layout Standard
-<select-input> A <select> menu input.
- This tag differs from <select-menu> only in that it adds the correct name
- attribute for the current field, and selected default to this.
- Attributes options - an array of options suitable to be passed to the Rails
- options_for_select helper.
- selected - the value (from the options array) that should be initially
- selected.
- Defaults to this first-option - a string to be used for an extra option
- in the first position.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ menu input.
+ This tag differs from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select-menu>
+\end_layout
+
+\end_inset
+
+ only in that it adds the correct 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ attribute for the current field, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+selected
+\end_layout
+
+\end_inset
+
+ default to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+options: an array of options suitable to be passed to the Rails 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options_for_select
+\end_layout
+
+\end_inset
+
+ helper.
+ 
+\end_layout
+
+\begin_layout Itemize
+selected: the value (from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options
+\end_layout
+
+\end_inset
+
+ array) that should be initially selected.
+ Defaults to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+first-option: a string to be used for an extra option in the first position.
  E.g.
- “Please choose…” first-value - the value to be used with the first-option.
+ “Please choose…” 
+\end_layout
+
+\begin_layout Itemize
+first-value: the value to be used with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first-option
+\end_layout
+
+\end_inset
+
+.
  Typically not used, meaning the option has a blank value.
 \end_layout
 
+\begin_layout Subsubsection*
+<error-messages> 
+\end_layout
+
 \begin_layout Standard
-<error-messages> Renders a readable list of error messages following a form
- submission.
- Expects the errors to be in this.errors.
+Renders a readable list of error messages following a form submission.
+ Expects the errors to be in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.errors
+\end_layout
+
+\end_inset
+
+.
  Renders nothing if there are no errors.
- Parameters heading ul li 
+ 
 \end_layout
 
 \begin_layout Standard
-<select-many> An input for has_many :through associations that lets the
- user chose the items from a <select> menu.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+heading 
+\end_layout
+
+\begin_layout Itemize
+ul 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+li 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+<select-many>
 \end_layout
 
 \begin_layout Standard
-To use this tag, the model of the items the user is choosing must have unique
- names, and the Parameters proto-item proto-hidden proto-remove-button item
- hidden remove-button 
+An input for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+ associations that lets the user chose the items from a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ menu.
 \end_layout
 
 \begin_layout Standard
-<after-submit> Used inside a form to specify where to redirect after successful
- submission.
- This works by inserting a hidden field called after_submit which is used
- by Hobo if present to perform a redirect after the form submission.
+To use this tag, the model of the items the user is choosing 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+must
+\end_layout
+
+\end_inset
+
+ have unique names, and the 
 \end_layout
 
 \begin_layout Standard
-Usage Use the stay-here attribute to remain on the current page: <form>
- <after-submit stay-here/> ...
- </form> Use the go-back option to return to the previous page: <form> <after-su
-bmit go-back/> ...
- </form> Use the uri option to specify a redirect location: <form> <after-submit
- uri="/admin"/> ...
- </form>
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+proto-item 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+proto-hidden 
+\end_layout
+
+\begin_layout Itemize
+proto-remove-button 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+item 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+hidden 
+\end_layout
+
+\begin_layout Itemize
+remove-button 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+<after-submit> 
 \end_layout
 
 \begin_layout Standard
-<select-menu> A simple wrapper around the <select> tag and options_for_select
+Used inside a form to specify where to redirect after successful submission.
+ This works by inserting a hidden field called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+after_submit
+\end_layout
+
+\end_inset
+
+ which is used by Hobo if present to perform a redirect after the form submissio
+n.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+stay-here
+\end_layout
+
+\end_inset
+
+ attribute to remain on the current page: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<form> 
+\end_layout
+
+\begin_layout LyX-Code
+  <after-submit stay-here/> ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</form> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use the go-back option to return to the previous page: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<form> 
+\end_layout
+
+\begin_layout LyX-Code
+  <after-submit go-back/> ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</form> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Use the uri option to specify a redirect location: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<form> 
+\end_layout
+
+\begin_layout LyX-Code
+  <after-submit uri="/admin"/> ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</form>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<select-menu> 
+\end_layout
+
+\begin_layout Standard
+A simple wrapper around the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ tag and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options_for_select
+\end_layout
+
+\end_inset
+
  helper
 \end_layout
 
 \begin_layout Standard
-Parameters default 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+default 
 \end_layout
 
 \begin_layout Standard
-Attributes options - an array of options suitable to be passed to the Rails
- options_for_select helper.
- selected - the value (from the options array) that should be initially
- selected.
- Defaults to this first-option - a string to be used for an extra option
- in the first position.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+options: an array of options suitable to be passed to the Rails 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options_for_select
+\end_layout
+
+\end_inset
+
+ helper.
+ 
+\end_layout
+
+\begin_layout Itemize
+selected: the value (from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options
+\end_layout
+
+\end_inset
+
+ array) that should be initially selected.
+ Defaults to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+first-option: a string to be used for an extra option in the first position.
  E.g.
- “Please choose…” first-value - the value to be used with the first-option.
+ “Please choose…” 
+\end_layout
+
+\begin_layout Itemize
+first-value: the value to be used with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first-option
+\end_layout
+
+\end_inset
+
+.
  Typically not used, meaning the option has a blank value.
 \end_layout
 
+\begin_layout Subsubsection*
+<check-many> 
+\end_layout
+
 \begin_layout Standard
-<check-many> Renders a <ul> list of checkboxes, one for each of the potential
- target in a has_many association.
+Renders a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+ list of checkboxes, one for each of the potential target in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ association.
  The user can check the items they wish to have associated.
  A typical use might be selecting categories for a blog post.
 \end_layout
 
 \begin_layout Standard
-Parameters default li name Attributes options - an array of models that
- may be added to the collection disabled - if true, sets the disabled flag
- on all check boxes.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+li 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+name 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+options: an array of models that may be added to the collection 
+\end_layout
+
+\begin_layout Itemize
+disabled: if true, sets the disabled flag on all check boxes.
+\end_layout
+
+\begin_layout Subsubsection*
+<hidden-id-field>
 \end_layout
 
 \begin_layout Standard
-<hidden-id-field> Renders an <input type='hidden'> for the id field of the
- current context
+Renders an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='hidden'>
+\end_layout
+
+\end_inset
+
+ for the id field of the current context
+\end_layout
+
+\begin_layout Subsubsection*
+<input-many> 
 \end_layout
 
 \begin_layout Standard
-<input-many> Creates a sub-section of the form which the user can repeat
- using (+) and (-) buttons, in order to allow an entire has_many collection
- to be created/edited in a single form.
- This tag is very different from tags like <select-many> and <check-many>
+Creates a sub-section of the form which the user can repeat using (+) and
+ (-) buttons, in order to allow an entire 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ collection to be created/edited in a single form.
+ 
+\end_layout
+
+\begin_layout Standard
+This tag is very different from tags like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select-many>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<check-many>
+\end_layout
+
+\end_inset
+
  in that: Those tags are used to chose existing records to include in the
- association, while <input-many> is used to actually create or edit the
- records in the association.
+ association, while 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input-many>
+\end_layout
+
+\end_inset
+
+ is used to actually create or edit the records in the association.
 \end_layout
 
 \begin_layout Standard
-Parameters default remove-item add-item default add-item 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_layout Itemize
+remove-item 
+\end_layout
+
+\begin_layout Itemize
+add-item 
 \end_layout
 
 \begin_layout Standard
-Example Say you are creating a new Category in your online shop, and you
- want to create some initial products in the same form, you can add the
- following to your form:
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<input-many:products><field-list fields="name, price"/></input-many>
+Say you are creating a new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Category
+\end_layout
+
+\end_inset
+
+ in your online shop, and you want to create some initial products 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+in the same form
+\end_layout
+
+\end_inset
+
+, you can add the following to your form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<input-many:products>
+\end_layout
+
+\begin_layout LyX-Code
+  <field-list fields="name, price"/>
+\end_layout
+
+\begin_layout LyX-Code
+</input-many>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6018,38 +7287,186 @@ The body of the tag will be repeated for each of the current records in
 \end_layout
 
 \begin_layout Standard
-Attributes fields: If you do not specify any content for the input-many,
- a <field-list> is rendered.
- This attribute is passed through to the <field-list>
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+fields: If you do not specify any content for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+input-many
+\end_layout
+
+\end_inset
+
+, a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ is rendered.
+ This attribute is passed through to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<input-all> 
 \end_layout
 
 \begin_layout Standard
-<input-all> Renders a sub-section of a form with fields for every record
- in a has_many association.
- This is similar to <input-many> except there is no ability to add and remove
- items (i.e.
+Renders a sub-section of a form with fields for every record in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ association.
+ This is similar to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input-many>
+\end_layout
+
+\end_inset
+
+ except there is no ability to add and remove items (i.e.
  no (+) and (-) buttons).
 \end_layout
 
-\begin_layout Standard
-<input> Provides an editable control tailored to the type of the object
- in context.
- <input> tags should be used within a <form>.
- <input> is a polymorphic tag which means that there are a variety of definition
-s, each one written for a particular type.
- For example there are inputs for text, boolean, password, date, datetime,
- integer, float, string and more.
+\begin_layout Subsubsection*
+<input> 
 \end_layout
 
 \begin_layout Standard
-Usage The tag behaves as a regular HTML input if the type attribute is given:
+Provides an editable control tailored to the type of the object in context.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ tags should be used within a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ is a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+polymorphic
+\end_layout
+
+\end_inset
+
+ tag which means that there are a variety of definitions, each one written
+ for a particular type.
+ For example there are inputs for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+text, boolean, password, date, datetime, integer, float, string
+\end_layout
+
+\end_inset
+
+ and more.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The tag behaves as a regular HTML input if the type attribute is given:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <input type="text" name="my_input"/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> Output is exactly as provided, untouched by Rapid
 \end_layout
 
@@ -6059,146 +7476,532 @@ If no type attribute is given then the context is used.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <input:title/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 -> <input id="blog_post[name]" class="string blog-post-name" type="text"
  value="My Blog Post" name="blog_post[name]"/>
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <input:created_at/>
 \end_layout
 
-\begin_layout Standard
-<select id="blog_post_created_at_year" name="blog_post[created_at][year]">
- ...
- </select>
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+-> <select id="blog_post_created_at_year" name="blog_post[created_at][year]">
+ 
+\end_layout
+
+\begin_layout LyX-Code
+  ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</select>
+\end_layout
+
+\begin_layout LyX-Code
 <select id="blog_post_created_at_month" name="blog_post[created_at][month]">
- ...
- </select>
+ 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</select>
+\end_layout
+
+\begin_layout LyX-Code
 <select id="blog_post_created_at_day" name="blog_post[created_at][day]">
- ...
- </select>
+   
+\end_layout
+
+\begin_layout LyX-Code
+  ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</select>
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <input:description/>
 \end_layout
 
-\begin_layout Standard
-<textarea class="text blog-post-description" id="blog_post[description]"
- name="blog_post[description]"> ...
- </textarea>
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+-> <textarea class="text blog-post-description" id="blog_post[description]"
+ name="blog_post[description]"> 
+\end_layout
+
+\begin_layout LyX-Code
+  ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</textarea>
 \end_layout
 
 \begin_layout Standard
-If the context is a belongs_to association, the <select-one> tag is used.
+If the context is a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ association, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select-one>
+\end_layout
+
+\end_inset
+
+ tag is used.
 \end_layout
 
 \begin_layout Standard
-If the context is a has_many :through association, the polymorphic <collection-i
-nput> tag is used.
+If the context is a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+ association, the polymorphic 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection-input>
+\end_layout
+
+\end_inset
+
+ tag is used.
 \end_layout
 
 \begin_layout Standard
-Attributes no-edit: control what happens if can_edit? is false.
- Can be one of: view: render the current value using the <view> tag disable:
- render the input as normal, but add HTML’s disabled attribute skip: render
- nothing at all ignore: render the input normally.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+no-edit: control what happens if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+can_edit?
+\end_layout
+
+\end_inset
+
+ is false.
+ Can be one of: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+view: render the current value using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag 
+\end_layout
+
+\begin_layout Itemize
+disable: render the input as normal, but add HTML’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+disabled
+\end_layout
+
+\end_inset
+
+ attribute 
+\end_layout
+
+\begin_layout Itemize
+skip: render nothing at all 
+\end_layout
+
+\begin_layout Itemize
+ignore: render the input normally.
  That is, don’t even perform the edit check.
 \end_layout
 
-\begin_layout Standard
-<input for='HoboFields::EnumString'> A <select> menu containing the values
- of an ‘enum string’.
+\end_deeper
+\begin_layout Subsubsection*
+<input for='HoboFields::EnumString'> 
 \end_layout
 
 \begin_layout Standard
-Attributes labels - A hash that gives custom labels for the values of the
- enum.
- Any values that do not have corresponding keys in this hash will get value.title
-ize as the label.
- titleize - Set to false to have the value itself (rather than value.titleize)
- be the default label.
- Default: true first-option - a string to be used for an extra option in
- the first position.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ menu containing the values of an ‘enum string’.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+labels: A hash that gives custom labels for the values of the enum.
+ Any values that do not have corresponding keys in this hash will get 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+value.titleize
+\end_layout
+
+\end_inset
+
+ as the label.
+ 
+\end_layout
+
+\begin_layout Itemize
+titleize: Set to false to have the value itself (rather than 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+value.titleize
+\end_layout
+
+\end_inset
+
+) be the default label.
+ Default: true 
+\end_layout
+
+\begin_layout Itemize
+first-option: a string to be used for an extra option in the first position.
  E.g.
- “Please choose…” first-value - the value to be used with the first-option.
+ “Please choose…” 
+\end_layout
+
+\begin_layout Itemize
+first-value: the value to be used with the first-option.
  Typically not used, meaning the option has a blank value.
 \end_layout
 
-\begin_layout Standard
-<input for='text'> A <textarea> input
+\begin_layout Subsubsection*
+<input for='text'>
 \end_layout
 
 \begin_layout Standard
-<input for='boolean'> A checkbox plus a hidden-field.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<textarea>
+\end_layout
+
+\end_inset
+
+ input
+\end_layout
+
+\begin_layout Subsubsection*
+<input for='boolean'>
+\end_layout
+
+\begin_layout Standard
+A checkbox plus a hidden field.
  The hidden field trick comes from Rails - it means that when the checkbox
  is not checked, the parameter name is still submitted, with a ‘0’ value
  (the value is ‘1’ when the checkbox is checked)
 \end_layout
 
-\begin_layout Standard
-<input for='password'> A password input - <input type='password'>
+\begin_layout Subsubsection*
+<input for='password'> 
 \end_layout
 
 \begin_layout Standard
-<input for='date'> A date picker, using the select_date helper from Rails
+A password input - 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='password'>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<input for='date'> 
 \end_layout
 
 \begin_layout Standard
-Attributes order: The order of the year, month and day menus.
+A date picker, using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+select_date
+\end_layout
+
+\end_inset
+
+ helper from Rails
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+order: The order of the year, month and day menus.
  A comma separated string or an array.
  Default: “year, month, day”
 \end_layout
 
 \begin_layout Standard
-Any other attributes are passed through to the select_date helper.
+Any other attributes are passed through to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+select_date
+\end_layout
+
+\end_inset
+
+ helper.
  The menus default to the current date if the current value is nil.
 \end_layout
 
-\begin_layout Standard
-<input for='time'> A date/time picker, using the select_date helper from
- Rails
+\begin_layout Subsubsection*
+<input for='time'>
 \end_layout
 
 \begin_layout Standard
-Attributes order: The order of the year, month and date menus.
+A date/time picker, using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+select_date
+\end_layout
+
+\end_inset
+
+ helper from Rails
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+order: The order of the year, month and date menus.
  A comma separated string or an array.
  Default: “year, month, day, hour, minute, second”
 \end_layout
 
 \begin_layout Standard
-Any other attributes are passed through to the select_date helper.
+Any other attributes are passed through to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+select_date
+\end_layout
+
+\end_inset
+
+ helper.
  The menus default to the current time if the current value is nil.
 \end_layout
 
-\begin_layout Standard
-<input for='datetime'> A date/time picker, using the select_datetime helper
- from Rails
+\begin_layout Subsubsection*
+<input for='datetime'>
 \end_layout
 
 \begin_layout Standard
-Attributes order: The order of the year, month and date menus.
+A date/time picker, using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+select_datetime
+\end_layout
+
+\end_inset
+
+ helper from Rails
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+order: The order of the year, month and date menus.
  A comma separated string or an array.
  Default: “year, month, day, hour, minute”
 \end_layout
 
 \begin_layout Standard
-Any other attributes are passed through to the select_datetime helper.
+Any other attributes are passed through to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+select_datetime
+\end_layout
+
+\end_inset
+
+ helper.
  The menus default to the current time if the current value is nil.
 \end_layout
 
+\begin_layout Subsubsection*
+<input for='integer'>
+\end_layout
+
 \begin_layout Standard
-<input for='integer'> An <input type='text'> input.
+An <input type='text'> input.
 \end_layout
 
 \begin_layout Standard
