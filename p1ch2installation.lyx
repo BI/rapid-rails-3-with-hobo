@@ -49,7 +49,7 @@ logicalmkup
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
+\secnumdepth -1
 \tocdepth 3
 \paragraph_separation skip
 \defskip smallskip
@@ -304,10 +304,6 @@ Rails Installer Setup Wizard
 \end_layout
 
 \begin_layout Standard
-Figure 5: Rails Installer Setup Wizard
-\end_layout
-
-\begin_layout Standard
 Pressing the “Next” button will start the installation.
  You will be prompted at each step to provide configuration information.
 \end_layout
@@ -344,13 +340,18 @@ Rails3
 \end_layout
 
 \begin_layout Standard
-Figure 6: 
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure6.png
+	width 90col%
+
+\end_inset
+
 
 \end_layout
 
@@ -359,6 +360,39 @@ status open
 
 \begin_layout Plain Layout
 Choose the Installation Directory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure7.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Completed Setup
 \end_layout
 
 \end_inset
@@ -377,7 +411,43 @@ Choose the Installation Directory
 
 \begin_layout Standard
 After the installation is complete, you will see a new menu option called
- “RailsInstaller” and four sub-menus similar to the following: 
+ “RailsInstaller” and four sub-menus similar to the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure8.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Menu Path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -386,12 +456,82 @@ If you select the sub-menu option “Command Prompt with Ruby and Rails” you
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure9.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Command Prompt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Note that a default “Sites” folder was created for you, and that there is
  even a sample Rails 3 application included:
 \end_layout
 
 \begin_layout Standard
-Figure 7: Rails Installer Sample Application Folder
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure10.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Rails Installer Sample Application Folder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -400,11 +540,54 @@ Selecting the Interactive Ruby sub-menu brings up a console similar to the
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure11.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+IRB
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 For more information, please check out the following link:
 \end_layout
 
 \begin_layout Standard
-http://www.ruby-lang.org/en/documentation/quickstart/
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.ruby-lang.org/en/documentation/quickstart/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -414,18 +597,84 @@ Selecting the RubyGems Documentation Server sub-menu option will start a
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure12.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+RubyGems Documentation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 For more information, please check out the following link:
 \end_layout
 
 \begin_layout Standard
-http://docs.rubygems.org/ Click on the “Command Prompt with Ruby and Rails”
- and type in the following command:
+\begin_inset CommandInset href
+LatexCommand href
+target "http://docs.rubygems.org/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Click on the “Command Prompt with Ruby and Rails” and type in the following
+ command:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 C:
 \backslash
 Sites> gem env
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -435,13 +684,69 @@ The “gem env” (gem environment) provides information that will later be
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure13.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Command Prompt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Now type the “gem list” command:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 C:
 \backslash
 Sites> gem list
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -450,7 +755,40 @@ The “gem list” command provides information about which ruby gems (modules)
 \end_layout
 
 \begin_layout Standard
-Figure 8: List of Ruby Gems installed by the Rails Installer
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure14.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+List of Ruby Gems installed by the Rails Installer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -459,7 +797,39 @@ Now test to see the SQLite3 is available.
 \end_layout
 
 \begin_layout Standard
-Figure 9: Testing SQLite3
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure15.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Testing SQLite3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -467,41 +837,194 @@ For a nice introduction to the use of SQLite3, access the following link:
 \end_layout
 
 \begin_layout Standard
-http://www.sqlite.org/quickstart.html Note that the Rails Installer comes with
- a sample application in the Sites/sample directory:
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.sqlite.org/quickstart.html "
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 10: The Sample Rails 3 app included by Rails Installer 
+Note that the Rails Installer comes with a sample application in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Sites/sample
+\end_layout
+
+\end_inset
+
+ directory:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure16.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Sample Rails 3 app included by Rails Installer 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
 Step 3.
- Install Hobo.
  
 \end_layout
 
 \begin_layout Standard
-Type the following command at the command prompt: C:
-\backslash
-Sites> gem install hobo -v 1.3.0.pre26 --pre 
+Install Hobo.
+ 
 \end_layout
 
 \begin_layout Standard
+Type the following command at the command prompt: 
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+C:
+\backslash
+Sites> gem install hobo -v 1.3.0.pre26 --pre
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure17.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Command Prompt with Ruby and Rails
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
 Note: In the screen shots captured here we used a recent pre-release version
  of Hobo.
  Notice we were required to use the “—pre” command option to install it.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 When Hobo 1.3.0 is officially released, the installation command will be:
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 C:
 \backslash
 Sites> gem install hobo -v 1.3.0
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -510,38 +1033,162 @@ Check your installation by using the “gem list” command to show all Ruby
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 C:
 \backslash
 Sites> gem list 
 \end_layout
 
-\begin_layout Standard
-Figure 11: Sample console output from the "gem list" command after installing
- Hobo
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure18.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sample console output from the "gem list" command after installing Hobo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
 Note: In the example above, 3.0.4 was installed by Hobo 1.3.0, as Rails 3.0.4
  was defined as a dependency.
  This may differ over time.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 If you find the need to start completely fresh, select the Uninstall RaisInstall
 er sub-menu option.
  
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
 Step 4.
- Choose and configure a text editor (optional) You can work through the
- tutorials in this book using Textpad or your favorite editor.
- However, For years TextMate (http://macromates.com/) for the Mac has been
- the most popular light-weight editor for Ruby and Rails, and offers many
- productivity features.
+ 
+\end_layout
+
+\begin_layout Standard
+Choose and configure a text editor (optional) You can work through the tutorials
+ in this book using Textpad or your favorite editor.
+ However, For years TextMate (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://macromates.com/"
+
+\end_inset
+
+) for the Mac has been the most popular light-weight editor for Ruby and
+ Rails, and offers many productivity features.
  There is an inexpensive “clone” for Windows called “E” that is very good
  facsimile of TextMate.
- You can download a 30-day evaluation version from http://www.e-texteditor.com/:
+ You can download a 30-day evaluation version from 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.e-texteditor.com/"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure19.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+TextMate Webpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -550,23 +1197,135 @@ Also take a look at two popular full Integrated Development environments
 \end_layout
 
 \begin_layout Standard
-http://www.aptana.com/products/radrails http://netbeans.org/features/ruby/index.html
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.aptana.com/products/radrails"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://netbeans.org/features/ruby/index.html"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now you are ready to start using Hobo with the default database engine for
  Rails and Hobo—SQLite.
- Skip to Chapter 3 (Introductory Tutorials) unless you prefer to use MySQL
- or Oracle.
- Instructions for installation of these database engines are next.
- Using MySQL with Hobo
+ 
 \end_layout
 
 \begin_layout Standard
-Step 1: Download and install MySQL For Mac OS X user, please see the following
- URL: http://dev.mysql.com/doc/mysql-macosx-excerpt/5.0/en/mac-os-x-installation.htm
-l For Linux users: http://dev.mysql.com/doc/refman/5.0/en/linux-rpm.html For
- Windows users: http://dev.mysql.com/downloads/mysql/#downloads
+Skip to Chapter 3 (Introductory Tutorials) unless you prefer to use MySQL
+ or Oracle.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Instructions for installation of these database engines are next.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Using MySQL with Hobo
+\end_layout
+
+\begin_layout Subsection*
+Step 1: Download and install MySQL 
+\end_layout
+
+\begin_layout Standard
+For Mac OS X user, please see the following URL:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dev.mysql.com/doc/mysql-macosx-excerpt/5.0/en/mac-os-x-installation.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For Linux users:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dev.mysql.com/doc/refman/5.0/en/linux-rpm.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For Windows users:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://dev.mysql.com/downloads/mysql/#downloads"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure20.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Download site for MySQL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -581,13 +1340,104 @@ Click on one of the mirror sites to begin the download.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure21.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the downloaded .msi file to install MySQL on Windows
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Choose the “Custom” option when prompted:
 \end_layout
 
 \begin_layout Standard
-Figure 15: Choose the “Custom” setup type Next choose the locations for
- the server code and data files.
- Note the default location in Windows is: C:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure22.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Choose the “Custom” setup type 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next choose the locations for the server code and data files.
+ Note the default location in Windows is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+C:
 \backslash
 Program Files
 \backslash
@@ -598,14 +1448,61 @@ MySQL Server 5.5
 
 \end_layout
 
-\begin_layout Standard
-We suggest a directory path that is more succinct:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 16: Specify the destination folder "C:
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+We suggest a directory path that is more succinct:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure23.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Specify the destination folder "C:
 \backslash
 MySQL" for the server software
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -613,11 +1510,44 @@ Specify the location of the data files used by MySQL databases:
 \end_layout
 
 \begin_layout Standard
-Figure 17: Specify the destination folder "C:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure24.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Specify the destination folder "C:
 \backslash
 MySQL
 \backslash
 data" to hold MySQL data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -625,15 +1555,122 @@ Click “OK” to continue:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure25.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Enterprise Monitor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Then Click “Next” to launch the MySQL Instance Configuration Wizard:
 \end_layout
 
 \begin_layout Standard
-Figure 18: The MySQL Instance Configuration Wizard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure26.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The MySQL Instance Configuration Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now click “Finish”:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure27.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Instance Configuration Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -642,9 +1679,82 @@ The next step is to choose instance configuration option.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure28.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Instance Configuration Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Click “Next” to obtain further configuration options.
  Select both “Install As Windows Service” and “Include Bin Directory in
  Windows PATH”:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure29.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Instance Configuration Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -655,8 +1765,81 @@ To make the application creation process for MySQL similar to using SQLite,
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure30.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Instance Configuration Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Click “Next” to continue.
  A status window similar to the following will be displayed:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure31.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Instance Configuration Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -669,7 +1852,81 @@ You should now see a new “MySQL” menu item in, from which you can launch
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure32.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Command Line Client
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The Command Line Client will appear similar to the following: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure33.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Command Line
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -679,20 +1936,132 @@ Because we opted to use the default MySQL security settings in our installation
 \end_layout
 
 \begin_layout Standard
-Step 2: Install the Ruby Gem for MySQL 5.5 The next step is to install the
- following Ruby gem for connecting to MySQL 5.5: C:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure34.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Command Line
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Step 2: Install the Ruby Gem for MySQL 5.5 
+\end_layout
+
+\begin_layout Standard
+The next step is to install the following Ruby gem for connecting to MySQL
+ 5.5: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+C:
 \backslash
 Sites
 \backslash
-tutorials> gem install mysql2 -v 0.2.7 -- '--with-mysql-lib="C;
+tutorials> gem install mysql2 -v 0.2.7 -- 
+\end_layout
+
+\begin_layout LyX-Code
+      '--with-mysql-lib="C;
 \backslash
 MySQL
 \backslash
-include"' If you installed MySQL in a different location you may have to
- adjust the previous command to reflect the appropriate location in your
- system.
- You may run into the issue in Windows systems with having the “libmysql.dll”
+include"'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you installed MySQL in a different location you may have to adjust the
+ previous command to reflect the appropriate location in your system.
+ 
+\end_layout
+
+\begin_layout Standard
+You may run into the issue in Windows systems with having the “libmysql.dll”
  file in a path that the mysql2 Ruby gem can access:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure35.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ruby.exe Error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -700,32 +2069,220 @@ You will find this DLL in the following MySQL directory:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure36.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL lib Directory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Copy this file and place it in the Ruby “bin” directory:
 \end_layout
 
 \begin_layout Standard
-Step 3: Generate a Hobo MySQL Application from the Command Line Now you
- can generate a Hobo MySQL app using the following command: C:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure37.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ruby bin Directory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Step 3: Generate a Hobo MySQL Application from the Command Line 
+\end_layout
+
+\begin_layout Standard
+Now you can generate a Hobo MySQL app using the following command: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+C:
 \backslash
 Sites
 \backslash
 tutorials> hobo new one_table –setup –d mysql
 \end_layout
 
-\begin_layout Standard
-This will create the “one_table” application and run the migrations necessary
- for the default “user” Hobo user model.
- Now edit the database.yml file to see what was created automatically: 
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 19: The automatically created database.yml file
+This will create the “one_table” application and run the migrations necessary
+ for the default “user” Hobo user model.
+ 
+\end_layout
+
+\begin_layout Standard
+Now edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+database.yml
+\end_layout
+
+\end_inset
+
+ file to see what was created automatically: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure38.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The automatically created database.yml file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Notice it is pre-filled with the proper parameter structure for MySQL.
- Fire up your MySQL command line again and use the “show databases” command
+ 
+\end_layout
+
+\begin_layout Standard
+Fire up your MySQL command line again and use the “show databases” command
  to see what was created:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure39.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MySQL Command Line
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -733,88 +2290,384 @@ Notice that Hobo and Rails make some assumptions about the naming of the
  development and test database names.
  You can change these as needed, but is useful to understand the default
  convention used Rails, which is what Hobo uses.
- Using Oracle with Hobo
+ 
+\end_layout
+
+\begin_layout Section*
+Using Oracle with Hobo
 \end_layout
 
 \begin_layout Standard
 We will discuss the following two configuration options: 1.
  Use an existing Oracle database 2.
  Download and install a fresh Oracle database For either of these options
- you will first need to install the following two ruby gems: C:
-\backslash
-Sites
-\backslash
-tutorials> gem install ruby-oci8 C:
-\backslash
-Sites
-\backslash
-tutorials> gem install activerecord-oracle_enhanced-adapter 
+ you will first need to install the following two ruby gems: 
 \end_layout
 
 \begin_layout Standard
-Figure 20: Console output after installing Oracle gems for Ruby and Rails
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+C:
+\backslash
+Sites
+\backslash
+tutorials> gem install ruby-oci8 
+\end_layout
+
+\begin_layout LyX-Code
+C:
+\backslash
+Sites
+\backslash
+tutorials> gem install 
+\end_layout
+
+\begin_layout LyX-Code
+   activerecord-oracle_enhanced-adapter 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Option 1 This is the typical scenario in a development shop that is already
- using Oracle and you have the Oracle client software already configured
- for other tools such as SQL Plus, Toad, or SQL Developer.
- You probably have different database “instances” for development, test,
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure40.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Console output after installing Oracle gems for Ruby and Rails
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure41.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Console output after installing Oracle gems for Ruby and Rails
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Option 1 
+\end_layout
+
+\begin_layout Standard
+This is the typical scenario in a development shop that is already using
+ Oracle and you have the Oracle client software already configured for other
+ tools such as SQL Plus, Toad, or SQL Developer.
+ 
+\end_layout
+
+\begin_layout Standard
+You probably have different database “instances” for development, test,
  and production systems.
  If you are lucky you might even have rights to create a new database user
  (i.e., schema) in your development environment.
  In most large shops you will probably need to request that the database
  administrator (DBA) create one for you.
- Note: The terms “user” and “schema” really are referring to the same thing
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: The terms “user” and “schema” really are referring to the same thing
  and are often used interchangeably by experienced Oracle developers.
  There is a long history to this that will confuse users of other database
  engines where users and schemas are not equivalent.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-As you learned in earlier tutorials, the database.yml file is the place to
- configure your database connections.
+As you learned in earlier tutorials, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+database.yml
+\end_layout
+
+\end_inset
+
+ file is the place to configure your database connections.
  Creating a new application using the hobo command with the “d” switch allows
  you to stipulate which database you will be using, and allows Hobo and
- Rails to build a database.yml template tailored to your database.
- C:
+ Rails to build a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+database.yml
+\end_layout
+
+\end_inset
+
+ template tailored to your database.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+C:
 \backslash
 Sites
 \backslash
 tutorials> hobo new two_table –d oracle 
 \end_layout
 
-\begin_layout Standard
-This is what the database.yml file looks like without modification:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 21: The generated database.yml file for Oracle
+This is what the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+database.yml
+\end_layout
+
+\end_inset
+
+ file looks like without modification:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure42.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The generated database.yml file for Oracle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Since we recommended using the “oracle_enhanced” adapter, we will need to
- replace the plain “oracle” with “oracle_enhanced” Also, when we used SQLite
- as the default database, Hobo and Rails automatically created a database
- called “two_table_development”.
+ replace the plain “oracle” with “oracle_enhanced” 
+\end_layout
+
+\begin_layout Standard
+Also, when we used SQLite as the default database, Hobo and Rails automatically
+ created a database called “two_table_development”.
  When you use an existing Oracle database, you will need to enter that database
  name instead of “two_table_development” and create an Oracle user (schema)
  called “two_table_development”.
- The changed entries in the database.yml file will look like the following:
- development: adapter: oracle_enhanced database: our_development_server_name
- username: two_table_development password: hobo
 \end_layout
 
 \begin_layout Standard
-Once you update the database.yml file, and save it, you can then run the
- database migrations (“hobo g migration”) as you will see in Tutorial 1.
+The changed entries in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+database.yml
+\end_layout
+
+\end_inset
+
+ file will look like the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+development: 
+\end_layout
+
+\begin_layout LyX-Code
+  adapter: oracle_enhanced 
+\end_layout
+
+\begin_layout LyX-Code
+  database: our_development_server_name 
+\end_layout
+
+\begin_layout LyX-Code
+  username: two_table_development 
+\end_layout
+
+\begin_layout LyX-Code
+  password: hobo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once you update the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+database.yml
+\end_layout
+
+\end_inset
+
+ file, and save it, you can then run the database migrations (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+“hobo g migration”
+\end_layout
+
+\end_inset
+
+) as you will see in Tutorial 1.
  
 \end_layout
 
+\begin_layout Subsection*
+Option 2 
+\end_layout
+
 \begin_layout Standard
-Option 2 In this part of the tutorial we will walk you through the steps
- of downloading, installing, and configuring Oracle 10g XE (Express Edition),
- which is a fully functional version of Oracle with no licensing requirements.
+In this part of the tutorial we will walk you through the steps of downloading,
+ installing, and configuring Oracle 10g XE (Express Edition), which is a
+ fully functional version of Oracle with no licensing requirements.
  It comes with administration tools accessible via a web browser.
  
 \end_layout
@@ -826,104 +2679,740 @@ Register for a free membership in the Oracle Technology Network (OTN) and
 \end_layout
 
 \begin_layout Standard
-http://www.oracle.com/technology/software/products/database/xe/htdocs/102xewinsoft.
-html
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.oracle.com/technology/software/products/database/xe/htdocs/102xewinsoft.html"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 22: Oracle database install download site
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure43.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Oracle database install download site
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 23: Running the Oracle XE installation
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure44.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Running the Oracle XE installation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 24: Specifying the database passwords
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure45.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Specifying the database passwords
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 25: Launch the Database home page 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure46.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Launch the Database home page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
-Figure 26: Log is as SYS to configure your database
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure47.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Log is as SYS to configure your database
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 27: Creating a schema/user to use with Hobo
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure48.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Creating a schema/user to use with Hobo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 28: The tnsnames.ora file created during installation
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure49.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The tnsnames.ora file created during installation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Note that you will be using the “XE” instance unless you change the name.
- C:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+C:
 \backslash
 Sites
 \backslash
-tutorials> hobo new two_table –d oracle Note: The following instructions
- and screen shots will make sense AFTER you work through the introductory
- tutorials.
+tutorials> hobo new two_table –d oracle 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 29: Log into Oracle to view the created table
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: The following instructions and screen shots will make sense AFTER
+ you work through the introductory tutorials.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 30: Access the Oracle Object Browser
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure50.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Log into Oracle to view the created table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 31: Review the User table from within Oracle
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure51.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Access the Oracle Object Browser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 32: Review the Indexes view for Users
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure52.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Review the User table from within Oracle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 33: Review the Constraints view for User
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure53.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Review the Indexes view for Users
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Installation Summary What you have now is: The Ruby language interpreter,
- which in this case is a Windows executable.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure54.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Review the Constraints view for User
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Installation Summary 
+\end_layout
+
+\begin_layout Standard
+What you have now is: 
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Ruby
+\end_layout
+
+\end_inset
+
+ language interpreter, which in this case is a Windows executable.
  This engine is called MRI for “Matz’s Ruby Interpreter”.
- http://en.wikipedia.org/wiki/Ruby_MRI.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://en.wikipedia.org/wiki/Ruby_MRI"
+
+\end_inset
+
+.
  There are a variety of other interpreters and implementations available,
- including JRuby http://jruby.org/ and Enterprise Ruby (http://www.rubyenterprisee
-dition.com/), which the authors have used successfully with Hobo.
- The upcoming MagLev (http://maglev.gemstone.com/status/index.html) implementation
- looks very promising for large-scale applications.
- The Ruby on Rails (RoR) Model-View-Controller (MVC) framework which is
- written using Ruby.
- The Hobo framework which enhances, and in some cases replaces, RoR functionalit
-y, particularly on the View and Controller portions of the (MVC) web development
+ including 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+JRuby
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://jruby.org/"
+
+\end_inset
+
+ and Enterprise Ruby (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.rubyenterpriseedition.com/"
+
+\end_inset
+
+), which the authors have used successfully with Hobo.
+ The upcoming MagLev (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://maglev.gemstone.com/status/index.html"
+
+\end_inset
+
+) implementation looks very promising for large-scale applications.
+ 
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Ruby on Rails
+\end_layout
+
+\end_inset
+
+ (RoR) Model-View-Controller (MVC) framework which is written using Ruby.
+ 
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Hobo
+\end_layout
+
+\end_inset
+
+ framework which enhances, and in some cases replaces, RoR functionality,
+ particularly on the View and Controller portions of the (MVC) web development
  framework.
  Hobo is written in Ruby.
- One of Hobo’s secret weapons is the powerful and succinct DRYML (Don’t
- Repeat Yourself Markup Language).
- The SQLite3 database and related Ruby gem (sqlite3-ruby) that makes prototyping
- quick and painless.
+ One of Hobo’s secret weapons is the powerful and succinct DRYML (
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+
+on’t 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+
+epeat 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Y
+\end_layout
+
+\end_inset
+
+ourself 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+M
+\end_layout
+
+\end_inset
+
+arkup 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+L
+\end_layout
+
+\end_inset
+
+anguage).
+ 
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+SQLite3
+\end_layout
+
+\end_inset
+
+ database and related Ruby gem (
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+sqlite3-ruby
+\end_layout
+
+\end_inset
+
+) that makes prototyping quick and painless.
  SQLite3 is a robust and widely used database engine for embedded systems
  and is the repository used by the Firefox browser.
- The Webrick HTTP/web server written in Ruby.
+ 
+\end_layout
+
+\begin_layout Itemize
+The Webrick 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+HTTP/web
+\end_layout
+
+\end_inset
+
+ server written in Ruby.
  This is a basic server for desktop development work.
  Another popular one is Mongrel (Ruby 1.8 only) and Thin.
  For production implementation there are a variety of options, including
  the popular Phusion Passenger (aka “mod_rails”), which can be used in conjuncti
 on with the Apache HTTP server.
- http://www.modrails.com/.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.modrails.com/"
+
+\end_inset
+
+.
  With JRuby you can run on Tomcat, JBoss, Glassfish, etc.
- A variety of add-on gems (ruby modules or “libraries”) that each framework
+ 
+\end_layout
+
+\begin_layout Itemize
+A variety of add-on gems (ruby modules or “libraries”) that each framework
  has included as “dependencies”.
- For example, will_paginate is used by Hobo for pagination of lists on web
- pages.
- Now you are ready for the tutorials!
+ For example, 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+will_paginate
+\end_layout
+
+\end_inset
+
+ is used by Hobo for pagination of lists on web pages.
+ 
+\end_layout
+
+\begin_layout Standard
+Now you are ready for the tutorials!
 \end_layout
 
 \end_body
