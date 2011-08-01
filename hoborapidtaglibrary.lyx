@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -8001,42 +8002,216 @@ select_datetime
 \end_layout
 
 \begin_layout Standard
-An <input type='text'> input.
+An 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='text'>
+\end_layout
+
+\end_inset
+
+ input.
+\end_layout
+
+\begin_layout Subsubsection*
+<input for='float'> 
 \end_layout
 
 \begin_layout Standard
-<input for='float'> An <input type='text'> input.
+An 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='text'>
+\end_layout
+
+\end_inset
+
+ input.
+\end_layout
+
+\begin_layout Subsubsection*
+<input for='string'> 
 \end_layout
 
 \begin_layout Standard
-<input for='string'> An <input type='text'> input.
+An 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='text'>
+\end_layout
+
+\end_inset
+
+ input.
+\end_layout
+
+\begin_layout Subsubsection*
+<input for='big_integer'>
 \end_layout
 
 \begin_layout Standard
-<input for='big_integer'> An <input type='text'> input.
+An 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='text'>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ input.
+\end_layout
+
+\begin_layout Subsubsection*
 <input for='Paperclip::Attachment'>
 \end_layout
 
-\begin_layout Standard
-<input for='BigDecimal'> An <input type='text'> input.
- <collection-input> This tag is called by <input> when the context is a
- has_many :through collection.
- By default a <select-many> is used, but this can be customized on a per-type
- basis.
- For example, say you would like the <check-many> tag used to edit collections
- a Category model in your application: <def tag="collection-input" for="Category
-"><check-many merge/></def>
+\begin_layout Subsubsection*
+<input for='BigDecimal'> 
 \end_layout
 
 \begin_layout Standard
-collection-input for='ActiveRecord::Base'> The default <collection-input>
- - calls <select-many>
+An 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input type='text'>
+\end_layout
+
+\end_inset
+
+ input.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+<collection-input> 
 \end_layout
 
 \begin_layout Standard
+This tag is called by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ when the context is a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+ collection.
+ By default a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select-many>
+\end_layout
+
+\end_inset
+
+ is used, but this can be customized on a per-type basis.
+ For example, say you would like the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<check-many>
+\end_layout
+
+\end_inset
+
+ tag used to edit collections a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Category
+\end_layout
+
+\end_inset
+
+ model in your application: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="collection-input" for="Category">
+\end_layout
+
+\begin_layout LyX-Code
+  <check-many merge/>
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<collection-input for='ActiveRecord::Base'>
+\end_layout
+
+\begin_layout Standard
+The default 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection-input>
+\end_layout
+
+\end_inset
+
+ - calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select-many>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Rapid Generics
 \end_layout
 
@@ -8046,82 +8221,354 @@ Rapid Generics provides tags that provide generic renderings that can adapt
  At the moment this library provides cards and collections of cards.
 \end_layout
 
-\begin_layout Standard
-<card> <search-card> <empty-collection-message> <collection> <record-flags>
+\begin_layout LyX-Code
+<card> 
+\end_layout
+
+\begin_layout LyX-Code
+<search-card> 
+\end_layout
+
+\begin_layout LyX-Code
+<empty-collection-message> 
+\end_layout
+
+\begin_layout LyX-Code
+<collection> 
+\end_layout
+
+\begin_layout LyX-Code
+<record-flags>
+\end_layout
+
+\begin_layout Subsubsection*
+<card> 
 \end_layout
 
 \begin_layout Standard
-<card> A ‘card’ is a representation of an sub-object within a page, such
- as a comment on a blog-post, or a single product in a list of products.
+A ‘card’ is a representation of an sub-object within a page, such as a comment
+ on a blog-post, or a single product in a list of products.
  This definition is just the very basic framework which gives the basis
  for the automatic cards that get generated.
- See app/views/taglibs/auto/rapid/cards.dryml for the cards that have been
- generated for your specific application.
+ See 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/taglibs/auto/rapid/cards.dryml
+\end_layout
+
+\end_inset
+
+ for the cards that have been generated for your specific application.
 \end_layout
 
 \begin_layout Standard
-Parameters default header body 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+header 
+\end_layout
+
+\begin_layout Itemize
+body 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+<search-card> 
 \end_layout
 
 \begin_layout Standard
-<search-card> A special card which is used by live-search to render the
- results.
- By default this just calls card, but you can define your own search cards
- with <def tag='search-card' for="MyModel"> to customize search results
- for that model.
+A special card which is used by live-search to render the results.
+ By default this just calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+card
+\end_layout
+
+\end_inset
+
+, but you can define your own search cards with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def tag='search-card' for="MyModel">
+\end_layout
+
+\end_inset
+
+ to customize search results for that model.
+\end_layout
+
+\begin_layout Subsubsection*
+<empty-collection-message>
 \end_layout
 
 \begin_layout Standard
-<empty-collection-message> Renders a message such as “No products to display”.
- If the collection (this) is empty, style="display:none" is added.
+Renders a message such as “No products to display”.
+ If the collection (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+) is not empty, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+style="display:none"
+\end_layout
+
+\end_inset
+
+ is added.
  This means the message is still present and can be revealed with JavaScript
  if all items in the collection are removed with AJAX remove buttons.
 \end_layout
 
 \begin_layout Standard
-Parameters default 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_layout Subsubsection*
+<collection> 
 \end_layout
 
 \begin_layout Standard
-<collection> Repeats the body of the tag inside a <ul> list with one item
- for each object in the collection (this).
- If no body is given, renders a <card> inside the <li>.
- The <li> tags are automatically given a ‘model ID’ CSS class, which means
- the AJAX <remove-button> will automatically be able to remove items from
- the collection.
+Repeats the body of the tag inside a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+ list with one item for each object in the collection (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+).
+ If no body is given, renders a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ inside the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<li>
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<li>
+\end_layout
+
+\end_inset
+
+ tags are automatically given a ‘model ID’ CSS class, which means the AJAX
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<remove-button>
+\end_layout
+
+\end_inset
+
+ will automatically be able to remove items from the collection.
  Also adds ‘even’ and ‘odd’ CSS classes.
 \end_layout
 
 \begin_layout Standard
-Parameters item default card empty-message 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+item 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+card 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+empty-message 
+\end_layout
+
+\begin_layout Subsubsection*
+<record-flags> 
 \end_layout
 
 \begin_layout Standard
-<record-flags> Renders a comma-separated list of any fields passed in the
- fields attribute that are true (in the Ruby sense).
- For example, if a forum post had a boolean field sticky, this tag can be
- used to automatically label sticky posts “Sticky”.
+Renders a comma-separated list of any 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ passed in the fields attribute that are true (in the Ruby sense).
+ For example, if a forum post had a boolean field 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+sticky
+\end_layout
+
+\end_inset
+
+, this tag can be used to automatically label sticky posts “Sticky”.
  Similarly, you could automatically add an “Administrator” label to the
  user’s home page (this is seen in the default Hobo app).
- Rapid Lifecycles
+ 
+\end_layout
+
+\begin_layout Subsection*
+Rapid Lifecycles
 \end_layout
 
 \begin_layout Standard
 Contains view-layer support for Hobo’s lifecycles.
- Note that lifecycle forms are generated automatically in app/views/taglibs/auto
-/rapid/forms.dryml - this library contains only lifecycle push-buttons.
+ Note that lifecycle forms are generated automatically in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/taglibs/auto/rapid/forms.dryml
+\end_layout
+
+\end_inset
+
+ - this library contains only lifecycle push-buttons.
+\end_layout
+
+\begin_layout LyX-Code
+<transition-button> 
+\end_layout
+
+\begin_layout LyX-Code
+<transition-buttons>
+\end_layout
+
+\begin_layout Subsubsection*
+<transition-button>
 \end_layout
 
 \begin_layout Standard
-<transition-button> <transition-buttons>
+A push-button to invoke a lifecycle transition either as a page-reload or
+ as an AJAX call.
+ 
 \end_layout
 
 \begin_layout Standard
-<transition-button> A push-button to invoke a lifecycle transition either
- as a page-reload or as an AJAX call.
- Attributes transition - the name of the transition to invoke.
- Required update - one or more DOM IDs of AJAX parts to update after the
- transition label - the label on the button.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+transition: the name of the transition to invoke.
+ Required 
+\end_layout
+
+\begin_layout Itemize
+update: one or more DOM IDs of AJAX parts to update after the transition
+\end_layout
+
+\begin_layout Itemize
+label: the label on the button.
  Defaults to the name of the transition
 \end_layout
 
@@ -8129,13 +8576,31 @@ Contains view-layer support for Hobo’s lifecycles.
 All of the standard AJAX attributes are also supported.
 \end_layout
 
+\begin_layout Subsubsection*
+<transition-buttons> 
+\end_layout
+
 \begin_layout Standard
-<transition-buttons> Renders a div containing transition buttons for every
- transition available to the current user.
- For example, you could use this on a Friendship card: the person invited
- to have friendship would automatically see ‘Accept’ and ‘Decline’ buttons,
- while the person initiating the invite would see ‘Retract’.
- Rapid Navigation
+Renders a div containing transition buttons for every transition available
+ to the current user.
+ For example, you could use this on a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Friendship
+\end_layout
+
+\end_inset
+
+ card: the person invited to have friendship would automatically see ‘Accept’
+ and ‘Decline’ buttons, while the person initiating the invite would see
+ ‘Retract’.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Rapid Navigation
 \end_layout
 
 \begin_layout Standard
@@ -8143,78 +8608,414 @@ Support for navigation links, account navigation (log in, out etc.) and paginati
 n navigation.
 \end_layout
 
-\begin_layout Standard
-<navigation> <nav-item> <account-nav> <page-nav>
+\begin_layout LyX-Code
+<navigation> 
+\end_layout
+
+\begin_layout LyX-Code
+<nav-item> 
+\end_layout
+
+\begin_layout LyX-Code
+<account-nav> 
+\end_layout
+
+\begin_layout LyX-Code
+<page-nav>
+\end_layout
+
+\begin_layout Subsubsection*
+<navigation> 
 \end_layout
 
 \begin_layout Standard
-<navigation> General purpose navigation bar.
- Renders a <ul class="navigation">.
- This tag is intended to be used in conjunction with <nav-item>.
- The main feature of this pair of tags (over, say, just using a plain <ul>
+General purpose navigation bar.
+ Renders a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul class="navigation">
+\end_layout
+
+\end_inset
+
+.
+ This tag is intended to be used in conjunction with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nav-item>
+\end_layout
+
+\end_inset
+
+.
+ The main feature of this pair of tags (over, say, just using a plain 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
  list), is that it’s easy to have a ‘current’ CSS class added to the appropriate
  nav item (so you can highlight the page/section the user is)
 \end_layout
 
 \begin_layout Standard
-The main navigation in the default hobo app is implemented with <navigation>
+The main navigation in the default hobo app is implemented with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
  but this tag is also appropriate for any sub-navigation.
 \end_layout
 
 \begin_layout Standard
-Parameters default Attributes current - the textual content of the nav item
- that should have the ‘current’ CSS class added (see example) Example The
- normal usage is to define your own navigation tag that calls <navigation>.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+default:
 \end_layout
 
 \begin_layout Standard
-<def tag="sub-nav"> <navigation merge> <nav-item>Red</nav-item> <nav-item>Green<
-/nav-item> <nav-item>Blue</nav-item> </navigation> </def>
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+current: the textual content of the nav item that should have the ‘current’
+ CSS class added (see example) 
 \end_layout
 
 \begin_layout Standard
-Then in your pages you can call the tag like this On the ‘red’ page: <sub-nav
- current="red"/> On the ‘green’ page: <sub-nav current="green"/> and so
- on.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Example
 \end_layout
 
-\begin_layout Standard
-<nav-item> Renders a single item in a <navigation> menu.
+\end_inset
+
  
 \end_layout
 
 \begin_layout Standard
-<account-nav> Account Navigation (log in / out / signup) When logged in,
- this renders: “Logged in as …” Link to account page Log out link
+The normal usage is to define your own navigation tag that calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-When not logged in, renders: Log in link Sign up link This is a simple tag
- - just look at the source if you need to know more detail.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="sub-nav"> 
+\end_layout
+
+\begin_layout LyX-Code
+  <navigation merge>
+\end_layout
+
+\begin_layout LyX-Code
+    <nav-item>Red</nav-item> 
+\end_layout
+
+\begin_layout LyX-Code
+    <nav-item>Green</nav-item> 
+\end_layout
+
+\begin_layout LyX-Code
+    <nav-item>Blue</nav-item> 
+\end_layout
+
+\begin_layout LyX-Code
+  </navigation> 
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Parameters ul dev-user-changer logged-in-as account log-out log-in sign-up
+Then in your pages you can call the tag like this:
+\end_layout
+
+\begin_layout Itemize
+On the ‘red’ page: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<sub-nav current="red"/>
+\end_layout
+
+\end_inset
+
  
 \end_layout
 
+\begin_layout Itemize
+On the ‘green’ page: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<sub-nav current="green"/>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+And so on.
+\end_layout
+
+\begin_layout Subsubsection*
+<nav-item> 
+\end_layout
+
 \begin_layout Standard
-<page-nav> A simple wrapper around the will_paginate helper.
- All options to will_paginate are available as attributes Rapid Pages
+Renders a single item in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ menu.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+<account-nav> 
+\end_layout
+
+\begin_layout Standard
+Account Navigation (log in / out / signup) When logged in, this renders:
+ 
+\end_layout
+
+\begin_layout Itemize
+“Logged in as …” 
+\end_layout
+
+\begin_layout Itemize
+Link to account page 
+\end_layout
+
+\begin_layout Itemize
+Log out link
+\end_layout
+
+\begin_layout Standard
+When not logged in, renders: 
+\end_layout
+
+\begin_layout Itemize
+Log in link 
+\end_layout
+
+\begin_layout Itemize
+Sign up link 
+\end_layout
+
+\begin_layout Standard
+This is a simple tag - just look at the source if you need to know more
+ detail.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ul 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+dev-user-changer 
+\end_layout
+
+\begin_layout Itemize
+logged-in-as 
+\end_layout
+
+\begin_layout Itemize
+account 
+\end_layout
+
+\begin_layout Itemize
+log-out 
+\end_layout
+
+\begin_layout Itemize
+log-in 
+\end_layout
+
+\begin_layout Itemize
+sign-up 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+<page-nav> 
+\end_layout
+
+\begin_layout Standard
+A simple wrapper around the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+will_paginate
+\end_layout
+
+\end_inset
+
+ helper.
+ All options to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+will_paginate
+\end_layout
+
+\end_inset
+
+ are available as attributes 
+\end_layout
+
+\begin_layout Subsection*
+Rapid Pages
 \end_layout
 
 \begin_layout Standard
 Rapid-Pages provides tags for working with entire pages.
 \end_layout
 
-\begin_layout Standard
-<page> <page-scripts> <permission-denied-page> <not-found-site> <doc-type>
- <html> <if-ie> <stylesheet> <javascript> <flash-message> <flash-messages>
- <ajax-progress>
+\begin_layout LyX-Code
+<page> 
+\end_layout
+
+\begin_layout LyX-Code
+<page-scripts> 
+\end_layout
+
+\begin_layout LyX-Code
+<permission-denied-page> 
+\end_layout
+
+\begin_layout LyX-Code
+<not-found-site> 
+\end_layout
+
+\begin_layout LyX-Code
+<doc-type> 
+\end_layout
+
+\begin_layout LyX-Code
+<html> 
+\end_layout
+
+\begin_layout LyX-Code
+<if-ie> 
+\end_layout
+
+\begin_layout LyX-Code
+<stylesheet> 
+\end_layout
+
+\begin_layout LyX-Code
+<javascript> 
+\end_layout
+
+\begin_layout LyX-Code
+<flash-message> 
+\end_layout
+
+\begin_layout LyX-Code
+<flash-messages> 
+\end_layout
+
+\begin_layout LyX-Code
+<ajax-progress>
+\end_layout
+
+\begin_layout Subsubsection*
+<page> 
 \end_layout
 
 \begin_layout Standard
-<page> The basic page structure for all the pages in a Hobo Rapid application.
+The basic page structure for all the pages in a Hobo Rapid application.
  Providing the doctype, page title, standard stylesheet JavaScript includes,
  the AJAX progress spinner, default header with app-name, account navigation,
  main navigation, and live search, empty section for the page content, flash
@@ -8223,106 +9024,723 @@ Rapid-Pages provides tags for working with entire pages.
 \end_layout
 
 \begin_layout Standard
-Parameters head title stylesheets app-stylesheet scripts JavaScript fix-ie6
- custom-scripts application-JavaScript body AJAX-progress header account-nav
- app-name live-search main-nav content footer page-scripts Attributes title
- - the page title, will have “: <app-name>” appended full-title - the full
- page title.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+head 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+title 
+\end_layout
+
+\begin_layout Itemize
+stylesheets 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+app-stylesheet 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+scripts 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+JavaScript 
+\end_layout
+
+\begin_layout Itemize
+fix-ie6 
+\end_layout
+
+\begin_layout Itemize
+custom-scripts 
+\end_layout
+
+\begin_layout Itemize
+application-JavaScript 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+body 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+AJAX-progress 
+\end_layout
+
+\begin_layout Itemize
+header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+account-nav 
+\end_layout
+
+\begin_layout Itemize
+app-name 
+\end_layout
+
+\begin_layout Itemize
+live-search 
+\end_layout
+
+\begin_layout Itemize
+main-nav 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_layout Itemize
+footer 
+\end_layout
+
+\begin_layout Itemize
+page-scripts 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+title: the page title, will have : 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<app-name>
+\end_layout
+
+\end_inset
+
+ appended 
+\end_layout
+
+\begin_layout Itemize
+full-title: the full page title.
  Set this if you do not want the app name suffix.
- <page-scripts> Renders dynamically generated JavaScript required by hobo-rapid.j
-s, including the information required to perform automatic part updates
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+<page-scripts> 
 \end_layout
 
 \begin_layout Standard
-Parameters default 
+Renders dynamically generated JavaScript required by 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+hobo-rapid.js
+\end_layout
+
+\end_inset
+
+, including the information required to perform automatic part updates
 \end_layout
 
 \begin_layout Standard
-<permission-denied-page> The page rendered by default in the case of a permissio
-n-denied error
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+default
+\end_layout
+
+\begin_layout Subsubsection*
+<permission-denied-page> 
 \end_layout
 
 \begin_layout Standard
-Parameters content content-header heading Attributes message - The main
- message to display.
+The page rendered by default in the case of a permission-denied error
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+content-header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+heading 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+message: The main message to display.
  Defaults to “That operation is not allowed”
 \end_layout
 
-\begin_layout Standard
-<not-found-page> The page rendered by default in the case of a not-found
- error
+\begin_layout Subsubsection*
+<not-found-page> 
 \end_layout
 
 \begin_layout Standard
-Parameters content content-header heading Attributes message - The main
- message to display.
+The page rendered by default in the case of a not-found error
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+content-header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+heading 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+message: The main message to display.
  Defaults to “The page you were looking for could not be found”
 \end_layout
 
-\begin_layout Standard
-<doctype> Renders one of five HTML DOCTYPE declarations, according to the
- version attribute.
- Attributes ‘version’ - the doctype version, must be one of: HTML 4.01 STRICT
- HTML 4.01 TRANSITIONAL XHTML 1.0 STRICT XHTML 1.0 TRANSITIONAL XHTML 1.1 <html>
- Renders an <html> tag along with the DOCTYPE specified in the doctype attribute.
- Parameters default Attributes doctype - the version of the DOCTYPE required.
- See the version attribute to <doctype>
+\begin_layout Subsubsection*
+<doctype> 
 \end_layout
 
 \begin_layout Standard
-<if-ie> Renders a conditional comment in order to have some content ignored
- by all browsers other than Internet Explorer
+Renders one of five HTML DOCTYPE declarations, according to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+version
+\end_layout
+
+\end_inset
+
+ attribute.
+ 
 \end_layout
 
 \begin_layout Standard
-Parameters default Example
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+version: the doctype version, must be one of: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+HTML 4.01 STRICT 
+\end_layout
+
+\begin_layout Itemize
+HTML 4.01 TRANSITIONAL 
+\end_layout
+
+\begin_layout Itemize
+XHTML 1.0 STRICT 
+\end_layout
+
+\begin_layout Itemize
+XHTML 1.0 TRANSITIONAL 
+\end_layout
+
+\begin_layout Itemize
+XHTML 1.1 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+<html> 
 \end_layout
 
 \begin_layout Standard
+Renders an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<html>
+\end_layout
+
+\end_inset
+
+ tag along with the DOCTYPE specified in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+doctype
+\end_layout
+
+\end_inset
+
+ attribute.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+doctype - the version of the DOCTYPE required.
+ See the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+version
+\end_layout
+
+\end_inset
+
+ attribute to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<doctype>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<if-ie> 
+\end_layout
+
+\begin_layout Standard
+Renders a conditional comment in order to have some content ignored by all
+ browsers other than Internet Explorer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <if-ie version="lt IE 7"> ...
  </if-ie>
 \end_layout
 
-\begin_layout Standard
-<stylesheet> Simple wrapper for the stylesheet_link_tag helper.
- The name attribute can be a comma-separated list of stylesheet names.
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<stylesheet>
 \end_layout
 
 \begin_layout Standard
-<JavaScript> Simple wrapper for the javascript_include_tag helper.
- The name attribute can be a comma-separated list of script file names.
+Simple wrapper for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+stylesheet_link_tag
+\end_layout
+
+\end_inset
+
+ helper.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ attribute can be a comma-separated list of stylesheet names.
+\end_layout
+
+\begin_layout Subsubsection*
+<JavaScript> 
 \end_layout
 
 \begin_layout Standard
-<flash-message> Renders a Rails flash message wrapped in a <div> tag
+Simple wrapper for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+javascript_include_tag
+\end_layout
+
+\end_inset
+
+ helper.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ attribute can be a comma-separated list of script file names.
+\end_layout
+
+\begin_layout Subsubsection*
+<flash-message> 
 \end_layout
 
 \begin_layout Standard
-Attributes type - which flash message to display.
+Renders a Rails flash message wrapped in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+type - which flash message to display.
  Defaults to :notice
 \end_layout
 
 \begin_layout Standard
-CSS Classes The flash is output in a <div class="flash notice">, where notice
- is the type specified.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+CSS Classes
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
-<flash-messages> Renders <flash-message> for every flash type given in the
- names attribute (comma separated), or for all flash messages that have
- been set if names is not given.
+The flash is output in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="flash notice">
+\end_layout
+
+\end_inset
+
+, where 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+notice
+\end_layout
+
+\end_inset
+
+ is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+type
+\end_layout
+
+\end_inset
+
+ specified.
+\end_layout
+
+\begin_layout Subsubsection*
+<flash-messages> 
 \end_layout
 
 \begin_layout Standard
-<ajax-progress> Renders: <div id="ajax-progress"> <div> <span id="ajax-progress-
-text"> </span> </div> </div>
+Renders 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<flash-message>
+\end_layout
+
+\end_inset
+
+ for every flash type given in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+names
+\end_layout
+
+\end_inset
+
+ attribute (comma separated), or for all flash messages that have been set
+ if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+names
+\end_layout
+
+\end_inset
+
+ is not given.
+\end_layout
+
+\begin_layout Subsubsection*
+<ajax-progress>
+\end_layout
+
+\begin_layout Standard
+Renders: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<div id="ajax-progress"> 
+\end_layout
+
+\begin_layout LyX-Code
+  <div> 
+\end_layout
+
+\begin_layout LyX-Code
+    <span id="ajax-progress-text"> 
+\end_layout
+
+\begin_layout LyX-Code
+    </span> 
+\end_layout
+
+\begin_layout LyX-Code
+  </div> 
+\end_layout
+
+\begin_layout LyX-Code
+</div>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The theme will style this as an AJAX progress ‘spinner’
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
 Rapid Plus
 \end_layout
 
@@ -8330,90 +9748,499 @@ Rapid Plus
 Tags that define higher level interactive ‘widgets’
 \end_layout
 
+\begin_layout LyX-Code
+<live-search> 
+\end_layout
+
+\begin_layout LyX-Code
+<filter-menu> 
+\end_layout
+
+\begin_layout LyX-Code
+<table-plus> 
+\end_layout
+
+\begin_layout LyX-Code
+<sortable-collection> 
+\end_layout
+
+\begin_layout LyX-Code
+<preview-with-more> 
+\end_layout
+
+\begin_layout LyX-Code
+<gravatar> 
+\end_layout
+
+\begin_layout Subsubsection*
+<live-search> 
+\end_layout
+
 \begin_layout Standard
-<live-search> Provides an AJAX-powered find-as-you-type live search field
- which is hooked up to Hobo’s site-side search feature.
+Provides an AJAX-powered 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+find-as-you-type
+\end_layout
+
+\end_inset
+
+ live search field which is hooked up to Hobo’s site-side search feature.
  At the moment this tag is not very flexible.
  It is not easy to use if for anything other than Hobo’s site-wide search.
 \end_layout
 
 \begin_layout Standard
-Parameters close-button 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+close-button 
+\end_layout
+
+\begin_layout Subsubsection*
+<filter-menu> 
 \end_layout
 
 \begin_layout Standard
-<filter-menu> A <select> menu intended to act as a filter for index pages.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ menu intended to act as a filter for index pages.
 \end_layout
 
 \begin_layout Standard
-Attributes param-name - the name of the HTTP parameter to use for the filter
- options - an array of options for the menu.
- no-filter - The text of the first option which indicates no filter is in
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+param-name: the name of the HTTP parameter to use for the filter 
+\end_layout
+
+\begin_layout Itemize
+options: an array of options for the menu.
+ 
+\end_layout
+
+\begin_layout Itemize
+no-filter: The text of the first option which indicates no filter is in
  effect.
  Defaults to ‘All’
 \end_layout
 
-\begin_layout Standard
-<table-plus> An enhanced version of Rapid’s <table> that has support for
- column sorting, searching and pagination.
- This tag calls <table merge-params>, so the parameters for <table> are
- also available.
- An worked example of this tag is available in the Agility Tutorial
+\begin_layout Subsubsection*
+<table-plus> 
 \end_layout
 
 \begin_layout Standard
-Parameters header search-form search-submit #{scope.field-name}-heading #{scope.fi
-eld-name}-heading-link up-arrow down-arrow empty-message page-nav 
+An enhanced version of Rapid’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table>
+\end_layout
+
+\end_inset
+
+ that has support for column sorting, searching and pagination.
+ 
 \end_layout
 
 \begin_layout Standard
-<sortable-collection> An enhanced version of Rapid’s <collection> tag that
- supports drag-and-drop re-ordering.
- Each item in the collection has a <div class="ordering-handle" param="handle">
+This tag calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table merge-params>
+\end_layout
+
+\end_inset
+
+, so the parameters for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table>
+\end_layout
+
+\end_inset
+
+ are also available.
+ An 
+\begin_inset CommandInset href
+LatexCommand href
+name "worked example"
+target "http://cookbook.hobocentral.net/tutorials/agility#improve_the_project_page_with_a_searchable_sortable_table"
+
+\end_inset
+
+ of this tag is available in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Agility Tutorial"
+target "http://cookbook.hobocentral.net/tutorials/agility"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+search-form 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+search-submit 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+#{scope.field-name}-heading 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+#{scope.field-name}-heading-link 
+\end_layout
+
+\begin_layout Itemize
+up-arrow 
+\end_layout
+
+\begin_layout Itemize
+down-arrow 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+empty-message 
+\end_layout
+
+\begin_layout Itemize
+page-nav 
+\end_layout
+
+\begin_layout Subsubsection*
+<sortable-collection> 
+\end_layout
+
+\begin_layout Standard
+An enhanced version of Rapid’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag that supports drag-and-drop re-ordering.
+ Each item in the collection has a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="ordering-handle" param="handle">
+\end_layout
+
+\end_inset
+
  added, which can be used to drag the item up and down.
 \end_layout
 
 \begin_layout Standard
-Parameters item handle default card Attributes sortable-options - a hash
- of options to pass to the sortable_element helper.
- Default are: { :constraint => :vertical, :overlap => :vertical, :scroll
- => :window, :handle => 'ordering-handle', :complete => [visual_effect(:highligh
-t, attributes[:id])] }
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+item 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+handle 
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+card 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+sortable-options: a hash of options to pass to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+sortable_element
+\end_layout
+
+\end_inset
+
+ helper.
+ Default are: 
 \end_layout
 
 \begin_layout Standard
-Controller support This tag assumes the controller has a reorder action.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+{ :constraint => :vertical,
+\end_layout
+
+\begin_layout LyX-Code
+  :overlap => :vertical, 
+\end_layout
+
+\begin_layout LyX-Code
+  :scroll => :window, 
+\end_layout
+
+\begin_layout LyX-Code
+  :handle => 'ordering-handle',
+\end_layout
+
+\begin_layout LyX-Code
+  :complete => 
+\end_layout
+
+\begin_layout LyX-Code
+    [visual_effect(:highlight,
+\end_layout
+
+\begin_layout LyX-Code
+     attributes[:id])] }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Controller support
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+This tag assumes the controller has a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+reorder
+\end_layout
+
+\end_inset
+
+ action.
  This action is added automatically by Hobo’s model-controller if the model
- declares acts_as_list.
+ declares 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acts_as_list
+\end_layout
+
+\end_inset
+
+.
  See also drag and drop reordering in the Controllers and routing section
  of this book.
 \end_layout
 
-\begin_layout Standard
-<preview-with-more> Captures the common pattern of a list of “the first
- few” cards, along with a link to the rest.
+\begin_layout Subsubsection*
+<preview-with-more> 
 \end_layout
 
 \begin_layout Standard
-Parameters default heading more collection 
+Captures the common pattern of a list of “the first few” cards, along with
+ a link to the rest.
 \end_layout
 
 \begin_layout Standard
-<gravatar> Renders a gravatar (see gravatar.com) image in side a link to
- this.
- Requires this to have an email_address field.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+default 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+heading 
+\end_layout
+
+\begin_layout Itemize
+more 
+\end_layout
+
+\begin_layout Itemize
+collection 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+<gravatar> 
+\end_layout
+
+\begin_layout Standard
+Renders a gravatar (see 
+\begin_inset CommandInset href
+LatexCommand href
+target "gravatar.com"
+
+\end_inset
+
+) image in side a link to this.
+ Requires this to have an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+email_address
+\end_layout
+
+\end_inset
+
+ field.
  Normally called with a user record in context.
 \end_layout
 
 \begin_layout Standard
-Attributes size - Size in pixels of the image.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+size: Size in pixels of the image.
  Defaults to 80.
- rating - The rating allowed.
+ 
+\end_layout
+
+\begin_layout Itemize
+rating: The rating allowed.
  Defaults to ‘g’.
  See gravatar for information on ratings.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Rapid Summary
 \end_layout
 
@@ -8423,40 +10250,329 @@ These are a collection of tags that allow a application outline or summary
  
 \end_layout
 
+\begin_layout LyX-Code
+<rails-version> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-plugins> <rails-location> 
+\end_layout
+
+\begin_layout LyX-Code
+<plugin-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<rails-root> 
+\end_layout
+
+\begin_layout LyX-Code
+<plugin-location> 
+\end_layout
+
+\begin_layout LyX-Code
+<rails-env> 
+\end_layout
+
+\begin_layout LyX-Code
+<plugin-method> 
+\end_layout
+
+\begin_layout LyX-Code
+<hobo-version> 
+\end_layout
+
+\begin_layout LyX-Code
+<plugin-clean>
+\end_layout
+
+\begin_layout LyX-Code
+<plugin-version> 
+\end_layout
+
+\begin_layout LyX-Code
+<git-branch>
+\end_layout
+
+\begin_layout LyX-Code
+<git-version>
+\end_layout
+
+\begin_layout LyX-Code
+<with-environments> 
+\end_layout
+
+\begin_layout LyX-Code
+<git-clean>  
+\end_layout
+
+\begin_layout LyX-Code
+<environment-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<git-last-commit-time>  
+\end_layout
+
+\begin_layout LyX-Code
+<database-type>
+\end_layout
+
+\begin_layout LyX-Code
+<database-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<cms-method>
+\end_layout
+
+\begin_layout LyX-Code
+<cms-clean> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-models> 
+\end_layout
+
+\begin_layout LyX-Code
+<cms-last-commit-time> 
+\end_layout
+
+\begin_layout LyX-Code
+<model-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<cms-version>  
+\end_layout
+
+\begin_layout LyX-Code
+<model-table-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<cms-branch>
+\end_layout
+
+\begin_layout LyX-Code
+<with-model-columns> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-gems> 
+\end_layout
+
+\begin_layout LyX-Code
+<model-column-type> 
+\end_layout
+
+\begin_layout LyX-Code
+<gem-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<model-column-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<gem-version-requirement>
+\end_layout
+
+\begin_layout LyX-Code
+<gem-version-required> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-model-associations> 
+\end_layout
+
+\begin_layout LyX-Code
+<gem-version> 
+\end_layout
+
+\begin_layout LyX-Code
+<model-association-name> 
+\end_layout
+
+\begin_layout LyX-Code
+<gem-frozen> 
+\end_layout
+
+\begin_layout LyX-Code
+<model-association-macro> 
+\end_layout
+
+\begin_layout LyX-Code
+<gem-dependencies> 
+\end_layout
+
+\begin_layout LyX-Code
+<model-association-class-name>
+\end_layout
+
 \begin_layout Standard
 There are several items that are parents with multiple children.
  They all start with the “<with-“ prefix:
 \end_layout
 
-\begin_layout Standard
-<with-gems> <with-plugins> <with-environments> <with-models> <with-model-columns
-> <with-model-associations>
+\begin_layout LyX-Code
+<with-gems> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-plugins> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-environments> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-models> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-model-columns> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-model-associations>
 \end_layout
 
 \begin_layout Standard
-Note that Hobo creates the file /app/views/front/summary.dryml automatically
- for you:
+Note that Hobo creates the file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/app/views/front/summary.dryml
+\end_layout
+
+\end_inset
+
+ automatically for you:
 \end_layout
 
 \begin_layout Standard
-Figure 300: The contents of the "summary.dryml" file
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/summary.dryml.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The contents of the "summary.dryml" file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 301: Sample view of the first section of an application summary page
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/application_summary_page_sample.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sample view of the first section of an application summary page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Below is a complete listing of the default app/views/front/summary.dryml
+Below is a complete listing of the default 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/front/summary.dryml
+\end_layout
+
+\end_inset
+
  file.
  It serves as clear documentation for this tag library.
 \end_layout
 
 \begin_layout Standard
-<page> <content:> <div class="content-body"> <h2>Application Summary</h2>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  <content:> 
+\end_layout
+
+\begin_layout LyX-Code
+    <div class="content-body">   
+\end_layout
+
+\begin_layout LyX-Code
+    <h2>Application Summary</h2>
+\end_layout
+
+\begin_layout LyX-Code
 <table class="app-summary"> <tr> <th></th><th></th></tr> <tr> <td>Application
  Name</td> <td><app-name/></td></tr> <tr> <td>Application Location</td><td><rail
 s-root/></td></tr> <tr> <td>Rails Version</td> <td><rails-version/></td></tr>
@@ -8464,7 +10580,7 @@ s-root/></td></tr> <tr> <td>Rails Version</td> <td><rails-version/></td></tr>
  <td><rails-env/></td> </tr> </table>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <h3>Change Control</h3> <table class="app-summary"> <tr> <th></th><th></th></tr>
  <tr> <td>Method</td>td><cms-method/></td> </tr> <if test="&cms_method.strip=='gi
 t'"> <tr> <td>Version</td> <td><cms-version/></td> </tr> <tr> <td>Date</td>
@@ -8472,7 +10588,7 @@ t'"> <tr> <td>Version</td> <td><cms-version/></td> </tr> <tr> <td>Date</td>
 td> </tr> <tr> <td>Clean?</td> <td><cms-clean/></td></tr> </if> </table>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <h3>Gems</h3> <table class="app-summary"> <with-gems> <tr if="&first_item?"><th>
 </th><th>Required</th><th>Installed</th><th>Status</th><th>Dependencies</th></tr
 > <tr> <td><gem-name/></td> <td><gem-version-required/></td> <td><gem-version/><
@@ -8480,7 +10596,7 @@ td> </tr> <tr> <td>Clean?</td> <td><cms-clean/></td></tr> </if> </table>
  </table>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <h3>Plugins</h3> <table class="app-summary"> <with-plugins> <tr if="&first_item?
 "><th></th><th>Location</th><th>Method</th><th>Clean?</th><th>Version</th></tr>
  <tr> <td><plugin-name/></td> <td><plugin-location/></td> <td><plugin-method/></
@@ -8488,14 +10604,14 @@ td> <td><plugin-clean/></td> <td><plugin-version/></td> </tr> </with-plugins>
  </table>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <h3>Environments</h3> <table class="app-summary"> <tr><th></th><th colspan='2'>d
 atabase</th></tr> <with-environments> <tr> <td><environment-name /></td>
  <td><database-type /></td> <td><database-name /></td> </tr> </with-environments
 > </table>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <h2>Models</h2> <table class="app-summary"> <tr><th>Class</th><th>Table</th></tr
 > <with-models> <tr> <td><model-name/></td> <td><model-table-name/></td>
  </tr> </with-models> </table> <with-models> <h3 if="&this.try.table_name"><model-
@@ -8506,7 +10622,12 @@ m?"><th>Column</th><th>Type</th></tr> <tr> <td><model-column-name/></td>
 ation</th><th>Macro</th><th>Class</th></tr> <tr> <td><model-association-name/></
 td> <td><model-association-macro/></td> <td><model-association-class-name/></td>
  </tr> </with-model-associations> </table> </with-models> </div> </content:>
- </page> 
+ </page>
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
