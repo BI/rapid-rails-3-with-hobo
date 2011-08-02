@@ -10194,7 +10194,7 @@ When running in development mode, all of these libraries are automatically
 Divergences from XML and HTML
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Self-closing tags
 \end_layout
 
@@ -10381,15 +10381,7 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
-<div class="container">
-\end_layout
-
-\begin_layout LyX-Code
-  <p class="content my-foo"></p>
-\end_layout
-
-\begin_layout LyX-Code
-</div>
+<div class="container"><p class="content my-foo"></p></div>
 \end_layout
 
 \end_inset
