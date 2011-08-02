@@ -2,3 +2,32 @@
 #  \DeclareLaTeXClass[book]{hellobook}
 Input stdclass.inc
 
+Style Code
+	Category              MainText
+	Margin                Static
+	LatexType             Environment
+	LatexName             lcode
+	NextNoIndent          1
+	LeftMargin            M
+	RightMargin           M
+	TopSep                0.5
+	BottomSep             0.5
+	Align                 Left
+	AlignPossible         Block, Left, Right, Center
+	LabelType             No_Label
+	FreeSpacing           1
+	Preamble
+		\newenvironment{lcode}
+			{\par\begin{list}{}{
+				\raggedright
+				\setlength{\itemsep}{0pt}
+				\setlength{\parsep}{0pt}
+				\normalfont\ttfamily}%
+			 \item[]}
+			{\end{list}}
+	EndPreamble
+	Font
+	  Family              Typewriter
+	EndFont
+End
+
