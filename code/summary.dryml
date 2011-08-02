@@ -5,36 +5,46 @@
 
     <table class="app-summary">
       <tr> <th></th><th></th></tr>
-			<tr> 
-				<td>Application Name</td>           
-				<td><app-name/></td>         
-			</tr>
-			<tr> 
-				<td>Application Location</td>       
-				<td><rails-root/></td>     
-			</tr>
-			<tr> 
-				<td>Rails Version</td>              
-				<td><rails-version/></td>    
-			</tr>
-			<tr> 
-				<td>Mode</td>                      
-				<td><rails-env/></td> 
-			</tr>
+      <tr> 
+        <td>Application Name</td>           
+        <td><app-name/></td>         
+      </tr>
+      <tr> 
+        <td>Application Location</td>       
+        <td><rails-root/></td>     
+      </tr>
+      <tr> 
+        <td>Rails Version</td>              
+        <td><rails-version/></td>    
+      </tr>
+      <tr> 
+        <td>Mode</td>                      
+        <td><rails-env/></td> 
+      </tr>
     </table>
 
     <h3>Change Control</h3>
     <table class="app-summary">
       <tr> <th></th><th></th></tr>
-			<tr> 
-				<td>Method</td>               
-				<td><cms-method/></td> 
-			</tr>
+      <tr> 
+        <td>Method</td>               
+        <td><cms-method/></td> 
+      </tr>
       <if test="&cms_method.strip=='git'">
-        <tr> <td>Version</td>                <td><cms-version/></td> </tr>
-        <tr> <td>Date</td>                   <td><cms-last-commit-time/></td> </tr>
-        <tr> <td>Branch</td>                 <td><cms-branch/></td> </tr>
-        <tr> <td>Clean?</td>                 <td><cms-clean/></td></tr>
+        <tr> 
+          <td>Version</td>                
+          <td><cms-version/></td> 
+        </tr>
+        <tr> 
+          <td>Date</td>                   
+          <td><cms-last-commit-time/></td> 
+        </tr>
+        <tr> 
+          <td>Branch</td>                 
+          <td><cms-branch/></td> </tr>
+        <tr> 
+          <td>Clean?</td>                 
+          <td><cms-clean/></td></tr>
       </if>
     </table>
 
@@ -42,7 +52,11 @@
     <h3>Bundled Gems</h3>
     <table class="app-summary">
       <with-gems>
-        <tr if="&first_item?"><th></th><th>Version</th><th>Dependencies</th></tr>
+        <tr if="&first_item?">
+          <th></th>
+          <th>Version</th>
+          <th>Dependencies</th>
+        </tr>
         <tr>
           <td><gem-name/></td>
           <td><gem-version/></td>
@@ -54,7 +68,13 @@
     <h3>Plugins</h3>
     <table class="app-summary">
       <with-plugins>
-        <tr if="&first_item?"><th></th><th>Location</th><th>Method</th><th>Clean?</th><th>Version</th></tr>
+        <tr if="&first_item?">
+          <th></th>
+          <th>Location</th>
+          <th>Method</th>
+          <th>Clean?</th>
+          <th>Version</th>
+        </tr>
         <tr>
           <td><plugin-name/></td>
           <td><plugin-location/></td>
@@ -67,7 +87,10 @@
 
     <h3>Environments</h3>
     <table class="app-summary">
-      <tr><th></th><th colspan='2'>database</th></tr>
+      <tr>
+        <th></th>
+        <th colspan='2'>database</th>
+      </tr>
       <with-environments>
         <tr>
           <td><environment-name /></td>
@@ -79,7 +102,11 @@
 
     <h2>Models</h2>
     <table class="app-summary">
-      <tr><th>Class</th><th>Table</th><th></th></tr>
+      <tr>
+        <th>Class</th>
+        <th>Table</th>
+        <th></th>
+      </tr>
       <with-models>
         <tr>
           <td><model-name/></td>
@@ -90,10 +117,16 @@
     </table>
 
     <with-models>
-      <h3 if="&this.try.table_name"><model-name /></h3>
+      <h3 if="&this.try.table_name">
+        <model-name />
+      </h3>
       <table class="app-summary">
         <with-model-columns>
-          <tr if="&first_item?"><th>Column</th><th>Type</th><th></th></tr>
+          <tr if="&first_item?">
+            <th>Column</th>
+            <th>Type</th>
+            <th></th>
+          </tr>
           <tr>
             <td><model-column-name/></td>
             <td><model-column-type/></td>
@@ -103,11 +136,20 @@
       </table>
       <table class="app-summary">
         <with-model-associations>
-          <tr if="&first_item?"><th>Association</th><th>Macro</th><th>Class</th></tr>
+          <tr if="&first_item?">
+            <th>Association</th>
+            <th>Macro</th>
+            <th>Class</th></tr>
           <tr>
-            <td><model-association-name/></td>
-            <td><model-association-macro/></td>
-            <td><model-association-class-name/></td>
+            <td>
+              <model-association-name/>
+            </td>
+            <td>
+              <model-association-macro/>
+            </td>
+            <td>
+              <model-association-class-name/>
+            </td>
           </tr>
         </with-model-associations>
       </table>
