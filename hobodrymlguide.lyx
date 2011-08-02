@@ -43,6 +43,7 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
@@ -604,64 +605,102 @@ One of the strengths of DRYML is that defining tags is done right in the
 \end_layout
 
 \begin_layout Standard
-Here’s the page from the previous section, defined as a <page> tag simply
- by wrapping the markup in a <def> tag:
+Here’s the page from the previous section, defined as a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag simply by wrapping the markup in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+ tag:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="page">
 \end_layout
 
-\begin_layout Standard
-<html>
+\begin_layout LyX-Code
+  <html>
 \end_layout
 
-\begin_layout Standard
-<head> 
+\begin_layout LyX-Code
+    <head>
 \end_layout
 
-\begin_layout Standard
-<title>My Blog</title>
+\begin_layout LyX-Code
+      <title>My Blog</title>
 \end_layout
 
-\begin_layout Standard
-</head>
+\begin_layout LyX-Code
+    </head>
 \end_layout
 
-\begin_layout Standard
-<body>
+\begin_layout LyX-Code
+    <body>
 \end_layout
 
-\begin_layout Standard
-<h1>My Famous Blog!</h1>
+\begin_layout LyX-Code
+      <h1>My Famous Blog!</h1> 
 \end_layout
 
-\begin_layout Standard
-<h2><%= @post.title %></h2>
+\begin_layout LyX-Code
+      <h2><%= @post.title %></h2> 
 \end_layout
 
-\begin_layout Standard
-<div class="post-body">
+\begin_layout LyX-Code
+      <div class="post-body"> 
 \end_layout
 
-\begin_layout Standard
-<%= @post.body %>
+\begin_layout LyX-Code
+        <%= @post.body %> 
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+      </div> 
 \end_layout
 
-\begin_layout Standard
-</body>
+\begin_layout LyX-Code
+    </body> 
 \end_layout
 
-\begin_layout Standard
-</html>
+\begin_layout LyX-Code
+  </html> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -669,135 +708,451 @@ Now we can call that tag just as we would call any other:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <page/>
 \end_layout
 
-\begin_layout Standard
-If you’d like an analogy to “normal” programming, you can think of the <def>...</de
-f> as defining a method called page, and <page/> as a call to that method.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+If you’d like an analogy to “normal” programming, you can think of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>...</def>
+\end_layout
+
+\end_inset
+
+ as defining a method called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+page
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page/>
+\end_layout
+
+\end_inset
+
+ as a call to that method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 In fact, DRYML is implemented by compiling to Ruby, and that is exactly
  what is happening.
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Parameters
 \end_layout
 
 \begin_layout Standard
-We’ve illustrated the most basic usage of <def>, but our <page> tag is not
- very useful.
+We’ve illustrated the most basic usage of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+, but our 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag is not very useful.
  Let’s take it a step further to make it into the equivalent of a layout.
  First of all, we clearly need the body of the page to be different each
  time we call it.
 \end_layout
 
 \begin_layout Standard
-In DRYML we achieve this by adding parameters to the definition, which is
- accomplished with the param attribute.
+In DRYML we achieve this by adding 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+parameters
+\end_layout
+
+\end_inset
+
+ to the definition, which is accomplished with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ attribute.
  Here’s the new definition:
 \end_layout
 
 \begin_layout Standard
-<def tag="page">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="page"> 
 \end_layout
 
-\begin_layout Standard
-<html>
+\begin_layout LyX-Code
+  <html> 
 \end_layout
 
-\begin_layout Standard
-<head>
+\begin_layout LyX-Code
+    <head> 
 \end_layout
 
-\begin_layout Standard
-<title>My Blog</title> 
+\begin_layout LyX-Code
+      <title>My Blog</title> 
 \end_layout
 
-\begin_layout Standard
-</head>
+\begin_layout LyX-Code
+    </head> 
 \end_layout
 
-\begin_layout Standard
-<body param/>
+\begin_layout LyX-Code
+    <body param/> 
 \end_layout
 
-\begin_layout Standard
-</html>
+\begin_layout LyX-Code
+  </html> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
-Now we can call the <page> tag and provide our own body:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Now we can call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 <page>
 \end_layout
 
-\begin_layout Standard
-<body:>
+\end_inset
+
+ tag and provide our own body:
 \end_layout
 
 \begin_layout Standard
-<h1>My Famous Blog!</h1> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page>
+\end_layout
+
+\begin_layout LyX-Code
+   <body:>
+\end_layout
+
+\begin_layout LyX-Code
+     <h1>My Famous Blog!</h1> 
+\end_layout
+
+\begin_layout LyX-Code
+    <h2><%= @post.title %></h2> 
+\end_layout
+
+\begin_layout LyX-Code
+     <div class="post-body"> 
+\end_layout
+
+\begin_layout LyX-Code
+      <%= @post.body %>
+\end_layout
+
+\begin_layout LyX-Code
+     </div> 
+\end_layout
+
+\begin_layout LyX-Code
+  </body:>
+\end_layout
+
+\begin_layout LyX-Code
+ </page><def tag="page">
+\end_layout
+
+\begin_layout LyX-Code
+  <html>
+\end_layout
+
+\begin_layout LyX-Code
+    <head>
+\end_layout
+
+\begin_layout LyX-Code
+      <title>My Blog</title> 
+\end_layout
+
+\begin_layout LyX-Code
+    </head>
+\end_layout
+
+\begin_layout LyX-Code
+    <body param/>
+\end_layout
+
+\begin_layout LyX-Code
+  </html>
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<h2><%= @post.title %></h2> 
+See how easy that was? We just added 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
 \end_layout
 
-\begin_layout Standard
-<div class="post-body"> 
+\end_inset
+
+ to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body>
 \end_layout
 
-\begin_layout Standard
-<%= @post.body %>
+\end_inset
+
+ tag, which means our page tag now has a parameter called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+body
 \end_layout
 
-\begin_layout Standard
-</div> 
+\end_inset
+
+.
+ In the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
 \end_layout
 
-\begin_layout Standard
-</body:>
-\end_layout
+\end_inset
 
-\begin_layout Standard
-</page>
-\end_layout
-
-\begin_layout Standard
-See how easy that was? We just added param to the <body> tag, which means
- our page tag now has a parameter called body.
- In the <page> call we provide some content for that parameter.
+ call we provide some content for that parameter.
  
 \end_layout
 
 \begin_layout Standard
-It’s very important to read that call to <page> properly.
- In particular, the <body:> (note the trailing ’:’) is not a call to a tag,
- it is providing a named parameter to the call to <page>.
- We call <body:> a parameter tag.
+It’s very important to read that call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ properly.
+ In particular, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ (note the trailing ’:’) is 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+not
+\end_layout
+
+\end_inset
+
+ a call to a tag, it is providing a named parameter to the call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+.
+ We call 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+parameter tag
+\end_layout
+
+\end_inset
+
+.
  In Ruby terms you could think of the call like this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 page(:body => "...my body content...")
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Note that is not actually what the compiled Ruby looks like in this case,
- but it illustrates the important point that <page> is a call to a defined
- tag, whereas <body:> is providing a parameter to that call.
+ but it illustrates the important point that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ is a call to a defined tag, whereas 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ is providing a parameter to that call.
+\end_layout
+
+\begin_layout Subsection*
 Changing Parameter Names
 \end_layout
 
@@ -807,35 +1162,54 @@ To give the parameter a different name, we can provide a value to the param
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="page">
 \end_layout
 
-\begin_layout Standard
-<html>
+\begin_layout LyX-Code
+   <html>
 \end_layout
 
-\begin_layout Standard
-<head>
+\begin_layout LyX-Code
+     <head>
 \end_layout
 
-\begin_layout Standard
-<title>My Blog</title>
+\begin_layout LyX-Code
+       <title>My Blog</title>
 \end_layout
 
-\begin_layout Standard
-</head> 
+\begin_layout LyX-Code
+     </head> 
 \end_layout
 
-\begin_layout Standard
-<body param="content"/> 
+\begin_layout LyX-Code
+    <body param="content"/> 
 \end_layout
 
-\begin_layout Standard
-</html>
+\begin_layout LyX-Code
+  </html>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -843,11 +1217,45 @@ We would now call the tag like this:
 \end_layout
 
 \begin_layout Standard
-<page><content:> ...body content goes here...
- </content:></page>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  <content:>
+\end_layout
+
+\begin_layout LyX-Code
+    ...body content goes here...
+\end_layout
+
+\begin_layout LyX-Code
+  </content:>
+\end_layout
+
+\begin_layout LyX-Code
+</page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Multiple Parameters
 \end_layout
 
@@ -857,86 +1265,181 @@ As you would expect, we can define many parameters in a single tag.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="page">
 \end_layout
 
-\begin_layout Standard
-<html> 
+\begin_layout LyX-Code
+   <html> 
 \end_layout
 
-\begin_layout Standard
-<head>
+\begin_layout LyX-Code
+    <head>
 \end_layout
 
-\begin_layout Standard
-<title>My Blog</title>
+\begin_layout LyX-Code
+       <title>My Blog</title>
 \end_layout
 
-\begin_layout Standard
-</head> 
+\begin_layout LyX-Code
+     </head> 
 \end_layout
 
-\begin_layout Standard
-<body> 
+\begin_layout LyX-Code
+    <body> 
 \end_layout
 
-\begin_layout Standard
-<div param="content"/> 
+\begin_layout LyX-Code
+      <div param="content"/> 
 \end_layout
 
-\begin_layout Standard
-<div param="aside" /> 
+\begin_layout LyX-Code
+      <div param="aside" /> 
 \end_layout
 
-\begin_layout Standard
-</body>
+\begin_layout LyX-Code
+    </body>
 \end_layout
 
-\begin_layout Standard
-</html>
+\begin_layout LyX-Code
+  </html>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Which we could call like this:
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <page>
 \end_layout
 
-\begin_layout Standard
-<content:> ...
+\begin_layout LyX-Code
+   <content:> ...
  main content here ...
  </content:>
 \end_layout
 
-\begin_layout Standard
-<aside:> ...
+\begin_layout LyX-Code
+   <aside:>  ...
  aside content here ...
  </aside:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </page>
 \end_layout
 
-\begin_layout Standard
-Note that when you name a parameter, DRYML automatically adds a CSS class
- of the same name to the output, so the two <div> tags above will be output
- as <div class="content"> and <div class="aside"> respectively.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note that when you name a parameter, DRYML automatically adds a CSS class
+ of the same name to the output, so the two 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+ tags above will be output as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="content">
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div class="aside">
+\end_layout
+
+\end_inset
+
+ respectively.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Default Parameter Content
 \end_layout
 
 \begin_layout Standard
-In the examples we’ve seen so far, we’ve only put the param attribute on
- empty tags.
+In the examples we’ve seen so far, we’ve only put the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ attribute on empty tags.
  That’s not required though.
  If you declare a non-empty tag as a parameter, the content of that tag
  becomes the default when the call does not provide that parameter.
@@ -945,66 +1448,114 @@ In the examples we’ve seen so far, we’ve only put the param attribute on
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="page">
 \end_layout
 
-\begin_layout Standard
-<html>
+\begin_layout LyX-Code
+  <html>
 \end_layout
 
-\begin_layout Standard
-<head> 
+\begin_layout LyX-Code
+     <head> 
 \end_layout
 
-\begin_layout Standard
-<title param>My Blog</title>
+\begin_layout LyX-Code
+       <title param>My Blog</title>
 \end_layout
 
-\begin_layout Standard
-</head> 
+\begin_layout LyX-Code
+     </head> 
 \end_layout
 
-\begin_layout Standard
-<body param>
+\begin_layout LyX-Code
+     <body param>
 \end_layout
 
-\begin_layout Standard
-</html>
+\begin_layout LyX-Code
+   </html>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 We’ve made the page title parameterized.
- All existing calls to <page/> will continue to work unchanged, but we’ve
- now got the ability to change the title on a per-page basis:
+ All existing calls to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page/>
+\end_layout
+
+\end_inset
+
+ will continue to work unchanged, but we’ve now got the ability to change
+ the title on a per-page basis:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <page>
 \end_layout
 
-\begin_layout Standard
-<title:>My VERY EXCITING Blog</title:>
+\begin_layout LyX-Code
+   <title:>My VERY EXCITING Blog</title:>
 \end_layout
 
-\begin_layout Standard
-<body:>
+\begin_layout LyX-Code
+   <body:>
 \end_layout
 
-\begin_layout Standard
-...
+\begin_layout LyX-Code
+     ...
  body content
 \end_layout
 
-\begin_layout Standard
-</body:> 
+\begin_layout LyX-Code
+   </body:> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1013,78 +1564,185 @@ This is a very nice feature of DRYML - whenever you’re writing a tag, and
  throw the param attribute at it and you’re done.
 \end_layout
 
-\begin_layout Standard
-Nested param Declarations
+\begin_layout Subsection*
+Nested 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ Declarations
 \end_layout
 
 \begin_layout Standard
-You can nest param declarations inside other tags that have param on them.
- For example, there’s no need to choose between a <page> tag that provides
- a single content section and one that provides an aside section as well
- – a single definition can serve both purposes:
+You can nest 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
 \end_layout
 
-\begin_layout Standard
-<def tag="page">
+\end_inset
+
+ declarations inside other tags that have 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
 \end_layout
 
-\begin_layout Standard
-<html>
-\end_layout
+\end_inset
 
-\begin_layout Standard
-<head>
-\end_layout
+ on them.
+ For example, there’s no need to choose between a 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
-<title>My Blog</title>
-\end_layout
-
-\begin_layout Standard
-</head>
-\end_layout
-
-\begin_layout Standard
-<body param>
-\end_layout
-
-\begin_layout Standard
-<div param="content"/>
-\end_layout
-
-\begin_layout Standard
-<div param="aside" />
-\end_layout
-
-\begin_layout Standard
-</body>
-\end_layout
-
-\begin_layout Standard
-</html>
-\end_layout
-
-\begin_layout Standard
-</def>
-\end_layout
-
-\begin_layout Standard
-Here the <body> tag is a param, and so are the two <div> tags inside it.
- The <page> tag can be called either like this:
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 <page>
 \end_layout
 
+\end_inset
+
+ tag that provides a single content section and one that provides an aside
+ section as well – a single definition can serve both purposes:
+\end_layout
+
 \begin_layout Standard
-<body:> ...
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="page">
+\end_layout
+
+\begin_layout LyX-Code
+  <html>
+\end_layout
+
+\begin_layout LyX-Code
+    <head>
+\end_layout
+
+\begin_layout LyX-Code
+      <title>My Blog</title>
+\end_layout
+
+\begin_layout LyX-Code
+    </head>
+\end_layout
+
+\begin_layout LyX-Code
+    <body param>
+\end_layout
+
+\begin_layout LyX-Code
+      <div param="content"/>
+\end_layout
+
+\begin_layout LyX-Code
+      <div param="aside" />
+\end_layout
+
+\begin_layout LyX-Code
+    </body>
+\end_layout
+
+\begin_layout LyX-Code
+  </html>
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body>
+\end_layout
+
+\end_inset
+
+ tag is a param, and so are the two 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+ tags inside it.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag can be called either like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page> 
+\end_layout
+
+\begin_layout LyX-Code
+  <body:> ...
  page content goes here ...
  </body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1092,95 +1750,279 @@ Or like this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <page>
 \end_layout
 
-\begin_layout Standard
-<content:> ...
+\begin_layout LyX-Code
+   <content:> ...
  main content here ...
  </content:> 
 \end_layout
 
-\begin_layout Standard
-<aside:> ...
+\begin_layout LyX-Code
+   <aside:>  ...
  aside content here ...
  </aside:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </page>
 \end_layout
 
-\begin_layout Standard
-An interesting question is, what happens if you give both a <body:> parameter
- and say, <content:>.
- By providing the <body:> parameter, you have replaced everything inside
- the body section, including those two parameterized <div> tags, so the
- <body:> you have provided will appear as normal, but the <content:> parameter
- will be silently ignored.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+An interesting question is, what happens if you give both a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ parameter and say, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<content:>
+\end_layout
+
+\end_inset
+
+.
+ By providing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ parameter, you have replaced everything inside the body section, including
+ those two parameterized 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+ tags, so the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ you have provided will appear as normal, but the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<content:>
+\end_layout
+
+\end_inset
+
+ parameter will be silently ignored.
+\end_layout
+
+\begin_layout Subsection*
 The Default Parameter
 \end_layout
 
 \begin_layout Standard
 In the situation where a tag will usually be given a single parameter when
  called, you can give your tag a more compact XML-like syntax by using the
- special parameter name default:
+ special parameter name 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+default
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="page"> 
 \end_layout
 
-\begin_layout Standard
-<html>
+\begin_layout LyX-Code
+  <html>
 \end_layout
 
-\begin_layout Standard
-<head>
+\begin_layout LyX-Code
+     <head>
 \end_layout
 
-\begin_layout Standard
-<title>My Blog</title>
+\begin_layout LyX-Code
+       <title>My Blog</title>
 \end_layout
 
-\begin_layout Standard
-</head> 
+\begin_layout LyX-Code
+     </head> 
 \end_layout
 
-\begin_layout Standard
-<body param="default"/> 
+\begin_layout LyX-Code
+    <body param="default"/> 
 \end_layout
 
-\begin_layout Standard
-</html
+\begin_layout LyX-Code
+  </html
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now there is no need to give a parameter tag in the call at all - the content
- directly inside the <page> tag becomes the default parameter:
+ directly inside the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag becomes the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+default
+\end_layout
+
+\end_inset
+
+ parameter:
 \end_layout
 
 \begin_layout Standard
-<page> ...
- body content goes here -- no need for a parameter tag ...
- </page>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page>
+\end_layout
+
+\begin_layout LyX-Code
+  ...
+ body content goes here -- 
+\end_layout
+
+\begin_layout LyX-Code
+  no need for a parameter tag ...
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-You might notice that the <page> tag is now indistinguishable from a normal
- HTML tag.
+You might notice that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag is now indistinguishable from a normal HTML tag.
  Some find this aspect of DRYML disconcerting at first – how can you tell
  what is an HTML tag and what it a defined DRYML tag? The answer is – you
  can’t, and that’s quite deliberate.
- This allows you to do nice tricks like define your own smart <form> tag
- or <a> tag (the Rapid library does exactly that).
+ This allows you to do nice tricks like define your own smart 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag (the Rapid library does exactly that).
  Other tag-based template languages (e.g.
  Java’s JSP) like to put everything in XML namespaces.
  The result is very cluttered views that are boring to type and hard to
@@ -1192,7 +2034,7 @@ You might notice that the <page> tag is now indistinguishable from a normal
  familiar and then view templates can be read and understood very easily.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 The Implicit Context
 \end_layout
 
@@ -1201,7 +2043,17 @@ In addition to the most important goal behind DRYML - creating a template
  language that would encourage re-use in the view layer, a secondary goal
  is for templates to be concise, elegant and readable.
  One aspect of DRYML that helps a lot in this regard is something called
- the implicit context.
+ the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+implicit context
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1209,7 +2061,17 @@ This feature was born of a simple observation that pretty much every page
  in a web app renders some kind of hierarchy of application objects.
  Think about a simple page in a blog - say, the permalink page for an individual
  post.
- The page as a whole can be considered a rendering of a BlogPost object.
+ The page as a whole can be considered a rendering of a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+BlogPost
+\end_layout
+
+\end_inset
+
+ object.
  Then we have sections of the page that display different “pieces” of the
  post – the title, the date, the author’s name, the body.
  Then we have the comments.
@@ -1225,9 +2087,39 @@ This structure is incredibly common, perhaps even universal, as it seems
  DRYML’s implicit context takes advantage of this fact to make templates
  extremely concise while remaining readable and clear.
  The object that you are rendering in any part of the page is known as the
- context, and every tag has access to this object through the method this.
+ 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+context
+\end_layout
+
+\end_inset
+
+, and every tag has access to this object through the method 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+.
  The controller sets up the initial context, and the templates then only
- have to mention where the context needs to change.
+ have to mention where the context needs to 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+change
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1248,22 +2140,98 @@ We’ll dive straight into some examples, but first a quick general point
 
 \begin_layout Standard
 In order to see the implicit context in its best light, we’ll start by defining
- a <view> tag, that simply renders the current context with HTML escaping.
- Remember the context is always available as this:
+ a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag, that simply renders the current context with HTML escaping.
+ Remember the context is always available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="view"><%= h this.to_s %></def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Next we’ll define a tag for making a link to the current context.
  We’ll assume the object will be recognized by Rails’ polymorphic routing.
- Let’s call the tag <l> (for link):
+ Let’s call the tag 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<l>
+\end_layout
+
+\end_inset
+
+ (for link):
 \end_layout
 
 \begin_layout Standard
-<def tag="l"><a href="#{url_for this}" param="default"/></def>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="l">
+\end_layout
+
+\begin_layout LyX-Code
+  <a href="#{url_for this}" param="default"/>
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1274,267 +2242,853 @@ Now let’s use these tags in a page template.
 \end_layout
 
 \begin_layout Standard
-def show @this = @blog_post = BlogPost.find(params[:id]) end
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+def show 
+\end_layout
+
+\begin_layout LyX-Code
+  @this = @blog_post = BlogPost.find(params[:id])
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The DRYML template handler looks for the @this instance variable for the
- initial context.
+The DRYML template handler looks for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+@this
+\end_layout
+
+\end_inset
+
+ instance variable for the initial context.
  It’s quite nice to also set the more conventionally named instance variable
  as we’ve done here.
-\end_layout
+ Now we’ll create the page.
+ Let’s assume we’re using a 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
-Now we’ll create the page.
- Let’s assume we’re using a <page> tag along the lines of those defined
- above.
- We’ll also assume that the blog post object has these fields: title, published_
-at, body and belongs_to :author, and that the author has a name field:
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 <page>
 \end_layout
 
-\begin_layout Standard
-<content:>
+\end_inset
+
+ tag along the lines of those defined above.
+ We’ll also assume that the blog post object has these fields: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+title
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+published_at
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+body
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to :author
+\end_layout
+
+\end_inset
+
+, and that the author has a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ field:
 \end_layout
 
 \begin_layout Standard
-<h2><view:title/></h2> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page>
 \end_layout
 
-\begin_layout Standard
-<div class="details"> 
+\begin_layout LyX-Code
+  <content:>
 \end_layout
 
-\begin_layout Standard
-Published by <l:author><view:name/></l> on <view:published-at/>.
+\begin_layout LyX-Code
+    <h2><view:title/></h2> 
 \end_layout
 
-\begin_layout Standard
-</div> 
+\begin_layout LyX-Code
+    <div class="details"> 
 \end_layout
 
-\begin_layout Standard
-<div class="post-body">
+\begin_layout LyX-Code
+      Published by <l:author><view:name/></l>
 \end_layout
 
-\begin_layout Standard
-<view:body/>
+\begin_layout LyX-Code
+      on <view:published-at/>.
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+    </div> 
 \end_layout
 
-\begin_layout Standard
-</content:>
+\begin_layout LyX-Code
+    <div class="post-body">
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+      <view:body/>
+\end_layout
+
+\begin_layout LyX-Code
+    </div>
+\end_layout
+
+\begin_layout LyX-Code
+  </content:>
+\end_layout
+
+\begin_layout LyX-Code
 </page>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-When you see a tag like <view:title/>, you don’t get any prizes for guessing
- what will be displayed.
+When you see a tag like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view:title/>
+\end_layout
+
+\end_inset
+
+, you don’t get any prizes for guessing what will be displayed.
  In terms of what actually happens, you can read this as “change the context
- to be the title attribute of the current context, then call the <view>
+ to be the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+title
+\end_layout
+
+\end_inset
+
+ attribute of the current context, then call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
  tag”.
- You might like to think of that change to the context as this = this.title
- (although in fact this is not assignable).
+ You might like to think of that change to the context as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this = this.title
+\end_layout
+
+\end_inset
+
+ (although in fact 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ is not assignable).
  But really you just think of it as “view the title”.
  Of what? Of whatever is in context, in this case the blog post.
 \end_layout
 
 \begin_layout Standard
 Be careful with the two different uses of colon in DRYML.
- A trailing colon as in <foo:> indicates a parameter tag, whereas a colon
- joining two names as in <view:title/> indicates a change of context.
+ A trailing colon as in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<foo:>
+\end_layout
+
+\end_inset
+
+ indicates a parameter tag, whereas a colon joining two names as in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view:title/>
+\end_layout
+
+\end_inset
+
+ indicates a change of context.
 \end_layout
 
 \begin_layout Standard
 When the tag ends, the context is set back to what it was.
- In the case of <view/> which is a self-closing tag familiar from XML, that
- happens immediately.
- The <l:author> tag is more interesting.
+ In the case of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view/>
+\end_layout
+
+\end_inset
+
+ which is a self-closing tag familiar from XML, that happens immediately.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<l:author>
+\end_layout
+
+\end_inset
+
+ tag is more interesting.
  We set the context to be the author, so that the link goes to the right
  place.
- Inside the <l:author> that context remains in place so we just need <view:name/
-> in order to display the author’s name.
+ Inside the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<l:author>
+\end_layout
+
+\end_inset
+
+ that context remains in place so we just need 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view:name/>
+\end_layout
+
+\end_inset
+
+ in order to display the author’s name.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
+\end_layout
+
+\end_inset
+
+ attributes
 \end_layout
 
 \begin_layout Standard
-with and field attributes
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with
 \end_layout
 
-\begin_layout Standard
-The with attribute is a special DRYML attribute that sets the context to
- be the result of any Ruby expression before the tag is called.
+\end_inset
+
+ attribute is a special DRYML attribute that sets the context to be the
+ result of any Ruby expression before the tag is called.
  In DRYML any attribute value that starts with ’&’ is interpreted as a Ruby
  expression.
- Here’s the same example as above using only the with attribute:
+ Here’s the same example as above using only the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with
+\end_layout
+
+\end_inset
+
+ attribute:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <page>
 \end_layout
 
-\begin_layout Standard
-<content:>
+\begin_layout LyX-Code
+   <content:>
+\end_layout
+
+\begin_layout LyX-Code
+     <h2><view with="&@blog_post.title"/></h2>
+\end_layout
+
+\begin_layout LyX-Code
+     <div class="details">
+\end_layout
+
+\begin_layout LyX-Code
+       Published by <l
+\end_layout
+
+\begin_layout LyX-Code
+         with="&@blog_post.author">
+\end_layout
+
+\begin_layout LyX-Code
+         <view with="&this.name"/></l>
+\end_layout
+
+\begin_layout LyX-Code
+       on <view with="&@blog_post.published-at"/>.
+\end_layout
+
+\begin_layout LyX-Code
+     </div>
+\end_layout
+
+\begin_layout LyX-Code
+     <div class="post-body">
+\end_layout
+
+\begin_layout LyX-Code
+       <view with="&@blog_post.body"/> 
+\end_layout
+
+\begin_layout LyX-Code
+     </div>
+\end_layout
+
+\begin_layout LyX-Code
+   </content:>
+\end_layout
+
+\begin_layout LyX-Code
+ </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<h2><view with="&@blog_post.title"/></h2>
+Note that we could have used 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+&this.title
+\end_layout
+
+\end_inset
+
+ instead of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+&@blog_post.title
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-<div class="details">
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
 \end_layout
 
-\begin_layout Standard
-Published by <l with="&@blog_post.author"><view with="&this.name"/></l>
-\end_layout
+\end_inset
 
-\begin_layout Standard
-on <view with="&@blog_post.published-at"/>.
-\end_layout
-
-\begin_layout Standard
-</div>
-\end_layout
-
-\begin_layout Standard
-<div class="post-body">
-\end_layout
-
-\begin_layout Standard
-<view with="&@blog_post.body"/> 
-\end_layout
-
-\begin_layout Standard
-</div>
-\end_layout
-
-\begin_layout Standard
-</content:>
-\end_layout
-
-\begin_layout Standard
-</page>
-\end_layout
-
-\begin_layout Standard
-Note that we could have used &this.title instead of &@blog_post.title.
-\end_layout
-
-\begin_layout Standard
-The field attribute makes things more concise by taking advantage of a common
- pattern.
+ attribute makes things more concise by taking advantage of a common pattern.
  When changing the context, we very often want to change to some attribute
  of the current context.
- field="x" is a shorthand for with="&this.x" (actually it’s not quite the
- same, using the field version also sets this_parent and this_field, whereas
- with does not.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field="x"
+\end_layout
+
+\end_inset
+
+ is a shorthand for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with="&this.x"
+\end_layout
+
+\end_inset
+
+ (actually it’s not quite the same, using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
+\end_layout
+
+\end_inset
+
+ version also sets 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_parent
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_field
+\end_layout
+
+\end_inset
+
+, whereas 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with
+\end_layout
+
+\end_inset
+
+ does not.
  This is discussed later in more detail).
 \end_layout
 
 \begin_layout Standard
-The same template again, this time using field:
+The same template again, this time using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <page>
 \end_layout
 
-\begin_layout Standard
-<content:> 
+\begin_layout LyX-Code
+  <content:> 
 \end_layout
 
-\begin_layout Standard
-<h2><view field="title"/></h2>
+\begin_layout LyX-Code
+    <h2><view field="title"/></h2>
 \end_layout
 
-\begin_layout Standard
-<div class="details"> 
+\begin_layout LyX-Code
+    <div class="details"> 
 \end_layout
 
-\begin_layout Standard
-Published by <l field="author"><view field="name"/></l>
+\begin_layout LyX-Code
+      Published by <l field="author">
 \end_layout
 
-\begin_layout Standard
-on <view field="published-at"/>.
+\begin_layout LyX-Code
+      <view field="name"/></l>
 \end_layout
 
-\begin_layout Standard
-</div> 
+\begin_layout LyX-Code
+      on <view field="published-at"/>.
 \end_layout
 
-\begin_layout Standard
-<div class="post-body"> 
+\begin_layout LyX-Code
+    </div> 
 \end_layout
 
-\begin_layout Standard
-<view field="body"/>
+\begin_layout LyX-Code
+    <div class="post-body"> 
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+      <view field="body"/>
 \end_layout
 
-\begin_layout Standard
-</content:>
+\begin_layout LyX-Code
+    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  </content:>
+\end_layout
+
+\begin_layout LyX-Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 If you compare that example to the first one, you should notice that the
- : syntax is just a shorthand for the field attribute; i.e., <view field="name">
- and <view:name> are equivalent.
+ : syntax is just a shorthand for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ attribute; i.e., 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view field="name">
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view:name>
+\end_layout
+
+\end_inset
+
+ are equivalent.
+\end_layout
+
+\begin_layout Subsection*
 Field chains
 \end_layout
 
 \begin_layout Standard
 Sometimes you want to drill down through several fields at a time.
- Both the field attribute and the : shorthand support this.
+ Both the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field
+\end_layout
+
+\end_inset
+
+ attribute and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+
+ shorthand support this.
  For example:
 \end_layout
 
 \begin_layout Standard
-<view:category.name/> <view field="category.name"/>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<view:category.name/> 
+\end_layout
+
+\begin_layout LyX-Code
+<view field="category.name"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_field
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_parent
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-this_field and this_parent
+When you change the context using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+field="my-field"
 \end_layout
 
-\begin_layout Standard
-When you change the context using field="my-field" (or the <tag:my-field>
- shorthand), the previous context is available as this_parent, and the name
- of the field is available as this_field.
- If you set the context using with="...", these values are not available.
+\end_inset
+
+ (or the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<tag:my-field>
+\end_layout
+
+\end_inset
+
+ shorthand), the previous context is available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_parent
+\end_layout
+
+\end_inset
+
+, and the name of the field is available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_field
+\end_layout
+
+\end_inset
+
+.
+ If you set the context using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with="..."
+\end_layout
+
+\end_inset
+
+, these values are not available.
  That means the following apparently identical tag calls are not quite the
  same:
 \end_layout
 
 \begin_layout Standard
-<my-tag with="&@post.title"/> <my-tag with="&@post" field="title"/>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<my-tag with="&@post.title"/> 
+\end_layout
+
+\begin_layout LyX-Code
+<my-tag with="&@post" field="title"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-If the tag requires this_parent and this_field, and in Rapid, for example,
- some do, then it must be called using the second style.
+If the tag requires 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_parent
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_field
+\end_layout
+
+\end_inset
+
+, and in Rapid, for example, some do, then it must be called using the second
+ style.
+\end_layout
+
+\begin_layout Subsubsection*
 Numeric field indices
 \end_layout
 
@@ -1544,48 +3098,135 @@ If your current context is a collection, you can use the field attribute
 \end_layout
 
 \begin_layout Standard
-<my-tag field="7" />
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<my-tag field="7" /> 
 \end_layout
 
-\begin_layout Standard
-<% i=97 %>
+\begin_layout LyX-Code
+  <% i=97 %> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <my-tag field="&i" />
 \end_layout
 
-\begin_layout Standard
-The <repeat> tag sets this_field to the current index into the collection.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<repeat:foos>
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ tag sets 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_field
+\end_layout
+
+\end_inset
+
+ to the current index into the collection.
 \end_layout
 
 \begin_layout Standard
-<td><%= this_field %></td>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<repeat:foos> 
 \end_layout
 
-\begin_layout Standard
-<td><view /></td>
+\begin_layout LyX-Code
+  <td><%= this_field %></td> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  <td><view /></td> 
+\end_layout
+
+\begin_layout LyX-Code
 </repeat>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Forms
 \end_layout
 
 \begin_layout Standard
-When rendering the Rapid library’s <form> tag, DRYML keeps track of even
- more metadata in order to add name attributes to form fields automatically.
- This mechanism does not work if you set the context using with=.
+When rendering the Rapid library’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ tag, DRYML keeps track of even more metadata in order to add 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ attributes to form fields automatically.
+ This mechanism does not work if you set the context using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with=
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
 Tag attributes
 \end_layout
 
@@ -1598,27 +3239,144 @@ As we’ve seen, DRYML provides parameters as a mechanism for Customizing
 \end_layout
 
 \begin_layout Standard
-As a simple example, say your application has a bunch of help files in public/he
-lp, and you have links to them scattered around your views.
+As a simple example, say your application has a bunch of help files in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+public/help
+\end_layout
+
+\end_inset
+
+, and you have links to them scattered around your views.
  Here’s a tag you could define:
 \end_layout
 
 \begin_layout Standard
-<def tag="help-link" attrs="file">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="help-link" attrs="file"> 
+\end_layout
+
+\begin_layout LyX-Code
+  <a class="help"
+\end_layout
+
+\begin_layout LyX-Code
+     href="#{base_url}/help/#{file}.html"
+\end_layout
+
+\begin_layout LyX-Code
+     param="default"/> 
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<a class="help" href="#{base_url}/help/#{file}.html" param="default"/> </def>
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
 \end_layout
 
-\begin_layout Standard
-<def> takes a special attribute attrs.
+\end_inset
+
+ takes a special attribute 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attrs
+\end_layout
+
+\end_inset
+
+.
  Use this to declare a list (separated by commas) of attributes, much as
  you would declare arguments to a method in Ruby.
- Here we’ve defined one attribute, file, and just like arguments in Ruby,
- file becomes a local variable inside the tag definition.
- In this definition we construct the href attribute from the base_url helper
- and file, using Ruby string interpolation syntax (#{....}).
+ Here we’ve defined one attribute, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+file
+\end_layout
+
+\end_inset
+
+, and just like arguments in Ruby, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+file
+\end_layout
+
+\end_inset
+
+ becomes a local variable inside the tag definition.
+ In this definition we construct the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+href
+\end_layout
+
+\end_inset
+
+ attribute from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+base_url
+\end_layout
+
+\end_inset
+
+ helper and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+file
+\end_layout
+
+\end_inset
+
+, using Ruby string interpolation syntax (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+#{....}
+\end_layout
+
+\end_inset
+
+).
  Remember that you can use that syntax when providing a value for any attribute
  in DRYML.
 \end_layout
@@ -1628,123 +3386,462 @@ The call to this tag would look like this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <help-link file="intro">Introductory Help</help-link>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Using regular XML-like attribute syntax – file="intro" – passes “intro”
- as a string value to the attribute.
+Using regular XML-like attribute syntax – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+file="intro"
+\end_layout
+
+\end_inset
+
+ – passes “intro” as a string value to the attribute.
  DRYML also allows you to pass any Ruby value.
- When the attribute value starts with &, the rest of the attribute is interprete
-d as a Ruby expression.
- For example you could use this syntax to pass true and false values:
+ When the attribute value starts with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+&
+\end_layout
+
+\end_inset
+
+, the rest of the attribute is interpreted as a Ruby expression.
+ For example you could use this syntax to pass 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+true
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+false
+\end_layout
+
+\end_inset
+
+ values:
 \end_layout
 
 \begin_layout Standard
-<help-link file="intro" new-window="&true">Introductory Help</help-link>
- <help-link file="intro" new-window="&false">Introductory Help</help-link>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<help-link file="intro" new-window="&true">
+\end_layout
+
+\begin_layout LyX-Code
+  Introductory Help
+\end_layout
+
+\begin_layout LyX-Code
+</help-link>
+\end_layout
+
+\begin_layout LyX-Code
+<help-link file="intro" new-window="&false">
+\end_layout
+
+\begin_layout LyX-Code
+  Introductory Help
+\end_layout
+
+\begin_layout LyX-Code
+</help-link>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-And we could add that new-window attribute to the definition like this:
+And we could add that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+new-window
+\end_layout
+
+\end_inset
+
+ attribute to the definition like this:
 \end_layout
 
 \begin_layout Standard
-<def tag="help-link" attrs="file, new-window">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="help-link" attrs="file, new-window"> 
 \end_layout
 
-\begin_layout Standard
-<a class="help" href="#{base_url}/help/#{file}.html" target="#{new_window
- ? '_blank' : '_self' }" param="default"/>
+\begin_layout LyX-Code
+  <a class="help" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+     href="#{base_url}/help/#{file}.html"
+\end_layout
+
+\begin_layout LyX-Code
+     target="#{new_window ? '_blank' : '_self' }"
+\end_layout
+
+\begin_layout LyX-Code
+     param="default"/> 
+\end_layout
+
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 An important point to notice there is that the markup-friendly dash in the
- new-window attribute became a Ruby-friendly underscore (new_window) in
- the local variable inside the tag definition.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+new-window
 \end_layout
 
-\begin_layout Standard
-Using the &, you can pass any value you like – arrays, hashes, active-record
- objects…
+\end_inset
+
+ attribute became a Ruby-friendly underscore (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+new_window
 \end_layout
 
-\begin_layout Standard
-In the case of boolean values like the one used in the above example, there
+\end_inset
+
+) in the local variable inside the tag definition.
+ Using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+&
+\end_layout
+
+\end_inset
+
+, you can pass any value you like – arrays, hashes, active-record objects…
+ In the case of boolean values like the one used in the above example, there
  is a nicer syntax that can be used in the call…
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Flag attributes
 \end_layout
 
 \begin_layout Standard
-That new-window attribute shown in the previous section is simple switch
- - on or off.
+That 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+new-window
+\end_layout
+
+\end_inset
+
+ attribute shown in the previous section is simple switch - on or off.
  DRYML lets you omit the value of the attribute, giving a flag-like syntax:
 \end_layout
 
 \begin_layout Standard
-<help-link file="intro" new-window>Introductory Help</help-link> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<help-link file="intro" new-window>
+\end_layout
+
+\begin_layout LyX-Code
+  Introductory Help
+\end_layout
+
+\begin_layout LyX-Code
+</help-link> 
+\end_layout
+
+\begin_layout LyX-Code
+<help-link file="intro">
+\end_layout
+
+\begin_layout LyX-Code
+  Introductory Help
+\end_layout
+
+\begin_layout LyX-Code
+</help-link>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<help-link file="intro">Introductory Help</help-link>
+Omitting the attribute value is equivalent to giving 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"&true"
 \end_layout
 
-\begin_layout Standard
-Omitting the attribute value is equivalent to giving "&true" as the value.
+\end_inset
+
+ as the value.
  In the second example the attribute is omitted entirely, meaning the value
- will be nil which evaluates to false in Ruby and so works as expected.
+ will be 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+nil
+\end_layout
+
+\end_inset
+
+ which evaluates to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+false
+\end_layout
+
+\end_inset
+
+ in Ruby and so works as expected.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_attributes
+\end_layout
+
+\end_inset
+
+ locals
 \end_layout
 
 \begin_layout Standard
-attributes and all_attributes locals
+Inside a tag definition two hashes are available in local variables: 
 \end_layout
 
-\begin_layout Standard
-Inside a tag definition two hashes are available in local variables:
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes
 \end_layout
 
-\begin_layout Standard
-attributes contains all the attributes that were not declared in the attrs
- list of the def but that were provided in the call to the tag.
+\end_inset
+
+ contains all the attributes that 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+were not declared
 \end_layout
 
-\begin_layout Standard
-all_attributes contains every attribute, including the declared ones.
+\end_inset
+
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attrs
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ list of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+def
+\end_layout
+
+\end_inset
+
+ but that were provided in the call to the tag.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_attributes
+\end_layout
+
+\end_inset
+
+ contains every attribute, including the declared ones.
+\end_layout
+
+\begin_layout Subsection*
 Merging Attributes
 \end_layout
 
 \begin_layout Standard
-In a tag definition, you can use the merge-attrs attribute to take any ‘extra’
- attributes that the caller passed in, and add them to a tag of your choosing
- inside your definition.
+In a tag definition, you can use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ attribute to take any ‘extra’ attributes that the caller passed in, and
+ add them to a tag of your choosing inside your definition.
  Let’s backtrack a bit and see why you might want to do that.
 \end_layout
 
 \begin_layout Standard
-Here’s a simple definition for a <markdown-help> tag--it’s similar to a
- tag defined in the Hobo Cookbook app:
+Here’s a simple definition for a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<markdown-help>
+\end_layout
+
+\end_inset
+
+ tag--it’s similar to a tag defined in the Hobo Cookbook app:
 \end_layout
 
 \begin_layout Standard
-<def tag="markdown-help">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="markdown-help"> 
 \end_layout
 
-\begin_layout Standard
-<a href="http://daringfireball.net/..." param="default"/>
+\begin_layout LyX-Code
+  <a href="http://daringfireball.net/..." 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+     param="default"/> 
+\end_layout
+
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1752,21 +3849,80 @@ You would use it like this:
 \end_layout
 
 \begin_layout Standard
-Add formatting using <markdown-help>markdown</markdown-help>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+Add formatting using
+\end_layout
+
+\begin_layout LyX-Code
+<markdown-help>markdown</markdown-help>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Suppose you wanted to give the caller the ability to choose the target for
- the link.
+Suppose you wanted to give the caller the ability to choose the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+target
+\end_layout
+
+\end_inset
+
+ for the link.
  You could extend the definition like this:
 \end_layout
 
 \begin_layout Standard
-<def tag="markdown-help" attrs="target">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="markdown-help" attrs="target"> 
 \end_layout
 
-\begin_layout Standard
-<a href="http://daringfireball.net/..." target="&target" param="default"/> </def>
+\begin_layout LyX-Code
+  <a href="http://daringfireball.net/..."
+\end_layout
+
+\begin_layout LyX-Code
+     target="&target" param="default"/> 
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1774,74 +3930,312 @@ Now we can call the tag like this:
 \end_layout
 
 \begin_layout Standard
-Add formatting using <markdown-help target="_blank">markdown</markdown-help>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+Add formatting using 
+\end_layout
+
+\begin_layout LyX-Code
+<markdown-help target="_blank">markdown</markdown-help>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-OK, but maybe the caller wants to add a CSS class, or a javascript onclick
+OK, but maybe the caller wants to add a CSS class, or a javascript 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+onclick
+\end_layout
+
+\end_inset
+
  attribute, or any one of a dozen potential HTML attributes.
  This approach is not going to scale.
- That’s where merge-attrs comes in.
+ That’s where 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ comes in.
  As mentioned above, DRYML keeps track of all the attributes that were passed
- to a tag, even if they were not declared in the attrs list of the tag definitio
-n.
- They are available in two hashes: attributes (that has only undeclared
- attributes) and all_attributes (that has all of them), but in normal usage
- you don’t need to access those variables directly.
+ to a tag, even if they were not declared in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attrs
+\end_layout
+
+\end_inset
+
+ list of the tag definition.
+ They are available in two hashes: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+ (that has only undeclared attributes) and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_attributes
+\end_layout
+
+\end_inset
+
+ (that has all of them), but in normal usage you don’t need to access those
+ variables directly.
  To add all of the undeclared attributes to a tag inside your definition,
- just add the merge-attrs attribute, like this:
+ just add the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ attribute, like this:
 \end_layout
 
 \begin_layout Standard
-<def tag="markdown-help"> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="markdown-help">
+\end_layout
+
+\begin_layout LyX-Code
+  <a href="http://daringfireball.net/..." 
+\end_layout
+
+\begin_layout LyX-Code
+     merge-attrs param="default"/> 
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<a href="http://daringfireball.net/..." merge-attrs param="default"/> </def>
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
 \end_layout
 
-\begin_layout Standard
-Note that the merge attribute is another way of merging attributes.
- Declaring merge is a shorthand for declaring both merge-attrs and merge-params
+\end_inset
+
+ attribute is another way of merging attributes.
+ Declaring 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+ is a shorthand for declaring both 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-params
+\end_layout
+
+\end_inset
+
  (which we’ll cover later).
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Merging selected attributes
 \end_layout
 
 \begin_layout Standard
-merge-attrs can be given a value - either a hash containing attribute names
- and values, or a list of attribute names (comma separated), to be merged
- from the all_attributes variable.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ can be given a value - either a hash containing attribute names and values,
+ or a list of attribute names (comma separated), to be merged from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_attributes
+\end_layout
+
+\end_inset
+
+ variable.
+ Examples:
 \end_layout
 
 \begin_layout Standard
-Examples:
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<a merge-attrs="href, name"> 
 \end_layout
 
-\begin_layout Standard
-<a merge-attrs="href, name">
-\end_layout
-
-\begin_layout Standard
+\begin_layout LyX-Code
 <a merge-attrs="&my_attribute_hash">
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 A requirement that crops up from time to time is to forward to a tag all
  the attributes that it understands (i.e.
- the attributes from that tag’s attrs list), and to forward some or all
- the other attributes to tags called within that tag.
+ the attributes from that tag’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attrs
+\end_layout
+
+\end_inset
+
+ list), and to forward some or all the other attributes to tags called within
+ that tag.
  Say for example, we are declaring a tag that renders a section of content,
  with some navigation at the top.
- We want to be able to add CSS classes and so on to the main <div> that
- will be output, but the <navigation> tag also defines some special attributes,
- and these need to be forwarded to it.
+ We want to be able to add CSS classes and so on to the main 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+ that will be output, but the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ tag also defines some special attributes, and these need to be forwarded
+ to it.
 \end_layout
 
 \begin_layout Standard
-To achieve this we take advantage of a helper method attrs_for.
+To achieve this we take advantage of a helper method 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attrs_for
+\end_layout
+
+\end_inset
+
+.
  Given the name of a tag, it returns the list of attributes declared by
  that tag.
 \end_layout
@@ -1851,48 +4245,212 @@ Here’s the definition:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="section-with-nav"> 
 \end_layout
 
-\begin_layout Standard
-<div class="section" merge-attrs="&attributes - attrs_for(:navigation)">
- <navigation merge-attrs="&attributes & attrs_for(:navigation)"/>
+\begin_layout LyX-Code
+  <div class="section" 
 \end_layout
 
-\begin_layout Standard
-<do param="default"/>
+\begin_layout LyX-Code
+      merge-attrs="&attributes -
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+        attrs_for(:navigation)">
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+    <navigation 
+\end_layout
+
+\begin_layout LyX-Code
+      merge-attrs="&attributes &
+\end_layout
+
+\begin_layout LyX-Code
+        attrs_for(:navigation)"/>
+\end_layout
+
+\begin_layout LyX-Code
+    <do param="default"/>
+\end_layout
+
+\begin_layout LyX-Code
+  </div>
+\end_layout
+
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Note that:
 \end_layout
 
-\begin_layout Standard
-The expression attributes - attrs_for(:navigation) returns a hash of only
- those attributes from the attributes hash that are not declared by <navigation>
- (The - operator on Hash comes from HoboSupport)
+\begin_layout Itemize
+The expression 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes - attrs_for(:navigation)
 \end_layout
 
-\begin_layout Standard
-The expression attributes & attrs_for(:navigation) returns a hash of only
- those attributes from the attributes hash that are declared by <navigation>
- (The & operator on Hash comes from HoboSupport)
+\end_inset
+
+ returns a hash of only those attributes from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes
 \end_layout
 
-\begin_layout Standard
-The <do> tag is a “do nothing” tag, defined by the core DRYML taglib, which
- is always included.
+\end_inset
+
+ hash that are 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+not
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ declared by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ (The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+
+ operator on 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hash
+\end_layout
+
+\end_inset
+
+ comes from HoboSupport)
+\end_layout
+
+\begin_layout Itemize
+The expression 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes & attrs_for(:navigation)
+\end_layout
+
+\end_inset
+
+ returns a hash of only those 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+ from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+ hash that are declared by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ (The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+&
+\end_layout
+
+\end_inset
+
+ operator on 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hash
+\end_layout
+
+\end_inset
+
+ comes from HoboSupport)
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<do>
+\end_layout
+
+\end_inset
+
+ tag is a “do nothing” tag, defined by the core DRYML taglib, which is always
+ included.
+\end_layout
+
+\begin_layout Subsubsection*
 The class attribute
 \end_layout
 
@@ -1901,7 +4459,34 @@ If you have the following definition:
 \end_layout
 
 \begin_layout Standard
-<def tag="foo"> <div id="foo" class="bar" merge-attrs /> </def>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="foo"> 
+\end_layout
+
+\begin_layout LyX-Code
+  <div id="foo" class="bar" merge-attrs /> 
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1909,7 +4494,26 @@ and the user invokes it with:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <foo id="baz" class="bop" />
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1917,17 +4521,55 @@ The following content will result:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <foo id="baz" class="bar bop" />
 \end_layout
 
-\begin_layout Standard
-The class attribute receives special behavior when merging.
- All other attributes are overridden with the user specified values.
- The class attribute takes on the values from both the tag definition and
- invocation.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class
+\end_layout
+
+\end_inset
+
+ attribute receives special behavior when merging.
+ All other attributes are overridden with the user specified values.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class
+\end_layout
+
+\end_inset
+
+ attribute takes on the values from both the tag definition and invocation.
+\end_layout
+
+\begin_layout Subsection*
 Repeated and optional content
 \end_layout
 
@@ -1936,17 +4578,76 @@ As you would expect from any template language, DRYML has the facility to
  repeat sections of content, and to optionally render or not render given
  sections according to your application’s data.
  DRYML provides two alternative syntaxes, much as Ruby does (e.g.
- Ruby has the block if and the one-line suffix version of if).
+ Ruby has the block 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
+\end_layout
+
+\end_inset
+
+ and the one-line suffix version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection*
+Conditionals - 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+unless
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Conditionals - if and unless
+DRYML provides 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
 \end_layout
 
-\begin_layout Standard
-DRYML provides if and unless both as tags, which come from the core tag
- library, and are just ordinary tag definitions, and as attributes, which
- are part of the language:
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+unless
+\end_layout
+
+\end_inset
+
+ both as tags, which come from the core tag library, and are just ordinary
+ tag definitions, and as attributes, which are part of the language:
 \end_layout
 
 \begin_layout Standard
@@ -1954,7 +4655,26 @@ The tag version:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <if test="&logged_in?"><p>Welcome back</p></if>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1962,7 +4682,26 @@ The attribute version:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <p if="&logged_in?">Welcome back</p>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1970,17 +4709,64 @@ Important note! The test is performed (in Ruby terms) like this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 if (...your test expression...).blank?
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Got that? Blankiness not truthiness (blank? comes from ActiveSupport by
- the way – Rails’ mixed bag of core-Ruby extensions).
+Got that? Blankiness not truthiness (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+blank?
+\end_layout
+
+\end_inset
+
+ comes from ActiveSupport by the way – Rails’ mixed bag of core-Ruby extensions).
  So for example, in DRYML:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <if test="&current_user.comments">
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1992,17 +4778,56 @@ is a test to see if there are any comments – empty collections are considered
 \end_layout
 
 \begin_layout Standard
-Can we skip <unless>? It’s like <if> with the nest negated.
+Can we skip 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<unless>
+\end_layout
+
+\end_inset
+
+? It’s like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ with the nest negated.
  You get the picture, right?
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Repetition
 \end_layout
 
 \begin_layout Standard
-For repeating sections of content, DRYML has the <repeat> tag (from the
- core tag library) and the repeat attribute.
+For repeating sections of content, DRYML has the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ tag (from the core tag library) and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+repeat
+\end_layout
+
+\end_inset
+
+ attribute.
 \end_layout
 
 \begin_layout Standard
@@ -2010,15 +4835,34 @@ The tag version:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <repeat with="&current_user.new_messages">
 \end_layout
 
-\begin_layout Standard
-<h3><%= h this.subject %></h3>
+\begin_layout LyX-Code
+  <h3><%= h this.subject %></h3>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </repeat>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2026,7 +4870,34 @@ The attribute version:
 \end_layout
 
 \begin_layout Standard
-<h3 repeat="&current_user.new_messages"><%= h this.subject %></h3>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<h3 repeat="&current_user.new_messages">
+\end_layout
+
+\begin_layout LyX-Code
+  <%= h this.subject %>
+\end_layout
+
+\begin_layout LyX-Code
+</h3>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2034,7 +4905,7 @@ Notice that as well as the content being repeated, the implicit context
  is set to each item in the collection in turn.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Even/odd classes
 \end_layout
 
@@ -2042,75 +4913,272 @@ Even/odd classes
 It’s a common need to want alternating styles for items in a collection
  - e.g.
  striped table rows.
- Both the repeat attribute and the repeat tag set a scoped variable scope.even_od
-d which will be alternately ‘even’ then ‘odd’, so you could do:
+ Both the repeat attribute and the repeat tag set a scoped variable 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+scope.even_odd
+\end_layout
+
+\end_inset
+
+ which will be alternately ‘even’ then ‘odd’, so you could do:
 \end_layout
 
 \begin_layout Standard
-<h3 repeat="&new_messages" class="#{scope.even_odd}"><%= h this.subject %></h3>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<h3 repeat="&new_messages" class="#{scope.even_odd}">
+\end_layout
+
+\begin_layout LyX-Code
+  <%= h this.subject %>
+\end_layout
+
+\begin_layout LyX-Code
+</h3>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 That example illustrates another important point – any Ruby code in attributes
- is evaluated inside the repeat.
- In other words, the repeat attribute behaves the same as wrapping the tag
- in a <repeat> tag.
+ is evaluated 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+inside
 \end_layout
 
-\begin_layout Standard
-first_item? and last_item? helpers
+\end_inset
+
+ the repeat.
+ In other words, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+repeat
+\end_layout
+
+\end_inset
+
+ attribute behaves the same as wrapping the tag in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first_item?
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+last_item?
+\end_layout
+
+\end_inset
+
+ helpers
 \end_layout
 
 \begin_layout Standard
 Another common need is to give special treatment to the first and last items
  in a collection.
- The first_item? and last_item? helpers can be used to find out when these
- items come up; e.g., we could use first_item? to capitalise the first item:
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first_item?
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+last_item?
+\end_layout
+
+\end_inset
+
+ helpers can be used to find out when these items come up; e.g., we could
+ use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first_item?
+\end_layout
+
+\end_inset
+
+ to capitalise the first item:
 \end_layout
 
 \begin_layout Standard
-<h3 repeat="&new_messages"><%= h(first_item? ? this.subject.upcase : this.subject)
- %></h3>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<h3 repeat="&new_messages">
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  <%= h(first_item? ? 
+\end_layout
+
+\begin_layout LyX-Code
+        this.subject.upcase : 
+\end_layout
+
+\begin_layout LyX-Code
+        this.subject) %>
+\end_layout
+
+\begin_layout LyX-Code
+</h3>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Repeating over hashes
 \end_layout
 
 \begin_layout Standard
 If you give a hash as the value to repeat over, DRYML will iterate over
- each key/value pair, with the value available as this (i.e.
- the implicit context) and the key available as this_key.
+ each key/value pair, with the value available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ (i.e.
+ the implicit context) and the key available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_key
+\end_layout
+
+\end_inset
+
+.
  This is particularly useful for grouping things in combination with the
- group_by method:
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+group_by
+\end_layout
+
+\end_inset
+
+ method:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <div repeat="&current_user.new_messages.group_by(&:sender)"> 
 \end_layout
 
-\begin_layout Standard
-<h2>Messages from <%= h this_key %></h2>
+\begin_layout Code
+  <h2>Messages from <%= h this_key %></h2> 
 \end_layout
 
-\begin_layout Standard
-<ul> 
+\begin_layout Code
+    <ul> 
 \end_layout
 
-\begin_layout Standard
-<li repeat><%= h this.subject %></li>
+\begin_layout Code
+      <li repeat><%= h this.subject %></li> 
 \end_layout
 
-\begin_layout Standard
-</ul>
+\begin_layout Code
+    </ul> 
 \end_layout
 
-\begin_layout Standard
-<h2>
+\begin_layout Code
+  </h2> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </div>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2119,7 +5187,7 @@ That example has given a sneak preview of another point - using if/unless/repeat
  We’ll get to that in a minute.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Using the implicit context
 \end_layout
 
@@ -2131,55 +5199,200 @@ If you don’t specify the test of a conditional, or the collection to repeat
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <if:comments> 
 \end_layout
 
-\begin_layout Standard
-<h3>Comments</h3> 
+\begin_layout Code
+  <h3>Comments</h3> 
 \end_layout
 
-\begin_layout Standard
-<ul> 
+\begin_layout Code
+  <ul> 
 \end_layout
 
-\begin_layout Standard
-<li repeat> ...
- </li>
+\begin_layout Code
+    <li repeat> ...
+ </li> 
 \end_layout
 
-\begin_layout Standard
-</ul>
+\begin_layout Code
+  </ul> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </if>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-We’re switching the context on the <if> tag to be this.comments, which has
- two effects.
- Firstly the comments collection is used as the test for the if, so the
- whole section including the heading will be omitted if the collection is
- empty (remember that if tests for blankness, and empty collections are
- considered blank).
+We’re switching the context on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ tag to be 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.comments
+\end_layout
+
+\end_inset
+
+, which has two effects.
+ Firstly the comments collection is used as the test for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
+\end_layout
+
+\end_inset
+
+, so the whole section including the heading will be omitted if the collection
+ is empty (remember that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
+\end_layout
+
+\end_inset
+
+ tests for blankness, and empty collections are considered blank).
  Secondly, the context is switched to be the comments collection, so that
- when we come to repeat the <li> tag, all we need to say is repeat.
+ when we come to repeat the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<li>
+\end_layout
+
+\end_inset
+
+ tag, all we need to say is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+repeat
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+One last shorthand - attributes of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-One last shorthand - attributes of this
+The attribute versions of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if/unless
 \end_layout
 
-\begin_layout Standard
-The attribute versions of if/unless and repeat support a useful shortcut
- for accessing attributes or methods of the implicit context.
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+repeat
+\end_layout
+
+\end_inset
+
+ support a useful shortcut for accessing attributes or methods of the implicit
+ context.
  If you give a literal string attribute–that is, an attribute that does
- not start with &–this is interpreted as the name of a method on this.
+ not start with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+&
+\end_layout
+
+\end_inset
+
+–this is interpreted as the name of a method on 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+.
  For example:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <li repeat="comments"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2187,7 +5400,26 @@ is equivalent to
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <li repeat="&this.comments"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2195,7 +5427,26 @@ Similarly
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <p if="sticky?">This post has been marked 'sticky'</p>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2203,28 +5454,186 @@ is equivalent to
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <p if="this.sticky?">This post has been marked 'sticky'</p>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 It is a bit inconsistent that these shortcuts do not work with the tag versions
- of <if>, <unless> and <repeat>.
+ of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<unless>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+.
  This may be remedied in a future version of DRYML.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Content tags only
 \end_layout
 
 \begin_layout Standard
-The attributes introduced in this section – repeat, if and unless, can only
- be used on content tags, i.e.
- static HTML tags and defined tags.
- They cannot be used on tags like <def>, <extend> and <include>.
+The attributes introduced in this section – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+repeat
 \end_layout
 
-\begin_layout Standard
-Pseudo parameters - before, after, append, prepend, and replace
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+unless
+\end_layout
+
+\end_inset
+
+, can only be used on content tags, i.e.
+ static HTML tags and defined tags.
+ They cannot be used on tags like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<include>
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Pseudo parameters - 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+before
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+after
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+append
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+prepend
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+replace
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2235,39 +5644,77 @@ For every parameter you define in a tag, there are five “pseudo parameters”
 \end_layout
 
 \begin_layout Standard
-To help illustrate these, here’s a very simple <page> tag:
+To help illustrate these, here’s a very simple 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="page"> 
 \end_layout
 
-\begin_layout Standard
-<body>
+\begin_layout LyX-Code
+  <body> 
 \end_layout
 
-\begin_layout Standard
-<h1 param="heading"><%= h @this.to_s %></h1>
+\begin_layout LyX-Code
+    <h1 param="heading"><%= h @this.to_s %></h1> 
 \end_layout
 
-\begin_layout Standard
-<div param="content"></div>
+\begin_layout LyX-Code
+    <div param="content"></div> 
 \end_layout
 
-\begin_layout Standard
-</body>
+\begin_layout LyX-Code
+  </body> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
-We’ve assumed that @this.to_s will give us the name of the object that this
- page is presenting.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+We’ve assumed that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+@this.to_s
+\end_layout
+
+\end_inset
+
+ will give us the name of the object that this page is presenting.
+\end_layout
+
+\begin_layout Subsubsection*
 Inserting extra content
 \end_layout
 
@@ -2276,36 +5723,154 @@ The output of the heading would look something like:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <h1 class="heading">Welcome to my new blog</h1>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Pseudo parameters give us the ability to insert extra context in four places,
- marked here as (A), (B), (C) and (D):
+ marked here as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(A)
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(B)
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(C)
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(D)
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 (A)<h1 class="heading">(B)Welcome to my new blog(C)</h1>(D)
 \end_layout
 
-\begin_layout Standard
-The parameters are:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-(A) – <before-heading:>
+The parameters are: 
 \end_layout
 
-\begin_layout Standard
-(B) – <prepend-heading:>
+\begin_layout Itemize
+(A) – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<before-heading:>
 \end_layout
 
-\begin_layout Standard
-(C) – <append-heading:>
+\end_inset
+
+ 
 \end_layout
 
-\begin_layout Standard
-(D) – <after-heading:>
+\begin_layout Itemize
+(B) – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<prepend-heading:>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+(C) – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<append-heading:>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+(D) – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<after-heading:>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2313,28 +5878,92 @@ So, for example, suppose we want to add the name of the blog to the heading:
 \end_layout
 
 \begin_layout Standard
-<h1 class="heading">Welcome to my new blog -- The Hobo Blog</h1>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<h1 class="heading">
+\end_layout
+
+\begin_layout Code
+  Welcome to my new blog -- The Hobo Blog
+\end_layout
+
+\begin_layout Code
+</h1>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-To achieve that on one page, we could call the <page> tag like this:
-\end_layout
+To achieve that on one page, we could call the 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 <page>
 \end_layout
 
-\begin_layout Standard
-<append-heading:> -- The Hobo Blog</append-heading:>
+\end_inset
+
+ tag like this:
 \end_layout
 
 \begin_layout Standard
-<body:> ...
- </body>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  <append-heading:>
+\end_layout
+
+\begin_layout LyX-Code
+    -- The Hobo Blog
+\end_layout
+
+\begin_layout LyX-Code
+  </append-heading:> 
+\end_layout
+
+\begin_layout LyX-Code
+  <body:> ...
+ </body> 
+\end_layout
+
+\begin_layout LyX-Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2344,76 +5973,309 @@ Or we could go a step further and create a new page tag that added that
 \end_layout
 
 \begin_layout Standard
-<def tag="blog-page">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="blog-page"> 
 \end_layout
 
-\begin_layout Standard
-<page>
+\begin_layout LyX-Code
+  <page> 
 \end_layout
 
-\begin_layout Standard
-<append-heading:> -- The Hobo Blog</append-heading:> 
+\begin_layout LyX-Code
+    <append-heading:> -- The Hobo Blog</append-heading:> 
 \end_layout
 
-\begin_layout Standard
-<body: param></body>
+\begin_layout LyX-Code
+    <body: param></body> 
 \end_layout
 
-\begin_layout Standard
-</page>
+\begin_layout LyX-Code
+  </page> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
-Note: we have explicitly made sure that the <body:> parameter is still available.
- There is a better way of achieving this using merge-params or merge, which
- are covered later.)
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The default parameter supports append and prepend
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: we have explicitly made sure that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ parameter is still available.
+ There is a better way of achieving this using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-params
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+, which are covered later.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+The default parameter supports 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+append
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+prepend
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-As we’ve seen, the <append-...:> and <prepend-...:> parameters insert content
- at the beginning and end of a tag’s content.
+As we’ve seen, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<append-...:>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<prepend-...:>
+\end_layout
+
+\end_inset
+
+ parameters insert content at the beginning and end of a tag’s content.
  But in the case of a defined tag that may output all sorts of other tags
- and may itself define many parameters, what exactly is the tag’s “content”?
- It is whatever is contained in the default parameter tag.
- So <append-...:> and <prepend-...:> only work on tags that define a default parameter.
+ and may itself define many parameters, what exactly 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+is
+\end_layout
+
+\end_inset
+
+ the tag’s “content”? It is whatever is contained in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+default
+\end_layout
+
+\end_inset
+
+ parameter tag.
+ So 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<append-...:>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<prepend-...:>
+\end_layout
+
+\end_inset
+
+ only work on tags that define a default parameter.
 \end_layout
 
 \begin_layout Standard
-For this reason, you will often see tag definitions include a default parameter,
- even though it would be rare to use it directly.
- It is there so that <append-...:> and <prepend-...:> work as expected.
+For this reason, you will often see tag definitions include a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+default
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ parameter, even though it would be rare to use it directly.
+ It is there so that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<append-...:>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<prepend-...:>
+\end_layout
+
+\end_inset
+
+ work as expected.
+\end_layout
+
+\begin_layout Subsubsection*
 Replacing a parameter entirely
 \end_layout
 
 \begin_layout Standard
 So far, we’ve seen how the parameter mechanism allows us to change the attribute
 s and content of a tag, but what if we want to remove the tag entirely?
- We might want a page that has no <h1> tag at all, or has <h2> instead.
+ We might want a page that has no 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h1>
+\end_layout
+
+\end_inset
+
+ tag at all, or has 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h2>
+\end_layout
+
+\end_inset
+
+ instead.
  For that situation we can use “replace parameters”.
- Here’s a page with an <h2> instead of an <h1>:
+ Here’s a page with an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h2>
+\end_layout
+
+\end_inset
+
+ instead of an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h1>
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-<page>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page> 
 \end_layout
 
-\begin_layout Standard
-<heading: replace><h2>My Awesome Page</h2></heading:>
+\begin_layout LyX-Code
+  <heading: replace><h2>My Awesome Page</h2></heading:> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2421,84 +6283,248 @@ And here’s one with no heading at all:
 \end_layout
 
 \begin_layout Standard
-<page>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<page> 
 \end_layout
 
-\begin_layout Standard
-<heading: replace/> 
+\begin_layout LyX-Code
+  <heading: replace/> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 There is a nice shorthand for the second case.
- For every parameter, the enclosing tag also supports a special without
+ For every parameter, the enclosing tag also supports a special 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+without
+\end_layout
+
+\end_inset
+
  attribute.
  This is exactly equivalent to the previous example, but much more readable:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <page without-heading/>
 \end_layout
 
-\begin_layout Standard
-Note: To make things more consistent, <heading: replace> may become <replace-hea
-ding:> in the future.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: To make things more consistent, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<heading: replace>
+\end_layout
+
+\end_inset
+
+ may become 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<replace-heading:>
+\end_layout
+
+\end_inset
+
+ in the future.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Current limitation
 \end_layout
 
 \begin_layout Standard
 Due to a limitation of the current DRYML implementation, you cannot use
- both before and after on the same parameter.
+ both 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+before
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+after
+\end_layout
+
+\end_inset
+
+ on the same parameter.
  You can achieve the same effect as follows (this technique is covered properly
  later in the section on wrapping content):
 \end_layout
 
 \begin_layout Standard
-<heading: replace> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<heading: replace>
 \end_layout
 
-\begin_layout Standard
-...
+\begin_layout LyX-Code
+  ...
  before content ...
+ 
 \end_layout
 
-\begin_layout Standard
-<heading restore>
+\begin_layout LyX-Code
+  <heading restore> 
 \end_layout
 
-\begin_layout Standard
-...
+\begin_layout LyX-Code
+  ...
  after content ...
+ 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </heading:>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Nested parameters
 \end_layout
 
 \begin_layout Standard
 As we’ve discussed at the start of this guide, one of the main motivations
- for the creation of DRYML was to deliver a higher degree of re-use in the
- view layer.
+ for the creation of DRYML was to deliver a higher degree of 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+re-use
+\end_layout
+
+\end_inset
+
+ in the view layer.
  One of the great challenges of re-use is managing the constant tension
  between re-use and flexibility: the greater the need for flexibility, the
  harder it is to re-use existing code.
- This has a very direct effect on the size of things that we can successfully
- re-use.
+ This has a very direct effect on the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+size
+\end_layout
+
+\end_inset
+
+ of things that we can successfully re-use.
  Take the humble hypertext link for example.
  A link is a link is a link – there’s only so much you could really want
  to change, so it’s not surprising that long ago we stopped having to assemble
  links from fragments of HTML text.
- Rails has its link_to helper, and Hobo Rapid has its <a> tag.
+ Rails has its 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+link_to
+\end_layout
+
+\end_inset
+
+ helper, and Hobo Rapid has its 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag.
  At the other extreme, reusing an entire photo gallery or interactive calendar
  is extremely difficult.
  Again no surprise–these things have been built from scratch over and over
@@ -2522,7 +6548,17 @@ ty can be retained longer.
 
 \begin_layout Standard
 One of the most important features that DRYML brings to the re-use party
- is nested parameters.
+ is 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+nested parameters
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -2530,17 +6566,19 @@ One of the most important features that DRYML brings to the re-use party
 They are born of the following observations:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 As components get larger, they are not really single components at all,
  but compositions of many smaller sub-components.
+ 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Often, the Customization we wish to make is not to the “super-component”
  but to one of the sub-components.
+ 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 What is needed, then, is a means to pass parameters and attributes not just
  to the tag you are calling, but to the tag called within the tag, or the
  tag called within the tag called within the tag, and so on.
@@ -2556,7 +6594,7 @@ DRYML’s nested parameter mechanism does exactly that.
  A little use of nested parameters goes a long way.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 An example
 \end_layout
 
@@ -2564,198 +6602,463 @@ An example
 To illustrate the mechanism, we’ll build up a small example using ideas
  that are familiar from Rapid.
  This is not a Rapid guide though, so we’ll define these tags from scratch.
- First off, the <card> tag.
+ First off, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag.
  This captures the very common pattern of web pages displaying collections
  of some kind of object as small “cards”: comments, friends, discussion
  threads, etc.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="card">
 \end_layout
 
-\begin_layout Standard
-<div class="card" merge-attrs>
+\begin_layout LyX-Code
+  <div class="card" merge-attrs>
 \end_layout
 
-\begin_layout Standard
-<h3 param="heading"><%= h this.to_s %></h3>
+\begin_layout LyX-Code
+     <h3 param="heading"><%= h this.to_s %></h3>
 \end_layout
 
-\begin_layout Standard
-<div param="body"></div>
+\begin_layout LyX-Code
+     <div param="body"></div>
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+   </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-We’ve defined a very simple <card> that uses the to_s method to give a default
- heading, and provides a <body:> parameter that is blank by default.
+We’ve defined a very simple 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ that uses the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+to_s
+\end_layout
+
+\end_inset
+
+ method to give a default heading, and provides a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ parameter that is blank by default.
  Here’s how we might use it:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <h2>Discussions</h2>
 \end_layout
 
-\begin_layout Standard
-<ul>
+\begin_layout LyX-Code
+ <ul>
+\end_layout
+
+\begin_layout LyX-Code
+   <li repeat="@discussions"> 
+\end_layout
+
+\begin_layout LyX-Code
+    <card> 
+\end_layout
+
+\begin_layout LyX-Code
+      <body:>
+\end_layout
+
+\begin_layout LyX-Code
+        <%= this.posts.length %> posts
+\end_layout
+
+\begin_layout LyX-Code
+     </body:>
+\end_layout
+
+\begin_layout LyX-Code
+     </card> 
+\end_layout
+
+\begin_layout LyX-Code
+    </li>
+\end_layout
+
+\begin_layout LyX-Code
+ </ul>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<li repeat="@discussions"> 
+This example (specifically, the collection created in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<li repeat="@discussions">
 \end_layout
 
-\begin_layout Standard
-<card> 
+\end_inset
+
+ section) demonstrates that as soon as we have the concept of a card, we
+ very often find ourselves wanting to render a collection of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
 \end_layout
 
-\begin_layout Standard
-<body:><%= this.posts.length %> posts</body:>
-\end_layout
+\end_inset
 
-\begin_layout Standard
-</card> 
-\end_layout
-
-\begin_layout Standard
-</li>
-\end_layout
-
-\begin_layout Standard
-</ul>
-\end_layout
-
-\begin_layout Standard
-This example (specifically, the collection created in the <li repeat="@discussio
-ns"> section) demonstrates that as soon as we have the concept of a card,
- we very often find ourselves wanting to render a collection of <card> tags.
+ tags.
  The obvious next step is to capture that collection-of-cards idea as a
  reusable tag:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="collection"> 
 \end_layout
 
-\begin_layout Standard
-<h2 param="heading"></h2>
+\begin_layout LyX-Code
+  <h2 param="heading"></h2>
 \end_layout
 
-\begin_layout Standard
-<ul>
+\begin_layout LyX-Code
+  <ul>
 \end_layout
 
-\begin_layout Standard
-<li repeat>
+\begin_layout LyX-Code
+    <li repeat>
 \end_layout
 
-\begin_layout Standard
-<card param>
+\begin_layout LyX-Code
+      <card param>
 \end_layout
 
-\begin_layout Standard
-</li>
+\begin_layout LyX-Code
+    </li>
 \end_layout
 
-\begin_layout Standard
-</ul>
+\begin_layout LyX-Code
+  </ul>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
-The <collection> tag has a straightforward <heading:> parameter, but notice
- that the <card> tag is also declared as a parameter.
- Whenever you add param to a tag that itself also has parameters, you give
- your “super-tag” (<collection> in this case) the ability to customize the
- “sub-tag” (<card> in this case) using nested parameters.
- Here’s how we can use the nested parameters in the <collection> tag to
- get the same output as the <li repeat="@discussions"> section in the previous
- example:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 <collection>
 \end_layout
 
-\begin_layout Standard
-<heading:>Discussions</heading>
+\end_inset
+
+ tag has a straightforward 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<heading:>
+\end_layout
+
+\end_inset
+
+ parameter, but notice that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag is also declared as a parameter.
+ Whenever you add 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ to a tag that itself also has parameters, you give your “super-tag” (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ in this case) the ability to customize the “sub-tag” (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ in this case) using 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+nested parameters
+\end_layout
+
+\end_inset
+
+.
+ Here’s how we can use the nested parameters in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag to get the same output as the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<li repeat="@discussions">
+\end_layout
+
+\end_inset
+
+ section in the previous example:
 \end_layout
 
 \begin_layout Standard
-<card:>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<collection>
 \end_layout
 
-\begin_layout Standard
-<body:><%= this.posts.length %>posts</body:>
+\begin_layout LyX-Code
+  <heading:>Discussions</heading>
 \end_layout
 
-\begin_layout Standard
-</card:>
+\begin_layout LyX-Code
+  <card:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+    <body:><%= this.posts.length %>posts</body:>
+\end_layout
+
+\begin_layout LyX-Code
+  </card:>
+\end_layout
+
+\begin_layout LyX-Code
 </collection>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 This nesting works to any depth.
- To show this, if we define an <index-page> tag that uses <collection> and
- declares it as a parameter:
+ To show this, if we define an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag that uses 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ and declares it as a parameter:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="index-page">
 \end_layout
 
-\begin_layout Standard
-<html>
+\begin_layout LyX-Code
+  <html>
 \end_layout
 
-\begin_layout Standard
-<head> ...
+\begin_layout LyX-Code
+    <head> ...
  </head>
 \end_layout
 
-\begin_layout Standard
-<body>
+\begin_layout LyX-Code
+    <body>
 \end_layout
 
-\begin_layout Standard
-<h1 param="heading"></h1>
+\begin_layout LyX-Code
+      <h1 param="heading"></h1>
 \end_layout
 
-\begin_layout Standard
-...
+\begin_layout LyX-Code
+      ...
 \end_layout
 
-\begin_layout Standard
-<collection param>
+\begin_layout LyX-Code
+      <collection param>
 \end_layout
 
-\begin_layout Standard
-...
+\begin_layout LyX-Code
+      ...
 \end_layout
 
-\begin_layout Standard
-</body> 
+\begin_layout LyX-Code
+    </body> 
 \end_layout
 
-\begin_layout Standard
-</html>
+\begin_layout LyX-Code
+  </html>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2763,65 +7066,180 @@ we can still access the card inside the collection inside the page:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-<heading:>Welcome to our forum</heading:>
+\begin_layout LyX-Code
+  <heading:>Welcome to our forum</heading:>
 \end_layout
 
-\begin_layout Standard
-<collection:>
+\begin_layout LyX-Code
+  <collection:>
 \end_layout
 
-\begin_layout Standard
-<heading:>Discussions</heading>
+\begin_layout LyX-Code
+    <heading:>Discussions</heading>
 \end_layout
 
-\begin_layout Standard
-<card:><body:><%= this.posts.length %>posts</body:></card:>
+\begin_layout LyX-Code
+    <card:><body:>
 \end_layout
 
-\begin_layout Standard
-</collection:>
+\begin_layout LyX-Code
+      <%= this.posts.length %> posts
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+    </body:></card:>
+\end_layout
+
+\begin_layout LyX-Code
+  </collection:>
+\end_layout
+
+\begin_layout LyX-Code
 </index-page>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Pay careful attention to the use of the trailing ’:’.
- The definition of <index-page> contains a call the collection tag, written
- <collection> (no ’:’).
- By contrast, the above call to <index-page> customizes the call to the
- collection tag that is already present inside <index-page>, so we write
- <collection:> (with a ’:’).
+Pay careful attention to the use of the trailing ’
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+
+’.
+ The definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ contains a call the collection tag, written 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ (no ’
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+
+’).
+ By contrast, the above call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ customizes the call to the collection tag that is already present inside
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+, so we write 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection:>
+\end_layout
+
+\end_inset
+
+ (with a ’
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+
+’).
  Remember:
 \end_layout
 
-\begin_layout Standard
-Without ’:’ – call a tag
+\begin_layout Itemize
+Without ’:’ – call a tag 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 With ’:’ – customize an existing call inside the definition
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Customizing and extending tags
 \end_layout
 
 \begin_layout Standard
 As we’ve seen, DRYML makes it easy to define tags that are highly customizable.
- By adding prams to the tags inside your definition, the caller can insert,
- replace and tweak to their heart’s content.
+ By adding 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+ to the tags inside your definition, the caller can insert, replace and
+ tweak to their heart’s content.
  Sometimes the changes you make to a tag’s output are needed not once, but
  many times throughout the site.
  In other words, you want to define a new tag in terms of an existing tag.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 New tags from old
 \end_layout
 
@@ -2830,27 +7248,46 @@ As an example, let’s bring back our card tag:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="card">
 \end_layout
 
-\begin_layout Standard
-<div class="card" merge-attrs>
+\begin_layout LyX-Code
+  <div class="card" merge-attrs>
 \end_layout
 
-\begin_layout Standard
-<h3 param="heading"><%= h this.to_s %></h3>
+\begin_layout LyX-Code
+    <h3 param="heading"><%= h this.to_s %></h3>
 \end_layout
 
-\begin_layout Standard
-<div param="body"></div>
+\begin_layout LyX-Code
+    <div param="body"></div>
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+  </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2861,42 +7298,102 @@ Now let’s say we want a new kind of card, one that has a link to the resource
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="linked-card"> 
 \end_layout
 
-\begin_layout Standard
-<card>
+\begin_layout LyX-Code
+  <card>
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="&object_url this"><%= h this.to_s %></a>
+\begin_layout LyX-Code
+    <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout LyX-Code
+      <a href="&object_url this">
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout LyX-Code
+        <%= h this.to_s %>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+      </a>
+\end_layout
+
+\begin_layout LyX-Code
+    </heading:>
+\end_layout
+
+\begin_layout LyX-Code
+  </card>
+\end_layout
+
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 That’s all well and good but there are a couple of problems:
 \end_layout
 
-\begin_layout Standard
-The original card used merge-attrs so that we could add arbitrary HTML attribute
-s to the final <div>.
- Our new card has lost that feature
+\begin_layout Itemize
+The original card used 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ so that we could add arbitrary HTML attributes to the final 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+.
+ Our new card has lost that feature 
+\end_layout
+
+\begin_layout Itemize
 Worse than that, the new card is in fact useless, as there’s no way to pass
- it the body parameter
+ it the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+body
+\end_layout
+
+\end_inset
+
+ parameter
 \end_layout
 
 \begin_layout Standard
@@ -2904,213 +7401,788 @@ Let’s solve those problems in turn.
  First the attributes.
 \end_layout
 
-\begin_layout Standard
-merge-attrs again
+\begin_layout Subsubsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ again
 \end_layout
 
 \begin_layout Standard
-In fact merge-attrs works just the same on defined tags as it does on HTML
- tags that are output, so we can simply add it to the call to <card>, like
- this:
+In fact 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ works just the same on defined tags as it does on HTML tags that are output,
+ so we can simply add it to the call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+, like this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="linked-card">
 \end_layout
 
-\begin_layout Standard
-<card merge-attrs>
+\begin_layout LyX-Code
+  <card merge-attrs>
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="&object_url this"><%= h this.to_s %></a>
+\begin_layout LyX-Code
+    <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout LyX-Code
+      <a href="&object_url this">
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout LyX-Code
+        <%= h this.to_s %>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+      </a>
+\end_layout
+
+\begin_layout LyX-Code
+    </heading:>
+\end_layout
+
+\begin_layout LyX-Code
+  </card>
+\end_layout
+
+\begin_layout LyX-Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Now we can do things like <linked-card class="emphasised">, and the attribute
- will be passed from <linked-card>, to <card>, to the rendered <div>.
+Now we can do things like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card class="emphasised">
+\end_layout
+
+\end_inset
+
+, and the attribute will be passed from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card>
+\end_layout
+
+\end_inset
+
+, to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+, to the rendered 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<div>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Now we’ll fix the parameters, it’s going to look somewhat similar…
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 merge-prams
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-We’ll introduce merge-prams the same way we introduced merge-attrs – by
- showing how you would get by without it.
- The problem with our <linked-card> tag is that we’ve lost the <body:> parameter.
+We’ll introduce 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-prams
+\end_layout
+
+\end_inset
+
+ the same way we introduced 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ – by showing how you would get by without it.
+ The problem with our 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card>
+\end_layout
+
+\end_inset
+
+ tag is that we’ve lost the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ parameter.
  We could bring it back like this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="linked-card">
 \end_layout
 
-\begin_layout Standard
-<card merge-attrs> 
+\begin_layout LyX-Code
+  <card merge-attrs> 
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="&object_url this"><%= h this.to_s %></a>
+\begin_layout LyX-Code
+    <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout LyX-Code
+      <a href="&object_url this">
 \end_layout
 
-\begin_layout Standard
-<body: param/>
+\begin_layout LyX-Code
+        <%= h this.to_s %>
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout LyX-Code
+      </a>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+    </heading:>
+\end_layout
+
+\begin_layout LyX-Code
+    <body: param/>
+\end_layout
+
+\begin_layout LyX-Code
+  </card>
+\end_layout
+
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
-In other words, we use the param declaration to give <linked-card> a <body:>
- parameter, which is forwarded to <card>.
- But what if <card> had several parameters? We would have to list them all
- out.
- And what if we add a new parameter to <card> later? We would have to remember
- to update <linked-card> and any other customized cards we had defined.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Instead we use merge-prams, much as we use merge-attrs:
+In other words, we use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ declaration to give 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card>
+\end_layout
+
+\end_inset
+
+ a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ parameter, which is forwarded to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+.
+ But what if 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ had several parameters? We would have to list them all out.
+ And what if we add a new parameter to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ later? We would have to remember to update 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card>
+\end_layout
+
+\end_inset
+
+ and any other customized cards we had defined.
+ Instead we use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-prams
+\end_layout
+
+\end_inset
+
+, much as we use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="linked-card"> 
 \end_layout
 
-\begin_layout Standard
-<card merge-attrs merge-params>
+\begin_layout LyX-Code
+  <card merge-attrs merge-params>
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="&object_url this"><%= h this.to_s %></a>
+\begin_layout LyX-Code
+    <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout LyX-Code
+      <a href="&object_url this">
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout LyX-Code
+        <%= h this.to_s %>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+      </a>
+\end_layout
+
+\begin_layout LyX-Code
+    </heading:>
+\end_layout
+
+\begin_layout LyX-Code
+  </card>
+\end_layout
+
+\begin_layout LyX-Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-You can read merge-prams as: take any “extra” parameters passed to <linked-card>
- and forward them all to <card>.
+You can read 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-prams
+\end_layout
+
+\end_inset
+
+ as: take any “extra” parameters passed to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card>
+\end_layout
+
+\end_inset
+
+ and forward them all to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+.
  By “extra” parameters, we mean any that are not declared as parameters
- (via the param attribute) inside the definition of <linked-card>.
+ (via the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ attribute) inside the definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 There are two local variables inside the tag definition that mirror the
- attributes and all_attributes variables described previously:
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_attributes
+\end_layout
+
+\end_inset
+
+ variables described previously:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parameters
+\end_layout
+
+\end_inset
+
+ a hash containing all the “extra” parameters (those that do not match a
+ declared parameter name) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_parameters
+\end_layout
+
+\end_inset
+
+ a hash containing all the parameters passed to the tag
 \end_layout
 
 \begin_layout Standard
-parameters a hash containing all the “extra” parameters (those that do not
- match a declared parameter name)
+The values in these hashes are Ruby 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+procs
+\end_layout
+
+\end_inset
+
+.
+ One common use of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_parameters
+\end_layout
+
+\end_inset
+
+ is to test if a certain parameter was passed or not:
 \end_layout
 
 \begin_layout Standard
-all parameters a hash containing all the parameters passed to the tag
-\end_layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
-\begin_layout Standard
-The values in these hashes are Ruby procs.
- One common use of all parameters is to test if a certain parameter was
- passed or not:
-\end_layout
-
-\begin_layout Standard
+\begin_layout LyX-Code
 <if test="&all_parameters[:body]">
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-In fact, all parameters and parameters are not regular hashes, they are
- instances of a subclass of Hash – Hobo::Dryml::TagParameters.
+In fact, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_parameters
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parameters
+\end_layout
+
+\end_inset
+
+ are not regular hashes, they are instances of a subclass of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hash
+\end_layout
+
+\end_inset
+
+ – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::Dryml::TagParameters
+\end_layout
+
+\end_inset
+
+.
  This subclass allows parameters to be called as if they were methods on
  the hash object, e.g.:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 parameters.default
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 That’s not something you’ll use often.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Merge
 \end_layout
 
 \begin_layout Standard
-As it’s very common to want both merge-attrs and merge-prams on the same
- tag, there is a shorthand for this: merge.
- So the final, preferred definition of <linked-card> is:
+As it’s very common to want both 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-prams
+\end_layout
+
+\end_inset
+
+ on the same tag, there is a shorthand for this: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+.
+ So the final, preferred definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<linked-card>
+\end_layout
+
+\end_inset
+
+ is:
 \end_layout
 
 \begin_layout Standard
-<def tag="linked-card">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="linked-card"> 
 \end_layout
 
-\begin_layout Standard
-<card merge>
+\begin_layout LyX-Code
+  <card merge>
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="&object_url this"><%= h this.to_s %></a>
+\begin_layout LyX-Code
+    <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout LyX-Code
+      <a href="&object_url this">
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout LyX-Code
+        <%= h this.to_s %>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+      </a>
+\end_layout
+
+\begin_layout LyX-Code
+    </heading:>
+\end_layout
+
+\begin_layout LyX-Code
+  </card>
+\end_layout
+
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Merging selected parameters
 \end_layout
 
 \begin_layout Standard
-Just as with merge-attrs, merge-prams can be given a value - either a hash
- containing the parameters you wish to merge, or a list of parameter names
- (comma separated), to be merged from the all parameters variable.
+Just as with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-attrs
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge-prams
+\end_layout
+
+\end_inset
+
+ can be given a value - either a hash containing the parameters you wish
+ to merge, or a list of parameter names (comma separated), to be merged
+ from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_parameters
+\end_layout
+
+\end_inset
+
+ variable.
 \end_layout
 
 \begin_layout Standard
@@ -3118,14 +8190,33 @@ Examples:
 \end_layout
 
 \begin_layout Standard
-<card merge-params="heading, body">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<card merge-params="heading, body"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <card merge-params="&my_parameter_hash">
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Extending a tag
 \end_layout
 
@@ -3138,118 +8229,236 @@ We’ve now seen how to easily create a new tag from an existing tag.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <!-- DOESN'T WORK! -->
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <def tag="card"> 
 \end_layout
 
-\begin_layout Standard
-<card merge>
+\begin_layout Code
+  <card merge>
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="&object_url this"><%= h this.to_s %></a>
+\begin_layout Code
+    <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout Code
+      <a href="&object_url this"><%= h this.to_s %></a>
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout Code
+    </heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+  </card>
+\end_layout
+
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 All we’ve done there is created a nice stack overflow when the card calls
  itself over and over.
+ Fortunately, DRYML has support for extending tags.
+ Use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ instead of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-Fortunately, DRYML has support for extending tags.
- Use <extend> instead of <def>:
-\end_layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
-\begin_layout Standard
+\begin_layout Code
 <extend tag="card">
 \end_layout
 
-\begin_layout Standard
-<old-card merge>
+\begin_layout Code
+  <old-card merge>
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="&object_url this"><%= h this.to_s %></a>
+\begin_layout Code
+    <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout Code
+      <a href="&object_url this"><%= h this.to_s %></a>
 \end_layout
 
-\begin_layout Standard
-</old-card>
+\begin_layout Code
+    </heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+  </old-card>
+\end_layout
+
+\begin_layout Code
 </extend>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-The one thing to notice there is that the “old” version of <card>, i.e.
- the one that was active before you’re extension, is available as <old-card>.
+The one thing to notice there is that the “old” version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+, i.e.
+ the one that was active before you’re extension, is available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<old-card>
+\end_layout
+
+\end_inset
+
+.
  That’s about all there is to it.
-\end_layout
+ Here’s another example where we add a footer to every page in our application.
+ It’s very common to 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
-Here’s another example where we add a footer to every page in our application.
- It’s very common to <extend tag="page"> in your application.dryml, in order
- to make changes that should appear on every page:
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 <extend tag="page">
 \end_layout
 
-\begin_layout Standard
-<old-page merge>
+\end_inset
+
+ in your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+, in order to make changes that should appear on every page:
 \end_layout
 
 \begin_layout Standard
-<footer: param> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<extend tag="page">
 \end_layout
 
-\begin_layout Standard
-...
+\begin_layout LyX-Code
+   <old-page merge>
+\end_layout
+
+\begin_layout LyX-Code
+     <footer: param> 
+\end_layout
+
+\begin_layout LyX-Code
+      ...
  
 \end_layout
 
-\begin_layout Standard
-your custom footer here
+\begin_layout LyX-Code
+       your custom footer here
 \end_layout
 
-\begin_layout Standard
-...
+\begin_layout LyX-Code
+       ...
  
 \end_layout
 
-\begin_layout Standard
-</footer:>
+\begin_layout LyX-Code
+    </footer:>
 \end_layout
 
-\begin_layout Standard
-</old-page>
+\begin_layout LyX-Code
+   </old-page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </extend>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Aliasing tags
 \end_layout
 
@@ -3263,7 +8472,26 @@ If you want to create an alias of a tag; i.e., an identical tag with a different
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="my-card" alias-of="card"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3274,7 +8502,7 @@ Note that it is a self-closing tag–there is no body to the definition.
 So… that’s aliasing tags then…
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Polymorphic tags
 \end_layout
 
@@ -3288,76 +8516,234 @@ DRYML allows you to define a whole collection of tags that share the same
 \end_layout
 
 \begin_layout Standard
-To illustrate how these work, let’s bring back our simple <card> tag once
- more:
+To illustrate how these work, let’s bring back our simple 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag once more:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="card" polymorphic>
 \end_layout
 
-\begin_layout Standard
-<div class="card" merge-attrs>
+\begin_layout LyX-Code
+  <div class="card" merge-attrs>
 \end_layout
 
-\begin_layout Standard
-<h3 param="heading"><%= h this.to_s %></h3> 
+\begin_layout LyX-Code
+    <h3 param="heading"><%= h this.to_s %></h3> 
 \end_layout
 
-\begin_layout Standard
-<div param="body">
+\begin_layout LyX-Code
+    <div param="body">
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+    </div>
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+  </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-We’ve added the polymorphic attribute to the <def>.
- This tells DRYML that <card> can have many definitions, each for a particular
- type.
+We’ve added the polymorphic attribute to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+.
+ This tells DRYML that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ can have many definitions, each for a particular type.
  The definition we’ve given here is called the “base” definition or the
  “base card”.
  The base definition serves two purposes:
 \end_layout
 
-\begin_layout Standard
-It is the fallback if we call <card> and no definition is found for the
- current type.
+\begin_layout Itemize
+It is the fallback if we call 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ and no definition is found for the current type.
+ 
+\end_layout
+
+\begin_layout Itemize
 The type-specific definition can use the base definition as a starting point
  to be further customized.
 \end_layout
 
 \begin_layout Standard
-To add a type-specific <card>, we use the for attribute on the <def>.
- For example, a card for a Product:
+To add a type-specific 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+, we use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+for
+\end_layout
+
+\end_inset
+
+ attribute on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+.
+ For example, a card for a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Product
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="card" for="Product"> ...
  </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
 Note: If the name in the for attribute starts with an uppercase letter,
  it is taken to be a class name.
  Otherwise it is taken to be an abbreviated name registered with HoboFields;
  e.g.:
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="input" for="email_address">
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3366,31 +8752,54 @@ For the product card, lets make the heading be a link to the product, and
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="card" for="Product">
 \end_layout
 
-\begin_layout Standard
-<card merge>
+\begin_layout Code
+   <card merge>
 \end_layout
 
-\begin_layout Standard
-<heading: param><a href="#{object_url this}"><%= h this.to_s %></a>
+\begin_layout Code
+     <heading: param>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout Code
+       <a href="#{object_url this}"><%= h this.to_s %></a>
 \end_layout
 
-\begin_layout Standard
-<body: param="price">$<%= this.price %></body:>
+\begin_layout Code
+     </heading:>
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout Code
+     <body: param="price">$<%= this.price %></body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+   </card>
+\end_layout
+
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3398,14 +8807,34 @@ We call this a type-specific definition.
  Some points to notice:
 \end_layout
 
-\begin_layout Standard
-The callback to <card> is not a recursive loop, but a call to the base definitio
-n.
+\begin_layout Itemize
+The callback to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
 \end_layout
 
-\begin_layout Standard
-We’re using the normal technique for Customizing / extending an existing
- card; i.e., we’re using merge.
+\end_inset
+
+ is not a recursive loop, but a call to the base definition.
+ 
+\end_layout
+
+\begin_layout Itemize
+We’re using the normal technique for customizing / extending an existing
+ card; i.e., we’re using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3416,76 +8845,200 @@ It is not required for the type-specific definition to call the base definition,
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="my-tag" polymorphic/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Type hierarchy
 \end_layout
 
 \begin_layout Standard
-If, for a given call, no type-specific definition is available for this.class,
- the search continues with this.class.superclass and so on up the superclass
- chain.
- If the search reaches either ActiveRecord::Base or Object, the base definition
- is used.
+If, for a given call, no type-specific definition is available for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.class
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+, the search continues with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.class.superclass
+\end_layout
+
+\end_inset
+
+ and so on up the superclass chain.
+ If the search reaches either 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord::Base
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Object
+\end_layout
+
+\end_inset
+
+, the base definition is used.
+\end_layout
+
+\begin_layout Subsubsection*
 Specifying the type explicitly
 \end_layout
 
 \begin_layout Standard
 Sometimes it is useful to give the type explicitly for the call explicitly
- (i.e., to override the use of this.class).
- The for-type attribute (on the call) provides this facility.
+ (i.e., to override the use of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this.class
+\end_layout
+
+\end_inset
+
+).
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+for-type
+\end_layout
+
+\end_inset
+
+ attribute (on the call) provides this facility.
  For example, you might want to implement one type-specific definition in
  terms of another:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="card" for="SpecialProduct">
 \end_layout
 
-\begin_layout Standard
-<card for-type="Product">
+\begin_layout LyX-Code
+   <card for-type="Product">
 \end_layout
 
-\begin_layout Standard
-<append-price:>Today Only!)</append-price:>
+\begin_layout LyX-Code
+     <append-price:>Today Only!)</append-price:>
 \end_layout
 
-\begin_layout Standard
-</card>
+\begin_layout LyX-Code
+   </card>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Extending polymorphic tags
 \end_layout
 
 \begin_layout Standard
 Type-specific definitions can be extended just like any other tag using
- the <extend> tag.
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ tag.
  For example, here we simply remove the price:
 \end_layout
 
 \begin_layout Standard
-<extend tag="card" for="Product">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<extend tag="card" for="Product"> 
 \end_layout
 
-\begin_layout Standard
-<old-card merge without-price/>
+\begin_layout LyX-Code
+  <old-card merge without-price/> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </extend>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Wrapping content
 \end_layout
 
@@ -3493,8 +9046,18 @@ Wrapping content
 DRYML provides two mechanisms for wrapping existing content inside new tags.
 \end_layout
 
-\begin_layout Standard
-Wrapping inside a parameter
+\begin_layout Subsubsection*
+Wrapping 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+inside
+\end_layout
+
+\end_inset
+
+ a parameter
 \end_layout
 
 \begin_layout Standard
@@ -3504,29 +9067,105 @@ Once or twice in the previous examples, we have extended our card tag definition
 \end_layout
 
 \begin_layout Standard
-<card>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<card> 
+\end_layout
+
+\begin_layout LyX-Code
+  <heading:>
+\end_layout
+
+\begin_layout LyX-Code
+    <a href="#{object_url this}"><%= h this.to_s %></a>
+\end_layout
+
+\begin_layout LyX-Code
+  </heading:> 
+\end_layout
+
+\begin_layout LyX-Code
+</card>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<heading:><a href="#{object_url this}"><%= h this.to_s %></a></heading:>
- </card>
+There’s a bit of repetition there – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<%= h this.to_s %>
 \end_layout
 
-\begin_layout Standard
-There’s a bit of repetition there – <%= h this.to_s %> was already present
- in the original definition.
- All we really wanted to do was wrap the existing heading in an <a>.
+\end_inset
+
+ was already present in the original definition.
+ All we really wanted to do was wrap the existing heading in an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+.
  In this case there wasn’t much markup to repeat, so it wasn’t a big deal,
  but in other cases there might be much more.
 \end_layout
 
 \begin_layout Standard
-We can’t use <prepend-heading:><a></prepend-heading:> and <append-heading:></a><
-/append-heading:> because that’s not well formed markup (and is very messy
- besides).
+We can’t use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<prepend-heading:><a></prepend-heading:>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<append-heading:></a></append-heading:>
+\end_layout
+
+\end_inset
+
+ because that’s not well formed markup (and is very messy besides).
  Instead, DRYML has a specific feature for this situation.
- The <param-content> tag is a special tag that brings back the default content
- for a parameter.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<param-content>
+\end_layout
+
+\end_inset
+
+ tag is a special tag that brings back the default content for a parameter.
 \end_layout
 
 \begin_layout Standard
@@ -3534,23 +9173,50 @@ Here’s how it works:
 \end_layout
 
 \begin_layout Standard
-<card>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<card> 
 \end_layout
 
-\begin_layout Standard
-<heading:>
+\begin_layout LyX-Code
+  <heading:> 
 \end_layout
 
-\begin_layout Standard
-<a href="#{object_url this}"><param-content for="heading"/></a>
+\begin_layout LyX-Code
+    <a href="#{object_url this}">
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout LyX-Code
+      <param-content for="heading"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+    </a> 
+\end_layout
+
+\begin_layout LyX-Code
+  </heading:> 
+\end_layout
+
+\begin_layout LyX-Code
 </card>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3559,16 +9225,64 @@ That’s the correct way to wrap inside the parameter, so in this case the
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <h3><a href="...">Fried Bananas</a></h3>
 \end_layout
 
-\begin_layout Standard
-What if we wanted to wrap the entire <heading:> parameter, including the
- <h3> tags?
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Wrapping outside a parameter
+What if we wanted to wrap the entire 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<heading:>
+\end_layout
+
+\end_inset
+
+ parameter, including the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h3>
+\end_layout
+
+\end_inset
+
+ tags?
+\end_layout
+
+\begin_layout Subsubsection*
+Wrapping 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+outside
+\end_layout
+
+\end_inset
+
+ a parameter
 \end_layout
 
 \begin_layout Standard
@@ -3577,84 +9291,201 @@ For example, we might want to give the card a new ‘header’ section, that
 \end_layout
 
 \begin_layout Standard
-<div class="header">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<div class="header"> 
 \end_layout
 
-\begin_layout Standard
-<h3>Fried Bananas</h3>
+\begin_layout LyX-Code
+  <h3>Fried Bananas</h3> 
 \end_layout
 
-\begin_layout Standard
-<p>Created: ....</p>
+\begin_layout LyX-Code
+  <p>Created: ....</p> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </div>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-To use DRYML terminology, what we’ve done there is replaced the entire heading
- with some new content, and the new content happens to contain the original
- heading.
+To use DRYML terminology, what we’ve done there is 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+replaced
+\end_layout
+
+\end_inset
+
+ the entire heading with some new content, and the new content happens to
+ contain the original heading.
  So we replaced the heading, and then restored it again, which in DRYML
  is written:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <card>
 \end_layout
 
-\begin_layout Standard
-<heading: replace> 
+\begin_layout LyX-Code
+  <heading: replace> 
 \end_layout
 
-\begin_layout Standard
-<div class="header">
+\begin_layout LyX-Code
+    <div class="header">
 \end_layout
 
-\begin_layout Standard
-<heading: restore/> 
+\begin_layout LyX-Code
+      <heading: restore/> 
 \end_layout
 
-\begin_layout Standard
-<p>Created: <%= this.created_at.to_s(:short) %></p>
+\begin_layout LyX-Code
+      <p>Created: <%= this.created_at.to_s(:short) %></p>
 \end_layout
 
-\begin_layout Standard
-</div>
+\begin_layout LyX-Code
+    </div>
 \end_layout
 
-\begin_layout Standard
-</heading:>
+\begin_layout LyX-Code
+  </heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </card>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 To summarize: 
 \end_layout
 
-\begin_layout Standard
-To wrap content inside a parameter, use <param-content/>
+\begin_layout Itemize
+To wrap content inside a parameter, use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<param-content/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
 To wrap an entire parameter, including the parameterized tag itself (the
- <h3> in our examples), use the replace and restore attributes.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h3>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ in our examples), use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+replace
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+restore
+\end_layout
+
+\end_inset
+
+ attributes.
+\end_layout
+
+\begin_layout Subsection*
 Local variables and scoped variables.
 \end_layout
 
 \begin_layout Standard
-DRYML provides two tags for setting variables: <set> and <set-scoped>.
+DRYML provides two tags for setting variables: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set>
 \end_layout
 
-\begin_layout Standard
-Setting local variables with <set>
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-scoped>
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Setting local variables with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3666,7 +9497,26 @@ Sometimes it’s useful to define a local variable inside a template or a
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <% total = price_of_fish * number_of_fish %>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3674,16 +9524,55 @@ For purely aesthetic reasons, DRYML provides a tag that does the same thing:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <set total="&price_of_fish * number_of_fish"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Note that you can put as many attribute/value pairs as you like on the same
- <set> tag, but the order of evaluation is not defined.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set>
 \end_layout
 
-\begin_layout Standard
-Scoped variables – <set-scoped>
+\end_inset
+
+ tag, but the order of evaluation is not defined.
+\end_layout
+
+\begin_layout Subsubsection*
+Scoped variables – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-scoped>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3695,35 +9584,151 @@ Scoped variables (which is not a great name, we realize as we come to document
 \end_layout
 
 \begin_layout Standard
-The <set-scoped> tag is very much like <set> except you open it up and put
- DRYML inside it:
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-scoped>
+\end_layout
+
+\end_inset
+
+ tag is very much like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set>
+\end_layout
+
+\end_inset
+
+ except you open it up and put DRYML inside it:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <set-scoped xyz="&..."> ...
  </set-scoped>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-The value is available as scope.xyz anywhere inside the tag and in any tags
- that are called inside that tag.
- That’s the difference between <set> and <set-scoped>.
+The value is available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+scope.xyz
+\end_layout
+
+\end_inset
+
+ anywhere inside the tag 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+and in any tags that are called inside that tag
+\end_layout
+
+\end_inset
+
+.
+ That’s the difference between 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-scoped>
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-They are like dynamic variables from LISP.
+They are like 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+dynamic variables
+\end_layout
+
+\end_inset
+
+ from LISP.
  To repeat the point, they are like global variables that exist from the
- time the <set-scope> tag is evaluated, and for the duration of the evaluation
- of the body of the tag, and are then removed.
+ time the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-scope>
+\end_layout
+
+\end_inset
+
+ tag is evaluated, and for the duration of the evaluation of the body of
+ the tag, and are then removed.
 \end_layout
 
 \begin_layout Standard
 As an example of their use, let’s define a simple tag for rendering navigation
  links.
- The output should be a list of <a> tags, and the <a> that represents the
- “current” page should have a CSS class “current”, so it can be highlighted
- in some way by the stylesheet.
+ The output should be a list of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tags, and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ that represents the “current” page should have a CSS class “current”, so
+ it can be highlighted in some way by the stylesheet.
  (In fact, the need to create a reusable tag like this is where the feature
  originally came from).
 \end_layout
@@ -3733,107 +9738,271 @@ On our pages, we’d like to simply call, say:
 \end_layout
 
 \begin_layout Standard
-<main-nav current="Home">`
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<main-nav current="Home">
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-And we’d like it to be easy to define our own <main-nav> tag in our applications
-:
+And we’d like it to be easy to define our own 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<main-nav>
+\end_layout
+
+\end_inset
+
+ tag in our applications: 
 \end_layout
 
 \begin_layout Standard
-<def tag="main-nav">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="main-nav"> 
 \end_layout
 
-\begin_layout Standard
-<navigation merge-attrs>
+\begin_layout LyX-Code
+  <navigation merge-attrs> 
 \end_layout
 
-\begin_layout Standard
-<nav-item href="...">Home</nav-item> 
+\begin_layout LyX-Code
+    <nav-item href="...">Home</nav-item>
 \end_layout
 
-\begin_layout Standard
-<nav-item href="...">News</nav-item>
+\begin_layout LyX-Code
+    <nav-item href="...">News</nav-item>
 \end_layout
 
-\begin_layout Standard
-<nav-item href="...">Offers</nav-item>
+\begin_layout LyX-Code
+    <nav-item href="...">Offers</nav-item>
 \end_layout
 
-\begin_layout Standard
-</navigation>
+\begin_layout LyX-Code
+  </navigation> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
-Here’s the definition for the <navigation> tag:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Here’s the definition for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ tag:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="navigation" attrs="current">
 \end_layout
 
-\begin_layout Standard
-<set-scoped current-nav-item="current">
+\begin_layout LyX-Code
+  <set-scoped current-nav-item="current"> 
 \end_layout
 
-\begin_layout Standard
-<ul merge-attrs param="default"/> 
+\begin_layout LyX-Code
+    <ul merge-attrs param="default"/>
 \end_layout
 
-\begin_layout Standard
-</set-scoped>
+\begin_layout LyX-Code
+  </set-scoped> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
-All <navigation> does is set a scoped-variable to whatever was given as
- current and output the body wrapped in a <ul>.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Here’s the definition for the <nav-item> tag:
+All 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ does is set a scoped-variable to whatever was given as current and output
+ the body wrapped in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-<def tag="nav-item">
+Here’s the definition for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nav-item>
+\end_layout
+
+\end_inset
+
+ tag:
 \end_layout
 
 \begin_layout Standard
-<set body="&parameters.default"/> 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<def tag="nav-item"> 
 \end_layout
 
-\begin_layout Standard
-<li class="#{'current' if scope.current_nav_item == body}"> 
+\begin_layout Code
+  <set body="&parameters.default"/> 
 \end_layout
 
-\begin_layout Standard
-<a merge-attrs><%= body %>
+\begin_layout Code
+  <li class="#{'current' if scope.current_nav_item == body}"> 
 \end_layout
 
-\begin_layout Standard
-</li>
+\begin_layout Code
+    <a merge-attrs><%= body %></a>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+  </li> 
+\end_layout
+
+\begin_layout Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-The content inside the <nav-item> is compared to scope.current_nav_item.
+The content inside the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nav-item>
+\end_layout
+
+\end_inset
+
+ is compared to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+scope.current_nav_item
+\end_layout
+
+\end_inset
+
+.
  If they are the same, the “current” class is added.
- Also note the way parameters.default is evaluated and the result stored
- in the local variable body, in order to avoid evaluating the body twice.
+ Also note the way 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parameters.default
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ is evaluated and the result stored in the local variable 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+body
+\end_layout
+
+\end_inset
+
+, in order to avoid evaluating the body twice.
+\end_layout
+
+\begin_layout Subsubsection*
 Nested scopes
 \end_layout
 
@@ -3841,24 +10010,101 @@ Nested scopes
 One of the strengths of scoped variables is that scopes can be nested, and
  where there are name clashes, the parent scope variable is temporarily
  hidden, rather than overwritten.
- With a bit of tweaking, we could use this fact to extend our <navigation>
- tag to support a sub-menu of links within a top level section.
- The sub-menu could also use <navigation> and <nav-item> and the two scope.curren
-t_nav_item variables would not conflict with each other.
+ With a bit of tweaking, we could use this fact to extend our 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ tag to support a sub-menu of links within a top level section.
+ The sub-menu could also use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nav-item>
+\end_layout
+
+\end_inset
+
+ and the two 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+scope.current_nav_item
+\end_layout
+
+\end_inset
+
+ variables would not conflict with each other.
+\end_layout
+
+\begin_layout Subsection*
 Taglibs
 \end_layout
 
 \begin_layout Standard
-DRYML provides the <include> tag to support breaking up lots of tag definitions
- into separate “tag libraries”, known as taglibs.
- You can call <include> with several different formats:
+DRYML provides the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<include>
+\end_layout
+
+\end_inset
+
+ tag to support breaking up lots of tag definitions into separate “tag libraries
+”, known as taglibs.
+ You can call 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<include>
+\end_layout
+
+\end_inset
+
+ with several different formats:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <include src="foo"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3866,19 +10112,77 @@ Load foo.dryml from the same directory as the current template or taglib.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <include src="path/to/foo"/>
 \end_layout
 
-\begin_layout Standard
-Load app/views/path/to/foo.dryml
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Load 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/path/to/foo.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <include src="foo" plugin="path/to/plugin"/>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Load vendor/plugins/path/to/plugin/taglibs/foo.dryml
+Load 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+vendor/plugins/path/to/plugin/taglibs/foo.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3886,7 +10190,7 @@ When running in development mode, all of these libraries are automatically
  reloaded on every request.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Divergences from XML and HTML
 \end_layout
 
@@ -3895,11 +10199,28 @@ Self-closing tags
 \end_layout
 
 \begin_layout Standard
-In DRYML, <foo:/> and <foo:></foo:> have two slightly different meanings.
+In DRYML, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<foo:/>
 \end_layout
 
-\begin_layout Standard
-The second form replaces the parameter’s default inner content with the
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<foo:></foo:>
+\end_layout
+
+\end_inset
+
+ have two slightly different meanings.
+ The second form replaces the parameter’s default inner content with the
  specified content: nothing in this case.
 \end_layout
 
@@ -3914,31 +10235,42 @@ This is very useful if you wish to add an attribute to a parameter but leave
 \end_layout
 
 \begin_layout Standard
-<def tag="bar">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="bar"> 
 \end_layout
 
-\begin_layout Standard
-<div class="container" merge-attrs> 
+\begin_layout LyX-Code
+  <div class="container" merge-attrs> 
 \end_layout
 
-\begin_layout Standard
-<p class="content" param>
+\begin_layout LyX-Code
+    <p class="content" param> Hello </p> 
 \end_layout
 
-\begin_layout Standard
-Hello
+\begin_layout LyX-Code
+  </div> 
 \end_layout
 
-\begin_layout Standard
-</p>
-\end_layout
-
-\begin_layout Standard
-</div>
-\end_layout
-
-\begin_layout Standard
+\begin_layout LyX-Code
 <def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3946,7 +10278,26 @@ Then:
 \end_layout
 
 \begin_layout Standard
-<bar><foo: class="my-foo"/></bar>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<bar><foo: class="my-foo"/></bar> 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3954,23 +10305,34 @@ Gives:
 \end_layout
 
 \begin_layout Standard
-<div class="container">
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<div class="container"> 
 \end_layout
 
-\begin_layout Standard
-<p class="content my-foo">
+\begin_layout LyX-Code
+  <p class="content my-foo"> Hello </p> 
 \end_layout
 
-\begin_layout Standard
-Hello
-\end_layout
-
-\begin_layout Standard
-</p>
-\end_layout
-
-\begin_layout Standard
+\begin_layout LyX-Code
 </div>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3978,7 +10340,26 @@ If you used:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <bar><foo: class="my-foo"></foo:></bar>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3986,18 +10367,37 @@ You would get:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <div class="container">
 \end_layout
 
-\begin_layout Standard
-<p class="content my-foo"></p>
+\begin_layout LyX-Code
+  <p class="content my-foo"></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </div>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Colons in tag names
 \end_layout
 
@@ -4008,7 +10408,7 @@ In XML, colons are valid inside tag and attribute names.
  XML 2.0.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Close tag shortcuts
 \end_layout
 
@@ -4017,7 +10417,26 @@ In DRYML, you’re allowed to close tags with everything preceding the colon:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <view:name> Hello </view>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4025,28 +10444,104 @@ XML requires the full tag to be specified:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <view:name> Hello </view:name>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Null end tags
 \end_layout
 
 \begin_layout Standard
-Self-closing tags are technically illegal in HTML.
- So <br /> is technically not valid HTML.
+Self-closing tags are 
+\begin_inset CommandInset href
+LatexCommand href
+name "technically illegal"
+target "http://www.w3.org/TR/html401/intro/sgmltut.html#h-3.2.1"
+
+\end_inset
+
+ in HTML.
+ So 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<br />
+\end_layout
+
+\end_inset
+
+ is technically not valid HTML.
  However, browsers do parse it as you expect.
  It is valid XHTML, though.
 \end_layout
 
 \begin_layout Standard
 However, browsers only do this for empty elements.
- So tags such as <script> and <a> require a separate closing tag in HTML.
+ So tags such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<script>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ require a separate closing tag in HTML.
  This behavior has surprised many people: 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <script src="foobar.js" />
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4055,7 +10550,26 @@ However, browsers only do this for empty elements.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <script src="foorbar.js"></script>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4067,11 +10581,34 @@ DRYML follows the XML conventions:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <a/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 …is valid DRYML.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
