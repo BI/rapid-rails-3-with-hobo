@@ -57,6 +57,8 @@ logicalmkup
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 0 -1
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -3551,7 +3553,17 @@ Usage
 \end_layout
 
 \begin_layout Itemize
-Assuming the context is a blog post… Viewing a DateTime field:
+Assuming the context is a blog post… Viewing a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+DateTime
+\end_layout
+
+\end_inset
+
+ field:
 \end_layout
 
 \begin_layout Standard
@@ -3582,7 +3594,17 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Viewing a String field:
+Viewing a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+
+ field:
 \end_layout
 
 \begin_layout Standard
@@ -3613,7 +3635,17 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Viewing an Integer field:
+Viewing an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Integer
+\end_layout
+
+\end_inset
+
+ field:
 \end_layout
 
 \begin_layout Standard
@@ -10255,7 +10287,11 @@ These are a collection of tags that allow a application outline or summary
 \end_layout
 
 \begin_layout LyX-Code
-<with-plugins> <rails-location> 
+<with-plugins> 
+\end_layout
+
+\begin_layout LyX-Code
+<rails-location> 
 \end_layout
 
 \begin_layout LyX-Code
@@ -10546,7 +10582,7 @@ app/views/front/summary.dryml
 \begin_inset Box Framed
 position "t"
 hor_pos "c"
-has_inner_box 1
+has_inner_box 0
 inner_pos "t"
 use_parbox 0
 use_makebox 0
@@ -10557,6 +10593,15 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
+\noindent
+\align left
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "code/summary.dryml"
+lstparams "label={summary.dryml}"
+
+\end_inset
+
 
 \end_layout
 
@@ -10571,176 +10616,703 @@ status open
 
 \begin_layout Standard
 Version of Rails.
- Same as Rails.version
+ Same as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Rails.version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<rails-location> 
 \end_layout
 
 \begin_layout Standard
-<rails-location> returns “vendor” or “gem”
+Returns “vendor” or “gem”
+\end_layout
+
+\begin_layout Subsubsection*
+<rails-root> 
 \end_layout
 
 \begin_layout Standard
-<rails-root> RAILS_ROOT 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+RAILS_ROOT
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+<rails-env> 
 \end_layout
 
 \begin_layout Standard
-<rails-env> RAILS_ENV
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+RAILS_ENV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<hobo-version> 
 \end_layout
 
 \begin_layout Standard
-<hobo-version> Hobo::VERSION
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::VERSION
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<cms-method> 
 \end_layout
 
 \begin_layout Standard
-<cms-method> Which change management system is in use: “git” “subversion”
- “other”
+Which change management system is in use: “git” “subversion” “other”
+\end_layout
+
+\begin_layout Subsubsection*
+<cms-clean> 
 \end_layout
 
 \begin_layout Standard
-<cms-clean> calls git-clean or svn-clean as appropriate.
- svn-clean not yet written.
+calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+git-clean
 \end_layout
 
-\begin_layout Standard
-<cms-last-commit-time> Calls git-last-commit-time or svn-last-commit-time
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-clean
+\end_layout
+
+\end_inset
+
  as appropriate.
- svn-last-commit-time not yet written.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-clean
+\end_layout
+
+\end_inset
+
+ not yet written.
+\end_layout
+
+\begin_layout Subsubsection*
+<cms-last-commit-time> 
 \end_layout
 
 \begin_layout Standard
-<cms-version> calls git-version or svn-version as appropriate.
- svn-version not yet written.
+Calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+git-last-commit-time
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-last-commit-time
+\end_layout
+
+\end_inset
+
+ as appropriate.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-last-commit-time
+\end_layout
+
+\end_inset
+
+ not yet written.
+\end_layout
+
+\begin_layout Subsubsection*
+<cms-version> 
 \end_layout
 
 \begin_layout Standard
-<cms-branch> calls git-branch or svn-branch as appropriate.
- svn-branch not yet written.
+Calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+git-version
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-version
+\end_layout
+
+\end_inset
+
+ as appropriate.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-version
+\end_layout
+
+\end_inset
+
+ not yet written.
+\end_layout
+
+\begin_layout Subsubsection*
+<cms-branch> 
 \end_layout
 
 \begin_layout Standard
-<git-branch> The git branch currently in use
+Calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+git-branch
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-branch
+\end_layout
+
+\end_inset
+
+ as appropriate.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+svn-branch
+\end_layout
+
+\end_inset
+
+ not yet written.
+\end_layout
+
+\begin_layout Subsubsection*
+<git-branch> 
 \end_layout
 
 \begin_layout Standard
-<git-version> The git version currently in use
+The git branch currently in use
+\end_layout
+
+\begin_layout Subsubsection*
+<git-version> 
 \end_layout
 
 \begin_layout Standard
-<git-clean> Returns ‘clean’ if there are no modified files, ‘modified’ otherwise.
+The git version currently in use
+\end_layout
+
+\begin_layout Subsubsection*
+<git-clean> 
 \end_layout
 
 \begin_layout Standard
-<git-last-commit-time> the time & date of the last commit
+Returns ‘clean’ if there are no modified files, ‘modified’ otherwise.
+\end_layout
+
+\begin_layout Subsubsection*
+<git-last-commit-time> 
 \end_layout
 
 \begin_layout Standard
-<with-gems> Repeats on Rails.configuration.gems, including dependent gems
+The time & date of the last commit
+\end_layout
+
+\begin_layout Subsubsection*
+<with-gems> 
 \end_layout
 
 \begin_layout Standard
-<gem-name> Inside <with-gems>, returns the gem name
+Repeats on 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Rails.configuration.gems
+\end_layout
+
+\end_inset
+
+, including dependent gems
+\end_layout
+
+\begin_layout Subsubsection*
+<gem-name> 
 \end_layout
 
 \begin_layout Standard
-<gem-version-required> Inside <with-gems>, returns the version required
+Inside 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-gems>
+\end_layout
+
+\end_inset
+
+, returns the gem name
+\end_layout
+
+\begin_layout Subsubsection*
+<gem-version-required>
 \end_layout
 
 \begin_layout Standard
-<gem-version> Inside <with-gems>, returns the version installed
+Inside 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-gems>
+\end_layout
+
+\end_inset
+
+, returns the version required
+\end_layout
+
+\begin_layout Subsubsection*
+<gem-version>
 \end_layout
 
 \begin_layout Standard
-<gem-frozen> Inside <with-gems>, returns ‘frozen’, ‘installed’ or ‘missing’
+Inside 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-gems>
+\end_layout
+
+\end_inset
+
+, returns the version installed
+\end_layout
+
+\begin_layout Subsubsection*
+<gem-frozen>
 \end_layout
 
 \begin_layout Standard
-<gem-dependencies> Inside <with-gems>, returns the gem dependencies
+Inside 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-gems>
+\end_layout
+
+\end_inset
+
+, returns ‘frozen’, ‘installed’ or ‘missing’
+\end_layout
+
+\begin_layout Subsubsection*
+<gem-dependencies>
 \end_layout
 
 \begin_layout Standard
-<with-plugins> Repeats on the plugins used by the application
+Inside 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-gems>
+\end_layout
+
+\end_inset
+
+, returns the gem dependencies
+\end_layout
+
+\begin_layout Subsubsection*
+<with-plugins>
 \end_layout
 
 \begin_layout Standard
-<plugin-name> within <with-plugins>, returns the plugin name
+Repeats on the plugins used by the application
+\end_layout
+
+\begin_layout Subsubsection*
+<plugin-name>
 \end_layout
 
 \begin_layout Standard
-<plugin-location> within <with-plugins>, returns the plugin location (directory)
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-plugins>
+\end_layout
+
+\end_inset
+
+, returns the plugin name
+\end_layout
+
+\begin_layout Subsubsection*
+<plugin-location>
 \end_layout
 
 \begin_layout Standard
-<plugin-method> Within <with-plugins>, try and determine the method that
- was used to install the plugin.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-plugins>
+\end_layout
+
+\end_inset
+
+, returns the plugin location (directory)
+\end_layout
+
+\begin_layout Subsubsection*
+<plugin-method>
+\end_layout
+
+\begin_layout Standard
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-plugins>
+\end_layout
+
+\end_inset
+
+, try and determine the method that was used to install the plugin.
  Returns “braid”, “symlink”, “git-submodule” or “other”
 \end_layout
 
+\begin_layout Subsubsection*
+<plugin-clean>
+\end_layout
+
 \begin_layout Standard
-<plugin-clean> Within <with-plugins>, determine if the plugin has been modified.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-plugins>
+\end_layout
+
+\end_inset
+
+, determine if the plugin has been modified.
  Returns “clean” or “modified”.
  Returns a blank string if this information is not available.
  
 \end_layout
 
+\begin_layout Subsubsection*
+<plugin-version>
+\end_layout
+
 \begin_layout Standard
-<plugin-version> Within <with-plugins>, determine if the plugin version.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-plugins>
+\end_layout
+
+\end_inset
+
+, determine if the plugin version.
  Returns a blank string if this information is not available.
  
 \end_layout
 
-\begin_layout Standard
-<with-environments> Repeats on the available execution environments, which
- are usually ‘development’, ‘test’ and ‘production’
+\begin_layout Subsubsection*
+<with-environments>
 \end_layout
 
 \begin_layout Standard
-<environment-name> Within <with-environments>, the environment name in context
+Repeats on the available execution environments, which are usually ‘development’
+, ‘test’ and ‘production’
+\end_layout
+
+\begin_layout Subsubsection*
+<environment-name>
 \end_layout
 
 \begin_layout Standard
-<database-type> Within <with-environments>, the database type in context
- <database-name> Within <with-environments>, the database name in context
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-environments>
+\end_layout
+
+\end_inset
+
+, the environment name in context
+\end_layout
+
+\begin_layout Subsubsection*
+<database-type>
 \end_layout
 
 \begin_layout Standard
-<with-models> Repeats on available models.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-environments>
+\end_layout
+
+\end_inset
+
+, the database type in context 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<database-name>
+\end_layout
+
+\end_inset
+
+ Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-environments>
+\end_layout
+
+\end_inset
+
+, the database name in context
+\end_layout
+
+\begin_layout Subsubsection*
+<with-models>
+\end_layout
+
+\begin_layout Standard
+Repeats on available models.
  Does not return models defined in libraries or plugins.
- <model-name> Within <with-models>, returns the internal model name.
+\end_layout
+
+\begin_layout Subsubsection*
+<model-name>
 \end_layout
 
 \begin_layout Standard
-<model-table-name> Within <with-models>, returns the model’s physical table
- name.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-models>
+\end_layout
+
+\end_inset
+
+, returns the internal model name.
+\end_layout
+
+\begin_layout Subsubsection*
+<model-table-name>
 \end_layout
 
 \begin_layout Standard
-<with-model-columns> Repeats on the columns within a model.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-models>
+\end_layout
+
+\end_inset
+
+, returns the model’s physical table name.
+\end_layout
+
+\begin_layout Subsubsection*
+<with-model-columns>
 \end_layout
 
 \begin_layout Standard
-<model-column-type> Within <with-model-columns>, returns the column type.
+Repeats on the columns within a model.
+\end_layout
+
+\begin_layout Subsubsection*
+<model-column-type>
 \end_layout
 
 \begin_layout Standard
-<model-column-name> Within <with-model-columns>, returns the column type.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-model-columns>
+\end_layout
+
+\end_inset
+
+, returns the column type.
+\end_layout
+
+\begin_layout Subsubsection*
+<model-column-name>
 \end_layout
 
 \begin_layout Standard
-<with-model-associations> Given a model, repeats on the associations.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-model-columns>
+\end_layout
+
+\end_inset
+
+, returns the column type.
+\end_layout
+
+\begin_layout Subsubsection*
+<with-model-associations>
 \end_layout
 
 \begin_layout Standard
-<model-association-name> Within <with-model-associations>, returns the associati
-on name.
- <model-association-macro> Within <with-model-associations>, returns the
- association type.
+Given a model, repeats on the associations.
+\end_layout
+
+\begin_layout Subsubsection*
+<model-association-name>
 \end_layout
 
 \begin_layout Standard
-<model-association-class-name> Within <with-model-associations>, returns
- the association class name.
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-model-associations>
+\end_layout
+
+\end_inset
+
+, returns the association name.
+\end_layout
+
+\begin_layout Subsubsection*
+<model-association-macro>
 \end_layout
 
 \begin_layout Standard
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-model-associations>
+\end_layout
+
+\end_inset
+
+, returns the association type.
+\end_layout
+
+\begin_layout Subsubsection*
+<model-association-class-name>
+\end_layout
+
+\begin_layout Standard
+Within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<with-model-associations>
+\end_layout
+
+\end_inset
+
+, returns the association class name.
+\end_layout
+
+\begin_layout Subsection*
 Rapid Support 
 \end_layout
 
@@ -10749,65 +11321,398 @@ Rapid Support is the home for some tags that are useful in defining other
  tags.
 \end_layout
 
-\begin_layout Standard
-<with-fields> <with-field-names>
+\begin_layout LyX-Code
+<with-fields> 
+\end_layout
+
+\begin_layout LyX-Code
+<with-field-names>
+\end_layout
+
+\begin_layout Subsubsection*
+<with-fields>
 \end_layout
 
 \begin_layout Standard
-<with-fields> Call with the context set to a record.
- Repeats the content of the tag with this and this_field set to the value
- and name of each of the record’s fields in turn.
+Call with the context set to a record.
+ Repeats the content of the tag with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_field
+\end_layout
+
+\end_inset
+
+ set to the value and name of each of the record’s fields in turn.
  E.g.
  this is useful for generating a form containing each of the fields.
- Tags like <field-list> and <table> forward their attributes to this tag
- and also have the features described here.
- For example, the fields attribute to <field-list> supports the same options
- as described here.
+ Tags like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table>
+\end_layout
+
+\end_inset
+
+ forward their attributes to this tag and also have the features described
+ here.
+ For example, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ attribute to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ supports the same options as described here.
 \end_layout
 
 \begin_layout Standard
-Parameters default default Attributes fields - set to one of: A model class
- - equivalent to listing all of the regular ‘content columns’ of that model
- ’*’ - equivalent to listing all of the regular ‘content columns’ of the
- current record A comma separated list of field names.
- Defaults to ’*’ associations - set to has_many to select the associations
- has_many relationships used as the “fields”.
- Do not also give the fields attribute.
- skip - comma separated list of field names to omit.
- skip-associations - set to has-many to omit all has_many associations.
- include-timestamps - whether or not to include the standard ActiveRecord
- timestamp fields such as created_at and updated_at.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+default:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+fields: set to one of: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A model class: equivalent to listing all of the regular ‘content columns’
+ of that model
+\end_layout
+
+\begin_layout Itemize
+*: equivalent to listing all of the regular ‘content columns’ of the current
+ record
+\end_layout
+
+\begin_layout Itemize
+A comma separated list of field names.
+ Defaults to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+*
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+associations: set to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ to select the associations 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ relationships used as the “fields”.
+ Do not also give the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ attribute.
+ 
+\end_layout
+
+\begin_layout Itemize
+skip: comma separated list of field names to omit.
+ 
+\end_layout
+
+\begin_layout Itemize
+skip-associations: set to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has-many
+\end_layout
+
+\end_inset
+
+ to omit all 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ associations.
+\end_layout
+
+\begin_layout Itemize
+include-timestamps: whether or not to include the standard 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord
+\end_layout
+
+\end_inset
+
+ timestamp fields such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+created_at
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+updated_at
+\end_layout
+
+\end_inset
+
+.
  Defaults to false.
- force-all - by default fields are skipped if the current user does not
- have view permission.
- Set force-all to true to skip this permission check and include all the
- fields.
+\end_layout
+
+\begin_layout Itemize
+force-all: by default fields are skipped if the current user does not have
+ view permission.
+ Set 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+force-all
+\end_layout
+
+\end_inset
+
+ to true to skip this permission check and include all the fields.
+\end_layout
+
+\begin_layout Subsubsection*
+<with-field-names>
 \end_layout
 
 \begin_layout Standard
-<with-field-names> Call with the context set to a model class.
- Repeats the content of the tag with this set name of each of the model’s
- fields in turn.
- For example, this tag is used when generating the heading row in: <table
- fields='...'/>.
+Call with the context set to a model class.
+ Repeats the content of the tag with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ set name of each of the model’s fields in turn.
+ For example, this tag is used when generating the heading row in: 
 \end_layout
 
 \begin_layout Standard
-Attributes fields - set to one of:
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<table fields='...'/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-A model class - equivalent to listing all of the regular ‘content columns’
- of that model ’*’ - equivalent to listing all of the regular ‘content columns’
- of the current record A comma separated list of field names.
- Defaults to ’*’ skip - comma separated list of field names to omit.
- skip-associations - set to has-many to omit all has_many associations.
- include-timestamps - whether or not to include the standard ActiveRecord
- timestamp fields such as created_at and updated_at.
+Attributes 
+\end_layout
+
+\begin_layout Itemize
+fields: set to one of:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A model class: equivalent to listing all of the regular ‘content columns’
+ of that model 
+\end_layout
+
+\begin_layout Itemize
+’*’: equivalent to listing all of the regular ‘content columns’ of the current
+ record 
+\end_layout
+
+\begin_layout Itemize
+A comma separated list of field names.
+ Defaults to ’*’ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+skip: comma separated list of field names to omit.
+ 
+\end_layout
+
+\begin_layout Itemize
+skip-associations: set to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has-many
+\end_layout
+
+\end_inset
+
+ to omit all 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ associations.
+\end_layout
+
+\begin_layout Itemize
+include-timestamps: whether or not to include the standard 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord
+\end_layout
+
+\end_inset
+
+ timestamp fields such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+created_at
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+updated_at
+\end_layout
+
+\end_inset
+
+.
  Defaults to false.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Rapid User Pages 
 \end_layout
 
@@ -10816,40 +11721,221 @@ Rapid User Pages contains tags that implement the basics of Hobo’s user
  management: log in, sign up, forgot password etc.
 \end_layout
 
-\begin_layout Standard
-<simple-page> <login-page> <forgot-password-page> <forgot-password-email-sent-pa
-ge> <account-disabled-page> <account-page>
+\begin_layout LyX-Code
+<simple-page>
+\end_layout
+
+\begin_layout LyX-Code
+<login-page>
+\end_layout
+
+\begin_layout LyX-Code
+<forgot-password-page>
+\end_layout
+
+\begin_layout LyX-Code
+<forgot-password-email-sent-page>
+\end_layout
+
+\begin_layout LyX-Code
+<account-disabled-page>
+\end_layout
+
+\begin_layout LyX-Code
+<account-page>
+\end_layout
+
+\begin_layout Subsubsection*
+<simple-page> 
 \end_layout
 
 \begin_layout Standard
-<simple-page> Some of the user pages use a simplified layout that does not
- feature things like the main nav and live-search.
+Some of the user pages use a simplified layout that does not feature things
+ like the main nav and live-search.
  This tag defines that page
 \end_layout
 
-\begin_layout Standard
-<login-page> Simple log-in page
+\begin_layout Subsubsection*
+<login-page>
 \end_layout
 
 \begin_layout Standard
-Parameters body content content-header heading content-body form labeled-item-li
-st login-label login-input password-label password-input remember-me remember-me
--label remember-me-input actions submit forgot-password 
+Simple log-in page
 \end_layout
 
 \begin_layout Standard
-<forgot-password-page> The page that initiates the forgotten password process.
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+body 
+\end_layout
+
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+content-header heading 
+\end_layout
+
+\begin_layout Itemize
+content-body 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+form 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+labeled-item-list 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+- login-label 
+\end_layout
+
+\begin_layout LyX-Code
+- login-input 
+\end_layout
+
+\begin_layout LyX-Code
+- password-label 
+\end_layout
+
+\begin_layout LyX-Code
+- password-input 
+\end_layout
+
+\begin_layout LyX-Code
+- remember-me 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+* remember-me-label 
+\end_layout
+
+\begin_layout LyX-Code
+* remember-me-input 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+actions 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+- submit 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+forgot-password 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection*
+<forgot-password-page>
+\end_layout
+
+\begin_layout Standard
+The page that initiates the forgotten password process.
  Contains a single text-input where the user can provide their email address
 \end_layout
 
 \begin_layout Standard
-Parameters body content content-header heading content-body form list-item-list
- email-address-label email-address-input actions submit 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+body 
+\end_layout
+
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+content-header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+heading 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+content-body 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+form 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+list-item-list 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+- email-address-label 
+\end_layout
+
+\begin_layout LyX-Code
+- email-address-input 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+actions 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+- submit 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection*
+<forgot-password-email-sent-page>
 \end_layout
 
 \begin_layout Standard
-<forgot-password-email-sent-page> Second page in the forgotten password
- process.
+Second page in the forgotten password process.
  Informs the user that the email has been sent “If the e-mail address you
  entered is in our records”.
  This is to avoid a privacy concern that the forgotten-password mechanism
@@ -10858,27 +11944,165 @@ Parameters body content content-header heading content-body form list-item-list
 \end_layout
 
 \begin_layout Standard
-Parameters body content content-header h2 content-body message 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+body 
+\end_layout
+
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+content-header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+h2 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+content-body 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+message 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsubsection*
+<account-disabled-page> 
 \end_layout
 
 \begin_layout Standard
-<account-disabled-page> The page that is displayed on attempting to log
- in to an account that has been disabled.
+The page that is displayed on attempting to log in to an account that has
+ been disabled.
 \end_layout
 
 \begin_layout Standard
-Parameters body content content-header h2 content-body 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+body 
+\end_layout
+
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+content-header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+h2 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+content-body 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+<account-page>
 \end_layout
 
 \begin_layout Standard
-<account-page> Basic account page that provides the ability for the user
- to change their email address and password.
+Basic account page that provides the ability for the user to change their
+ email address and password.
 \end_layout
 
 \begin_layout Standard
-Parameters body content content-header heading content-body error-messages
- form field-list actions submit 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Parameters
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+body 
+\end_layout
+
+\begin_layout Itemize
+content 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+content-header 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+heading 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+content-body 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+error-messages 
+\end_layout
+
+\begin_layout Itemize
+form 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+field-list 
+\end_layout
+
+\begin_layout Itemize
+actions 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+- submit 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\end_deeper
 \end_body
 \end_document
