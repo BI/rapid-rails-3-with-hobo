@@ -49,8 +49,8 @@ logicalmkup
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip medskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -65,6 +65,1895 @@ logicalmkup
 \begin_body
 
 \begin_layout Standard
+Hobo scopes are an extension of the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+named scope
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+dynamic finder
+\end_layout
+
+\end_inset
+
+ functionality introduced in Rails 2.1, 2.2 and 2.3.
+\end_layout
+
+\begin_layout Standard
+Most of these scopes work by calling 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+named_scope
+\end_layout
+
+\end_inset
+
+ the first time they are invoked.
+ They should work at the same speed as a named scope on subsequent invocations2.
+\end_layout
+
+\begin_layout Standard
+However, this does substantially slow down 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+method_missing
+\end_layout
+
+\end_inset
+
+ on your model’s class.
+ If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord::Base.method_missing
+\end_layout
+
+\end_inset
+
+ is used often, you may wish to disable this module.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Simple Scopes
+\end_layout
+
+\begin_layout LyX-Code
+	
+\end_layout
+
+\begin_layout LyX-Code
+_is
+\end_layout
+
+\begin_layout LyX-Code
+_is_not
+\end_layout
+
+\begin_layout LyX-Code
+_contains
+\end_layout
+
+\begin_layout LyX-Code
+_does_not_contain
+\end_layout
+
+\begin_layout LyX-Code
+_starts
+\end_layout
+
+\begin_layout LyX-Code
+_does_not_start
+\end_layout
+
+\begin_layout LyX-Code
+_ends
+\end_layout
+
+\begin_layout LyX-Code
+_does_not_end
+\end_layout
+
+\begin_layout Subsubsection*
+Boolean Scopes
+\end_layout
+
+\begin_layout LyX-Code
+not_
+\end_layout
+
+\begin_layout Subsubsection*
+Date Scopes
+\end_layout
+
+\begin_layout LyX-Code
+_before
+\end_layout
+
+\begin_layout LyX-Code
+_after
+\end_layout
+
+\begin_layout LyX-Code
+_between
+\end_layout
+
+\begin_layout Subsubsection*
+Lifecyle Scopes
+\end_layout
+
+\begin_layout Subsubsection*
+Key Scopes
+\end_layout
+
+\begin_layout Subsubsection*
+Static Scopes
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset CommandInset href
+LatexCommand href
+name "by_most_recent"
+target "http://cookbook.hobocentral.net/manual/scopes#by_most_recent"
+
+\end_inset
+
+	
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset CommandInset href
+LatexCommand href
+name "recent"
+target "http://cookbook.hobocentral.net/manual/scopes#recent"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset CommandInset href
+LatexCommand href
+name "limit"
+target "http://cookbook.hobocentral.net/manual/scopes#limit"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+order
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset CommandInset href
+LatexCommand href
+name "include"
+target "http://cookbook.hobocentral.net/manual/scopes#include"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset CommandInset href
+LatexCommand href
+name "search"
+target "http://cookbook.hobocentral.net/manual/scopes#search"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Association Scopes
+\end_layout
+
+\begin_layout LyX-Code
+with_
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset CommandInset href
+LatexCommand href
+name "without_"
+target "http://cookbook.hobocentral.net/manual/scopes#without_"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+_is
+\end_layout
+
+\begin_layout LyX-Code
+_is_not
+\end_layout
+
+\begin_layout Subsubsection*
+Scoping Associations
+\end_layout
+
+\begin_layout Subsubsection*
+Chaining
+\end_layout
+
+\begin_layout Section*
+Preparation
+\end_layout
+
+\begin_layout Standard
+Let’s set up a few models for our testing:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Person < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+    hobo_model
+\end_layout
+
+\begin_layout Code
+     fields do
+\end_layout
+
+\begin_layout Code
+		 name :string
+\end_layout
+
+\begin_layout Code
+       born_at :date
+\end_layout
+
+\begin_layout Code
+       code :integer
+\end_layout
+
+\begin_layout Code
+       male :Boolean
+\end_layout
+
+\begin_layout Code
+      timestamps
+\end_layout
+
+\begin_layout Code
+    end
+\end_layout
+
+\begin_layout Code
+    lifecycle(:key_timestamp_field => false) do
+\end_layout
+
+\begin_layout Code
+     state :inactive, :active
+\end_layout
+
+\begin_layout Code
+    end
+\end_layout
+
+\begin_layout Code
+    has_many :friendships
+\end_layout
+
+\begin_layout Code
+    has_many :friends, :through => :friendships
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Friendship < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+    hobo_model
+\end_layout
+
+\begin_layout Code
+    belongs_to :person
+\end_layout
+
+\begin_layout Code
+    belongs_to :friend, :class_name => "Person"
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Generate a migration and run it:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Or with Hobo 1.0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ ./script/generate hobo_migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And create a couple of fixtures:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> bryan = Person.new(:name => "Bryan", 
+\end_layout
+
+\begin_layout Code
+                      :code => 17,
+\end_layout
+
+\begin_layout Code
+                      :born_at => Date.new(1973,4,8),
+\end_layout
+
+\begin_layout Code
+                      :male => true)
+\end_layout
+
+\begin_layout Code
+>> bryan.state = "active" >> bryan.save! 
+\end_layout
+
+\begin_layout Code
+>> bethany = Person.new(:name => "Bethany",
+\end_layout
+
+\begin_layout Code
+                        :code => 42,
+\end_layout
+
+\begin_layout Code
+                        :born_at => date.new(1975,5,13),
+\end_layout
+
+\begin_layout Code
+                        :male => false)
+\end_layout
+
+\begin_layout Code
+>> bethany.state = "inactive" >> bethany.save!
+\end_layout
+
+\begin_layout Code
+>> Friendship.new(:person => Bryan, 
+\end_layout
+
+\begin_layout Code
+                  :friend => bethany).save!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hack the created_at column to get predictable sorting:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> bethany.created_at = Date.new(2000)
+\end_layout
+
+\begin_layout Code
+>> bethany.save!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We’re ready to get going.
+\end_layout
+
+\begin_layout Section*
+Simple Scopes
+\end_layout
+
+\begin_layout Subsubsection*
+_is
+\end_layout
+
+\begin_layout Standard
+Most Hobo scopes work by appending an appropriate query string to the field
+ name.
+ In this case, the hobo scope function name is the name of your database
+ column, followed by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+_is
+\end_layout
+
+\end_inset
+
+.
+ It returns an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Array
+\end_layout
+
+\end_inset
+
+ of models.
+\end_layout
+
+\begin_layout Standard
+It works the same as a dynamic finder:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.find_all_by_name("Bryan").*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\begin_layout Code
+>> Person.name_is("Bryan").*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\begin_layout Code
+>> Person.code_is(17).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\begin_layout Code
+>> Person.code_is(99).length 
+\end_layout
+
+\begin_layout Code
+=> 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_is_not
+\end_layout
+
+\begin_layout Standard
+But the Hobo scope form allows us to supply several variations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.name_is_not("Bryan").*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_contains
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.name_contains("y").*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan", "Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_does_not_contain
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.name_does_not_contain("B").*.name 
+\end_layout
+
+\begin_layout Code
+=> []
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_starts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.name_starts("B").*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan", "Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_does_not_start
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.name_does_not_start("B").length 
+\end_layout
+
+\begin_layout Code
+=> 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_ends
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.name_ends("y").*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_does_not_end
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.name_does_not_end("y").*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Boolean scopes
+\end_layout
+
+\begin_layout Standard
+If you use the name of the column by itself, the column is of type boolean,
+ and no function is already defined on the model class with the name, Hobo
+ scopes adds a dynamic finder to return all records with the boolean column
+ set to true:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.male.*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+not_
+\end_layout
+
+\begin_layout Standard
+You can also search for boolean records that are not true.
+ This includes all records that are set to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+false
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+NULL
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.not_male.*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Date scopes
+\end_layout
+
+\begin_layout Standard
+Date scopes work only with columns that have a name ending in ”at”.
+ The ”at” is omitted when using these finders.
+\end_layout
+
+\begin_layout Subsubsection*
+_before
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.born_before(Date.new(1974)).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_after
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.born_after(Date.new(1974)).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_between
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.born_between(Date.new(1974), Date.today).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Lifecycle scopes
+\end_layout
+
+\begin_layout Standard
+If you have a 
+\begin_inset CommandInset href
+LatexCommand href
+name "lifecycle"
+target "http://cookbook.hobocentral.net/manual/lifecycles"
+
+\end_inset
+
+ defined, each state name can be used as a dynamic finder.
+\end_layout
+
+\begin_layout LyX-Code
+>> Person.active.*.name 
+\end_layout
+
+\begin_layout LyX-Code
+=> ["Bryan"]
+\end_layout
+
+\begin_layout Section*
+Key scopes
+\end_layout
+
+\begin_layout Standard
+This isn’t very useful:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.is(Bryan).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But this is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.is_not(Bryan).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Static scopes
+\end_layout
+
+\begin_layout Standard
+These scopes do not contain the column name.
+\end_layout
+
+\begin_layout Subsubsection*
+by_most_recent
+\end_layout
+
+\begin_layout Standard
+Sorting on the created_at column:	
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.by_most_recent.*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan", "Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+recent
+\end_layout
+
+\begin_layout Standard
+Gives the N most recent items:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.recent(1).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+limit
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.limit(1).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+order_by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.order_by(:code).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan", "Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+include
+\end_layout
+
+\begin_layout Standard
+Adding the include function to your query chain has the same effect as the
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:include
+\end_layout
+
+\end_inset
+
+ option to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+find
+\end_layout
+
+\end_inset
+
+ method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.include(:friends).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan", "Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+search
+\end_layout
+
+\begin_layout Standard
+Search for text in the specified column(s).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.search("B", :name).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan", "Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Association Scopes
+\end_layout
+
+\begin_layout Subsubsection*
+with_
+\end_layout
+
+\begin_layout Standard
+Find the records that contain the specified record in an association
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.with_friendship(Friendship.first).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\begin_layout Code
+>> Person.with_friend(Bethany).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can also specify multiple records with the plural form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.with_friends(Bethany, nil).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bryan"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+without_
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Person.without_friend(Bethany).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\begin_layout Code
+>> Person.without_friends(Bethany, nil).*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_is
+\end_layout
+
+\begin_layout Standard
+You can use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+_is
+\end_layout
+
+\end_inset
+
+ on a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_one
+\end_layout
+
+\end_inset
+
+ or a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ relationship:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Friendship.person_is(Bryan).*.friend.*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+_is_not
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> Friendship.person_is_not(Bryan) => []
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Scoping Associations
+\end_layout
+
+\begin_layout Standard
+When defining an association, you can add a scope:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> class Person
+\end_layout
+
+\begin_layout Code
+	 has_many :active_friends, 
+\end_layout
+
+\begin_layout Code
+              :class_name => "Person",
+\end_layout
+
+\begin_layout Code
+              :through => :friendships,
+\end_layout
+
+\begin_layout Code
+              :source => :friend, 
+\end_layout
+
+\begin_layout Code
+              :scope => :active
+\end_layout
+
+\begin_layout Code
+	 has_many :inactive_friends,
+\end_layout
+
+\begin_layout Code
+              :class_name => "Person",
+\end_layout
+
+\begin_layout Code
+              :through =>    :friendships,
+\end_layout
+
+\begin_layout Code
+              :source => :friend, 
+\end_layout
+
+\begin_layout Code
+              :scope => :inactive 
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+ >> bryan.inactive_friends.*.name => ["Bethany"]
+\end_layout
+
+\begin_layout Code
+ >> bryan.active_friends.*.name => []
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Or several scopes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> class Person
+\end_layout
+
+\begin_layout Code
+    has_many :inactive_female_friends,
+\end_layout
+
+\begin_layout Code
+             :class_name => "Person",
+\end_layout
+
+\begin_layout Code
+             :through => :friendships,
+\end_layout
+
+\begin_layout Code
+             :source => :friend,
+\end_layout
+
+\begin_layout Code
+             :scope => [:inactive, :not_male]
+\end_layout
+
+\begin_layout Code
+    has_many :active_female_friends,
+\end_layout
+
+\begin_layout Code
+             :class_name => "Person",
+\end_layout
+
+\begin_layout Code
+             :through => :friendships,
+\end_layout
+
+\begin_layout Code
+             :source => :friend, 
+\end_layout
+
+\begin_layout Code
+             :scope => [:active, :not_male]
+\end_layout
+
+\begin_layout Code
+    has_many :inactive_male_friends,
+\end_layout
+
+\begin_layout Code
+             :class_name => "Person",
+\end_layout
+
+\begin_layout Code
+             :through => :friendships,
+\end_layout
+
+\begin_layout Code
+             :source => :friend,
+\end_layout
+
+\begin_layout Code
+             :scope => [:inactive, :male]
+\end_layout
+
+\begin_layout Code
+   end
+\end_layout
+
+\begin_layout Code
+>> bryan.inactive_female_friends.*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\begin_layout Code
+>> bryan.active_female_friends.*.name 
+\end_layout
+
+\begin_layout Code
+=> []
+\end_layout
+
+\begin_layout Code
+>> bryan.inactive_male_friends.*.name 
+\end_layout
+
+\begin_layout Code
+=> []
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+You can also parameterize the scopes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> class Person
+\end_layout
+
+\begin_layout Code
+    has_many :y_friends, 
+\end_layout
+
+\begin_layout Code
+             :class_name => "Person",
+\end_layout
+
+\begin_layout Code
+             :through => :friendships,
+\end_layout
+
+\begin_layout Code
+             :source => :friend,
+\end_layout
+
+\begin_layout Code
+             :scope => { :name_contains => 'y' }
+\end_layout
+
+\begin_layout Code
+    has_many :z_friends,
+\end_layout
+
+\begin_layout Code
+             :class_name => "Person",
+\end_layout
+
+\begin_layout Code
+             :through => :friendships,
+\end_layout
+
+\begin_layout Code
+             :source => :friend, 
+\end_layout
+
+\begin_layout Code
+             :scope => { :name_contains => 'z' }
+\end_layout
+
+\begin_layout Code
+  end 
+\end_layout
+
+\begin_layout Code
+ >> bryan.y_friends.*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\begin_layout Code
+ >> bryan.z_friends.*.name 
+\end_layout
+
+\begin_layout Code
+=> []
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Chaining
+\end_layout
+
+\begin_layout LyX-Code
+Like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+named_scopes
+\end_layout
+
+\end_inset
+
+, Hobo scopes can be chained:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+>> bryan.inactive_friends.inactive.*.name 
+\end_layout
+
+\begin_layout Code
+=> ["Bethany"]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 
 \end_layout
 
