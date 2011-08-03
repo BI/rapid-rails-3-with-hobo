@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -63,6 +65,3729 @@ logicalmkup
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+The Hobo Permission System (aka “permissions”) is an extension to Rails
+ Active Record that allows you to define 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+which actions on your models are permitted by which users
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Hobo’s controllers and DRYML tag libraries use this information to automatically
+ customize their behavior according to your definitions.
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+One of the core pieces of the Hobo puzzle is the permission system.
+ The permission system itself lives in the model layer - it is a set of
+ extensions to Active Record models.
+ It’s not a particularly complex set of extensions but the overall effect
+ in Hobo is very powerful.
+ This comes not so much from the permission system itself, but from how
+ it is 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+used
+\end_layout
+
+\end_inset
+
+.
+ Hobo’s controllers use the permission system to decide if a given request
+ is allowed or not.
+ In the view layer, the Rapid tag library uses the permission system to
+ decide what to render for the currently logged in user.
+\end_layout
+
+\begin_layout Standard
+To understand how it all fits together, it’s helpful to be clear about this
+ distinction: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+The permission system is a model level feature, but it is used in both the
+ controller and view layers.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+This guide will be mostly about how it all works in the model layer, but
+ we’ll also talk a little about how the controllers and tags use the permissions.
+\end_layout
+
+\begin_layout Standard
+At its heart, the permission system is fairly simple, it just provides methods
+ on each model that allow the following four questions to be asked:
+\end_layout
+
+\begin_layout Standard
+Is a given user allowed to:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Create
+\end_layout
+
+\end_inset
+
+ this record? 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Update
+\end_layout
+
+\end_inset
+
+ the database with the current changes to this record? (Thanks to Active
+ Record’s ability to track changes) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Destroy
+\end_layout
+
+\end_inset
+
+ the current record? 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+View
+\end_layout
+
+\end_inset
+
+ the current record, or an individual attribute?.
+\end_layout
+
+\begin_layout Standard
+There is also a fifth permission, which is more of a pseudo permission.
+ Can this user:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Edit
+\end_layout
+
+\end_inset
+
+ a specified attribute of the record
+\end_layout
+
+\begin_layout Standard
+We call this pseudo permission because it is not a request to actually 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+do something
+\end_layout
+
+\end_inset
+
+ with the record.
+ It is more like asking: if, at some point in the future, the user tries
+ to update this attribute, will that be allowed? Clearly edit permission
+ is closely related to update permission, but it’s not quite the same.
+ In fact, you often don’t need to declare edit permissions because Hobo
+ can figure them out from your update permission.
+ We’ll cover this in more detail later, but for now just be aware that edit
+ permission is a bit of an odd-one-out.
+\end_layout
+
+\begin_layout Subsection*
+Defining permissions
+\end_layout
+
+\begin_layout Standard
+In a typical Hobo app, the place where the permission system is most prominent
+ in your own code is your permission declarations.
+ These are methods, which you define on your models, known as “permission
+ methods”.
+ These methods are where you tell the permission system who is allowed to
+ do what.
+ The permission methods are called by the framework - it is unusual to call
+ them yourself.
+\end_layout
+
+\begin_layout Subsubsection*
+The four basic permission methods
+\end_layout
+
+\begin_layout Standard
+When you generate a new Hobo model, you get stubs for the following methods.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+def create_permitted? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+def update_permitted?
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+def destroy_permitted?
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+def view_permitted?(attribute)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The methods must return true or false to indicate whether or not the operation
+ is allowed.
+ We’ll see some examples in a moment but we first need to look at what informati
+on the methods have access to.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The user performing the action is available via 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ method.
+ This method will always return a user object, even if no one is logged
+ in to the app, because Hobo has a special 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Guest
+\end_layout
+
+\end_inset
+
+ class to represent a user that is not logged in.
+ Two useful methods that are available on all Hobo user objects are:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+guest?
+\end_layout
+
+\end_inset
+
+ – returns true if the user is a guest, i.e.
+ no-one is logged in.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+signed_up?
+\end_layout
+
+\end_inset
+
+ – returns true if the user is a not a guest.
+\end_layout
+
+\begin_layout Standard
+So for example, to specify that you must be logged in to create a record:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def create_permitted? 
+\end_layout
+
+\begin_layout Code
+  acting_user.signed_up? 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It’s also common to compare the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ with associations on your model, for example, say your model has an owner:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+belongs_to :owner, :class_name => "User"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can assert that only the owner can make changes like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted?
+\end_layout
+
+\begin_layout Code
+  owner == acting_user 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a downside to that method – the owner association will be fetched
+ from the database.
+ That’s not really necessary, as the foreign key that we need has already
+ been loaded.
+ Fortunately Hobo adds a comparison method for every belongs_to that avoids
+ this trip to the database:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted?
+\end_layout
+
+\begin_layout Code
+  owner_is? acting_user 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Change tracking
+\end_layout
+
+\begin_layout Standard
+When deciding if an update is permitted (i.e., in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+ method), it will often be important to know what exactly has changed.
+ In a previous version of Hobo we had to jump through a lot of hoops to
+ make this information available.
+ No longer – Active Record now tracks all changes made to an object.
+ For example, say you wish to find out about changes to an attribute 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+status
+\end_layout
+
+\end_inset
+
+.
+ The following methods (among others) are available:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+status_changed?
+\end_layout
+
+\end_inset
+
+ - returns true if the attribute has been changed 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+status_was
+\end_layout
+
+\end_inset
+
+ - returns the old value of the attribute
+\end_layout
+
+\begin_layout Standard
+Note that these methods are only available on attributes, not on associations.
+ However, as a convenience Hobo models add 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+*_changed?
+\end_layout
+
+\end_inset
+
+ for all 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ associations.
+ For example, the following definition means that only signed up users can
+ make changes, and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+status
+\end_layout
+
+\end_inset
+
+ attribute cannot be changed by anyone:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted? 
+\end_layout
+
+\begin_layout Code
+  acting_user.signed_up? && !status_changed? 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As a stylistic point, sometimes it can be clearer to use early returns,
+ rather than to build up a large and complex boolean expression.
+ This approach is also a bit easier to apply comments to.
+ For example:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted? # Must be signed up: 
+\end_layout
+
+\begin_layout Code
+  return false unless acting_user.signed_up?
+\end_layout
+
+\begin_layout Code
+  !status_changed? 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Change tracking helpers
+\end_layout
+
+\begin_layout Standard
+Making assertions about changes to many attributes can quickly get tedious:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted?
+\end_layout
+
+\begin_layout Code
+  !(address1_changed? || 
+\end_layout
+
+\begin_layout Code
+  address2_changed? || 
+\end_layout
+
+\begin_layout Code
+  city_changed? || 
+\end_layout
+
+\begin_layout Code
+  zipcode_changed?) 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The permission system provides four helpers to make code like this more
+ concise and clearer.
+ Each of these methods are passed one or more attribute names:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+only_changed?
+\end_layout
+
+\end_inset
+
+ – are the attributes passed the only ones that have changed? 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+none_changed?
+\end_layout
+
+\end_inset
+
+ – have none of the attributes passed been changed? 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+any_changed?
+\end_layout
+
+\end_inset
+
+ – have any of the attributes passed been changed? 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_changed?
+\end_layout
+
+\end_inset
+
+ – have all of the attributes passed been changed?
+\end_layout
+
+\begin_layout Standard
+So, for example, the previous 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+ could be simplified to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted? 
+\end_layout
+
+\begin_layout Code
+  none_changed? :address1, :address2, :city, :zipcode
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ruby tip: if you want to pass an array, use Ruby’s ‘splat’ operator:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+READ_ONLY_ATTRS = %w(address1 address2 city zipcode)
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+def update_permitted? 
+\end_layout
+
+\begin_layout Code
+  none_changed? *READ_ONLY_ATTRS 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that you can include the names of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ associations in your attribute list.
+\end_layout
+
+\begin_layout Subsubsection*
+Examples
+\end_layout
+
+\begin_layout Standard
+Let’s go through a few examples.
+ Here’s a definition that says you cannot create records faking the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+owner
+\end_layout
+
+\end_inset
+
+ to be someone else, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+state
+\end_layout
+
+\end_inset
+
+ must be ‘new’:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def create_permitted? 
+\end_layout
+
+\begin_layout Code
+  return false unless owner_is? acting_user
+\end_layout
+
+\begin_layout Code
+  state == "new" 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that by asserting 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+owner_is? acting_user
+\end_layout
+
+\end_inset
+
+ you are implicitly asserting that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ is signed up, because 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+owner
+\end_layout
+
+\end_inset
+
+ can never be a reference to a guest user.
+\end_layout
+
+\begin_layout Standard
+A common requirement for update permission is to restrict the list of fields
+ that can be changed according to the type of user.
+ For example, maybe an administrator can change anything, but a non-admin
+ can only change a given set of fields:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted? 
+\end_layout
+
+\begin_layout Code
+  return true if acting_user.administrator?
+\end_layout
+
+\begin_layout Code
+  only_changed? :name, :description 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that we’re assuming there is an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ method on the user object.
+ Such a method is not built into Hobo, but Hobo’s default user generator
+ does add this to your model.
+ We’ll discuss this in more detail later on.
+\end_layout
+
+\begin_layout Subsection*
+Destroy permissions
+\end_layout
+
+\begin_layout Standard
+A typical destroy permission might be that administrators can delete anything,
+ but non-administrators can only delete the record if they own it:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def destroy_permitted?
+\end_layout
+
+\begin_layout Code
+  acting_user.administrator? || owner_is?(acting_user)
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+View permission and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+never_show
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As you may have noticed when we introduced the permissions above, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+view_permitted
+\end_layout
+
+\end_inset
+
+ method differs from the other three basic permissions in that it takes
+ a single parameter:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def view_permitted?(attribute) 
+\end_layout
+
+\begin_layout Code
+  ...
+ 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The method is required to do double duty.
+ If the permission system needs to determine if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ is allowed to view this record as a whole, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attribute
+\end_layout
+
+\end_inset
+
+ will be nil.
+ Otherwise 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attribute
+\end_layout
+
+\end_inset
+
+ will be the name of an attribute for which view permission is requested.
+ So when defining this method, remember that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attribute
+\end_layout
+
+\end_inset
+
+ may be nil.
+\end_layout
+
+\begin_layout Standard
+There is also a convenient shorthand for denying view permission for a particula
+r attribute or attributes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class MyModel 
+\end_layout
+
+\begin_layout Code
+  ...
+ 
+\end_layout
+
+\begin_layout Code
+  never_show :foo, :baa ...
+ 
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+View and edit permission will always be denied for those attributes.
+\end_layout
+
+\begin_layout Subsection*
+Edit Permission
+\end_layout
+
+\begin_layout Standard
+Edit permission is used by the view layer to determine whether or not to
+ render a particular form field.
+ That means it is not like the other permission methods, in that it’s not
+ actually a request to view or change a record.
+ Instead it’s more like a preview of update permission.
+\end_layout
+
+\begin_layout Standard
+Asking for edit permission is a bit like asking: 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+will update permission be granted if a change is made to this attribute?
+\end_layout
+
+\end_inset
+
+ A common response to that question might be: it depends what you’re changing
+ the attribute to.
+ And therein lies the difference between update permission and edit permission.
+ With update permission, we are dealing with a known quantity – we have
+ a set of concrete changes to the object that may or may not be permitted.
+ With edit permission, the value that the attribute will become is not known
+ (because the user hasn’t submitted the form yet).
+\end_layout
+
+\begin_layout Standard
+Despite that difference edit permission and update permission are obviously
+ very closely related.
+ Because saving you work is what Hobo is all about, the permission system
+ contains a mechanism for deriving edit permission based on your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+ method.
+ For that reason, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit_permitted?
+\end_layout
+
+\end_inset
+
+ method:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def edit_permitted?(attribute) 
+\end_layout
+
+\begin_layout Code
+  ...
+ 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This method often does not need to be implemented.
+\end_layout
+
+\begin_layout Subsubsection*
+Protected, read-only, and non-viewable attributes
+\end_layout
+
+\begin_layout Standard
+Rails provides a few ways to prevent attributes from being updated during
+ ‘mass assignment’:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attr_protected
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attr_accessible
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attr_readonly
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(You can look these up in the regular Rails API reference if you’re not
+ familiar with them).
+\end_layout
+
+\begin_layout Standard
+Before the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit_permitted?
+\end_layout
+
+\end_inset
+
+ method is even called, Hobo checks these declarations.
+ If changes to any attribute is prevented by these declarations, they will
+ automatically be recognized as not editable.
+\end_layout
+
+\begin_layout Standard
+Similarly, if a virtual attribute is read-only in the Ruby sense (it has
+ no setter method), that tells Hobo it is not editable.
+ And finally, fields that are not viewable are implicitly not editable either.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Tip: if a particular attribute can 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+never
+\end_layout
+
+\end_inset
+
+ be edited by any user, it’s simplest to just declare it as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attr_protected
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attr_readonly
+\end_layout
+
+\end_inset
+
+ (read-only attributes can be set on creation, but not changed later).
+ If the ability to change the attribute either depends on the state of the
+ record, or varies from user to user, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attr_protected
+\end_layout
+
+\end_inset
+
+ and the rest are not flexible enough – define permission methods instead.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We’ll now take a look at how 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit_permitted?
+\end_layout
+
+\end_inset
+
+ is provided automatically, and then cover the details of defining edit
+ permission yourself.
+\end_layout
+
+\begin_layout Subsubsection*
+Deriving edit permission
+\end_layout
+
+\begin_layout Standard
+To figure out edit permission for a particular attribute, based on your
+ definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+, Hobo calls your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+ method, but with a special trick in place.
+\end_layout
+
+\begin_layout Standard
+If your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+ attempts to access the attribute under test, Hobo intercepts that access
+ and says to itself: “Aha! the permission method tried to access the attribute,
+ which means permission to update 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+depends on the value of that attribute
+\end_layout
+
+\end_inset
+
+”.
+ Given that we don’t know what value the attribute will have 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+after the edit
+\end_layout
+
+\end_inset
+
+, we had better be conservative.
+ The result is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+false
+\end_layout
+
+\end_inset
+
+ - no you cannot edit that attribute.
+\end_layout
+
+\begin_layout Standard
+If, on the other hand, the permission method returns true without ever accessing
+ that attribute, the conclusion is: update permission is granted regardless
+ of the value the attribute.
+ No matter what change is made to the attribute, update permission will
+ be granted, and therefore edit permission can be granted.
+\end_layout
+
+\begin_layout Standard
+Neat eh? It’s not perfect but it sure is useful.
+ Remember you can always define 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit_permitted?
+\end_layout
+
+\end_inset
+
+ if things don’t work out.
+ Also note that if edit permission is incorrect, this does not result in
+ a security hole in your application.
+ An edit control may be rendered when it really should not have been, but
+ on submission of the form, the change to the database is policed by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+, not 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit_permitted?
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In case you’re interested, here’s how Hobo intercepts those accesses to
+ the attribute under test.
+ A few singleton methods are added to the record (i.e., methods are defined
+ on the record’s metaclass).
+ These give special behavior to this one instance.
+ In effect these methods make one of the models attributes ‘undefined’.
+ Any access to an undefined attribute raises 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::UndefinedAccessError
+\end_layout
+
+\end_inset
+
+, which is caught by the permission system, and edit permission is denied.
+ 
+\end_layout
+
+\begin_layout Standard
+Say a test is being made for edit permission on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ attribute, the following methods will be added: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ - raises 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::UndefinedAccessError
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name_change
+\end_layout
+
+\end_inset
+
+ - raises 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::UndefinedAccessError
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name_was
+\end_layout
+
+\end_inset
+
+ - returns the actual current value (because this will be the old value
+ after the edit) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name_changed?
+\end_layout
+
+\end_inset
+
+ - returns true
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+changed?
+\end_layout
+
+\end_inset
+
+ - returns true
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+changed
+\end_layout
+
+\end_inset
+
+ - returns the list of attributes that have changed, including 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+changes
+\end_layout
+
+\end_inset
+
+ - raises 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::UndefinedAccessError
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the edit check those singleton methods are removed again.
+\end_layout
+
+\begin_layout Subsubsection*
+Defining edit permission
+\end_layout
+
+\begin_layout Standard
+If the mechanism described above is not adequate for some reason, you can
+ always define edit permission yourself.
+ If the derived edit permission is not correct for just one field, it’s
+ possible to define edit permission manually for just that one field, and
+ still have the automatic edit permission for the other fields in your model.
+\end_layout
+
+\begin_layout Standard
+To define edit permission for a single attribute (and keep the automatically
+ derived edit permission for the others), define 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+foo_edit_permitted?
+\end_layout
+
+\end_inset
+
+ (where foo is the name of your attribute).
+ For example, if the attribute is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def name_edit_permitted?
+\end_layout
+
+\begin_layout Code
+  acting_user.administrator?
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To completely replace the derived edit permission with your own definition,
+ just implement 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit_permitted?
+\end_layout
+
+\end_inset
+
+ yourself:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def edit_permitted?(attribute)
+\end_layout
+
+\begin_layout Code
+  ...
+ 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attribute
+\end_layout
+
+\end_inset
+
+ parameter will either be the name of an attribute, or nil.
+ In the case that it is nil, Hobo is testing to see if the current user
+ has edit permission “in general” for this record.
+ For example, this would be use to determine whether or not to render an
+ edit link.
+\end_layout
+
+\begin_layout Subsection*
+Permissions and associations 
+\end_layout
+
+\begin_layout Standard
+So far we’ve focused on policing changes to basic data fields, but Hobo
+ supports multi-model forms, so we also need to place restrictions on associated
+ records.
+ We need to specify permissions regarding:
+\end_layout
+
+\begin_layout Itemize
+Changes to the target of a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ association.
+\end_layout
+
+\begin_layout Itemize
+Adding and removing items to a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ association.
+ 
+\end_layout
+
+\begin_layout Itemize
+Changes to the fields of any related record
+\end_layout
+
+\begin_layout Standard
+If we think in terms of the underlying database, it’s clear that every change
+ ultimately comes down to things that we have already covered - creating,
+ updating and deleting rows.
+ So the permission system is able to covers these cases with a simple rule:
+\end_layout
+
+\begin_layout Itemize
+If you make a change to a record via one of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_*
+\end_layout
+
+\end_inset
+
+ methods, (e.g., 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_create
+\end_layout
+
+\end_inset
+
+), and 
+\end_layout
+
+\begin_layout Itemize
+as a result of that change, related records are created, updated or destroyed,
+ then
+\end_layout
+
+\begin_layout Itemize
+the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ is propagated to those records, and
+\end_layout
+
+\begin_layout Itemize
+any permissions defined on those records are enforced.
+\end_layout
+
+\begin_layout Standard
+All we have to do then, is think of everything in terms of the records that
+ are being created, modified or deleted, and it should be clear how which
+ permissions apply.
+ For example:
+\end_layout
+
+\begin_layout Itemize
+Change the target of a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ required update permission on the owner record.
+ 
+\end_layout
+
+\begin_layout Itemize
+Adding a new record to a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ association requires create permission for that new record.
+ 
+\end_layout
+
+\begin_layout Itemize
+Adding and removing items to a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+ requires create or destroy permission on the join model.
+\end_layout
+
+\begin_layout Standard
+So there really is no special support for associations in the permission
+ system, other than the rule described above for propagating the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Testing for changes to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ associations
+\end_layout
+
+\begin_layout Standard
+As discussed, no special support is needed to police 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ associations, you can just check for changes to the foreign key.
+ For example:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+belongs_to :user 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+def update_permitted? 
+\end_layout
+
+\begin_layout Code
+  acting_user.administrator || !user_id_changed? 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Although that works fine, it feels a bit low level.
+ We’d much rather say 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_changed?
+\end_layout
+
+\end_inset
+
+, and in fact we can.
+ For every belongs_to association, Hobo adds a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+*_changed?
+\end_layout
+
+\end_inset
+
+ method, e.g.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_changed?
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In addition to this, the attribute change helpers – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+only_changed?
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+none_changed?
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+any_changed?
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+all_changed?
+\end_layout
+
+\end_inset
+
+ – all accept 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ association names along with regular field names.
+\end_layout
+
+\begin_layout Section
+The Permission API
+\end_layout
+
+\begin_layout Standard
+It is common in Hobo applications, especially small ones, that although
+ you 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+define
+\end_layout
+
+\end_inset
+
+ permissions on your models, you never actually call the permissions API
+ yourself.
+ The model controller will use the API to determine if POST and PUT requests
+ are allowed, and the Rapid tags in the view layer will use the permissions
+ API to determine what to render.
+\end_layout
+
+\begin_layout Standard
+When you’re digging a bit deeper though, customizing the controllers and
+ the views, you may need to use the permission API yourself.
+ That’s what we’ll look at in this section.
+\end_layout
+
+\begin_layout Subsubsection*
+The standard CRUD operations.
+\end_layout
+
+\begin_layout Standard
+Active Record provides a very simple API for the basic CRUD operations:
+ 
+\end_layout
+
+\begin_layout Itemize
+Create – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Model.create
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+r = Model.new; ...; r.save
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Read – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Model.find
+\end_layout
+
+\end_inset
+
+, then access the attributes on the record 
+\end_layout
+
+\begin_layout Itemize
+Update – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.save
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.update_attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Delete – 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.destroy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Hobo permission system adds “user” versions of these methods.
+ For example, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_create
+\end_layout
+
+\end_inset
+
+ is like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+create
+\end_layout
+
+\end_inset
+
+, but takes the “acting user” as an argument, and performs a permission
+ check before the actual create.
+ The full set of class (model) methods are:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Model.user_find(user, ...)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A regular find, followed by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.user_view(user)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Model.user_new(user, attributes)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A regular new, then 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+set_creator(user)
+\end_layout
+
+\end_inset
+
+, then 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.user_view(user)
+\end_layout
+
+\end_inset
+
+.
+ If a block is given, the yield is after the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+set_creator
+\end_layout
+
+\end_inset
+
+ and before the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Model.user_create(user, attributes)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_create!
+\end_layout
+
+\end_inset
+
+) As with regular 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+create
+\end_layout
+
+\end_inset
+
+, attributes can be an array of hashes, in which case multiple records are
+ created.
+ Equivalent to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_new
+\end_layout
+
+\end_inset
+
+ followed by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.user_save
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_create!
+\end_layout
+
+\end_inset
+
+ version raises an exception on validation errors.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+The instance (record) methods are:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.user_save(user)
+\end_layout
+
+\end_inset
+
+ (and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_save!
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A regular save plus a permission check.
+ If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+new_record?
+\end_layout
+
+\end_inset
+
+ is true, checks for create permission, otherwise for update permission.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.user_update_attributes(user, attributes)
+\end_layout
+
+\end_inset
+
+ (and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_update_attributes!
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A regular update_attributes plus the permission check.
+ If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+new_record?
+\end_layout
+
+\end_inset
+
+ is true, checks for create permission, otherwise for update permission.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.user_view
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Performs a view permission check and raises 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+PermissionDeniedError
+\end_layout
+
+\end_inset
+
+ if it fails 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.user_destroy
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A regular destroy with a permission check first.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Direct permission tests
+\end_layout
+
+\begin_layout Standard
+The methods mentioned in the previous section perform the appropriate permission
+ tests along with some operation.
+ If you want to perform a permission test directly, the following methods
+ are available:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.creatable_by?(user)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.updatable_by?(user)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.destroyable_by?(user)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.viewable_by?(user, attribute=nil)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+record.editable_by?(user, attribute=nil)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is also:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+method_callable_by?(user, method_name)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Which is related to web methods, which we’ll cover later on.
+ 
+\end_layout
+
+\begin_layout Standard
+You should always call these methods, rather than calling the ...
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+_permitted?
+\end_layout
+
+\end_inset
+
+ methods directly, as some of them have extra logic in addition to the call
+ to the ...
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+_permitted?
+\end_layout
+
+\end_inset
+
+ method.
+\end_layout
+
+\begin_layout Standard
+For example, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+editable_by?
+\end_layout
+
+\end_inset
+
+ will check things like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+attr_protected
+\end_layout
+
+\end_inset
+
+ first, and then call 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit_permitted?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Create, update and destroy hooks
+\end_layout
+
+\begin_layout Standard
+In addition to the methods described in this section, the permission system
+ extends the regular 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+create
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+destroy
+\end_layout
+
+\end_inset
+
+ methods.
+ If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ is set, each of these will perform a permission check prior to the actual
+ operation.
+ This is illustrated in the very simple implementation of, for example user
+ save:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def user_save(user) 
+\end_layout
+
+\begin_layout Code
+  with_acting_user(user) { save } 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with_acting_user
+\end_layout
+
+\end_inset
+
+ just sets 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ for the duration of the block, then restores it to it’s previous value)
+\end_layout
+
+\begin_layout Subsubsection*
+Permission for web methods
+\end_layout
+
+\begin_layout Standard
+In order for a web method to be available to a particular user, a permission
+ method must be defined (one permission method per web method).
+ For example, if the web method is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+send_reminder_email
+\end_layout
+
+\end_inset
+
+, you would define the permission to call that in:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def send_reminder_email_permitted?
+\end_layout
+
+\begin_layout Code
+  ...
+ 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As mentioned previously, you can test a method-call permission directly
+ with:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+record.method_callable_by?(user, :send_reminder_email)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+after_user_new
+\end_layout
+
+\end_inset
+
+ – initialize a record using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Often we would like to initialize some aspect of our model based on who
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ is.
+ A very common example would be to set an “owner” association automatically.
+ Hobo provides the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+after_user_new
+\end_layout
+
+\end_inset
+
+ callback for this purpose:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+belongs_to :owner, :class_name => "User",
+\end_layout
+
+\begin_layout Code
+    after_user_new { |r| r.owner = acting_user }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+after_user_new
+\end_layout
+
+\end_inset
+
+ fires on both 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_new
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user_create
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The need for an “owner association” is so common that Hobo provides an additiona
+l shortcut for it:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+belongs_to :owner, :class_name => "User", :creator => true
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Other situations can be more complex, and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:creator => true
+\end_layout
+
+\end_inset
+
+ shorthand may not suffice.
+ 
+\end_layout
+
+\begin_layout Standard
+For example, an “event” model might need to be associated with the same
+ “group” as the acting user.
+ In this case we go back to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+after_user_new
+\end_layout
+
+\end_inset
+
+ callback:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Event
+\end_layout
+
+\begin_layout Code
+  belongs_to :group, after_user_new { |event|
+\end_layout
+
+\begin_layout Code
+      event.group = acting_user.group } 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+OK, but what does all this have to do with permissions? It is quite common
+ that you 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+need
+\end_layout
+
+\end_inset
+
+ this information to be in place in order to confirm if permission is granted.
+ For example:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def create_permitted? 
+\end_layout
+
+\begin_layout Code
+  acting_user.group == group 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This definition says that a user can only create an event in their own group.
+ When we combine the two…
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+after_user_new { |event| event.group = acting_user.group } 
+\end_layout
+
+\begin_layout Code
+def create_permitted?
+\end_layout
+
+\begin_layout Code
+  acting_user.group == group 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+…a neat thing happens.
+ A signed up user 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+is
+\end_layout
+
+\end_inset
+
+ allowed to create an event, because the callback ensures that the event
+ is in the right group, but if an attempt is made to change the group to
+ a different one, that would fail.
+ 
+\end_layout
+
+\begin_layout Standard
+The edit permission mechanism (described in a previous section) can detect
+ this, so the end result is that (by default) your app will have the “New
+ Event” form, but the form control for choosing the group will be automatically
+ removed.
+ The event will be automatically assigned to the logged in user’s group.
+ I love it when a plan comes together!
+\end_layout
+
+\begin_layout Section*
+Permissions vs.
+ validations
+\end_layout
+
+\begin_layout Standard
+It may have occurred to you that there is some overlap between the permission
+ system and Active Record’s validations.
+ To an extent that’s true: they both provide a way to prevent undesirable
+ changes from making their way into the database.
+ The line between them is fairly clear though:
+\end_layout
+
+\begin_layout Itemize
+Validations are appropriate for “normal mistakes”.
+\end_layout
+
+\begin_layout Standard
+A validation “error” is not really an application error, but a normal occurrence
+ which is reported to the user in a helpful manner.
+\end_layout
+
+\begin_layout Itemize
+Permissions are appropriate for preventing things that should never happen.
+\end_layout
+
+\begin_layout Standard
+Your user interface should provide no means by which a “permission denied”
+ error can occur.
+ Permission errors should only come from manually editing the browser’s
+ address bar, or from unsolicited form posts.
+\end_layout
+
+\begin_layout Standard
+In Rails code, it’s not uncommon to see validations used for both of these
+ reasons.
+ For example, the UI may provide radio buttons to chose “Male” or “Female”,
+ and the model might state:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+validates_inclusion_of :gender, :in => %w(Male Female)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In normal usage, no one will ever see the message that gets generated when
+ this validation fails.
+ Effectively it’s being used as a permission.
+ In a Hobo app it might be better to use the permission system for this
+ example, but the declarative 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+validates_inclusion_of
+\end_layout
+
+\end_inset
+
+ is quite nice, so if you do use it we’ll turn a blind eye.
+\end_layout
+
+\begin_layout Subsubsection*
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ Method
+\end_layout
+
+\begin_layout Standard
+The idea that your user model has a boolean method 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ is bit of a strong assumption.
+ It fits for many applications, but might be totally inappropriate for many
+ others.
+ 
+\end_layout
+
+\begin_layout Standard
+Although you’ve probably seen this method a lot, it’s important to clarify
+ that it’s not actually part of Hobo.
+ 
+\end_layout
+
+\begin_layout Standard
+Eh what?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ is only a part of Hobo insofar as:
+\end_layout
+
+\begin_layout Itemize
+The user model created by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_user_model
+\end_layout
+
+\end_inset
+
+ generator contains a boolean field 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Guest
+\end_layout
+
+\end_inset
+
+ model created by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo
+\end_layout
+
+\end_inset
+
+ generator has a method 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ which just returns false.
+\end_layout
+
+\begin_layout Itemize
+The default permission stubs generated by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_model
+\end_layout
+
+\end_inset
+
+ require 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user.administrator?
+\end_layout
+
+\end_inset
+
+ for create, update and destroy permission.
+\end_layout
+
+\begin_layout Standard
+That’s it.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ is a feature of those three generators, but is not a feature of the permission
+ system itself, or any other part of the Hobo internals.
+ The generated code is just a starting point.
+ Two common ways you might want to change that are:
+\end_layout
+
+\begin_layout Itemize
+Get rid of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator
+\end_layout
+
+\end_inset
+
+ field in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+User
+\end_layout
+
+\end_inset
+
+ model, and define a method instead, for example:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def administrator?
+\end_layout
+
+\begin_layout Code
+  roles.include?(Role.administrator) 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Get rid of that field, and of all calls to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ from your models’ permission methods.
+ Those are just stubs that you are expected to replace
+\end_layout
+
+\begin_layout Standard
+At some point we may add an option to the generators so you will only get
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+ if you want it.
+\end_layout
+
+\begin_layout Section*
+View helpers
+\end_layout
+
+\begin_layout Standard
+This is the quick version.
+ Five permission related view-helpers are provided:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+can_create?(object=this)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+can_update?(object=this)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+can_edit?
+\end_layout
+
+\end_inset
+
+ – arguments are an object, or a symbol indicating a field (assumes 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ as the object), or both, or no arguments
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+can_delete?(object=this)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+can_call?
+\end_layout
+
+\end_inset
+
+ – arguments are an object and a method name (symbol), or just a method
+ name (assumes 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ as the object)
+\end_layout
 
 \begin_layout Standard
 
