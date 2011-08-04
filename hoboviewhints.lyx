@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -63,6 +65,4340 @@ logicalmkup
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: While Hobo View Hints still operate in version 1.3, we recommend using
+ the new Internationalization (I18n) Locales functionality which will be
+ discussed later in this chapter.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+One of the main attractions of Hobo is its ability to give you a pretty
+ decent starting point for you app’s UI, entirely automatically based on
+ information extracted from your models and controllers.
+ The more information available to Hobo, the better job it can do, but some
+ such information doesn’t properly belong in either the model or the controller.
+ For example, we might want to declare that a particular field should have
+ a different name in the UI than in the model layer.
+\end_layout
+
+\begin_layout Standard
+This functionality used to be handled in the ViewHints module in Hobo 1.
+ As of Hobo 1.3, these features have been migrated into the Internationalization
+ module.
+ For those of you who are upgrading your Hobo 1 applications, a section
+ on migrating ViewHints to Internationalization is available at the end
+ of this chapter.
+\end_layout
+
+\begin_layout Section*
+Internationalization (I18n)
+\end_layout
+
+\begin_layout Standard
+The old view hints renaming has been moved into the locale files.
+ Locales files have been introduced to support Rails Internationalization
+ (i18n) and have their own conventions.
+ They are perfect and already working English to English customizations
+ as well.
+ So Hobo now uses this Rails-standard tool and established conventions to
+ provide model, field name, and field help customization.
+ For more detail see the Rails Internationalization (I18n) API Guide at
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://guides.rubyonrails.org/i18n.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here is the uncommented default 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locale/app.en.yml
+\end_layout
+
+\end_inset
+
+ file
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/app.en.yml.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locale/app.en.yml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: YAML (.yml) files use a fixed number of spaces (2) to indent levels.
+ Tabs are illegal Quotation marks are optional.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can rename models and attributes by 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+changing
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+adding
+\end_layout
+
+\end_inset
+
+ key/values in the specific activerecord.models and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+activerecord.attributes
+\end_layout
+
+\end_inset
+
+ sections.
+ You can also add any attributes help you might need in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+activerecord.attribute_help
+\end_layout
+
+\end_inset
+
+ section (which is a Hobo specific section).
+ For example: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/app.en.yml_name_fieldhelp.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Name and input help
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Just be careful: don't mess up the indentation! 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The key/values inside the first attributes: group (marked in blue)
+ are used as the default for all of the models 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Hobo-specific translation definitions can be seen in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo.en.yml
+\end_layout
+
+\end_inset
+
+ file: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/hobo.en.yml.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+hobo.en.yml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Members of the Hobo community have created versions for Spanish, Italian,
+ German, Russian, etc.
+ Check out the latest by joining the Hobo Google Users Group.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Child relationships 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ViewHints.children
+\end_layout
+
+\end_inset
+
+ and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ViewHints.inline_booleans
+\end_layout
+
+\end_inset
+
+ methods have been moved in the model from the View Hints, but they are
+ used in the exactly same way they were used before.
+\end_layout
+
+\begin_layout Standard
+Many web applications arrange the information they present in a hierarchy.
+ By declaring a hierarchy using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+children
+\end_layout
+
+\end_inset
+
+ declaration, Hobo can give you a much better default user interface.
+\end_layout
+
+\begin_layout Standard
+At present, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+children
+\end_layout
+
+\end_inset
+
+ declaration only influences Rapid‘s show-page – it governs the display
+ of collections of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tags embedded in the show-page.
+ If you declare a single child collection, e.g.: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class User < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    ...
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  children :recipes
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The collection of the user‘s recipes will be added to the main content of
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+users/show
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+You can declare additional child relationships.
+ The order is significant, with the first in the list being the ―primary
+ collection.‖ For example: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class User < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    ...
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  children :recipes, :questions, :answers
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With this declaration, the user’s show-page will be given an aside section
+ (sidebar), in which cards for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+questions
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+answers
+\end_layout
+
+\end_inset
+
+ collections are displayed.
+\end_layout
+
+\begin_layout Section*
+Inline Booleans
+\end_layout
+
+\begin_layout Standard
+By default, Rapid will display boolean fields as part of the header if they
+ are true (so an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:administrator
+\end_layout
+
+\end_inset
+
+ field will turn into the text 'Administrator' just under the main heading
+ on the show page).
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+inline_booleans
+\end_layout
+
+\end_inset
+
+ view hint can alter this behavior for some or all of the model's boolean
+ fields.
+ Fields specified as inline booleans will be rendered as part of the regular
+ field list.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class User < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    ...
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  inline_booleans :administrator, :moderator
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As a shortcut…
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class User < ActiveRecord::Base 
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    ...
+\end_layout
+
+\begin_layout Code
+  end 
+\end_layout
+
+\begin_layout Code
+  inline_booleans true 
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+…will apply the option to all boolean fields in the model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: You can always reach the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+view_hints
+\end_layout
+
+\end_inset
+
+ class by accessing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Model.view_hints
+\end_layout
+
+\end_inset
+
+ method, so for example 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+User.view_hints.children
+\end_layout
+
+\end_inset
+
+ will return the children of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+User
+\end_layout
+
+\end_inset
+
+ model.
+ Same thing with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parent
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+parent_defined
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+sortable?
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+paginate?
+\end_layout
+
+\end_inset
+
+ which are the survived methods in the view hint class.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Locale (I18n) Friendly Tags
+\end_layout
+
+\begin_layout Standard
+In hobo 1.3.x all the code not compatible by the Ruby i18n standard has been
+ removed.
+ As a result a few Hobo tags have changed internally and accept more attributes,
+ or deprecate others.
+ A few Hobo tags have been deprecated and replaced with relevant i18n-specific
+ tags that are included in the auto-generated taglibs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Many internal Hobo tags have been transparently internationalized,
+ i.e., the strings they use are automatically translated to the current locale
+ language.
+ We are only documenting here the tags that you might use in application
+ development.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Changed tags
+\end_layout
+
+\begin_layout Subsubsection*
+<view/>
+\end_layout
+
+\begin_layout Standard
+The "view" tags for these types are localized (i.e.
+ their values get formatted consistently with the locale)
+\end_layout
+
+\begin_layout Itemize
+Date
+\end_layout
+
+\begin_layout Itemize
+Time
+\end_layout
+
+\begin_layout Itemize
+ActiveSupport::TimeWithZone
+\end_layout
+
+\begin_layout Itemize
+Numeric
+\end_layout
+
+\begin_layout Itemize
+boolean
+\end_layout
+
+\begin_layout Subsubsection*
+<count/>
+\end_layout
+
+\begin_layout Standard
+A convenience tag used to output a count summary with a correctly localized
+ and pluralized label.
+ Works with any kind of collection such as an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord
+\end_layout
+
+\end_inset
+
+ association or an array.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<count:comments/>
+\end_layout
+
+\begin_layout Code
+-> <span class="count">1 Comment</span>
+\end_layout
+
+\begin_layout Code
+<count:viewings/>
+\end_layout
+
+\begin_layout Code
+-> <span class="count">3 Viewings</span>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The label can be customized using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+label
+\end_layout
+
+\end_inset
+
+ attribute, e.g.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<count:comments label="blog post comment"/> 
+\end_layout
+
+\begin_layout Code
+-> <span class="count">12 blog post comments</span>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can pass a summary attribute, which will generate a complete localized
+ sentence.
+ It allows two options:
+\end_layout
+
+\begin_layout Itemize
+boolean (e.g., 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<count summary/>
+\end_layout
+
+\end_inset
+
+): it will lookup the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tags.count.default
+\end_layout
+
+\end_inset
+
+ key in the locale file.
+ If the lookup fails, it will fallback to the english default sentences
+ consistent with the count.
+\end_layout
+
+\begin_layout Itemize
+String (e.g., 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<count summary="offer"/>
+\end_layout
+
+\end_inset
+
+): it will lookup the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tags.count.offer
+\end_layout
+
+\end_inset
+
+ key in the locale file.
+\end_layout
+
+\begin_layout Standard
+If the lookup fails, it will fall back to the English default sentences
+ consistent with the count.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+it:
+\end_layout
+
+\begin_layout Code
+  tags:
+\end_layout
+
+\begin_layout Code
+    count:
+\end_layout
+
+\begin_layout Code
+      default:
+\end_layout
+
+\begin_layout Code
+        zero: "Non ci sono {{label}}"
+\end_layout
+
+\begin_layout Code
+        one: "C'è solo 1 {{label}}"
+\end_layout
+
+\begin_layout Code
+        other: "Ci sono {{count}} {{label}}"
+\end_layout
+
+\begin_layout Code
+      choice:
+\end_layout
+
+\begin_layout Code
+        zero: "Non ci sono {{label}} da scegliere"
+\end_layout
+
+\begin_layout Code
+        one: "Puoi scegliere solo una {{label}}"
+\end_layout
+
+\begin_layout Code
+        other: "Puoi scegliere tra {{count}} {{label}}"
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:en
+\end_layout
+
+\end_inset
+
+ locale and boolean summary (internal defaults)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<count:comments summary/> 
+\end_layout
+
+\begin_layout Code
+-> <span class="count">There is 1 Comment</span>
+\end_layout
+
+\begin_layout Code
+<count:viewings summary/> 
+\end_layout
+
+\begin_layout Code
+-> <span class="count">There are 3 Viewings</span>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Add the locale English strings to use the following examples)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:it
+\end_layout
+
+\end_inset
+
+ locale and boolean summary (key "tags.count.default"):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<count:comments summary/>
+\end_layout
+
+\begin_layout Code
+0 -> <span class="count">Non ci sono Commenti</span>
+\end_layout
+
+\begin_layout Code
+1 -> <span class="count">C'è solo 1 Commento</span>
+\end_layout
+
+\begin_layout Code
+5 -> <span class="count">Ci sono 5 Commenti</span>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:it
+\end_layout
+
+\end_inset
+
+ locale and summary="choice" (key "tags.count.choice"):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<count:comments summary="choice"/>
+\end_layout
+
+\begin_layout Code
+0 -> <span class="count">
+\end_layout
+
+\begin_layout Code
+       Non ci sono Commenti da scegliere
+\end_layout
+
+\begin_layout Code
+     </span>
+\end_layout
+
+\begin_layout Code
+1 -> <span class="count">
+\end_layout
+
+\begin_layout Code
+       Puoi scegliere solo 1 Commento
+\end_layout
+
+\begin_layout Code
+     </span>
+\end_layout
+
+\begin_layout Code
+5 -> <span class="count">
+\end_layout
+
+\begin_layout Code
+       Puoi scegliere tra 5 Commenti
+\end_layout
+
+\begin_layout Code
+     </span>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Additional Notes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+prefix
+\end_layout
+
+\end_inset
+
+ attribute is deprecated: use summary instead.
+\end_layout
+
+\begin_layout Itemize
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lowercase
+\end_layout
+
+\end_inset
+
+ attribute to force the generated label to be lowercase:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<count:comments lowercase/> 
+\end_layout
+
+\begin_layout LyX-Code
+-> <span class="count">1 comment</span>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if-any
+\end_layout
+
+\end_inset
+
+ attribute to output nothing if the count is zero.
+ This can be followed by an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+ tag to handle the empty case:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<count:comments if-any/><else>There are no comments</else>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<you/>
+\end_layout
+
+\begin_layout Standard
+Convenience tag to help with the common situation where you need to address
+ the current user as "you", and refer to other users by name
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The context should be a user object.
+ If 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this == current_user
+\end_layout
+
+\end_inset
+
+ the "you" form is rendered, otherwise the form with the user's name:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<you have/> new mail
+\end_layout
+
+\begin_layout Code
+-> "you have new mail" or "Jim has new mail"
+\end_layout
+
+\begin_layout Code
+<you are/> now an admin
+\end_layout
+
+\begin_layout Code
+-> "you are now an admin" or "Jim is now an admin"
+\end_layout
+
+\begin_layout Code
+<you do/>n't want to go there 
+\end_layout
+
+\begin_layout Code
+-> "you don't want to go there" 
+\end_layout
+
+\begin_layout Code
+   or "Jim doesn't want to go there"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The tag is also localized in the namespaces "tags.you.current_user" and "tags.you.ot
+her_user".
+\end_layout
+
+\begin_layout Standard
+Each namespace can contain the legacy keys "have", "are", "do" used for
+ the respective attributes, and "nothing" used when no attribute is passed.
+ But you can also use your own keys, providing that you add the keys in
+ the correct namespaces.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+it:
+\end_layout
+
+\begin_layout Code
+  tags:
+\end_layout
+
+\begin_layout Code
+    you:
+\end_layout
+
+\begin_layout Code
+      current_user:
+\end_layout
+
+\begin_layout Code
+        nothing: "Tu"
+\end_layout
+
+\begin_layout Code
+        have: "Hai"
+\end_layout
+
+\begin_layout Code
+        are: "sei"
+\end_layout
+
+\begin_layout Code
+        can: "Puoi"
+\end_layout
+
+\begin_layout Code
+      other_user:
+\end_layout
+
+\begin_layout Code
+        nothing: "{{name}}"
+\end_layout
+
+\begin_layout Code
+        have: "{{name}} ha"
+\end_layout
+
+\begin_layout Code
+        are: "{{name}} è"
+\end_layout
+
+\begin_layout Code
+        can: "{{name}} può"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<you have/> un nuovo messaggio.
+ 
+\end_layout
+
+\begin_layout Code
+-> "Hai un nuovo messaggio." or "Jim ha un nuovo messaggio."
+\end_layout
+
+\begin_layout Code
+Adesso <you are/> amministratore.
+ 
+\end_layout
+
+\begin_layout Code
+-> "Adesso sei amministratore." 
+\end_layout
+
+\begin_layout Code
+   or "Adesso Jim è amministratore."
+\end_layout
+
+\begin_layout Code
+<you can/> scrivere.
+\end_layout
+
+\begin_layout Code
+-> "Puoi scrivere." or "Jim può scrivere."
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The symbol 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:name
+\end_layout
+
+\end_inset
+
+ is added by default as an interpreted variable)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+capitalize: the first letter of the resulting sentence will be capitalized
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Additional Notes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The "titleize" attribute is deprecated--use "capitalize" instead.
+\end_layout
+
+\begin_layout Subsubsection*
+<your/>
+\end_layout
+
+\begin_layout Standard
+Similar to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<you>
+\end_layout
+
+\end_inset
+
+, but renders "Your" or "Fred's" or equivalent localized strings
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+capitalize: the first letter of the resulting sentence will be capitalized
+\end_layout
+
+\begin_layout Itemize
+count: used in pluralization.
+ If omitted it will be set to 1.
+\end_layout
+
+\begin_layout Itemize
+key: used to lookup the translation in the locale file.
+ It allows 3 different options:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A single key like 'message': simple translation in 'tags.your.message.current_user'
+ or 'tags.your.message.other_user'
+\end_layout
+
+\begin_layout Itemize
+A Composite key like 'any.namespace.message': translation as for the previous
+ case, but it willtranslate also the 'any.namespace.message' and will interpolate
+ the variable <key> (in this case :message) in the translation
+\end_layout
+
+\begin_layout Itemize
+When the key is omitted it will be set to "default" and will do the translation
+ with that key.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+NEED CLARIFICATION:
+\end_layout
+
+\begin_layout Standard
+Pass other meaningful attributes to achieve a dynamic usage
+\end_layout
+
+\begin_layout Standard
+- any other attribute passed to the tag will be used as a variable for interpola
+tion
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Notes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:name
+\end_layout
+
+\end_inset
+
+ variable is added by default as an interpolable variable
+\end_layout
+
+\begin_layout Itemize
+If no translation is found an automatic (only english) default is generated:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the Your/Jim's string, joined to the tag content.
+\end_layout
+
+\begin_layout Itemize
+If you pass an explicit 'default' attribute you will override the automatic
+ default.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+it:
+\end_layout
+
+\begin_layout Code
+  tags:
+\end_layout
+
+\begin_layout Code
+    your:
+\end_layout
+
+\begin_layout Code
+      message:
+\end_layout
+
+\begin_layout Code
+        current_user:
+\end_layout
+
+\begin_layout Code
+          one: "Tuo Messaggio"
+\end_layout
+
+\begin_layout Code
+          other: "Tuoi Messaggi"
+\end_layout
+
+\begin_layout Code
+        other_user:
+\end_layout
+
+\begin_layout Code
+          one: "Messaggio di {{name}}"
+\end_layout
+
+\begin_layout Code
+          other: "Messaggi di {{name}
+\end_layout
+
+\begin_layout Code
+        entry:
+\end_layout
+
+\begin_layout Code
+          current_user:
+\end_layout
+
+\begin_layout Code
+            one: "Tua {{entry}}"
+\end_layout
+
+\begin_layout Code
+            other: "Tue {{entry}}"
+\end_layout
+
+\begin_layout Code
+          other_user: "{{entry}} di {{name}}"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<your key="message" count=>"&messages.count"/>
+\end_layout
+
+\begin_layout Code
+1 -> "Tuo Messaggio" or "Messaggio di Jim"
+\end_layout
+
+\begin_layout Code
+5 -> "Tuoi Messaggi" or "Messaggi di Jim"
+\end_layout
+
+\begin_layout Code
+<your key="activerecord.models.entry"
+\end_layout
+
+\begin_layout Code
+       count=>"&this.entries.count"/>
+\end_layout
+
+\begin_layout Code
+1 -> "Tua Entrata" or "Entrata di Jim"
+\end_layout
+
+\begin_layout Code
+5 -> "Tue Entrate" or "Entrate di Jim"
+\end_layout
+
+\begin_layout Code
+<your>Posts</your>
+\end_layout
+
+\begin_layout Code
+-> "your Posts" or "Jim's Posts"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<select-menu/>
+\end_layout
+
+\begin_layout Standard
+A simple wrapper around the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ tag and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options_for_select
+\end_layout
+
+\end_inset
+
+ helper
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+options: an array of options suitable to be passed to the Rails 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options_for_select
+\end_layout
+
+\end_inset
+
+ helper.
+\end_layout
+
+\begin_layout Itemize
+selected: the value (from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options
+\end_layout
+
+\end_inset
+
+ array) that should be initially selected.
+ Defaults to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+first-option: a string to be used for an extra option in the first position.
+ E.g.
+ "Please choose..."
+\end_layout
+
+\begin_layout Itemize
+first-value: the value to be used with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first-option
+\end_layout
+
+\end_inset
+
+.
+ Typically not used, meaning the option has a blank value.
+\end_layout
+
+\begin_layout Itemize
+key: the key used to lookup in the locale file or 'default' by default.
+ If you pass it hobo will lookup in the namespace "tags.select_menu.#{key}"
+ in order to find 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+options
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first_option
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+first_value
+\end_layout
+
+\end_inset
+
+.
+ The passed attributes are used as a default in case the lookups fail.
+ (see the documentation of filter-menu tag for a similar example).
+\end_layout
+
+\begin_layout Subsubsection*
+<filter-menu/>
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<select>
+\end_layout
+
+\end_inset
+
+ menu intended to act as a filter for index pages.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Filtering on state is a common use.
+ Here's the dryml for Order:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<filter-menu param-name="state"
+\end_layout
+
+\begin_layout Code
+             options="&Order::Lifecycle.states.keys" />
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the controller action:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "105col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def index
+\end_layout
+
+\begin_layout Code
+  # always validate data given in URL's!!!
+\end_layout
+
+\begin_layout Code
+  params[:state]=nil unless  
+\end_layout
+
+\begin_layout Code
+    Order::Lifecycle.states.include?(params[:state]._?.to_sym)
+\end_layout
+
+\begin_layout Code
+  finder = params[:state] ? Order.send(params[:state]) : Order
+\end_layout
+
+\begin_layout Code
+  hobo_index finder
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+See 
+\begin_inset CommandInset href
+LatexCommand href
+name "Filtering stories by status"
+target "http://cookbook.hobocentral.net/tutorials/agility#filtering_stories_by_status"
+
+\end_inset
+
+ in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Agility Tutorial"
+target "http://cookbook.hobocentral.net/tutorials/agility"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+param-name: the name of the HTTP parameter to use for the filter
+\end_layout
+
+\begin_layout Itemize
+options: an array of options or an array of arrays (useful for localized
+ apps) for the menu.
+ It can be omitted if you provide the options as an array or array of arrays
+ in the locale file.
+\end_layout
+
+\begin_layout Itemize
+no-filter: The text of the first option which indicates no filter is in
+ effect.
+ Defaults to 'All'
+\end_layout
+
+\begin_layout Subsubsection*
+<I18n/>
+\end_layout
+
+\begin_layout Standard
+It lookups the options attributes in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+filter_menu.#{param_name}.options
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The passed options are used as a default in case the lookup fails.
+\end_layout
+
+\begin_layout Standard
+Besides the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tags.filter_menu.default.no_filter
+\end_layout
+
+\end_inset
+
+ key is used as default of the attribute 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+no-filter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(or "All" if no default is found)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+es:
+\end_layout
+
+\begin_layout Code
+  tags:
+\end_layout
+
+\begin_layout Code
+    filter_menu:
+\end_layout
+
+\begin_layout Code
+      period:
+\end_layout
+
+\begin_layout Code
+        no_filter: Todos Períodos
+\end_layout
+
+\begin_layout Code
+        options:
+\end_layout
+
+\begin_layout Code
+        - [ "Hoy", "today" ]
+\end_layout
+
+\begin_layout Code
+        - [ "Ayer", "yesterday" ]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+TIME_PERIODS = %w[today yesterday]
+\end_layout
+
+\begin_layout Code
+<t-filter-menu param-name="period"
+\end_layout
+
+\begin_layout Code
+               options="&TIME_PERIODS" 
+\end_layout
+
+\begin_layout Code
+               no-filter="All Periods"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+I18n.locale == :es
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<select name="period">
+\end_layout
+
+\begin_layout Code
+  <option value="">Todos Períodos</option>
+\end_layout
+
+\begin_layout Code
+  <option value="today">Hoy</option>
+\end_layout
+
+\begin_layout Code
+  <option value="yesterday">Ayer</option>
+\end_layout
+
+\begin_layout Code
+</select>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+I18n.locale == :en
+\end_layout
+
+\end_inset
+
+ (i.e no locale file)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<select name="period">
+\end_layout
+
+\begin_layout Code
+  <option value="">All Periods</option>
+\end_layout
+
+\begin_layout Code
+  <option value="today">today</option>
+\end_layout
+
+\begin_layout Code
+  <option value="yesterday">yesterday</option>
+\end_layout
+
+\begin_layout Code
+</select>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+i18n tags
+\end_layout
+
+\begin_layout Standard
+These are the tag from the i18n_rapid taglib.
+\end_layout
+
+\begin_layout Subsubsection*
+<t/>
+\end_layout
+
+\begin_layout Standard
+Simple wrapper around I18n.t.
+\end_layout
+
+\begin_layout Standard
+The tag content is used as the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:default
+\end_layout
+
+\end_inset
+
+ option.
+ It is overridden by an explicit 'default' attribute.
+\end_layout
+
+\begin_layout Standard
+There is a default 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:count => 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+key: the key to lookup
+\end_layout
+
+\begin_layout Itemize
+all the attributes accepted by the wrapped method
+\end_layout
+
+\begin_layout Subsubsection*
+<ht/>
+\end_layout
+
+\begin_layout Standard
+This is a helper and a tag.
+ Uses RoR native 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+I18n.translate
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Adds some conventions for easier hobo translation.
+ 
+\end_layout
+
+\begin_layout Itemize
+Assumes the first part of the key to be a model name (e.g.: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+users.index.title -> user
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Tries to translate the model by lookup for: (e.g.: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user-> activerecord.models.user
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Adds a default fallback to the beginning of the fallback chain by replacing
+ the first part of the key with "hobo" and using the translated model name
+ as additional attribute.
+ This allows us to have default translations (e.g.: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo.index.title: "{{model}} Index"
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Is also used as a tag in the dryml-view files.
+ The syntax is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<ht key="my.app">My Application</ht>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Will lookup the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my.app
+\end_layout
+
+\end_inset
+
+ key for your locale and replaces the "My Application" content if found.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<ht key="my" app="Program">My Application</ht>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Will look up both the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app
+\end_layout
+
+\end_inset
+
+ key for your locale, and replaces the "My Application" with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my
+\end_layout
+
+\end_inset
+
+ key contents (interpolated using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app
+\end_layout
+
+\end_inset
+
+ key.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+sample.no.yml
+\end_layout
+
+\end_inset
+
+ file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+"no":
+\end_layout
+
+\begin_layout Code
+my: "Mitt {{app}}"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The output should be: 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Mitt Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<model-name-human/>
+\end_layout
+
+\begin_layout Standard
+Wrapper around 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveModel::Name#human
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+model: (optional) should be a model class or a record object (default to
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+count: (optional) used to pick the inflected string for the model.
+ It should be an integer.
+\end_layout
+
+\begin_layout Subsubsection*
+<human-attribute-name/>
+\end_layout
+
+\begin_layout Standard
+Wrapper around 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord::Base.human_attribute_name
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+attribute: the attribute to lookup
+\end_layout
+
+\begin_layout Itemize
+model: (optional) should be a model class or a record object (default to
+ this)
+\end_layout
+
+\begin_layout Itemize
+count: (optional) should be an integer
+\end_layout
+
+\begin_layout Subsubsection*
+<human-collection-name/>
+\end_layout
+
+\begin_layout Standard
+Used to localize and pluralize collection names.
+\end_layout
+
+\begin_layout Standard
+A collection name is a special case of an attribute name.
+ You should store the collection names as attribute names in the locale
+ file.
+ This tag internally uses 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+human_attribute_name
+\end_layout
+
+\end_inset
+
+ to return them.
+\end_layout
+
+\begin_layout Standard
+With the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+your
+\end_layout
+
+\end_inset
+
+ attribute and in the special case the context is a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::Model::User
+\end_layout
+
+\end_inset
+
+ instance it automatically embeds the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+your
+\end_layout
+
+\end_inset
+
+ tag functionality.
+ (note: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:name
+\end_layout
+
+\end_inset
+
+ is added by default as an interpolable variable)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+collection: the attribute/collection key to lookup in the activerecord.attributes
+ namespace.
+ (e.g.
+ 'roles')
+\end_layout
+
+\begin_layout Itemize
+count: used to pick the inflected string for the collection.
+ It should be an integer.
+\end_layout
+
+\begin_layout Itemize
+your: wraps the collection name in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Your
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+it:
+\end_layout
+
+\begin_layout Code
+  activerecord:
+\end_layout
+
+\begin_layout Code
+    attributes:
+\end_layout
+
+\begin_layout Code
+      post:
+\end_layout
+
+\begin_layout Code
+        comments:
+\end_layout
+
+\begin_layout Code
+          one: "Commento"
+\end_layout
+
+\begin_layout Code
+          other: "Commenti"
+\end_layout
+
+\begin_layout Code
+      user:
+\end_layout
+
+\begin_layout Code
+        roles:
+\end_layout
+
+\begin_layout Code
+          one: "Ruolo"
+\end_layout
+
+\begin_layout Code
+          other: "Ruoli"
+\end_layout
+
+\begin_layout Code
+  tags:
+\end_layout
+
+\begin_layout Code
+    your:
+\end_layout
+
+\begin_layout Code
+      roles:
+\end_layout
+
+\begin_layout Code
+        current_user:
+\end_layout
+
+\begin_layout Code
+          one: "Il tuo Ruolo"
+\end_layout
+
+\begin_layout Code
+          other: "I tuoi Ruoli"
+\end_layout
+
+\begin_layout Code
+        other_user:
+\end_layout
+
+\begin_layout Code
+          one: "Ruolo di {{name}}"
+\end_layout
+
+\begin_layout Code
+          other: Ruoli di {{name}}"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Context is a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Post
+\end_layout
+
+\end_inset
+
+ instance ('your' is ignored)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<human-collection-name collection="comments" 
+\end_layout
+
+\begin_layout Code
+  count="&user.comments.count" your/>
+\end_layout
+
+\begin_layout Code
+I18n.locale = :en => "Comment" or "Comments"
+\end_layout
+
+\begin_layout Code
+I18n.locale = :it => "Commento" or "Commenti"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Context is an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+User
+\end_layout
+
+\end_inset
+
+ instance
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<human-collection-name collection="roles' 
+\end_layout
+
+\begin_layout Code
+  count="&user.roles.count" your/>
+\end_layout
+
+\begin_layout Code
+I18n.locale = :en => "Your Role" or "Jim's Role" 
+\end_layout
+
+\begin_layout Code
+  or "Your Roles" or "Jim's Roles"
+\end_layout
+
+\begin_layout Code
+I18n.locale = :it => "Il tuo Ruolo" 
+\end_layout
+
+\begin_layout Code
+  or "Il Ruolo di Jim" or "I tuoi Ruoli" or "I Ruoli di Jim"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(output is the same as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<Your key="roles" count=>"&user.roles.count"/>
+\end_layout
+
+\end_inset
+
+ )
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<human-collection-name collection="roles" 
+\end_layout
+
+\begin_layout Code
+  count="&user.roles.count"/>
+\end_layout
+
+\begin_layout Code
+I18n.locale = :en => "Role" or "Roles"
+\end_layout
+
+\begin_layout Code
+I18n.locale = :it => "Ruolo" or "Ruoli"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Deprecated/Renamed tags
+\end_layout
+
+\begin_layout Standard
+These tags have been deprecated because they were not compliant with i18n
+ or they have been renamed in a more appropriate way.
+\end_layout
+
+\begin_layout Subsubsection*
+<collection-name/>
+\end_layout
+
+\begin_layout Standard
+deprecated: use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<human-collection-name/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+<preview-with-more/>
+\end_layout
+
+\begin_layout Standard
+renamed: use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection-preview/>
+\end_layout
+
+\end_inset
+
+ instead
+\end_layout
+
+\begin_layout Section*
+Migrating ViewHints to the Internationalization Module
+\end_layout
+
+\begin_layout Standard
+In the ViewHints module, there are four kinds of hints you can give about
+ your models:
+\end_layout
+
+\begin_layout Itemize
+The model name: in case you want this to differ from the actual class name
+\end_layout
+
+\begin_layout Itemize
+Field names: in case you want any of these to differ from the database column
+ names
+\end_layout
+
+\begin_layout Itemize
+Field help: some simple explanatory text for each field in a model
+\end_layout
+
+\begin_layout Itemize
+Child relationships: allows you to arrange your models in a hierarchy appropriat
+e for the user interface.
+\end_layout
+
+\begin_layout Itemize
+Inline Booleans: allows you to force Hobo to show boolean fields in the
+ field list on model show pages.
+\end_layout
+
+\begin_layout Standard
+Renaming the model name, field names and specifying field help can be specified
+ in the localization file.
+ In this section’s examples, the localization file we will be using is the
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locales/app.en.yml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here is an example of migrating the model name rename, field rename and
+ field help from your ViewHints to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locales/app.en.yml
+\end_layout
+
+\end_inset
+
+ file:
+\end_layout
+
+\begin_layout Standard
+Existing ViewHints file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class AnswerHints < Hobo::ViewHints
+\end_layout
+
+\begin_layout Code
+  model_name "Response" 
+\end_layout
+
+\begin_layout Code
+  field_names :body => "", :recipe => "See recipe"
+\end_layout
+
+\begin_layout Code
+  field_help :recipe => 
+\end_layout
+
+\begin_layout Code
+        "Enter keywords from the name of a recipe"
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Corresponding 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+en:
+\end_layout
+
+\begin_layout Code
+  activerecord:
+\end_layout
+
+\begin_layout Code
+    models:
+\end_layout
+
+\begin_layout Code
+      answer:
+\end_layout
+
+\begin_layout Code
+        one: Response
+\end_layout
+
+\begin_layout Code
+        other: Responses
+\end_layout
+
+\begin_layout Code
+    attributes:
+\end_layout
+
+\begin_layout Code
+      answer:
+\end_layout
+
+\begin_layout Code
+        body: ""
+\end_layout
+
+\begin_layout Code
+        recipe: See recipe
+\end_layout
+
+\begin_layout Code
+    attribute_help:
+\end_layout
+
+\begin_layout Code
+    answer:
+\end_layout
+
+\begin_layout Code
+recipe: Enter keywords from the name of a recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since different languages handle pluralization in different ways, simply
+ specifying another name for a model is no longer feasible, instead, we
+ have to specify at least the models’s new name for it in a single instance,
+ and, for plural instances.
+ So above, we have renamed ‘Answer’ to ‘Response’ when there is only 1 model
+ present, and, ‘Responses’ in all other cases.
+ 
+\end_layout
+
+\begin_layout Standard
+To specify Child relationships, this declaration should be moved from the
+ ViewHints file to the Model.
+ So:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class UserHints < Hobo::ViewHints
+\end_layout
+
+\begin_layout Code
+  children :recipes, :questions, :answers
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+would be changed to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class User < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    ...
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  children :recipes, :questions, :answers
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If there are any inline_booleans specified in your ViewHints file, these
+ can be specified in the Model declaration.
+ So:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class UserHints < Hobo::ViewHints
+\end_layout
+
+\begin_layout Code
+  inline_booleans :administrators
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+would be changed to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class User < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    ...
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  inline_booleans :administrators
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tim Griffin ran into an issue with localization that is worth noting here:
+\end_layout
+
+\begin_layout Itemize
+If you don't explicitly name the enum_string with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name: =>
+\end_layout
+
+\end_inset
+
+ parameter or with a call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+set_name
+\end_layout
+
+\end_inset
+
+, the main key in your locale file must include the model name in which
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ is defined, as well as the tableized name of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ (lower-case/ pluralized).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+BUT
+\end_layout
+
+\end_inset
+
+ the enum_string's main key can 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+ONLY
+\end_layout
+
+\end_inset
+
+ use the "/" notation.
+\end_layout
+
+\begin_layout Standard
+So, if you do this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Document < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model
+\end_layout
+
+\begin_layout Code
+  Region = HoboFields::Types::EnumString.for(:ab, :bc)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+you must use this notation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+en:
+\end_layout
+
+\begin_layout Code
+  document/regions:
+\end_layout
+
+\begin_layout Code
+    ab: "Alberta"
+\end_layout
+
+\begin_layout Code
+    bc: "British Columbia"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+NOT
+\end_layout
+
+\end_inset
+
+ this notation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+en:
+\end_layout
+
+\begin_layout Code
+  document:
+\end_layout
+
+\begin_layout Code
+    regions:
+\end_layout
+
+\begin_layout Code
+      ab: "Alberta"
+\end_layout
+
+\begin_layout Code
+      bc: "British Columbia"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If you DO explicitly name the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ with the "
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name: =>
+\end_layout
+
+\end_inset
+
+" parameter or with a call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+set_name
+\end_layout
+
+\end_inset
+
+, the keys in your locale file must 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+not
+\end_layout
+
+\end_inset
+
+ include the model name.
+\end_layout
+
+\begin_layout Standard
+If you do this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Document < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model
+\end_layout
+
+\begin_layout Code
+  Region = HoboFields::Types::EnumString.for(:ab, :bc, 
+\end_layout
+
+\begin_layout Code
+      :name => "Region")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Your locale file's 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ key must match the tableized version of the name you assigned to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+.
+ (Note the lower-case first letter, and the pluralization.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+en:
+\end_layout
+
+\begin_layout Code
+  regions:
+\end_layout
+
+\begin_layout Code
+    ab: "Alberta"
+\end_layout
+
+\begin_layout Code
+    bc: "British Columbia"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Tim Griffin submitted the following example of Hobo’s new support
+ for specifying a model name to enable different models with the same filter
+ attribute to be properly represented in a locale file under the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+activerecord.attributes namespace
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 'model' parameter on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<filter-menu>
+\end_layout
+
+\end_inset
+
+ tag now enables you to include translated filter values for each model
+ that requires a filter menu in your application.
+\end_layout
+
+\begin_layout Standard
+As an example, consider a model representing packages that can be in different
+ states.
+ On the package index page using a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table-plus>
+\end_layout
+
+\end_inset
+
+ tag to show packages, your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<filter-menu>
+\end_layout
+
+\end_inset
+
+ tag can show its options using translation keys from a locale file by including
+ the 'model' parameter in the tag call:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<filter-menu model="package" param-name="state"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Your locale file will then need to include the keys for the filter menu
+ as an entry under the activerecord namespace.
+ The following example shows the options keys listed under the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+filter_menu
+\end_layout
+
+\end_inset
+
+ key:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+activerecord:
+\end_layout
+
+\begin_layout Code
+  attributes:
+\end_layout
+
+\begin_layout Code
+    package:
+\end_layout
+
+\begin_layout Code
+      name: "Package Name"
+\end_layout
+
+\begin_layout Code
+      id: "ID"
+\end_layout
+
+\begin_layout Code
+      created_at: "Created"
+\end_layout
+
+\begin_layout Code
+      updated_at: "Updated"
+\end_layout
+
+\begin_layout Code
+      state: "Status" 
+\end_layout
+
+\begin_layout Code
+      lifecycle:
+\end_layout
+
+\begin_layout Code
+        states:
+\end_layout
+
+\begin_layout Code
+          draft: "Draft"
+\end_layout
+
+\begin_layout Code
+          submitted: "Submitted"
+\end_layout
+
+\begin_layout Code
+          received: "Received"
+\end_layout
+
+\begin_layout Code
+          in_review: "In Review"
+\end_layout
+
+\begin_layout Code
+          accepted: "Accepted"
+\end_layout
+
+\begin_layout Code
+          rejected: "Rejected"
+\end_layout
+
+\begin_layout Code
+          withdrawn: "Withdrawn" 
+\end_layout
+
+\begin_layout Code
+      filter_menu: 
+\end_layout
+
+\begin_layout Code
+        state: 
+\end_layout
+
+\begin_layout Code
+          no_filter: All
+\end_layout
+
+\begin_layout Code
+          options:
+\end_layout
+
+\begin_layout Code
+          - [ "Draft", "draft" ]
+\end_layout
+
+\begin_layout Code
+          - [ "Submitted", "submitted" ]
+\end_layout
+
+\begin_layout Code
+          - [ "In Review", "in_review" ]
+\end_layout
+
+\begin_layout Code
+          - [ "Accepted", "accepted" ]
+\end_layout
+
+\begin_layout Code
+          - [ "Rejected", "rejected" ]
+\end_layout
+
+\begin_layout Code
+          - [ "Withdrawn", "withdrawn" ]
+\end_layout
+
+\begin_layout Code
+          - [ "Archived", "archived" ]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prior to the support for the 'model' parameter on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<filter-menu>
+\end_layout
+
+\end_inset
+
+ tag, it was not possible to have more than one model using a filter-menu
+ that had to show translated values from a locale file.
+ 
+\end_layout
 
 \begin_layout Standard
 
