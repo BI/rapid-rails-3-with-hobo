@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -63,6 +65,3551 @@ logicalmkup
 \end_header
 
 \begin_body
+
+\begin_layout Section
+Changes from Hobo 1.0 to Hobo 1.3 for Rails 3
+\end_layout
+
+\begin_layout Subsubsection*
+Commands
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="50col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ruby script/generate hobo_model_resource
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g resource
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ruby script/generate hobo_model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Generator names
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="50col%">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_model_resource
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+resource
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Standard
+The Hobo generators have been rewritten from scratch to match the new  Rails
+ 3 generator standards.
+\end_layout
+
+\begin_layout Standard
+The Hobo generators have also been reorganized to fit to the new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+, and to be more DRY.
+ indeed they often invoke each other from the inside when needed.
+ 
+\end_layout
+
+\begin_layout Section*
+Hobo Generators
+\end_layout
+
+\begin_layout Standard
+The following command in any hobo application directory will show all the
+ generators available:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g --help
+\end_layout
+
+\begin_layout Code
+(or) 
+\end_layout
+
+\begin_layout Code
+> rails g --help
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Under the 'Hobo' group we find the hobo generators:
+\end_layout
+
+\begin_layout Code
+Hobo:
+\end_layout
+
+\begin_layout Code
+  hobo:admin_subsite
+\end_layout
+
+\begin_layout Code
+  hobo:assets
+\end_layout
+
+\begin_layout Code
+  hobo:controller
+\end_layout
+
+\begin_layout Code
+  hobo:front_controller
+\end_layout
+
+\begin_layout Code
+  hobo:i18n
+\end_layout
+
+\begin_layout Code
+  hobo:migration
+\end_layout
+
+\begin_layout Code
+  hobo:model
+\end_layout
+
+\begin_layout Code
+  hobo:rapid
+\end_layout
+
+\begin_layout Code
+  hobo:resource
+\end_layout
+
+\begin_layout Code
+  hobo:routes
+\end_layout
+
+\begin_layout Code
+  hobo:setup_wizard
+\end_layout
+
+\begin_layout Code
+  hobo:subsite
+\end_layout
+
+\begin_layout Code
+  hobo:subsite_taglib
+\end_layout
+
+\begin_layout Code
+  hobo:test_framework
+\end_layout
+
+\begin_layout Code
+  hobo:user_controller
+\end_layout
+
+\begin_layout Code
+  hobo:user_mailer
+\end_layout
+
+\begin_layout Code
+  hobo:user_model
+\end_layout
+
+\begin_layout Code
+  hobo:user_resource
+\end_layout
+
+\begin_layout Standard
+You can have more help about any generator (e.g., the “hobo:resource” generator)
+ by doing:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g resource --help
+\end_layout
+
+\begin_layout Code
+(which is the same as)
+\end_layout
+
+\begin_layout Code
+> rails g hobo:resource --help
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: If you use the hobo command you can omit the 'hobo:' namespace prepended
+ to hobo generators.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following options are common options for all the generators:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+Runtime options:
+\end_layout
+
+\begin_layout Code
+  -q, [--quiet]    # Supress status output
+\end_layout
+
+\begin_layout Code
+  -f, [--force]    # Overwrite files that already exist
+\end_layout
+
+\begin_layout Code
+  -s, [--skip]     # Skip files that already exist
+\end_layout
+
+\begin_layout Code
+  -p, [--pretend]  # Run but do not make any changes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+-p
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--pretend
+\end_layout
+
+\end_inset
+
+ option that can be passed to all generators.
+ It will run the generator without actually produce any change, so it is
+ very useful to see what a generator would do without eventually messing
+ up your app.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:setup_wizard
+\end_layout
+
+\begin_layout Standard
+This is the generator that the hobo command invokes after creating the rails
+ infrastructure.
+ It calls others generators in the background, in order to customize the
+ new application.
+\end_layout
+
+\begin_layout Standard
+You can eventually invoke it manually (when you choose the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--skip-setup
+\end_layout
+
+\end_inset
+
+ options of the hobo command) or re-invoke it in order to overwrite any
+ file of the original installation, but its common use is to be called internall
+y by the hobo command.
+\end_layout
+
+\begin_layout Standard
+In its default mode (interactive/wizard mode) the developer will be asked
+ for any feature he possibly wants in his new application.
+\end_layout
+
+\begin_layout Standard
+Here are the static options as they come from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--help
+\end_layout
+
+\end_inset
+
+ option:
+\end_layout
+
+\begin_layout Code
+
+\size small
+Options:
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--migration-migrate]                            # Generate migration and
+ migrate
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: true
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--fixture-replacement=FIXTURE_REPLACEMENT]      # Use a specific fixture
+ replacement
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--fixtures]                                     # Add the fixture option
+ to the test
+\end_layout
+
+\begin_layout Code
+
+\size small
+ 						    # framework – default: true                                 
+              
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--wizard]                                       # Ask instead using options
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: true
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--update]                                       # Run bundle update to
+ install the missing gems
+\end_layout
+
+\begin_layout Code
+
+\size small
+-i, [--invite-only]                              # Add features for an invite
+ only website
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--git-repo]                                     # Create the git repository
+ with the 
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--front-controller-name=FRONT_CONTROLLER_NAME]  # Front Controller Name:
+ Default: front                                             
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--gitignore-auto-generated-files]               # Add the auto-generated
+ files to .gitignore
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: true
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--default-locale=DEFAULT_LOCALE]                # Sets the default locale
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--admin-subsite-name=ADMIN_SUBSITE_NAME]        # Admin Subsite Name
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: admin
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--user-resource-name=USER_RESOURCE_NAME]        # User Resource Name
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: user
+\end_layout
+
+\begin_layout Code
+
+\size small
+-t, [--test-framework=TEST_FRAMEWORK]            # Use a specific test framework
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: test_unit
+\end_layout
+
+\begin_layout Code
+
+\size small
+--locales=one two three]                         # Choose the locales
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: en
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--private-site]                                 # Make the site unaccessible
+ to non-members
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--activation-email]                             # Send an email to activate
+ the account
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--migration-generate]                           # Generate migration only
+\end_layout
+
+\begin_layout Code
+
+\size small
+[--main-title]                                   # Shows the main title
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: true
+\end_layout
+
+\begin_layout Standard
+Here they are in the order they get invokved by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--main-title
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This shows the main title 
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:assets  
+\end_layout
+
+\begin_layout Standard
+No option / prompt: this generator copies a few asset files.
+\end_layout
+
+\begin_layout Paragraph*
+hobo:test_framework generator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--test-framework=TEST_FRAMEWORK
+\end_layout
+
+\end_inset
+
+  interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want to customize the test_framework?"
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Choose your preferred test framework: <availble frameworks>"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives you the opportunity to change the test framework, so the next
+ generators invoked will use it for generating tests.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--fixtures
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+Interactively set by 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want the test framework to generate the fixtures?"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+This allows you to choose fixtures generation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--fixture-replacement=FIXTURE_REPLACEMENT 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Type your preferred fixture replacement or <enter> for no replacement:"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can use the fixture replacement that you prefer.
+\end_layout
+
+\begin_layout Subsubsection*
+Site options:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--invite-only 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want to add the features for an invite only website?"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It will pass this option to the next invoked generators in order to create
+ an admin site and the resources used to invite a new user.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--private-site  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want to prevent all access to the site to non-members? (Choose 'y'
+ only if ALL your site will be private, choose 'n' if at least one controller
+ will be public)"
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+If 'n' the wizard will print the instruction to do the same with single
+ controllers 
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:rapid generator
+\end_layout
+
+\begin_layout Standard
+No option / prompt: this generator copies files
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:user_resource generator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--user-resource-name 
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Choose a name for the user resource [<enter>=user|<custom_name>]:"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+You can choose a different name for the user model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--activation-email
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want to send an activation email to activate the user?"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+The user will receive an activation email containing an activation link.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:front_controller generator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--front-controller-name
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Internally set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Choose a name for the front controller [<enter>=front|<custom_name>]:"
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+You can change the front controller name
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:admin_subsite generator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--admin-subsite-name 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Choose a name for the admin subsite [<enter>=admin|<custom_name>]:"
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+You can change the admin site name and it will be passed to the next invoked
+ generators.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:migration generator
+\end_layout
+
+\begin_layout Standard
+The following option are interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Initial Migration: [s]kip, [g]enerate migration file only, generate and
+ [m]igrate [s|g|m]:"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--migration-migrate 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Generate and migrate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--migration-generate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Generate only
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:i18n generator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--locales
+\end_layout
+
+\end_inset
+
+  
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Type the locales (space separated) you want to add to your application
+ or <enter> for 'en':"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Copies the locale files for the supported locales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--default-locale 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want to set a default locale? Type the locale or <enter> to skip:"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+set the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config.i18n.default_locale
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/application.rb
+\end_layout
+
+\end_inset
+
+ file  
+\end_layout
+
+\begin_layout Subsubsection*
+Git repository options
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--git-repo 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want to initialize a git repository now?" 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This will initialize a git repository committing the new generated app
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--gitignore-auto-generated-files
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Interactively set by: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+"Do you want git to ignore the auto-generated files?
+\backslash
+n(Choose 'n' only if you are planning to deploy on a read-only File System
+ like Heroku)"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+This will add the auto-generated files to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.gitignore
+\end_layout
+
+\end_inset
+
+.
+ In read-only file systems like Heroku, this feature would be counter-productive
+, so in that case is better committing also the auto generated files.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: You use any of the generators used by the Setup  Wizard in order to
+ override/restore any modified/generated file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:admin_subsite
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g admin_subsite [NAME=admin] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+
+\size small
+Options:
+\end_layout
+
+\begin_layout Code
+
+\size small
+  -i, [--invite-only]                            # Add features for an invite
+ only website
+\end_layout
+
+\begin_layout Code
+
+\size small
+      [--make-front-site]                        # Rename application.dryml
+ to 
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                   front_site.dryml
+\end_layout
+
+\begin_layout Code
+
+\size small
+  -t, [--test-framework=NAME]                    # Test framework to be
+ invoked
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: test_unit
+\end_layout
+
+\begin_layout Code
+
+\size small
+      [--user-resource-name=USER_RESOURCE_NAME]  # User Resource Name
+\end_layout
+
+\begin_layout Code
+
+\size small
+                                                 # Default: user
+\end_layout
+
+\begin_layout Standard
+This generator is used internally by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+, when the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--invite-only
+\end_layout
+
+\end_inset
+
+ option is true.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:assets
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g assets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Used by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+, this generator copies asset files
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:controller
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g controller NAME
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+
+\size small
+  -t, [--test-framework=NAME]  # Test framework to be invoked
+\end_layout
+
+\begin_layout Code
+
+\size small
+                               # Default: test_unit
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:front_controller
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g front_controller [NAME=front] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -i, [--invite-only]                          
+\end_layout
+
+\begin_layout Code
+  # Add features for an invite only website
+\end_layout
+
+\begin_layout Code
+      [--add-routes]                           
+\end_layout
+
+\begin_layout Code
+  # Modify config/routes.rb to support the front controller
+\end_layout
+
+\begin_layout Code
+                                               
+\end_layout
+
+\begin_layout Code
+  # Default: true
+\end_layout
+
+\begin_layout Code
+  -t, [--test-framework=NAME]                    
+\end_layout
+
+\begin_layout Code
+  # Test framework to be invoked
+\end_layout
+
+\begin_layout Code
+                                                  
+\end_layout
+
+\begin_layout Code
+  # Default: test_unit
+\end_layout
+
+\begin_layout Code
+   -d, [--delete-index]                           
+\end_layout
+
+\begin_layout Code
+  # Delete public/index.html
+\end_layout
+
+\begin_layout Code
+                                                  
+\end_layout
+
+\begin_layout Code
+  # Default: true
+\end_layout
+
+\begin_layout Code
+      [--user-resource-name=USER_RESOURCE_NAME]   
+\end_layout
+
+\begin_layout Code
+  # User Resource Name                                               
+\end_layout
+
+\begin_layout Code
+  # Default: user
+\end_layout
+
+\begin_layout Standard
+Used by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:setup_wizard
+\end_layout
+
+\end_inset
+
+ generator
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:i18n
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g i18n [en it ...]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Used by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:setup_wizard
+\end_layout
+
+\end_inset
+
+ generator, it creates the locale files for i18n.
+ You can use it to add any supported language at any point in the development
+ lifecycle.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:migration
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ hobo g migration [NAME] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -g, [--generate]      # Don't prompt for action - generate the migration
+\end_layout
+
+\begin_layout Code
+  -m, [--migrate]       # Don't prompt for action - generate and migrate
+\end_layout
+
+\begin_layout Code
+  -n, [--default-name]  # Don't prompt for a migration name - just pick
+ one
+\end_layout
+
+\begin_layout Code
+  -d, [--drop]          # Don't prompt with 'drop or rename' - just drop
+ everything
+\end_layout
+
+\begin_layout Standard
+Used by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+ generator and by the user when needed.
+ It is actually part of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_fields
+\end_layout
+
+\end_inset
+
+, so it can be used outside of hobo.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ hobo g model NAME [field:type field:type] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  [--timestamps]  # Indicates when to generate timestamps
+\end_layout
+
+\begin_layout Standard
+Creates a new hobo model and all the related files.
+ It actually invokes the ActiveRecord generator and injects the code needed
+ to hobo.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:rapid
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g rapid
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Used by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+, this generator just copy a few assets in order to make Rapid work
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:resource
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g resource NAME [field:type field:type] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  [--timestamps]  # Indicates when to generate timestamps
+\end_layout
+
+\begin_layout Standard
+Use this generator to create resource (model + controller + files) of called
+ NAME, adding fields as needed.
+ The value for NAME must be singular.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:routes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g routes
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+This generator prepares the automatic routes for your application.
+ It is automatically used internally, so you should not use it manually.
+ You can customize the path where it will create the routes in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/application.rb
+\end_layout
+
+\end_inset
+
+ setting the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config.hobo.routes_pat
+\end_layout
+
+\end_inset
+
+h
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:subsite
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g subsite [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -i, [--invite-only]                            
+\end_layout
+
+\begin_layout Code
+  # Add features for an invite only website
+\end_layout
+
+\begin_layout Code
+      [--user-resource-name=USER_RESOURCE_NAME]  
+\end_layout
+
+\begin_layout Code
+  # User Resource Name
+\end_layout
+
+\begin_layout Code
+                                                 
+\end_layout
+
+\begin_layout Code
+  # Default: user
+\end_layout
+
+\begin_layout Code
+  -t, [--test-framework=NAME]                    
+\end_layout
+
+\begin_layout Code
+  # Test framework to be invoked
+\end_layout
+
+\begin_layout Code
+                                                 
+\end_layout
+
+\begin_layout Code
+  # Default: test_unit
+\end_layout
+
+\begin_layout Code
+      [--make-front-site]                        
+\end_layout
+
+\begin_layout Code
+  # Rename application.dryml to front_site.dryml
+\end_layout
+
+\begin_layout Standard
+You can use this generator to create a new custom subsite.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:subsite_taglib
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g subsite_taglib NAME [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -i, [--invite-only]                            # Add features for an invite
+ only website
+\end_layout
+
+\begin_layout Code
+      [--user-resource-name=USER_RESOURCE_NAME]  # User Resource Name
+\end_layout
+
+\begin_layout Code
+                                                 # Default: user
+\end_layout
+
+\begin_layout Standard
+Used internally when a subsite is generated in order to generate the subsite
+ tag library.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:test_framework
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ hobo g test_framework NAME [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+      [--fixture-replacement=FIXTURE_REPLACEMENT]  
+\end_layout
+
+\begin_layout Code
+  # Use a specific fixture replacement
+\end_layout
+
+\begin_layout Code
+      [--update]                                   
+\end_layout
+
+\begin_layout Code
+  # Run bundler update to install missing gems
+\end_layout
+
+\begin_layout Code
+      [--fixtures]                                 
+\end_layout
+
+\begin_layout Code
+  # Add the fixture option to the test framework
+\end_layout
+
+\begin_layout Code
+                                                   
+\end_layout
+
+\begin_layout Code
+  # Default: true
+\end_layout
+
+\begin_layout Code
+  -t, [--test-framework=TEST_FRAMEWORK]            
+\end_layout
+
+\begin_layout Code
+  # Use a specific test framework
+\end_layout
+
+\begin_layout Code
+                                                   
+\end_layout
+
+\begin_layout Code
+  # Default: test_unit
+\end_layout
+
+\begin_layout Standard
+Used internally by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+ (see the "invoke 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:test_framework
+\end_layout
+
+\end_inset
+
+ generator" step above)
+\end_layout
+
+\begin_layout Standard
+The following generators are for the user resource, and are:
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:user_controller
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g user_controller [NAME=users] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -i, [--invite-only]          # Add features for an invite only website
+\end_layout
+
+\begin_layout Code
+  -t, [--test-framework=NAME]  # Test framework to be invoked
+\end_layout
+
+\begin_layout Code
+                               # Default: test_unit
+\end_layout
+
+\begin_layout Standard
+Used internally by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+ for the user resource.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:user_mailer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ hobo g user_mailer [NAME=user] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -i, [--invite-only]          # Add features for an invite only website
+\end_layout
+
+\begin_layout Code
+  -t, [--test-framework=NAME]  # Test framework to be invoked
+\end_layout
+
+\begin_layout Code
+                               # Default: test_unit
+\end_layout
+
+\begin_layout Code
+      [--activation-email]     # Send an email to activate the account
+\end_layout
+
+\begin_layout Standard
+Used internally by the setup_wizard for the user resource
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:user_model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ hobo g user_model [NAME=user] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -i, [--invite-only]                            # Add features for an invite
+ only website
+\end_layout
+
+\begin_layout Code
+      [--activation-email]                       # Send an email to activate
+ the account
+\end_layout
+
+\begin_layout Code
+      [--timestamps]                             # Indicates when to generate
+ timestamps
+\end_layout
+
+\begin_layout Code
+      [--admin-subsite-name=ADMIN_SUBSITE_NAME]  # Admin Subsite Name
+\end_layout
+
+\begin_layout Code
+                                                 # Default: admin
+\end_layout
+
+\begin_layout Standard
+Used internally by the setup_wizard for the user resource.
+\end_layout
+
+\begin_layout Subsubsection*
+hobo:user_resource
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+$ hobo g user_resource [NAME=user] [options]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+Options:
+\end_layout
+
+\begin_layout Code
+  -i, [--invite-only]       # Add features for an invite only website
+\end_layout
+
+\begin_layout Code
+      [--activation-email]  # Send an email to activate the account
+\end_layout
+
+\begin_layout Standard
+Used internally by the setup_wizard for the user resource
+\end_layout
+
+\begin_layout Section*
+Automatically Generated DRYML Tags 
+\end_layout
+
+\begin_layout Standard
+Rapid generates a set of four complex tags for each model in In 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Code
+ <index-page>
+\end_layout
+
+\begin_layout Code
+ <new-page>
+\end_layout
+
+\begin_layout Code
+ <show-page> 
+\end_layout
+
+\begin_layout Code
+ <edit-page> 
+\end_layout
+
+\begin_layout Standard
+These auto-generated tags are invoked by the corresponding controller action
+ (index, new, show or edit) to render view templates corresponding to each
+ action.
+  
+\end_layout
+
+\begin_layout Standard
+The other three fundamental actions--create, update and destroy--do not
+ have their own Hobo page.
+ They appear as links within the four auto-generated tags, some invoked
+ within the Rapid 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag (similar to the HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ hyperlink tag), or the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<submit>
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<delete-button>
+\end_layout
+
+\end_inset
+
+ tag.
+ The four tags that are used to render templates plus the three that appear
+ as links or buttons total to the seven actions we repeatedly cite.
+\end_layout
+
+\begin_layout Standard
+Tag definitions for the four basic tags begin like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<def tag="index-page" for="Contact">
+\end_layout
+
+\begin_layout Code
+   ...
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a lot going on in the tag definitions in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ that you might not fully understand yet.
+ This includes calls to HTML tags with parameterization syntax (you see
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+ declarations), unfamiliar tags like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ and so forth.
+ 
+\end_layout
+
+\begin_layout Standard
+The figure below summarizes some important information about the four basic
+ tags:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle" tabularwidth="100col%">
+<column alignment="left" valignment="top" width="18col%">
+<column alignment="left" valignment="top" width="15col%">
+<column alignment="left" valignment="top" width="35col%">
+<column alignment="left" valignment="top" width="15col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Tag Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Controller Action
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Main Data Tags
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Actions Linked
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+index (list )
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+new
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+new
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+create
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+show
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ ( for associated models)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+edit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+edit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+update
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hobo Rapid action related tags
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The content of the four table columns is explained below:
+\end_layout
+
+\begin_layout Paragraph*
+Tag Name:  
+\end_layout
+
+\begin_layout Standard
+This tag name is what is the text used to invoke the tag within a Hobo template
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ (see below).
+\end_layout
+
+\begin_layout Paragraph*
+Controller Action: 
+\end_layout
+
+\begin_layout Standard
+indicates the action that calls the particular tag, which is rendered as
+ a Hobo view template.
+\end_layout
+
+\begin_layout Paragraph*
+Main Data Tags: 
+\end_layout
+
+\begin_layout Standard
+Indicates the most used sub-tags responsible for data input and output.
+ Other sub-tags handle formatting tasks.
+\end_layout
+
+\begin_layout Paragraph*
+Actions Linked: 
+\end_layout
+
+\begin_layout Standard
+indicates which actions have tags which link to other actions.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Linked actions do not appear explicitly as a tag but as attributes
+ of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag or implicitly within the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<submit>
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<delete-button>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each of the four pages tags calls tags in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+ file libraries.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ tag explicitly call 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tags within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ tags call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tags to display lists or individual records but DO NOT do so explicitly.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ call 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tags implicitly through the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name>
+\end_layout
+
+\end_inset
+
+ tags.
+ This does not mean, for example that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ only uses 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tags.
+ It uses its polymorphic capability to know what type of page tag it is
+ being called from to determine what to do.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Application.dryml file.
+ 
+\end_layout
+
+\begin_layout Standard
+Like the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file, this is also a repository for tag definitions.
+ A tag definition placed here with the same name as a tag definition in
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+ auto-generated libraries will override the definition in these libraries.
+ Additional definitions may also be placed in this library file and will
+ be available to all view templates within the application.
+\end_layout
+
+\begin_layout Standard
+A typical use for this file is to copy a tag definition from an auto-generated
+  library and then make edits to it in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ (as of Hobo 0.8.9) is the only library that permits tag definitions that
+ are 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+extensions
+\end_layout
+
+\end_inset
+
+ of other tags that you first learned about in the tutorials.
+ It is anticipated that Hobo 1.0 will allow extensions in other dryml files.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+View templates
+\end_layout
+
+\begin_layout Standard
+View templates are stored within view directories carrying the plural of
+ the model name.
+ Hobo view templates have the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.dryml
+\end_layout
+
+\end_inset
+
+ extension in contrast to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.erb
+\end_layout
+
+\end_inset
+
+  or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.rhtml
+\end_layout
+
+\end_inset
+
+ (older) extension of Rails templates.
+ You can of course use these template types since Hobo is a Rails application,
+ but you probably will not need to.
+\end_layout
+
+\begin_layout Subsubsection*
+View layouts
+\end_layout
+
+\begin_layout Standard
+Rails has a layout file to handle markup that is common to many templates
+ such as header and footer information.
+ Since it is so easy to use DRYML tags, you will probably find it unnecessary
+ to use layouts.
+\end_layout
+
+\begin_layout Subsubsection*
+Template Processing Order
+\end_layout
+
+\begin_layout Standard
+The diagram below outlines the precedence logic for Hobo rendering of templates.
+ One very important issue to keep straight is the difference between tag
+ definitions and tag usage.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch7template_processing_order.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hobo precedence logic for action tags
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+, there are only tag 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+definitions
+\end_layout
+
+\end_inset
+
+.
+ Hobo takes these definitions and creates tags on the fly from which it
+ renders templates.
+ You never actually see the tags anywhere in the application.
+  If you have coded your own template (e.g., 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+) you may have both tag definitions and tag usage within that template file.
+ Remember tag definitions begin with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+ tag and tag usage invokes the tag by name, e.g., 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ in the above example.
+ 
+\end_layout
 
 \begin_layout Standard
 
