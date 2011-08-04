@@ -1,0 +1,369 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 20 – Adding User Comments to Models
+\end_layout
+
+\begin_layout Standard
+By Tiago Franco
+\end_layout
+
+\begin_layout Standard
+Tutorial Application:  comments_recipe
+\end_layout
+
+\begin_layout Standard
+Almost every application on the web allows users to post comments and provide
+ feedback to almost every item (books, blog posts, other users, etc).
+ This recipe will show you how to support user comments on Hobo.
+\end_layout
+
+\begin_layout Standard
+Sometimes we want users to post comments to more than one table object.
+ For example, suppose that we are developing a social network where users
+ can enroll in basketball games and search for courts to play.
+ We also want to allow users to post comments to games (e.g., users that didn’t
+ win sometimes like to blame the referee) or provide feedback about the
+ court (e.g., if it was suitable or not).
+ In this recipe we will be adding comments to both games and courts.
+ Because we are focused on the comments, we will ignore the attributes of
+ games and courts.
+\end_layout
+
+\begin_layout Standard
+First, create a Hobo application named “comments-recipe”:
+\end_layout
+
+\begin_layout Standard
+> hobo new comments-recipe --setup
+\end_layout
+
+\begin_layout Standard
+Now, edit the file config/application.rb and add the following line inside
+ the c Class Application < Rails::Application..end block:
+\end_layout
+
+\begin_layout Standard
+Figure 214: Editing the application name for the Comments Recipe
+\end_layout
+
+\begin_layout Standard
+We will now add a model class to support the management of basketball games.
+ This can be done with the following command:
+\end_layout
+
+\begin_layout Standard
+> hobo g resource game name:string
+\end_layout
+
+\begin_layout Standard
+Don’t forget to generate and run the migration.
+ This can be done with:
+\end_layout
+
+\begin_layout Standard
+> hobo g migration --migrate --default-name create_games
+\end_layout
+
+\begin_layout Standard
+> rake db:migrate
+\end_layout
+
+\begin_layout Standard
+Let’s run the application to perform a sanity check.
+ We expect to see an image similar to the figure below.
+  
+\end_layout
+
+\begin_layout Standard
+Figure 215: Home page for the Comments Recipe
+\end_layout
+
+\begin_layout Standard
+Notice the games entry on the menu.
+ If it is there, it means that the games controller is working fine.
+\end_layout
+
+\begin_layout Standard
+To add comments support to the application, we need follow similar steps.
+ First, we need to create the model with:
+\end_layout
+
+\begin_layout Standard
+> hobo g resource comment
+\end_layout
+
+\begin_layout Standard
+We will add the body attribute to hold the text of the user’s comment.
+ Edit the file app/models/comment.rb and add the line number 6 as shown by
+ the following figure:
+\end_layout
+
+\begin_layout Standard
+Additionally, add line 10 and 11 from the same figure.
+ Line 10 is used to keep track of the user that created the comment, while
+ line 11 records the game that is being commented.
+\end_layout
+
+\begin_layout Standard
+Some applications allow users to edit or delete their comments.
+ But they never let a user change comments made by someone else.
+ So we need to update the permissions of our comment model.
+ Just edit the app/models/comment.rb and make sure the permissions are like
+ the ones shown on the figure below:
+\end_layout
+
+\begin_layout Standard
+Now, we only want users to create, edit or browse comments if a game is
+ being shown (i.e.
+ in game/show view).
+ So we need to update line 5 of app/controllers/comments_controller.rb from:
+\end_layout
+
+\begin_layout Standard
+auto_actions :all
+\end_layout
+
+\begin_layout Standard
+To:
+\end_layout
+
+\begin_layout Standard
+auto_actions :destroy
+\end_layout
+
+\begin_layout Standard
+The result is shown on the figure below:
+\end_layout
+
+\begin_layout Standard
+Line 7 also needs to be added, to allow comments to be created from the
+ game/show view.
+ Without this line the user won’t be able to comment a game when it is being
+ displayed.
+ Add the line to app/controllers/comments_controller.rb.
+\end_layout
+
+\begin_layout Standard
+We now need to deal with the game/comment relation on the other end.
+ Edit the file app/models/game.rb (and add lines 10, 12):
+\end_layout
+
+\begin_layout Standard
+We’re just two steps away from testing our new feature: create and run the
+ migration.
+ 
+\end_layout
+
+\begin_layout Standard
+But we already know how to do that.
+ We need to execute the following commands in the command line:
+\end_layout
+
+\begin_layout Standard
+> hobo g migration --migrate --default-name create_comments
+\end_layout
+
+\begin_layout Standard
+> rake db:migrate
+\end_layout
+
+\begin_layout Standard
+And we should be ready for a test drive.
+ Create a user account (if you haven’t already done it), create a game and
+ add two comments.
+ The result should be something similar to:
+\end_layout
+
+\begin_layout Standard
+Easy isn’t it? So let’s not waste time and start working on the courts!
+\end_layout
+
+\begin_layout Standard
+Let’s create a model to store the courts on our database.
+\end_layout
+
+\begin_layout Standard
+> hobo g resource court name:string 
+\end_layout
+
+\begin_layout Standard
+Because we are not interested in the details of the courts, let’s just create
+ and run the migration:
+\end_layout
+
+\begin_layout Standard
+> hobo g migration --migrate --default-name create_courts
+\end_layout
+
+\begin_layout Standard
+> rake db:migrate
+\end_layout
+
+\begin_layout Standard
+Et voila! As we can see in the figure below the application can now store
+ courts.
+\end_layout
+
+\begin_layout Standard
+Figure 221: Comments' Recipe with support for courts
+\end_layout
+
+\begin_layout Standard
+Now we need to update the existing infrastructure to allow users to comment
+ the courts.
+ Since we already have a comment model, let’s just make a few updates so
+ that it can also be related with a court.
+\end_layout
+
+\begin_layout Standard
+First, we need to update the existing comment model.
+ Add the contents of line 12 on figure below to the file app/models/comment.rb.
+ This will allow a comment to be related with a court.
+\end_layout
+
+\begin_layout Standard
+Figure 222: Adding courts to comments
+\end_layout
+
+\begin_layout Standard
+Then update the court model, file app/models/court.rb, to deal with the other
+ end of the one-to-many relationship.
+ Update the file with the contents of line 10 and line 12:
+\end_layout
+
+\begin_layout Standard
+We now need to update the CommentsController to allow the creation of comments
+ in the court/show page.
+ Add line 8 as seen in the figure below to the file app/controllers/comments_con
+troller.rb.
+\end_layout
+
+\begin_layout Standard
+Figure 224: Modifying auto_actions for the comments_controller (allow court)
+\end_layout
+
+\begin_layout Standard
+Finally, create and run the migrations using the following commands:
+\end_layout
+
+\begin_layout Standard
+> hobo g migration --migrate --default-name add_comments_to_courts
+\end_layout
+
+\begin_layout Standard
+> rake db:migrate
+\end_layout
+
+\begin_layout Standard
+Now, create a court and insert a new comment.
+ It seems that the application is asking to add a game to the comment.
+ By default Hobo auto-generates forms to fill every attribute on the model.
+ We need to tell the framework not to show the game list-box on the new
+ comment form.
+ 
+\end_layout
+
+\begin_layout Standard
+This can be performed by adding line 14 below comment.rb (app/models).
+\end_layout
+
+\begin_layout Standard
+Figure 225: Hiding court and game in the comment's form
+\end_layout
+
+\begin_layout Standard
+Now you will be able to see something like the following:
+\end_layout
+
+\begin_layout Standard
+Figure 226: View of the in-line "Add a Comment" form
+\end_layout
+
+\begin_layout Standard
+In this recipe we have learned how to support comments to the application
+ models.
+ The example was performed with games and courts, but can easily be mapped
+ to any Hobo based application in the wild.
+\end_layout
+
+\begin_layout Section*
+
+\end_layout
+
+\end_body
+\end_document

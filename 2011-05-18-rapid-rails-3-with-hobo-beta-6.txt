@@ -2375,4 +2375,3 @@ Figure 150: Page view of custom <show-page> tag
 5.   Construct a link to a specific record. In general, Hobo takes care of linking to specific records for you by setting up the links implicitly in the <index-page>. If you need to link to a specific record, that will require a little Ruby to address a specific record in the database. 
 
 
-

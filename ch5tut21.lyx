@@ -1,0 +1,1830 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 21 – Replicating the Look and Feel of a Site
+\end_layout
+
+\begin_layout Standard
+By Tom Locke
+\end_layout
+
+\begin_layout Standard
+Introduction
+\end_layout
+
+\begin_layout Standard
+Say we want a new Hobo app to have the same look-and-feel of an existing
+ site.
+ The really big win is if we can have this look and feel happen to our new
+ app almost ‘automatically’.
+ We want to be able to develop at “Hobo speed”, and have the look and feel
+ “just happen”.
+ This is not trivial to set up, but once it is, the payback in terms of
+ development agility will be more than worth it.
+ That is the topic of this chapter.
+\end_layout
+
+\begin_layout Standard
+We’ll use the example of the standard web design used throughout all agencies
+ within the U.S.
+ Department of Agriculture.
+ The authors have done substantial work with NIFA, The Cooperative State
+ Research, Education, and Extension Service, so we will use their website
+ (www.nifa.usda.gov) as an example:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 228: Screen shot of the nifa.usda.gov home page
+\end_layout
+
+\begin_layout Standard
+Note that, for now at least, this recipe will document how to create a close
+ approximation to this theme.
+ In particular, we’re going to skip some of the details that cannot be implement
+ed without resorting to images.
+ This is just to keep the recipe getting too long and complicated.
+\end_layout
+
+\begin_layout Standard
+This will be as much a guide to general web-development best practices as
+ it will be a lesson in Hobo and DRYML.
+ The mantra when working with themes in Hobo is something already familiar
+ to skilled web developers:
+\end_layout
+
+\begin_layout Standard
+Separate content from presentation
+\end_layout
+
+\begin_layout Standard
+The vast majority of common mistakes that are made in styling a web-app
+ come under this heading.
+ If this one idea can be understood and applied, you’re well on the way
+ to:
+\end_layout
+
+\begin_layout Standard
+Having the look-and-feel “just happen” as your site changes and evolves
+\end_layout
+
+\begin_layout Standard
+Being able to change the theme in the future, without having to modify the
+ app
+\end_layout
+
+\begin_layout Standard
+Since CSS has been widely adopted, most web developers are familiar with
+ this principle.
+ So this is probably just a recap, but as a reminder about how this works:
+\end_layout
+
+\begin_layout Standard
+“Content” describes what is on the page, but not what it will look like.
+ In a Hobo app content comes from tag definitions, page templates and the
+ application’s data of course.
+\end_layout
+
+\begin_layout Standard
+“Presentation” describes how the page should look.
+ That is, it describes fonts, colors, margins, borders, images and so on.
+ In a Hobo app the presentation is handled essentially the same way as with
+ any app, with CSS stylesheets and image assets.
+\end_layout
+
+\begin_layout Standard
+Having said that, we need to inject a note of pragmatism:
+\end_layout
+
+\begin_layout Standard
+Humans being visual animals, information can never truly be separated from
+ the way it is displayed.
+ The line is sometimes blurred and there are often judgment calls to be
+ made.
+\end_layout
+
+\begin_layout Standard
+The technologies we’ve got to work with, in particular cross-browser support
+ for CSS, are far from perfect.
+ Sometimes we have to compromise.
+\end_layout
+
+\begin_layout Standard
+There’s probably an entire PhD thesis lurking in that first point, but let’s
+ move on!
+\end_layout
+
+\begin_layout Standard
+The current site
+\end_layout
+
+\begin_layout Standard
+We’ll start with a look at the elements of the existing site that we’ll
+ need to replicate.
+ The main ones are:
+\end_layout
+
+\begin_layout Standard
+A banner image:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+A photo image that fits below the banner image:
+\end_layout
+
+\begin_layout Standard
+Figure 230: The NIFA photo image
+\end_layout
+
+\begin_layout Standard
+The main navigation bar:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+A couple of styles of navigation panels:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+And more navigation in the page footer:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+One of the important things to notice at this stage, is that this is not
+ just a “theme” in the Hobo sense of the word.
+ Hobo themes are purely about presentation, whereas the “look and feel”
+ of this site is a mixture of content elements and presentation.
+\end_layout
+
+\begin_layout Standard
+That means we’re going to be creating three things to capture this look-and-feel
+:
+\end_layout
+
+\begin_layout Standard
+Tag Definitions
+\end_layout
+
+\begin_layout Standard
+A CSS stylesheet
+\end_layout
+
+\begin_layout Standard
+Some image assets.
+\end_layout
+
+\begin_layout Standard
+The current markup
+\end_layout
+
+\begin_layout Standard
+The existing site makes extensive use of HTML tables for layout, and the
+ various images in the page are present in the markup as <img> tags.
+ In other words, the existing markup is very presentational.
+\end_layout
+
+\begin_layout Standard
+So rather than create tag definitions out of the existing markup, we’ll
+ be recreating the site using clean, semantic markup and CSS.
+\end_layout
+
+\begin_layout Standard
+The other advantage of re-creating the markup is that it will be easier
+ to follow Hobo conventions.
+ There’s no particular need to do this, but it makes it a great deal easier
+ to jump from one Hobo app to the next.
+\end_layout
+
+\begin_layout Standard
+Building the new app
+\end_layout
+
+\begin_layout Standard
+Let’s do this properly and actually follow along in a blank Hobo app.
+ At the end of the recipe we’ll see how we could package this look-and-feel
+ up and re-use it another app.
+ To follow along, you should use Firefox and the Firebug extension you can
+ find at http://getfirebug.com.
+\end_layout
+
+\begin_layout Standard
+> hobo nifa-demo
+\end_layout
+
+\begin_layout Standard
+> cd nifa-demo
+\end_layout
+
+\begin_layout Standard
+> hobo g migration
+\end_layout
+
+\begin_layout Standard
+If you fire up the server, you’ll see the default Hobo app of course:
+\end_layout
+
+\begin_layout Standard
+Figure 234: The NIFA Demo default home page
+\end_layout
+
+\begin_layout Standard
+First thing to do is change the heading “Nifa” to “NIFA” in 
+\backslash
+views
+\backslash
+taglibs
+\backslash
+applicationl.dryml since it is an acronym for the National Institute of Food
+ and Agriculture:
+\end_layout
+
+\begin_layout Standard
+Figure 235: Using the "app-name" tag to change the default application name
+\end_layout
+
+\begin_layout Standard
+Now we can start to make it look like the page we’re after.
+ We’ll take it step by step.
+\end_layout
+
+\begin_layout Standard
+Main background and width
+\end_layout
+
+\begin_layout Standard
+With the Firebug add-on for Firefox I can tell that the NIFA background
+ color is #A8ACB7:
+\end_layout
+
+\begin_layout Standard
+Figure 236: Using Firebug to locate the background color
+\end_layout
+
+\begin_layout Standard
+Now switching to the Hobo NIFA Demo application, Firebug tells us (click
+ the inspect button, then click on the background) that the CSS rule that
+ sets the current background comes from clean.css and looks like:
+\end_layout
+
+\begin_layout Standard
+Figure 237: Using Firebug to find the images used by Hobo for the default
+ background
+\end_layout
+
+\begin_layout Standard
+Anything we add to application.css (it is empty by default) will override
+ clean.css.
+ So I’m going to add this rule to  public/stylesheets/application.css:
+\end_layout
+
+\begin_layout Standard
+html, body { background:#A8ACB7 }
+\end_layout
+
+\begin_layout Standard
+Figure 238: Adding the new background color to "application.css"
+\end_layout
+
+\begin_layout Standard
+Again, using Firebug on the NIFA Demo app (by clicking on the <body> tag
+ in the HTML window) I can see that the width is set on the body tag:
+\end_layout
+
+\begin_layout Standard
+body { ...
+ width: 960px; ...
+ }
+\end_layout
+
+\begin_layout Standard
+Back in NIFA, I can right click the banner image and chose “View Image”,
+ and Firefox tells me its width is 766 pixels.
+ So in application.css I add
+\end_layout
+
+\begin_layout Standard
+body { width: 766px; }
+\end_layout
+
+\begin_layout Standard
+Note we’ve not changed any markup yet - that’s how we like it.
+\end_layout
+
+\begin_layout Standard
+Account navigation
+\end_layout
+
+\begin_layout Standard
+These are the log-in and sign-up links in the top right.
+ They are not on the NIFA site, but if the app needed them, the place they
+ are in now would be fine, so we’ll leave them where they are.
+\end_layout
+
+\begin_layout Standard
+Search
+\end_layout
+
+\begin_layout Standard
+The page header has a search-field that we don’t want.
+ To get rid of this we’ll customize the <page> tag.
+ We need to do this in application.dryml:
+\end_layout
+
+\begin_layout Standard
+Figure 239: First pass at modifying "application.dryml"
+\end_layout
+
+\begin_layout Standard
+<extend tag="page">
+\end_layout
+
+\begin_layout Standard
+  <old-page merge without-live-search>
+\end_layout
+
+\begin_layout Standard
+  </old-page>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+So now we have made a change to the markup, but that makes perfect sense,
+ because here we wanted to change what’s on the page not what stuff looks
+ like.
+\end_layout
+
+\begin_layout Standard
+The Banner
+\end_layout
+
+\begin_layout Standard
+Again, using Firefox’s “View Image”, it turns out that the existing banner
+ is in fact two images.
+ 
+\end_layout
+
+\begin_layout Standard
+This one:
+\end_layout
+
+\begin_layout Standard
+And this one:
+\end_layout
+
+\begin_layout Standard
+To add these images without changing the markup, we need to use CSS’s background
+-image feature.
+ One major limitation of CSS is that you can only have one background image
+ per element.
+ That won’t be a problem, but to understand our approach, first take a look
+ at a simplified view of the page markup that we’re working with:
+\end_layout
+
+\begin_layout Standard
+<html>
+\end_layout
+
+\begin_layout Standard
+  <head>...</head>
+\end_layout
+
+\begin_layout Standard
+  <body>
+\end_layout
+
+\begin_layout Standard
+    <div class="page-header">
+\end_layout
+
+\begin_layout Standard
+      <h1 class="app-name">NIFA Demo</h1>
+\end_layout
+
+\begin_layout Standard
+    </div>
+\end_layout
+
+\begin_layout Standard
+    ...
+\end_layout
+
+\begin_layout Standard
+  </body>
+\end_layout
+
+\begin_layout Standard
+</html>
+\end_layout
+
+\begin_layout Standard
+Notice that this image:
+\end_layout
+
+\begin_layout Standard
+Is essentially a graphical version of that <h1> tag, so we’ll use CSS to
+ make that same <h1> be rendered as an image.
+ The existing text will be hidden, by moving it way out of the way with
+ a text-indent rule.
+ First we need to save that image into our public/images folder.
+ 
+\end_layout
+
+\begin_layout Standard
+The CSS to add to application.css is:
+\end_layout
+
+\begin_layout Standard
+div.page-header { padding: 0; }
+\end_layout
+
+\begin_layout Standard
+div.page-header h1.app-name {
+\end_layout
+
+\begin_layout Standard
+    text-indent: -10000px;
+\end_layout
+
+\begin_layout Standard
+    background: url(..
+\backslash
+images
+\backslash
+banner_nifa.gif) no-repeat;
+\end_layout
+
+\begin_layout Standard
+    padding: 0; margin: 0;
+\end_layout
+
+\begin_layout Standard
+    height: 62px;
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+Figure 241: How to reference the banner gif in "application.css"
+\end_layout
+
+\begin_layout Standard
+OK that was a bit of a leap.
+ Why padding: 0px for the page-header, for example? The fact of the matter
+ is that working with CSS is all about trial and error.
+ Using Firebug to figure out what rules are currently in effect, flipping
+ back and forth between the stylesheet in your editor and the browser.
+ Try experimenting by taking some of those rules out and you’ll see why
+ each is needed.
+\end_layout
+
+\begin_layout Standard
+Now for the photo part of the banner.
+ Again, save it to public/images, then add some extra properties to the
+ div.page-header selector, so it ends up like:
+\end_layout
+
+\begin_layout Standard
+div.page-header {
+\end_layout
+
+\begin_layout Standard
+    padding: 0; 
+\end_layout
+
+\begin_layout Standard
+    background: url(..
+\backslash
+images
+\backslash
+banner_photo.jpg) no-repeat 0px 62px;
+\end_layout
+
+\begin_layout Standard
+    height: 106px;
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+Figure 242: View of the NIFA Demo login page
+\end_layout
+
+\begin_layout Standard
+Taking shape now, except the main navigation panel (“Home” tag) is hovering
+ on top of the photos:
+\end_layout
+
+\begin_layout Standard
+Figure 243: The Navigation Panel before refactoring
+\end_layout
+
+\begin_layout Standard
+Navigation
+\end_layout
+
+\begin_layout Standard
+The existing navigation bar is created entirely with images.
+ It’s quite common to do this, as it gives total control over fonts, borders,
+ and other visual effects such as color gradients.
+ The downside is that you have to fire up your image editor every time there’s
+ a change to the navigation.
+\end_layout
+
+\begin_layout Standard
+This doesn’t sit very well with our goal to be able to make changes quickly
+ and easily.
+ So for this recipe we’re going to go implement the navigation bar without
+ resorting to images.
+ We’ll lose the bevel effect, but some might think the end result is actually
+ better - cleaner, clearer and more professional looking.
+ 
+\end_layout
+
+\begin_layout Standard
+Our app only has a home page right now, so first let’s define a fake navigation
+ bar to work with.
+ In application.dryml:
+\end_layout
+
+\begin_layout Standard
+<def tag="main-nav">
+\end_layout
+
+\begin_layout Standard
+  <navigation class="main-nav">
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Home</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">About Us</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Grants</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Forms</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Newsroom</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Help</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Contact Us</nav-item>
+\end_layout
+
+\begin_layout Standard
+  </navigation>  
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Figure 244: View of our first pass at the main navigation menu
+\end_layout
+
+\begin_layout Standard
+Use Firebug’s “Inspect” button to find the navigation bar.
+ You’ll see that it’s rendered as a <ul> list, which is generally considered
+ good practice; it is a list of links after all.
+ There are several things wrong with the appearance of the navigation at
+ this point:
+\end_layout
+
+\begin_layout Standard
+It’s in the wrong place - we want to move it down and to the right.
+\end_layout
+
+\begin_layout Standard
+Needs to be shorter, and the spacing of the items needs fixing
+\end_layout
+
+\begin_layout Standard
+The font needs to be smaller, and not bold
+\end_layout
+
+\begin_layout Standard
+The background color needs to change, as do the colors when you mouse-over
+ a link
+\end_layout
+
+\begin_layout Standard
+Now this is not a CSS tutorial, so we’re not going to explain every last
+ detail, but we’ll build it up in a few steps which will help to illustrate
+ what does what.
+ First update the rules for div.page-header in application.css so they look
+ like:
+\end_layout
+
+\begin_layout Standard
+div.page-header {
+\end_layout
+
+\begin_layout Standard
+    padding: 0; 
+\end_layout
+
+\begin_layout Standard
+    background: white url(..
+\backslash
+images
+\backslash
+banner_photo.jpg) no-repeat 0px 62px;
+\end_layout
+
+\begin_layout Standard
+    height: 138px;
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+And add:
+\end_layout
+
+\begin_layout Standard
+div.page-header .main-nav {
+\end_layout
+
+\begin_layout Standard
+    position: absolute; bottom: 0; right: 0; 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+Figure 245: Still need more to fix the top navigation menu...
+\end_layout
+
+\begin_layout Standard
+The nav-bar still looks wrong.
+  We’ll now fix the sizing and placement.
+ Update the new rule (div.page-header .main-nav) and add new ones, and colors.
+  The entire application.css looks  like this so far:
+\end_layout
+
+\begin_layout Standard
+html, body { background:#A8ACB6 }
+\end_layout
+
+\begin_layout Standard
+body { width: 766px; }
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+div.page-header {
+\end_layout
+
+\begin_layout Standard
+    padding: 0;
+\end_layout
+
+\begin_layout Standard
+    background: white url(../images/banner_photo.jpg) no-repeat 0px 62px;
+\end_layout
+
+\begin_layout Standard
+    height: 138px;
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+div.page-header h1.app-name {
+\end_layout
+
+\begin_layout Standard
+    text-indent: -10000px;
+\end_layout
+
+\begin_layout Standard
+    background: url(../images/banner_nifa.gif) no-repeat;
+\end_layout
+
+\begin_layout Standard
+    padding: 0; margin: 0;
+\end_layout
+
+\begin_layout Standard
+    height: 55px;
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+div.page-header .main-nav { 
+\end_layout
+
+\begin_layout Standard
+    position: relative; 
+\end_layout
+
+\begin_layout Standard
+	top: 63px; 
+\end_layout
+
+\begin_layout Standard
+    height: 21px; 
+\end_layout
+
+\begin_layout Standard
+	width: 100%; 
+\end_layout
+
+\begin_layout Standard
+	line-height: 21px; 
+\end_layout
+
+\begin_layout Standard
+	padding: 0;  
+\end_layout
+
+\begin_layout Standard
+    text-align: right;  
+\end_layout
+
+\begin_layout Standard
+    background: #313367;  
+\end_layout
+
+\begin_layout Standard
+} 
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+div.page-header .main-nav li { 
+\end_layout
+
+\begin_layout Standard
+    margin: 0; 
+\end_layout
+
+\begin_layout Standard
+	padding: 0 0 0 4px; 
+\end_layout
+
+\begin_layout Standard
+    display:inline; 
+\end_layout
+
+\begin_layout Standard
+	float:none; 
+\end_layout
+
+\begin_layout Standard
+    border-left: 1px dotted #eee; 
+\end_layout
+
+\begin_layout Standard
+	background: #313367; 
+\end_layout
+
+\begin_layout Standard
+    color: silver; 	
+\end_layout
+
+\begin_layout Standard
+} 
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+div.page-header .navigation.main-nav li a { 
+\end_layout
+
+\begin_layout Standard
+    padding: 3px 8px; 
+\end_layout
+
+\begin_layout Standard
+	margin: 0; 
+\end_layout
+
+\begin_layout Standard
+    font-weight: normal; 
+\end_layout
+
+\begin_layout Standard
+	display:inline; 
+\end_layout
+
+\begin_layout Standard
+	font-size: 12px; 
+\end_layout
+
+\begin_layout Standard
+    background: #313367;
+\end_layout
+
+\begin_layout Standard
+    color: silver; 	
+\end_layout
+
+\begin_layout Standard
+} 
+\end_layout
+
+\begin_layout Standard
+div.page-header .navigation.main-nav li.current a {
+\end_layout
+
+\begin_layout Standard
+    background: #313367;
+\end_layout
+
+\begin_layout Standard
+    color: white; 	
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+div.page-header .navigation.main-nav li a:hover { 
+\end_layout
+
+\begin_layout Standard
+	 background: #A9BACF;
+\end_layout
+
+\begin_layout Standard
+	  color: black;
+\end_layout
+
+\begin_layout Standard
+	
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+Note that we had to make the last two selectors a bit more specific, in
+ order to ensure that they take precedence over rules in the “Clean” theme.
+\end_layout
+
+\begin_layout Standard
+The page header should be done at this point:
+\end_layout
+
+\begin_layout Standard
+Figure 246: The fixed NIFA man navigation bar
+\end_layout
+
+\begin_layout Standard
+The sidebars
+\end_layout
+
+\begin_layout Standard
+The existing site has both left and right sidebars.
+ We’ll add those now.
+ The first step is to add the three content sections to the <page> tag in
+ application.dryml.
+ We’ve already extended <page>, so modify the DRYML you already have to
+ look like:
+\end_layout
+
+\begin_layout Standard
+<extend tag="page">
+\end_layout
+
+\begin_layout Standard
+  <old-page merge without-live-search>
+\end_layout
+
+\begin_layout Standard
+    <content: replace>
+\end_layout
+
+\begin_layout Standard
+      <section-group class="page-content">
+\end_layout
+
+\begin_layout Standard
+        <aside param="aside1"/>
+\end_layout
+
+\begin_layout Standard
+        <section param="content"/>
+\end_layout
+
+\begin_layout Standard
+        <aside param="aside2"/>
+\end_layout
+
+\begin_layout Standard
+      </section-group>
+\end_layout
+
+\begin_layout Standard
+    </content:>
+\end_layout
+
+\begin_layout Standard
+  </old-page>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+We’ve replaced the existing <content:> with a <section-group> that contains
+ our two <aside> tags and the main <section>.
+\end_layout
+
+\begin_layout Standard
+To try this out, we’ll insert some dummy content in app/views/front/index.dryml.
+ Edit that file as follows:
+\end_layout
+
+\begin_layout Standard
+<page title="Home">
+\end_layout
+
+\begin_layout Standard
+  <body: class="front-page"/>
+\end_layout
+
+\begin_layout Standard
+  <aside1:>Aside 1</aside1:>
+\end_layout
+
+\begin_layout Standard
+  <content:>Main content</content:>
+\end_layout
+
+\begin_layout Standard
+  <aside2:>Aside 2</aside2:>
+\end_layout
+
+\begin_layout Standard
+</page>
+\end_layout
+
+\begin_layout Standard
+You should see something like:
+\end_layout
+
+\begin_layout Standard
+Figure 247: View of the default three-column formatting
+\end_layout
+
+\begin_layout Standard
+Obviously we’ve got a bunch of styling to do.
+ First though, let’s add the content for the left sidebar.
+ This is the “search and browse” panel, which is on every page of the site,
+ so let’s define it as a tag in application.dryml:
+\end_layout
+
+\begin_layout Standard
+<def tag="search-and-browse" attrs="current-subject"> 
+\end_layout
+
+\begin_layout Standard
+  <div class="search-and-browse"> 
+\end_layout
+
+\begin_layout Standard
+    <div param="search"> 
+\end_layout
+
+\begin_layout Standard
+      <h3>Search NIFA</h3> 
+\end_layout
+
+\begin_layout Standard
+      <form action=""> 
+\end_layout
+
+\begin_layout Standard
+        <input type="text" class="search-field"/> 
+\end_layout
+
+\begin_layout Standard
+        <submit label="Go"/> 
+\end_layout
+
+\begin_layout Standard
+      </form> 
+\end_layout
+
+\begin_layout Standard
+      <p class="help"><a href="">Search Help</a></p> 
+\end_layout
+
+\begin_layout Standard
+    </div> 
+\end_layout
+
+\begin_layout Standard
+    <div param="browse-by-audience"> 
+\end_layout
+
+\begin_layout Standard
+      <h3>Browse by Audience</h3> 
+\end_layout
+
+\begin_layout Standard
+      <select-menu first-option="Information for..." options="&[]"/>   
+\end_layout
+
+\begin_layout Standard
+    </div> 
+\end_layout
+
+\begin_layout Standard
+    <div param="browse-by-subject"> 
+\end_layout
+
+\begin_layout Standard
+      <h3>Browse by Subject</h3> 
+\end_layout
+
+\begin_layout Standard
+      <navigation current="&current_subject"> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Agricultural &amp; Food Biosecurity</nav-item>
+ 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Agricultural Systems</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Animals &amp; Animal Products</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Biotechnology &amp; Geneomics</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Economy &amp; Commerce</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Education</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Families, Youth &amp; Communities</nav-item>
+ 
+\end_layout
+
+\begin_layout Standard
+      </navigation> 
+\end_layout
+
+\begin_layout Standard
+    </div> 
+\end_layout
+
+\begin_layout Standard
+  </div>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+A few points to note about that markup:
+\end_layout
+
+\begin_layout Standard
+We’ve tried to make the markup as “semantic” as possible – it describes
+ what the content is, not what it looks like.
+\end_layout
+
+\begin_layout Standard
+We’ve added a few params, so that individual pages can customize the search-and-
+browse panel.
+ Each param also gives us a CSS class of the same name, so we can target
+ those in our stylesheet.
+\end_layout
+
+\begin_layout Standard
+We’ve used <navigation> for the browse-by-subject links.
+ This gives us the ability to highlight the current page as the user browses.
+\end_layout
+
+\begin_layout Standard
+Because the search-and-browse panel appears on every page, lets call it
+ from our master page tag (<extend tag="page">).
+ Change:
+\end_layout
+
+\begin_layout Standard
+<aside param="aside1"/>
+\end_layout
+
+\begin_layout Standard
+To:
+\end_layout
+
+\begin_layout Standard
+<aside param="aside1"><search-and-browse/></aside>
+\end_layout
+
+\begin_layout Standard
+Then remove the <aside1:>Aside 1</aside1:> parameter from front/index.dryml.
+\end_layout
+
+\begin_layout Standard
+Figure 248: View of the left panel contact without styling
+\end_layout
+
+\begin_layout Standard
+Now we need to style this panel.
+ After a good deal of experimentation, we get to the following CSS:
+\end_layout
+
+\begin_layout Standard
+div.page-content, div.page-content .aside { background: white; }
+\end_layout
+
+\begin_layout Standard
+.aside1 { width: 173px; padding: 10px;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse {
+\end_layout
+
+\begin_layout Standard
+    background: #A9BACF;
+\end_layout
+
+\begin_layout Standard
+    border: 1px solid #313367;
+\end_layout
+
+\begin_layout Standard
+    font-size: 11px;
+\end_layout
+
+\begin_layout Standard
+    margin: 4px;
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse h3 {
+\end_layout
+
+\begin_layout Standard
+    background: #313367; color: white;
+\end_layout
+
+\begin_layout Standard
+    margin: 0; padding: 3px 5px;
+\end_layout
+
+\begin_layout Standard
+    font-weight: normal; font-size: 13px; 
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse a { background: none; color: #000483;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .navigation { list-style-type: circle; }
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .navigation li { padding: 3px 0; font-size: 11px; line-height:
+ 14px;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .navigation li a { border:none;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .search form { margin: 0 3px 3px 3px;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .search p { margin: 3px;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .search-field { width: 120px;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .submit-button { padding: 2px;}
+\end_layout
+
+\begin_layout Standard
+.search-and-browse .browse-by-audience select { margin: 5px 3px; width: 92%;}
+\end_layout
+
+\begin_layout Standard
+With that added to application.css you should see:
+\end_layout
+
+\begin_layout Standard
+Figure 249: View of the left panel content with correct styling
+\end_layout
+
+\begin_layout Standard
+OK - let’s switch to the right-hand sidebar.
+\end_layout
+
+\begin_layout Standard
+If you click around the site you’ll see the right sidebar is always used
+ for navigation panels, like this one:
+\end_layout
+
+\begin_layout Standard
+You’ll also notice it’s missing from some pages, which is as easy as:
+\end_layout
+
+\begin_layout Standard
+<page without-aside2/>
+\end_layout
+
+\begin_layout Standard
+It seems like a good idea to define a tag that creates one of these panels,
+ say:
+\end_layout
+
+\begin_layout Standard
+<nav-panel>
+\end_layout
+
+\begin_layout Standard
+  <heading:>Quick Links</heading:>
+\end_layout
+
+\begin_layout Standard
+  <items:>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="/">A-Z Index</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="/">Local Extension Office</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="/">Jobs and Opportunities</nav-item>
+\end_layout
+
+\begin_layout Standard
+  </items:>
+\end_layout
+
+\begin_layout Standard
+</nav-panel>
+\end_layout
+
+\begin_layout Standard
+We’ve re-used the <nav-item> tag as it gives us an <li> and an <a> which
+ is just what we need here.
+\end_layout
+
+\begin_layout Standard
+Now add the definition of <nav-panel> to your application.dryml:
+\end_layout
+
+\begin_layout Standard
+<def tag="nav-panel">
+\end_layout
+
+\begin_layout Standard
+  <div class="nav-panel" param="default">
+\end_layout
+
+\begin_layout Standard
+    <h3 param="heading"></h3>
+\end_layout
+
+\begin_layout Standard
+    <div param="body">
+\end_layout
+
+\begin_layout Standard
+      <ul param="items"/>
+\end_layout
+
+\begin_layout Standard
+    </div>
+\end_layout
+
+\begin_layout Standard
+  </div>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Notice that we defined two parameters for the body of the panel.
+ Callers can either provide the <items:> parameter, in which case the <ul>
+ wrapper is provided, or, in the situation where the body will not be a
+ single <ul>, they can provide the <body:> parameter.
+\end_layout
+
+\begin_layout Standard
+OK let’s throw one of these things into our page.
+ Here’s what front/index.dryml needs to look like:
+\end_layout
+
+\begin_layout Standard
+<page title="Home">
+\end_layout
+
+\begin_layout Standard
+  <body: class="front-page"/>
+\end_layout
+
+\begin_layout Standard
+  <content:>Main content</content:>
+\end_layout
+
+\begin_layout Standard
+  <aside2:>
+\end_layout
+
+\begin_layout Standard
+    <nav-panel>
+\end_layout
+
+\begin_layout Standard
+      <heading:>Grants</heading:>
+\end_layout
+
+\begin_layout Standard
+      <items:>
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">National Research Initiative</nav-item>
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Small Business Innovation Research</nav-item>
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">More...</nav-item>
+\end_layout
+
+\begin_layout Standard
+      </items:>
+\end_layout
+
+\begin_layout Standard
+    </nav-panel>
+\end_layout
+
+\begin_layout Standard
+    <nav-panel>
+\end_layout
+
+\begin_layout Standard
+      <heading:>Quick Links</heading:>
+\end_layout
+
+\begin_layout Standard
+      <items:>
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">A-Z Index</nav-item>
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Local Extension Office</nav-item>
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Jobs and Opportunities</nav-item>
+\end_layout
+
+\begin_layout Standard
+      </items:>
+\end_layout
+
+\begin_layout Standard
+    </nav-panel>
+\end_layout
+
+\begin_layout Standard
+  </aside2:>
+\end_layout
+
+\begin_layout Standard
+</page>
+\end_layout
+
+\begin_layout Standard
+And here’s the associated CSS – add this to the end of your application.css:
+\end_layout
+
+\begin_layout Standard
+.aside2 { margin: 0; padding: 12px 10px; width: 182px;}
+\end_layout
+
+\begin_layout Standard
+.nav-panel {border: 1px solid #C9C9C9; margin-bottom: 10px;}
+\end_layout
+
+\begin_layout Standard
+.nav-panel h3 {background:#A9BACF; color: #313131; font-size: 13px; padding:
+ 3px 8px; margin: 0;}
+\end_layout
+
+\begin_layout Standard
+.nav-panel .body {background: #DAE4ED; color: #00059A; padding: 5px;}
+\end_layout
+
+\begin_layout Standard
+.nav-panel .body a {color: #00059A; background: none;}
+\end_layout
+
+\begin_layout Standard
+.nav-panel ul {list-style-type: circle;}
+\end_layout
+
+\begin_layout Standard
+.nav-panel ul li { margin: 5px 0 5px 20px;}
+\end_layout
+
+\begin_layout Standard
+Figure 250: View of the right panel content with styling
+\end_layout
+
+\begin_layout Standard
+Main content
+\end_layout
+
+\begin_layout Standard
+The main content varies a lot from page to page, so let’s just make sure
+ that the margins are OK, and leave it at that.
+ First we need some content to work with, so in front/index.dryml, replace:
+\end_layout
+
+\begin_layout Standard
+<content:>Main content</content:>
+\end_layout
+
+\begin_layout Standard
+With:
+\end_layout
+
+\begin_layout Standard
+<content:>
+\end_layout
+
+\begin_layout Standard
+  <h2>National Institute of Food and Agriculture</h2>
+\end_layout
+
+\begin_layout Standard
+  <p>Main content goes here...</p>
+\end_layout
+
+\begin_layout Standard
+</content:>
+\end_layout
+
+\begin_layout Standard
+On refreshing the browser it seems there’s nothing else to do.
+ This looks fine:
+\end_layout
+
+\begin_layout Standard
+Figure 251: View of the main content panel
+\end_layout
+
+\begin_layout Standard
+The footer
+\end_layout
+
+\begin_layout Standard
+The footer is the same throughout the site.
+ Let’s define it as a tag and add it to our main <page> tag.
+ Here’s the definition for application.dryml:
+\end_layout
+
+\begin_layout Standard
+<def tag="footer-nav">
+\end_layout
+
+\begin_layout Standard
+     <ul>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">NIFA</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">USDA.gov</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">Site Map</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">Policies and Links</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">Grants.gov</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">CRIS</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">REEIS</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">Leadership Management Dashboard</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">eXension</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">RSS</nav-item>
+\end_layout
+
+\begin_layout Standard
+    </ul>
+\end_layout
+
+\begin_layout Standard
+/def>
+\end_layout
+
+\begin_layout Standard
+And add this parameter to the <extend tag="page">:
+\end_layout
+
+\begin_layout Standard
+<footer: param><footer-nav/></footer:>
+\end_layout
+
+\begin_layout Standard
+Note: Since Hobo already includes a page-footer div out-of-the-box, we don’t
+ need to create this div in DRYML.
+  If we did, we would end up with a duplicate and this would distort the
+ footer.
+ 
+\end_layout
+
+\begin_layout Standard
+And finally, the CSS.
+ To get the corner graphic that we’ve used here, you need to right-click
+ and “Save Image As” on the bottom left corner in the existing site:
+\end_layout
+
+\begin_layout Standard
+.page-footer {
+\end_layout
+
+\begin_layout Standard
+    background: white url(../images/footer_corner_left.gif) no-repeat bottom
+ left;
+\end_layout
+
+\begin_layout Standard
+    overflow: hidden; height: 100%;
+\end_layout
+
+\begin_layout Standard
+    border-top: 1px solid #B8B8B8;
+\end_layout
+
+\begin_layout Standard
+    font-size: 12px; line-height: 10px;
+\end_layout
+
+\begin_layout Standard
+    padding: 5px 0px 10px 40px;
+\end_layout
+
+\begin_layout Standard
+}
+\end_layout
+
+\begin_layout Standard
+.page-footer ul { list-style-type: none; }
+\end_layout
+
+\begin_layout Standard
+.page-footer ul li { float: left; border-right: 1px solid #2A049A; margin:
+ 0; padding: 0 5px;}
+\end_layout
+
+\begin_layout Standard
+.page-footer ul li a {border:none; color: #2A049A;}
+\end_layout
+
+\begin_layout Standard
+There’s one CSS trick in there that is work a mention.
+ In the .page-footer section, we’ve specified:
+\end_layout
+
+\begin_layout Standard
+overflow: hidden; height: 100%;
+\end_layout
+
+\begin_layout Standard
+This is the famous “self clearing” trick.
+ Because all the content in the footer is floated, without this trick the
+ footer looses its height.
+\end_layout
+
+\begin_layout Standard
+Figure 252: NIFA Demo with final footer styling
+\end_layout
+
+\begin_layout Standard
+That pretty much brings us to the end of the work of reproducing the look
+ and feel.
+ We should now be able to build out our application, and it will look right
+ “automatically”.
+ In practice you always run into small problems here and there and need
+ to dive back into CSS to tweak things, but the bulk of the job is done.
+\end_layout
+
+\begin_layout Standard
+The next question is - how could we make several apps look like this without
+ repeating all this code?  That is the subject of our next tutorial.
+ 
+\end_layout
+
+\begin_layout Section*
+
+\end_layout
+
+\end_body
+\end_document

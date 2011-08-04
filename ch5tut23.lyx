@@ -1,0 +1,527 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 23 – Using Hobo Lifecycles for Workflow
+\end_layout
+
+\begin_layout Standard
+By Venka Ashtakala
+\end_layout
+
+\begin_layout Standard
+Now that we have our “Four Table” application working the way we want, let’s
+ add an approval process so that new recipes need to be approved by a user
+ before they are published to the web.
+  
+\end_layout
+
+\begin_layout Standard
+To do this we can take advantage of ‘Hobo Lifecycles‘, which is the Hobo
+ answer to creating a workflow.
+  The workflow that we will define for this application is that a Recipe
+ can exist in one of 2 states: “Not Published” and “Published” and that
+ there will be two transitions: “Publish” and “Not Publish” which will move
+ the Recipe from one state to the other.
+ 
+\end_layout
+
+\begin_layout Standard
+The “Publish” transaction will move the Recipe from the “Not Published”
+ to “Published” state, while the “Not Publish” transaction will do the opposite.
+   Lastly we’ll make controller and view changes as necessary.
+\end_layout
+
+\begin_layout Standard
+Tutorial Application:  four_table
+\end_layout
+
+\begin_layout Standard
+Topic: HOBO Lifecycles
+\end_layout
+
+\begin_layout Standard
+Steps
+\end_layout
+
+\begin_layout Standard
+1.
+ Setup the lifecycle.
+  Now that we know the functional requirements for the Recipe workflow we
+ wish to implement we can start modifying our Four Table application.
+  We are going to add the Hobo Lifecycle definition to our Recipe model.
+  Let’s open up the /app/model/recipe.rb file and add the lifecycle do...end
+ block:
+\end_layout
+
+\begin_layout Standard
+[…]
+\end_layout
+
+\begin_layout Standard
+belongs_to :country
+\end_layout
+
+\begin_layout Standard
+lifecycle :state_field => :lifecycle_state do
+\end_layout
+
+\begin_layout Standard
+state :not_published, :default => :true
+\end_layout
+
+\begin_layout Standard
+state :published
+\end_layout
+
+\begin_layout Standard
+    
+\end_layout
+
+\begin_layout Standard
+transition :publish, { :not_published => :published }, :available_to =>
+ "acting_user if acting_user.signed_up?"
+\end_layout
+
+\begin_layout Standard
+transition :not_publish, { :published => :not_published }, :available_to
+ => "acting_user if acting_user.signed_up?"
+\end_layout
+
+\begin_layout Standard
+    
+\end_layout
+
+\begin_layout Standard
+end
+\end_layout
+
+\begin_layout Standard
+# --- Permissions --- #
+\end_layout
+
+\begin_layout Standard
+[…]
+\end_layout
+
+\begin_layout Standard
+So what did we add exactly?  The lifecycle do..end block defines the lifecycle
+ for a given model.
+  The :state_field argument specifies that we want the lifecycle to save
+ the current state to a ‘lifecycle_state’ column in the table.
+  Within the block we have to define our states and transition actions.
+  
+\end_layout
+
+\begin_layout Standard
+We define our states by using the ‘state’ keyword, which takes the state
+ name and options as arguments.
+  So in this manner we have defined two states:
+\end_layout
+
+\begin_layout Standard
+ :not_published
+\end_layout
+
+\begin_layout Standard
+ :published
+\end_layout
+
+\begin_layout Standard
+The :default => :true argument to the :not_published state, means that when
+ the state is not defined, such as when the recipe is created, its initial
+ state will be :not_published.
+  
+\end_layout
+
+\begin_layout Standard
+After the state declarations, we have defined two transition actions using
+ the ‘transition’ keyword.
+  The transition keyword requires a name, a hash that specifies the state
+ transition and then options.
+  The first transition, :publish, specifies that when this action is executed,
+ the Recipe’s state will go from :not_published to :published.
+  The :available_to argument specifies that this action can only be executed
+ by a user that has signed up, so guests are not allowed to execute this
+ action.
+  The second transition, :not_publish, changes the state from :published
+ to :not_published, and limits the action to be available only to signed
+ up users.
+\end_layout
+
+\begin_layout Standard
+By adding the lifecycle behaviour to our model, we’ll need to generate and
+ run a hobo g migration since a new ‘lifecycle_state’ column will be added
+ to our recipes table.
+  At the command line, in your application directory, execute the following:
+\end_layout
+
+\begin_layout Standard
+> hobo g migration
+\end_layout
+
+\begin_layout Standard
+Select ‘m’ when prompted to migrate now, and then specify a name for this
+ migration.	
+\end_layout
+
+\begin_layout Standard
+2.
+ Setup the lifecycle controls in your view.
+  Now that we have setup the lifecycle for our Recipe model, we need to
+ expose the transition actions to our users.
+  HOBO makes this very easy by giving us a predefined dryml tag called <transiti
+on-buttons/> and we’ll use this tag on our Recipe listing page.
+\end_layout
+
+\begin_layout Standard
+Open up the views/recipes/index.dryml page and change this code:
+\end_layout
+
+\begin_layout Standard
+<table-plus fields="this, categories.count, categories,country"/>
+\end_layout
+
+\begin_layout Standard
+to:
+\end_layout
+
+\begin_layout Standard
+		 <table-plus fields="this, categories.count, categories, country">
+\end_layout
+
+\begin_layout Standard
+	   	<controls:>
+\end_layout
+
+\begin_layout Standard
+     <transition-buttons/>
+\end_layout
+
+\begin_layout Standard
+  </controls:>
+\end_layout
+
+\begin_layout Standard
+</table-plus>
+\end_layout
+
+\begin_layout Standard
+By using the <controls:> parameter tag in table-plus, it allows us to insert
+ an extra column at the end of the table where we can place action buttons
+ or links.
+  There we use the <transition-buttons/> tag to specify that lifecycle transitio
+n buttons should show for any actions that are available for the current
+ user.
+  
+\end_layout
+
+\begin_layout Standard
+3.
+ Setup the lifecycle actions in the controller.
+  We need to make a couple of changes to our Recipes controller:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+The lifecycle actions need to be added to the controller so that the transition-
+buttons added above work correctly.
+  To do this, just open up:
+\end_layout
+
+\begin_layout Standard
+/app/controllers/recipes_controller
+\end_layout
+
+\begin_layout Standard
+ and replace the existing auto_actions list with this:
+\end_layout
+
+\begin_layout Standard
+auto_actions :all
+\end_layout
+
+\begin_layout Standard
+	
+\end_layout
+
+\begin_layout Standard
+Specifying :all will also add support for the lifecycle actions.
+\end_layout
+
+\begin_layout Standard
+4.
+ Modify the Recipes Index page.
+ The Recipes index page needs to be modified so that it only shows published
+ recipes when the user is a Guest, and all the Recipes for logged in users.
+  So we need to do add the following named_scope to the Recipe model:
+\end_layout
+
+\begin_layout Standard
+named_scope :viewable, lambda {|acting_user| {:conditions => “#{acting_user.signe
+d_up??1:0}=1 or lifecycle_state='published'"  }}
+\end_layout
+
+\begin_layout Standard
+…which returns all Recipes for logged in users, and only published recipes
+ to Guest users.
+ 
+\end_layout
+
+\begin_layout Standard
+Note: The lambda block is used so that we can pass in a parameter to a named_sco
+pe, which in this case is a reference to the logged in user.
+\end_layout
+
+\begin_layout Standard
+The Recipe controller index action needs to be modified so that when a Guest
+ user is viewing the Recipe listing page, only “published” Recipes will
+ be shown.
+  To do this, change the following line by inserting in the highlighted
+ text:
+\end_layout
+
+\begin_layout Standard
+Original:
+\end_layout
+
+\begin_layout Standard
+hobo_index Recipe.apply_scopes(:search => [params[:search], :title, :body],
+ :order_by  => parse_sort_param(:title, :country))
+\end_layout
+
+\begin_layout Standard
+To:
+\end_layout
+
+\begin_layout Standard
+hobo_index Recipe.viewable(current_user).apply_scopes(:search => [params[:search],
+ :title, :body], :order_by  => parse_sort_param(:title, :country))
+\end_layout
+
+\begin_layout Standard
+5.
+ Try it out.
+  Restart your server to see the changes.
+  Following that, access the Recipe listing page as a Guest and you should
+ see that there aren’t any Recipes showing (this is because all the Recipes
+ are in a state of ‘Not Published’):
+\end_layout
+
+\begin_layout Standard
+Figure 254: Guest view Recipes - All recipes are in state "Not Published"
+\end_layout
+
+\begin_layout Standard
+If you login as a user you should see your recipes showing with ‘Publish’
+ buttons next to each row:
+\end_layout
+
+\begin_layout Standard
+Figure 255: Recipes ready to Publish.
+\end_layout
+
+\begin_layout Standard
+To publish a Recipe just click on the ‘Publish’ button.
+  For this example, I’ll publish the Omelet recipe.
+  After clicking on the button, I’ll get the show page for the Omelet.
+\end_layout
+
+\begin_layout Standard
+Figure 256: Omelet recipe after being placed in the "Published" state
+\end_layout
+
+\begin_layout Standard
+And if I go back to my Recipe listing page I see:
+\end_layout
+
+\begin_layout Standard
+Figure 257: Recipe index with buttons for "Publish" and "Not Publish"
+\end_layout
+
+\begin_layout Standard
+Since my Omelet recipe has been published, the only available action for
+ it is to ‘Not Publish’ it.
+\end_layout
+
+\begin_layout Standard
+If I go to the Recipe listing page as a Guest user, I should now see my
+ Omelet recipe:
+\end_layout
+
+\begin_layout Standard
+Figure 258: Guest user can only see the published Recipe
+\end_layout
+
+\begin_layout Standard
+6.
+ Improve the navigation.
+ So at this point we are able to Publish and Not Publish our recipes, so
+ our workflow is behaving as we expect.
+  But the navigation can be improved and would be cleaner if after we clicked
+ on a transition button the page would just refresh instead of taking us
+ to the show screen for the recipe.
+  To do this, we will need to override the default lifecycle actions in
+ the Recipes controller.
+  
+\end_layout
+
+\begin_layout Standard
+For each transition we define, hobo creates 2 controller actions, 1 for
+ a GET request and 1 for a PUT request.
+  So, for the Publish transition action, hobo creates a publish action for
+ GET requests, and a do_publish action for PUT  requests.
+  The publish action would be used if we wanted to show a form before executing
+ the transition action, i.e.
+  if we wanted to collect comments from the user before he/she Publishes
+ or Not Publishes, we could show a form with a comments box and a Publish/Not
+ Publish submit button.
+  But in this example, we just want to configure the application so that
+ after a Recipe is Published or Not Published, the browser should redirect
+ back to the Recipe listing page.
+  To do this we’ll add the following 2 actions to our Recipe controller
+ just after the index action:
+\end_layout
+
+\begin_layout Standard
+  def do_publish
+\end_layout
+
+\begin_layout Standard
+    do_transition_action :publish do
+\end_layout
+
+\begin_layout Standard
+      redirect_to recipes_path
+\end_layout
+
+\begin_layout Standard
+    end
+\end_layout
+
+\begin_layout Standard
+  end
+\end_layout
+
+\begin_layout Standard
+  def do_not_publish
+\end_layout
+
+\begin_layout Standard
+    do_transition_action :not_publish do
+\end_layout
+
+\begin_layout Standard
+      redirect_to recipes_path
+\end_layout
+
+\begin_layout Standard
+    end
+\end_layout
+
+\begin_layout Standard
+  end
+\end_layout
+
+\begin_layout Standard
+These actions override the default hobo actions so that we can specify the
+ page redirect after the transition has been executed.
+  Once you have added these actions, if you access the Recipe index page
+ and click on a Publish or Not Publish button, you’ll just see the page
+ get refreshed.
+  
+\end_layout
+
+\begin_layout Standard
+So now you have a working Publish/Not Publish workflow for Recipes in the
+ Four Tables application.
+\end_layout
+
+\begin_layout Standard
+Note:  This example is a basic implementation of Hobo lifecycles, but, it
+ does serve as a good introduction to its various features.
+  It is possible to implement workflows with numerous states and transitions,
+ and the ability to implement more fine-grained security for each transition
+ using the :available_to argument.
+  Consult the full Hobo Lifecycles overview at http://cookbook.hobocentral.net
+ 
+\end_layout
+
+\end_body
+\end_document
