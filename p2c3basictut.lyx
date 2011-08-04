@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\paragraph_separation skip
+\defskip smallskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -65,7 +67,4608 @@ logicalmkup
 \begin_body
 
 \begin_layout Standard
+Introductory Concepts and Comments
+\end_layout
 
+\begin_layout Standard
+Tutorial 1 - Directories and Generators 
+\end_layout
+
+\begin_layout Standard
+Tutorial 2 - Changing Field Names 
+\end_layout
+
+\begin_layout Standard
+Tutorial 3 - Field Validation 
+\end_layout
+
+\begin_layout Standard
+Tutorial 4 - Introduction to Permissions
+\end_layout
+
+\begin_layout Standard
+Tutorial 5 - Hobo 
+\end_layout
+
+\begin_layout Standard
+Tutorial 6 - Editing the Navigation Tabs
+\end_layout
+
+\begin_layout Standard
+Tutorial 7 - Model Relationships 
+\end_layout
+
+\begin_layout Standard
+Tutorial 8 - Model Relationships
+\end_layout
+
+\begin_layout Section*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Standard
+If you explain a magic trick before it is performed, you risk spoiling the
+ enjoyment.
+ There will be plenty of time after you work through a few of the tutorials
+ to learn what is going on “behind the curtain.” 
+\end_layout
+
+\begin_layout Standard
+So, in the spirit of this adventure we will explain just enough right now
+ to allow you to dive in head first… 
+\end_layout
+
+\begin_layout Section*
+Tutorial 1 – Directories and Generators 
+\end_layout
+
+\begin_layout Standard
+You will create a single-table application that demonstrates how Hobo constructs
+ a nice user interface that includes a built-in login system and basic search
+ capability.
+ Hobo 1.3 generators are compatible with the new Rails 3 generator API and
+ operate quite differently from Hobo 1.0 and Rails 2.x.
+ We will explain in more detail below.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Tutorial Application:
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my-first-app
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Topics
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Creating a Hobo application 
+\end_layout
+
+\begin_layout Itemize
+Learning the Hobo Directory structure 
+\end_layout
+
+\begin_layout Itemize
+Generating Hobo models and controllers 
+\end_layout
+
+\begin_layout Itemize
+Generating Hobo models 
+\end_layout
+
+\begin_layout Itemize
+Generating Hobo controllers 
+\end_layout
+
+\begin_layout Itemize
+Creating Migrations and Databases 
+\end_layout
+
+\begin_layout Itemize
+Editing Models and propagating the changes 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Tutorial Application:
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my-first-app
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Steps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Description of development tools.
+\end_layout
+
+\end_inset
+
+ You will use three tools to do the work in these tutorials.
+ They include: 
+\end_layout
+
+\begin_layout Itemize
+A shell command prompt to run scripts 
+\end_layout
+
+\begin_layout Itemize
+A text editor for you to edit your application files 
+\end_layout
+
+\begin_layout Itemize
+A browser to run and test your application 
+\end_layout
+
+\begin_layout Standard
+Ordinarily you will have two shell windows or tabs open: one from which
+ to run Hobo scripts or operating system commands and one from which to
+ run a web server (Mongrel in these tutorials).
+ These tutorials are not done with an integrated development environment
+ (IDE).
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create a Hobo application directory.
+\end_layout
+
+\end_inset
+
+ Before you create your first Hobo application, create a directory called
+ tutorials.
+ This will be the directory where you keep all of your Hobo tutorials.
+ Navigate to the tutorials directory using your shell application.
+ You should now see the following prompt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+tutorials> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create a Hobo application.
+\end_layout
+
+\end_inset
+
+ All you have to do to create a Hobo application is to issue the Hobo command:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+tutorials> hobo new my-first-app
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure55.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Command Prompt with Ruby and Rails
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: The screen captures were taken with Hobo 1.3 pre-release # 26 as of
+ 2/15/2011.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You will see a log of what Hobo is creating go by within the shell window
+ that you will better understand as you learn Hobo’s directory structure.
+ The first prompt from the Hobo Setup Wizard will appear as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure56.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Command Prompt with Ruby on Rails
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Hobo Setup Wizard will present you with the following eight options,
+ for this tutorial choose the following “default” options:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+Question Defaults 
+\end_layout
+
+\begin_layout LyX-Code
+Do you want to customize the test_framework? [y|n] 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+a.
+ Choose a name for the user resource
+\end_layout
+
+\begin_layout LyX-Code
+       [<enter>=user|<custom_name>] 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+<enter>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+b.
+ Do you want to send an activation 
+\end_layout
+
+\begin_layout LyX-Code
+       email to activate the user? [y|n] 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+c.
+ Do you want to add the features 
+\end_layout
+
+\begin_layout LyX-Code
+       for an invite only website? [y|n] 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+d.
+ Will you application use only hobo/dryml 
+\end_layout
+
+\begin_layout LyX-Code
+       web page templates? (Choose 'n' only if you 
+\end_layout
+
+\begin_layout LyX-Code
+       also plan to use plain rails/erb web page
+\end_layout
+
+\begin_layout LyX-Code
+       templates) [y|n] 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+y
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+e.
+ Choose a name for the front controller
+\end_layout
+
+\begin_layout LyX-Code
+       [<enter>=front|<custom_name>]: 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+<enter>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+f.
+ Initial Migration: [s]kip, [g]enerate 
+\end_layout
+
+\begin_layout LyX-Code
+       migration file only, generate and 
+\end_layout
+
+\begin_layout LyX-Code
+       [m]igrate [s|g|m]: 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+g.
+ Type the locales (space separated) you 
+\end_layout
+
+\begin_layout LyX-Code
+       want to add to your application or 
+\end_layout
+
+\begin_layout LyX-Code
+       <enter> for 'en': 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+<enter>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+h.
+ Do you want to initialize a git repository 
+\end_layout
+
+\begin_layout LyX-Code
+       now? [y|n] 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You will see the following message upon completion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure57.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Completion Message
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Start the web server.
+\end_layout
+
+\end_inset
+
+ Create a second shell window (or tab).
+ You are now going to start a local web server on your computer.
+ This will enable you to run the Hobo application and see what a deployed
+ application looks like in your browser.
+ 
+\end_layout
+
+\begin_layout Standard
+Navigate to your application directory and fire up the local web server
+ by issuing the following command at your command prompt.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+my-first-app> rails server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+While your server is executing, it does 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+not
+\end_layout
+
+\end_inset
+
+ return you to your command prompt.
+ As you run your application, it logs what it is doing to this shell.
+ You can terminate the web server by typing control-c and restart it the
+ same way you started it above, but do not terminate the server.
+ 
+\end_layout
+
+\begin_layout Standard
+5.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Open your application in a web browser.
+\end_layout
+
+\end_inset
+
+ Type the following URL into your browser: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+http://localhost:3000/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following “Register Administrator” page will appear:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure58.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Register Administrator Screen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo, by default, assumes the first person that launches the application
+ will be an administrator.
+ Go ahead and enter the information required and click on the “Register
+ Administrator” button: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: The first person to register is assigned the administrator privileges
+ by Hobo.
+ Notice that in the upper right-hand corner of your web page there is a
+ drop-down list of created users that allows you to sign in automatically
+ to any of the user accounts without going through the login page if you
+ are in development mode.
+ This is turned off in production mode.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure59.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Register Administrator Screen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is how your app looks after registering:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure60.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Completed Registration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now let’s take a look at what Hobo has generated so far.
+ Use your text editor to locate the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+user.rb
+\end_layout
+
+\end_inset
+
+ file under the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/models
+\end_layout
+
+\end_inset
+
+ directory:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure61.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The default User model created by Hobo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo took care of building the User model and generating the database table
+ needed because we selected the “m” (generate and migrate) option for step
+ 6 of the Hobo Setup Wizard: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Initial Migration: [s]kip, [g]enerate migration file only, generate and
+ [m]igrate [s|g|m]: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Examine what Hobo created during the first “migration”.
+\end_layout
+
+\end_inset
+
+ In the following figure, you can see that the db directory is populated.
+ 
+\end_layout
+
+\begin_layout Standard
+a.
+ The file, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+development.sqllite3
+\end_layout
+
+\end_inset
+
+, is the database file.
+ 
+\end_layout
+
+\begin_layout Standard
+b.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<timestamp>_initial_migration.rb
+\end_layout
+
+\end_inset
+
+ file defines the database table that will be created when the migration
+ is executed.
+ 
+\end_layout
+
+\begin_layout Standard
+c.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+schema.rb
+\end_layout
+
+\end_inset
+
+ file shows the current database schema after all migration executions to
+ date.
+ In this case we have only created the user table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure62.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Contents of the first Hobo migration file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Take a look at the schema and you will see that it corresponds to the migration
+ file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure63.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Contents of the "schema.rb" file after the first migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: You can see that the User model does not display all the fields that
+ are implemented in the database.
+ Hobo does not expose all of the User fields but reserves them for its own
+ use.
+ All of the fields in other models will be reflected in the schema file.
+ <def tag= new-page> .....
+ </end> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Click on the “Logout” link and then click on the “Signup” link to create
+ another account.
+ In the example below we are creating another account for “John Smith”.
+ We will call this and all other accounts you create user accounts, because
+ by default they will not have administrative privileges.
+\end_layout
+
+\begin_layout Standard
+Log out of the user (e.g., John Smith) account you just created and login
+ using the account you created as administrator (e.g., Owen Dall) for now.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: You will use the user’s email address and password to log in, not
+ the user’s name.
+ Also, notice that in the upper right corner of your web page, there is
+ a drop down box that lets you automatically login to any of your accounts
+ without using the normal login page.
+ This speeds up testing permission customizations in development mode.
+ In production mode this option disappears.
+ More on switching modes later.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure64.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Drop down selector for the active user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+7.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Check the changes in the views/taglibs directory.
+\end_layout
+
+\end_inset
+
+ Notice that since you fired up your web server, there is now a change in
+ the taglibs directory.
+ There is a new branch called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/auto/rapid
+\end_layout
+
+\end_inset
+
+ and three files in that directory: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ We are going to show you a few things to pique your curiosity but we will
+ not cover how Hobo handles views in any detail until the intermediate tutorials.
+ We will just make a few high level comments here in case you know something
+ about Ruby on Rails and so you know what is coming.
+ 
+\end_layout
+
+\begin_layout Standard
+Familiarize yourself with the contents of these files.
+ You will see many lines that look similar to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag= new-page> 
+\end_layout
+
+\begin_layout LyX-Code
+.....
+ 
+\end_layout
+
+\begin_layout LyX-Code
+</end> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You will see mark-up in between the “def” and “end” tags.
+ The contents are what we have mentioned before as “tag definitions.” Hobo
+ uses them to construct view templates on the fly.
+ 
+\end_layout
+
+\begin_layout Standard
+These three files contain the libraries of tags that Hobo uses to construct
+ view templates.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure65.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Location of the Rapid templates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: When Hobo makes a web page, it takes tags from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file.
+ When it wants to construct a data entry form, tags in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file call tags in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+form.dryml
+\end_layout
+
+\end_inset
+
+ file.
+ When Hobo wants to list the records from a table, tags in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file call tags in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+ file.
+ Card tags define how individual database table records are rendered.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+(Actually, these files are a copy of what Hobo is doing on the fly behind
+ the scenes but it is easier to think of it in this way.) 
+\end_layout
+
+\begin_layout Plain Layout
+You will learn that you can edit and redefine the tags from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/rapid
+\end_layout
+
+\end_inset
+
+ directory.
+ When you want your changes to be available to the application, you can
+ either put the new tags in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file or create a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+taglibs/application
+\end_layout
+
+\end_inset
+
+ folder and save your tags to a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+taglibs/application/<filename>.dryml
+\end_layout
+
+\end_inset
+
+.
+ Any 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+dryml
+\end_layout
+
+\end_inset
+
+ file located in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+taglibs/application
+\end_layout
+
+\end_inset
+
+ directory will automatically loaded and its tags will be available application
+ wide.
+ When you want them to be available only in a particular view you can put
+ them in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+dryml
+\end_layout
+
+\end_inset
+
+ file under the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/<model>
+\end_layout
+
+\end_inset
+
+ directory named for the model.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+So far, we only have the front (home page) and the users template directories.
+ You will see after creating a new model (running hobo g resource or hobo
+ g model) and running hobo g migration, that directories will be created
+ and named for your new models.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+8.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create a new model and controller.
+\end_layout
+
+\end_inset
+
+ Let’s create a simple contacts model and see what Hobo does for us.
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+my-first-app> hobo g resource contact name:string company:string
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+This generator will create both a model and controller.
+ Execute it and then take a look at what has changed in your application
+ directories.
+ 
+\end_layout
+
+\begin_layout Standard
+You will see the new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+contacts_controller.rb
+\end_layout
+
+\end_inset
+
+ file in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/controllers
+\end_layout
+
+\end_inset
+
+ directory and the new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+contact.rb
+\end_layout
+
+\end_inset
+
+ file in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/models
+\end_layout
+
+\end_inset
+
+ directory.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Note: Unlike Hobo 1.0, a view template file is not created in the views/contacts
+ folder.
+ We will discuss later how the rapid taglibs in the /auto/rapid folder take
+ care of the default views for you).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure66.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Folder location for Models and Views 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+9.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Run a Hobo migration.
+\end_layout
+
+\end_inset
+
+ Before you run the migration, take a look at the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+contact.rb
+\end_layout
+
+\end_inset
+
+ model file.
+ We just want to review the relevant part for now.
+ The permissions part will be explained in a later tutorial.
+ 
+\end_layout
+
+\begin_layout Standard
+Here is the code that declares the fields that you want in your database
+ table that will be called 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+contacts
+\end_layout
+
+\end_inset
+
+.
+ When you ran 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g resource
+\end_layout
+
+\end_inset
+
+, it generated this code.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+class Contact < ActiveRecord::Base
+\end_layout
+
+\begin_layout LyX-Code
+hobo_model # Don't put anything above this 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+fields do 
+\end_layout
+
+\begin_layout LyX-Code
+     name :string 
+\end_layout
+
+\begin_layout LyX-Code
+     company :string timestamps
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When you run 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+, Hobo will take this declaration and create a migration file.
+ It will then in turn use the migration file to create the database table.
+ These two steps will be executed within a single Hobo migration.
+ You could do them separately but we will not do that here.
+ 
+\end_layout
+
+\begin_layout Standard
+Now run 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+ and observe what happens.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+my-first-app> hobo g migration 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Remember to select the ‘m’ option to both create and execute the migration
+ file.
+ Then hit return to accept the proposed name of the migration file.
+ 
+\end_layout
+
+\begin_layout Standard
+You will notice some changes now in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my-first-app/db directory
+\end_layout
+
+\end_inset
+
+ of your app.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure67.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Migration file changes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a new migration file and changes in your schema file as well.
+ The new migration file contains the following code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+def self.up 
+\end_layout
+
+\begin_layout LyX-Code
+   create_table :contacts do |t| 
+\end_layout
+
+\begin_layout LyX-Code
+      t.string :name 
+\end_layout
+
+\begin_layout LyX-Code
+      t.string :company 
+\end_layout
+
+\begin_layout LyX-Code
+      t.datetime :created_at 
+\end_layout
+
+\begin_layout LyX-Code
+      t.datetime :updated_at 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The schema file (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+schema.rb
+\end_layout
+
+\end_inset
+
+), reflecting this code, shows the current state of the database in the
+ db/schema file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+create_table "contacts", :force => true do |t| 
+\end_layout
+
+\begin_layout LyX-Code
+   t.string "name" 
+\end_layout
+
+\begin_layout LyX-Code
+   t.string "company" 
+\end_layout
+
+\begin_layout LyX-Code
+   t.datetime "created_at" 
+\end_layout
+
+\begin_layout LyX-Code
+   t.datetime "updated_at" 
+\end_layout
+
+\begin_layout LyX-Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now check out the application in your browser with the following URL after
+ running the command rails server
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure68.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Contacts tab on 
+\begin_inset Quotes eld
+\end_inset
+
+My First App
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now you have a new tab called “Contacts.” 
+\end_layout
+
+\begin_layout Standard
+10.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create some contacts.
+\end_layout
+
+\end_inset
+
+ Now you should be able to create a new contact by clicking the ‘New Contact’
+ link in the Contacts tab.
+ Go ahead and create a couple of new contacts to convince yourself that
+ the database entry actually works.
+ While you are at it also try editing a contact.
+ 
+\end_layout
+
+\begin_layout Standard
+So far, Hobo is doing a pretty decent job.
+ You have a usable UI, I/O capability for your contact model and a login
+ system and you have written no code.
+ 
+\end_layout
+
+\begin_layout Standard
+11.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Try out the search facility.
+\end_layout
+
+\end_inset
+
+ Type the name of one your contacts to exercise the search facility.
+ The default search searches “name” fields.
+ You need at lease three characters for a partial word search.
+ 
+\end_layout
+
+\begin_layout Standard
+12.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Add columns to the database.
+\end_layout
+
+\end_inset
+
+ Now we are going to add a couple more fields to the model and have hobo
+ add columns to the database.
+ In this and the following steps, you will get a sense for the power of
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+ generator.
+ Since we have already generated our model using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g resource
+\end_layout
+
+\end_inset
+
+, we do not have to do that again.
+ Go into the model and add some new fields.
+ Your code should now look like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class Contact < ActiveRecord::Base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+fields do 
+\end_layout
+
+\begin_layout LyX-Code
+  name :string 
+\end_layout
+
+\begin_layout LyX-Code
+  company :string 
+\end_layout
+
+\begin_layout LyX-Code
+  address_1 :string 
+\end_layout
+
+\begin_layout LyX-Code
+  address_2 :string 
+\end_layout
+
+\begin_layout LyX-Code
+  city :string 
+\end_layout
+
+\begin_layout LyX-Code
+  state :string 
+\end_layout
+
+\begin_layout LyX-Code
+  date_met :date 
+\end_layout
+
+\begin_layout LyX-Code
+  married :boolean 
+\end_layout
+
+\begin_layout LyX-Code
+  age :integer 
+\end_layout
+
+\begin_layout LyX-Code
+  notes :text
+\end_layout
+
+\begin_layout LyX-Code
+  timestamps 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Make sure you save your changes and run 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+.
+ Select the ‘m’ option and accept the default filename for the migration.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+my-first-app> hobo g migration 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser.
+ Go to the contacts tab and click ‘New Contact ’
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure69.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+New Contact page for 
+\begin_inset Quotes eld
+\end_inset
+
+My First App
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note what Hobo has done for you.
+ It determines which entry controls you need based on the type of field
+ you defined in your model.
+ It has one-line fields for strings, a set of three combo boxes for dates,
+ a one-line field for integers, a check box for boolean field, and a multi-line
+ box for text fields.
+ Later you will see that Hobo can provide the controls you need for multi-model
+ situations.
+ 
+\end_layout
+
+\begin_layout Standard
+Hobo has also provided reasonable names and styles from the field names.
+ It removed the underscore characters and appropriately capitalized words
+ to give the presentation a nice look and feel.
+ 
+\end_layout
+
+\begin_layout Standard
+13.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Remove columns from the database.
+\end_layout
+
+\end_inset
+
+ Now suppose you decide that you need only one address field and you decide
+ to remove the second one.
+ Go back to the Contact model and delete it (we just commented it out with
+ the # sign so you can see things clearer.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure70.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Remove field from contact model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class Contact < ActiveRecord::Base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+fields do 
+\end_layout
+
+\begin_layout LyX-Code
+  name :string 
+\end_layout
+
+\begin_layout LyX-Code
+  company :string 
+\end_layout
+
+\begin_layout LyX-Code
+  address_1 :string 
+\end_layout
+
+\begin_layout LyX-Code
+  #address_2:string 
+\end_layout
+
+\begin_layout LyX-Code
+  city :string 
+\end_layout
+
+\begin_layout LyX-Code
+  state :string 
+\end_layout
+
+\begin_layout LyX-Code
+  date_met :date 
+\end_layout
+
+\begin_layout LyX-Code
+  married :boolean 
+\end_layout
+
+\begin_layout LyX-Code
+  age :integer 
+\end_layout
+
+\begin_layout LyX-Code
+  notes :text 
+\end_layout
+
+\begin_layout LyX-Code
+  timestamps 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Run 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+ again.
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+my-first-app> hobo g migration
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Hobo notices that you have deleted a model field and responds in this way.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+CONFIRM DROP! column contacts.address_2 
+\end_layout
+
+\begin_layout LyX-Code
+Enter 'drop address_2' to confirm: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You respond by typing what it asks (without the quotes).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+CONFIRM DROP! column contacts.address_2 
+\end_layout
+
+\begin_layout LyX-Code
+Enter 'drop address_2' to confirm: drop address_2 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Complete the migration as you have learned above.
+ Then go check the db directory.
+ You will see another migration, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+*_hobo_migration_4.rb
+\end_layout
+
+\end_inset
+
+ with the following code.
+ (The asterisk (*) here stands for the time/date stamp that precedes the
+ rest of the migration file name.) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class HoboMigration4 < ActiveRecord::Migration 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+  def self.up 
+\end_layout
+
+\begin_layout LyX-Code
+    remove_column :contacts, :address_2 
+\end_layout
+
+\begin_layout LyX-Code
+  end
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  def self.down 
+\end_layout
+
+\begin_layout LyX-Code
+    add_column :contacts, :address_2, :string 
+\end_layout
+
+\begin_layout LyX-Code
+  end 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Check out the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+schema.rb
+\end_layout
+
+\end_inset
+
+ file now.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ActiveRecord::Schema.define(:version => 20090220154125) do
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+create_table "contacts", :force => true do |t| 
+\end_layout
+
+\begin_layout LyX-Code
+  t.string "name" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.string "company" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.datetime "created_at" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.datetime "updated_at" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.string "address_1" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.string "city" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.string "state" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.date "date_met" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.boolean "married" 
+\end_layout
+
+\begin_layout LyX-Code
+  t.integer “age” 
+\end_layout
+
+\begin_layout LyX-Code
+  t.text "notes" 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+You can see that address_2 is gone.
+\end_layout
+
+\begin_layout Standard
+14.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Adding and removing database tables.
+\end_layout
+
+\end_inset
+
+ You can also use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+ to remove (drop) a table.
+ Delete the model file and the associated helper and controller files.
+ Then run 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+.
+ You will be prompted to confirm that you wish to drop the table.
+ (If you neglect to delete the helper and controller file for this model
+ you will get an error.) 
+\end_layout
+
+\begin_layout Standard
+15.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Going back to earlier migrations.
+\end_layout
+
+\end_inset
+
+ Hobo does not provide this facility within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+.
+ You will need to use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+rake db:migrate VERSION = XXX
+\end_layout
+
+\end_inset
+
+ procedure.
+ You can roll back your tables but the rest of your changes will not be
+ synchronized so you will have to perform manual edits.
+ 
+\end_layout
+
+\begin_layout Section*
+Tutorial 2 – Changing Field Names
+\end_layout
+
+\begin_layout Standard
+We are going to continue from the previous tutorial and show you how to
+ do rename fields in a couple of different ways and improve your UI with
+ hints about what to enter in a particular field.
+ Topics Two ways of changing field names displayed Displaying data entry
+ hints Changing field sizes: Hobo does not provide this facility now.
+ Tutorial Application: my-first-app Steps 1.
+ Rename a database column.
+ In Tutorial 1, we showed you how to make changes to your database by editing
+ the model file.
+ You can rename a field and database column in the same way.
+ We will try this with the married field.
+ Go to your contacts.rb file and rename married to married_now and run the
+ hobo g migration.
+ class Contact < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do name :string company :string address_1 :string #address_2 :string
+ city :string state :string date_met :date #married :boolean married_now
+ :Boolean age :integer notes :text timestamps end
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+my-first-app> hobo g migration Hobo should now respond: DROP, RENAME or
+ KEEP?: column contacts.married Rename choices: married_now Enter either
+ 'drop married' or one of the rename choices or press enter to keep: Hobo
+ is trying to confirm that what you really want to do is rename the column
+ and not drop it.
+ Enter married_now to rename.
+ Check your schema.db file and you will see that the column has been renamed.
+ The KEEP option is a safety option in case you mistakenly renamed the column,
+ Note: Do not use question marks (?) in field names.
+ You will get an error.
+ Refresh your browser and you will now see the field labeled ‘Married Now.’
+ 2.
+ Changing field names.
+ There is no need to change the name of a field or column if all you wish
+ to do is to change the name of a label in the user interface.
+ Hobo provides this as part of its new Internationalization (i18n) module.
+ This i18n module is very versatile and can be used for providing field/model
+ renaming capabilities up to full multi-lingual support for your application.
+ The i18n module is comprised of .yml files that reside in the config/locales
+ directory; if you look in the directory you will see these files: app.en.yml
+ (or app.<locale>.yml) hobo.en.yml (or hobo.<locale>.yml) For this tutorial we
+ will assume that english (en) was specified as the default locale.
+ The hobo.en.yml file contains all the strings that the hobo framework uses,
+ while application specific strings are stored in the app.en.yml file.
+ We will modify the app.en.yml file to rename a couple of fields in the Contact
+ model.
+ When you open the config/locales/app.en.yml file, you will see:
+\end_layout
+
+\begin_layout Standard
+Figure 44: Default config/locales/app.en.yml File
+\end_layout
+
+\begin_layout Standard
+The commented yaml code is very useful in understanding how to setup your
+ locale file.
+ Our goal is to rename the name and address_1 fields of the Contact model.
+ To do this, add the illustrated code to the file:
+\end_layout
+
+\begin_layout Standard
+Figure 45: app.en.yml File with Fields Renamed As shown above, to declare
+ new names for model fields in the app.en.yml file, the following pattern
+ must be followed: activerecord: attributes: <model1>: <field1>: Label/Rename
+ <field2>: Label/Rename …
+\end_layout
+
+\begin_layout Standard
+<model2>: <field1>: Label/Rename <field2>: Label/Rename …
+\end_layout
+
+\begin_layout Standard
+Note: Indentation and spacing is very important when working with yml files;
+ the activerecord: line must start with 2 spaces.
+ Refresh your browser and you should see the fields relabeled with your
+ choices from above.
+ Notice that a migration is not necessary for any changes made using the
+ i18n module.
+\end_layout
+
+\begin_layout Standard
+3.
+ Using the i18n module to suggest field uses.
+ The application locale (app.en.yml) file also provides the facility to provide
+ a suggestion below the field on what to enter into it.
+ Edit your app.en.yml file to look like this.
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser and you will see hints on the field use in a small
+ font below:
+\end_layout
+
+\begin_layout Standard
+Note: In the Intermediate tutorials you will also learn how to use yet another
+ way to manipulate the labels on a web page by using Hobo’s view markup
+ language called DRYML (Don’t Repeat Yourself Markup Language).
+ DRYML is used by the Rapid UI generator that creates much of Hobo’s magic.
+ 4.
+ Changing field sizes.
+ As of the latest version of Hobo, the way to change the field length on
+ an input form is to add an entry to application.css that will override any
+ other reference to the element you wish to modify.
+ Look for the relevant class definition used by Hobo’s “Rapid” UI generator:
+ rapid-ui.css, located at: /public/hobothemes/clean/stylesheets/rapid-ui.css
+\end_layout
+
+\begin_layout Standard
+Figure 49: CSS definitions for the input text fields
+\end_layout
+
+\begin_layout Standard
+Figure 50: Modified entry in "application.css" to shorten text prompts Tutorial
+ 3 – Field Validation
+\end_layout
+
+\begin_layout Standard
+You will be introduced to a couple of ways of validating data entry fields.
+ This is a capability that is derived from what are called Rails helper
+ methods.
+ There are a couple of enhancements Hobo has made for the most common need.
+ Topics Field validation using Hobo’s enhancements Field validation using
+ Rails helper methods Validation on save, create and update processes
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: my-first-app
+\end_layout
+
+\begin_layout Standard
+1.
+ Make sure data is entered.
+ Open up the model contact.rb file.
+ Add the following code to the “name” field definition name :string, :required
+ This is the simplified version that Hobo provides.
+ To do this in the “normal” rails way, you would need to add this line after
+ the “fields/do” block: validates_presence_of :name (The difference in the
+ two is a matter of taste, but the former seems “DRYer” to us.) By default
+ Hobo will provide a message if a user fails to enter data.
+ Try it out by trying to create a contact record with no data in it.
+ Click the Contacts tab and then New Contact.
+ Without entering anything in the form, click Create Contact.
+\end_layout
+
+\begin_layout Standard
+2.
+ Validate multiple fields.
+ In order to validate multiple fields, add the “:required” label to another
+ field: address_1 :string, :required
+\end_layout
+
+\begin_layout Standard
+Click the Contacts tab and then New Contact.
+ Without entering anything in the form, click Create Contact.
+\end_layout
+
+\begin_layout Standard
+Notice the “declarative” nature of this validation.
+ All you need to do is use the label “:required” for the name and address_1
+ fields and Hobo takes care of all of the logic associated with validation
+ and delivering error messages.
+ Now let’s try some other validations.
+ 3.
+ Make sure the integer field contains a number.
+ Add this validation to the “age” field after the “fields do/end” block:
+ validates_numericality_of :age
+\end_layout
+
+\begin_layout Standard
+Now try this out by entering the text “old” in the age field.
+ (Also put something in the name and address_1 fields so you won’t trip
+ the validations we put into place earlier in the tutorial.)
+\end_layout
+
+\begin_layout Standard
+Figure 54: Page view of triggering the "validates_numericality_of" error
+\end_layout
+
+\begin_layout Standard
+Note: When you cause a validation error for integer, Hobo/Rails replaces
+ what you entered with a zero (0).
+ If the validation rule was not there, the text will be replaced by a zero,
+ but the validation error will not be displayed.
+ 4.
+ Prevent the entry of duplicates.
+ Use the following code to prevent a user from entering code that duplicates
+ an existing record with a column value that is the same as the new record.
+ name :string, :required, :unique
+\end_layout
+
+\begin_layout Standard
+Note: This particular validation will only verify that there is no existing
+ record with the same field value at the time of validation.
+ In a multi-user application, there is still a chance that records could
+ be entered nearly at the same time resulting in a duplicate entry.
+ The most reliable way to enforce uniqueness is with a database-level constraint.
+ 5.
+ Including and excluding values.
+ Now suppose we wish to exclude people who have an age between 0 and 17,
+ and include people under 65 years of age.
+ Try the following code after the “fields do/end” block: validates_inclusion_of
+ :age, :in => 18..65, :message => "Must be between 18 and 65"
+\end_layout
+
+\begin_layout Standard
+6.
+ Validate length of entry.
+ Suppose you wish to check the length of a string entry.
+ You can specify a length range in the following way.
+ validates_length_of :name, :within => 2..20, :too_long => "pick a shorter
+ name", :too_short => "pick a longer name" Try to enter a one-character
+ name.
+ You will get the following response: 7.
+ Validate acceptance.
+ If you wish to get the user to accept a contract, for example, you can
+ use the following validation code.
+ Assume you have a Boolean variable named contract_agree, which would show
+ up in the UI as a checkbox.
+ validates_acceptance_of :contract_agree, :accept => true Hobo will generate
+ an error if the contract_agree check box is not checked setting the value
+ to 1.
+\end_layout
+
+\begin_layout Standard
+8.
+ Summary.
+ Here is the list of validations we accumulated during this tutorial: address_1
+ :string, :required name :string, :required, :unique
+\end_layout
+
+\begin_layout Standard
+validates_numericality_of :age
+\end_layout
+
+\begin_layout Standard
+validates_acceptance_of :contract_agree, :accept => true
+\end_layout
+
+\begin_layout Standard
+validates_length_of :name, :within => 2..20, :too_long => "pick a shorter
+ name", :too_short => "pick a longer name" 
+\end_layout
+
+\begin_layout Standard
+validates_inclusion_of :age, :in => 18..65, :message => "Must be between 18
+ and 65"
+\end_layout
+
+\begin_layout Standard
+There are several other very useful validation functions provided by Rails,
+ and the ones that we have shown you above have many other options.
+ These functions can provide very sophisticated business rule execution.
+ For example, the following is a sample of the list of options for the validates
+_length_of and validates_size_of (synonym) declarative expressions: :minimum
+ - The minimum size of the attribute.
+ :maximum - The maximum size of the attribute.
+ :is - The exact size of the attribute.
+ :within - A range specifying the minimum and maximum size of the attribute.
+ :in - A synonym(or alias) for :within.
+ :allow_nil - Attribute may be nil; skip validation.
+ :allow_blank - Attribute may be blank; skip validation.
+ :too_long - The error message if the attribute goes over the maximum (default
+ is: "is too long (maximum is {{count}} characters)").
+ :too_short - The error message if the attribute goes under the minimum
+ (default is: "is too short (min is {{count}} characters)").
+ :wrong_length - The error message if using the :is method and the attribute
+ is the wrong size (default is: "is the wrong length (should be {{count}}
+ characters)").
+ :message - The error message to use for a :minimum, :maximum, or :is violation.
+ An alias of the appropriate too_long/too_short/wrong_length message.
+ :on - Specifies when this validation is active (default is :save, other
+ options :create, :update).
+ :if - Specifies a method, procedure, or string to call to determine if
+ the validation should occur: :if => :allow_validation The method, procedure,
+ or string should return or evaluate to a true or false value.
+ :unless - Specifies a method, procedure or string to call to determine
+ if the validation should not occur: :unless => :skip_validation The method,
+ procedure, or string should return or evaluate to a true or false value.
+ We encourage you to read about validation helpers (what Rails calls functions)
+ in the many good Ruby on Rails references.
+ The following is a useful on-line reference: http://api.rubyonrails.org/classes/A
+ctiveRecord/Validations/ClassMethods.html Tutorial 4 – Permissions 
+\end_layout
+
+\begin_layout Standard
+In this tutorial you will learn some elementary aspects of Hobo’s permission
+ system by changing what the admin user and users can do.
+ Specifically, you will determine whether a user is permitted to view, create,
+ edit or delete records in the database.
+ Topics Experiment with altering user permissions.
+ Naming conventions for database tables, models, controllers and views.
+ Tutorial Application: one_table Steps 1.
+ Create the Hobo application.
+ Create the one_table Hobo application by issuing the following command
+ at the command prompt.
+ By adding the --setup command line parameter the application will bypass
+ the setup wizard and create the application with default settings, Then
+ change directory to the subdirectory one_table: 
+\backslash
+tutorials> hobo new one_table --setup 
+\backslash
+tutorials> cd one_table 
+\backslash
+one_table> Recall from Tutorial 1 that this sets up the Hobo directory tree
+ and the user model and controller.
+ Note: Look at the file 
+\backslash
+one_table
+\backslash
+app
+\backslash
+models
+\backslash
+user.rb and at the database schema file 
+\backslash
+one_table
+\backslash
+db
+\backslash
+schema.rb.
+ There are more fields in the users table than in the user model.
+ This is because Hobo creates several user model fields for you automatically.
+ This will not be the case for models you create.
+ 3.
+ Start the web server.
+ Open a new command prompt and navigate to the 
+\backslash
+tutorials
+\backslash
+one_table directory.
+ Fire up your web server by issuing the following command.
+ 
+\backslash
+one_table> rails server 4.
+ Initiate the web application.
+ Enter the local URL for the application in your browser’s URL window: http://lo
+calhost:3000/
+\end_layout
+
+\begin_layout Standard
+You should now see the following displayed on your browser.
+\end_layout
+
+\begin_layout Standard
+5.
+ Create user accounts.
+ You will need a couple of accounts to exercise the functions of the One
+ Table application.
+ Let’s do this now like you did in Tutorial 1.
+ Click Register Administrator to create the administrator account.
+ We refer to this account as the admin account.
+ Logout and create a second account.
+ We will refer to this second account as the user account in the following
+ tutorials.
+ By default, the user account does not have administrative privileges.
+ Later in the tutorial, you will learn to customize the default permission
+ features.
+ Log out of the user account and login to the admin account for now.
+ Remember that you will use the admin email address and password to login,
+ not the name.
+ 6.
+ Create the recipe model.
+ Next create a model using the hobo:resource generator, which will be called
+ Recipe.
+ It will contain three fields: title, body and country.
+ We will complete this step by rerunning the Hobo migration from Step 3.
+ This will take the model definitions and create a migration file and the
+ database table recipes.
+ 
+\backslash
+one_table> hobo g resource recipe title:string body:text country:string
+ This generator created a recipe.rb model from which the hobo:migration generator
+ will create a migration file and a database table.
+ Note: When we talk about a model’s name we are referring to its Ruby Class
+ name that can be found at the top of the file.
+ It also created the recipes_controller.rb controller, the recipes_helper.rb
+ helper file, and recipes view folder.
+ Run the hobo:migration generator: 
+\backslash
+one_table> hobo g migration
+\end_layout
+
+\begin_layout Standard
+IMPORTANT: Hobo is different from Rails in that the migration file and database
+ table are both the result of the hobo:migration generator.
+ In Rails, generators typically create both models AND migration files but
+ NOT database tables.
+ Refresh your browser and you should see a Recipes tab added.
+ 
+\end_layout
+
+\begin_layout Standard
+7.
+ Confirm your login info.
+ Make sure you are logged in as the administrator.
+ As long as you are logged in, you should see the “New Recipe” link on the
+ left.
+ Create three recipes and take care to add info in all three fields.
+ You can create them either from the Home or Recipes tab.
+ The finished recipes should be displayed in both the Home tab and the Recipes
+ tab automatically.
+ You can click on any of the names of the recipes to edit them.
+ Try it out.
+\end_layout
+
+\begin_layout Standard
+Figure 61: Page view of created recipes 8.
+ Login as a user.
+ Sign out of the admin account and sign in as another.
+ Note that you can still see the recipe title.
+ Now, you can click on the recipe title and view the entire recipe record
+ but you cannot create or edit a recipe.
+ This is governed by the Hobo “Permissions” module.
+ In the next step, you will change the user permissions and see how the
+ user interface responds by automatically providing creation and editing
+ capabilities in the user interface.
+ 9.
+ Edit permissions: Take a look at the recipe.rb model file.
+ # --- Permissions --- #
+\end_layout
+
+\begin_layout Standard
+def create_permitted? acting_user.administrator? end
+\end_layout
+
+\begin_layout Standard
+def update_permitted? acting_user.administrator? end
+\end_layout
+
+\begin_layout Standard
+def destroy_permitted? acting_user.administrator? end
+\end_layout
+
+\begin_layout Standard
+def view_permitted?(field) true end There are four methods that define the
+ basic permission system: create_permitted?, update_permitted?, destroy_permitte
+d? and view_permitted?.
+ In exercising the permission system, you are editing Ruby code.
+ The permission methods are defined within Hobo.
+ Each method evaluates a boolean-valued variable (actually a method on an
+ object) that indicates whether the named action is allowed or not allowed.
+ Method Refers to permission to: create_permitted? create a record update_permit
+ted? edit a record destroy_permitted? delete a record View_permitted?(field)
+ view a record or field Figure 62: Table of Hobo permission methods For
+ the code that is generated by the hobo:resource generator, the method is
+ checking whether the acting user, which is the user that is signed on,
+ is or is not the administrator.
+ In practice though, the boolean value may ask another question or a more
+ complex question.
+ For example, one could write a line of Ruby code that determined if the
+ signed on user was the admin AND the time was between 8:00 AM and 5:00
+ PM.
+ In other words, there can be other logical determinations but you have
+ to know a little Ruby.
+ acting_user method Meaning administrator? first user to sign up signed_up?
+ any user who is signed up (including the administrator) guest? any user
+ who is not signed up Figure 63: Table of Hobo "acting_user" options For
+ these tutorials, we will use the acting_user object and its methods: administra
+tor?, signed_up?, and guest?.
+ Hobo encodes information about the user of its applications in the active_user
+ object that determines if the user is an administrator, other signed up
+ user or a guest user.
+ For example, acting_user.administrator? equals ‘1’ if the user is the administra
+tor and ‘0’ if the user is not.
+ If we place it within the create_permitted? method, Hobo only permits users
+ who are administrators to create database records related to the model
+ containing the method.
+ Note: The ‘?’ after signed up indicates the method is a Boolean method.
+ The meaning of the default permissions code can be summarized simply now.
+ Only the administrator is permitted to create, update or destroy records
+ and anyone can view records.
+ Using the view_permitted? method is a little more involved so we will wait
+ until the intermediate tutorials to tell you about it.
+ Before trying this out, it is useful to understand how Hobo implements
+ these permissions within Hobo’s UI.
+ Yes, Hobo not only provides the facility to set permissions but it also
+ takes care of providing the right links and controls within the UI.
+ When there is no create permission, there is no “Create a New {model_name}
+ ” link.
+ When there is no update permission, there is no edit link and no way to
+ populate a form with an existing record.
+ When there is no destroy permission, there is no “Remove this Record?”
+ link.
+ This will make more sense when you learn about controller actions in the
+ next tutorial.
+ Hobo permissions essentially turn controller actions (what users do in
+ the UI) on or off depending on defined logical conditions.
+ Let’s try something out now.
+ As of now in your code, users who are not the admin can only view the records
+ entered by the administrator.
+ The user has no create, edit or delete permission; these options do not
+ appear in the user interface.
+ Now let’s make a minor change and see how the UI responds.
+ CHANGE: def create_permitted? acting_user.administrator? end TO: def create_perm
+itted? acting_user.signed_up? end Update your browser and you will see the
+ New Recipe link appear at the bottom of both the Home and Recipes tabs.
+ Now do the following:
+\end_layout
+
+\begin_layout Standard
+CHANGE: def update_permitted? acting_user.administrator? end
+\end_layout
+
+\begin_layout Standard
+def destroy_permitted? acting_user.administrator? end TO: def update_permitted?
+ acting_user.signed_up? end
+\end_layout
+
+\begin_layout Standard
+def destroy_permitted? acting_user.signed_up? end Click a recipe title.
+ On the right hand side of the screen showing the record, you will see an
+ Edit Recipe link now indicating editing permission.
+ Click this edit link and you will now see a full editing page as well as
+ a Remove This Recipe delete link in the upper right of the page.
+\end_layout
+
+\begin_layout Standard
+Try changing all of the signed_up? methods to guest and you will observe
+ that you have full permissions even if you are not signed in.
+ Complete the tutorial by putting back all three methods to signed_up?.
+ Tutorial 5 – Controllers
+\end_layout
+
+\begin_layout Standard
+Topics Introduce Hobo’s controller/routing system.
+ Hobo automatic actions Show examples of the permission system working with
+ controllers Tutorial Application: one_table 
+\end_layout
+
+\begin_layout Standard
+Steps 1.
+ Demonstrate controller actions.
+ Hobo has a set of built in actions for responding to user-initiated requests
+ from browser actions (clicks).
+ For example, when Hobo displayed the Recipes in Tutorial 3, it is the result
+ of the index action found in the /app/controllers/recipes_controller.rb
+ file.
+ Open this file.
+ Note: Recall that controller and model files contain Ruby code whereas
+ view templates contain HTML with embedded Ruby code.
+\end_layout
+
+\begin_layout Standard
+class RecipesController < ApplicationController hobo_model_controller
+\end_layout
+
+\begin_layout Standard
+auto_actions :all end There is not much you can see--but there is a lot
+ going on behind the scenes.
+ The first line is similar to the first line of the Recipe model we told
+ you about in Tutorial 1.
+ It indicates that the RecipesController is part of the Rails ApplicationControl
+ler and inherits general capabilities from this master controller.
+ The next line, hobo_model_controller, tells Rails to use Hobo’s controller
+ functionality to control the Recipe model and views.
+ It is actually short for: #Do not copy - although it won’t change anything
+ if you do.
+ hobo_model_controller Recipe Hobo automatically infers the model name from
+ the controller name in the first line above.
+ Note: The pound (or “hash”) character (#) is the symbol to indicate a Ruby
+ comment.
+ Everything on a line following # will be ignored by Ruby.
+ Code starts again on the next line.
+ To create view template comments, where you are not in a Ruby file you
+ must surround comments like this <!--Comment-->.
+ The next line, auto_actions :all, makes all the standard actions available
+ to the controller including: index (meaning “list”), show, new, create,
+ edit, update, and destroy (meaning “delete”).
+ If you are familiar with Rails, you will realize that Hobo has replaced
+ quite a bit of Rails code in these two lines.
+ 2.
+ Edit the auto_actions.
+ Clicking the Recipes tab in your app invokes the index action of the Recipes
+ controller.
+ The index action of the controller tells Hobo to list the records of the
+ model.
+ You probably noticed this as you created new records.
+ Each time you created a new one, you probably clicked on the tab to see
+ a list of all the records you created.
+ Now notice something else that you will learn to be important.
+ When you click on the Recipes tab, the URL that is displayed in the URL
+ window says: http://localhost:3000/recipes As you learn about the functions
+ of the fundamental Hobo actions (listed in Step 1 above), you will learn
+ that there is a unique URL entirely specified by the action and model name.
+ Look at figure earlier in this book about “Actions and Routes”, and you
+ will see the URL for an index action is the base URL, http://localhost:3000/
+ concatenated with the plural of the model name, which in this case is “recipes”.
+ We are going to further demonstrate that attempting to route to this URL
+ invokes the index action by turning off the action in Hobo and then putting
+ turning it back on.
+ First go to your home page by clicking the Home tab.
+ Then, in recipes_controller.rb, CHANGE: class RecipesController < ApplicationCon
+troller
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :all
+\end_layout
+
+\begin_layout Standard
+end TO: class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :all, :except => :index
+\end_layout
+
+\begin_layout Standard
+end The except clause in this code tells the controller to turn off the
+ index action.
+ Refresh your browser and you should see this display:
+\end_layout
+
+\begin_layout Standard
+Your Recipes tab disappeared.
+ You can also try invoking the index action by typing http://localhost:3000/reci
+pes into your URL window.
+ You will get a blank page.
+ Hobo will no longer invoke the index action because you told it not to
+ in your code.
+ Hobo decided to do more though; it changed the UI also.
+ In Tutorial 3, you learned that Hobo figures out how your UI should look
+ depending on your model code.
+ There it changed what links were available depending on permissions you
+ specified in the code.
+ In this case, Hobo figures out how to change the UI depending on the controller
+ code.
+ Here it has removed a tab, the Recipes tab, because you disallowed the
+ action that it would invoke.
+ Now remove the except clause and you should get your Recipes tab back.
+ Note: If you are new to Ruby you are probably noticing all the colons(:)
+ and arrows (=>).
+ For now.
+ Think of these two as a way of connecting a Ruby symbol (any text that
+ begins with a colon) to a value (the entity after the expression “=>”).
+ We recommend a companion book such as Peter Cooper’s “Beginning Ruby: From
+ Novice to Professional” to learn more about Ruby symbols and their importance.
+ Now turn the index action back on by deleting the :except clause.
+ class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller
+\end_layout
+
+\begin_layout Standard
+auto_actions :all end 3.
+ Remove and restore the new and show actions.
+ Hobo allows you to edit this in two ways.
+ You can either stipulate you want all except certain actions or that you
+ want only specific actions.
+ In other words, you can either indicate which actions you wish to include
+ or indicate which actions you wish to exclude.
+ The former is what you did in step three.
+ Let’s try the latter where you declare which actions you want.
+ The following code will do exactly what you did before but in a different
+ way.
+ First, use the following code to include all seven actions, including the
+ index action.
+ This code is equivalent to the auto_actions :all statement above.
+ class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :index, :show, :new, :create, :edit, :update, :destroy
+\end_layout
+
+\begin_layout Standard
+end Try removing the index action.
+ When you save your code and refresh your browser, you will obtain the same
+ result using the :except => index code.
+ Now put back the index action and try removing the :new option.
+ class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :index, :show, :create, :edit, :update, :destroy
+\end_layout
+
+\begin_layout Standard
+end The result is that the New Recipe link to http://localhost:3000/recipes/new,
+ the URL associated with the new action disappears.
+ This is because you have disallowed the new action and Hobo takes care
+ of cleaning up your UI for you.
+ Even if you try to go to that URL by typing http://localhost:3000/recipes/new
+ into the browser, Hobo tells you that you can no longer go there.
+\end_layout
+
+\begin_layout Standard
+Put the :new action back in and click the Recipes tab.
+ Mouse over the Recipe links and note that the URL’s look like, http://localhost
+:3000/recipes/2-omelette which are of the form http://localhost:3000/model(plura
+l)/ID-model_name_variable which is the form that we discussed earlier in
+ this tutorial for the show action.
+ Note: Hobo assigns a name variable to the model equal to the value of the
+ field it thinks is the most likely summary field.
+ Hobo first looks for a field called name.
+ Next it looks for the next most likely, which in this case it guesses is
+ title.
+ You can override the automatic name assignment by adding the option :name
+ => true to the field you would like displayed as the “name”.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 67: How Hobo finds the default "name" attribute for a model You can
+ also use a little “Hobo magic” to create your own version of name using
+ a Ruby method as below:
+\end_layout
+
+\begin_layout Standard
+Figure 68: Creating your own custom "name" attribute
+\end_layout
+
+\begin_layout Standard
+Figure 69: Page view of the custom name attribute
+\end_layout
+
+\begin_layout Standard
+Now back to our original train of thought…Remove the :show action.: class
+ RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :index, :new, :create, :edit, :update, :destroy
+\end_layout
+
+\begin_layout Standard
+end Now when you refresh your browser you will note that you no longer have
+ links to show(display) the details of a particular Recipe record.
+ Even if you try to navigate your browser to http://localhost:3000/recipes/2-ome
+lette, you will get an error.
+ Now let’s try one more but using the except version of auto_actions again
+ but first make sure you are back to the all actions state.
+ Use the code below.
+ class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :all
+\end_layout
+
+\begin_layout Standard
+end Navigate to the Recipes link where you should now see a list of hyperlinks
+ to each recipe.
+ Click on a recipe.
+\end_layout
+
+\begin_layout Standard
+Observe the Edit Recipe link on the right hand side of the display.
+ Click or mouse over it to convince yourself that the URL associated with
+ this link is: http://localhost:3000/recipes/6-hamburger/edit This is just
+ the result you would expect for the edit action of the form: http://localhost:3
+000/model(plural)/ID-model_name_variable/edit Now make sure you are on the
+ screen above, a particular Recipe.
+ Edit your code to remove the edit action.
+ class RecipesController < ApplicationController hobo_model_controller auto_acti
+ons :all, :except => :edit end Now you should see that Hobo removes the
+ links to the edit action and even if you try to force Hobo to go to the
+ above URL, it will not, giving you an error:
+\end_layout
+
+\begin_layout Standard
+1.
+ Remove multiple actions.
+ So far we have showed you how to remove one action at a time.
+ You can use the two methods we have showed you to remove two or more actions
+ at a time.
+ If you use the listing approach and you are starting with all the actions
+ as in: class RecipesController < ApplicationController 
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller auto_actions :index, :show, :new, :create, :edit,
+ :update, :destroy
+\end_layout
+
+\begin_layout Standard
+end If you want to remove both the new and the create actions, just delete
+ them from your list so that you have: class RecipesController < ApplicationCont
+roller
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :index, :show, :edit, :update, :destroy
+\end_layout
+
+\begin_layout Standard
+end If you start be specifying all actions and use the except clause, the
+ equivalent code to the above will be: class RecipesController < ApplicationCont
+roller
+\end_layout
+
+\begin_layout Standard
+hobo_model_controller 
+\end_layout
+
+\begin_layout Standard
+auto_actions :all, :except => [:new, :create]
+\end_layout
+
+\begin_layout Standard
+end
+\end_layout
+
+\begin_layout Standard
+Note: When removing the :new action, this actually adds a 'New' facility
+ below the list of Recipes.
+ When you remove the :show action, Hobo places an 'Edit' link against each
+ listed item.
+\end_layout
+
+\begin_layout Standard
+You may be wondering why the :except option encloses the list of actions
+ in square brackets and the listing approach does not.
+ The Ruby :except method takes a Ruby array as an input and Ruby arrays
+ are enclosed in square brackets.
+ 5.
+ Using controller short cuts.
+ There is one other way to add or remove controller actions and that is
+ through the use of short cuts.
+ The code: auto_actions :read_only is the same as: auto_actions :index,
+ :show The code: auto_actions :write_only is the same as: auto_actions :create,
+ :update, :destroy
+\end_layout
+
+\begin_layout Standard
+Note: You can append actions or use the except actions clause with either
+ of these short cuts.
+ The proviso is that you must use the shortcut first and [use only one]
+ and use the except clause last.
+\end_layout
+
+\begin_layout Standard
+6.
+ Hobo Controller action summary.
+ Below is a list of all controller actions Action Summary Meaning URL Mapping
+ Example (model - recipe) index display list of records /base/model(plural)
+ /base/recipes show display a single record /base/model(plural)/ID-name
+ /base/recipes/2-omelette new allocate memory for a new record and open
+ a form to hold it.
+ /base/model(plural)/ID-name /base/recipes/new create save the new record.
+ link without landing /base/recipes edit retrieve a record from the database
+ and display it in a form /base/model(plural)/ID-name/edit /base/recipes
+ update save the contents of an edited record lands on show /base/recipes
+ destroy delete the record lands on index /base/recipes Figure 72: Hobo
+ Controller action summary Tutorial 6 – Navigation Tabs
+\end_layout
+
+\begin_layout Standard
+This tutorial provides an introduction to Hobo’s automatically generated
+ tags.
+ We will start with the navigation tabs that are generated for each mode.
+ We will show you where to find them and how to make a simple edit to change
+ how navigation tabs are displayed.
+ We will explore this more deeply in Chapter 4.
+ Topics Locate Rapid directories Edit the navigation tab Tutorial Application:
+ one_table Steps 1.
+ Find Hobo’s auto-generated tags.
+ Open up the views directory and navigate to the rapid directory by following
+ this tree: views/taglibs/auto/rapid.
+ You will see three files called: pages.dryml, forms.dryml, and cards.dryml.
+ It is here that Hobo keeps its default definition of the tags its uses
+ to generate view templates.
+ 2.
+ Open the pages.dryml.
+ file.
+ Take a quick look through this file and you will see tag definitions such
+ as: <def tag="main-nav"> .
+ .
+ .
+ <def tag="index-page" for="Recipe"> <def tag="new-page" for="Recipe"> <def
+ tag="show-page" for="Recipe"> <def tag="edit-page" for="Recipe"> Notice
+ how, except for the <main-nav> tag these correspond to the actions of Hobo
+ Controller action summary above in Tutorial 5.
+ You will further note that these are just the actions that require a view
+ (remember index means list).
+ The other actions, create, update, and destroy only needed a hyperlink.
+ We are only mentioning this now to pique your curiosity for Chapter 4 where
+ you will delve deeply into Hobo’s way of creating and editing view templates.
+ 3.
+ Edit the <main-nav> tag.
+ Copy the following code and paste it into your views/taglibs/application.dryml
+ file.
+ Hobo automatically uses code in this file instead of what it finds in pages.drym
+l.
+ In other words, application.dryml overrides pages.dryml and further makes
+ it available to the entire application.
+ <def tag="main-nav"> <navigation class="main-nav" merge-attrs param="default">
+ <nav-item href="#{base_url}/">Home</nav-item> <nav-item with="&Recipe"><ht
+ key="recipe.nav_item" count="100"><model-name-human count="100"/></ht></nav-item
+> </navigation> </def> 5.
+ Rename a Navigation Tab.
+ By convention, Hobo names tabs, other than the Home tab with the plural
+ of the model name.
+ In this case, that is ‘Recipes’ Let’s try renaming this to ‘My Recipes’.
+ There are a couple of ways to do this: Use Hobo’s i18n module to specify
+ a new value for the recipe.nav_item key Override the main-nav tag in application.
+dryml and rewrite it to specify ‘My Recipes’ as the Recipe tab label The
+ preferred way of doing this is the first option and specify a new value
+ for the recipe.nav_item key, the reason for this is that this maintains
+ the application’s ability to handle multiple languages.
+ If we overrode the main-nav tag in application.dryml, this would be a ‘hard-code
+d’ solution and would always show ‘My Recipes’ regardless of the current
+ locale/language.
+ Just add the following to your config/locales/app.en.yml file: en: recipe:
+ nav_item: "My Recipes" Refresh your browser and you will see a renamed
+ tab:
+\end_layout
+
+\begin_layout Standard
+6.
+ Remove the Home Tab.
+ Instead of deleting the Home tab, just comment it out by surrounding it
+ with <!-- ...-->.
+ Note: Since view files are essentially HTML and not Ruby code, you use
+ the HTML commenting syntax instead of the Ruby comment syntax.
+\end_layout
+
+\begin_layout Standard
+<def tag="main-nav"> <navigation class="main-nav" merge-attrs> <!--<nav-item
+ href="#{base_url}/">Home</nav-item>--> <nav-item with="&Recipe"><ht key="recipe.
+nav_item" count="100"><model-name-human count="100"/></ht></nav-item> </navigati
+on> </def>
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser and you will see the Home tab has been removed:
+\end_layout
+
+\begin_layout Standard
+7.
+ Reset the tabs.
+ Since editing the application.dryml file will interfere with future tutorials,
+ delete the code you copied above.
+ <def tag="main-nav"> <navigation class="main-nav" merge-attrs> <!--<nav-item
+ href="#{base_url}/">Home</nav-item>--> <nav-item with="&Recipe"><ht key="recipe.
+nav_item" count="100"><model-name-human count="100"/></ht></nav-item> </navigati
+on> </def>
+\end_layout
+
+\begin_layout Standard
+Tutorial 7 – Model Relationships: Part 1 
+\end_layout
+
+\begin_layout Standard
+You will learn how to create a new model that is related to another table.
+ You will replace one of your table’s original fields with a key that is
+ linked to a foreign key in order to select values.
+ You will see how Hobo automatically creates a drop-down control to select
+ values that you have entered.
+ You will also make some controller action edits [and some permissions changes]
+ to refine the user interface.
+ More specifically, you will add a new model to hold the names of countries
+ that a user will select from the New Recipe page.
+ The application will identify the foreign key for that country and place
+ it in the recipes table.
+ Topics Model relationships Foreign keys Drop-down list boxes
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: one_table Steps
+\end_layout
+
+\begin_layout Standard
+1.
+ Copy the Application.
+ If you would like to preserve your application in its state as of the end
+ of Tutorial 6, you may wish to copy the application and work on the new
+ version.
+ Copy the entire application directory and paste it into a folder called
+ two_table in your tutorials directory.
+ To change the application name, make the following change to config/application.
+rb: Figure 75: Changing the Application Name Shut down the web server by
+ issuing a <control-c> in the command window where you issued the rails
+ server command.
+ Restart the web server and you are ready to go.
+ 
+\backslash
+two_table> rails server 2.
+ Add drop down control for preset selections.
+ This tutorial is about adding associations between tables.
+ In subsequent steps, we are going to show you how to create a new Countries
+ table to store the values of country names to associate with your recipes.
+ Hobo will take care of the user interface rendering, as you will soon see.
+ Before we do that though, let’s demonstrate the simpler approach.
+ This is the easy way to go for applications when you know at design time
+ all the possible values of a category.
+ In this case, you would not need to add the additional complexity of creating
+ a table to maintain all values for countries.
+ All that is needed is to specify in the model the list of possible values
+ using the enum_string attribute of a field.
+ In this tutorial let’s assume the only values for country will be: American,
+ French & Chinese.
+ Your recipe.rb model code should now look like: class Recipe < ActiveRecord::Bas
+e
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do title :string body :text #country :string country enum_string(:America
+n, :French, :Chinese) timestamps end We have used the enum_string field
+ method to declare the possible values for country.
+ So we can easily see what we have done, we have commented out the old version
+ of the country field declaration by preceding it with a ‘#’ (hash).
+ Now refresh your browser and click ‘New Recipe’ and you will see a drop-down
+ control that lets you select values for country.
+\end_layout
+
+\begin_layout Standard
+This is fine as long as you don’t have to change the possible values.
+ In the next steps, we will show you how to create a new table to store
+ country values and be able to edit it on the fly and have it be reflected
+ in your GUI.
+ You will not have to write any queries.
+ Hobo will take care of everything for you.
+ 3.
+ Remove drop down control.
+ First let’s get back to where we started before adding a new table.
+ Edit your code to look like this.
+ class Recipe < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do title :string body :text country :string #country enum_string(:America
+n, :French, :Chinese) timestamps end
+\end_layout
+
+\begin_layout Standard
+The drop-down control will now be gone when you refresh your browser.
+ Note: Remove the custom name attribute you created in the last tutorial
+ before continuing.
+ 4.
+ Creating model associations.
+ In the next several steps, we will add a Country model, set up a relationship
+ between the Country model and the recipe model and then run a Hobo migration
+ to create the Countries table.
+ This last step will also set up the foreign key in the Recipe model that
+ will maintain the association to the index of the new Country model, country_id.
+ When you look in the db/schema file to review the fields in your tables,
+ you will not see the ID’s of any table listed but they are there.
+ Every time you create a table using a migration in Hobo, it will also create
+ the table index with a name defined by convention to be the model name
+ with ‘_ID’ appended.
+ 5.
+ Add a new model.
+ We will use Hobo’s hobo:resource generator to create a new model with one
+ field to store a country’s name.
+ If you do not have a command prompt window open besides the window you
+ used to start your web server, open a new one now and navigate to the root
+ of the application.
+ 
+\backslash
+two_table> Execute the following command from your command prompt.
+ 
+\backslash
+two_table> hobo g resource country name:string Check the models directory
+ and you should see a country.rb file with the following contents defining
+ the Country name field.
+ class Country < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do name :string timestamps end If you look in the db/schema file,
+ however, you will not see a countries table because you have not run the
+ migration yet.
+ Let’s define our relationships now.
+ The hobo:resource generator also created some other files.
+ An important one is the controller file called countries_controller.rb.
+ Note that the class names (how Hobo refers to them) are CountriesController
+ for the controller and Country for the model, which you can see, in the
+ first line of code in the respective files.
+ Note: The controller has a file and class name that is the plural of the
+ model name.
+ The file names use underscores in the file names and removes them for class
+ names.
+ 6.
+ Remove a field.
+ In preparation for setting up a relationship between the Recipe and Country
+ models, you must delete the country field in the Recipe model.
+ It will not be needed any more since it is replaced by the name field in
+ the Country model.
+ Open the recipe.rb model file and delete the country field from the fields…do
+ block at the beginning of the file.
+ So you can see what you have done, it would easiest to comment it out.
+ Change this: … fields do title :string body :text # country enum_string
+ (:American, :French, :Chinese) timestamps end … 7.
+ Add a belongs_to relationship.
+ The Recipe model will have what is called a belongs_to relationship with
+ the new Country model.
+ This relationship or association requires that every recipe have at the
+ most one country associated with it.
+ Add the belongs_to declaration just before the #permissions comment.
+ Any belongs_to declarations must be added after the fields…do block.
+ class Recipe < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do title :string body :text # country enum_string (:American, :French,
+ :Chinese) timestamps end belongs_to :country 
+\end_layout
+
+\begin_layout Standard
+validates_presence_of :country …
+\end_layout
+
+\begin_layout Standard
+We have also added validation so that the country is always specified for
+ all recipes.
+\end_layout
+
+\begin_layout Standard
+Note: It is useful to read belongs_to as ‘refers to’ to remind yourself
+ that when this relationship is declared, it causes the creation of a key
+ field named country_id in the recipes table to “refer to” the country table,
+ which contains the name field.
+\end_layout
+
+\begin_layout Standard
+In the above belongs_to statement, :country is the name of a relationship.
+ It is not the name of a field.
+ Through its naming conventions, Hobo determines that the model to relate
+ to is named Country.
+ For the case when naming conventions fail, you can force the relationship
+ as in the following code:
+\end_layout
+
+\begin_layout Standard
+belongs_to :country, :class_name=>"Some_other_model" 8.
+ Add a has_many relationship.
+ The Country model needs the inverse relationship to the belongs_to in the
+ Recipe model:.
+ class Country < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do name :string timestamps end has_many :recipes ...
+ When you learn to do more sophisticated programming, this feature of naming
+ relationships, which Hobo inherits from Rails, will become a powerful tool.
+ Unlike standard relational database relationships, this capability essentially
+ adds meaning to the relationship.
+ 9.
+ Run the Hobo migration.
+ Now you have done everything needed for Hobo’s intelligence to take over
+ and create the new countries table and set up the proper foreign keys.
+ Now, go to your command prompt and run the Hobo migration.
+ By doing this you will allow Hobo to accomplish several things.
+ Hobo will: Create the migration file for the new table, countries Remove
+ the country field from the recipes table Set up a foreign key to handle
+ the relationship between Recipe and Country Execute the migration to create
+ the new database table, Countries.
+ For every recipe record with a country entered, there will now be a country_id
+ value written in the recipestable that corresponds to a country_id in a
+ country record.
+ 
+\backslash
+two_table> hobo g migration You will get the following response: DROP or
+ RENAME?: column recipes.country Rename choices: country_id Enter either
+ 'drop country' or one of the rename choices: Hobo has noticed that there
+ is an ambiguity you have created that needs to be resolved.
+ There is both a country field and a Country model.
+ It knows you need a foreign key, country_id, to relate to the Countries
+ table.
+ So it gives you a choice to rename country to country_id or drop the country
+ field and create a new country_id field.
+ Since country has real country names in it, not foreign key integer values,
+ it is best to drop it and let Hobo create a new field for the foreign key.
+ Enter ‘drop country’ (without quotation marks) in response.
+ Next the migration will respond as follows: What now: [g]enerate migration,
+ generate and [m]igrate now or [c]ancel? You should type ‘m’.
+ Last it will prompt you to name the migration file: Filename [hobo_migration_3]
+: Just hit the ‘enter’ key and it will take the default name, hobo_migration_3.
+ 10.
+ Review the results of your migration.
+ Let’s take a look at the database schema in db/schema.rb: ActiveRecord::Schema.de
+fine(:version => 20100313165708) do
+\end_layout
+
+\begin_layout Standard
+create_table "countries", :force => true do |t| t.string "name" t.datetime
+ "created_at" t.datetime "updated_at" end
+\end_layout
+
+\begin_layout Standard
+create_table "recipes", :force => true do |t| t.string "title" t.text "body"
+ t.datetime "created_at" t.datetime "updated_at" t.integer "country_id" end
+\end_layout
+
+\begin_layout Standard
+add_index "recipes", ["country_id"], :name => "index_recipes_on_country_id"
+\end_layout
+
+\begin_layout Standard
+create_table "users", :force => true do |t| t.string "crypted_password",
+ :limit => 40 t.string "salt", :limit => 40 t.string "remember_token" t.datetime
+ "remember_token_expires_at" t.string "name" t.string "email_address" t.boolean
+ "administrator", :default => false t.datetime "created_at" t.datetime "updated_at
+" t.string "state", :default => "active" t.datetime "key_timestamp" end
+\end_layout
+
+\begin_layout Standard
+add_index "users", ["state"], :name => "index_users_on_state"
+\end_layout
+
+\begin_layout Standard
+end
+\end_layout
+
+\begin_layout Standard
+Note: Hobo automatically creates appropriate indexes for table relationships
+ with foreign keys.
+ We will discuss how to enhance or disable this feature in a later tutorial.
+\end_layout
+
+\begin_layout Standard
+11.
+ Double-check the tab code before refreshing your browser.
+ Back in Tutorial 6 #7, we asked you to delete the <navigation> tag.
+ Go back there and make sure you completed that step before refreshing your
+ browser.
+ You should see a new tab for Countries.
+ 12.
+ Review a few features of the UI.
+ Make sure you are signed in as the admin.
+ Go to the Countries tab and click through to enter a few countries.
+ 
+\end_layout
+
+\begin_layout Standard
+Then go to the Recipes tab and click through to edit one of your recipes.
+ You should now see a drop down box just as you saw when you used the enum_strin
+g option for your attribute:
+\end_layout
+
+\begin_layout Standard
+The difference is that you are now actually selecting a country_id foreign
+ key behind the scenes.
+ Hobo takes care of querying the countries table (Country model) and displaying
+ the actual country names.
+ When you save this Recipe record, Hobo maintains all of the necessary related
+ keys automatically.
+ After you do the save, note that the Country value in the page is an active
+ hyperlink: .
+ 
+\end_layout
+
+\begin_layout Standard
+If you click it, you will see a screen that allows you to edit the Country
+ record.
+\end_layout
+
+\begin_layout Standard
+You can edit a country record because you are logged in as the “administrator”.
+ If you check the countries.rb file, you will see that the permission to
+ edit the Country field is limited to the administrator.
+ This means that if you log in as a regular user, Hobo should not allow
+ the edit.
+ Log out from the administrator account and login as regular user.
+ class Country < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+.
+ .
+ .
+ # --- Permissions --- #
+\end_layout
+
+\begin_layout Standard
+def create_permitted? acting_user.administrator? end
+\end_layout
+
+\begin_layout Standard
+def update_permitted? acting_user.administrator? end
+\end_layout
+
+\begin_layout Standard
+.
+ .
+ .
+ Now go to the Recipes tab, click on a recipe link and edit the recipe.
+ Next click on the country name on the page.
+ Now you see that the Edit Country link is no longer available.
+ 
+\end_layout
+
+\begin_layout Standard
+12.
+ One-to-many relationship discussion.
+ The relationship or association that you have just implemented is known
+ as a one-to-many relationship.
+ In this particular situation, we have an individual country that is related
+ to many recipes.
+ More specifically, there is one record in the Countries table with the
+ name ‘American,’ but potentially many American recipes.
+ Tutorial 8 – Model Relationships: Part II
+\end_layout
+
+\begin_layout Standard
+In this tutorial you will learn to implement many-to-many relationships.
+ These relationships are useful, for example, in categorizing a model’s
+ records.
+ You will implement the relationship using the “has_many”, “has_many =>:through”
+, and “belongs_to” relationship declarations of Rails.
+ You will learn how Hobo establishes a direct relationship between model
+ relationships and the features of the UI.
+\end_layout
+
+\begin_layout Standard
+In terms of our tutorial application, you will be adding recipe categories
+ so that you can categorize recipes as, for example sweet, sour, or hot.
+ You will implement an architecture where it is easy to invert the relationships
+ so that you can display both which categories a recipe belongs to and which
+ recipes are classified in a particular category.
+ PREREQUISITES: Tutorials 1-6.
+ Topics Many-to-many relationships Using the has_many, has_many =>:through,
+ and belongs_to rails relationship declarations Fixing a UI assumption by
+ Hobo when it is not the optimum.
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: four_table Steps 1.
+ Copy the Application.
+ Just like you did in Tutorial 7, we suggest you copy your application from
+ Tutorial 7 in order to easily go back to its state at the end of that tutorial.
+ Shut down the web server by issuing a <Control-C> in the command window
+ where you issued the rails server command.
+ Then, do a copy in whatever operating system you are using.
+ We have called the new application directory four_table.
+ Navigate to the new directory.
+ Restart the web server and you are ready to go.
+ 
+\backslash
+four_table> rails server You may wish to change the name of your application
+ as displayed in the UI.
+ Go to config/application.rb.
+ Change the key config.hobo.app_name to read: config.hobo.app_name = "Four Table"
+ Now refresh your browser and you will see the new name.
+ 2.
+ Create the models.
+ We are going to add two new models to our original application and keep
+ the original Recipe and Country models.
+ The first will be a Category model and the second will be a CategoryAssignment
+ model.
+ CategoryAssignment will have the two fields, category_id and recipe_id
+ that correspond to keys of the same name in the Category and Recipe models.
+ Note: If you review the schema in the app/db directory, you will not see
+ these fields listed in the Categories and Recipes table.
+ They are the default keys for these tables.
+ Rails does not list them.
+ As you will see shortly, you do not have to worry about creating or naming
+ any of these fields, the Hobo generators will take care of it all for you.
+ Go to your command prompt and issue the following two commands: 
+\backslash
+four_table> hobo g resource category name:string 
+\backslash
+four_table> hobo g model category_assignment The first command will create
+ both a controller and model, Category being the name of the model.
+ The second will create a CategoryAssignment model but no controller.
+ When you implement the relationships below, you will see that CategoryAssignmen
+t sits in between the Recipe and Category models.
+ You do not need a CategoryAssignments controller because you will be accessing
+ recipes and categories through these models directly and need no actions
+ that pull data directly from the intermediary CategoryAssignment model.
+ 3.
+ Add relationships to your models.
+ Edit the models as shown below to enter model relationships.
+ Note: Hobo migrations rely on both the field declarations in your models
+ AND the relationship declarations.
+ The relationship declarations allows Hobo to setup all the necessary keys
+ to implement real model relationships.
+ recipe.rb class Recipe < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do title :string body :text #country :string timestamps end belongs_to
+ :country has_many :categories, :through => :category_assignments, :accessible
+ => true has_many :category_assignments, :dependent => :destroy 
+\end_layout
+
+\begin_layout Standard
+category.rb class Category < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do name :string timestamps end
+\end_layout
+
+\begin_layout Standard
+has_many :recipes, :through => :category_assignments has_many :category_assignme
+nts, :dependent => :destroy category_assignment.rb class CategoryAssignment
+ < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do timestamps end
+\end_layout
+
+\begin_layout Standard
+belongs_to :category belongs_to :recipe 4.
+ Discussion of model relationships.
+ Note above that you used the has_many and the belongs_to relationships.
+ You further used a has_many relationship with a :through option.
+ Let’s start with the belongs_to relationship, which we used in Tutorial
+ 7 and declared in the CategoryAssignment model above.
+ Recall that when you see belongs_to, think refers to, and you will understand
+ that these declarations cause the category_id and recipe_id fields to be
+ placed in the category_assignments table.
+ The has_many :through statements instructs Hobo/Rails to setup the necessary
+ functions to access a category from a recipe or a recipe from a category.
+ The vanilla has_many statements set up the one to many relationships between
+ the recipes table and the category_assignments tables and between the categorie
+s and category_assignments tables.
+ The :dependent => destroy option makes sure that when either a recipe or
+ category is deleted that the corresponding records in the category_assignments
+ table are removed automatically too.
+ 5.
+ Run the hobo g migration.
+ Go to your command prompt and run the following.
+ 
+\backslash
+four_table> hobo g migration Remember to respond ‘m’ when prompted for migration
+ and just press <enter> when prompted with the migration file name.
+ Note: At this point, if your web server is still running from earlier tutorials
+, you need to terminate it and restart it.
+ Rails and Hobo will not recognize a new database table without doing so.
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+four_table> rails server 6.
+ Populate the new table.
+ Open up your browser to http://localhost:3000/ and you should see the following
+ (since you had copied over all the files from the Two Table application,
+ your database came with you so you will not see the Register Administrator
+ form):
+\end_layout
+
+\begin_layout Standard
+Now go to the new Categories tab and enter in some food categories:
+\end_layout
+
+\begin_layout Standard
+7.
+ Adding new records to the relationships.
+ Go to the Recipes tab.
+ Click on one of the recipes and you should get this.
+\end_layout
+
+\begin_layout Standard
+Notice there is no category assignment.
+ Then click Edit Recipe on the right.
+\end_layout
+
+\begin_layout Standard
+Now you can see a new drop-down box that lets you add categories to your
+ recipe.
+ Hobo has taken care of this for you by inferring that you need it from
+ your model relationship declarations.
+ Note: Here is a good example of the DRY (Don’t Repeat Yourself) notion
+ playing out.
+ If the necessary UI controls can be directly inferred from model structure,
+ there should be no need to directly code it yourself.
+ You may wish to use a different control but Hobo picks a reasonable one
+ for you so you do not have to bother unless you want to.
+ Take a look at the URL that activated the page.
+ You will see that the URL is of the form for a “controller edit” action.
+ If you need to remind yourself of the form look at the Hobo Controller
+ Action Summary figure in Tutorial 5 step 6.
+ Try adding a couple of categories and save the changes.
+ 
+\end_layout
+
+\begin_layout Standard
+Here, on the Edit Recipe screen, you can see that Hobo is displaying the
+ entries for the Recipe categories you have chosen to associate with the
+ recipe, namely hot and sour.
+ So far, Hobo is doing just what we would expect.
+ 8.
+ Add information to the model in order to display the associations.
+ Hobo, before version 1.3, used ViewHints to indicate to the application
+ how you would like to display related information on a model’s show page.
+ To simplify things, this functionality has been moved into the model itself
+ and ViewHints are no longer used as of Hobo 1.3.
+ So now you modify the ActiveRecord model itself.
+ Edit the app/models/recipe.rb file.
+ Enter the code (in bold italics below) to tell Hobo explicitly to use categorie
+s as the child of recipes in its displays.
+ class Recipe < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do name :string body :text timestamps end
+\end_layout
+
+\begin_layout Standard
+belongs_to :country has_many :categories, :through => :category_assignments,
+ :accessible => true has_many :category_assignments, :dependent => :destroy
+\end_layout
+
+\begin_layout Standard
+children :categories
+\end_layout
+
+\begin_layout Standard
+[ ...
+ ]
+\end_layout
+
+\begin_layout Standard
+Now edit country.rb:
+\end_layout
+
+\begin_layout Standard
+class Country < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do name :string timestamps end
+\end_layout
+
+\begin_layout Standard
+has_many :recipes children :recipes
+\end_layout
+
+\begin_layout Standard
+[ ...
+ ]
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser and choose a recipe to view:
+\end_layout
+
+\begin_layout Standard
+If you wish to see all the recipes, which are ‘hot’, you would click on
+ ‘hot’ to check this out; or you could go to ‘Categories’ and then click
+ on ‘hot’.
+\end_layout
+
+\begin_layout Standard
+Now let’s enhance this view.
+ Edit app/models/category.rb: Enter the code (in italics and bold below)
+ to tell Hobo explicitly to use recipes as the child of categories in its
+ displays.
+ class Category < ActiveRecord::Base
+\end_layout
+
+\begin_layout Standard
+hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Standard
+fields do name :string timestamps end
+\end_layout
+
+\begin_layout Standard
+has_many :recipes, :through => :category_assignments has_many :category_assignme
+nts, :dependent => :destroy children :recipes
+\end_layout
+
+\begin_layout Standard
+[ ...
+ ] Refresh your browser.
+\end_layout
+
+\begin_layout Standard
+Now you can see all of the “children” of the category “Hot” on the Category
+ “show” page.
+\end_layout
+
+\begin_layout Standard
+9.
+ Comments on the many-to-many relationship.
+ Now let’s review how you got this all to work.
+ The end product is that you can see the categories associated with each
+ recipe and the recipes associated with each category.
+ In each case you can click through to look at individual categories or
+ recipes and edit them if you wish.
+ All of this is a result of having a recipe model related to a category_assignme
+nt model, which is, in turn, related to the category, model and vice versa.
+ We will call the category_assignment model the intermediary model and the
+ other two, “outer” models.
+ You have created a symmetrical set of model relationships where the two
+ outer models have has_many relationships with the intermediary model and
+ has_many :through relationships with each other.
+ Conversely, the intermediary model has a belongs_to relationship with each
+ of the outer models.
+ 
+\end_layout
+
+\begin_layout Standard
+This structure will be used frequently in most data-rich applications.
+ It is worth noting how you need only a few lines of code to implement this
+ structure and how it lets you access each outer model from the other.
 \end_layout
 
 \end_body
