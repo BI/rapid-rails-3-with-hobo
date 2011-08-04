@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -63,6 +65,2383 @@ logicalmkup
 \end_header
 
 \begin_body
+
+\begin_layout Subsubsection*
+Introductory Comments
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 26 – Installing and using the Git Version Control System
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 27 – Rapid Deployment Using Heroku.com
+\end_layout
+
+\begin_layout Section*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Standard
+There isn’t much use in developing an application that you don’t put into
+ production.
+  This chapter is devoted to helping you put together the tools necessary
+ to use one of the most innovative cloud computing sites today—
+\begin_inset CommandInset href
+LatexCommand href
+target "heroku.com"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Once you configure your computer to work with the source code configuration
+ management software called “Git” and create your subscription with Heroku,
+ you will be able to publish a new app in a manner of minutes.
+\end_layout
+
+\begin_layout Standard
+Of course, if you are an experienced Rails developer you can publish any
+ Hobo app on your existing infrastructure.
+  If you haven’t tried Heroku yet, I encourage you to do so.
+  This is the wave of the future.
+\end_layout
+
+\begin_layout Section*
+Tutorial 26 – Installing and Using Git 
+\end_layout
+
+\begin_layout Standard
+Git has become the standard distributed version control system for Ruby
+ and Rails applications, in part due the success of the social coding site,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://github.com"
+
+\end_inset
+
+.
+  
+\end_layout
+
+\begin_layout Standard
+On Github you will find thousands of public and private projects aided by
+ the extremely useful Web 2.0 user interface designed with distributed coding
+ in mind.
+  Hobo’s code base is located there.
+  You can access the source, view the change history, and view the branching
+ and merging of code as members of the open source community participate:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6github.com.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hobo source code on github.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is also where the Hobo gems are stored:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6hobo_gems_on_github.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hobo gems are also available on github.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Barquin International also uses Github as the central hub for developing
+ several large-scale Hobo projects that involve participants from several
+ countries.
+\end_layout
+
+\begin_layout Standard
+In this tutorial we will focus on the Windows user, as git is much easier
+ for Mac OS X and Linux users.
+ You only need to learn a few commands for basic usage.
+  There are many outstanding resources for more in-depth understanding,
+ including the excellent 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://peepcode.com/products/git-internals-pdf"
+
+\end_inset
+
+ by Scott Chacon.
+\end_layout
+
+\begin_layout Standard
+There is an excellent tutorial for Mac users:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://help.github.com"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6git_for_mac.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Installing Git for Mac OSX
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+OK.
+  So let’s get the software we need for Git:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6msysgit_installer.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Download the mysysgit installer for Windows
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Download and run the git installer for windows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6running_git_setup.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Running the Git Setup Wizard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Select the following options:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6git_setup_options.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Git setup options
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Select the “Use OpenSSH” option:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6use_openssh.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Select the OpenSSH option
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Allow the installer to configure running git from the Windows command prompt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6run_git_from_cmd.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Select to option to run Git from the Windows command prompt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next select the CR/LF behavior option:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6use_windows_line_endings.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Select Windows style line endings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the installation is complete, the release notes will be displayed.
+\end_layout
+
+\begin_layout Standard
+Now download the PuTTYgen RSA/DSA secure key generator from this URL:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Run the downloaded 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+puttygen.exe
+\end_layout
+
+\end_inset
+
+ file to install:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6puttygen_install.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Running the PuTTY Key Generator install
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Open up the application and start the process of generating key pairs:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6generate_ssh_keypairs.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Generate SSH key pairs for use with Git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Saving the files with default names:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6default_puttygen_filenames.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The default file names generated by PuTTYGen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Private key = “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+PrivateKey.ppk
+\end_layout
+
+\end_inset
+
+”
+\end_layout
+
+\begin_layout Standard
+Public Key = “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Publickey
+\end_layout
+
+\end_inset
+
+”
+\end_layout
+
+\begin_layout Standard
+You will need to rename these and put them in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+USERPROFILE
+\end_layout
+
+\end_inset
+
+ environment setting default location that most systems will look.
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6userprofile_setting.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Locating your USERPROFILE setting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I was logged in as the user “Administrator” in windows when I tried to use
+ the Heroku gem (see next chapter):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6no_pubkey_found_error.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of "no ssh public key found" error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So Heroku was looking for the file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+id_rsa.pub
+\end_layout
+
+\end_inset
+
+ (since I was used the RSA option with PuttyGen) in the default folder:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+C:
+\backslash
+Documents and Settings
+\backslash
+Administrator
+\backslash
+.ssh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we can move the keys as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6naming_ssh_keypairs.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Naming your SSH key pairs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+known_hosts
+\end_layout
+
+\end_inset
+
+ file will be created and updated automatically when you connect to Heroku.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Now you are ready to use Git.
+  See the next tutorial to learn how Git is used to deploy your application
+ to Heroku.com.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 27 – Rapid Deployment with Heroku
+\end_layout
+
+\begin_layout Standard
+We have been following with great interest the development of Heroku for
+ almost two years.
+ I recently tracked down my initial “Invitation to Heroku Beta” email invitation
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6original_heroku_invite.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The original Heroku beta invitation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to Wikipedia, it has been in development since June of 2007, with
+ an initial investment of about $3 million dollars.
+  It was one of the first to use the new Amazon Elastic Compute Cloud (EC2)
+ as its infrastructure.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://aws.amazon.com/ec2/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For more details on this innovative architecture, see:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://heroku.com/how/architecture"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For information for pricing and options:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://heroku.com/pricing#blossom-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6heroku_blossom.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the free "Blossom" database hosting option on Heroku.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For this tutorial, we are going to use the free “Blossom” version for apps
+ under 5MB in size.
+ In addition to choosing more storage capacity, you can add “Dynos” (processing
+ power) to suit your needs, and choose your replication and backup options.
+ The database backend provided by Heroku is PostgresSQL, a rock-solid choice
+ in the open source world.
+ 
+\end_layout
+
+\begin_layout Standard
+Of course you can always host your database elsewhere and use Heroku for
+ your Hobo or Rails front end.
+  The nice thing about Heroku is the database migration and setup is transparent
+, so you can develop your app using SQLite and then deploy your app to Heroku’s
+ PostgresSQL back-end transparently.
+\end_layout
+
+\begin_layout Standard
+For this tutorial we will use the “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+” application will built in the earlier tutorials and deploy it to Heroku.
+\end_layout
+
+\begin_layout Subsection*
+Step 1: Install and Configure git
+\end_layout
+
+\begin_layout Standard
+If you haven’t done so already, please follow the instructions in Tutorial
+ 23 – Installing and Using git.
+\end_layout
+
+\begin_layout Subsection*
+Step 2: Create an Account at Heroku.com
+\end_layout
+
+\begin_layout Standard
+Go to 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://heroku.com/signup"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6heroku_signup.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sign Up for a Heroku account
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Enter the email address you wish to use for communication with Heroku.
+  Heroku will send a confirmation email with a link to access your account.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6heroku_confirmation.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Heroku notification that "Confirmation email sent"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Going to you email to access the confirmation link you will need:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6heroku_invitation_email.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Locating your "Invitation to Heroku" email
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When you click the confirmation link, you should see a screen similar to
+ the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6welcome_to_heroku.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The "Welcome to Heroku" signup page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then this when you finish:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6account_created_heroku.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The "Account Created" message at Heroku.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The instructions that are displayed on the “Welcome to Heroku!” splash screen
+ are tailored for the Mac or Linux user.
+  We’ll provide the Windows equivalents below.
+\end_layout
+
+\begin_layout Subsection*
+Step 3: Install the Heroku Gem
+\end_layout
+
+\begin_layout Standard
+Go to you command prompt and type the following command:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+C:
+\backslash
+Sites
+\backslash
+tutorials>gem install heroku
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6gem_install_heroku.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Installing the Heroku Ruby gem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The other four gems that are installed along with the Heroku gem.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Step 4: Use git to package your application
+\end_layout
+
+\begin_layout Standard
+Initialize git for your app:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> git init
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tell git to add all the files in all folders to the project:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> git add .
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tell git to commit these additions and enter an optional message that helps
+ for version control:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> git commit –m “My first Commit”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Step 5: Use the “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+heroku create
+\end_layout
+
+\end_inset
+
+” command to Initialize your application
+\end_layout
+
+\begin_layout Standard
+Change your directory to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+c:
+\backslash
+tutorials
+\backslash
+my-first-app
+\end_layout
+
+\end_inset
+
+ and then execute the command while in the root directory of the app.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> heroku create four_table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6heroku_create.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Console output from the "heroku create" command
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The first time you try to create using the heroku gem you will be
+ prompted to enter your user name and password that you provided heroku
+ while creating an account:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at the output you can see that we could not create the application
+ “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+”, as Heroku does not allow an underscore in a name.
+  We need to change the name of our app and try again:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> heroku create four-table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> git push heroku master
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6git_push.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using heroku git push
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+	
+\end_layout
+
+\begin_layout Standard
+OK.
+ So our app launched, but then crashed.
+  What we forgot to do is to inform Heroku to add the Hobo gem to our applicatio
+n.
+  We can do this by adding an instruction:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6gems_file.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Telling Heroku where to find your application's gems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Create a text file with the name .gems in the application’s root folder.
+  Add the following text:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+hobo –source gems.github.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we need to use GIT again to add these changes and push them to Heroku:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> git add .
+\end_layout
+
+\begin_layout Code
+
+\backslash
+four_table> git commit –m “Added .gems definition file”
+\end_layout
+
+\begin_layout Code
+
+\backslash
+four_table> git push heroku master
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6adding_gems_file.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding your “.gems” config file to your git repository
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: that the additional gems that Hobo uses (dependencies) were automatically
+ installed as well.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Step 6: Migrate your database schema to Heroku
+\end_layout
+
+\begin_layout Standard
+Your UI is up and running, but your database has not been migrated until
+ you do this:
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> heroku rake db:migrate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6migrating_database.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Migrating your database schema to Heroku.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Step 7: Test your application
+\end_layout
+
+\begin_layout Standard
+Log into Heroku.com to see the application URL:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6first_test_on_heroku.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Testing your Heroku app
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://four-table.heroku.com"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6app_running.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Running the "Four Table"  app on Heroku.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: You can set up your application to use an existing domain name instead
+ of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+heroku.com
+\end_layout
+
+\end_inset
+
+.
+ See the information located on this link:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://docs.heroku.com/custom-domains"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Step 8: Use the Taps gem to push data to your app on Heroku
+\end_layout
+
+\begin_layout Standard
+The data we created in earlier tutorials has not yet been loaded to Heroku.
+ However, we can easily do this with Heroku by installing the “taps” gem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> gem install taps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6installing_taps_gem.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Installing the Taps gem to upload data to Heroku.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: that several other dependencies are also installed along with Taps.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now you can use the following single command to upload your existing (local)
+ data to your version on Heroku:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> heroku db:push
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6heroku_dbpush.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using "heroku db:push" to push data to your app on Heroku.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The log indicates that six tables with a total of 23 records were sent.
+ Let’s look at the live app to see:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6app_on_heroku_with_data.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The "Four Table" app on Heroku.com with data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+Now let’s add a recipe for “Crab Cakes”:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6add_a_recipe.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Add a recipe on Heroku.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Step 9: Pull changed data from Heroku
+\end_layout
+
+\begin_layout Standard
+I can use the “pull” option to backup my change on Heroku to my local database:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\backslash
+four_table> heroku db:pull
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch6heroku_dbpull.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pull changed data from Heroku.com to your local app
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pretty slick!  I now have 24 records on the local version--including my
+ precious recipe for crab cakes.
+\end_layout
 
 \begin_layout Standard
 
