@@ -79,17 +79,33 @@ Tutorial 19 – Using FusionCharts with Hobo
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 By Marcelo Giorgi
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Overview
 \end_layout
 
 \begin_layout Standard
 Presenting data in a visual informative way is a powerful too.
  A widely-used charting and graphing library that includes lots of special
- effects is FusionCharts from InfoSoft (http://www.fusioncharts.com/).
+ effects is FusionCharts from InfoSoft (
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.fusioncharts.com/"
+
+\end_inset
+
+).
   
 \end_layout
 
@@ -103,51 +119,138 @@ FusionCharts offers a wide range of flash components for rendering data-driven
 \end_layout
 
 \begin_layout Standard
-In this tutorial we will continue with the four_table project you completed
- earlier so we can leverage the existing models and just focus on the chart
- functionality.
+In this tutorial we will continue with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+ project you completed earlier so we can leverage the existing models and
+ just focus on the chart functionality.
 \end_layout
 
 \begin_layout Standard
 We’ll be adding two charts to the project:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Recipes By Country (which counts the number of recipes for each country)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Recipes by Category (which counts the number of recipes in each category)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Configuring FusionCharts for our Hobo application
 \end_layout
 
 \begin_layout Standard
 The first thing we need to do is download the trial version of  FusionCharts
  Version 3.
- Go to the URL  http://www.fusioncharts.com/Download.asp and submit the form
- as shown below:
+ Go to the URL  
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.fusioncharts.com/Download.asp"
+
+\end_inset
+
+ and submit the form as shown below:
 \end_layout
 
 \begin_layout Standard
-Figure 204: Registration form to request FusionCharts
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/registration_for_fusioncharts.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Registration form to request FusionCharts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 205: Download page for FusionCharts
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/download_fusioncharts.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-.
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Download page for FusionCharts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Click on the ‘Download FusionCharts v3 (Evaluation)’ link, save and unzip
- the file into a safe location, such as, c:
+ the file into a safe location, such as, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+c:
 \backslash
-FusionChartsDistribution.
+FusionChartsDistribution
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -155,39 +258,109 @@ FusionChartsDistribution.
 Next:
 \end_layout
 
-\begin_layout Standard
-1.
- Create a new folder under the hobo “public” folder called FusionCharts.
-  Copy all the swf files contained in the folder c:
+\begin_layout Enumerate
+Create a new folder under the hobo “public” folder called FusionCharts.
+  Copy all the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+swf
+\end_layout
+
+\end_inset
+
+ files contained in the folder 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+c:
 \backslash
 FusionChartsDistribution
 \backslash
-Charts to folder you created:  
+Charts
+\end_layout
+
+\end_inset
+
+ to folder you created:  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 four_table
 \backslash
 public
 \backslash
-FusionCharts 
+FusionCharts
 \end_layout
 
-\begin_layout Standard
-	
+\end_inset
+
+ 	
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
-Figure 206: Target location for the FusionCharts SWF files
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/target_location_for_fusioncharts.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-2.
- Next, copy the file c:
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Target location for the FusionCharts SWF files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Next, copy the file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+c:
 \backslash
 FusionChartsDistribution
 \backslash
 JSClass
 \backslash
-FusionCharts.debug.js to 
+FusionCharts.debug.js
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 four_table
 \backslash
@@ -196,25 +369,91 @@ public
 javascripts
 \end_layout
 
-\begin_layout Standard
-3.
- Finally, we are ready to reference the JavaScript file (copied in Step
- 2) in our application.dryml file, as follows:
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Finally, we are ready to reference the JavaScript file (copied in Step 2)
+ in our 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file, as follows:
 \end_layout
 
 \begin_layout Standard
-Figure 207: Adding the required <extend tag=’page’> definition in application.dry
-ml
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/extend_page_tag.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the required <extend tag=’page’> definition in application.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-As you can see from the code of application.dryml,we extend the ‘page’ view
- so that we always include the JavaScript file FusionCharts.debug.js.
+As you can see from the code of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+,we extend the ‘page’ view so that we always include the JavaScript file
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+FusionCharts.debug.js
+\end_layout
+
+\end_inset
+
+.
  We could include this JavaScript at a page level, but for the purposes
  of this tutorial seemed more practical to do it this way.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Adding sample data
 \end_layout
 
@@ -224,7 +463,40 @@ Before implementing the chart functionality, create some sample data to
 \end_layout
 
 \begin_layout Standard
-Figure 208: Screen shot of sample recipe data for the tutorial
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/sampe_recipe_data.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Screen shot of sample recipe data for the tutorial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -233,7 +505,7 @@ It is probably better to first use the data presented here to make sure
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Recipes By Country
 \end_layout
 
@@ -242,26 +514,41 @@ In order to implement a “Recipes By Country” chart we need to complete two
  steps: 
 \end_layout
 
-\begin_layout Standard
-1.
- Programmatically save the data to an XML file
+\begin_layout Enumerate
+Programmatically save the data to an XML file
+\end_layout
+
+\begin_layout Enumerate
+Configure the Flash Component to retrieve the generated data.
+\end_layout
+
+\begin_layout Subsubsection*
+Save the data to an XML file
 \end_layout
 
 \begin_layout Standard
-2.
- Configure the Flash Component to retrieve the generated data.
+For our first chart we need to modify the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_controller.rb
 \end_layout
 
-\begin_layout Standard
-1.
- Save the data to an XML file
+\end_inset
+
+ in order to save the data (XML file) needed by the FusionCharts Flash component.
+ We will activate the chart within the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes/index.dryml
 \end_layout
 
-\begin_layout Standard
-For our first chart we need to modify the RecipesController.rb in order to
- save the data (XML file) needed by the FusionCharts Flash component.
- We will activate the chart within the recipes/index.dryml file view as the
- data needed will be derived from the collection Recipes.
+\end_inset
+
+ file view as the data needed will be derived from the collection Recipes.
 \end_layout
 
 \begin_layout Standard
@@ -271,7 +558,40 @@ To get this to work, we will need to add a filter method to the controller,
 \end_layout
 
 \begin_layout Standard
-Figure 209: Enhancements to RecipesController to provide data to FusionCharts
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/recipes_controller_for_fusion_data.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Enhancements to RecipesController to provide data to FusionCharts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -281,27 +601,78 @@ As you can see (modifications are highlighted in bold italics below), we
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 class RecipesController < ApplicationController
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   hobo_model_controller
 \end_layout
 
-\begin_layout Standard
-  before_filter :save_fusion_chart_data, :only => [:index]
+\begin_layout Code
+
+\size footnotesize
+  
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\size footnotesize
+before_filter :save_fusion_chart_data, :only => [:index]
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
   auto_actions :index, :show, :new, :edit, :create, :update, :destroy
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 ...
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Now we must define the ruby method save_fusion_chart_data for this controller.
+Now we must define the ruby method 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+save_fusion_chart_data
+\end_layout
+
+\end_inset
+
+ for this controller.
  For now ignore the “private” method that encloses the code:
 \end_layout
 
@@ -310,17 +681,127 @@ Let’s go through this code:
 \end_layout
 
 \begin_layout Standard
-In this line we define an instance variable (@recipes_count_by_countries)
- that resolves the query of how many recipes there are for each country.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
+@recipes_count_by_countries = Recipe.select(
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    'country_id, count(*) as counter').group('country_id')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this line we define an instance variable (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+@recipes_count_by_countries
+\end_layout
+
+\end_inset
+
+) that resolves the query of how many recipes there are for each country.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
+filename = 
+\begin_inset Quotes eld
+\end_inset
+
+#{RAILS_ROOT}/public/recipes_count_by_countries.xml
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 In this line we define the local path (from the Server point of view) where
  the XML data file will be stored.
- As you can see, we are pointing to the public directory of the Hobo application
-, and that’s necessary because the file must be available so that the FusionChar
-ts Flash component (on the client side) can load it.
+ As you can see, we are pointing to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+public
+\end_layout
+
+\end_inset
+
+ directory of the Hobo application, and that’s necessary because the file
+ must be available so that the FusionCharts Flash component (on the client
+ side) can load it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+xml_string = render_to_string(:partial =>
+\end_layout
+
+\begin_layout Code
+    'chart_data_generator_for_count_by_country')
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -331,46 +812,178 @@ tor_for_count_by_country” .
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+save_xml_file(filename, xml_string)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The final line calls the save_xml_file method passing the filename and the
- string stored in the variable xml_string (which represent an XML file)
+ string stored in the variable 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+xml_string
+\end_layout
+
+\end_inset
+
+ (which represent an XML file)
 \end_layout
 
 \begin_layout Standard
- 
+Now, it’s time to review the implementation of the Rails’ “partial
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+To learn more about Rails partials, please see 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://guides.rubyonrails.org/layouts_and_rendering.html"
+
+\end_inset
+
+.
+ Here is a quote: ―it‘s important to know that the file extension on your
+ view controls the choice of template handler.
+ In Rails 2, the standard extensions are 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.erb
 \end_layout
 
-\begin_layout Standard
-Now, it’s time to review the implementation of the Rails’ “partial”1 that
- generates the XML string.
+\end_inset
+
+ for ERB (HTML with embedded Ruby), 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.rjs
+\end_layout
+
+\end_inset
+
+ for RJS (javascript with embedded ruby) and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.builder
+\end_layout
+
+\end_inset
+
+ for Builder (XML generator).
+ You‘ll also find 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.rhtml
+\end_layout
+
+\end_inset
+
+ used for ERB templates and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.rxml
+\end_layout
+
+\end_inset
+
+ for Builder templates, but those extensions are now formally deprecated
+ and will be removed from a future version of Rails.‖ 
+\end_layout
+
+\end_inset
+
+” that generates the XML string.
   Add the code below to the specified file.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 app/views/recipes/_chart_data_generator_for_count_by_country.builder
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 xml.instruct!
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 xml.chart :caption => 'Recipies Count by Country' do
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   @recipes_count_by_countries.each do |recipe|
 \end_layout
 
-\begin_layout Standard
-    xml.set(:label => recipe.country.name, :value => recipe['counter'])
+\begin_layout Code
+    xml.set(:label => recipe.country.name, 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+            :value => recipe['counter'])
+\end_layout
+
+\begin_layout Code
   end
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -380,14 +993,39 @@ Rails “partials” that end with the extension “.builder” instruct rails t
 \end_layout
 
 \begin_layout Standard
-http://api.rubyonrails.org/classes/Builder/XmlMarkup.html
+\begin_inset CommandInset href
+LatexCommand href
+target "http://api.rubyonrails.org/classes/Builder/XmlMarkup.html"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-This code defines a chart XML element (line #2), and then for each instance
- of the collection @recipes_count_by_countries it adds (within XML chart
- element) a set of XML elements that contain both the name of the Country
- and a counter for the number of recipes for the related country.
+This code defines a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+chart
+\end_layout
+
+\end_inset
+
+ XML element (line #2), and then for each instance of the collection @recipes_co
+unt_by_countries it adds (within XML chart element) a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+set of
+\end_layout
+
+\end_inset
+
+ XML elements that contain both the name of the Country and a counter for
+ the number of recipes for the related country.
  
 \end_layout
 
@@ -396,101 +1034,239 @@ The following is a sample file generated by that Builder code:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <?xml version="1.0" encoding="UTF-8"?>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <chart caption="Recipes Count by Country">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <set label="American" value="3"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <set label="Uruguay" value="2"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <set label="Mexico" value="3"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <set label="Italy" value="5"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <set label="France" value="1"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </chart>
 \end_layout
 
-\begin_layout Standard
-2.
- Configure the Flash Component to retrieve the generated data
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Configure the Flash Component to retrieve the generated data
 \end_layout
 
 \begin_layout Standard
 Now that we have the data needed by our FusionCharts Flash Component, we
  need to instruct our FusionCharts Flash Component, by means of the JavaScript
- API available (thanks to the included file FusionCharts.debug.js), to load
- it.
+ API available (thanks to the included file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+FusionCharts.debug.js
+\end_layout
+
+\end_inset
+
+), to load it.
 \end_layout
 
 \begin_layout Standard
-See the figure below that includes the code from  recipes/index.dryml that
- demonstrates how we can accomplish that:
+See the figure below that includes the code from  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes/index.dryml
+\end_layout
+
+\end_inset
+
+ that demonstrates how we can accomplish that:
 \end_layout
 
 \begin_layout Standard
-Figure 210: Content of recipes/index.dryml used to render FusionCharts
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/recipes-index.dryml_for_fusioncharts.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-We define a div element (with id equal to recipes_count_by_countries), at
- line #8, intended to be the placeholder of the chart.
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Content of recipes/index.dryml used to render FusionCharts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We define a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+div
+\end_layout
+
+\end_inset
+
+ element (with id equal to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_count_by_countries
+\end_layout
+
+\end_inset
+
+), at line #8, intended to be the placeholder of the chart.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Next, we make use of the FusionCharts JavaScript API o by creating a FusionChart
 s object at line #11.
 \end_layout
 
-\begin_layout Standard
+\begin_deeper
+\begin_layout Itemize
 The first parameter for the constructor is the particular Chart type that
  we are going to use.
  In this particular case, we will be using a Bar chart.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 The second parameter is used to identify this Chart by name if you are going
  to use advanced features of the JavaScript API.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 The third and forth parameters indicate the dimensions (width and height
  respectively) of the chart.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Finally, in line #13, we instruct FusionCharts to render the chart within
- the DOM element with id equal to recipes_count_by_countries.
+ the DOM element with id equal to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_count_by_countries
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+And that’s it!!! Just go to the browser and request the URL: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes"
+
+\end_inset
+
+, and you’ll see, at the bottom of the view, a chart similar to the following:
 \end_layout
 
 \begin_layout Standard
-And that’s it!!! Just go to the browser and request the URL: http://localhost:30
-00/recipes, and you’ll see, at the bottom of the view, a chart similar to
- the following:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/fusioncharts_bar_chart.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-Figure 211: Screen shot of rendered FusionCharts bar chart
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Screen shot of rendered FusionCharts bar chart
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Recipes By Category
 \end_layout
 
@@ -502,96 +1278,209 @@ Now let’s try a different type of Chart.
  For that reason, I’ll be focusing on the differences for this new chart.
 \end_layout
 
-\begin_layout Standard
-1.
- Save the data to an XML file
+\begin_layout Subsubsection*
+Save the data to an XML file
 \end_layout
 
 \begin_layout Standard
 We are going to use the same mechanism presented earlier in this tutorial
  to store the XML file.
- In fact, we’ll be modifying the method save_fusion_chart_data of recipes_contro
-ller.rb, this way:
+ In fact, we’ll be modifying the method 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+save_fusion_chart_data
+\end_layout
+
+\end_inset
+
+ of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_controller.rb
+\end_layout
+
+\end_inset
+
+, this way:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 1   private
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 2   def save_fusion_chart_data
 \end_layout
 
-\begin_layout Standard
-3     @recipes_count_by_countries = Recipe.find(:all, :select => 'country_id,
- count(*) as counter', :group => 'country_id')
+\begin_layout Code
+
+\size footnotesize
+3     @recipes_count_by_countries = Recipe.find(:all, 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
+          :select => 'country_id, count(*) as counter', 
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+          :group => 'country_id')
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
 4     filename = "#{RAILS_ROOT}/public/recipes_count_by_countries.xml"
 \end_layout
 
-\begin_layout Standard
-5     xml_string = render_to_string(:partial => 'chart_data_generator_for_count_
-by_country')
+\begin_layout Code
+
+\size footnotesize
+5     xml_string = render_to_string(:partial => 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
+          'chart_data_generator_for_count_by_country')
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
 6     save_xml_file(filename, xml_string)
 \end_layout
 
-\begin_layout Standard
-7     @recipes_count_by_categories = CategoryAssignment.select('category_id,
- count(*) as counter').group('category_id')
+\begin_layout Code
+
+\shape italic
+\size footnotesize
+7     @recipes_count_by_categories = CategoryAssignment.select( 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\shape italic
+\size footnotesize
+          'category_id, count(*) as counter').group('category_id')
+\end_layout
+
+\begin_layout Code
+
+\shape italic
+\size footnotesize
 8     filename = "#{RAILS_ROOT}/public/recipes_count_by_categories.xml"
 \end_layout
 
-\begin_layout Standard
-9     xml_string = render_to_string(:partial => 'chart_data_generator_for_count_
-by_categories')
+\begin_layout Code
+
+\shape italic
+\size footnotesize
+9     xml_string = render_to_string(:partial => 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\shape italic
+\size footnotesize
+          'chart_data_generator_for_count_by_categories')
+\end_layout
+
+\begin_layout Code
+
+\shape italic
+\size footnotesize
 10    save_xml_file(filename, xml_string)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 11   end
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 12   def save_xml_file(filename, data)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 13     FileUtils.rm(filename, :force => true)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 14    f = File.new(filename, 'w')
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 15    f.write(data)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 16    f.close
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 17   end
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Again, statements marked with bold italics represent the modifications to
- the previous code.
+Again, statements marked with italics represent the modifications to the
+ previous code.
  As you can see, these new lines just implement the same functionality as
  before, but using a different collection as input, this time we are using
- recipes_count_by_categories.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_count_by_categories
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -601,32 +1490,77 @@ Next, as we did for the previous chart, we define an XML builder as shown
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 recipes/_chart_data_generator_for_count_by_categories.builder
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size small
 1 xml.instruct!
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 2 xml.chart :caption => 'Recipies Count by Category' do
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 3   @recipes_count_by_categories.each do |category_assignment|
 \end_layout
 
-\begin_layout Standard
-4     xml.set(:label => category_assignment.category.name, :value => category_assig
-nment['counter'])
+\begin_layout Code
+
+\size small
+4     xml.set(:label => category_assignment.category.name,
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
+              :value => category_assignment['counter'])
+\end_layout
+
+\begin_layout Code
+
+\size small
 5   end
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 6 end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -640,9 +1574,8 @@ After adding this we’ll be generating both XML data files each time a request
  to Recipes index arrives.
 \end_layout
 
-\begin_layout Standard
-2.
- Configure the Flash Component to retrieve the generated data
+\begin_layout Subsubsection*
+Configure the Flash Component to retrieve the generated data
 \end_layout
 
 \begin_layout Standard
@@ -652,8 +1585,40 @@ The only thing missing now to render this second chart is to add a placeholder
 \end_layout
 
 \begin_layout Standard
-Figure 212: The recipe/index.dryml file to render a FusionCharts pie chart
- and bar chart
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/fusioncharts_pie_chart_and_bar_chart.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The recipe/index.dryml file to render a FusionCharts pie chart and bar chart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -661,7 +1626,40 @@ And then, we’re done!! Here is the final result:
 \end_layout
 
 \begin_layout Standard
-Figure 213: Screen shot of the rendered FusionCharts bar and pie charts
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/fusioncharts_end_screen_shot.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Screen shot of the rendered FusionCharts bar and pie charts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -669,15 +1667,17 @@ Have fun with FusionCharts!! And explore the different options here:
 \end_layout
 
 \begin_layout Standard
-http://www.fusioncharts.com/OnlineDocs.asp
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.fusioncharts.com/OnlineDocs.asp"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
  
-\end_layout
-
-\begin_layout Section*
-
 \end_layout
 
 \end_body
