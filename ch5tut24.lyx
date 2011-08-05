@@ -79,7 +79,16 @@ Tutorial 24 – Creating an Administration Sub-Site
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 By Bryan Larsen
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -90,11 +99,7 @@ This tutorial will show how you can create an administrative sub-site for
  
 \end_layout
 
-\begin_layout Standard
- 
-\end_layout
-
-\begin_layout Standard
+\begin_layout Subsubsection*
 Generator steps 
 \end_layout
 
@@ -105,29 +110,100 @@ Let’s add an admin sub-site to the project we created in the “Agile Project
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 
 \backslash
 projects> hobo g admin_subsite --make-front-site 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 
 \backslash
-projects> hobo g front_controller admin::front --add-routes 
+projects> hobo g front_controller admin::front --add-routes
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
-Figure 259: Generator console output for creating an admin sub-site
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/admin_subite_console_output.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Generator console output for creating an admin sub-site
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Model Modifications
 \end_layout
 
 \begin_layout Standard
 We would like to “hide” our code table maintenance the admin sub-site.
-  Currently we have one code table, requirement_statuses (model = RequirementSta
-tus).
+  Currently we have one code table, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+requirement_statuses
+\end_layout
+
+\end_inset
+
+ (model = 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+RequirementStatus
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -136,6 +212,43 @@ Let’s first change all of the permissions for this model to “true”, as onl
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/requirement_status_permissions.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Requirement Status Permissions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Controller Modifications
 \end_layout
 
@@ -145,24 +258,84 @@ We need to move the controller for RequirementStatus to the admin folder
 \end_layout
 
 \begin_layout Standard
-Class Admin::RequirementStatusesController < Admin::AdminSiteController
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
+class Admin::RequirementStatusesController < Admin::AdminSiteController
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       hobo_model_controller RequirementStatus 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       auto_actions :all 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 end 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Figure 260: View of the Admin folder contents
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/view_of_admin_folder.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the Admin folder contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -172,7 +345,40 @@ At this stage you should be able to run your application.
 \end_layout
 
 \begin_layout Standard
-Figure 261: View of the Admin Sub-Site
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/admin_sub-site_view.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the Admin Sub-Site
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
