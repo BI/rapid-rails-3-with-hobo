@@ -79,7 +79,16 @@ Tutorial 22 - Creating a “Look and Feel” Plugin for Hobo
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 By Tom Locke
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -93,11 +102,11 @@ In this tutorial we will start with the results of Tutorial 21.
 The plugin will contain:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 A DRYML taglib with all of our tag definitions
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 A Public directory, containing our images and stylesheets
 \end_layout
 
@@ -112,7 +121,40 @@ Here is the content of a batch file to create the folders and move the files:
 \end_layout
 
 \begin_layout Standard
-Figure 253: Batch file with commands to create the plugin folders and content
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/plugin_batch_file.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Batch file with commands to create the plugin folders and content
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -120,6 +162,20 @@ Or, as individual commands:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 > md vendor
 \backslash
 plugins
@@ -127,7 +183,7 @@ plugins
 nifa
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > cd vendor
 \backslash
 plugins
@@ -135,21 +191,21 @@ plugins
 nifa
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > md taglibs
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > md public
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > md public
 \backslash
 nifa
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > md public
 \backslash
 nifa
@@ -157,7 +213,7 @@ nifa
 stylesheets
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > md public
 \backslash
 nifa
@@ -165,7 +221,7 @@ nifa
 images
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > cd ..
 \backslash
 ..
@@ -173,14 +229,20 @@ images
 ..
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > copy app
 \backslash
 views
 \backslash
 taglibs
 \backslash
-application.dryml  vendor
+application.dryml 
+\backslash
+
+\end_layout
+
+\begin_layout Code
+  vendor
 \backslash
 plugins
 \backslash
@@ -191,12 +253,18 @@ taglibs
 nifa.dryml
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > copy public
 \backslash
 stylesheets
 \backslash
-application.css vendor
+application.css 
+\backslash
+
+\end_layout
+
+\begin_layout Code
+  vendor
 \backslash
 plugins
 \backslash
@@ -209,7 +277,7 @@ stylesheets
 nifa.css
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > copy public
 \backslash
 images
@@ -227,31 +295,98 @@ nifa
 images
 \end_layout
 
-\begin_layout Standard
-(That last command will also copy rails.png into the plugin, which you probably
- want to delete).
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-We’ve copied the whole of application.dryml into our plugin, because nearly
- everything in there belongs in the plugin, but it does need some editing:
+(That last command will also copy 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+rails.png
+\end_layout
+
+\end_inset
+
+ into the plugin, which you probably want to delete).
 \end_layout
 
 \begin_layout Standard
-At the top, remove all of the includes, the <set-theme> and the definition
- of <app-name>
+We’ve copied the whole of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ into our plugin, because nearly everything in there belongs in the plugin,
+ but it does need some editing:
+\end_layout
+
+\begin_layout Standard
+At the top, remove all of the includes, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-theme>
+\end_layout
+
+\end_inset
+
+ and the definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<app-name>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 We need to make sure our stylesheet gets included, so add the following
- parameter to the call to <old-page>
+ parameter to the call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<old-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <append-stylesheets:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <stylesheet name="
 \backslash
 nifa
@@ -261,61 +396,82 @@ stylesheets
 nifa.css"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
  </append-stylesheets:>
 \end_layout
 
-\begin_layout Standard
-The new nifa.dryml will be:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-# nifa.drynl
+The new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+nifa.dryml
+\end_layout
+
+\end_inset
+
+ will be:
 \end_layout
 
 \begin_layout Standard
-<append-stylesheets:>
-\end_layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
-\begin_layout Standard
-   <stylesheet name="
-\backslash
-nifa
-\backslash
-stylesheets
-\backslash
-nifa.css"/>
-\end_layout
+\begin_layout Code
 
-\begin_layout Standard
- </append-stylesheets:>
-\end_layout
-
-\begin_layout Standard
+\size footnotesize
 # Add this remove the live search and add sidebars
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 <extend tag="page">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   <old-page merge without-live-search>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
    
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   # need this to acces the nifa.css stylesheet 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
    <append-stylesheets:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <stylesheet name="
 \backslash
 nifa
@@ -325,317 +481,497 @@ stylesheets
 nifa.css"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </append-stylesheets:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
    #    
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <content: replace>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <section-group class="page-content">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <aside param="aside1"><search-and-browse/></aside>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
          <section param="content"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <aside param="aside2"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       </section-group>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <footer: param><footer-nav/></footer:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   </old-page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 </extend>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 # Replace the default navigation bar
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 <def tag="main-nav">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   <navigation class="main-nav">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <nav-item href="">Home</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <nav-item href="">About Us</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <nav-item href="">Grants</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <nav-item href="">Forms</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <nav-item href="">Newsroom</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <nav-item href="">Help</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <nav-item href="">Contact Us</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   </navigation>  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 # new tag 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 <def tag="search-and-browse" attrs="current-subject"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   <div class="search-and-browse"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <div param="search"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <h3>Search CSREES</h3> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <form action=""> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <input type="text" class="search-field"/> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <submit label="Go"/> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       </form> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <p class="help"><a href="">Search Help</a></p> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </div> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <div param="browse-by-audience"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <h3>Browse by Audience</h3> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <select-menu first-option="Information for..." options="&[]"/>   
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </div> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <div param="browse-by-subject"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <h3>Browse by Subject</h3> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <navigation current="&current_subject"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Agricultural &amp; Food Biosecurity</nav-item>
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Agricultural Systems</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Animals &amp; Animal Products</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Biotechnology &amp; Geneomics</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Economy &amp; Commerce</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Education</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Families, Youth &amp; Communities</nav-item>
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       </navigation> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </div> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+
+\size footnotesize
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 # Parameterized panel
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 <def tag="nav-panel">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   <div class="nav-panel" param="default">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <h3 param="heading"></h3>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <div param="body">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <ul param="items"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 # Footer parameterized tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 <def tag="footer-nav">
 \end_layout
 
-\begin_layout Standard
-   <ul>
+\begin_layout Code
+
+\size footnotesize
+  <ul>
 \end_layout
 
-\begin_layout Standard
-       <nav-item href="/">NIFA</nav-item>
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">NIFA</nav-item>
 \end_layout
 
-\begin_layout Standard
-      	<nav-item href="/">USDA.gov</nav-item>
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">USDA.gov</nav-item>
 \end_layout
 
-\begin_layout Standard
-      	<nav-item href="/">Site Map</nav-item>
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">Site Map</nav-item>
 \end_layout
 
-\begin_layout Standard
-      	<nav-item href="/">Policies</nav-item>
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">Policies</nav-item>
 \end_layout
 
-\begin_layout Standard
-      	<nav-item href="/">Grants.gov</nav-item>
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">Grants.gov</nav-item>
 \end_layout
 
-\begin_layout Standard
-		<nav-item href="/">CRIS</nav-item>
+\begin_layout Code
+
+\size footnotesize
+	<nav-item href="/">CRIS</nav-item>
 \end_layout
 
-\begin_layout Standard
-		<nav-item href="/">REEIS</nav-item>
+\begin_layout Code
+
+\size footnotesize
+	<nav-item href="/">REEIS</nav-item>
 \end_layout
 
-\begin_layout Standard
-		<nav-item href="/">Leadership Management Dashboard</nav-item>
+\begin_layout Code
+
+\size footnotesize
+	<nav-item href="/">Leadership Management Dashboard</nav-item>
 \end_layout
 
-\begin_layout Standard
-		<nav-item href="/">eXension</nav-item>
+\begin_layout Code
+
+\size footnotesize
+	<nav-item href="/">eXension</nav-item>
 \end_layout
 
-\begin_layout Standard
-      	<nav-item href="/">RSS</nav-item>
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">RSS</nav-item>
 \end_layout
 
-\begin_layout Standard
-    </ul>
+\begin_layout Code
+
+\size footnotesize
+  </ul>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 </def>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Using the plugin
 \end_layout
 
@@ -644,37 +980,122 @@ To try out the plugin, create a new blank Hobo app.
  There are then three steps to install and setup the plugin:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph*
 Step 1.
-   Copy vendor
+   
+\end_layout
+
+\begin_layout Standard
+Copy 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+vendor
 \backslash
 plugins
 \backslash
-nifa from nifa-demo  into vendor
+nifa
+\end_layout
+
+\end_inset
+
+ from nifa-demo  into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+vendor
 \backslash
-plugins in the new app.
+plugins
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ in the new app.
+\end_layout
+
+\begin_layout Paragraph*
 Step 2.
-  To install the taglib add:
+  
 \end_layout
 
 \begin_layout Standard
+To install the taglib add:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <include src="nifa" plugin="nifa"/>
 \end_layout
 
-\begin_layout Standard
-to application.dryml.
- It must be added after the <set-theme> tag.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
+ It must be added after the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<set-theme>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Paragraph*
 Step 3.
- To install the public assets:
+ 
 \end_layout
 
 \begin_layout Standard
+To install the public assets:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 > copy vendor
 \backslash
 plugins
@@ -686,18 +1107,25 @@ public
 * public
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 That should be it.
  Your new app will now look like the NIFA website, and the tags we defined,
- such as <nav-panel> will be available in every template.
+ such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nav-panel>
 \end_layout
 
-\begin_layout Section*
+\end_inset
 
-\end_layout
-
-\begin_layout Section*
-
+ will be available in every template.
 \end_layout
 
 \end_body

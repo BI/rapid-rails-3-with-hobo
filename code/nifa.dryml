@@ -1,0 +1,89 @@
+<extend tag="page">
+  <old-page merge without-live-search>
+  # need this to acces the nifa.css stylesheet 
+    <append-stylesheets:>
+      <stylesheet name="\nifa\stylesheets\nifa.css"/>
+    </append-stylesheets:>
+    <content: replace>
+      <section-group class="page-content">
+        <aside param="aside1"><search-and-browse/></aside>
+         <section param="content"/>
+        <aside param="aside2"/>
+      </section-group>
+    </content:>
+    <footer: param><footer-nav/></footer:>
+  </old-page>
+</extend>
+
+# Replace the default navigation bar
+
+<def tag="main-nav">
+  <navigation class="main-nav">
+    <nav-item href="">Home</nav-item>
+    <nav-item href="">About Us</nav-item>
+    <nav-item href="">Grants</nav-item>
+    <nav-item href="">Forms</nav-item>
+    <nav-item href="">Newsroom</nav-item>
+    <nav-item href="">Help</nav-item>
+    <nav-item href="">Contact Us</nav-item>
+  </navigation>  
+</def>
+
+# new tag 
+
+<def tag="search-and-browse" attrs="current-subject"> 
+  <div class="search-and-browse"> 
+    <div param="search"> 
+      <h3>Search CSREES</h3> 
+      <form action=""> 
+        <input type="text" class="search-field"/> 
+        <submit label="Go"/> 
+      </form> 
+      <p class="help"><a href="">Search Help</a></p> 
+    </div> 
+    <div param="browse-by-audience"> 
+      <h3>Browse by Audience</h3> 
+      <select-menu first-option="Information for..." options="&[]"/>   
+    </div> 
+    <div param="browse-by-subject"> 
+      <h3>Browse by Subject</h3> 
+      <navigation current="&current_subject"> 
+        <nav-item href="/">Agricultural &amp; Food Biosecurity</nav-item> 
+        <nav-item href="/">Agricultural Systems</nav-item> 
+        <nav-item href="/">Animals &amp; Animal Products</nav-item> 
+        <nav-item href="/">Biotechnology &amp; Geneomics</nav-item> 
+        <nav-item href="/">Economy &amp; Commerce</nav-item> 
+        <nav-item href="/">Education</nav-item> 
+        <nav-item href="/">Families, Youth &amp; Communities</nav-item> 
+      </navigation> 
+    </div> 
+  </div>
+</def>
+
+# Parameterized panel
+
+<def tag="nav-panel">
+  <div class="nav-panel" param="default">
+    <h3 param="heading"></h3>
+    <div param="body">
+      <ul param="items"/>
+    </div>
+  </div>
+</def>
+
+# Footer parameterized tag
+
+<def tag="footer-nav">
+  <ul>
+    <nav-item href="/">NIFA</nav-item>
+    <nav-item href="/">USDA.gov</nav-item>
+    <nav-item href="/">Site Map</nav-item>
+    <nav-item href="/">Policies</nav-item>
+    <nav-item href="/">Grants.gov</nav-item>
+    <nav-item href="/">CRIS</nav-item>
+    <nav-item href="/">REEIS</nav-item>
+    <nav-item href="/">Leadership Management Dashboard</nav-item>
+    <nav-item href="/">eXension</nav-item>
+    <nav-item href="/">RSS</nav-item>
+  </ul>
+</def>
