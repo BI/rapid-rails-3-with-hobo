@@ -66,7 +66,7 @@ logicalmkup
 
 \begin_body
 
-\begin_layout Section*
+\begin_layout Section
 What is Hobo?
 \end_layout
 
@@ -678,7 +678,7 @@ Hopefully this introduction has whetted your appetite and you’re keen to
  Enjoy!
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Fundamentals
 \end_layout
 
@@ -848,7 +848,7 @@ Now we are going to approach the major topics at a shallow level first and
  way first.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rails and Hobo
 \end_layout
 
@@ -890,6 +890,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure1.png
 	width 90col%
@@ -931,6 +933,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure2.png
 	width 90col%
@@ -964,6 +968,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure3.png
 	width 90col%
@@ -1012,7 +1018,7 @@ Hobo Rapid pages are rendered using DRYML, which is passed to the DRYML
  eRB (embedded Ruby) that is then rendered with Action View in Rails.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Hobo Enhancement Summary
 \end_layout
 

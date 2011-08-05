@@ -78,7 +78,7 @@ Tutorial 26 – Installing and using the Git Version Control System
 Tutorial 27 – Rapid Deployment Using Heroku.com
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introductory Concepts and Comments
 \end_layout
 
@@ -109,7 +109,7 @@ Of course, if you are an experienced Rails developer you can publish any
   This is the wave of the future.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 26 – Installing and Using Git 
 \end_layout
 
@@ -919,7 +919,7 @@ Now you are ready to use Git.
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 27 – Rapid Deployment with Heroku
 \end_layout
 
@@ -1407,7 +1407,7 @@ Note: The other four gems that are installed along with the Heroku gem.
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Step 4: Use git to package your application
 \end_layout
 

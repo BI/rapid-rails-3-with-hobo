@@ -49,6 +49,13 @@ logicalmkup
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 0.5in
+\bottommargin 1in
+\headheight 0.5in
+\headsep 0.5in
+\footskip 0.5in
 \secnumdepth -1
 \tocdepth 3
 \paragraph_separation skip
@@ -92,7 +99,7 @@ Note: This Book is for Hobo version 1.3 which is only compatible with Rails
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introductory Concepts and Comments 
 \end_layout
 
@@ -133,7 +140,7 @@ So--get your favorite web browser fired up, have a good cup of coffee handy,
  
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Installing Ruby, Rails and Hobo 
 \end_layout
 
@@ -154,6 +161,7 @@ If you are using a PC with Linux, see this link for installing Ruby and
  Rails on Ubuntu and Debian Linux, and then skip to step #3: 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset CommandInset href
 LatexCommand href
@@ -164,6 +172,7 @@ target "http://wiki.rubyonrails.org/getting-started/installation/linux-ubuntu"
  
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 If you are using a PC with Windows XP or Windows 7, and are new to Ruby
  and Rails, Start with Step #1 below: 
@@ -192,9 +201,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure4.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -277,9 +288,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure5.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -346,9 +359,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure6.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -379,9 +394,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure7.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -421,6 +438,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure8.png
 
@@ -462,9 +481,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure9.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -504,9 +525,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure10.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -546,9 +569,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure11.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -603,9 +628,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure12.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -690,9 +717,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure13.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -761,9 +790,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure14.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -803,8 +834,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure15.png
+	width 80col%
 
 \end_inset
 
@@ -867,9 +901,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure16.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -943,8 +979,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure17.png
+	width 80col%
 
 \end_inset
 
@@ -1066,9 +1105,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure18.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1165,9 +1206,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure19.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1245,7 +1288,7 @@ Instructions for installation of these database engines are next.
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Using MySQL with Hobo
 \end_layout
 
@@ -1302,9 +1345,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure20.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1350,9 +1395,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure21.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1391,9 +1438,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure22.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1477,9 +1526,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure23.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1520,9 +1571,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure24.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1565,9 +1618,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure25.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1606,9 +1661,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure26.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1647,9 +1704,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure27.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1689,8 +1748,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure28.png
+	width 80col%
 
 \end_inset
 
@@ -1706,10 +1768,6 @@ MySQL Instance Configuration Wizard
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1731,9 +1789,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure29.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1775,9 +1835,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure30.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1817,8 +1879,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure31.png
+	width 80col%
 
 \end_inset
 
@@ -1862,9 +1927,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure32.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1903,9 +1970,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure33.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -1946,9 +2015,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure34.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2038,9 +2109,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure35.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2079,9 +2152,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure36.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2120,9 +2195,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure37.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2212,9 +2289,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure38.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2259,9 +2338,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure39.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2297,7 +2378,7 @@ Notice that Hobo and Rails make some assumptions about the naming of the
  
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Using Oracle with Hobo
 \end_layout
 
@@ -2354,9 +2435,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure40.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2391,9 +2474,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure41.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2543,9 +2628,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure42.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2699,9 +2786,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure43.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2736,9 +2825,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure44.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2773,9 +2864,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure45.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2810,9 +2903,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure46.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2847,9 +2942,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure47.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2884,9 +2981,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure48.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -2921,9 +3020,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure49.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -3014,9 +3115,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure50.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -3051,9 +3154,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure51.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -3088,9 +3193,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure52.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -3125,9 +3232,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure53.png
-	width 90col%
+	width 80col%
 
 \end_inset
 
@@ -3162,9 +3271,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename figures/figure54.png
-	width 90col%
+	width 80col%
 
 \end_inset
 

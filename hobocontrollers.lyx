@@ -90,7 +90,7 @@ Model Controller
  is not hard at all.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -468,7 +468,7 @@ auto_actions :write_only, :show
 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Section
 Owner actions 
 \end_layout
 
@@ -782,7 +782,7 @@ config/routes.rb
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Adding extra actions
 \end_layout
 
@@ -1023,7 +1023,7 @@ index_action
 .
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Changing action behavior 
 \end_layout
 
@@ -1124,7 +1124,7 @@ A good test is to ask: is this related to http? No? Then it probably shouldn’t
  they shouldn’t really be dealing with anything else.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Writing an action from scratch
 \end_layout
 
@@ -1881,7 +1881,7 @@ index_action :table, :per_page => 10
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 The default actions
 \end_layout
 
@@ -2393,7 +2393,7 @@ this.user_destroy(current_user)
 The response is either a redirect or an AJAX part update as appropriate.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Section
 Owner actions
 \end_layout
 
@@ -2922,7 +2922,7 @@ home_page
  in ApplicationController)
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Autocompleters
 \end_layout
 
@@ -3102,7 +3102,7 @@ email_address_contains
  Note that this is one of Hobo’s automatic scopes.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Section
 Further Customization
 \end_layout
 
@@ -3254,7 +3254,7 @@ A finder, i.e.
 Options (the same as described above)
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Drag and drop reordering 
 \end_layout
 

@@ -357,7 +357,7 @@ setup_wizard
  
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Hobo Generators
 \end_layout
 
@@ -2524,7 +2524,7 @@ Options:
 Used internally by the setup_wizard for the user resource
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Automatically Generated DRYML Tags 
 \end_layout
 
@@ -3327,7 +3327,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Application.dryml file.
  
 \end_layout

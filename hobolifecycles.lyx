@@ -107,7 +107,7 @@ There is support for this feature in all three of the MVC layers
 This is the secret to making it very quick and easy to get up and running.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -1096,7 +1096,7 @@ Hopefully that worked example has clarified what lifecycles are all about.
  We’ll move on and look at the details now.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Key concepts
 \end_layout
 
@@ -1180,7 +1180,7 @@ There are a variety of ways to limit which users are allowed to perform
  both to steps and to states.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Defining a lifecycle
 \end_layout
 
@@ -1438,7 +1438,7 @@ lifecycle do ...
  
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Defining states
 \end_layout
 
@@ -1581,7 +1581,7 @@ This will take effect the next time you generate and apply a hobo migration.
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Defining creators
 \end_layout
 
@@ -1838,7 +1838,7 @@ instance_eval
 ‘d on the record.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Defining transitions
 \end_layout
 
@@ -2110,7 +2110,7 @@ instance_eval
 ‘d on the record.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Repeated transition names
 \end_layout
 
@@ -2502,7 +2502,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Validations
 \end_layout
 
@@ -2576,7 +2576,7 @@ foo
  is a lifecycle transition.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Controller actions and routes
 \end_layout
 
@@ -3043,7 +3043,7 @@ redirect_to
 .
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Transitions
 \end_layout
 
@@ -3341,7 +3341,7 @@ params[:key]
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Keys and secure links
 \end_layout
 

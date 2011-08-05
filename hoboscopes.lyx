@@ -585,7 +585,7 @@ status open
 We’re ready to get going.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Simple Scopes
 \end_layout
 
@@ -897,7 +897,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Boolean scopes
 \end_layout
 
@@ -991,7 +991,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Date scopes
 \end_layout
 
@@ -1093,7 +1093,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Lifecycle scopes
 \end_layout
 
@@ -1117,7 +1117,7 @@ target "http://cookbook.hobocentral.net/manual/lifecycles"
 => ["Bryan"]
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Key scopes
 \end_layout
 
@@ -1183,7 +1183,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Static scopes
 \end_layout
 
@@ -1414,7 +1414,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Association Scopes
 \end_layout
 
@@ -1623,7 +1623,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Scoping Associations
 \end_layout
 
@@ -1908,7 +1908,7 @@ status open
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Chaining
 \end_layout
 

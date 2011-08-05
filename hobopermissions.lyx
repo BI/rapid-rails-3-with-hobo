@@ -87,7 +87,7 @@ Hobo’s controllers and DRYML tag libraries use this information to automatical
  customize their behavior according to your definitions.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -240,7 +240,7 @@ do something
  permission is a bit of an odd-one-out.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Defining permissions
 \end_layout
 
@@ -537,7 +537,7 @@ end
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Change tracking
 \end_layout
 
@@ -1948,7 +1948,7 @@ attribute
  edit link.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Permissions and associations 
 \end_layout
 
@@ -3372,7 +3372,7 @@ The edit permission mechanism (described in a previous section) can detect
  I love it when a plan comes together!
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Permissions vs.
  validations
 \end_layout
@@ -3694,7 +3694,7 @@ administrator?
  if you want it.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 View helpers
 \end_layout
 

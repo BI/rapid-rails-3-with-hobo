@@ -493,15 +493,8 @@ Rapid User Pages contains tags that implement the basics of Hobo’s user
 
 \end_layout
 
-\begin_layout Subsection*
-\begin_inset CommandInset href
-LatexCommand href
-name "Core"
-target "http://cookbook.hobocentral.net/api_taglibs/core"
-
-\end_inset
-
-
+\begin_layout Section
+Core
 \end_layout
 
 \begin_layout Standard
@@ -1074,7 +1067,7 @@ status collapsed
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Core
 \end_layout
 
@@ -4145,7 +4138,7 @@ status collapsed
 Renders ‘Yes’ for true and ‘No’ for false
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Document Tags
 \end_layout
 
@@ -4456,7 +4449,7 @@ status collapsed
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Editing
 \end_layout
 
@@ -5155,7 +5148,7 @@ status collapsed
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Forms 
 \end_layout
 
@@ -8243,7 +8236,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Generics
 \end_layout
 
@@ -8540,7 +8533,7 @@ sticky
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Lifecycles
 \end_layout
 
@@ -8631,7 +8624,7 @@ Friendship
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Navigation
 \end_layout
 
@@ -8986,7 +8979,7 @@ will_paginate
  are available as attributes 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Pages
 \end_layout
 
@@ -9772,7 +9765,7 @@ status open
 The theme will style this as an AJAX progress ‘spinner’
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Rapid Plus
 \end_layout
 
@@ -10272,7 +10265,7 @@ rating: The rating allowed.
  See gravatar for information on ratings.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Summary
 \end_layout
 
@@ -11312,7 +11305,7 @@ status collapsed
 , returns the association class name.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid Support 
 \end_layout
 
@@ -11712,7 +11705,7 @@ updated_at
  Defaults to false.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Rapid User Pages 
 \end_layout
 

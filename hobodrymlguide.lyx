@@ -65,7 +65,7 @@ logicalmkup
 
 \begin_body
 
-\begin_layout Subsection*
+\begin_layout Section
 What is DRYML?
 \end_layout
 
@@ -241,7 +241,7 @@ name
 ly something you want to paste right into your application.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Simple page templates and ERB
 \end_layout
 
@@ -516,7 +516,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Where are the layouts?
 \end_layout
 
@@ -593,7 +593,7 @@ status collapsed
  tag in the next section.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Defining simple tags
 \end_layout
 
@@ -787,7 +787,7 @@ In fact, DRYML is implemented by compiling to Ruby, and that is exactly
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Parameters
 \end_layout
 
@@ -1152,7 +1152,7 @@ status collapsed
  is providing a parameter to that call.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Changing Parameter Names
 \end_layout
 
@@ -1255,7 +1255,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Multiple Parameters
 \end_layout
 
@@ -1424,7 +1424,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Default Parameter Content
 \end_layout
 
@@ -1854,7 +1854,7 @@ status collapsed
  parameter will be silently ignored.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 The Default Parameter
 \end_layout
 
@@ -2034,7 +2034,7 @@ status collapsed
  familiar and then view templates can be read and understood very easily.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 The Implicit Context
 \end_layout
 
@@ -2899,7 +2899,7 @@ status collapsed
  are equivalent.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Field chains
 \end_layout
 
@@ -3226,7 +3226,7 @@ with=
 .
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Tag attributes
 \end_layout
 
@@ -3593,7 +3593,7 @@ status collapsed
  is a nicer syntax that can be used in the call…
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Flag attributes
 \end_layout
 
@@ -3775,7 +3775,7 @@ all_attributes
  contains every attribute, including the declared ones.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Merging Attributes
 \end_layout
 
@@ -4127,7 +4127,7 @@ merge-params
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Merging selected attributes
 \end_layout
 
@@ -4569,7 +4569,7 @@ class
  attribute takes on the values from both the tag definition and invocation.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Repeated and optional content
 \end_layout
 
@@ -4905,7 +4905,7 @@ Notice that as well as the content being repeated, the implicit context
  is set to each item in the collection in turn.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Even/odd classes
 \end_layout
 
@@ -5187,7 +5187,7 @@ That example has given a sneak preview of another point - using if/unless/repeat
  We’ll get to that in a minute.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Using the implicit context
 \end_layout
 
@@ -5582,7 +5582,7 @@ status collapsed
 .
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Pseudo parameters - 
 \begin_inset Flex Code
 status collapsed
@@ -6469,7 +6469,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Nested parameters
 \end_layout
 
@@ -7216,7 +7216,7 @@ Without ’:’ – call a tag
 With ’:’ – customize an existing call inside the definition
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Customizing and extending tags
 \end_layout
 
@@ -8458,7 +8458,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Aliasing tags
 \end_layout
 
@@ -8502,7 +8502,7 @@ Note that it is a self-closing tag–there is no body to the definition.
 So… that’s aliasing tags then…
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Polymorphic tags
 \end_layout
 
@@ -9038,7 +9038,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Wrapping content
 \end_layout
 
@@ -9446,7 +9446,7 @@ restore
  attributes.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Local variables and scoped variables.
 \end_layout
 
@@ -10054,7 +10054,7 @@ scope.current_nav_item
  variables would not conflict with each other.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Taglibs
 \end_layout
 
@@ -10190,7 +10190,7 @@ When running in development mode, all of these libraries are automatically
  reloaded on every request.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Divergences from XML and HTML
 \end_layout
 

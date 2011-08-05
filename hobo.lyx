@@ -124,7 +124,7 @@ INTRODUCTION AND INSTALLATION
 \end_layout
 
 \begin_layout Chapter
-Chapter 1
+Chapter 1 
 \begin_inset Newline newline
 \end_inset
 
@@ -142,7 +142,7 @@ filename "p1ch1intro.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chaper 2
+Chaper 2 
 \begin_inset Newline newline
 \end_inset
 
@@ -164,7 +164,7 @@ TUTORIALS
 \end_layout
 
 \begin_layout Chapter
-Chapter 3
+Chapter 3 
 \begin_inset Newline newline
 \end_inset
 
@@ -182,7 +182,7 @@ filename "p2c3basictut.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 4
+Chapter 4 
 \begin_inset Newline newline
 \end_inset
 
@@ -229,7 +229,7 @@ Tutorial 16 - The <a> Tag Hyperlink
 	
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introductory Concepts and Comments
 \end_layout
 
@@ -472,7 +472,7 @@ In order to create your own tags, Hobo provides tag definition language
  include in the definition of a web page.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 9 – Editing Auto-Generated Tags 
 \end_layout
 
@@ -486,7 +486,7 @@ filename "ch4tut9.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 10 – DRYML I:  A First Look at DRYML
 \end_layout
 
@@ -500,7 +500,7 @@ filename "ch4tut10.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 11 – DRYML II: Creating Tags from Tags
 \end_layout
 
@@ -514,7 +514,7 @@ filename "ch4tut11.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 12 – Rapid, DRYML and Record Collections
 \end_layout
 
@@ -528,7 +528,7 @@ filename "ch4tut12.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 13 – Listing Data in Table Form
 \end_layout
 
@@ -542,7 +542,7 @@ filename "ch4tut13.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 14 – Working with the Show Page Tag
 \end_layout
 
@@ -556,7 +556,7 @@ filename "ch4tut14.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 15 – New and Edit Pages with The Form Tag	
 \end_layout
 
@@ -570,7 +570,7 @@ filename "ch4tut15.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 16 – The <a> Hyperlink Tag 
 \end_layout
 
@@ -585,7 +585,7 @@ filename "ch4tut16.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 5
+Chapter 5 
 \begin_inset Newline newline
 \end_inset
 
@@ -632,7 +632,7 @@ Tutorial 24 – Creating an Administration Sub-Site
 Tutorial 25 – Using Hobo Database Index Generation
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introductory Concepts and Comments
 \end_layout
 
@@ -659,7 +659,7 @@ At the end of the Advanced Tutorials you will have the expertise to build,
   Enjoy!
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 17 – The Agile Project Manager
 \end_layout
 
@@ -673,7 +673,7 @@ filename "ch5tut17.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 18 – Using CKEditor (Rich Text) with Hobo
 \end_layout
 
@@ -687,7 +687,7 @@ filename "ch5tut18.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 19 – Using FusionCharts with Hobo
 \end_layout
 
@@ -701,7 +701,7 @@ filename "ch5tut19.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 20 – Adding User Comments to Models
 \end_layout
 
@@ -715,7 +715,7 @@ filename "ch5tut20.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 21 – Replicating the Look and Feel of a Site
 \end_layout
 
@@ -729,7 +729,7 @@ filename "ch5tut21.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 22 - Creating a “Look and Feel” Plugin for Hobo
 \end_layout
 
@@ -743,7 +743,7 @@ filename "ch5tut22.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 23 – Using Hobo Lifecycles for Workflow
 \end_layout
 
@@ -757,7 +757,7 @@ filename "ch5tut23.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 24 – Creating an Administration Sub-Site
 \end_layout
 
@@ -771,7 +771,7 @@ filename "ch5tut24.lyx"
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tutorial 25 – Using Hobo Database Index Generation
 \end_layout
 
@@ -786,7 +786,7 @@ filename "ch5tut25.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 6
+Chapter 6 
 \begin_inset Newline newline
 \end_inset
 
@@ -808,7 +808,7 @@ HOBO UNDER THE HOOD
 \end_layout
 
 \begin_layout Chapter
-Chapter 7
+Chapter 7 
 \begin_inset Newline newline
 \end_inset
 
@@ -830,13 +830,11 @@ filename "hobogenerators.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 8
+Chapter 8 
 \begin_inset Newline newline
 \end_inset
 
-
-\size largest
-THE HOBO PERMISSIONS SYSTEM
+THE HOBO PERMISSION SYSTEM
 \end_layout
 
 \begin_layout Standard
@@ -862,7 +860,7 @@ filename "hobopermissions.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 9
+Chapter 9 
 \begin_inset Newline newline
 \end_inset
 
@@ -888,7 +886,7 @@ filename "hobocontrollers.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 10
+Chapter 10 
 \begin_inset Newline newline
 \end_inset
 
@@ -922,9 +920,7 @@ filename "hobolifecycles.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 11
-\size largest
-
+Chapter 11 
 \begin_inset Newline newline
 \end_inset
 
@@ -946,7 +942,7 @@ filename "hoboviewhints.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 12
+Chapter 12 
 \begin_inset Newline newline
 \end_inset
 
@@ -964,7 +960,7 @@ filename "hoboscopes.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 13
+Chapter 13 
 \begin_inset Newline newline
 \end_inset
 
@@ -982,7 +978,7 @@ filename "hobodrymlguide.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 14
+Chapter 14 
 \begin_inset Newline newline
 \end_inset
 

@@ -91,7 +91,7 @@ Note: While Hobo View Hints still operate in version 1.3, we recommend using
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -114,7 +114,7 @@ This functionality used to be handled in the ViewHints module in Hobo 1.
  of this chapter.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Internationalization (I18n)
 \end_layout
 
@@ -405,7 +405,7 @@ Note: Members of the Hobo community have created versions for Spanish, Italian,
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Child relationships 
 \end_layout
 
@@ -607,7 +607,7 @@ answers
  collections are displayed.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Inline Booleans
 \end_layout
 
@@ -843,7 +843,7 @@ paginate?
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Locale (I18n) Friendly Tags
 \end_layout
 
