@@ -1,0 +1,984 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 12 – Rapid, DRYML and Record Collections
+\end_layout
+
+\begin_layout Standard
+You will learn how to create a new index page that will replace the default
+ index page that Hobo generates on the fly, and learn how to display data
+ on this index page that is related through a many-to-many relationship.
+ 
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: four_table
+\end_layout
+
+\begin_layout Standard
+Topics
+\end_layout
+
+\begin_layout Standard
+Learn how to create your own index template in a view/model directory.
+\end_layout
+
+\begin_layout Standard
+Work on using the application.dryml directory to override auto-generated
+ tags.
+\end_layout
+
+\begin_layout Standard
+Learn about the Rapid collection tag.
+\end_layout
+
+\begin_layout Standard
+Get introduced to the Rapid <a> tag.
+\end_layout
+
+\begin_layout Standard
+Learn how to use the <repeat>, <if> and <else> tags.
+\end_layout
+
+\begin_layout Standard
+Steps
+\end_layout
+
+\begin_layout Standard
+1.	Click the model(Recipes) tab.
+  Load your browser again with the Four Table application we ended up with
+ in Tutorial 11.
+  Click the Recipes tag to remind yourself how Hobo automatically creates
+ a list of your recipes.
+ This is different than the Home tab you were working with in Tutorial 11.
+ When you click the Recipes tab, Hobo goes through the three-step check
+ you learned about in Tutorial 1 to locate a template or template definition.
+\end_layout
+
+\begin_layout Standard
+Since we have already moved the <index-page> tag for recipes to 
+\backslash
+taglibs
+\backslash
+application.dryml, Hobo will obtain its tag definition for generation of
+ a view template here.
+ 
+\end_layout
+
+\begin_layout Standard
+Note: You learned back in Tutorial 1 that each of Hobo’s tabs, named with
+ the plural of the model name by default, invoke the index action and list
+ the records in the model.
+\end_layout
+
+\begin_layout Standard
+Since there is not a file called views
+\backslash
+recipes
+\backslash
+index.dryml, Hobo will create its own template on the fly from the <index-page>
+ tag definition in 
+\backslash
+taglibs
+\backslash
+application.dryml.
+ (We created a views
+\backslash
+recipes
+\backslash
+index.dryml in Step 1 but we asked you to remove it.
+ If you did not do that, do it now so you do not have any conflicts as we
+ proceed).
+\end_layout
+
+\begin_layout Standard
+2.
+ Create a new template file.
+ Now, create the new file called index.dryml in the views/recipes folder.
+ This is the folder automatically created when you did the hobo g resource
+ generation in Tutorial 1.
+ This file is called a DRYML template.
+ 
+\end_layout
+
+\begin_layout Standard
+Note: We have used the word template quite frequently now but it is still
+ worth reminding you not to be confused by it.
+ It is a file used to render a specific web page, not a framework for creating
+ one as the word may imply.
+\end_layout
+
+\begin_layout Standard
+Now that this file exists, Hobo will use it when it finds it so let’s put
+ a tag in it to make sure Hobo has a template to render.
+\end_layout
+
+\begin_layout Standard
+<index-page/>
+\end_layout
+
+\begin_layout Standard
+Refresh your browser.
+ It should look just like it did in Step 1.
+ This is because <index-page> is exactly the tag that Hobo is calling to
+ display this page.
+ Instead of doing it automatically, you have added one step.
+ Before, since there was no file in views
+\backslash
+recipes, Hobo created its own version of the page using this tag.
+ Now it looks in the folder, finds the index.dryml file and does what it
+ would have done anyways, namely use the <index-page> tag.
+\end_layout
+
+\begin_layout Standard
+3.	Work with the <collection> tag.
+ From here on in this tutorial we will be moving back and forth between
+ the template views/recipes/index.dryml and the <index-page> definition in
+ views
+\backslash
+taglibs
+\backslash
+application.dryml.
+ Keep this in mind so you do not get confused.
+\end_layout
+
+\begin_layout Standard
+Go to the application.dryml and find the <index-page> tag definition for
+ the Recipe model.
+ Note the <collection> tag in italics and bold below.
+\end_layout
+
+\begin_layout Standard
+<def tag="index-page" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <page merge title="#{ht 'recipe.index.title', :default=>[model.model_name.human(:c
+ount=>100)] }">
+\end_layout
+
+\begin_layout Standard
+    <body: class="index-page recipe" param/>
+\end_layout
+
+\begin_layout Standard
+    <content: param>
+\end_layout
+
+\begin_layout Standard
+      <header param="content-header">
+\end_layout
+
+\begin_layout Standard
+        <h2 param="heading">
+\end_layout
+
+\begin_layout Standard
+          My Recipes
+\end_layout
+
+\begin_layout Standard
+        </h2>
+\end_layout
+
+\begin_layout Standard
+        <p param="count" if>
+\end_layout
+
+\begin_layout Standard
+          <ht key="recipe.collection.count" count="&this.size">
+\end_layout
+
+\begin_layout Standard
+            <count summary/>
+\end_layout
+
+\begin_layout Standard
+          </ht>
+\end_layout
+
+\begin_layout Standard
+        </p>
+\end_layout
+
+\begin_layout Standard
+      </header>
+\end_layout
+
+\begin_layout Standard
+      <section param="content-body">
+\end_layout
+
+\begin_layout Standard
+        <a action="new" to="&model" param="new-link">
+\end_layout
+
+\begin_layout Standard
+          <ht key="recipe.actions.new">New Recipe</ht>
+\end_layout
+
+\begin_layout Standard
+        </a>
+\end_layout
+
+\begin_layout Standard
+        <page-nav param="top-page-nav"/>
+\end_layout
+
+\begin_layout Standard
+        <collection param/>
+\end_layout
+
+\begin_layout Standard
+        <page-nav param="bottom-page-nav"/>
+\end_layout
+
+\begin_layout Standard
+      </section>
+\end_layout
+
+\begin_layout Standard
+    </content:>
+\end_layout
+
+\begin_layout Standard
+  </page>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+To remind yourself that this is the tag responsible for listing the recipe
+ records, delete it and refresh your browser.
+ You will still see a template rendered but without the list of recipes.
+ OK, now let’s put back the <collection> tag so that your file still reads
+ like the above code.
+\end_layout
+
+\begin_layout Standard
+Now let’s move back to the  views/recipes/index.dryml template and explicitly
+ call the collection tag.
+ Change your code to read like this:
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:/>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+Your Recipes template should still look exactly like the one in Step 1.
+\end_layout
+
+\begin_layout Standard
+You are now calling the <collection> tag.
+ Notice the trailing colon (:).
+ This colon is here because you are calling a parameter tag.
+ You can see above that the <collection> tag was parameterized in application.dry
+ml by adding the param attribute to the declaration.
+ You might be wondering where the <collection> tag is defined.
+ 
+\end_layout
+
+\begin_layout Standard
+Actually, it is a member of the Rapid library of tags that we have mentioned.
+ As we go through these tutorials, we will point out where tags, and in
+ particular parameters tags come from.
+ Here is a list of tag situations you will encounter:
+\end_layout
+
+\begin_layout Standard
+HTML tags which are often parameterized
+\end_layout
+
+\begin_layout Standard
+Rapid library tags which are often parameterized
+\end_layout
+
+\begin_layout Standard
+Rapid parameter tags, not defined in your app
+\end_layout
+
+\begin_layout Standard
+User-defined tags which are often parameterized
+\end_layout
+
+\begin_layout Standard
+Rapid auto-generated tags which are not usually parameterized
+\end_layout
+
+\begin_layout Standard
+As we go forward, you will gradually learn how the auto-generated tags are
+ built up out of Rapid library tags.
+\end_layout
+
+\begin_layout Standard
+OK, let’s learn a little more about the <collection> tag.
+ The <collection> tag does the following:
+\end_layout
+
+\begin_layout Standard
+Repeats the body (stuff between the tags) of the tag inside a <ul> list
+ with one item for each object in the collection of records.
+\end_layout
+
+\begin_layout Standard
+If there is no content for the body, it renders a <card> inside the <li>
+ tag nested within the <ul> tags.
+\end_layout
+
+\begin_layout Standard
+The following code corresponds to "no body":
+\end_layout
+
+\begin_layout Standard
+<collection:/>
+\end_layout
+
+\begin_layout Standard
+and this code corresponds to an empty or blank body:
+\end_layout
+
+\begin_layout Standard
+<collection:></collection:>
+\end_layout
+
+\begin_layout Standard
+You have already seen what the former will do, namely list your records
+ in a bolded hyperlinked format, which it derives from the <card> tag.
+ Now try the latter.
+ You will get the blank repeated as many times as there are recipe records,
+ that is, nothing.
+\end_layout
+
+\begin_layout Standard
+Figure 120: page view of using a blank "<collection:></collection:>" tag
+\end_layout
+
+\begin_layout Standard
+Now try the following code.
+\end_layout
+
+\begin_layout Standard
+<collection:>Hello!</collection:>
+\end_layout
+
+\begin_layout Standard
+Since there is a body, the ‘Hello!’ will be repeated and the <card> will
+ no longer be called.
+\end_layout
+
+\begin_layout Standard
+There are three records in our Recipes table so ‘Hello!’ is repeated three
+ times.
+ If you examine your page a little more in detail by hovering your mouse
+ over the ‘Hello’s’, you will see that each is linked to different records
+ and has a different route associated with it.
+\end_layout
+
+\begin_layout Standard
+Now let’s get some content displayed.
+ We are going to use Rapid’s <a> tag, which is similar to the HTML <a> tag
+ but has been redefined.
+ The <a> tag is extended in Rapid to automatically provide a hyperlink to
+ the route to show a particular record of the model.
+ Let’s try this out with the following code.
+\end_layout
+
+\begin_layout Standard
+<collection:><a/></collection:>
+\end_layout
+
+\begin_layout Standard
+If you mouse over or click on one of the links you will discover a route
+ like this
+\end_layout
+
+\begin_layout Standard
+http://localhost:3000/recipes/2-omelette
+\end_layout
+
+\begin_layout Standard
+The <a> link has created this route, which is the route for a show action.
+\end_layout
+
+\begin_layout Standard
+Let’s do a comparison with the <card> tag that Hobo would call if you were
+ not overriding it.
+ Here is the <card> tag definition.
+\end_layout
+
+\begin_layout Standard
+<def tag="card" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <card class="recipe" param="default" merge>
+\end_layout
+
+\begin_layout Standard
+    <header: param>
+\end_layout
+
+\begin_layout Standard
+      <h4 param="heading"><a><name/></a></h4>
+\end_layout
+
+\begin_layout Standard
+    </header:>
+\end_layout
+
+\begin_layout Standard
+    <body: param>
+\end_layout
+
+\begin_layout Standard
+      <ht key="category.collection.count" count="&this.categories.size">
+\end_layout
+
+\begin_layout Standard
+         <count:categories param/>
+\end_layout
+
+\begin_layout Standard
+      </ht>
+\end_layout
+
+\begin_layout Standard
+    </body:>
+\end_layout
+
+\begin_layout Standard
+  </card>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+The <card> tag uses an <h4> heading tag which bolds and applies a larger
+ font according to Hobo’s CSS files.
+ It also uses the <a> tag with a body provided by the <name> tag, which
+ renders the field that Hobo figures out automatically to be the most likely
+ field you want to display.
+ The <name> tag will pick out field names such as title, for example, which
+ is the name of the field in our Recipe model.
+\end_layout
+
+\begin_layout Standard
+If you wish to explicitly display a different field other than the one that
+ Hobo provides by default, you can use the Rapid <view> tag.
+ The syntax for this tag is different than you have encountered so far.
+ Right now we are just going to give you a simplified description of the
+ syntax and postpone a more detailed discussion for a later chapter:
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><view:title/></collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+Note: You will observe the trailing colon (:) with the <view> tag.
+ This is an entirely different use of colon (:) than you have seen with
+ parameter tags.
+ Here the colon (:) is telling Hobo to figure out what model you are referring
+ to and display the field from that particular model.
+ This called implicit context, Hobo’s ability to know at all times what
+ model you are working with in a particular view.
+ In a later chapter you will learn how to change the implicit context.
+ 
+\end_layout
+
+\begin_layout Standard
+If you refresh your browser, you will note that the recipes displayed are
+ not clickable.
+ That is because of the way that the <collection> tag works.
+ Remember that when you add a body to the tag, it no longer uses the <card>
+ tag so you are only asking Hobo to display the title field, not create
+ a hyperlink.
+ That is easily remedied by doing the following.
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><a><view:title/></a></collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+Refresh your browser and see what you’ve got now:
+\end_layout
+
+\begin_layout Standard
+This looks pretty close to the default version of the <collection> tag.
+ With the following use of the <h4> HTML tag, you can almost bring back
+ the default appearance.
+ 
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><h4><a><view:title/></a></h4></collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+The only difference is the background provided to the record that you see
+ above in Step 1 and the lack of the category count.
+ The background is Hobo’s default CSS formatting which in this case is associate
+d with the <card> tag and since you are not using it, the formatting does
+ not appear.
+ Understanding how Hobo utilizes CSS files is covered in a later Chapter.
+\end_layout
+
+\begin_layout Standard
+	
+\end_layout
+
+\begin_layout Standard
+4.	Display the associated record collection.
+ Now that you see how to display collections of records, let’s go a bit
+ deeper.
+ Our Recipe model has a many-to-many relationship with the Category Model.
+ It would be nice to see this relationship without having to click through
+ to an individual recipe.
+\end_layout
+
+\begin_layout Standard
+You can do this in several different ways.
+ First we will do it in views/recipes/index.dryml template.
+ Then we will try it in a <card> definition in application.dryml.
+ Try out the following code.
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><h4><a><view:title/></a></h4>
+\end_layout
+
+\begin_layout Standard
+	<view:categories/>
+\end_layout
+
+\begin_layout Standard
+</collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+What we did here with the <view> tag was to tell Hobo to change its implicit
+ context to the Categories model.
+ The colon(:) is what did the trick and, of course, all the machinery inside
+ Hobo which keeps it informed about the relationship between models that
+ we set up.
+\end_layout
+
+\begin_layout Standard
+Now we are going to do this slightly differently by using another Rapid
+ library tag called <repeat>.
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><h4><a><view:title/></a></h4>
+\end_layout
+
+\begin_layout Standard
+	<repeat:categories><a/></repeat>
+\end_layout
+
+\begin_layout Standard
+</collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+The repeat tag with the colon (:) tells Hobo to loop through the records
+ in the implicit context and to display what is in the body of the tag,
+ namely <a/>.
+ Try it and you will see the categories as hyperlinks but all run together.
+ Fortunately, <repeat> has a join attribute to put in some additional character
+ punctuation.
+ Try this.
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><h4><a><view:title/></a></h4>
+\end_layout
+
+\begin_layout Standard
+	<repeat:categories join=", "><a/></repeat>
+\end_layout
+
+\begin_layout Standard
+	</collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+Now you get this:
+\end_layout
+
+\begin_layout Standard
+If you don’t want to have your categories linked you could do this,
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><h4><a><view:title/></a></h4>
+\end_layout
+
+\begin_layout Standard
+	<repeat:categories join=", "><name/></repeat>
+\end_layout
+
+\begin_layout Standard
+</collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+or you could do this.
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+	<collection:><h4><a><view:title/></a></h4>
+\end_layout
+
+\begin_layout Standard
+	<repeat:categories join=", "><view:name/></repeat>
+\end_layout
+
+\begin_layout Standard
+</collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+Note: The <name/> tag and the name attribute in <view:name/> are not the
+ same.
+ In the former, Hobo looks at the Category model to find a candidate field
+ to output from the <name> tag.
+ We made it easy for Hobo since there is a field called name, which it picks,
+ and displays.
+ In the second example, we explicitly tell Hobo to display the name field
+ of the categories model.
+  
+\end_layout
+
+\begin_layout Standard
+Now we are going to try the same thing within a tag definition so put your
+ template, views/recipes/index.dryml back to the following:
+\end_layout
+
+\begin_layout Standard
+<index-page/>
+\end_layout
+
+\begin_layout Standard
+Now go into application.dryml and find the recipe <card> definition.
+ It should be there from Tutorial 1.
+ If it is not there copy it from views
+\backslash
+taglibs
+\backslash
+auto
+\backslash
+rapid
+\backslash
+cards.dryml.
+ 
+\end_layout
+
+\begin_layout Standard
+Edit it to look like the below.
+ Not the added code in italics and bold.
+ We have added the same code we put in the template above.
+ Since the code is now in the <card> tag definition, we should get all the
+ formatting set up pre-defined in Hobo.
+\end_layout
+
+\begin_layout Standard
+<def tag="card" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <card class="recipe" param="default" merge>
+\end_layout
+
+\begin_layout Standard
+    <header: param>
+\end_layout
+
+\begin_layout Standard
+      <h4 param="heading"><a><name/></a></h4>
+\end_layout
+
+\begin_layout Standard
+    </header:>
+\end_layout
+
+\begin_layout Standard
+    <body: param>
+\end_layout
+
+\begin_layout Standard
+      <ht key="category.collection.count" count="&this.categories.size">
+\end_layout
+
+\begin_layout Standard
+         <count:categories param/>
+\end_layout
+
+\begin_layout Standard
+      </ht>
+\end_layout
+
+\begin_layout Standard
+		 <br/><view:categories/>
+\end_layout
+
+\begin_layout Standard
+    </body:>
+\end_layout
+
+\begin_layout Standard
+  </card>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Refresh your browser.
+\end_layout
+
+\begin_layout Standard
+Now you have succeeded in editing the recipe <card> tag to drill down to
+ assigned categories for your recipes.
+\end_layout
+
+\begin_layout Standard
+5.	Use the <if> and <else> tags.
+ We are going to show you one more version way of displaying the recipe
+ records and the categories assigned to them.
+ Notice that when there are no categories assigned, the <view> tag puts
+ out the text, ‘none’.
+ Let’s try to make this look a little nicer.
+\end_layout
+
+\begin_layout Standard
+The <if> tag checks for null records in a record collection and outputs
+ the body of the tag when the record exists.
+ You use the <else> tag for the case when the record does not exist.
+ Try this.
+\end_layout
+
+\begin_layout Standard
+<def tag="card" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <card class="recipe" param="default" merge>
+\end_layout
+
+\begin_layout Standard
+    <header: param>
+\end_layout
+
+\begin_layout Standard
+      <h4 param="heading"><a><name/></a></h4>
+\end_layout
+
+\begin_layout Standard
+    </header:>
+\end_layout
+
+\begin_layout Standard
+    <body: param>
+\end_layout
+
+\begin_layout Standard
+      
+\end_layout
+
+\begin_layout Standard
+	  <if:categories><view/></if>
+\end_layout
+
+\begin_layout Standard
+	  <else>There are no assigned categories yet.</else>
+\end_layout
+
+\begin_layout Standard
+    </body:>
+\end_layout
+
+\begin_layout Standard
+  </card>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+In the examples above, we used the trailing colon (:) syntax to tell Hobo
+ what model context we wanted in the <view> or <repeat> tags.
+ In this example, we take care of changing the context with the <if> tag
+ so there is no need to do it again.
+ In fact, if we introduced this redundancy, as in the code below, we would
+ get an error:
+\end_layout
+
+\begin_layout Standard
+<!--THIS CODE PRODUCES AN ERROR-->
+\end_layout
+
+\begin_layout Standard
+<if:categories><view:categories/></if>
+\end_layout
+
+\begin_layout Standard
+<else>There are no assigned categories yet.</else>
+\end_layout
+
+\end_body
+\end_document

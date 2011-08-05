@@ -1,0 +1,372 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 13 – Listing Data in Table Form
+\end_layout
+
+\begin_layout Standard
+You will learn how to display your data in a sortable, searchable table.
+ The search will actually extend beyond the table entries to all the fields
+ of each record.
+ The sort and search code is an advanced topic that is provided here for
+ completeness.
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: four_table
+\end_layout
+
+\begin_layout Standard
+Topics
+\end_layout
+
+\begin_layout Standard
+Display model data in table form.
+\end_layout
+
+\begin_layout Standard
+Use the replace attribute to change the content of a parameter tag.
+\end_layout
+
+\begin_layout Standard
+Display associated record counts in the table
+\end_layout
+
+\begin_layout Standard
+Add search and sort to the table.
+\end_layout
+
+\begin_layout Standard
+Steps
+\end_layout
+
+\begin_layout Standard
+1.	Display model in table form.
+ In the following code, we use another built in feature of Hobo’s parameter
+ tags, the ability to replace what the parameter does with new tag code.
+ The code below should be entered into your views/recipes/index.dryml file.
+ Delete or comment out the <index-page> tag from Tutorial 12.
+ 
+\end_layout
+
+\begin_layout Standard
+<index-page >
+\end_layout
+
+\begin_layout Standard
+	<collection: replace>
+\end_layout
+
+\begin_layout Standard
+		<div>
+\end_layout
+
+\begin_layout Standard
+	      <table-plus fields="title,country"/>
+\end_layout
+
+\begin_layout Standard
+	    </div>
+\end_layout
+
+\begin_layout Standard
+	  </collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+Refresh your browser to see your new table:
+\end_layout
+
+\begin_layout Standard
+The fields attribute of the <table-plus> tag lets you specify a list of
+ fields that will become the columns of a table.
+ 
+\end_layout
+
+\begin_layout Standard
+So essentially one line of code sets up a pretty good table for you in Hobo.
+\end_layout
+
+\begin_layout Standard
+2.	Make your data hyperlinked.
+ You might have noticed that the country names are clickable but the titles
+ are not.
+ Hobo provides a way to do this using the this keyword.
+ This refers to the object currently in scope.
+\end_layout
+
+\begin_layout Standard
+ Note: The  this keyword actually has a far deeper meaning that will be
+ explored in more depth later.
+ For now we will just outline how to use it.
+\end_layout
+
+\begin_layout Standard
+Make the following change to your code and refresh your browser.
+\end_layout
+
+\begin_layout Standard
+<index-page >
+\end_layout
+
+\begin_layout Standard
+	<collection: replace>
+\end_layout
+
+\begin_layout Standard
+		<div>
+\end_layout
+
+\begin_layout Standard
+	      <table-plus fields="this, country"/>
+\end_layout
+
+\begin_layout Standard
+	    </div>
+\end_layout
+
+\begin_layout Standard
+	  </collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+Now your recipes are hyperlinked to the show route that displays individual
+ recipe records.
+\end_layout
+
+\begin_layout Standard
+3.	Show associated record counts.
+ It would be nice to display how many associated category records there
+ are.
+ Again, since Hobo knows all about the relationships between records, you
+ know it can figure this out.
+ 
+\end_layout
+
+\begin_layout Standard
+However, if you are familiar with database programming, you know queries
+ have to be done to compute this value.
+ The Hobo framework does not require you to do this extra work.
+ You already know what you want--so you should be able to declare it.
+ Here is how you do it:
+\end_layout
+
+\begin_layout Standard
+<index-page >
+\end_layout
+
+\begin_layout Standard
+	<collection: replace>
+\end_layout
+
+\begin_layout Standard
+		<div>
+\end_layout
+
+\begin_layout Standard
+			<table-plus fields="this, categories.count, country"/>
+\end_layout
+
+\begin_layout Standard
+	    </div>
+\end_layout
+
+\begin_layout Standard
+	  </collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+That was pretty straightforward.
+ Before we refresh our browser again, let’s also display the actual categories
+ in addition to the count.
+ 
+\end_layout
+
+\begin_layout Standard
+Again, with other frameworks this would be a bit more complicated, but Hobo
+ makes this easy.
+ In the previous tutorial, you learned a few ways to display the categories
+ associated with an individual recipe, the simplest of which was the <view>
+ tag.
+ 
+\end_layout
+
+\begin_layout Standard
+Here it is even easier--just add categories to the fields attribute:
+\end_layout
+
+\begin_layout Standard
+<index-page >
+\end_layout
+
+\begin_layout Standard
+	<collection: replace>
+\end_layout
+
+\begin_layout Standard
+		<div>
+\end_layout
+
+\begin_layout Standard
+			<table-plus fields="this, categories.count, categories, country"/>
+\end_layout
+
+\begin_layout Standard
+	    </div>
+\end_layout
+
+\begin_layout Standard
+	  </collection:>
+\end_layout
+
+\begin_layout Standard
+</index-page>
+\end_layout
+
+\begin_layout Standard
+4.
+ Add search and sort capability to the table.
+ Until now we have worked with controllers relatively little.
+ If you think about it a bit, you will quickly realize that to add search
+ and sort, we will have to make a change in the recipe controller.
+ You can understand this by realizing that we want our application to respond
+ to a click with two specific actions: one is a sort and the other is a
+ search.
+\end_layout
+
+\begin_layout Standard
+Go to your controllers/recipes_controller.rb file.
+\end_layout
+
+\begin_layout Standard
+Note: This is actually an advanced topic since we are adding some Ruby code.
+ You will learn more about the meaning of all the unfamiliar syntax in subsequen
+t chapters.
+ But for now, let’s polish off this table functionality.
+\end_layout
+
+\begin_layout Standard
+To get the search feature working, we need to update the controller side.
+ Add an index method to app/controllers/recipes_controller.rb like this:
+\end_layout
+
+\begin_layout Standard
+def index
+\end_layout
+
+\begin_layout Standard
+ hobo_index Recipe.apply_scopes(:search => [params[:search],:title,:body],
+ :joins=>:country, :order_by  => parse_sort_param(:title, :country, :count))
+\end_layout
+
+\begin_layout Standard
+end
+\end_layout
+
+\begin_layout Standard
+Note: The “apply scopes” for the search facility can only contain fields
+ within the recipe model—not related models at this time, but the “order
+  by” can.
+\end_layout
+
+\begin_layout Standard
+Clicking on the Country label twice will trigger sorting in descending alphabeti
+cal order:
+\end_layout
+
+\begin_layout Standard
+	
+\end_layout
+
+\begin_layout Standard
+Now search/filter by “French” in the title or body:
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,475 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 11 – DRYML II: Creating Tags from Tags
+\end_layout
+
+\begin_layout Standard
+You will go to the next step in your understanding of DRYML.
+ You will learn how to define tags from other tags.
+ Specifically, you will learn how to create new tags that inherit parameters
+ from the tags they are based on.
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: four_table
+\end_layout
+
+\begin_layout Standard
+Topics
+\end_layout
+
+\begin_layout Standard
+Defining tags from tags using the merge tag
+\end_layout
+
+\begin_layout Standard
+Defining tags from tags using the extend tag
+\end_layout
+
+\begin_layout Standard
+Replacing tag parameters (not tag content)
+\end_layout
+
+\begin_layout Standard
+1.	Define a tag based on another tag: Method 1.
+ In Tutorial 10, you learned how to define a tag called <messages> that
+ output three lines of HTML.
+ Now you will define a new tag based on <messages> called <more-messages>.
+ Place the following code below the <messages> tag definition.
+ (The order of tag definitions does not matter.
+ This was just a recommendation for neatness.) 
+\end_layout
+
+\begin_layout Standard
+<def tag="more-messages">
+\end_layout
+
+\begin_layout Standard
+	<messages merge>
+\end_layout
+
+\begin_layout Standard
+		<msg2: param>Message 2 Changed</msg2:>
+\end_layout
+
+\begin_layout Standard
+	</messages>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+What you have done here is to edit the <msg2:> parameter tag of the <messages>
+ tag so that it has different default content.
+ By using the merge attribute, you have told Hobo to use everything from
+ the <messages> tag except for the change.
+ Now let’s invoke this tag.
+ Place the following code below your last code from the previous tutorial.
+\end_layout
+
+\begin_layout Standard
+<more-messages/>
+\end_layout
+
+\begin_layout Standard
+		
+\end_layout
+
+\begin_layout Standard
+Refresh your browser to see the change the below.
+ 
+\end_layout
+
+\begin_layout Standard
+Note: Later in this Chapter you will also learn how to add attributes to
+ tags in addition to parameters.
+ Merge means merge parameters AND attributes.
+\end_layout
+
+\begin_layout Standard
+Remember that the text, ‘Message 1’ and ‘Message 3’ is the default text
+ from the <messages> tag.
+\end_layout
+
+\begin_layout Standard
+2.
+ Define a tag based on another tag: Method 2.
+ In the last example, you learned how to define a new tag based on an old
+ tag.
+ The new tag is defined with a new name, <more-messages>.
+ You cannot use the merge method to define a tag from a tag without changing
+ the name.
+\end_layout
+
+\begin_layout Standard
+Go ahead and change <more-messages> to <messages> to convince yourself that
+ you will get an error.
+\end_layout
+
+\begin_layout Standard
+However, Hobo does have a way of preserving tag names while creating tags
+ from tags.
+ It is called extending a tag.
+ It works basically the same way as merging tags, except it uses the <extend>
+ tag instead of the <def> tag to define the new tag.
+\end_layout
+
+\begin_layout Standard
+Now let’s create an extended tag.
+ We will begin by creating a new tag called <messagex> and then extend it
+ using the same name.
+\end_layout
+
+\begin_layout Standard
+<def tag="messagex">
+\end_layout
+
+\begin_layout Standard
+<br/> <br/>
+\end_layout
+
+\begin_layout Standard
+	<ul>
+\end_layout
+
+\begin_layout Standard
+		<li param="msg1">Message 1</li>
+\end_layout
+
+\begin_layout Standard
+		<li param="msg2">Message 2</li>
+\end_layout
+
+\begin_layout Standard
+		<li param="msg3">Message 3</li>
+\end_layout
+
+\begin_layout Standard
+	</ul>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+<extend tag="messagex">
+\end_layout
+
+\begin_layout Standard
+	<old-messagex merge>
+\end_layout
+
+\begin_layout Standard
+		<msg2: param>Message 2 Extended</msg2:>
+\end_layout
+
+\begin_layout Standard
+	</old-messagex>
+\end_layout
+
+\begin_layout Standard
+</extend>	
+\end_layout
+
+\begin_layout Standard
+Instead of placing the code above in front
+\backslash
+.index.dryml, you need to put it in views/taglibs/application.dryml.
+ Recall this will make the tag definition available throughout your application.
+ But there is another reason for putting it here.
+ You cannot use the <extend> tag in a view template, you can only use it
+ within application.dryml.
+  
+\end_layout
+
+\begin_layout Standard
+Note: To extend this tag and have the original one still available, you
+ can use the Hobo “alias-of” parameter:
+\end_layout
+
+\begin_layout Standard
+     <def tag="new-messagex” alias-of="messagex"/>
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+And then extend “new-messagex” with the functionality you need.
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+Before trying this out, you should delete (or comment out) the code for
+  <more-messages> so you will not get confused.
+ 
+\end_layout
+
+\begin_layout Standard
+In the code example above, we created a new tag <messagex> just like the
+ old <messages> tag.
+ We then extended it so that it would look just like the 
+\end_layout
+
+\begin_layout Standard
+<more-messages> tag from Step 1.
+\end_layout
+
+\begin_layout Standard
+Now call the <messagex> tag in front/index.dryml to confirm that it yields
+ output like the <more-messages> tag.
+\end_layout
+
+\begin_layout Standard
+	<messagex/>
+\end_layout
+
+\begin_layout Standard
+You should see the following rendering:
+\end_layout
+
+\begin_layout Standard
+3.
+  Edit the merged tag in more ways.
+ Let’s modify our <more-messages> tag of Step 1,  which is defined in front/inde
+x.dryml.
+ Remove or comment out the <messagex> tag so you won’t get confused.
+\end_layout
+
+\begin_layout Standard
+We are going to show you now that DRYML can do lots of things within the
+ same tag definition with ease.
+ First we will add a new parameter tag before the merge line to demonstrate
+ that you do not have to have the merge line right after your <def> line.
+ 
+\end_layout
+
+\begin_layout Standard
+Next we will show you that you can put both parameter tags and non-parameter
+ HTML after merge markup.
+ Let’s do this in two steps.
+\end_layout
+
+\begin_layout Standard
+Edit your <more-messages> tag to look like the following:
+\end_layout
+
+\begin_layout Standard
+<def tag="more-messages">
+\end_layout
+
+\begin_layout Standard
+	<br/><br/>
+\end_layout
+
+\begin_layout Standard
+	<li param="msg0">Message 0</li>
+\end_layout
+
+\begin_layout Standard
+	<messages merge>
+\end_layout
+
+\begin_layout Standard
+		<msg2: param>Message 2 changed in merge.</msg2:>
+\end_layout
+
+\begin_layout Standard
+	</messages>
+\end_layout
+
+\begin_layout Standard
+</def> 
+\end_layout
+
+\begin_layout Standard
+Make sure you call your <more-messages> tag and refresh your browser.
+\end_layout
+
+\begin_layout Standard
+Figure 115: Page view of the <more-messages> tag usage
+\end_layout
+
+\begin_layout Standard
+Let’s demonstrate that <msg0:> is a real parameter tag with the following
+ code where you call the <more-messages> tag.
+\end_layout
+
+\begin_layout Standard
+<more-messages>
+\end_layout
+
+\begin_layout Standard
+	<msg0:> Message 0 changed with parameter tag.</msg0:>
+\end_layout
+
+\begin_layout Standard
+</more-messages> 
+\end_layout
+
+\begin_layout Standard
+We have chosen this exercise to remind you that you have changed the text
+ in two ways.
+ 
+\end_layout
+
+\begin_layout Standard
+You changed the third block of messages by changing the tag definition within
+ a merge.
+ 
+\end_layout
+
+\begin_layout Standard
+You changed the second block (Message 0) by calling a parameter tag within
+ a tag.
+\end_layout
+
+\begin_layout Standard
+Now let’s edit the <more-messages> definition after the merge is closed
+ with </messages>.
+ We have added two lines of DRYML.
+ The first is a parameter tag, <msg4:>.
+ The second is pure HTML without any parameterization.
+\end_layout
+
+\begin_layout Standard
+<def tag="more-messages">
+\end_layout
+
+\begin_layout Standard
+	<li param="msg0">Message 0</li>
+\end_layout
+
+\begin_layout Standard
+	<messages merge>
+\end_layout
+
+\begin_layout Standard
+		<msg2: param>Message 2 changed in merge.</msg2:>
+\end_layout
+
+\begin_layout Standard
+	</messages>
+\end_layout
+
+\begin_layout Standard
+	<li param="msg4">Message 4</li>
+\end_layout
+
+\begin_layout Standard
+	<li>No Parameter Here</li>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Now let’s invoke <more-messages> and change the default content of the <msg4:>
+ parameter tag.
+\end_layout
+
+\begin_layout Standard
+<more-messages>
+\end_layout
+
+\begin_layout Standard
+	<msg0:> Message 0 changed with parameter tag.</msg0:>
+\end_layout
+
+\begin_layout Standard
+	<msg4:> Message 4 has changed with parameter tag too.</msg4:>
+\end_layout
+
+\begin_layout Standard
+</more-messages> 
+\end_layout
+
+\begin_layout Standard
+Figure 117: More parameter magic
+\end_layout
+
+\end_body
+\end_document

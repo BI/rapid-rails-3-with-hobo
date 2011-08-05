@@ -1,0 +1,1082 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 9 – Editing Auto-Generated Tags 
+\end_layout
+
+\begin_layout Standard
+In this tutorial, you will learn about Hobo’s auto-generated tags that render
+ views in response to controller actions.
+ You will find your way around Hobo’s Rapid directories and files where
+ the auto-generated tags are stored.
+ You will also learn how to make minor edits to the auto-generated tags
+ to prepare you for making tags from tags and redefining tags in later tutorials.
+\end_layout
+
+\begin_layout Standard
+Hobo’s Rapid component handles the generation of an application’s auto-generated
+ tags.
+ The auto-generated tags are built from both HTML and Hobo’s internal library
+ of XML tags called the Rapid Library.
+\end_layout
+
+\begin_layout Standard
+The most important lesson you will learn in this tutorial is how Hobo associates
+ its fundamental auto-generated tags with the four fundamental controller
+ actions: 
+\end_layout
+
+\begin_layout Standard
+index for listing collections of records
+\end_layout
+
+\begin_layout Standard
+show for displaying a single record
+\end_layout
+
+\begin_layout Standard
+new for creating records
+\end_layout
+
+\begin_layout Standard
+edit for editing a single record
+\end_layout
+
+\begin_layout Standard
+The other fundamental actions of saving new and edited records and deleting
+ records are embedded within these fundamental tags as links because they
+ do not need their own web pages.
+ In addition to these four main tags, there is also a navigation tag that
+ defines certain parts of the navigation interface.
+\end_layout
+
+\begin_layout Standard
+Topics
+\end_layout
+
+\begin_layout Standard
+Edit an index page tag
+\end_layout
+
+\begin_layout Standard
+Edit a card tag
+\end_layout
+
+\begin_layout Standard
+Edit a form tag
+\end_layout
+
+\begin_layout Standard
+Edit the Navigation tags 
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: four_table
+\end_layout
+
+\begin_layout Standard
+	
+\end_layout
+
+\begin_layout Standard
+Steps
+\end_layout
+
+\begin_layout Standard
+1.	Start your web server.
+ We are going to continue on from Chapter 3 and use the four_table application.
+ If you don’t have it started, navigate to your four_table directory, in
+ tutorials/four_table, and start the application.
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+four_table> rails server
+\end_layout
+
+\begin_layout Standard
+You should now have a UI that looks like this:
+\end_layout
+
+\begin_layout Standard
+Now open your editor and navigate to the views/taglibs/auto/rapid directory:
+\end_layout
+
+\begin_layout Standard
+Figure 92: Folder view of the rapid DRYML files
+\end_layout
+
+\begin_layout Standard
+Take a look at this directory structure.
+ Focus on the files in the views/taglibs/auto/rapid directory.
+ The Rapid auto-generated tags are stored in these files.
+ Hobo updates the three Rapid directory files, pages.dryml, forms.dryml and
+ cards.dryml every time you run a hobo g migration.
+ Don’t edit these files because Hobo will overwrite them.
+  You can copy and paste pieces, and therefore override them, with code
+ placed in either the application.dryml file or in a template file in a view
+ directory named for a specific model, e.g., views/recipes.
+ This will be explained below in this tutorial.
+\end_layout
+
+\begin_layout Standard
+2.	Familiarize yourself with the Rapid auto-generated files.
+ Let’s look at the pages.dryml file first.
+ Open up the views/taglibs/auto/rapid/pages.dryml file.
+ You will see a series of tag definitions.
+ Look through the file.
+ Notice that there is a Main Navigation section, a Recipes section and a
+ Users section.
+  There are also sections  related to the app’s other models.
+\end_layout
+
+\begin_layout Standard
+We will be talking about the Recipes and Navigation section in this tutorial.
+\end_layout
+
+\begin_layout Standard
+Open up the forms.dryml and cards.dryml files and page through them.
+ You will see similar structures.
+ You will see a section describing Recipes and the other models we have
+ built so far.
+\end_layout
+
+\begin_layout Standard
+Now that you have familiarized yourself with the three Rapid auto-generated
+ tag files, go back to the pages.dryml file.
+ 
+\end_layout
+
+\begin_layout Standard
+3.	Understanding the pages.dryml file.
+ We are not going to explain every detail about what you see in pages.dryml
+ at this point.
+ In subsequent tutorials in this chapter, you will learn most of the key
+ points.
+ The goal in this tutorial is to get some familiarity with the tag structures
+ and how Hobo uses and overrides them.
+ 
+\end_layout
+
+\begin_layout Standard
+Now focus in on the Recipes section.
+ You will see four tag definitions: <index-page>, <show-page>, <new-page>
+ and <edit-page>:
+\end_layout
+
+\begin_layout Standard
+<!-- ====== Recipe Pages ====== -->
+\end_layout
+
+\begin_layout Standard
+<def tag="index-page" for="Recipe"> .
+ .
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+<def tag="new-page" for="Recipe"> .
+ .
+ .
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+<def tag="show-page" for="Recipe"> .
+ .
+ .
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+<def tag="edit-page" for="Recipe"> .
+ .
+ .
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+The following table explains what each of these does.
+ Rapid automatically creates this set of four tags for each model in your
+ application.
+\end_layout
+
+\begin_layout Standard
+Tag
+\end_layout
+
+\begin_layout Standard
+Meaning
+\end_layout
+
+\begin_layout Standard
+Calls
+\end_layout
+
+\begin_layout Standard
+Controller Action
+\end_layout
+
+\begin_layout Standard
+Route (URL)
+\end_layout
+
+\begin_layout Standard
+<index-page>
+\end_layout
+
+\begin_layout Standard
+renders a list of model records
+\end_layout
+
+\begin_layout Standard
+Cards
+\end_layout
+
+\begin_layout Standard
+index
+\end_layout
+
+\begin_layout Standard
+*/model_name(plural)
+\end_layout
+
+\begin_layout Standard
+<new-page>
+\end_layout
+
+\begin_layout Standard
+renders a data entry page for a new record.
+\end_layout
+
+\begin_layout Standard
+Forms
+\end_layout
+
+\begin_layout Standard
+new
+\end_layout
+
+\begin_layout Standard
+*/model_name/new
+\end_layout
+
+\begin_layout Standard
+<show-page>
+\end_layout
+
+\begin_layout Standard
+renders a single record.
+\end_layout
+
+\begin_layout Standard
+None
+\end_layout
+
+\begin_layout Standard
+show
+\end_layout
+
+\begin_layout Standard
+*/model_name/ID-record_name
+\end_layout
+
+\begin_layout Standard
+<edit-page>
+\end_layout
+
+\begin_layout Standard
+renders a data entry page for an existing record.
+\end_layout
+
+\begin_layout Standard
+Forms
+\end_layout
+
+\begin_layout Standard
+edit
+\end_layout
+
+\begin_layout Standard
+*/model_name/edit/ID-record_name
+\end_layout
+
+\begin_layout Standard
+Figure 93: Hobo Page Action Tag definitions
+\end_layout
+
+\begin_layout Standard
+You cannot see it explicitly in the pages.dryml file, but the <index-page>
+ tag calls the Recipe <card> tag.
+ We will demonstrate this by editing them shortly.
+ The <new-page> and <edit-page> tags call the Recipe <form> tags.
+ 
+\end_layout
+
+\begin_layout Standard
+These auto-generated tags, each of the four tags above as well as the <form>
+ and <card> tags, are built from tags defined in the Rapid library of tags.
+ The four page tags are built from the Rapid <page> tag, the form tag from
+ the Rapid <form> tag and the card tag from the Rapid <card> tag.
+ 
+\end_layout
+
+\begin_layout Standard
+You might be confused at first because the auto-generated tags <form> and
+ <card> have the same names as the Rapid auto-generated tags.
+ What Hobo is really doing is redefining these tags and using the same tag
+ name in the redefined tag.
+\end_layout
+
+\begin_layout Standard
+The last important point to realize is that there is a one-to-one association
+ between these four tags and both controller actions and their associated
+ routes.
+ Routes are the URLs related to the web pages resulting from a particular
+ controller action.
+ Hobo automatically defines the routes, although they can be user-defined
+ and customized too.
+ 
+\end_layout
+
+\begin_layout Standard
+The controller action can be executed by navigating to the browser route
+ URL listed in the figure at the top of this page.
+\end_layout
+
+\begin_layout Standard
+Note:  The asterisk (*) refers to the route URL for your app, which is usually
+ http://localhost:3000 for Ruby on Rails development setups.
+\end_layout
+
+\begin_layout Standard
+4.	Edit the index page (method 1).
+ Open up the pages.dryml file and look at the <index-page> tag definition.
+ Here is what it looks like:
+\end_layout
+
+\begin_layout Standard
+You invoke the index action by clicking on a tab with a particular model
+ name, which is Recipes in this example.
+ Go ahead and click the Recipes tab to remind yourself where you left off
+ in Tutorial 6 of Chapter 3: 
+\end_layout
+
+\begin_layout Standard
+Note that the URL that generates the “Recipes Index” page, http://localhost:3000
+/recipes, has the form of an index action.
+ (Refer to the Hobo Page Action Tag definitions figure earlier in this tutorial.)
+ You can see three lines of text in the body of the tab beginning with the
+ ‘Recipes’ title, then ‘There are 3 Recipes’, a ‘New Recipe’ hyperlink,
+ and finally the list of recipes.
+ 
+\end_layout
+
+\begin_layout Standard
+There are three levels of overriding.
+ Hobo handles these by checking sequentially in three directories for the
+ tags or tag definitions it will use to render a view template.
+\end_layout
+
+\begin_layout Standard
+The first place Hobo looks to find the information it needs to render a
+ view template corresponding to a particular model is the /views directory
+ corresponding to that model.
+ 
+\end_layout
+
+\begin_layout Standard
+Note: Prior to Hobo 1.3, a view folder for each generated model was created.
+  This is no longer the case.
+ In the figure below, the categories, countries, and recipes folders were
+ created manually.
+\end_layout
+
+\begin_layout Standard
+In this case, note that /views/recipes is empty.
+\end_layout
+
+\begin_layout Standard
+The next place Hobo goes is the views/taglibs/application.dryml file.
+ The last place Hobo goes is the views/taglibs/auto/rapid/pages.dryml file.
+ 
+\end_layout
+
+\begin_layout Standard
+You are going to put the recipe index tag definition in application.dryml
+ causing Hobo to use level 2.
+ So take the code above from pages.dryml beginning with 
+\end_layout
+
+\begin_layout Standard
+<def tag="index-page" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+and paste it into /views/taglibs/application.dryml file.
+ Paste it below the following code in views/taglibs/application.dryml file.
+\end_layout
+
+\begin_layout Standard
+<include src="rapid" plugin="hobo"/>
+\end_layout
+
+\begin_layout Standard
+<include src="taglibs/auto/rapid/cards"/>
+\end_layout
+
+\begin_layout Standard
+<include src="taglibs/auto/rapid/pages"/>
+\end_layout
+
+\begin_layout Standard
+<include src="taglibs/auto/rapid/forms"/>
+\end_layout
+
+\begin_layout Standard
+<set-theme name="clean"/>
+\end_layout
+
+\begin_layout Standard
+<def tag="index-page" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+.
+ .
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+	The line in bold italics above is the first line from your copied code.
+\end_layout
+
+\begin_layout Standard
+Note: As you learn Hobo you might get confused between tag definitions and
+ tags.
+ This is often the case because Hobo does not need you to specifically invoke
+ the tags that are defined in the Rapid files (pages.dryml,forms.dryml etc…)
+ or in the application.dryml file.
+ If the tags have the default names “index”, “new”,” show”, or “edit”, then
+ Hobo creates the template on the fly.
+ You do not have to put tag code in a template yourself unless you do not
+ want to use Hobo’s default template.
+\end_layout
+
+\begin_layout Standard
+First, refresh your browser to confirm that the UI has not changed.
+ Simply copying a tag definition from pages.dryml to application.dryml with
+ no changes to the tag definition should not change the page rendering.
+ It is a good idea to double check in case you copied something wrong so
+ you won’t confuse a copy mistake with a coding mistake.
+\end_layout
+
+\begin_layout Standard
+Let’s make a minor change to convince you that this is what is happening.
+ Note that the line in bold italics below is what has changed.
+\end_layout
+
+\begin_layout Standard
+<def tag="index-page" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <page merge title="#{ht 'recipe.index.title', :default=>[model.model_name.human(:c
+ount=>100)] }">
+\end_layout
+
+\begin_layout Standard
+    <body: class="index-page recipe" param/>
+\end_layout
+
+\begin_layout Standard
+    <content: param>
+\end_layout
+
+\begin_layout Standard
+      <header param="content-header">
+\end_layout
+
+\begin_layout Standard
+        <h2 param="heading">
+\end_layout
+
+\begin_layout Standard
+          My Recipes
+\end_layout
+
+\begin_layout Standard
+        </h2>
+\end_layout
+
+\begin_layout Standard
+        <p param="count" if>
+\end_layout
+
+\begin_layout Standard
+          <ht key="recipe.collection.count" count="&this.size">
+\end_layout
+
+\begin_layout Standard
+            <count summary/>
+\end_layout
+
+\begin_layout Standard
+          </ht>
+\end_layout
+
+\begin_layout Standard
+        </p>
+\end_layout
+
+\begin_layout Standard
+      </header>
+\end_layout
+
+\begin_layout Standard
+      <section param="content-body">
+\end_layout
+
+\begin_layout Standard
+        <a action="new" to="&model" param="new-link">
+\end_layout
+
+\begin_layout Standard
+          <ht key="recipe.actions.new">New Recipe</ht>
+\end_layout
+
+\begin_layout Standard
+        </a>
+\end_layout
+
+\begin_layout Standard
+        <page-nav param="top-page-nav"/>
+\end_layout
+
+\begin_layout Standard
+        <collection param/>
+\end_layout
+
+\begin_layout Standard
+        <page-nav param="bottom-page-nav"/>
+\end_layout
+
+\begin_layout Standard
+      </section>
+\end_layout
+
+\begin_layout Standard
+    </content:>
+\end_layout
+
+\begin_layout Standard
+  </page>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser and you will see that Hobo has changed the template
+ it generated dynamically:
+\end_layout
+
+\begin_layout Standard
+Figure 98: Page view of "My Recipes" after modifying the <index-page> tag
+\end_layout
+
+\begin_layout Standard
+You should see that the first line of the page has changed from “Recipes”
+ to “My Recipes”.
+\end_layout
+
+\begin_layout Standard
+Let us describe what happened.
+ 
+\end_layout
+
+\begin_layout Standard
+Step 1: Hobo looked for a template in the views/recipes/ directory called
+ index.dryml.
+ 
+\end_layout
+
+\begin_layout Standard
+Step 2: Since views/recipes/index.dryml did not exist, Hobo next looked in
+ views/taglib/application.dryml where it found the tag definition for the
+ index page.
+\end_layout
+
+\begin_layout Standard
+Step 3: Hobo used this tag definition to generate the contents of the “index”
+ page.
+\end_layout
+
+\begin_layout Standard
+5.	Change the index page(method 2).
+ If you want to change the index page directly, you can create a new file
+ in the views/recipes directory called index.dryml.
+\end_layout
+
+\begin_layout Standard
+	We haven’t given you enough information for you to build your own index.dryml
+ template using Hobo’s tag library yet.
+  We said above that Hobo will look there first for a page to render when
+ the index action is invoked.
+ 
+\end_layout
+
+\begin_layout Standard
+So if you place an empty file here, you get a blank page rendered.
+ Go ahead and create a file called index.dryml in the views/recipes directory.
+ Confirm for yourself that you get a blank page.
+\end_layout
+
+\begin_layout Standard
+Now let’s do something a little more useful.
+ Add the single line of code below to the index.dryml file: 
+\end_layout
+
+\begin_layout Standard
+<index-page/> 
+\end_layout
+
+\begin_layout Standard
+Note: The Hobo tag syntax is just like you would expect from HTML or XML.
+ The code <index-page/> is equivalent to <index-page></index-page>.
+ Watch your placement of “/”.
+ It was our most frequent error when we started with DRYML.
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser and you will see the same page rendered as in Step
+ 4.
+ What has happened is that Hobo has checked in the views/recipes directory
+ for a file called index.dryml, found one and rendered it.
+ When it encountered the <index-page/> tag, it first checked in index.dryml
+ for a tag definition.
+ Not finding one there, it checked in application.dryml where it found one
+ to use in rendering the <index-page/> tag in index.dryml.
+ If it had not found a tag definition in application.dryml, Hobo would have
+ gone back to pages.dryml for the default <index-page> definition.
+\end_layout
+
+\begin_layout Standard
+Note: You can put a tag definition in either a view template file or in
+ application.dryml but Hobo will ignore tags in application.dryml.
+ The application.dryml file is for tag definitions only.
+ 
+\end_layout
+
+\begin_layout Standard
+6.	Edit an individual record’s view in the index page.
+ By now, you should have entered a couple of recipes.
+ Be sure to do that if you have not.
+\end_layout
+
+\begin_layout Standard
+In Table 1 above, we indicated that the <index-page> tag calls <card> tags
+ to render individual records.
+ We can demonstrate this process by changing a <card> tag.
+ Go to the cards.dryml file in the rapid directory and copy the <card> definition
+ for recipe cards into the application.dryml file below the <index-page>
+ definition.
+ Hobo will now use this version of the <card> tag when it uses the  <index-page>.
+\end_layout
+
+\begin_layout Standard
+<def tag="card" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+	 <card class="recipe" param="default" merge>
+\end_layout
+
+\begin_layout Standard
+    <header: param>
+\end_layout
+
+\begin_layout Standard
+      <h4 param="heading"><a><name/></a></h4>
+\end_layout
+
+\begin_layout Standard
+    </header:>
+\end_layout
+
+\begin_layout Standard
+    <body: param>
+\end_layout
+
+\begin_layout Standard
+      <ht key="category.collection.count" count="&this.categories.size">
+\end_layout
+
+\begin_layout Standard
+         <count:categories param/>
+\end_layout
+
+\begin_layout Standard
+      </ht>
+\end_layout
+
+\begin_layout Standard
+    </body:>
+\end_layout
+
+\begin_layout Standard
+  </card>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Again, we will not explain the detailed syntax of this tag yet.
+ Let’s just make a simple change (in bold italics below) to demonstrate
+ how Hobo works:
+\end_layout
+
+\begin_layout Standard
+<def tag="card" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+	 <card class="recipe" param="default" merge>
+\end_layout
+
+\begin_layout Standard
+    <header: param>
+\end_layout
+
+\begin_layout Standard
+      <h4 param="heading"><a><name/></a>…test</h4>
+\end_layout
+
+\begin_layout Standard
+    </header:>
+\end_layout
+
+\begin_layout Standard
+    <body: param>
+\end_layout
+
+\begin_layout Standard
+      <ht key="category.collection.count" count="&this.categories.size">
+\end_layout
+
+\begin_layout Standard
+         <count:categories param/>
+\end_layout
+
+\begin_layout Standard
+      </ht>
+\end_layout
+
+\begin_layout Standard
+    </body:>
+\end_layout
+
+\begin_layout Standard
+  </card>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser.
+ Click the ‘Recipes’ tab to invoke the index action using the <index-page>
+ tag.
+\end_layout
+
+\begin_layout Standard
+Figure 100: How a change to the <index-page> tag affects a collection
+\end_layout
+
+\begin_layout Standard
+You see how each record displayed has been changed.
+ You didn’t need to iterate through a loop.
+ Iterating through all records in a collection is built in to Hobo’s tag
+ processing.
+ If you look back to Step 4 to see the <index-page> tag definition, you
+ will see the following line:
+\end_layout
+
+\begin_layout Standard
+<collection param/>
+\end_layout
+
+\begin_layout Standard
+It is here that the <card> tag is called.
+ The <collection> tag refers to a collection of records from a data model.
+ 
+\end_layout
+
+\begin_layout Standard
+Now click on one of the recipe name hyperlinks, which will invoke the <show-page
+> tag in pages.dryml.
+ Since you haven’t changed this tag and since it does not use the <card>
+ tag, you will NOT see ‘....test’ appended to recipe names as you do when Hobo
+ lists recipes using the <index-page> tag.
+\end_layout
+
+\begin_layout Standard
+To finish up this step, remove the text ‘....test’ to keep things looking nice.
+ 
+\end_layout
+
+\begin_layout Standard
+6.	Editing a form.
+ To modify a form, you can do something similar to editing the <card> tag
+ above.
+ In this case, the relevant page tag is the <new-page> tag in pages.dryml.
+ It calls the <form> tag.
+ You can see that in the forms.dryml file.
+ 
+\end_layout
+
+\begin_layout Standard
+7.	Editing navigation tabs and their order.
+ As you have seen, Hobo provides a predefined tab-based user interface.
+ By default, it arranges the tabs alphabetically by model.
+ This is probably not what you want.
+ You more than likely want to set up an order that makes sense for your
+ application.
+\end_layout
+
+\begin_layout Standard
+This is readily done.
+ Find the <main-nav> tag definition in the pages.dryml file and copy it into
+ application.dryml right after the <app-name> tag definition.
+\end_layout
+
+\begin_layout Standard
+<def tag="main-nav">
+\end_layout
+
+\begin_layout Standard
+  <navigation class="main-nav" merge-attrs param="default">
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="#{base_url}/">Home</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-nam
+e-human count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item with="&Country"><ht key="country.nav_item" count="100"><model-name-
+human count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item with="&Recipe"><ht key="recipe.nav_item" count="100"><model-name-hu
+man count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Standard
+  </navigation>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Now let’s change the order of the tabs in your UI.
+ Change the order of your tabs by moving the Recipes tab up to the position
+ noted below in bold italics.
+\end_layout
+
+\begin_layout Standard
+<def tag="main-nav">
+\end_layout
+
+\begin_layout Standard
+  <navigation class="main-nav" merge-attrs param="default">
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="#{base_url}/">Home</nav-item>
+\end_layout
+
+\begin_layout Standard
+	   <nav-item with="&Recipe"><ht key="recipe.nav_item" count="100"><model-name-hu
+man count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-nam
+e-human count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item with="&Country"><ht key="country.nav_item" count="100"><model-name-
+human count="100"/></ht></nav-item> 
+\end_layout
+
+\begin_layout Standard
+  </navigation>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser and you will see the new tab order:
+\end_layout
+
+\begin_layout Standard
+8.	Editing an application name.
+ If you want to change the name of the application that appears on all the
+ UI web pages, you can do this easily also.
+ The config.hobo.app_name key is found in the config/application.rb file and
+ can be edited to change the application name.
+  Make the following change, then restart the application, and then refresh
+ your browser:
+\end_layout
+
+\begin_layout Standard
+config.hobo.app_name = "Four Tables, No Waiting"	
+\end_layout
+
+\begin_layout Standard
+9.
+  Summary.
+ The Hobo Rapid generator creates tag definitions and places them in the
+ files of the Rapid directory.
+ The programmer overrides, redefines, and defines new tags in application.dryml.
+ These definitions are available throughout the application.
+ So far, you have just learned how to override tags.
+\end_layout
+
+\begin_layout Standard
+There are no tag calls in application.dryml except within a tag definition
+ because application.dryml is NOT a template file (see it as a library file).
+ The programmer invokes--that is--calls tags in template files placed in
+ the view/<model_name> directories.
+ 
+\end_layout
+
+\begin_layout Standard
+The programmer may also override, redefine, or define a new tag within a
+ template, but this modification is local (e.g., only available within that
+ template).
+\end_layout
+
+\begin_layout Standard
+Note: A new feature of Hobo 1.3 is that application tag definitions can be
+ organized into multiple dryml files as long as they reside in the app/views/app
+lication directory.
+\end_layout
+
+\begin_layout Standard
+So instead of having one large application.dryml file, you can organize your
+ application specific tag definitions into multiple files and place them
+ in the app/views/application directory.
+\end_layout
+
+\begin_layout Section*
+
+\end_layout
+
+\end_body
+\end_document

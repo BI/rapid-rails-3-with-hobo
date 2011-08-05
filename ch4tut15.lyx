@@ -1,0 +1,712 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 15 – New and Edit Pages with The Form Tag	
+\end_layout
+
+\begin_layout Standard
+In this tutorial you will be introduced to the <new-page> and <edit-page>
+ auto-generated tags.
+ Both of these tags utilize the Rapid <form> tag as their basic building
+ block.
+ You will learn how the <form> tag utilizes both the <field-list> and <input>
+ tags.
+ You will also learn about the concept of a “polymorphic” tag, which renders
+ form components based on field type and model structure.
+\end_layout
+
+\begin_layout Standard
+Tutorial Application: four_table
+\end_layout
+
+\begin_layout Standard
+Topics
+\end_layout
+
+\begin_layout Standard
+The <new-page> and <edit-page> tags
+\end_layout
+
+\begin_layout Standard
+The <field-list> tag
+\end_layout
+
+\begin_layout Standard
+The <input-tag>
+\end_layout
+
+\begin_layout Standard
+Steps
+\end_layout
+
+\begin_layout Standard
+1.	Get introduced to the <new-page> and <edit-page> tags.
+ Go into pages.dryml and take a look at the code for both of these tags.
+ Here is the  <new-page> definition:
+\end_layout
+
+\begin_layout Standard
+<def tag="new-page" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <page merge title="#{ht 'recipe.new.title', :default=>[' New Recipe'] }">
+\end_layout
+
+\begin_layout Standard
+    <body: class="new-page recipe" param/>
+\end_layout
+
+\begin_layout Standard
+    <content: param>
+\end_layout
+
+\begin_layout Standard
+      <section param="content-header">
+\end_layout
+
+\begin_layout Standard
+        <h2 param="heading">
+\end_layout
+
+\begin_layout Standard
+          <ht key="recipe.new.heading">
+\end_layout
+
+\begin_layout Standard
+            New Recipe
+\end_layout
+
+\begin_layout Standard
+          </ht>
+\end_layout
+
+\begin_layout Standard
+        </h2>
+\end_layout
+
+\begin_layout Standard
+      </section>
+\end_layout
+
+\begin_layout Standard
+      <section param="content-body">
+\end_layout
+
+\begin_layout Standard
+        <form param>
+\end_layout
+
+\begin_layout Standard
+          <submit: label="#{ht 'recipe.actions.create', :default=>['Create
+ Recipe']}"/>
+\end_layout
+
+\begin_layout Standard
+        </form>
+\end_layout
+
+\begin_layout Standard
+      </section>
+\end_layout
+
+\begin_layout Standard
+    </content:>
+\end_layout
+
+\begin_layout Standard
+  </page>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+And here is the <edit-page> definition:
+\end_layout
+
+\begin_layout Standard
+<def tag="edit-page" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <page merge title="#{ht 'recipe.edit.title', :default=>['Edit Recipe'] }">
+\end_layout
+
+\begin_layout Standard
+    <body: class="edit-page recipe" param/>
+\end_layout
+
+\begin_layout Standard
+    <content:>
+\end_layout
+
+\begin_layout Standard
+      <section param="content-header">
+\end_layout
+
+\begin_layout Standard
+        <h2 param="heading">
+\end_layout
+
+\begin_layout Standard
+          <ht key="recipe.edit.heading" name="&this.respond_to?(:name) ? this.name
+ : ''">
+\end_layout
+
+\begin_layout Standard
+            Edit Recipe
+\end_layout
+
+\begin_layout Standard
+          </ht>
+\end_layout
+
+\begin_layout Standard
+        </h2>
+\end_layout
+
+\begin_layout Standard
+        <delete-button label="#{ht 'recipe.actions.delete', :default=>['Remove
+ This Recipe']}" param/>
+\end_layout
+
+\begin_layout Standard
+      </section>
+\end_layout
+
+\begin_layout Standard
+      <section param="content-body">
+\end_layout
+
+\begin_layout Standard
+        <form param/>
+\end_layout
+
+\begin_layout Standard
+      </section>
+\end_layout
+
+\begin_layout Standard
+    </content:>
+\end_layout
+
+\begin_layout Standard
+  </page>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+The components that we are going to focus on are shown in bold italics.
+ Let’s also take a look at the <form> tag that both of these tags call.
+\end_layout
+
+\begin_layout Standard
+<def tag="form" for="Recipe">
+\end_layout
+
+\begin_layout Standard
+  <form merge param="default">
+\end_layout
+
+\begin_layout Standard
+    <error-messages param/>	
+\end_layout
+
+\begin_layout Standard
+    <field-list fields="title, body, categories, category_assignments, country"
+ param/>
+\end_layout
+
+\begin_layout Standard
+    <div param="actions">
+\end_layout
+
+\begin_layout Standard
+      <submit label="Save" param/><or-cancel param="cancel"/>
+\end_layout
+
+\begin_layout Standard
+    </div>
+\end_layout
+
+\begin_layout Standard
+  </form>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+In a nutshell, you can see that each of these auto-generated tags call the
+ auto-generated  <form> tag which is defined by merging the Rapid <form>
+ tag in addition to other tags.
+ The specific fields that will be used in the form are declared within the
+ fields attribute of the <field-list> tag that you learned about in Tutorial
+ 14 on the <show-page> tag.
+\end_layout
+
+\begin_layout Standard
+You no doubt are noticing that the <field-list> tag is doing something different
+ here.
+ Instead of displaying a two-column table consisting of field labels in
+ the first column and field data in the second, it is putting the appropriate
+ data entry control in the second column.
+ The data entry control choice depends on the type of field that was defined
+ in the model.
+\end_layout
+
+\begin_layout Standard
+Hobo puts a one-line data entry box for the title field, which is a string
+ field and a larger box for the body field, which is a text field.
+  Notice that Hobo also creates drop-down combo controls for the country
+ field and for the categories collection.
+ 
+\end_layout
+
+\begin_layout Standard
+Hobo does this from inspecting table relationships.
+  The recipe model is related to both the country model and the category
+ model.
+ This is a pretty powerful capability for just one tag, especially given
+ that the Category model is related to the Recipe model through a many-to-many
+ relationship through the CategoryAssignment model.
+\end_layout
+
+\begin_layout Standard
+All of this capability results from Hobo’s implementation of tag polymorphism,
+ an ability to do what is necessary from the context of the code.
+ Polymorphism means ‘many forms (not data entry form)’ or ‘many structures’.
+ It is a hallmark feature of the Ruby language.
+\end_layout
+
+\begin_layout Standard
+(There is even more going on in the <field-list> tag but we will wait to
+ discuss it until the next step.)
+\end_layout
+
+\begin_layout Standard
+Before moving on, let’s take care of a detail by using your knowledge of
+ parameter tags.
+ You will note that the <new-page> tag calls the <submit:> parameter tag
+ and that the <edit-page> tag does not.
+ But there is still a submit button on the edit page.
+ The explanation can be found in the definition of the <form> tag.
+ There you will see that the <submit> tag is declared as a parameter tag
+ as is the <or-cancel> tag.
+\end_layout
+
+\begin_layout Standard
+The <new-page> tag calls the <submit:> parameter tag and changes the label
+ from its default value of ‘Save’ to a new value of ‘Create Recipe’.
+ There is no need to call the <or-cancel> tag with its parameterized name,
+ <cancel>, because it is not changed.
+\end_layout
+
+\begin_layout Standard
+On the other hand, the <edit-page> tag just relies on the default for both
+ of these tags so there are no calls to them in the <edit-page> tag definition.
+\end_layout
+
+\begin_layout Standard
+2.	Working with the <field-list> tag.
+ You have already done some work with this tag in the last tutorial.
+  Experiment with removing a field by editing the tag’s fields attribute.
+ First copy the three tags above into application.dryml
+\end_layout
+
+\begin_layout Standard
+     (As we have mentioned, you probably want to be careful about editing
+ tags this way in a real application.
+ But this is the easiest way for us to acquaint you with how Hobo works.)
+ 
+\end_layout
+
+\begin_layout Standard
+Let’s remove the categories drop-down box as an experiment.
+ Working in application.dryml, edit the <form> definition code.
+ Change 
+\end_layout
+
+\begin_layout Standard
+<field-list fields="title, body, categories, category_assignments, country"
+ param/>
+\end_layout
+
+\begin_layout Standard
+to:
+\end_layout
+
+\begin_layout Standard
+<field-list fields="title, body, category_assignments, country" param/>
+\end_layout
+
+\begin_layout Standard
+Now your categories drop-down box is gone.
+\end_layout
+
+\begin_layout Standard
+You may be wondering why we did not remove the category_assignments attribute
+ also or for that matter why it is there at all.
+ First, try removing category_assignments without removing categories.
+ There is no effect.
+ Try removing both.
+ You get the same result as with removing categories alone.
+ This is just how the <field-list> tag works.
+ On the other hand, the model structure that connects the Recipe model to
+ the Category model through the CategoryAssignments model must, of course,
+ be there for the drop-down box to be there at all.
+ Put back the categories drop-down box to end this step of the tutorial.
+\end_layout
+
+\begin_layout Standard
+3.
+  Working with the  <field-list> and <input> tags.
+ In the same way that <field-list> calls the <view> tag when it is showing
+ a record’s data, <field-list> calls the <input> tag when it is creating
+ an empty form to enter a record or populating a form for editing a record.
+ This is an illustration of tag polymorphism.
+ That is, <field-list> does many different things depending on the context
+ of its use.
+\end_layout
+
+\begin_layout Standard
+The overall syntax of the <input> tag is the same as the <view> tag.
+ When you wish to create an input control on a form, one at a time, you
+ can invoke the control in the following way.
+\end_layout
+
+\begin_layout Standard
+<input:title>
+\end_layout
+
+\begin_layout Standard
+In the code above you are requesting that an input field be created for
+ the title field of the Recipe model.
+ Hobo knows to use the Recipe model as long as you are in the context of
+ the Recipe model, which in this case is set by working within the Recipe
+ form.
+ Further, as you’ve seen before, Hobo knows just what kind of control you
+ are likely to need.
+\end_layout
+
+\begin_layout Standard
+Below we are going to show you how to construct essentially the same form
+ out of <input> tags that you created with the <field-list> tag in the previous
+ step.
+\end_layout
+
+\begin_layout Standard
+Let’s be a bit more rigorous now in constructing tags from tags.
+ First remove the form definition tag from application.dryml.
+ You will now use the <extend> tag to redefine an auto-generated <form>
+ tag with the same name.
+\end_layout
+
+\begin_layout Standard
+First, let’s create the skeleton of an extend tag so we can watch what happens
+ one step at a time.
+ The following code placed in application.dryml will cause no change because
+ it substitutes this  <form> tag for the original <form> tag.
+\end_layout
+
+\begin_layout Standard
+<extend tag="form" for ="Recipe">
+\end_layout
+
+\begin_layout Standard
+	<old-form merge/>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+The following code, which might seem to be identical, actually is not.
+ 
+\end_layout
+
+\begin_layout Standard
+<extend tag="form" for ="Recipe">
+\end_layout
+
+\begin_layout Standard
+	<old-form merge>
+\end_layout
+
+\begin_layout Standard
+	</old-form>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+In the above case, Hobo replaced the default content of the parameterized
+ <form> tag with blank content resulting in a blank form.
+ Go to the ‘Recipes’ tab and pick a recipe.
+ Then click ‘New Recipe’ to see the blank form.
+\end_layout
+
+\begin_layout Standard
+Now let’s get some content into the parameter tag.
+ Copy the following code into application.dryml:
+\end_layout
+
+\begin_layout Standard
+<extend tag="form" for ="Recipe">
+\end_layout
+
+\begin_layout Standard
+	<old-form merge>
+\end_layout
+
+\begin_layout Standard
+		<error-messages param/>
+\end_layout
+
+\begin_layout Standard
+		<p><input:title/><p/>
+\end_layout
+
+\begin_layout Standard
+	    <div param="actions">
+\end_layout
+
+\begin_layout Standard
+	      <submit label="Save" param/><or-cancel param="cancel"/>
+\end_layout
+
+\begin_layout Standard
+	    </div>
+\end_layout
+
+\begin_layout Standard
+	</old-form>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+Refresh your browser.
+\end_layout
+
+\begin_layout Standard
+We’ve got an entry control but <input> has no built in labeling like <field-list
+>.
+ We need to add it like we did with the <view> tag.
+\end_layout
+
+\begin_layout Standard
+<extend tag="form" for ="Recipe">
+\end_layout
+
+\begin_layout Standard
+	<old-form merge>
+\end_layout
+
+\begin_layout Standard
+			<error-messages param/>
+\end_layout
+
+\begin_layout Standard
+		<p><b>Title</b></p>
+\end_layout
+
+\begin_layout Standard
+		<p><input:title/><p/><br/><br/>
+\end_layout
+
+\begin_layout Standard
+	    <div param="actions">
+\end_layout
+
+\begin_layout Standard
+	      <submit label="Save" param/><or-cancel param="cancel"/>
+\end_layout
+
+\begin_layout Standard
+	    </div>
+\end_layout
+
+\begin_layout Standard
+	</old-form>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+Refresh your browser:
+\end_layout
+
+\begin_layout Standard
+Do the same thing for the rest of the fields.
+ (Some of Hobo’s tags have differing built-in breaks, which is why the number
+ of breaks varies some below.)
+\end_layout
+
+\begin_layout Standard
+<extend tag="form" for ="Recipe">
+\end_layout
+
+\begin_layout Standard
+ <old-form merge>
+\end_layout
+
+\begin_layout Standard
+   <error-messages param/>
+\end_layout
+
+\begin_layout Standard
+   <p><b>Title</b></p>
+\end_layout
+
+\begin_layout Standard
+   <p><input:title/></p>
+\end_layout
+
+\begin_layout Standard
+   <p><b>Recipe</b></p>
+\end_layout
+
+\begin_layout Standard
+   <p><input:body/></p>
+\end_layout
+
+\begin_layout Standard
+   <p><b>Categories</b></p>
+\end_layout
+
+\begin_layout Standard
+   <p><input:categories/></p>
+\end_layout
+
+\begin_layout Standard
+   <p><b>Country</b></p>
+\end_layout
+
+\begin_layout Standard
+   <p><input:country/></p>
+\end_layout
+
+\begin_layout Standard
+   <div param="actions">
+\end_layout
+
+\begin_layout Standard
+     <submit label="Save" param/><or-cancel param="cancel"/>
+\end_layout
+
+\begin_layout Standard
+   </div>
+\end_layout
+
+\begin_layout Standard
+ </old-form>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+Now you have succeeded in reconstructing a form with the <input> tag and
+ a little bit of additional HTML formatting.
+ 
+\end_layout
+
+\begin_layout Standard
+Summary.
+ Hobo provides some great functionality for fine-tuning your application
+ when the default rendering is not quite what you would like.
+ You can experiment with them by going through the documentation on the
+ Hobo web site or learn more about them in later chapters of this book.
+\end_layout
+
+\end_body
+\end_document

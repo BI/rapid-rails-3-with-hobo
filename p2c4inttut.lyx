@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -64,7 +66,367 @@ logicalmkup
 
 \begin_body
 
+\begin_layout Subsubsection*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 9 - Editing Auto-Generated Tag
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 10 - DRYML I:  A First Look at DRYML 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 11 - DRYML
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 12 - Rapid, DRYML
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 13 - Listing Data in Table Form
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 14 - Working with the Show Page 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 15 - New and Edit Pages With The Form Tag 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 16 - The <a> Tag Hyperlink
+\end_layout
+
 \begin_layout Standard
+	
+\end_layout
+
+\begin_layout Section*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Standard
+In Chapter 3 we deliberately focused on helping you get something done without
+ spending much time looking under the hood--or should we say--behind the
+ “Magic Curtain.” 
+\end_layout
+
+\begin_layout Standard
+When Jeff and I first discovered Hobo, we were impressed by what seemed
+ like little magic tricks that Tom had Hobo perform for us:  dynamic AJAX
+ without coding; automatic page flow; automatic checking and executing changes
+ to the database when declarations change; built-in permissions system and
+ data lifecycles; high-level declarative markup language: you can do so
+ much that looks and acts great.
+\end_layout
+
+\begin_layout Standard
+Of course, there will ALWAYS be something you need to do that doesn’t come
+ ready-made out-of-the-box.
+ So--just like learning magic tricks--you can learn how Hobo works and create
+ some new magic tricks of your own to impress and help your clients in 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Rapid
+\end_layout
+
+\end_inset
+
+ time.
+\end_layout
+
+\begin_layout Standard
+No magician worth his salt will reveal his tricks to an apprentice all at
+ once.
+  There is only so much we can absorb at one time.
+ The trick to learning--as well as developing software--is to do it incrementall
+y.
+ Get grounded at each step.
+ Most magic tricks use the same knowledge of human perception, habits and
+ expectations to create the illusions.
+  
+\end_layout
+
+\begin_layout Standard
+Learning one trick helps you learn another faster.
+ Then you learn the patterns.
+  And after that, you learn to make more patterns that you and others can
+ use again and again.
+\end_layout
+
+\begin_layout Standard
+So, in this chapter we will start revealing how “Rapid” (Hobo’s process
+ of automatically rendering forms, views and routing) works in a way we
+ think it can best be absorbed.
+\end_layout
+
+\begin_layout Standard
+One of the ways is to examine the code that the author has written that
+ runs the application itself.
+  In the early versions of Hobo, the rendering of pages, forms, and navigation
+ flow was done “auto-magically” by Rapid.
+  You couldn’t see how it worked until version  0.8.0.
+  It was in this release that Tom Locke made visible the DRYML code that
+ was being executed in the background, invisibly.
+\end_layout
+
+\begin_layout Standard
+So now you can look, learn, and copy the DRYML that “Rapid” actually uses
+ to generate Pages, Cards, Forms and the Main Navigation Menu.
+\end_layout
+
+\begin_layout Standard
+Take a close look at 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+apps
+\backslash
+views
+\backslash
+taglibs
+\backslash
+auto
+\backslash
+rapid
+\end_layout
+
+\end_inset
+
+ folder of any of your Hobo apps:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch4/taglibs_auto_rapid_folder.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Folder view of 
+\backslash
+taglibs
+\backslash
+auto
+\backslash
+rapid 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that there are three DRYML files: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ These files include the DRYML XML-like formatted tags that are the declarative
+ statements used as templates to render web page views and forms.
+ They provide the logic to render a combination of HTML, JavaScript, and
+ CSS code when needed.
+\end_layout
+
+\begin_layout Standard
+DRYML provides a high-level of abstraction for formatting web pages and
+ dealing with all aspects of data-driven applications.
+  Listing, displaying, creating, editing and deleting records are simplified
+ without the necessity of specifying the granular level of detail that other
+ frameworks require, such as Rails with its ERB (embedded Ruby) pages that
+ are a hybrid of Ruby and HTML.
+\end_layout
+
+\begin_layout Standard
+In this chapter we will explore:
+\end_layout
+
+\begin_layout Enumerate
+The Hobo Rapid library of tags
+\end_layout
+
+\begin_layout Enumerate
+The auto-generated DRYML files that expose the Rapid process
+\end_layout
+
+\begin_layout Enumerate
+User-defined tags that you can use to extend Hobo
+\end_layout
+
+\begin_layout Paragraph*
+Hobo Rapid Library of Tags.
+\end_layout
+
+\begin_layout Standard
+Hobo comes with a pre-coded set of tags that you can use to build other
+ tags.
+ It provides tags to handle forms, display collections of records, and render
+ a table of records.
+ Hobo uses these to build the Rapid default web pages.
+  You will learn to use some of the more common Rapid tags in this chapter.
+\end_layout
+
+\begin_layout Paragraph*
+Auto-generated DRYML.
+ 
+\end_layout
+
+\begin_layout Standard
+These DRYML files are saved replicas of Hobo’s way of coding the view associated
+ with all of the web site actions.
+ For example, there is a <show-page> tag involved with displaying a single
+ record, and <index-page> tag to display a list of records, and a <new-page>
+ tag involved with generating the form to accept the data for a new record.
+\end_layout
+
+\begin_layout Paragraph*
+User-defined Tags.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to create your own tags, Hobo provides tag definition language
+ elements.
+ You can build custom tags that include HTML, DRYML tags defined in Hobo’s
+ Rapid library, and even imbedded custom Ruby code.
+ There is great flexibility.
+ The end result can be simple tag that you use in a Hobo view template to
+ include in the definition of a web page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut9.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut10.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut11.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut12.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut13.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut14.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut15.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut16.lyx"
+
+\end_inset
+
 
 \end_layout
 
