@@ -57,7 +57,7 @@ logicalmkup
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth -1
+\secnumdepth 5
 \tocdepth 2
 \paragraph_separation skip
 \defskip medskip
@@ -79,7 +79,16 @@ Tutorial 23 – Using Hobo Lifecycles for Workflow
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 By Venka Ashtakala
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -105,83 +114,198 @@ The “Publish” transaction will move the Recipe from the “Not Published”
    Lastly we’ll make controller and view changes as necessary.
 \end_layout
 
-\begin_layout Standard
-Tutorial Application:  four_table
+\begin_layout Subsubsection*
+Tutorial Application:  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
 Topic: HOBO Lifecycles
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
 Steps
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 1.
  Setup the lifecycle.
-  Now that we know the functional requirements for the Recipe workflow we
+  
+\end_layout
+
+\begin_layout Standard
+Now that we know the functional requirements for the Recipe workflow we
  wish to implement we can start modifying our Four Table application.
   We are going to add the Hobo Lifecycle definition to our Recipe model.
-  Let’s open up the /app/model/recipe.rb file and add the lifecycle do...end
+  Let’s open up the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/app/model/recipe.rb
+\end_layout
+
+\end_inset
+
+ file and add the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lifecycle do...end
+\end_layout
+
+\end_inset
+
  block:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size small
 […]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 belongs_to :country
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 lifecycle :state_field => :lifecycle_state do
 \end_layout
 
-\begin_layout Standard
-state :not_published, :default => :true
+\begin_layout Code
+
+\size small
+  state :not_published, :default => :true
 \end_layout
 
-\begin_layout Standard
-state :published
+\begin_layout Code
+
+\size small
+  state :published
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
     
 \end_layout
 
-\begin_layout Standard
-transition :publish, { :not_published => :published }, :available_to =>
- "acting_user if acting_user.signed_up?"
+\begin_layout Code
+
+\size small
+  transition :publish, { :not_published => :published },
 \end_layout
 
-\begin_layout Standard
-transition :not_publish, { :published => :not_published }, :available_to
- => "acting_user if acting_user.signed_up?"
+\begin_layout Code
+
+\size small
+      :available_to => "acting_user if acting_user.signed_up?"
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
+  transition :not_publish, { :published => :not_published },
+\end_layout
+
+\begin_layout Code
+
+\size small
+      :available_to => "acting_user if acting_user.signed_up?"
+\end_layout
+
+\begin_layout Code
+
+\size small
     
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 end
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 # --- Permissions --- #
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 […]
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-So what did we add exactly?  The lifecycle do..end block defines the lifecycle
- for a given model.
-  The :state_field argument specifies that we want the lifecycle to save
- the current state to a ‘lifecycle_state’ column in the table.
+So what did we add exactly?  The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lifecycle do..end
+\end_layout
+
+\end_inset
+
+ block defines the lifecycle for a given model.
+  The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:state_field
+\end_layout
+
+\end_inset
+
+ argument specifies that we want the lifecycle to save the current state
+ to a ‘
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lifecycle_state
+\end_layout
+
+\end_inset
+
+’ column in the table.
   Within the block we have to define our states and transition actions.
   
 \end_layout
@@ -192,18 +316,47 @@ We define our states by using the ‘state’ keyword, which takes the state
   So in this manner we have defined two states:
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
  :not_published
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
  :published
 \end_layout
 
 \begin_layout Standard
-The :default => :true argument to the :not_published state, means that when
- the state is not defined, such as when the recipe is created, its initial
- state will be :not_published.
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:default => :true
+\end_layout
+
+\end_inset
+
+ argument to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:not_published
+\end_layout
+
+\end_inset
+
+ state, means that when the state is not defined, such as when the recipe
+ is created, its initial state will be 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:not_published
+\end_layout
+
+\end_inset
+
+.
   
 \end_layout
 
@@ -212,14 +365,81 @@ After the state declarations, we have defined two transition actions using
  the ‘transition’ keyword.
   The transition keyword requires a name, a hash that specifies the state
  transition and then options.
-  The first transition, :publish, specifies that when this action is executed,
- the Recipe’s state will go from :not_published to :published.
-  The :available_to argument specifies that this action can only be executed
- by a user that has signed up, so guests are not allowed to execute this
- action.
-  The second transition, :not_publish, changes the state from :published
- to :not_published, and limits the action to be available only to signed
- up users.
+  The first transition, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:publish
+\end_layout
+
+\end_inset
+
+, specifies that when this action is executed, the Recipe’s state will go
+ from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:not_published
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:published
+\end_layout
+
+\end_inset
+
+.
+  The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:available_to
+\end_layout
+
+\end_inset
+
+ argument specifies that this action can only be executed by a user that
+ has signed up, so guests are not allowed to execute this action.
+  The second transition, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:not_publish
+\end_layout
+
+\end_inset
+
+, changes the state from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:published
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:not_published
+\end_layout
+
+\end_inset
+
+, and limits the action to be available only to signed up users.
 \end_layout
 
 \begin_layout Standard
@@ -230,7 +450,28 @@ By adding the lifecycle behaviour to our model, we’ll need to generate and
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 > hobo g migration
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -238,13 +479,26 @@ Select ‘m’ when prompted to migrate now, and then specify a name for this
  migration.	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 2.
  Setup the lifecycle controls in your view.
-  Now that we have setup the lifecycle for our Recipe model, we need to
- expose the transition actions to our users.
-  HOBO makes this very easy by giving us a predefined dryml tag called <transiti
-on-buttons/> and we’ll use this tag on our Recipe listing page.
+  
+\end_layout
+
+\begin_layout Standard
+Now that we have setup the lifecycle for our Recipe model, we need to expose
+ the transition actions to our users.
+  HOBO makes this very easy by giving us a predefined dryml tag called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<transition-buttons/>
+\end_layout
+
+\end_inset
+
+ and we’ll use this tag on our Recipe listing page.
 \end_layout
 
 \begin_layout Standard
@@ -252,7 +506,28 @@ Open up the views/recipes/index.dryml page and change this code:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 <table-plus fields="this, categories.count, categories,country"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -260,82 +535,229 @@ to:
 \end_layout
 
 \begin_layout Standard
-		 <table-plus fields="this, categories.count, categories, country">
+		
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
+<table-plus fields="this, categories.count, categories, country">
 \end_layout
 
-\begin_layout Standard
-	   	<controls:>
+\begin_layout Code
+
+\size footnotesize
+  <controls:>
 \end_layout
 
-\begin_layout Standard
-     <transition-buttons/>
+\begin_layout Code
+
+\size footnotesize
+    <transition-buttons/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   </controls:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 </table-plus>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-By using the <controls:> parameter tag in table-plus, it allows us to insert
- an extra column at the end of the table where we can place action buttons
- or links.
-  There we use the <transition-buttons/> tag to specify that lifecycle transitio
-n buttons should show for any actions that are available for the current
- user.
+By using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<controls:>
+\end_layout
+
+\end_inset
+
+ parameter tag in table-plus, it allows us to insert an extra column at
+ the end of the table where we can place action buttons or links.
+  There we use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<transition-buttons/>
+\end_layout
+
+\end_inset
+
+ tag to specify that lifecycle transition buttons should show for any actions
+ that are available for the current user.
+  
+\end_layout
+
+\begin_layout Subsubsection*
+3.
+ Setup the lifecycle actions in the controller.
   
 \end_layout
 
 \begin_layout Standard
-3.
- Setup the lifecycle actions in the controller.
-  We need to make a couple of changes to our Recipes controller:
-\end_layout
-
-\begin_layout Standard
- 
+We need to make a couple of changes to our Recipes controller:
 \end_layout
 
 \begin_layout Standard
 The lifecycle actions need to be added to the controller so that the transition-
 buttons added above work correctly.
-  To do this, just open up:
-\end_layout
+  To do this, just open up: 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 /app/controllers/recipes_controller
 \end_layout
 
-\begin_layout Standard
- and replace the existing auto_actions list with this:
+\end_inset
+
+ and replace the existing 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions
+\end_layout
+
+\end_inset
+
+ list with this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 auto_actions :all
 \end_layout
 
-\begin_layout Standard
-	
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Specifying :all will also add support for the lifecycle actions.
+Specifying 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:all
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ will also add support for the lifecycle actions.
+\end_layout
+
+\begin_layout Subsubsection*
 4.
  Modify the Recipes Index page.
- The Recipes index page needs to be modified so that it only shows published
- recipes when the user is a Guest, and all the Recipes for logged in users.
-  So we need to do add the following named_scope to the Recipe model:
+ 
 \end_layout
 
 \begin_layout Standard
-named_scope :viewable, lambda {|acting_user| {:conditions => “#{acting_user.signe
-d_up??1:0}=1 or lifecycle_state='published'"  }}
+The Recipes index page needs to be modified so that it only shows published
+ recipes when the user is a Guest, and all the Recipes for logged in users.
+  So we need to do add the following 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+named_scope
+\end_layout
+
+\end_inset
+
+ to the Recipe model:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
+named_scope :viewable, lambda {|acting_user| if acting_user.signed_up? 
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    {}
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+  else
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    { :conditions => 
+\begin_inset Quotes eld
+\end_inset
+
+lifecycle_state='published'" }
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -345,16 +767,43 @@ d_up??1:0}=1 or lifecycle_state='published'"  }}
 \end_layout
 
 \begin_layout Standard
-Note: The lambda block is used so that we can pass in a parameter to a named_sco
-pe, which in this case is a reference to the logged in user.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The lambda block is used so that we can pass in a parameter to a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+named_scope
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+, which in this case is a reference to the logged in user.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 The Recipe controller index action needs to be modified so that when a Guest
  user is viewing the Recipe listing page, only “published” Recipes will
  be shown.
-  To do this, change the following line by inserting in the highlighted
- text:
+  To do this, change the following line by inserting in the red italic text:
 \end_layout
 
 \begin_layout Standard
@@ -362,8 +811,34 @@ Original:
 \end_layout
 
 \begin_layout Standard
-hobo_index Recipe.apply_scopes(:search => [params[:search], :title, :body],
- :order_by  => parse_sort_param(:title, :country))
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+hobo_index Recipe.apply_scopes(:search => [params[:search],
+\end_layout
+
+\begin_layout Code
+  :title, :body], :order_by  => parse_sort_param(:title,
+\end_layout
+
+\begin_layout Code
+  :country))
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -371,21 +846,100 @@ To:
 \end_layout
 
 \begin_layout Standard
-hobo_index Recipe.viewable(current_user).apply_scopes(:search => [params[:search],
- :title, :body], :order_by  => parse_sort_param(:title, :country))
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+hobo_index Recipe
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+.viewable(current_user)
+\end_layout
+
+\end_inset
+
+
+\color inherit
+.apply_scopes(
+\end_layout
+
+\begin_layout Code
+  :search => [params[:search], :title, :body], 
+\end_layout
+
+\begin_layout Code
+  :order_by  => parse_sort_param(:title, :country))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+5.
+ Try it out.
+  
 \end_layout
 
 \begin_layout Standard
-5.
- Try it out.
-  Restart your server to see the changes.
+Restart your server to see the changes.
   Following that, access the Recipe listing page as a Guest and you should
  see that there aren’t any Recipes showing (this is because all the Recipes
  are in a state of ‘Not Published’):
 \end_layout
 
 \begin_layout Standard
-Figure 254: Guest view Recipes - All recipes are in state "Not Published"
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/guest_recipe_view.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Guest view Recipes - All recipes are in state "Not Published"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -394,7 +948,40 @@ If you login as a user you should see your recipes showing with ‘Publish’
 \end_layout
 
 \begin_layout Standard
-Figure 255: Recipes ready to Publish.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/recipes_ready_to_publish.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Recipes ready to Publish.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -404,7 +991,40 @@ To publish a Recipe just click on the ‘Publish’ button.
 \end_layout
 
 \begin_layout Standard
-Figure 256: Omelet recipe after being placed in the "Published" state
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/omelet_after_publish.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Omelet recipe after being placed in the "Published" state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -412,7 +1032,40 @@ And if I go back to my Recipe listing page I see:
 \end_layout
 
 \begin_layout Standard
-Figure 257: Recipe index with buttons for "Publish" and "Not Publish"
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/recipe_index_with_publish_buttons.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Recipe index with buttons for "Publish" and "Not Publish"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -426,13 +1079,50 @@ If I go to the Recipe listing page as a Guest user, I should now see my
 \end_layout
 
 \begin_layout Standard
-Figure 258: Guest user can only see the published Recipe
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/guest_can_only_see_published.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Guest user can only see the published Recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+6.
+ Improve the navigation.
+ 
 \end_layout
 
 \begin_layout Standard
-6.
- Improve the navigation.
- So at this point we are able to Publish and Not Publish our recipes, so
+So at this point we are able to Publish and Not Publish our recipes, so
  our workflow is behaving as we expect.
   But the navigation can be improved and would be cleaner if after we clicked
  on a transition button the page would just refresh instead of taking us
@@ -446,7 +1136,17 @@ Figure 258: Guest user can only see the published Recipe
 For each transition we define, hobo creates 2 controller actions, 1 for
  a GET request and 1 for a PUT request.
   So, for the Publish transition action, hobo creates a publish action for
- GET requests, and a do_publish action for PUT  requests.
+ GET requests, and a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+do_publish
+\end_layout
+
+\end_inset
+
+ action for PUT  requests.
   The publish action would be used if we wanted to show a form before executing
  the transition action, i.e.
   if we wanted to collect comments from the user before he/she Publishes
@@ -460,43 +1160,62 @@ For each transition we define, hobo creates 2 controller actions, 1 for
 \end_layout
 
 \begin_layout Standard
-  def do_publish
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def do_publish
 \end_layout
 
-\begin_layout Standard
-    do_transition_action :publish do
+\begin_layout Code
+  do_transition_action :publish do
 \end_layout
 
-\begin_layout Standard
-      redirect_to recipes_path
+\begin_layout Code
+    redirect_to recipes_path
 \end_layout
 
-\begin_layout Standard
-    end
-\end_layout
-
-\begin_layout Standard
+\begin_layout Code
   end
 \end_layout
 
-\begin_layout Standard
-  def do_not_publish
+\begin_layout Code
+end
 \end_layout
 
-\begin_layout Standard
-    do_transition_action :not_publish do
+\begin_layout Code
+def do_not_publish
 \end_layout
 
-\begin_layout Standard
-      redirect_to recipes_path
+\begin_layout Code
+  do_transition_action :not_publish do
 \end_layout
 
-\begin_layout Standard
-    end
+\begin_layout Code
+    redirect_to recipes_path
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   end
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -514,13 +1233,48 @@ So now you have a working Publish/Not Publish workflow for Recipes in the
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note:  This example is a basic implementation of Hobo lifecycles, but, it
  does serve as a good introduction to its various features.
   It is possible to implement workflows with numerous states and transitions,
  and the ability to implement more fine-grained security for each transition
- using the :available_to argument.
-  Consult the full Hobo Lifecycles overview at http://cookbook.hobocentral.net
+ using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:available_to
+\end_layout
+
+\end_inset
+
+ argument.
+  Consult the full Hobo Lifecycles overview at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://cookbook.hobocentral.net"
+
+\end_inset
+
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
