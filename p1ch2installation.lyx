@@ -80,7 +80,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: This Book is for Hobo version 1.3 which is only compatible with Rails
  version 3.
  If you are using Rails 2, please use the previously published book, “Rapid
@@ -986,17 +986,19 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: In the screen shots captured here we used a recent pre-release version
  of Hobo.
  Notice we were required to use the “—pre” command option to install it.
 \end_layout
 
+\begin_deeper
 \begin_layout Plain Layout
 When Hobo 1.3.0 is officially released, the installation command will be:
  
 \end_layout
 
+\end_deeper
 \end_inset
 
 
@@ -1108,18 +1110,20 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: In the example above, 3.0.4 was installed by Hobo 1.3.0, as Rails 3.0.4
  was defined as a dependency.
  This may differ over time.
 \end_layout
 
+\begin_deeper
 \begin_layout Plain Layout
 If you find the need to start completely fresh, select the Uninstall RaisInstall
 er sub-menu option.
  
 \end_layout
 
+\end_deeper
 \end_inset
 
 
@@ -2451,7 +2455,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: The terms “user” and “schema” really are referring to the same thing
  and are often used interchangeably by experienced Oracle developers.
  There is a long history to this that will confuse users of other database
@@ -2993,7 +2997,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: The following instructions and screen shots will make sense AFTER
  you work through the introductory tutorials.
 \end_layout

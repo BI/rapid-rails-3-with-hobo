@@ -132,17 +132,8 @@ You will create a single-table application that demonstrates how Hobo constructs
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Strong
-status collapsed
-
-\begin_layout Plain Layout
-Tutorial Application:
-\end_layout
-
-\end_inset
-
- 
+\begin_layout Subsubsection*
+Tutorial Application: 
 \begin_inset Flex Code
 status collapsed
 
@@ -155,17 +146,8 @@ my-first-app
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Strong
-status collapsed
-
-\begin_layout Plain Layout
-Topics
-\end_layout
-
-\end_inset
-
- 
+\begin_layout Subsubsection*
+Topics 
 \end_layout
 
 \begin_layout Itemize
@@ -196,17 +178,8 @@ Creating Migrations and Databases
 Editing Models and propagating the changes 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Strong
-status collapsed
-
-\begin_layout Plain Layout
-Tutorial Application:
-\end_layout
-
-\end_inset
-
- 
+\begin_layout Subsubsection*
+Tutorial Application: 
 \begin_inset Flex Code
 status collapsed
 
@@ -219,17 +192,8 @@ my-first-app
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex Strong
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout Subsubsection*
 Steps
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -405,7 +369,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: The screen captures were taken with Hobo 1.3 pre-release # 26 as of
  2/15/2011.
  
@@ -887,7 +851,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: The first person to register is assigned the administrator privileges
  by Hobo.
  Notice that in the upper right-hand corner of your web page there is a
@@ -1221,7 +1185,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: You can see that the User model does not display all the fields that
  are implemented in the database.
  Hobo does not expose all of the User fields but reserves them for its own
@@ -1263,7 +1227,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: You will use the user’s email address and password to log in, not
  the user’s name.
  Also, notice that in the upper right corner of your web page, there is
@@ -1479,7 +1443,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: When Hobo makes a web page, it takes tags from the 
 \begin_inset Flex Code
 status collapsed
@@ -1537,6 +1501,7 @@ cards.dryml
  
 \end_layout
 
+\begin_deeper
 \begin_layout Plain Layout
 (Actually, these files are a copy of what Hobo is doing on the fly behind
  the scenes but it is easier to think of it in this way.) 
@@ -1641,6 +1606,7 @@ So far, we only have the front (home page) and the users template directories.
  
 \end_layout
 
+\end_deeper
 \end_inset
 
 
@@ -1752,7 +1718,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: Unlike Hobo 1.0, a view template file is not created in the views/contacts
  folder.
  We will discuss later how the rapid taglibs in the /auto/rapid folder take
@@ -3000,98 +2966,852 @@ Tutorial 2 – Changing Field Names
 We are going to continue from the previous tutorial and show you how to
  do rename fields in a couple of different ways and improve your UI with
  hints about what to enter in a particular field.
- Topics Two ways of changing field names displayed Displaying data entry
- hints Changing field sizes: Hobo does not provide this facility now.
- Tutorial Application: my-first-app Steps 1.
- Rename a database column.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Topics 
+\end_layout
+
+\begin_layout Itemize
+Two ways of changing field names displayed 
+\end_layout
+
+\begin_layout Itemize
+Displaying data entry hints 
+\end_layout
+
+\begin_layout Itemize
+Changing field sizes: Hobo does not provide this facility now.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my-first-app
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Steps 
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Rename a database column.
+\end_layout
+
+\end_inset
+
  In Tutorial 1, we showed you how to make changes to your database by editing
  the model file.
  You can rename a field and database column in the same way.
- We will try this with the married field.
- Go to your contacts.rb file and rename married to married_now and run the
- hobo g migration.
- class Contact < ActiveRecord::Base
+ We will try this with the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+married
+\end_layout
+
+\end_inset
+
+ field.
+ Go to your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+contacts.rb
+\end_layout
+
+\end_inset
+
+ file and rename 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+married
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+married_now
+\end_layout
+
+\end_inset
+
+ and run the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+class Contact < ActiveRecord::Base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 hobo_model # Don't put anything above this
 \end_layout
 
-\begin_layout Standard
-fields do name :string company :string address_1 :string #address_2 :string
- city :string state :string date_met :date #married :boolean married_now
- :Boolean age :integer notes :text timestamps end
+\begin_layout LyX-Code
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+fields do 
+\end_layout
+
+\begin_layout LyX-Code
+  name :string 
+\end_layout
+
+\begin_layout LyX-Code
+  company :string 
+\end_layout
+
+\begin_layout LyX-Code
+  address_1 :string 
+\end_layout
+
+\begin_layout LyX-Code
+  #address_2 :string 
+\end_layout
+
+\begin_layout LyX-Code
+  city :string 
+\end_layout
+
+\begin_layout LyX-Code
+  state :string 
+\end_layout
+
+\begin_layout LyX-Code
+  date_met :date 
+\end_layout
+
+\begin_layout LyX-Code
+  #married :boolean 
+\end_layout
+
+\begin_layout LyX-Code
+  married_now :Boolean 
+\end_layout
+
+\begin_layout LyX-Code
+  age :integer 
+\end_layout
+
+\begin_layout LyX-Code
+  notes :text 
+\end_layout
+
+\begin_layout LyX-Code
+  timestamps 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
 
 \backslash
-my-first-app> hobo g migration Hobo should now respond: DROP, RENAME or
- KEEP?: column contacts.married Rename choices: married_now Enter either
- 'drop married' or one of the rename choices or press enter to keep: Hobo
- is trying to confirm that what you really want to do is rename the column
- and not drop it.
- Enter married_now to rename.
- Check your schema.db file and you will see that the column has been renamed.
+my-first-app> hobo g migration
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Hobo should now respond: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+DROP, RENAME or KEEP?: column contacts.married 
+\end_layout
+
+\begin_layout LyX-Code
+Rename choices: married_now 
+\end_layout
+
+\begin_layout LyX-Code
+Enter either 'drop married' or one of the rename 
+\end_layout
+
+\begin_layout LyX-Code
+choices or press enter to keep: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo is trying to confirm that what you really want to do is rename the
+ column and not drop it.
+ Enter 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+married_now
+\end_layout
+
+\end_inset
+
+ to rename.
+ Check your s
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+chema.db
+\end_layout
+
+\end_inset
+
+ file and you will see that the column has been renamed.
  The KEEP option is a safety option in case you mistakenly renamed the column,
- Note: Do not use question marks (?) in field names.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Do not use question marks (?) in field names.
  You will get an error.
- Refresh your browser and you will now see the field labeled ‘Married Now.’
- 2.
- Changing field names.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Refresh your browser and you will now see the field labeled ‘Married Now.’
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Changing field names.
+\end_layout
+
+\end_inset
+
  There is no need to change the name of a field or column if all you wish
  to do is to change the name of a label in the user interface.
- Hobo provides this as part of its new Internationalization (i18n) module.
- This i18n module is very versatile and can be used for providing field/model
- renaming capabilities up to full multi-lingual support for your application.
- The i18n module is comprised of .yml files that reside in the config/locales
- directory; if you look in the directory you will see these files: app.en.yml
- (or app.<locale>.yml) hobo.en.yml (or hobo.<locale>.yml) For this tutorial we
- will assume that english (en) was specified as the default locale.
- The hobo.en.yml file contains all the strings that the hobo framework uses,
- while application specific strings are stored in the app.en.yml file.
- We will modify the app.en.yml file to rename a couple of fields in the Contact
- model.
- When you open the config/locales/app.en.yml file, you will see:
+ Hobo provides this as part of its new Internationalization (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+i18n
+\end_layout
+
+\end_inset
+
+) module.
+ This 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+i18n
+\end_layout
+
+\end_inset
+
+ module is very versatile and can be used for providing field/model renaming
+ capabilities up to full multi-lingual support for your application.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+i18n
+\end_layout
+
+\end_inset
+
+ module is comprised of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.yml
+\end_layout
+
+\end_inset
+
+ files that reside in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locales
+\end_layout
+
+\end_inset
+
+ directory; if you look in the directory you will see these files: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app.en.yml
+\end_layout
+
+\end_inset
+
+ (or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app.<locale>.yml
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo.en.yml
+\end_layout
+
+\end_inset
+
+ (or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo.<locale>.yml
+\end_layout
+
+\end_inset
+
+) 
 \end_layout
 
 \begin_layout Standard
-Figure 44: Default config/locales/app.en.yml File
+For this tutorial we will assume that english (en) was specified as the
+ default locale.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo.en.yml
+\end_layout
+
+\end_inset
+
+ file contains all the strings that the hobo framework uses, while application
+ specific strings are stored in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app.en.yml
+\end_layout
+
+\end_inset
+
+ file.
+ We will modify the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app.en.yml
+\end_layout
+
+\end_inset
+
+ file to rename a couple of fields in the Contact model.
+ When you open the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locales/app.en.yml
+\end_layout
+
+\end_inset
+
+ file, you will see:
 \end_layout
 
 \begin_layout Standard
-The commented yaml code is very useful in understanding how to setup your
- locale file.
- Our goal is to rename the name and address_1 fields of the Contact model.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure71.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Default config/locales/app.en.yml File
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The commented 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+yaml
+\end_layout
+
+\end_inset
+
+ code is very useful in understanding how to setup your locale file.
+ Our goal is to rename the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+address_1
+\end_layout
+
+\end_inset
+
+ fields of the Contact model.
  To do this, add the illustrated code to the file:
 \end_layout
 
 \begin_layout Standard
-Figure 45: app.en.yml File with Fields Renamed As shown above, to declare
- new names for model fields in the app.en.yml file, the following pattern
- must be followed: activerecord: attributes: <model1>: <field1>: Label/Rename
- <field2>: Label/Rename …
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure72.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+app.en.yml File with Fields Renamed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<model2>: <field1>: Label/Rename <field2>: Label/Rename …
+As shown above, to declare new names for model fields in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app.en.yml
+\end_layout
+
+\end_inset
+
+ file, the following pattern must be followed: 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+activerecord: 
+\end_layout
+
+\begin_layout LyX-Code
+  attributes: 
+\end_layout
+
+\begin_layout LyX-Code
+    <model1>: 
+\end_layout
+
+\begin_layout LyX-Code
+      <field1>: Label/Rename 
+\end_layout
+
+\begin_layout LyX-Code
+      <field2>: Label/Rename 
+\end_layout
+
+\begin_layout LyX-Code
+      …
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+    <model2>: 
+\end_layout
+
+\begin_layout LyX-Code
+      <field1>: Label/Rename 
+\end_layout
+
+\begin_layout LyX-Code
+      <field2>: Label/Rename 
+\end_layout
+
+\begin_layout LyX-Code
+      …
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: Indentation and spacing is very important when working with yml files;
  the activerecord: line must start with 2 spaces.
- Refresh your browser and you should see the fields relabeled with your
- choices from above.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Refresh your browser and you should see the fields relabeled with your choices
+ from above.
  Notice that a migration is not necessary for any changes made using the
- i18n module.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+i18n
+\end_layout
+
+\end_inset
+
+ module.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure73.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of fields relabeled using the Hobo i18n module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 3.
- Using the i18n module to suggest field uses.
- The application locale (app.en.yml) file also provides the facility to provide
- a suggestion below the field on what to enter into it.
- Edit your app.en.yml file to look like this.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+i18n
+\end_layout
+
+\end_inset
+
+ module to suggest field uses.
+\end_layout
+
+\end_inset
+
+ The application locale (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app.en.yml
+\end_layout
+
+\end_inset
+
+) file also provides the facility to provide a suggestion below the field
+ on what to enter into it.
+ Edit your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app.en.yml
+\end_layout
+
+\end_inset
+
+ file to look like this.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure74.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding help text using the Hobo i18n 
+\begin_inset Quotes eld
+\end_inset
+
+attribute_help
+\begin_inset Quotes erd
+\end_inset
+
+ method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3100,26 +3820,210 @@ Now refresh your browser and you will see hints on the field use in a small
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure75.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Contact entry page with ViewHints enabled
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: In the Intermediate tutorials you will also learn how to use yet another
  way to manipulate the labels on a web page by using Hobo’s view markup
  language called DRYML (Don’t Repeat Yourself Markup Language).
  DRYML is used by the Rapid UI generator that creates much of Hobo’s magic.
- 4.
- Changing field sizes.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Changing field sizes.
+\end_layout
+
+\end_inset
+
  As of the latest version of Hobo, the way to change the field length on
- an input form is to add an entry to application.css that will override any
- other reference to the element you wish to modify.
- Look for the relevant class definition used by Hobo’s “Rapid” UI generator:
- rapid-ui.css, located at: /public/hobothemes/clean/stylesheets/rapid-ui.css
+ an input form is to add an entry to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+ that will override any other reference to the element you wish to modify.
+ 
 \end_layout
 
 \begin_layout Standard
-Figure 49: CSS definitions for the input text fields
+Look for the relevant class definition used by Hobo’s “Rapid” UI generator:
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+rapid-ui.css
+\end_layout
+
+\end_inset
+
+, located at:
 \end_layout
 
 \begin_layout Standard
-Figure 50: Modified entry in "application.css" to shorten text prompts Tutorial
- 3 – Field Validation
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+/public/hobothemes/clean/stylesheets/rapid-ui.css
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure76.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+CSS definitions for the input text fields
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure77.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Modified entry in "application.css" to shorten text prompts 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 3 – Field Validation
 \end_layout
 
 \begin_layout Standard
@@ -3127,39 +4031,289 @@ You will be introduced to a couple of ways of validating data entry fields.
  This is a capability that is derived from what are called Rails helper
  methods.
  There are a couple of enhancements Hobo has made for the most common need.
- Topics Field validation using Hobo’s enhancements Field validation using
- Rails helper methods Validation on save, create and update processes
+ 
 \end_layout
 
-\begin_layout Standard
-Tutorial Application: my-first-app
+\begin_layout Subsubsection*
+Topics 
+\end_layout
+
+\begin_layout Itemize
+Field validation using Hobo’s enhancements 
+\end_layout
+
+\begin_layout Itemize
+Field validation using Rails helper methods 
+\end_layout
+
+\begin_layout Itemize
+Validation on save, create and update processes
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+my-first-app
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 1.
- Make sure data is entered.
- Open up the model contact.rb file.
- Add the following code to the “name” field definition name :string, :required
- This is the simplified version that Hobo provides.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Make sure data is entered.
+\end_layout
+
+\end_inset
+
+ Open up the model 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+contact.rb
+\end_layout
+
+\end_inset
+
+ file.
+ Add the following code to the “name” field definition 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+name :string, :required 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the simplified version that Hobo provides.
  To do this in the “normal” rails way, you would need to add this line after
- the “fields/do” block: validates_presence_of :name (The difference in the
- two is a matter of taste, but the former seems “DRYer” to us.) By default
- Hobo will provide a message if a user fails to enter data.
+ the “fields/do” block: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+validates_presence_of :name 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(The difference in the two is a matter of taste, but the former seems “DRYer”
+ to us.) 
+\end_layout
+
+\begin_layout Standard
+By default Hobo will provide a message if a user fails to enter data.
  Try it out by trying to create a contact record with no data in it.
- Click the Contacts tab and then New Contact.
- Without entering anything in the form, click Create Contact.
+ Click the Contacts tab and then 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+New Contact
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Without entering anything in the form, click 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Create Contact
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure78.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of validation presence of name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 2.
- Validate multiple fields.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Validate multiple fields.
+\end_layout
+
+\end_inset
+
  In order to validate multiple fields, add the “:required” label to another
- field: address_1 :string, :required
+ field: 
 \end_layout
 
 \begin_layout Standard
-Click the Contacts tab and then New Contact.
- Without entering anything in the form, click Create Contact.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+address_1 :string, :required
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Click the Contacts tab and then 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+New Contact
+\end_layout
+
+\end_inset
+
+.
+ Without entering anything in the form, click 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Create Contact
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure79.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of double validation error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3167,127 +4321,1048 @@ Notice the “declarative” nature of this validation.
  All you need to do is use the label “:required” for the name and address_1
  fields and Hobo takes care of all of the logic associated with validation
  and delivering error messages.
- Now let’s try some other validations.
- 3.
- Make sure the integer field contains a number.
+ 
+\end_layout
+
+\begin_layout Standard
+Now let’s try some other validations.
+ 
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Make sure the integer field contains a number.
+\end_layout
+
+\end_inset
+
  Add this validation to the “age” field after the “fields do/end” block:
- validates_numericality_of :age
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+validates_numericality_of :age
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure80.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding 
+\begin_inset Quotes eld
+\end_inset
+
+validate_numericality_of
+\begin_inset Quotes erd
+\end_inset
+
+ validation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now try this out by entering the text “old” in the age field.
- (Also put something in the name and address_1 fields so you won’t trip
- the validations we put into place earlier in the tutorial.)
+ (Also put something in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+address_1
+\end_layout
+
+\end_inset
+
+ fields so you won’t trip the validations we put into place earlier in the
+ tutorial.)
 \end_layout
 
 \begin_layout Standard
-Figure 54: Page view of triggering the "validates_numericality_of" error
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure81.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of triggering the "validates_numericality_of" error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: When you cause a validation error for integer, Hobo/Rails replaces
  what you entered with a zero (0).
  If the validation rule was not there, the text will be replaced by a zero,
  but the validation error will not be displayed.
- 4.
- Prevent the entry of duplicates.
- Use the following code to prevent a user from entering code that duplicates
- an existing record with a column value that is the same as the new record.
- name :string, :required, :unique
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+4.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Prevent the entry of duplicates.
+\end_layout
+
+\end_inset
+
+ Use the following code to prevent a user from entering code that duplicates
+ an existing record with a column value that is the same as the new record.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+name :string, :required, :unique
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure82.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of uniqueness validation error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: This particular validation will only verify that there is no existing
  record with the same field value at the time of validation.
  In a multi-user application, there is still a chance that records could
  be entered nearly at the same time resulting in a duplicate entry.
  The most reliable way to enforce uniqueness is with a database-level constraint.
- 5.
- Including and excluding values.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Including and excluding values.
+\end_layout
+
+\end_inset
+
  Now suppose we wish to exclude people who have an age between 0 and 17,
  and include people under 65 years of age.
- Try the following code after the “fields do/end” block: validates_inclusion_of
- :age, :in => 18..65, :message => "Must be between 18 and 65"
+ Try the following code after the “fields do/end” block: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+validates_inclusion_of :age, :in => 18..65, :message => "Must be between 18
+ and 65"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure83.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of triggering a range validation error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 6.
- Validate length of entry.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Validate length of entry.
+\end_layout
+
+\end_inset
+
  Suppose you wish to check the length of a string entry.
  You can specify a length range in the following way.
- validates_length_of :name, :within => 2..20, :too_long => "pick a shorter
- name", :too_short => "pick a longer name" Try to enter a one-character
- name.
- You will get the following response: 7.
- Validate acceptance.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+validates_length_of :name, :within => 2..20, 
+\end_layout
+
+\begin_layout LyX-Code
+     :too_long => "pick a shorter name", 
+\end_layout
+
+\begin_layout LyX-Code
+     :too_short => "pick a longer name" 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Try to enter a one-character name.
+ You will get the following response: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure84.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of validation of text length error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+7.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Validate acceptance.
+\end_layout
+
+\end_inset
+
  If you wish to get the user to accept a contract, for example, you can
  use the following validation code.
- Assume you have a Boolean variable named contract_agree, which would show
- up in the UI as a checkbox.
- validates_acceptance_of :contract_agree, :accept => true Hobo will generate
- an error if the contract_agree check box is not checked setting the value
- to 1.
+ Assume you have a Boolean variable named 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+contract_agree
+\end_layout
+
+\end_inset
+
+, which would show up in the UI as a checkbox.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+validates_acceptance_of :contract_agree, :accept => true 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo will generate an error if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+contract_agree
+\end_layout
+
+\end_inset
+
+ check box is not checked setting the value to 1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure85.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of 
+\begin_inset Quotes eld
+\end_inset
+
+validates_acceptance_of
+\begin_inset Quotes erd
+\end_inset
+
+ error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 8.
- Summary.
- Here is the list of validations we accumulated during this tutorial: address_1
- :string, :required name :string, :required, :unique
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Summary.
+\end_layout
+
+\end_inset
+
+ Here is the list of validations we accumulated during this tutorial: 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+address_1 :string, :required 
+\end_layout
+
+\begin_layout LyX-Code
+name :string, :required, :unique
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 validates_numericality_of :age
 \end_layout
 
-\begin_layout Standard
-validates_acceptance_of :contract_agree, :accept => true
+\begin_layout LyX-Code
+
 \end_layout
 
-\begin_layout Standard
-validates_length_of :name, :within => 2..20, :too_long => "pick a shorter
- name", :too_short => "pick a longer name" 
+\begin_layout LyX-Code
+validates_acceptance_of :contract_agree, 
 \end_layout
 
-\begin_layout Standard
-validates_inclusion_of :age, :in => 18..65, :message => "Must be between 18
- and 65"
+\begin_layout LyX-Code
+    :accept => true
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+validates_length_of :name, :within => 2..20,         
+\end_layout
+
+\begin_layout LyX-Code
+    :too_long => "pick a shorter name", 
+\end_layout
+
+\begin_layout LyX-Code
+    :too_short => "pick a longer name"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+validates_inclusion_of :age, :in => 18..65, 
+\end_layout
+
+\begin_layout LyX-Code
+    :message => "Must be between 18 and 65"
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 There are several other very useful validation functions provided by Rails,
  and the ones that we have shown you above have many other options.
  These functions can provide very sophisticated business rule execution.
- For example, the following is a sample of the list of options for the validates
-_length_of and validates_size_of (synonym) declarative expressions: :minimum
+ 
+\end_layout
+
+\begin_layout Standard
+For example, the following is a sample of the list of options for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+validates_length_of
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+validates_size_of
+\end_layout
+
+\end_inset
+
+ (synonym) declarative expressions:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:minimum
+\end_layout
+
+\end_inset
+
  - The minimum size of the attribute.
- :maximum - The maximum size of the attribute.
- :is - The exact size of the attribute.
- :within - A range specifying the minimum and maximum size of the attribute.
- :in - A synonym(or alias) for :within.
- :allow_nil - Attribute may be nil; skip validation.
- :allow_blank - Attribute may be blank; skip validation.
- :too_long - The error message if the attribute goes over the maximum (default
- is: "is too long (maximum is {{count}} characters)").
- :too_short - The error message if the attribute goes under the minimum
- (default is: "is too short (min is {{count}} characters)").
- :wrong_length - The error message if using the :is method and the attribute
- is the wrong size (default is: "is the wrong length (should be {{count}}
- characters)").
- :message - The error message to use for a :minimum, :maximum, or :is violation.
- An alias of the appropriate too_long/too_short/wrong_length message.
- :on - Specifies when this validation is active (default is :save, other
- options :create, :update).
- :if - Specifies a method, procedure, or string to call to determine if
- the validation should occur: :if => :allow_validation The method, procedure,
- or string should return or evaluate to a true or false value.
- :unless - Specifies a method, procedure or string to call to determine
- if the validation should not occur: :unless => :skip_validation The method,
- procedure, or string should return or evaluate to a true or false value.
- We encourage you to read about validation helpers (what Rails calls functions)
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:maximum
+\end_layout
+
+\end_inset
+
+ - The maximum size of the attribute.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:is
+\end_layout
+
+\end_inset
+
+ - The exact size of the attribute.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:within
+\end_layout
+
+\end_inset
+
+ - A range specifying the minimum and maximum size of the attribute.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:in
+\end_layout
+
+\end_inset
+
+ - A synonym(or alias) for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:within
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:allow_nil
+\end_layout
+
+\end_inset
+
+ - Attribute may be nil; skip validation.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:allow_blank
+\end_layout
+
+\end_inset
+
+ - Attribute may be blank; skip validation.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:too_long
+\end_layout
+
+\end_inset
+
+ - The error message if the attribute goes over the maximum (default is:
+ "is too long (maximum is {{count}} characters)").
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:too_short
+\end_layout
+
+\end_inset
+
+ - The error message if the attribute goes under the minimum (default is:
+ "is too short (min is {{count}} characters)").
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:wrong_length
+\end_layout
+
+\end_inset
+
+ - The error message if using the :is method and the attribute is the wrong
+ size (default is: "is the wrong length (should be {{count}} characters)").
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:message
+\end_layout
+
+\end_inset
+
+ - The error message to use for a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:minimum
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:maximum
+\end_layout
+
+\end_inset
+
+, or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:is
+\end_layout
+
+\end_inset
+
+ violation.
+ An alias of the appropriate 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+too_long/too_short/wrong_length
+\end_layout
+
+\end_inset
+
+ message.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:on
+\end_layout
+
+\end_inset
+
+ - Specifies when this validation is active (default is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:save
+\end_layout
+
+\end_inset
+
+, other options 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:create
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:update
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:if
+\end_layout
+
+\end_inset
+
+ - Specifies a method, procedure, or string to call to determine if the
+ validation should occur: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:if => :allow_validation
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+The method, procedure, or string should return or evaluate to a true or
+ false value.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+:unless - Specifies a method, procedure or string to call to determine if
+ the validation should not occur: 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:unless => :skip_validation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+The method, procedure, or string should return or evaluate to a true or
+ false value.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+We encourage you to read about validation helpers (what Rails calls functions)
  in the many good Ruby on Rails references.
- The following is a useful on-line reference: http://api.rubyonrails.org/classes/A
-ctiveRecord/Validations/ClassMethods.html Tutorial 4 – Permissions 
+ The following is a useful on-line reference:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://api.rubyonrails.org/classes/ActiveRecord/Validations/ClassMethods.html "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tutorial 4 – Permissions 
 \end_layout
 
 \begin_layout Standard
