@@ -79,10 +79,19 @@ Tutorial 21 – Replicating the Look and Feel of a Site
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
 By Tom Locke
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Introduction
 \end_layout
 
@@ -104,20 +113,65 @@ We’ll use the example of the standard web design used throughout all agencies
  Department of Agriculture.
  The authors have done substantial work with NIFA, The Cooperative State
  Research, Education, and Extension Service, so we will use their website
- (www.nifa.usda.gov) as an example:
+ (
+\begin_inset CommandInset href
+LatexCommand href
+target "www.nifa.usda.gov"
+
+\end_inset
+
+) as an example:
 \end_layout
 
 \begin_layout Standard
- 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa.usda.gov_page.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Screen shot of the nifa.usda.gov home page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 228: Screen shot of the nifa.usda.gov home page
+Note that, for now at least, this recipe will document how to create a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+close approximation
 \end_layout
 
-\begin_layout Standard
-Note that, for now at least, this recipe will document how to create a close
- approximation to this theme.
+\end_inset
+
+ to this theme.
  In particular, we’re going to skip some of the details that cannot be implement
 ed without resorting to images.
  This is just to keep the recipe getting too long and complicated.
@@ -130,7 +184,7 @@ This will be as much a guide to general web-development best practices as
  to skilled web developers:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Separate content from presentation
 \end_layout
 
@@ -141,11 +195,11 @@ The vast majority of common mistakes that are made in styling a web-app
  to:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Having the look-and-feel “just happen” as your site changes and evolves
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Being able to change the theme in the future, without having to modify the
  app
 \end_layout
@@ -156,13 +210,13 @@ Since CSS has been widely adopted, most web developers are familiar with
  So this is probably just a recap, but as a reminder about how this works:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 “Content” describes what is on the page, but not what it will look like.
  In a Hobo app content comes from tag definitions, page templates and the
  application’s data of course.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 “Presentation” describes how the page should look.
  That is, it describes fonts, colors, margins, borders, images and so on.
  In a Hobo app the presentation is handled essentially the same way as with
@@ -173,14 +227,14 @@ Since CSS has been widely adopted, most web developers are familiar with
 Having said that, we need to inject a note of pragmatism:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Humans being visual animals, information can never truly be separated from
  the way it is displayed.
  The line is sometimes blurred and there are often judgment calls to be
  made.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 The technologies we’ve got to work with, in particular cross-browser support
  for CSS, are far from perfect.
  Sometimes we have to compromise.
@@ -191,7 +245,7 @@ There’s probably an entire PhD thesis lurking in that first point, but let’s
  move on!
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 The current site
 \end_layout
 
@@ -206,7 +260,40 @@ A banner image:
 \end_layout
 
 \begin_layout Standard
- 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_banner.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The NIFA banner image 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -214,7 +301,40 @@ A photo image that fits below the banner image:
 \end_layout
 
 \begin_layout Standard
-Figure 230: The NIFA photo image
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_photo_image.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The NIFA photo image
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -222,7 +342,40 @@ The main navigation bar:
 \end_layout
 
 \begin_layout Standard
- 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_bar.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The NIFA main navigation bar 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -230,7 +383,51 @@ A couple of styles of navigation panels:
 \end_layout
 
 \begin_layout Standard
- 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_panels.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_panels2.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_panels3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+NIFA navigation panels 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -238,11 +435,53 @@ And more navigation in the page footer:
 \end_layout
 
 \begin_layout Standard
- 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_footer_nav.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+NIFA footer navigation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-One of the important things to notice at this stage, is that this is not
+One of the important things to notice at this stage, is that this is 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+not
+\end_layout
+
+\end_inset
+
  just a “theme” in the Hobo sense of the word.
  Hobo themes are purely about presentation, whereas the “look and feel”
  of this site is a mixture of content elements and presentation.
@@ -253,26 +492,46 @@ That means we’re going to be creating three things to capture this look-and-fe
 :
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Tag Definitions
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 A CSS stylesheet
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Some image assets.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 The current markup
 \end_layout
 
 \begin_layout Standard
 The existing site makes extensive use of HTML tables for layout, and the
- various images in the page are present in the markup as <img> tags.
- In other words, the existing markup is very presentational.
+ various images in the page are present in the markup as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<img>
+\end_layout
+
+\end_inset
+
+ tags.
+ In other words, the existing markup is very 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+presentational
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -287,7 +546,7 @@ The other advantage of re-creating the markup is that it will be easier
  to jump from one Hobo app to the next.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Building the new app
 \end_layout
 
@@ -296,19 +555,45 @@ Let’s do this properly and actually follow along in a blank Hobo app.
  At the end of the recipe we’ll see how we could package this look-and-feel
  up and re-use it another app.
  To follow along, you should use Firefox and the Firebug extension you can
- find at http://getfirebug.com.
+ find at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://getfirebug.com"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 > hobo nifa-demo
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > cd nifa-demo
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 > hobo g migration
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -316,22 +601,96 @@ If you fire up the server, you’ll see the default Hobo app of course:
 \end_layout
 
 \begin_layout Standard
-Figure 234: The NIFA Demo default home page
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_default_home.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The NIFA Demo default home page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 First thing to do is change the heading “Nifa” to “NIFA” in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 views
 \backslash
 taglibs
 \backslash
-applicationl.dryml since it is an acronym for the National Institute of Food
- and Agriculture:
+applicationl.dryml
+\end_layout
+
+\end_inset
+
+ since it is an acronym for the National Institute of Food and Agriculture:
 \end_layout
 
 \begin_layout Standard
-Figure 235: Using the "app-name" tag to change the default application name
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_app-name.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the "app-name" tag to change the default application name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -339,70 +698,293 @@ Now we can start to make it look like the page we’re after.
  We’ll take it step by step.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Main background and width
 \end_layout
 
 \begin_layout Standard
 With the Firebug add-on for Firefox I can tell that the NIFA background
- color is #A8ACB7:
+ color is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+#A8ACB7
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-Figure 236: Using Firebug to locate the background color
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/firebug_background_color.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using Firebug to locate the background color
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now switching to the Hobo NIFA Demo application, Firebug tells us (click
  the inspect button, then click on the background) that the CSS rule that
- sets the current background comes from clean.css and looks like:
+ sets the current background comes from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+clean.css
+\end_layout
+
+\end_inset
+
+ and looks like:
 \end_layout
 
 \begin_layout Standard
-Figure 237: Using Firebug to find the images used by Hobo for the default
- background
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/firebug_hobo_images.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using Firebug to find the images used by Hobo for the default background
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Anything we add to application.css (it is empty by default) will override
- clean.css.
- So I’m going to add this rule to  public/stylesheets/application.css:
+Anything we add to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+ (it is empty by default) will override 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+clean.css
+\end_layout
+
+\end_inset
+
+.
+ So I’m going to add this rule to  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+public/stylesheets/application.css
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 html, body { background:#A8ACB7 }
 \end_layout
 
-\begin_layout Standard
-Figure 238: Adding the new background color to "application.css"
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Again, using Firebug on the NIFA Demo app (by clicking on the <body> tag
- in the HTML window) I can see that the width is set on the body tag:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/adding_new_background_color.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the new background color to "application.css"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Again, using Firebug on the NIFA Demo app (by clicking on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body>
+\end_layout
+
+\end_inset
+
+ tag in the HTML window) I can see that the width is set on the body tag:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 body { ...
  width: 960px; ...
  }
 \end_layout
 
-\begin_layout Standard
-Back in NIFA, I can right click the banner image and chose “View Image”,
- and Firefox tells me its width is 766 pixels.
- So in application.css I add
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Back in NIFA, I can right click the banner image and chose “View Image”,
+ and Firefox tells me its width is 766 pixels.
+ So in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+ I add
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 body { width: 766px; }
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Note we’ve not changed any markup yet - that’s how we like it.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Account navigation
 \end_layout
 
@@ -412,43 +994,143 @@ These are the log-in and sign-up links in the top right.
  are in now would be fine, so we’ll leave them where they are.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Search
 \end_layout
 
 \begin_layout Standard
 The page header has a search-field that we don’t want.
- To get rid of this we’ll customize the <page> tag.
- We need to do this in application.dryml:
+ To get rid of this we’ll customize the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag.
+ We need to do this in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-Figure 239: First pass at modifying "application.dryml"
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_first_application.dryml_mod.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+First pass at modifying "application.dryml"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <extend tag="page">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <old-page merge without-live-search>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </old-page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </extend>
 \end_layout
 
-\begin_layout Standard
-So now we have made a change to the markup, but that makes perfect sense,
- because here we wanted to change what’s on the page not what stuff looks
- like.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+So now we 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+have
+\end_layout
+
+\end_inset
+
+ made a change to the markup, but that makes perfect sense, because here
+ we wanted to change 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+what’s on the page
+\end_layout
+
+\end_inset
+
+ not 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+what stuff looks like
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
 The Banner
 \end_layout
 
@@ -459,11 +1141,46 @@ Again, using Firefox’s “View Image”, it turns out that the existing banner
 \end_layout
 
 \begin_layout Standard
-This one:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_banner.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-And this one:
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_photo_image.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The two images used in NIFA's top banner 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -476,39 +1193,58 @@ To add these images without changing the markup, we need to use CSS’s backgrou
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <html>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <head>...</head>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <body>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <div class="page-header">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <h1 class="app-name">NIFA Demo</h1>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     ...
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </body>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </html>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -516,31 +1252,104 @@ Notice that this image:
 \end_layout
 
 \begin_layout Standard
-Is essentially a graphical version of that <h1> tag, so we’ll use CSS to
- make that same <h1> be rendered as an image.
+\begin_inset Graphics
+	filename figures/ch5/nifa_banner.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is essentially a graphical version of that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h1>
+\end_layout
+
+\end_inset
+
+ tag, so we’ll use CSS to make that same 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h1>
+\end_layout
+
+\end_inset
+
+ be rendered as an image.
  The existing text will be hidden, by moving it way out of the way with
- a text-indent rule.
- First we need to save that image into our public/images folder.
+ a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+text-indent
+\end_layout
+
+\end_inset
+
+ rule.
+ First we need to save that image into our 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+public/images
+\end_layout
+
+\end_inset
+
+ folder.
  
 \end_layout
 
 \begin_layout Standard
-The CSS to add to application.css is:
+The CSS to add to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+ is:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 div.page-header { padding: 0; }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 div.page-header h1.app-name {
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     text-indent: -10000px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     background: url(..
 \backslash
 images
@@ -548,26 +1357,74 @@ images
 banner_nifa.gif) no-repeat;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     padding: 0; margin: 0;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     height: 62px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 }
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Figure 241: How to reference the banner gif in "application.css"
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/adding_banners_in_css.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+How to reference the banner gif in "application.css"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 OK that was a bit of a leap.
- Why padding: 0px for the page-header, for example? The fact of the matter
- is that working with CSS is all about trial and error.
+ Why 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+padding: 0px
+\end_layout
+
+\end_inset
+
+ for the page-header, for example? The fact of the matter is that working
+ with CSS is all about trial and error.
  Using Firebug to figure out what rules are currently in effect, flipping
  back and forth between the stylesheet in your editor and the browser.
  Try experimenting by taking some of those rules out and you’ll see why
@@ -576,19 +1433,58 @@ OK that was a bit of a leap.
 
 \begin_layout Standard
 Now for the photo part of the banner.
- Again, save it to public/images, then add some extra properties to the
- div.page-header selector, so it ends up like:
+ Again, save it to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+public/images
+\end_layout
+
+\end_inset
+
+, then add some extra properties to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+div.page-header
+\end_layout
+
+\end_inset
+
+ selector, so it ends up like:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size small
 div.page-header {
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
     padding: 0; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
     background: url(..
 \backslash
 images
@@ -596,16 +1492,58 @@ images
 banner_photo.jpg) no-repeat 0px 62px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
     height: 106px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size small
 }
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Figure 242: View of the NIFA Demo login page
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_demo_login.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the NIFA Demo login page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -614,10 +1552,43 @@ Taking shape now, except the main navigation panel (“Home” tag) is hovering
 \end_layout
 
 \begin_layout Standard
-Figure 243: The Navigation Panel before refactoring
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_panel_before.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Navigation Panel before refactoring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Navigation
 \end_layout
 
@@ -646,74 +1617,136 @@ Our app only has a home page right now, so first let’s define a fake navigatio
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="main-nav">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <navigation class="main-nav">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="">Home</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="">About Us</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="">Grants</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="">Forms</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="">Newsroom</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="">Help</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="">Contact Us</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </navigation>  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Figure 244: View of our first pass at the main navigation menu
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_panel_first_pass.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of our first pass at the main navigation menu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Use Firebug’s “Inspect” button to find the navigation bar.
- You’ll see that it’s rendered as a <ul> list, which is generally considered
- good practice; it is a list of links after all.
+ You’ll see that it’s rendered as a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+ list, which is generally considered good practice; it is a list of links
+ after all.
  There are several things wrong with the appearance of the navigation at
  this point:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 It’s in the wrong place - we want to move it down and to the right.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Needs to be shorter, and the spacing of the items needs fixing
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 The font needs to be smaller, and not bold
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 The background color needs to change, as do the colors when you mouse-over
  a link
 \end_layout
@@ -722,32 +1755,80 @@ The background color needs to change, as do the colors when you mouse-over
 Now this is not a CSS tutorial, so we’re not going to explain every last
  detail, but we’ll build it up in a few steps which will help to illustrate
  what does what.
- First update the rules for div.page-header in application.css so they look
- like:
+ First update the rules for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+div.page-header
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+ so they look like:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 div.page-header {
 \end_layout
 
-\begin_layout Standard
-    padding: 0; 
+\begin_layout Code
+
+\size footnotesize
+  padding: 0; 
 \end_layout
 
-\begin_layout Standard
-    background: white url(..
+\begin_layout Code
+
+\size footnotesize
+  background: white url(..
 \backslash
 images
 \backslash
 banner_photo.jpg) no-repeat 0px 62px;
 \end_layout
 
-\begin_layout Standard
-    height: 138px;
+\begin_layout Code
+
+\size footnotesize
+  height: 138px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -755,250 +1836,459 @@ And add:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 div.page-header .main-nav {
 \end_layout
 
-\begin_layout Standard
-    position: absolute; bottom: 0; right: 0; 
+\begin_layout Code
+
+\size footnotesize
+  position: absolute; bottom: 0; right: 0; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Figure 245: Still need more to fix the top navigation menu...
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_panel_second_pass.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Still need more to fix the top navigation menu...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The nav-bar still looks wrong.
   We’ll now fix the sizing and placement.
- Update the new rule (div.page-header .main-nav) and add new ones, and colors.
-  The entire application.css looks  like this so far:
+ Update the new rule (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+div.page-header .main-nav
+\end_layout
+
+\end_inset
+
+) and add new ones, and colors.
+  The entire 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+ looks  like this so far:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 html, body { background:#A8ACB6 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 body { width: 766px; }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 div.page-header {
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     padding: 0;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     background: white url(../images/banner_photo.jpg) no-repeat 0px 62px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     height: 138px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 div.page-header h1.app-name {
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     text-indent: -10000px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     background: url(../images/banner_nifa.gif) no-repeat;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     padding: 0; margin: 0;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     height: 55px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 div.page-header .main-nav { 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     position: relative; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	top: 63px; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     height: 21px; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	width: 100%; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	line-height: 21px; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	padding: 0;  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     text-align: right;  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     background: #313367;  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 } 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 div.page-header .main-nav li { 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     margin: 0; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	padding: 0 0 0 4px; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     display:inline; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	float:none; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     border-left: 1px dotted #eee; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	background: #313367; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     color: silver; 	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 } 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 div.page-header .navigation.main-nav li a { 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     padding: 3px 8px; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	margin: 0; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     font-weight: normal; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	display:inline; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	font-size: 12px; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     background: #313367;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     color: silver; 	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 } 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 div.page-header .navigation.main-nav li.current a {
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     background: #313367;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     color: white; 	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 div.page-header .navigation.main-nav li a:hover { 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	 background: #A9BACF;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	  color: black;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1011,98 +2301,246 @@ The page header should be done at this point:
 \end_layout
 
 \begin_layout Standard
-Figure 246: The fixed NIFA man navigation bar
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_nav_panel_done.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The fixed NIFA man navigation bar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 The sidebars
 \end_layout
 
 \begin_layout Standard
 The existing site has both left and right sidebars.
  We’ll add those now.
- The first step is to add the three content sections to the <page> tag in
- application.dryml.
- We’ve already extended <page>, so modify the DRYML you already have to
- look like:
+ The first step is to add the three content sections to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
+ We’ve already extended 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+, so modify the DRYML you already have to look like:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <extend tag="page">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <old-page merge without-live-search>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <content: replace>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section-group class="page-content">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <aside param="aside1"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <section param="content"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <aside param="aside2"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </section-group>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </old-page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </extend>
 \end_layout
 
-\begin_layout Standard
-We’ve replaced the existing <content:> with a <section-group> that contains
- our two <aside> tags and the main <section>.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-To try this out, we’ll insert some dummy content in app/views/front/index.dryml.
+We’ve replaced the existing 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<content:>
+\end_layout
+
+\end_inset
+
+ with a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section-group>
+\end_layout
+
+\end_inset
+
+ that contains our two 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<aside>
+\end_layout
+
+\end_inset
+
+ tags and the main 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section>
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To try this out, we’ll insert some dummy content in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/front/index.dryml
+\end_layout
+
+\end_inset
+
+.
  Edit that file as follows:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <page title="Home">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <body: class="front-page"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <aside1:>Aside 1</aside1:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <content:>Main content</content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <aside2:>Aside 2</aside2:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1110,159 +2548,355 @@ You should see something like:
 \end_layout
 
 \begin_layout Standard
-Figure 247: View of the default three-column formatting
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_3_column_default.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the default three-column formatting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Obviously we’ve got a bunch of styling to do.
  First though, let’s add the content for the left sidebar.
  This is the “search and browse” panel, which is on every page of the site,
- so let’s define it as a tag in application.dryml:
+ so let’s define it as a tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 <def tag="search-and-browse" attrs="current-subject"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   <div class="search-and-browse"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <div param="search"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <h3>Search NIFA</h3> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <form action=""> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <input type="text" class="search-field"/> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <submit label="Go"/> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       </form> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <p class="help"><a href="">Search Help</a></p> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </div> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <div param="browse-by-audience"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <h3>Browse by Audience</h3> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <select-menu first-option="Information for..." options="&[]"/>   
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </div> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     <div param="browse-by-subject"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <h3>Browse by Subject</h3> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       <navigation current="&current_subject"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Agricultural &amp; Food Biosecurity</nav-item>
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Agricultural Systems</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Animals &amp; Animal Products</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Biotechnology &amp; Geneomics</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Economy &amp; Commerce</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Education</nav-item> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
         <nav-item href="/">Families, Youth &amp; Communities</nav-item>
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
       </navigation> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     </div> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
   </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 A few points to note about that markup:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 We’ve tried to make the markup as “semantic” as possible – it describes
- what the content is, not what it looks like.
+ what the content 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+is
 \end_layout
 
-\begin_layout Standard
-We’ve added a few params, so that individual pages can customize the search-and-
-browse panel.
- Each param also gives us a CSS class of the same name, so we can target
- those in our stylesheet.
+\end_inset
+
+, not what it looks 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+like
 \end_layout
 
-\begin_layout Standard
-We’ve used <navigation> for the browse-by-subject links.
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We’ve added a few 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+, so that individual pages can customize the search-and-browse panel.
+ Each 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ also gives us a CSS class of the same name, so we can target those in our
+ stylesheet.
+\end_layout
+
+\begin_layout Itemize
+We’ve used 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ for the browse-by-subject links.
  This gives us the ability to highlight the current page as the user browses.
 \end_layout
 
 \begin_layout Standard
 Because the search-and-browse panel appears on every page, lets call it
- from our master page tag (<extend tag="page">).
+ from our master page tag (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend tag="page">
+\end_layout
+
+\end_inset
+
+).
  Change:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <aside param="aside1"/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1270,15 +2904,87 @@ To:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <aside param="aside1"><search-and-browse/></aside>
 \end_layout
 
-\begin_layout Standard
-Then remove the <aside1:>Aside 1</aside1:> parameter from front/index.dryml.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 248: View of the left panel contact without styling
+Then remove the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<aside1:>Aside 1</aside1:>
+\end_layout
+
+\end_inset
+
+ parameter from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+front/index.dryml
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_left_contact_panel_before.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the left panel contact without styling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1287,100 +2993,217 @@ Now we need to style this panel.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 div.page-content, div.page-content .aside { background: white; }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .aside1 { width: 173px; padding: 10px;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse {
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     background: #A9BACF;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     border: 1px solid #313367;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     font-size: 11px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     margin: 4px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse h3 {
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     background: #313367; color: white;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     margin: 0; padding: 3px 5px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
     font-weight: normal; font-size: 13px; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse a { background: none; color: #000483;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse .navigation { list-style-type: circle; }
 \end_layout
 
-\begin_layout Standard
-.search-and-browse .navigation li { padding: 3px 0; font-size: 11px; line-height:
- 14px;}
+\begin_layout Code
+
+\size footnotesize
+.search-and-browse .navigation li { 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
+  padding: 3px 0; font-size: 11px; line-height: 14px;}
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse .navigation li a { border:none;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse .search form { margin: 0 3px 3px 3px;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse .search p { margin: 3px;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse .search-field { width: 120px;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .search-and-browse .submit-button { padding: 2px;}
 \end_layout
 
-\begin_layout Standard
-.search-and-browse .browse-by-audience select { margin: 5px 3px; width: 92%;}
+\begin_layout Code
+
+\size footnotesize
+.search-and-browse .browse-by-audience select { 
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+  margin: 5px 3px; width: 92%;}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-With that added to application.css you should see:
+With that added to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+ you should see:
 \end_layout
 
 \begin_layout Standard
-Figure 249: View of the left panel content with correct styling
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_left_contact_panel_after.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the left panel content with correct styling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1388,8 +3211,16 @@ OK - let’s switch to the right-hand sidebar.
 \end_layout
 
 \begin_layout Standard
-If you click around the site you’ll see the right sidebar is always used
- for navigation panels, like this one:
+If you click around 
+\begin_inset CommandInset href
+LatexCommand href
+name "the site"
+target "http://nifa.usda.gov/"
+
+\end_inset
+
+ you’ll see the right sidebar is always used for navigation panels, like
+ this one:
 \end_layout
 
 \begin_layout Standard
@@ -1397,7 +3228,26 @@ You’ll also notice it’s missing from some pages, which is as easy as:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <page without-aside2/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1406,227 +3256,520 @@ It seems like a good idea to define a tag that creates one of these panels,
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <nav-panel>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <heading:>Quick Links</heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <items:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="/">A-Z Index</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="/">Local Extension Office</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="/">Jobs and Opportunities</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </items:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </nav-panel>
 \end_layout
 
-\begin_layout Standard
-We’ve re-used the <nav-item> tag as it gives us an <li> and an <a> which
- is just what we need here.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Now add the definition of <nav-panel> to your application.dryml:
+We’ve re-used the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nav-item>
+\end_layout
+
+\end_inset
+
+ tag as it gives us an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<li>
+\end_layout
+
+\end_inset
+
+ and an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ which is just what we need here.
 \end_layout
 
 \begin_layout Standard
+Now add the definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<nav-panel>
+\end_layout
+
+\end_inset
+
+ to your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="nav-panel">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <div class="nav-panel" param="default">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <h3 param="heading"></h3>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <div param="body">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <ul param="items"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Notice that we defined two parameters for the body of the panel.
- Callers can either provide the <items:> parameter, in which case the <ul>
+ Callers can either provide the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<items:>
+\end_layout
+
+\end_inset
+
+ parameter, in which case the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
  wrapper is provided, or, in the situation where the body will not be a
- single <ul>, they can provide the <body:> parameter.
+ single 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+, they can provide the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body:>
+\end_layout
+
+\end_inset
+
+ parameter.
 \end_layout
 
 \begin_layout Standard
 OK let’s throw one of these things into our page.
- Here’s what front/index.dryml needs to look like:
+ Here’s what 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+front/index.dryml
+\end_layout
+
+\end_inset
+
+ needs to look like:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <page title="Home">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <body: class="front-page"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <content:>Main content</content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <aside2:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-panel>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <heading:>Grants</heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <items:>
 \end_layout
 
-\begin_layout Standard
-        <nav-item href="/">National Research Initiative</nav-item>
+\begin_layout Code
+        <nav-item href="/">
 \end_layout
 
-\begin_layout Standard
-        <nav-item href="/">Small Business Innovation Research</nav-item>
+\begin_layout Code
+          National Research Initiative
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+        </nav-item>
+\end_layout
+
+\begin_layout Code
+        <nav-item href="/">
+\end_layout
+
+\begin_layout Code
+          Small Business Innovation Research
+\end_layout
+
+\begin_layout Code
+        </nav-item>
+\end_layout
+
+\begin_layout Code
         <nav-item href="/">More...</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </items:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </nav-panel>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-panel>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <heading:>Quick Links</heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <items:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <nav-item href="/">A-Z Index</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <nav-item href="/">Local Extension Office</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <nav-item href="/">Jobs and Opportunities</nav-item>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </items:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </nav-panel>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </aside2:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </page>
 \end_layout
 
-\begin_layout Standard
-And here’s the associated CSS – add this to the end of your application.css:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+And here’s the associated CSS – add this to the end of your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.css
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 .aside2 { margin: 0; padding: 12px 10px; width: 182px;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 .nav-panel {border: 1px solid #C9C9C9; margin-bottom: 10px;}
 \end_layout
 
-\begin_layout Standard
-.nav-panel h3 {background:#A9BACF; color: #313131; font-size: 13px; padding:
- 3px 8px; margin: 0;}
+\begin_layout Code
+.nav-panel h3 {
 \end_layout
 
-\begin_layout Standard
-.nav-panel .body {background: #DAE4ED; color: #00059A; padding: 5px;}
+\begin_layout Code
+  background:#A9BACF; 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+  color: #313131; 
+\end_layout
+
+\begin_layout Code
+  font-size: 13px; 
+\end_layout
+
+\begin_layout Code
+  padding: 3px 8px; 
+\end_layout
+
+\begin_layout Code
+  margin: 0;}
+\end_layout
+
+\begin_layout Code
+.nav-panel .body {
+\end_layout
+
+\begin_layout Code
+  background: #DAE4ED; 
+\end_layout
+
+\begin_layout Code
+  color: #00059A; 
+\end_layout
+
+\begin_layout Code
+  padding: 5px;}
+\end_layout
+
+\begin_layout Code
 .nav-panel .body a {color: #00059A; background: none;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 .nav-panel ul {list-style-type: circle;}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 .nav-panel ul li { margin: 5px 0 5px 20px;}
 \end_layout
 
-\begin_layout Standard
-Figure 250: View of the right panel content with styling
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_right_panel_content.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the right panel content with styling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Main content
 \end_layout
 
 \begin_layout Standard
 The main content varies a lot from page to page, so let’s just make sure
  that the margins are OK, and leave it at that.
- First we need some content to work with, so in front/index.dryml, replace:
+ First we need some content to work with, so in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+front/index.dryml
+\end_layout
+
+\end_inset
+
+, replace:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <content:>Main content</content:>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1634,19 +3777,38 @@ With:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <h2>National Institute of Food and Agriculture</h2>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <p>Main content goes here...</p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </content:>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1655,89 +3817,229 @@ On refreshing the browser it seems there’s nothing else to do.
 \end_layout
 
 \begin_layout Standard
-Figure 251: View of the main content panel
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_main_content_panel.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the main content panel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 The footer
 \end_layout
 
 \begin_layout Standard
 The footer is the same throughout the site.
- Let’s define it as a tag and add it to our main <page> tag.
+ Let’s define it as a tag and add it to our main 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<page>
+\end_layout
+
+\end_inset
+
+ tag.
  Here’s the definition for application.dryml:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 <def tag="footer-nav">
 \end_layout
 
-\begin_layout Standard
-     <ul>
+\begin_layout Code
+
+\size footnotesize
+  <ul>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">NIFA</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">USDA.gov</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">Site Map</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">Policies and Links</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">Grants.gov</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">CRIS</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">REEIS</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">Leadership Management Dashboard</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">eXension</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <nav-item href="/">RSS</nav-item>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+  </ul>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-      	<nav-item href="/">NIFA</nav-item>
+And add this parameter to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend tag="page">
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-      	<nav-item href="/">USDA.gov</nav-item>
-\end_layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
-\begin_layout Standard
-      	<nav-item href="/">Site Map</nav-item>
-\end_layout
+\begin_layout Code
 
-\begin_layout Standard
-      	<nav-item href="/">Policies and Links</nav-item>
-\end_layout
-
-\begin_layout Standard
-      	<nav-item href="/">Grants.gov</nav-item>
-\end_layout
-
-\begin_layout Standard
-		<nav-item href="/">CRIS</nav-item>
-\end_layout
-
-\begin_layout Standard
-		<nav-item href="/">REEIS</nav-item>
-\end_layout
-
-\begin_layout Standard
-		<nav-item href="/">Leadership Management Dashboard</nav-item>
-\end_layout
-
-\begin_layout Standard
-		<nav-item href="/">eXension</nav-item>
-\end_layout
-
-\begin_layout Standard
-      	<nav-item href="/">RSS</nav-item>
-\end_layout
-
-\begin_layout Standard
-    </ul>
-\end_layout
-
-\begin_layout Standard
-/def>
-\end_layout
-
-\begin_layout Standard
-And add this parameter to the <extend tag="page">:
-\end_layout
-
-\begin_layout Standard
+\size footnotesize
 <footer: param><footer-nav/></footer:>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: Since Hobo already includes a page-footer div out-of-the-box, we don’t
  need to create this div in DRYML.
   If we did, we would end up with a duplicate and this would distort the
  footer.
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1747,54 +4049,144 @@ And finally, the CSS.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
 .page-footer {
 \end_layout
 
-\begin_layout Standard
-    background: white url(../images/footer_corner_left.gif) no-repeat bottom
- left;
+\begin_layout Code
+
+\size footnotesize
+ background: white url(images/footer_corner_left.gif) no-repeat bottom left;
 \end_layout
 
-\begin_layout Standard
-    overflow: hidden; height: 100%;
+\begin_layout Code
+
+\size footnotesize
+ overflow: hidden; height: 100%;
 \end_layout
 
-\begin_layout Standard
-    border-top: 1px solid #B8B8B8;
+\begin_layout Code
+
+\size footnotesize
+ border-top: 1px solid #B8B8B8;
 \end_layout
 
-\begin_layout Standard
-    font-size: 12px; line-height: 10px;
+\begin_layout Code
+
+\size footnotesize
+ font-size: 12px; line-height: 10px;
 \end_layout
 
-\begin_layout Standard
-    padding: 5px 0px 10px 40px;
+\begin_layout Code
+
+\size footnotesize
+ padding: 5px 0px 10px 40px;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 }
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
 .page-footer ul { list-style-type: none; }
 \end_layout
 
-\begin_layout Standard
-.page-footer ul li { float: left; border-right: 1px solid #2A049A; margin:
- 0; padding: 0 5px;}
+\begin_layout Code
+
+\size footnotesize
+.page-footer ul li { 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\size footnotesize
+ float: left; 
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+ border-right: 1px solid #2A049A; 
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+ margin: 0; 
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+ padding: 0 5px;}
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
 .page-footer ul li a {border:none; color: #2A049A;}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 There’s one CSS trick in there that is work a mention.
- In the .page-footer section, we’ve specified:
+ In the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.page-footer
+\end_layout
+
+\end_inset
+
+ section, we’ve specified:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 overflow: hidden; height: 100%;
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1804,7 +4196,40 @@ This is the famous “self clearing” trick.
 \end_layout
 
 \begin_layout Standard
-Figure 252: NIFA Demo with final footer styling
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/nifa_demo_with_footer.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+NIFA Demo with final footer styling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1820,10 +4245,6 @@ That pretty much brings us to the end of the work of reproducing the look
 The next question is - how could we make several apps look like this without
  repeating all this code?  That is the subject of our next tutorial.
  
-\end_layout
-
-\begin_layout Section*
-
 \end_layout
 
 \end_body
