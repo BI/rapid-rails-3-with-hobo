@@ -28,6 +28,7 @@ logicalmkup
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -43,14 +44,15 @@ logicalmkup
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
+\boxbgcolor #e6e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
-\paragraph_separation indent
-\paragraph_indentation default
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
@@ -64,7 +66,164 @@ logicalmkup
 
 \begin_body
 
+\begin_layout Subsubsection*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 17 – The Agile Project Manager
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 18 – Using CKEditor (Rich Text) with Hobo
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 19 – Using FusionCharts with Hobo
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 20 – Adding User Comments to Models
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 21 – Replicating the Look and Feel of a Site
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 22 – Using Hobo Lifecycles for Workflow
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 23 – Using Hobo Lifecycles for Workflow
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 24 – Creating an Administration Sub-Site
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 25 – Using Hobo Database Index Generation
+\end_layout
+
+\begin_layout Section*
+Introductory Concepts and Comments
+\end_layout
+
 \begin_layout Standard
+This set of tutorials builds on the expertise you have developed so far
+ with the Beginning Tutorials and Intermediate Tutorials.
+ 
+\end_layout
+
+\begin_layout Standard
+You should be able to flex your muscles a bit, at rich text editing, charting,,
+ or even completely change the look and feel of a site.
+\end_layout
+
+\begin_layout Standard
+The “Agile Project Manager” implements a large range of Hobo features into
+ a fairly substantial and useful application.
+  Try out enhancing and modifying it to fit your needs.
+\end_layout
+
+\begin_layout Standard
+At the end of the Advanced Tutorials you will have the expertise to build,
+ customize, and have your data-rich  application ready to go into production.
+  Enjoy!
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut17.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut18.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut19.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut20.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut21.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut22.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut23.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut24.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut25.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 
 \end_layout
 

@@ -1,0 +1,179 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 24 – Creating an Administration Sub-Site
+\end_layout
+
+\begin_layout Standard
+By Bryan Larsen
+\end_layout
+
+\begin_layout Standard
+This tutorial will show how you can create an administrative sub-site for
+ a Hobo.
+   This will allow the administrator to create, update and destroy any database
+ row without writing any view code.
+ 
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Standard
+Generator steps 
+\end_layout
+
+\begin_layout Standard
+Let’s add an admin sub-site to the project we created in the “Agile Project
+ Manager” tutorial.
+  
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+projects> hobo g admin_subsite --make-front-site 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+projects> hobo g front_controller admin::front --add-routes 
+\end_layout
+
+\begin_layout Standard
+Figure 259: Generator console output for creating an admin sub-site
+\end_layout
+
+\begin_layout Standard
+Model Modifications
+\end_layout
+
+\begin_layout Standard
+We would like to “hide” our code table maintenance the admin sub-site.
+  Currently we have one code table, requirement_statuses (model = RequirementSta
+tus).
+\end_layout
+
+\begin_layout Standard
+Let’s first change all of the permissions for this model to “true”, as only
+ an administrator will be able to access this sub-site:
+\end_layout
+
+\begin_layout Standard
+Controller Modifications
+\end_layout
+
+\begin_layout Standard
+We need to move the controller for RequirementStatus to the admin folder
+ and modify it to be:
+\end_layout
+
+\begin_layout Standard
+Class Admin::RequirementStatusesController < Admin::AdminSiteController
+ 
+\end_layout
+
+\begin_layout Standard
+      hobo_model_controller RequirementStatus 
+\end_layout
+
+\begin_layout Standard
+      auto_actions :all 
+\end_layout
+
+\begin_layout Standard
+end 
+\end_layout
+
+\begin_layout Standard
+Figure 260: View of the Admin folder contents
+\end_layout
+
+\begin_layout Standard
+At this stage you should be able to run your application.
+  If you browse to "/admin", you can create, remove, update and destroy
+ any requirement status:
+\end_layout
+
+\begin_layout Standard
+Figure 261: View of the Admin Sub-Site
+\end_layout
+
+\end_body
+\end_document

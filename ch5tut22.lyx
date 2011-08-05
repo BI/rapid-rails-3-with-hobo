@@ -1,0 +1,704 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 22 - Creating a “Look and Feel” Plugin for Hobo
+\end_layout
+
+\begin_layout Standard
+By Tom Locke
+\end_layout
+
+\begin_layout Standard
+In this tutorial we will start with the results of Tutorial 21.
+  To re-use this work across many apps, we’ll use the standard Rails technique
+ - create a plugin.
+ 
+\end_layout
+
+\begin_layout Standard
+The plugin will contain:
+\end_layout
+
+\begin_layout Standard
+A DRYML taglib with all of our tag definitions
+\end_layout
+
+\begin_layout Standard
+A Public directory, containing our images and stylesheets
+\end_layout
+
+\begin_layout Standard
+Somehow the idea of “creating a plugin” seems like a big deal, but it’s
+ there’s really nothing to it.
+ Pretty much all we’re going to do is move a few files into different places.
+\end_layout
+
+\begin_layout Standard
+Here is the content of a batch file to create the folders and move the files:
+\end_layout
+
+\begin_layout Standard
+Figure 253: Batch file with commands to create the plugin folders and content
+\end_layout
+
+\begin_layout Standard
+Or, as individual commands:
+\end_layout
+
+\begin_layout Standard
+> md vendor
+\backslash
+plugins
+\backslash
+nifa
+\end_layout
+
+\begin_layout Standard
+> cd vendor
+\backslash
+plugins
+\backslash
+nifa
+\end_layout
+
+\begin_layout Standard
+> md taglibs
+\end_layout
+
+\begin_layout Standard
+> md public
+\end_layout
+
+\begin_layout Standard
+> md public
+\backslash
+nifa
+\end_layout
+
+\begin_layout Standard
+> md public
+\backslash
+nifa
+\backslash
+stylesheets
+\end_layout
+
+\begin_layout Standard
+> md public
+\backslash
+nifa
+\backslash
+images
+\end_layout
+
+\begin_layout Standard
+> cd ..
+\backslash
+..
+\backslash
+..
+\end_layout
+
+\begin_layout Standard
+> copy app
+\backslash
+views
+\backslash
+taglibs
+\backslash
+application.dryml  vendor
+\backslash
+plugins
+\backslash
+nifa
+\backslash
+taglibs
+\backslash
+nifa.dryml
+\end_layout
+
+\begin_layout Standard
+> copy public
+\backslash
+stylesheets
+\backslash
+application.css vendor
+\backslash
+plugins
+\backslash
+nifa
+\backslash
+public
+\backslash
+stylesheets
+\backslash
+nifa.css
+\end_layout
+
+\begin_layout Standard
+> copy public
+\backslash
+images
+\backslash
+* vendor
+\backslash
+plugins
+\backslash
+nifa
+\backslash
+public
+\backslash
+nifa
+\backslash
+images
+\end_layout
+
+\begin_layout Standard
+(That last command will also copy rails.png into the plugin, which you probably
+ want to delete).
+\end_layout
+
+\begin_layout Standard
+We’ve copied the whole of application.dryml into our plugin, because nearly
+ everything in there belongs in the plugin, but it does need some editing:
+\end_layout
+
+\begin_layout Standard
+At the top, remove all of the includes, the <set-theme> and the definition
+ of <app-name>
+\end_layout
+
+\begin_layout Standard
+We need to make sure our stylesheet gets included, so add the following
+ parameter to the call to <old-page>
+\end_layout
+
+\begin_layout Standard
+<append-stylesheets:>
+\end_layout
+
+\begin_layout Standard
+   <stylesheet name="
+\backslash
+nifa
+\backslash
+stylesheets
+\backslash
+nifa.css"/>
+\end_layout
+
+\begin_layout Standard
+ </append-stylesheets:>
+\end_layout
+
+\begin_layout Standard
+The new nifa.dryml will be:
+\end_layout
+
+\begin_layout Standard
+# nifa.drynl
+\end_layout
+
+\begin_layout Standard
+<append-stylesheets:>
+\end_layout
+
+\begin_layout Standard
+   <stylesheet name="
+\backslash
+nifa
+\backslash
+stylesheets
+\backslash
+nifa.css"/>
+\end_layout
+
+\begin_layout Standard
+ </append-stylesheets:>
+\end_layout
+
+\begin_layout Standard
+# Add this remove the live search and add sidebars
+\end_layout
+
+\begin_layout Standard
+<extend tag="page">
+\end_layout
+
+\begin_layout Standard
+  <old-page merge without-live-search>
+\end_layout
+
+\begin_layout Standard
+   
+\end_layout
+
+\begin_layout Standard
+  # need this to acces the nifa.css stylesheet 
+\end_layout
+
+\begin_layout Standard
+   <append-stylesheets:>
+\end_layout
+
+\begin_layout Standard
+      <stylesheet name="
+\backslash
+nifa
+\backslash
+stylesheets
+\backslash
+nifa.css"/>
+\end_layout
+
+\begin_layout Standard
+    </append-stylesheets:>
+\end_layout
+
+\begin_layout Standard
+   #    
+\end_layout
+
+\begin_layout Standard
+    <content: replace>
+\end_layout
+
+\begin_layout Standard
+      <section-group class="page-content">
+\end_layout
+
+\begin_layout Standard
+        <aside param="aside1"><search-and-browse/></aside>
+\end_layout
+
+\begin_layout Standard
+         <section param="content"/>
+\end_layout
+
+\begin_layout Standard
+        <aside param="aside2"/>
+\end_layout
+
+\begin_layout Standard
+      </section-group>
+\end_layout
+
+\begin_layout Standard
+    </content:>
+\end_layout
+
+\begin_layout Standard
+    <footer: param><footer-nav/></footer:>
+\end_layout
+
+\begin_layout Standard
+  </old-page>
+\end_layout
+
+\begin_layout Standard
+</extend>
+\end_layout
+
+\begin_layout Standard
+# Replace the default navigation bar
+\end_layout
+
+\begin_layout Standard
+<def tag="main-nav">
+\end_layout
+
+\begin_layout Standard
+  <navigation class="main-nav">
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Home</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">About Us</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Grants</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Forms</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Newsroom</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Help</nav-item>
+\end_layout
+
+\begin_layout Standard
+    <nav-item href="">Contact Us</nav-item>
+\end_layout
+
+\begin_layout Standard
+  </navigation>  
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+# new tag 
+\end_layout
+
+\begin_layout Standard
+<def tag="search-and-browse" attrs="current-subject"> 
+\end_layout
+
+\begin_layout Standard
+  <div class="search-and-browse"> 
+\end_layout
+
+\begin_layout Standard
+    <div param="search"> 
+\end_layout
+
+\begin_layout Standard
+      <h3>Search CSREES</h3> 
+\end_layout
+
+\begin_layout Standard
+      <form action=""> 
+\end_layout
+
+\begin_layout Standard
+        <input type="text" class="search-field"/> 
+\end_layout
+
+\begin_layout Standard
+        <submit label="Go"/> 
+\end_layout
+
+\begin_layout Standard
+      </form> 
+\end_layout
+
+\begin_layout Standard
+      <p class="help"><a href="">Search Help</a></p> 
+\end_layout
+
+\begin_layout Standard
+    </div> 
+\end_layout
+
+\begin_layout Standard
+    <div param="browse-by-audience"> 
+\end_layout
+
+\begin_layout Standard
+      <h3>Browse by Audience</h3> 
+\end_layout
+
+\begin_layout Standard
+      <select-menu first-option="Information for..." options="&[]"/>   
+\end_layout
+
+\begin_layout Standard
+    </div> 
+\end_layout
+
+\begin_layout Standard
+    <div param="browse-by-subject"> 
+\end_layout
+
+\begin_layout Standard
+      <h3>Browse by Subject</h3> 
+\end_layout
+
+\begin_layout Standard
+      <navigation current="&current_subject"> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Agricultural &amp; Food Biosecurity</nav-item>
+ 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Agricultural Systems</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Animals &amp; Animal Products</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Biotechnology &amp; Geneomics</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Economy &amp; Commerce</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Education</nav-item> 
+\end_layout
+
+\begin_layout Standard
+        <nav-item href="/">Families, Youth &amp; Communities</nav-item>
+ 
+\end_layout
+
+\begin_layout Standard
+      </navigation> 
+\end_layout
+
+\begin_layout Standard
+    </div> 
+\end_layout
+
+\begin_layout Standard
+  </div>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+# Parameterized panel
+\end_layout
+
+\begin_layout Standard
+<def tag="nav-panel">
+\end_layout
+
+\begin_layout Standard
+  <div class="nav-panel" param="default">
+\end_layout
+
+\begin_layout Standard
+    <h3 param="heading"></h3>
+\end_layout
+
+\begin_layout Standard
+    <div param="body">
+\end_layout
+
+\begin_layout Standard
+      <ul param="items"/>
+\end_layout
+
+\begin_layout Standard
+    </div>
+\end_layout
+
+\begin_layout Standard
+  </div>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+# Footer parameterized tag
+\end_layout
+
+\begin_layout Standard
+<def tag="footer-nav">
+\end_layout
+
+\begin_layout Standard
+   <ul>
+\end_layout
+
+\begin_layout Standard
+       <nav-item href="/">NIFA</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">USDA.gov</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">Site Map</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">Policies</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">Grants.gov</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">CRIS</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">REEIS</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">Leadership Management Dashboard</nav-item>
+\end_layout
+
+\begin_layout Standard
+		<nav-item href="/">eXension</nav-item>
+\end_layout
+
+\begin_layout Standard
+      	<nav-item href="/">RSS</nav-item>
+\end_layout
+
+\begin_layout Standard
+    </ul>
+\end_layout
+
+\begin_layout Standard
+</def>
+\end_layout
+
+\begin_layout Standard
+Using the plugin
+\end_layout
+
+\begin_layout Standard
+To try out the plugin, create a new blank Hobo app.
+ There are then three steps to install and setup the plugin:
+\end_layout
+
+\begin_layout Standard
+Step 1.
+   Copy vendor
+\backslash
+plugins
+\backslash
+nifa from nifa-demo  into vendor
+\backslash
+plugins in the new app.
+\end_layout
+
+\begin_layout Standard
+Step 2.
+  To install the taglib add:
+\end_layout
+
+\begin_layout Standard
+<include src="nifa" plugin="nifa"/>
+\end_layout
+
+\begin_layout Standard
+to application.dryml.
+ It must be added after the <set-theme> tag.
+\end_layout
+
+\begin_layout Standard
+Step 3.
+ To install the public assets:
+\end_layout
+
+\begin_layout Standard
+> copy vendor
+\backslash
+plugins
+\backslash
+nifa
+\backslash
+public
+\backslash
+* public
+\end_layout
+
+\begin_layout Standard
+That should be it.
+ Your new app will now look like the NIFA website, and the tags we defined,
+ such as <nav-panel> will be available in every template.
+\end_layout
+
+\begin_layout Section*
+
+\end_layout
+
+\begin_layout Section*
+
+\end_layout
+
+\end_body
+\end_document

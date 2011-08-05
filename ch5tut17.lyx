@@ -1,0 +1,6179 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Tutorial 17 – The Agile Project Manager
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: We have simplified this example somewhat by substituting the more
+ traditional term “requirement” for what many agile development texts refer
+ to “story”.
+ One can extend this tutorial by linked one or many “requirements” for each
+ user “story”.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial Application:  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+projects
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Overview
+\end_layout
+
+\begin_layout Standard
+This tutorial is adapted from the classic “Agility” tutorial created by
+ Tom Locke.
+  It retains much of Tom’s text and style.
+ We have also highlighted quotes from Tom at critical points in the tutorial.
+  
+\end_layout
+
+\begin_layout Standard
+Here is a quick summary of our goals for this application:
+\end_layout
+
+\begin_layout Enumerate
+The application “Projects” maintains a set of projects, requirements, and
+ related tasks for a team of people.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Users access the application with a browser.
+ The browser provides the capability to create, edit, delete and list projects,
+ tasks, and task assignments.
+\end_layout
+
+\begin_layout Enumerate
+All data entry fields have rollover hints to aid user data entry.
+ Validation rules attached to the fields to prevent invalid entries.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Each project can have any number of associated tasks, and each task can
+ have one or more team members assigned to it.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Each task has one status at any given time.
+ A drop-down list of status codes will be displayed on a task creation page.
+ Only one of these status codes can be selected and saved for this task.
+\end_layout
+
+\begin_layout Enumerate
+There is a signup and login capability permitting each team member to create
+ his/her own login name and password.
+ The system administrator is determined by a simple rule--the first to log
+ in to the application becomes the system administrator.
+ 
+\end_layout
+
+\begin_layout Enumerate
+There will be a simple role facility that will allow an Administrator to
+ assign roles to users.
+ Both the Administrator and Coordinator roles can create and update projects,
+ requirements, and tasks and assign team members to a task.
+  Analysts, Developers, and Testers can change the status of a Requirement.
+\end_layout
+
+\begin_layout Enumerate
+The task assignment page will have a drop-down list of all existing team
+ members.
+  Only members of this list can have tasks assigned to them.
+\end_layout
+
+\begin_layout Enumerate
+A project page will display a list of all tasks assigned to the project.
+\end_layout
+
+\begin_layout Enumerate
+A task page will display a list of team members assigned to the task.
+\end_layout
+
+\begin_layout Subsubsection*
+Getting Started
+\end_layout
+
+\begin_layout Standard
+Create the application like you have for the other tutorials:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+   > hobo new projects --setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now look again about what we want this app to do:
+\end_layout
+
+\begin_layout Itemize
+Track multiple projects
+\end_layout
+
+\begin_layout Itemize
+Each project has a collection of requirements (“requirements”) which are
+ described at a high-level requirements using the language of the user
+\end_layout
+
+\begin_layout Itemize
+Each requirement is just a brief chunk of text
+\end_layout
+
+\begin_layout Itemize
+A requirement can be assigned a current status and a set of outstanding
+ tasks
+\end_layout
+
+\begin_layout Itemize
+Tasks can be assigned to users
+\end_layout
+
+\begin_layout Itemize
+Each user will have a simple view of the tasks they are assigned to
+\end_layout
+
+\begin_layout Standard
+So:
+\end_layout
+
+\begin_layout Itemize
+Project (with a name) has many requirements
+\end_layout
+
+\begin_layout Itemize
+Requirement (with a title, description and status) belongs to a project
+ AND has many tasks
+\end_layout
+
+\begin_layout Itemize
+Task (with a description) belongs to a requirement AND has many users (through
+ task-assignments)
+\end_layout
+
+\begin_layout Itemize
+User has many tasks (through task-assignments)
+\end_layout
+
+\begin_layout Standard
+ Now we need to create the models outlined above using the Hobo generator:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g resource project name:string
+\end_layout
+
+\begin_layout Code
+> hobo g resource requirement title:string 
+\backslash
+
+\end_layout
+
+\begin_layout Code
+  body:text status:string
+\end_layout
+
+\begin_layout Code
+> hobo g resource task name:string
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Remember that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:resource
+\end_layout
+
+\end_inset
+
+ generator builds the entire MVC (Model/Controller/View) infrastructure
+ needed for any model requiring a web-font end.
+  The “task assignments” model is simply the table required to support many-to-m
+any relationships behind the scenes.
+  So a view or controller is not needed, so we only need the hobo model
+ generator:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g model task_assignment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: We are using the convention of naming an association table with the
+ combination of a model name with a descriptive intermediate name, with
+ terms separated by an underscore:
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+task
+\end_layout
+
+\end_inset
+
+ + 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+assignment
+\end_layout
+
+\end_inset
+
+ becomes: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+task_assignment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The field declarations have been created by the generators in each model
+ file, but not the associations.
+ 
+\end_layout
+
+\begin_layout Standard
+To create the associations, edit each model file as outlined below and declare
+ the association just below the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields do ...
+ end
+\end_layout
+
+\end_inset
+
+ declaration in each model, as follows:
+\end_layout
+
+\begin_layout Standard
+Adding "belongs_to :project" and "has_many :tasks" to the Requirement model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5adding_requirements_assoc.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding "has_many :requirements" to the Project class
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5adding_project_tasks_assoc.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding "belongs_to :project" and "has_many :tasks" to the Requirement model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that we have chosen to specify the index name associated with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ declaration in the Requirement model.
+  We did this in case we might want to port this app to Oracle at some point,
+ and Oracle has this irritating limitation of 30 characters for table, column,
+ and index names.
+  If we had not specified the index name, Rails would chose a default name,
+ which is often longer than 30 characters.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5adding_assoc_to_task.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the “belongs_to” and “has_many” declarations to the Task model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5adding_belongs_to_assocs_to_taskassignment.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the two "belongs_to" definitions to the TaskAssignment model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5adding_assoc_to_user.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the "has_many" declarations to the User model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now Hobo will create a single migration for all of these changes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Load the migration file in your text editor to see what was generated:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5first_hobo_migration.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+First Hobo migration for Projects 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5view_of_indexes.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of indexes created by the migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the figure above you can see the indexes that were created in an Oracle
+ environment.
+  Notice that in addition to our custom indexes, all of the tables have
+ a unique identifier column called “ID” that is also indexed.
+  All of these indexes start with the “SYS_” prefix.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: A change starting with Hobo 1.0 requires the developer to declare child
+ models for the automatic Hobo Rapid display of child element counts as
+ shown in the rest of this tutorial.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The code to add is 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+italicized
+\end_layout
+
+\end_inset
+
+ below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Project < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    name :string
+\end_layout
+
+\begin_layout Code
+    timestamps
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  
+\end_layout
+
+\begin_layout Code
+  has_many :requirements, :dependent=>:destroy
+\end_layout
+
+\begin_layout Code
+  
+\end_layout
+
+\begin_layout Code
+  
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+children :requirements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+[...]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Requirement < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    title  :string
+\end_layout
+
+\begin_layout Code
+    body   :text
+\end_layout
+
+\begin_layout Code
+    status :string
+\end_layout
+
+\begin_layout Code
+    timestamps
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  belongs_to :project, :index=>'requirement_project_index'
+\end_layout
+
+\begin_layout Code
+  has_many :tasks, :dependent=>:destroy
+\end_layout
+
+\begin_layout Code
+  
+\end_layout
+
+\begin_layout Code
+  
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+children :tasks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+[...]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Task < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    name :string
+\end_layout
+
+\begin_layout Code
+    timestamps
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  
+\end_layout
+
+\begin_layout Code
+  belongs_to :requirement, :index=>'requirement_task_index'
+\end_layout
+
+\begin_layout Code
+  has_many :task_assignments, :dependent=>:destroy
+\end_layout
+
+\begin_layout Code
+  has_many :users, :through=>:task_assignments
+\end_layout
+
+\begin_layout Code
+  
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+children :task_assignments
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+  
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+children :users
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+[...]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After you run the migration fire up the app:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> rails server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here is what you app should look like now:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5projects_home.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The default Home page for the Projects application
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Make sure you create a first user, which will by default have administrator
+ rights.
+  Then remember to stay in as an administrator (e.g., the user who signed
+ up first), and spend a few minutes populating the app with projects, requiremen
+ts and tasks.
+\end_layout
+
+\begin_layout Standard
+Now enter a few projects like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5projects_index.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Projects index page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Enter a couple of requirements for one of your projects:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5new_requirement.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+New Requirement page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5requirements_index.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Index view for Requirements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And enter some tasks for one of the requirements:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5_new_task.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+New Task page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5tasks_index.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Index view for Tasks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the “Application Summary” page.
+ A handy new feature starting with Hobo 0.9.0 is the Application Summary page.
+  If you are an administrator you can access this page by entering the following
+ URL in your browser:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/dev/summary"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This summary provides you quick access to information on:
+\end_layout
+
+\begin_layout Itemize
+Application Name	
+\end_layout
+
+\begin_layout Itemize
+Application Location	
+\end_layout
+
+\begin_layout Itemize
+Rails Version
+\end_layout
+
+\begin_layout Itemize
+Change Control (e.g., Git)
+\end_layout
+
+\begin_layout Itemize
+Bundled Gems
+\end_layout
+
+\begin_layout Itemize
+Plugins
+\end_layout
+
+\begin_layout Itemize
+Environments
+\end_layout
+
+\begin_layout Itemize
+Models/Tables
+\end_layout
+
+\begin_layout Itemize
+Model Associations
+\end_layout
+
+\begin_layout Standard
+The following are screen shots of the Projects application so far.
+  Notice that the development environment we have been using is Oracle.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The Application Summary is refreshed each time a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+ is executed.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5appsummary1.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Part 1 of the Application Summary page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5appsummary2.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/appsummary3.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Part 2 and 3 of the Application Summary page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/appsummary4.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Part 4 of the Application Summary page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Removing actions
+\end_layout
+
+\begin_layout Standard
+By default Hobo has given us a full set of restful actions for every single
+ model/controller pair.
+ But many of these page flows (“routes”) are not optimal for our application.
+\end_layout
+
+\begin_layout Standard
+For example, why would we want an index page listing every task in the database?
+ We only really want to see 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+tasks listed against related requirements and users
+\end_layout
+
+\end_inset
+
+.
+ We need to disable the routes we don’t want.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+There’s an interesting change of approach here that often crops up with
+ Hobo development.
+ Normally you’d expect to have to build everything yourself.
+ With Hobo, you often are given everything you want and more besides.
+ Your job is to take away the parts that 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+you don’t
+\end_layout
+
+\end_inset
+
+ want
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here’s how we would remove, for example, the index action from TasksController.
+ 
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/controllers/tasks_controller.rb
+\end_layout
+
+\end_inset
+
+, change
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :all
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :all, :except => :index
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, refresh the browser and you’ll notice that “Tasks” has been removed
+ from the main nav-bar.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/removing_index_from_tasks.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Effect of removing the "index" action from the Tasks controller
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Hobo’s page generators adapt to changes in the actions that you make
+ available.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here’s another similar trick.
+ Browse to one of your projects that do not have related requirements.
+ You’ll see the page text says “No requirements to display”:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/no_requirements_to_display.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of "No Requirements to display" message
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is an “Edit Project” link, but no obvious way to add a requirement
+ related to this project.
+ Hobo has support for this--but we need to switch it on.
+ 
+\end_layout
+
+\begin_layout Standard
+Add the following declaration to the requirements controller:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions_for :project, [:new, :create]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/new_requirement_link.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The "New Requirement" link now appears
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo’s page generators will respond to the existence of these routes and
+ add a “New Requirement” link to the project page, and an appropriate “New
+ Requirement” page:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/new_requirement_page.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the "New Requirement" page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Create a requirement and you’ll see the requirement has the same issue with
+ an associated task – there is no obvious way to create one.
+ Again, we can add the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions_for
+\end_layout
+
+\end_inset
+
+ declaration to the tasks controller, but this time we’ll only ask for a
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+create
+\end_layout
+
+\end_inset
+
+ action, and not a new action:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions_for :requirement, :create
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo’s page generator can support the lack of a ‘New Task’ page – it gives
+ you an in-line form on the requirement page!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/inline_add_task_form.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the in-line "Add a Task" form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can continue to configure the available actions for all of the controller
+s.
+ So far we’ve seen the “black-list” style where you list what you don’t
+ want:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :all, :except => :index
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There’s also “white-list” style where you list what you do want, e.g.:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :index, :show
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There’s also a handy shortcut to get just the read-only routes (i.e., the
+ ones that don’t modify the database):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :read_only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The opposite is handy for things that are manipulated by AJAX, but never
+ viewed directly:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :write_only 
+\end_layout
+
+\begin_layout Code
+# short for -- :create, :update, :destroy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now edit each of the controllers as listed below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class ProjectsController < ApplicationController
+\end_layout
+
+\begin_layout Code
+  hobo_model_controller
+\end_layout
+
+\begin_layout Code
+  auto_actions :all
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class TasksController < ApplicationController
+\end_layout
+
+\begin_layout Code
+  hobo_model_controller
+\end_layout
+
+\begin_layout Code
+  auto_actions :write_only,:edit
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  # Add the following to put an in-place editor within the 
+\end_layout
+
+\begin_layout Code
+  #   Requirement page
+\end_layout
+
+\begin_layout Code
+  auto_actions_for :requirement, :create
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RequirementsController < ApplicationController
+\end_layout
+
+\begin_layout Code
+  hobo_model_controller
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  # add this to remove the Requirement tab from the main
+\end_layout
+
+\begin_layout Code
+  #   navigation bar 
+\end_layout
+
+\begin_layout Code
+  auto_actions :all, :except=> :index
+\end_layout
+
+\begin_layout Code
+ 
+\end_layout
+
+\begin_layout Code
+  # add this line to get a New Requirement link for the 
+\end_layout
+
+\begin_layout Code
+  #   Project page
+\end_layout
+
+\begin_layout Code
+  auto_actions_for :project, [:new, :create]
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice the Task listing within a Requirement, and the “Add a Task” in-page
+ editor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/requirement_page_after_controller_mod.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Requirement page after modifying controller definitions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Permissions
+\end_layout
+
+\begin_layout Standard
+So far we’ve done two major things with our app: 
+\end_layout
+
+\begin_layout Itemize
+Created models and specified associations
+\end_layout
+
+\begin_layout Itemize
+Modified controllers to specify which actions are available
+\end_layout
+
+\begin_layout Standard
+There’s one more thing we typically do when creating a new Hobo app, before
+ we even touch the view layer.
+ We modify permissions in the model layer.
+\end_layout
+
+\begin_layout Subsubsection*
+Adding Roles
+\end_layout
+
+\begin_layout Standard
+Let’s do a simple addition to the User model.
+  Here we have taken the simple route, and created a new field called “role”
+ along with the list of acceptable values using the Ruby 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ method:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/roles_as_enum_string.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Defining available roles using “enum_string”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Run a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+ to add this field to the database.
+\end_layout
+
+\begin_layout Standard
+Modify the create permission to allow an Administrator to create a new user:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/modify_create_permitted_in_user.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Modifying the "create_permitted" method to the User model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Modify your Users Controller as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/add_auto_actions_all_to_users.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Users Controller with "auto actions :all:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Run the server again and then refresh your browser: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/users_tab.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Users tab is now active
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can edit a user and add a role:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/edit_user_with_role.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Edit User page with the new Role field
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I have selected the “Analyst” option.
+  So I have 
+\end_layout
+
+\begin_layout Enumerate
+A Hobo system permission as an Administrator
+\end_layout
+
+\begin_layout Enumerate
+An Application role as Analyst.
+\end_layout
+
+\begin_layout Standard
+Now let’s see how to use this information.
+\end_layout
+
+\begin_layout Subsubsection*
+Customizing the Permissions by Role
+\end_layout
+
+\begin_layout Standard
+Here is what we would like to implement:
+\end_layout
+
+\begin_layout Itemize
+Only an administrator can delete projects, requirements, or tasks
+\end_layout
+
+\begin_layout Itemize
+Only an administrator or coordinator can create and edit projects, requirements,
+ tasks or task assignments
+\end_layout
+
+\begin_layout Standard
+Change your permissions in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+project.rb
+\end_layout
+
+\end_inset
+
+ as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/adding_role_in_permissions.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the use of Role in Permissions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that to create a project, the active user must be an administrator
+ OR:
+\end_layout
+
+\begin_layout Itemize
+The user must be signed up (not a guest)
+\end_layout
+
+\begin_layout Itemize
+The signed up user must have the role “Coordinator”
+\end_layout
+
+\begin_layout Standard
+Also notice that we have entered “false” in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+destroy_permitted?
+\end_layout
+
+\end_inset
+
+ definition.
+ In this case, 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+no user can erase a project
+\end_layout
+
+\end_inset
+
+.
+  Deleting projects would have to be done behind the scenes in the database,
+ or the permissions changed to clean up unwanted projects.
+\end_layout
+
+\begin_layout Standard
+Now enter the same permissions (except for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+destroy_permitted?
+\end_layout
+
+\end_inset
+
+ permission) for requirements, tasks, and task assignments.
+\end_layout
+
+\begin_layout Standard
+Here is the code for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+project.rb
+\end_layout
+
+\end_inset
+
+ listed in the figure above:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Project < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    name :string
+\end_layout
+
+\begin_layout Code
+    timestamps
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  has_many :requirements, :dependent=> :destroy
+\end_layout
+
+\begin_layout Code
+ 
+\end_layout
+
+\begin_layout Code
+ # --- Permissions --- #
+\end_layout
+
+\begin_layout Code
+  def create_permitted?
+\end_layout
+
+\begin_layout Code
+  	# Make sure the user is 1) Signed up and a Coordinator 
+\end_layout
+
+\begin_layout Code
+      # or 2) is an Adminstrator
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+   (acting_user.signed_up? && 
+\end_layout
+
+\begin_layout Code
+    acting_user.role=="Coordinator") ||
+\end_layout
+
+\begin_layout Code
+    acting_user.administrator?
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  def update_permitted?
+\end_layout
+
+\begin_layout Code
+   	# Make sure the user is 1) Signed up and a Coordinator 
+\end_layout
+
+\begin_layout Code
+       # or 2) is an Adminstrator
+\end_layout
+
+\begin_layout Code
+   (acting_user.signed_up? && 
+\end_layout
+
+\begin_layout Code
+    acting_user.role=="Coordinator") ||
+\end_layout
+
+\begin_layout Code
+    acting_user.administrator?
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  def destroy_permitted?
+\end_layout
+
+\begin_layout Code
+    false
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  def view_permitted?(field)
+\end_layout
+
+\begin_layout Code
+    true
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Permissions for data integrity
+\end_layout
+
+\begin_layout Standard
+The permissions system is not just for providing operations to some users
+ but not to others.
+ It is also used to prevent operations that don’t make sense for anyone.
+  For example, notice default UI allows requirements to be moved from one
+ project to another.
+ This may or may not be a sensible operation for anyone to be doing.
+  So, if you want to stop this from happening, change the “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+” method in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+requirement.rb
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/modifying_update_permitted_in_requirement.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Modifying the 
+\begin_inset Quotes eld
+\end_inset
+
+update_permitted?
+\begin_inset Quotes erd
+\end_inset
+
+ method in the Requirement model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Refresh the browser and you’ll see that menu was removed from the form automatic
+ally.
+\end_layout
+
+\begin_layout Standard
+Now make a similar change to prevent tasks being moved from one requirement
+ to another in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+task.rb
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def update_permitted?
+\end_layout
+
+\begin_layout Code
+  ((acting_user.signed_up? &&
+\end_layout
+
+\begin_layout Code
+    acting_user.role == "coordinator") or  
+\end_layout
+
+\begin_layout Code
+    acting_user.administrator?) &&
+\end_layout
+
+\begin_layout Code
+    !requirement_changed?
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Associations
+\end_layout
+
+\begin_layout Standard
+Although we have modeled the assignment of tasks to users, at the moment
+ there is no way for the user to set these assignments.
+ We’ll add that to the task edit page.
+ Create a task and browse to the edit page.
+ Notice that only the description is editable.
+ 
+\end_layout
+
+\begin_layout Standard
+Hobo does provide support for “multi-model” forms, but it is not active
+ by default.
+ To specify that a particular association should be accessible to updates
+ from the form, you need to declare 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:accessible => true
+\end_layout
+
+\end_inset
+
+ on the association.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+task.rb
+\end_layout
+
+\end_inset
+
+, edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :users
+\end_layout
+
+\end_inset
+
+ association as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+has_many :users, :through => :task_assignments,
+\end_layout
+
+\begin_layout Code
+    :accessible => true
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Without that declaration, the permission system was reporting that
+ this association was not editable.
+ Now that the association is “accessible”, the permission system will check
+ for create and destroy permissions on the join model TaskAssignment.
+ As long as the current user has those permissions, the task edit page will
+ now include a nice JavaScript powered control for assigning users in the
+ edit-task page.
+ Notice you can continue to assign users to a task and not leave the page:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/assigning_multiple_users_to_task.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Assigning multiple Users to a Task in the Edit Task page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Renaming Fields and Field Help
+\end_layout
+
+\begin_layout Standard
+Hobo has a great facility that makes it easy to modify the display of a
+ field name and the  field help that is displayed in the edit form.
+  As of Hobo 1.3, this functionality has been merged into the Hobo internationali
+zation module: i18n.
+   
+\end_layout
+
+\begin_layout Standard
+For this tutorial, we will rename the Project name field and also specify
+ some help text for the field that will appear on the Project edit form.
+  To do this, we need add the following to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locales/app.en.yml
+\end_layout
+
+\end_inset
+
+ file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+en:
+\end_layout
+
+\begin_layout Code
+  activerecord:
+\end_layout
+
+\begin_layout Code
+    attributes:
+\end_layout
+
+\begin_layout Code
+      project:
+\end_layout
+
+\begin_layout Code
+        name: Project Name
+\end_layout
+
+\begin_layout Code
+    attribute_help:
+\end_layout
+
+\begin_layout Code
+      project:
+\end_layout
+
+\begin_layout Code
+        name: Enter a name for the project.
+ Make it short 
+\backslash
+ 
+\end_layout
+
+\begin_layout Code
+and descriptive
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Refresh your browser and enter a new project:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/new_project_with_hints.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The New Project page using “ProjectHints”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Customizing views	
+\end_layout
+
+\begin_layout Standard
+It’s pretty surprising how far you can get without even touching the view
+ layer.
+ That’s the way we like to work with Hobo -- get the models and controllers
+ right and the view will probably get close to what you want.
+ From there you can override just those parts of the view that you need
+ to.
+\end_layout
+
+\begin_layout Standard
+We do that using the DRYML template language, which is part of Hobo.
+ DRYML is tag based – it allows you to define and use your own tags right
+ alongside the regular HTML tags.
+ Tags are like helpers, but a lot more powerful.
+ DRYML is quite different to other tag-based template languages, thanks
+ to features like the implicit context and nestable parameters.
+ DRYML is also an extension of ERB so you can still use the ERB syntax if
+ you are familiar with Rails.
+\end_layout
+
+\begin_layout Standard
+DRYML is probably the single best part of Hobo.
+ It’s very good at high-level re-use because it allows you to make very
+ focused changes if a given piece of pre-packaged HTML is not quite what
+ you want.
+\end_layout
+
+\begin_layout Subsubsection*
+Changing the Front Page
+\end_layout
+
+\begin_layout Standard
+The first thing we are going to do is to change the front page.
+  Let’s change the title of the app and the default message: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/default_welcome_message.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The default application name and welcome message
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To change the application name, edit 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/config/application.rb
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/config-application.rb_appname.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Changing the application name in "config/application.rb"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Changing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app-name
+\end_layout
+
+\end_inset
+
+ value for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app-name
+\end_layout
+
+\end_inset
+
+ tag here will change it anywhere that tag is used throughout the application.
+\end_layout
+
+\begin_layout Standard
+Now let’s change the rest of the page…
+\end_layout
+
+\begin_layout Standard
+Bring up  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/app/views/front/index.dryml
+\end_layout
+
+\end_inset
+
+ in your editor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/front-index.dryml.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Modifying 
+\begin_inset Quotes eld
+\end_inset
+
+
+\backslash
+front
+\backslash
+index.dryml
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is what it looks like before you change it.
+  Now change it to the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size footnotesize
+<page title="Home">
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+  <body: class="front-page"/>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+  <content:>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    <header class="content-header">
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+      <h1>"Powered by Hobo"</h1>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+      <section class="welcome-message">
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+        <h3>Here is what you can do:</h3>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+        <ul>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+          <li>Create and maintain any number of Projects</li>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+          <li>Associate Requirements to each Project</li>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+          <li>Assign Tasks and assign people to complete each Task</li>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+        </ul>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+      </section>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+    </header>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+  </content:>
+\end_layout
+
+\begin_layout Code
+
+\size footnotesize
+</page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/modified_front_page.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Home page modified by changing "/front/index.dryml"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Add Assigned Users to the Tasks
+\end_layout
+
+\begin_layout Standard
+Currently the only way to see who’s assigned to a task is to click the task’s
+ edit link.
+ It would be better to add a list of the assigned users to each task when
+ we’re looking at a requirement.
+\end_layout
+
+\begin_layout Standard
+DRYML has a feature called “polymorphic” tags.
+ These are tags that are defined differently for different types of objects.
+ Rapid makes use of this feature with a system of “cards”.
+ The tasks that are displayed on the requirement page are rendered by the
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Standard
+You can define custom cards for particular models.
+ Furthermore, if you call the base 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ you can define your card by tweaking the default, rather than starting
+ from scratch.
+ This is what DRYML is all about.
+ It’s like a smart-bomb, capable of taking out little bits of unwanted HTML
+ with pin-point strikes and no collateral damage.
+\end_layout
+
+\begin_layout Standard
+The file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/taglibs/application.dryml
+\end_layout
+
+\end_inset
+
+ is a place to put tag definitions that will be available throughout the
+ site.
+ Add this definition to that file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<extend tag="card" for="Task">
+\end_layout
+
+\begin_layout Code
+  <old-card merge>
+\end_layout
+
+\begin_layout Code
+    <append-body:>
+\end_layout
+
+\begin_layout Code
+      <div class="users">
+\end_layout
+
+\begin_layout Code
+        Assigned users: 
+\end_layout
+
+\begin_layout Code
+        <repeat:users join=", "><a/></repeat>
+\end_layout
+
+\begin_layout Code
+        <else>None</else>
+\end_layout
+
+\begin_layout Code
+      </div>
+\end_layout
+
+\begin_layout Code
+    </append-body:>
+\end_layout
+
+\begin_layout Code
+  </old-card>
+\end_layout
+
+\begin_layout Code
+</extend>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/extending_card_for_task.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Extending the card tag for Task in "application.dryml"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now refresh the requirement page.
+ You’ll see that in the cards for each task there is now a list of assigned
+ users.
+ The users are clickable - they link to each user’s home page (which doesn’t
+ have much on it at the moment).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/users_on_task_card.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Viewing assigned users on a the Task card
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ tag is used to extend any tag that’s already defined.
+ The body of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ is our new definition.
+ It’s very common to want to base the new definition on the old one, for
+ example, we often want to insert a bit of extra content as we’ve done here.
+ 
+\end_layout
+
+\begin_layout Standard
+We can do that by calling the “old” definition, which is available as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<old-card>
+\end_layout
+
+\end_inset
+
+.
+ We’ve passed the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<append-body:>
+\end_layout
+
+\end_inset
+
+ parameter to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<old-card>
+\end_layout
+
+\end_inset
+
+, which is used to append content to the body of the card.
+ 
+\end_layout
+
+\begin_layout Standard
+Some points to note:
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ tag provides a join attribute that we use to insert the commas.
+ The link is created with a simple empty 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a/>
+\end_layout
+
+\end_inset
+
+.
+ It links to the ‘current context‘, which, in this case, is the user.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:users
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat:users>
+\end_layout
+
+\end_inset
+
+ switches the context.
+ It selects the users association of the task.
+\end_layout
+
+\begin_layout Standard
+DRYML has a multi-purpose 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+ tag.
+ When used with repeat, it provides a default for the case when the collection
+ is empty.
+\end_layout
+
+\begin_layout Subsubsection*
+Add a Task Summary to the User’s Home Page
+\end_layout
+
+\begin_layout Standard
+Now that each task provides links to the assigned users, the user’s page
+ is not looking great.
+ Rapid has rendered cards for the task-assignments but there’s no meaningful
+ content in them.
+ What we’d like to see there is a list of all the tasks the user has been
+ assigned to.
+ Having them grouped by requirement would be helpful too.
+\end_layout
+
+\begin_layout Standard
+To achieve this we want to create a custom template for users show page.
+ If you look in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/users
+\end_layout
+
+\end_inset
+
+ you’ll see that it’s empty.
+ When a page template is missing, Hobo tries to fall back on a defined tag.
+ For a ‘show’ page, that tag is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+.
+ The Rapid library provides a definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+, so that’s what we’re seeing at the moment.
+ 
+\end_layout
+
+\begin_layout Standard
+As soon as we create 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/users/show.dryml
+\end_layout
+
+\end_inset
+
+, that file will take over from the generic 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag.
+ Try creating that file and just throw “Hello!” in there for now.
+ You should see that the user’s show page now displays just “Hello!” and
+ has lost all of the page styling.
+\end_layout
+
+\begin_layout Standard
+If you now edit 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+ to read ”
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page/>
+\end_layout
+
+\end_inset
+
+” you’ll see we’re back where we started.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag is just being called explicitly instead of by convention.
+ 
+\end_layout
+
+\begin_layout Standard
+Rapid has generated a custom definition of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page for="User">
+\end_layout
+
+\end_inset
+
+.
+ You can find this in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/taglibs/auto/rapid/pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/app-views-taglibs-auto-rapid.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Listing the contents for the "app
+\backslash
+views
+\backslash
+taglibs
+\backslash
+auto
+\backslash
+rapid" folder 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Warning: 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Don’t edit this file!
+\end_layout
+
+\end_inset
+
+ Your changes will be overwritten.
+ Instead, use this file as a reference so you can see what the page provides,
+ and what parameters there are (the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ attributes).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here is the top of the file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/pages.dryml.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+contents of the pages.dryml file 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now find the “show-page” tag for User:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/auto-show-page_for_user.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The auto-generated "show-page" tag for User in "pages.dryml”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now let’s get the content we’re after - the user’s assigned tasks, grouped
+ by requirement.
+ It’s only five lines of markup to put in a file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+views
+\backslash
+users
+\backslash
+show.dryml
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<show-page>
+\end_layout
+
+\begin_layout Code
+  <content-body:>
+\end_layout
+
+\begin_layout Code
+    <h3><Your/> Assigned Tasks</h3>
+\end_layout
+
+\begin_layout Code
+    <repeat with="&@user.tasks.group_by(&:requirement)">
+\end_layout
+
+\begin_layout Code
+      <h4>Requirement: <a with="&this_key"/></h4>
+\end_layout
+
+\begin_layout Code
+      <collection/>
+\end_layout
+
+\begin_layout Code
+    </repeat>
+\end_layout
+
+\begin_layout Code
+  </content-body:>
+\end_layout
+
+\begin_layout Code
+</show-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figures/ch5/users-show.dryml.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This will override the definition in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ and display a page similar to the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/view_of_user_show-page.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the enhanced User "show-page"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<Your>
+\end_layout
+
+\end_inset
+
+ tag is a handy little gadget.
+ It outputs “Your” if the context is the current user, otherwise it outputs
+ the user’s name.
+ You’ll see “Your Assigned Tasks” when looking at yourself, and “Fred’s
+ Assigned Tasks” when looking at Fred.
+\end_layout
+
+\begin_layout Standard
+We’re using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ again, but this time we’re setting the context to the result of a Ruby
+ expression (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+with="&...expr..."
+\end_layout
+
+\end_inset
+
+).
+ The expression: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+@user.tasks.group_by(&:requirement) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+gives us the grouped tasks.
+ Inside the “repeat this” (the implicit context) will be an array of tasks,
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this_key
+\end_layout
+
+\end_inset
+
+ will be the requirement.
+ 
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a with="&this_key">
+\end_layout
+
+\end_inset
+
+ gives us a link to the requirement.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ is used to render a collection of anything in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+ list.
+ By default it renders 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tags.
+ To change this, just provide a body to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag.
+  Now click on the Users tab to see a summary of tasks for all users:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/users_tab_with_assignments.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Users tab showing all assignments
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now you can get the big picture of 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+all
+\end_layout
+
+\end_inset
+
+ user assignments.
+\end_layout
+
+\begin_layout Standard
+This is a lot to take in all at once.
+  The main idea here is to give you an overview of what’s possible.
+ See The DRYML Guide for more in-depth information:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://cookbook.hobocentral.net/manual/dryml-guide"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Improve the Project Page with a Searchable, Sortable table
+\end_layout
+
+\begin_layout Standard
+The project page is currently workable, but we can easily improve it a lot.
+ Hobo Rapid provides a tag called  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table-plus>
+\end_layout
+
+\end_inset
+
+ which:
+\end_layout
+
+\begin_layout Itemize
+Renders a table with support for sorting by clicking on the headings
+\end_layout
+
+\begin_layout Itemize
+Provides a built-in search bar for filtering the rows displayed
+\end_layout
+
+\begin_layout Itemize
+Searching and sorting are done server-side so we need to modify the controller
+ as well as the view for this enhancement.
+\end_layout
+
+\begin_layout Standard
+As with the user’s show-page, to get started put a simple call to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page/>
+\end_layout
+
+\end_inset
+
+ in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/projects/show.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To see what this page is doing, take a look at
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+ <def tag="show-page" for="Project">
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/taglibs/auto/rapid
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Notice this tag:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<collection:requirements param/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That’s the part we want to replace with the table.
+ Note that when a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ attribute doesn’t give a name, the name defaults to the same name as the
+ tag.
+\end_layout
+
+\begin_layout Standard
+Here’s how we would replace that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ with a simple list of links:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<show-page>
+\end_layout
+
+\begin_layout Code
+  <collection: replace>
+\end_layout
+
+\begin_layout Code
+    <div>
+\end_layout
+
+\begin_layout Code
+      <repeat:requirements join=", "><a/></repeat>
+\end_layout
+
+\begin_layout Code
+    </div>
+\end_layout
+
+\begin_layout Code
+  </collection:>
+\end_layout
+
+\begin_layout Code
+</show-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You should now see that in place of the requirement cards, we now get a
+ simple comma-separated list of links to the requirements.
+ Not what we want of course, but it illustrates the concept of replacing
+ a parameter.
+ Here’s how we get the “table-plus”:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<show-page>
+\end_layout
+
+\begin_layout Code
+  <collection: replace>
+\end_layout
+
+\begin_layout Code
+    <table-plus:requirements fields="this, status">
+\end_layout
+
+\begin_layout Code
+      <empty-message:>
+\end_layout
+
+\begin_layout Code
+        No requirements match your criteria
+\end_layout
+
+\begin_layout Code
+      </empty-message:>
+\end_layout
+
+\begin_layout Code
+    </table-plus>
+\end_layout
+
+\begin_layout Code
+  </collection:>
+\end_layout
+
+\begin_layout Code
+</show-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ attribute to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table-plus>
+\end_layout
+
+\end_inset
+
+ lets you specify a list of fields that will become the columns in the table.
+ We could have specified 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields="title, status"
+\end_layout
+
+\end_inset
+
+ which would have given us the same content in the table, but by saying
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+, the first column contains 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+links
+\end_layout
+
+\end_inset
+
+ to the requirements, rather than just the title as text.
+\end_layout
+
+\begin_layout Standard
+We could also add a column showing the number of tasks in a requirement.
+ Change to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields="this, tasks.count, status
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and see that a column is added with a readable title “Tasks Count”.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/table-plus_for_requirements.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the Hobo “<table-plus>” feature to enhance the Requirements listing
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To get the search feature working, we need to update the controller side.
+ Add a show method to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/controllers/projects_controller.rb
+\end_layout
+
+\end_inset
+
+ like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+def show
+\end_layout
+
+\begin_layout Code
+  @project = find_instance
+\end_layout
+
+\begin_layout Code
+  @reqlist = @project.requirements.where(["title like ?",
+\end_layout
+
+\begin_layout Code
+  "%#{params[:search]}%"]).order(parse_sort_param(:title, 
+\end_layout
+
+\begin_layout Code
+    :status).join(' '))
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What we are doing is creating two instance variables that will hold the
+ values in memory between the controller and view.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+@project =
+\end_layout
+
+\end_inset
+
+ Holds the information for the project that has just been clicked
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+@reqlist =
+\end_layout
+
+\end_inset
+
+ A variable name we chose to hold the list of projects returned by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+apply_scopes
+\end_layout
+
+\end_inset
+
+ method.
+ 
+\end_layout
+
+\begin_layout Standard
+If there are no values in the search 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+, all requirements for that project are returned.
+  The first time the projects page is loaded 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+ will be null.
+ 
+\end_layout
+
+\begin_layout Standard
+Then get the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table-plus>
+\end_layout
+
+\end_inset
+
+ to use 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+@requirements
+\end_layout
+
+\end_inset
+
+:	
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size small
+<table-plus with="&@reqlist" fields="this, tasks.count, status">
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/enhanced_table-plus_code.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Enhancing the <table-plus> listing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now enter a word in the Search box and see how the requirement list is filtered:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/using_search_in_requirements.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using a search within the Requirements listing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Other Enhancements
+\end_layout
+
+\begin_layout Standard
+We’re now going to work through some more easy but very valuable enhancements
+ to the application.
+ We will add:
+\end_layout
+
+\begin_layout Itemize
+A menu for requirement statuses.
+ We’ll do this first with a hard-wired set of options, and then add the
+ ability to manage the set of available statuses.
+\end_layout
+
+\begin_layout Itemize
+Filtering of requirements by status on the project page
+\end_layout
+
+\begin_layout Itemize
+Drag and drop re-ordering of tasks for easy prioritization.
+\end_layout
+
+\begin_layout Itemize
+Rich text formatting of requirements.
+ This is implemented by changing one symbol in the source code and adding
+ the CKEditor plugin.
+\end_layout
+
+\begin_layout Subsubsection*
+Requirement Status Menu
+\end_layout
+
+\begin_layout Standard
+We’re going to do this in two stages.
+  First using a fixed menu that will require a source-code change if you
+ ever need to alter the available statuses.
+ We’ll then remove that restriction by adding a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+RequirementStatus
+\end_layout
+
+\end_inset
+
+ model.
+ We’ll also see the migration generator in action again.
+\end_layout
+
+\begin_layout Standard
+The fixed menu is very simple.
+ Locate the declaration of the status field in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+requirement.rb
+\end_layout
+
+\end_inset
+
+ (it’s in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields do ...
+ end
+\end_layout
+
+\end_inset
+
+ block), and change it to this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+status enum_string(:proposed, :accepted, :rejected, 
+\end_layout
+
+\begin_layout Code
+  :reviewing, :developing, :completed)
+\end_layout
+
+\begin_layout Code
+# etc..
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now the Edit Requirement page looks like this, with a select list:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/edit_requirement_with_status_select.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Edit Requirement form with selectable status codes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The menu is working in the edit requirement page now.
+ It would be nice though if we had an “AJAX-ified” editor right on the requireme
+nt page.
+ Edit the file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/requirements/show.dryml
+\end_layout
+
+\end_inset
+
+ to be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<show-page>
+\end_layout
+
+\begin_layout Code
+  <field-list: tag="editor"/>
+\end_layout
+
+\begin_layout Code
+</show-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now the page has an in-place editor that does not require a submit button
+ update.
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/ajax_status_update_for_requirements.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Creating an AJAX status update for Requirements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simply select the new status, and a save is automatically executed via an
+ AJAX call.
+\end_layout
+
+\begin_layout Standard
+How did Hobo do that? 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ uses a tag called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ to render a table of fields.
+ DRYML’s parameter mechanism allows the caller to customize the parameters
+ that are passed to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+On our requirement page the field-list contains only the status field.
+ By default 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ uses the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag to render read-only views of the fields, but that can be changed by
+ passing a tag name to the tag attribute.
+ We’re passing the name “editor” which is a DRYML tag for creating AJAX-style
+ in-place editors.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Create a Configurable Status List
+\end_layout
+
+\begin_layout Standard
+In order to support management of the statuses available, we’ll create a
+ Requirement Status model:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g resource requirement_status name:string
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Whenever you create a new model and controller with Hobo, get into the habit
+ of thinking about permissions and controller actions.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case, we probably want only administrators to be able to manage
+ the permissions.
+ As for actions, we probably only want the write actions, and the index
+ page:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :write_only, :new, :index
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, remove the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+status
+\end_layout
+
+\end_inset
+
+ field from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields do ...
+ end
+\end_layout
+
+\end_inset
+
+ block in the Requirement model and add the following association declaration:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+belongs_to :status, :class_name => "RequirementStatus",
+\end_layout
+
+\begin_layout Code
+    :index => 'requirement_status_index'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now run the migration generator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You’ll see that the migration generator considers this change to be ambiguous
+ and will prompt you for an action.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Whenever there are columns removed and columns added, the migration
+ generator can’t tell whether you’re actually removing one column and adding
+ another, or if you are renaming the old column.
+ It’s also pretty fussy about what it makes you type.
+ We really don’t want to play fast and loose with precious data.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, for the case at hand, to confirm that you want to drop the ‘status’
+ column, you have to type in full: “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+drop status
+\end_layout
+
+\end_inset
+
+”.
+\end_layout
+
+\begin_layout Standard
+Once you’ve done that you’ll see that the generated migration includes the
+ creation of the new foreign key and the removal of the old status column.
+\end_layout
+
+\begin_layout Standard
+That’s it.
+ The page to manage the requirement statuses should appear in the main navigatio
+n.
+\end_layout
+
+\begin_layout Standard
+We’ve decided to revise our list while entering them using the New Requirement
+ Status page:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/requirement_status_view.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Requirement Status view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now that we’ve got more structured statuses, let’s do something with them…
+\end_layout
+
+\begin_layout Subsubsection*
+Reordering Tasks
+\end_layout
+
+\begin_layout Standard
+We’re now going to add the ability to re-order a requirement’s tasks by
+ drag-and-drop.
+ There’s support for this built into Hobo, so there’s not much to do.
+ First we need the acts_as_list plugin:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+
+\size small
+> rails plugin install git://github.com/rails/acts_as_list.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now two changes to our models:	
+\end_layout
+
+\begin_layout Standard
+Task needs:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+acts_as_list :scope => :requirement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Requirement needs a modification to the has_many :tasks declaration:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+has_many :tasks, :dependent => :destroy, :order => :position
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The migration generator knows about the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acts_as_list
+\end_layout
+
+\end_inset
+
+ plugin, so you can just run it and you’ll get the new position column on
+ Task which is needed to keep track of ordering for you.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now refresh the application…
+\end_layout
+
+\begin_layout Standard
+You’ll notice a slight glitch – the tasks position has been added to the
+ new-task and edit-task forms.
+ Fix this by customizing the Task form.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ add:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<extend tag="form" for="Task">
+\end_layout
+
+\begin_layout Code
+  <old-form merge>
+\end_layout
+
+\begin_layout Code
+    <field-list: fields="name, users"/>
+\end_layout
+
+\begin_layout Code
+  </old-form>
+\end_layout
+
+\begin_layout Code
+</extend>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the task edit page you might also have noticed that Hobo Rapid didn’t
+ manage to figure out a destination for the cancel link.
+ You can fix that by editing 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tasks/edit.dryml
+\end_layout
+
+\end_inset
+
+ to be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<edit-page>
+\end_layout
+
+\begin_layout Code
+  <form:>
+\end_layout
+
+\begin_layout Code
+    <cancel: with="&this.requirement"/>
+\end_layout
+
+\begin_layout Code
+  </form:>
+\end_layout
+
+\begin_layout Code
+</edit-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a good demonstration of DRYML’s nested parameter feature.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ makes its form available as a parameter, and the form provides a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<cancel:>
+\end_layout
+
+\end_inset
+
+ parameter.
+ 
+\end_layout
+
+\begin_layout Standard
+We can drill down from the edit-page to the form and then to the cancel
+ link to pass in a custom attribute.
+ You can do this to any depth.
+\end_layout
+
+\begin_layout Subsubsection*
+Adding a “Due Date” to Tasks
+\end_layout
+
+\begin_layout Standard
+Let’s first add a good library of date and time validations:
+\end_layout
+
+\begin_layout Itemize
+Add the following line to the end of the Gemfile file in your application
+ root directory:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+gem “validates_timeliness”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then run the following command in your console:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> bundle install
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Now update your Task model with a due date, and add this validation for
+ that date field:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+validates_date :due_date, :on_or_after => Date.today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/task_with_due_date_and_validation.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Task model with "due_date" and a validation for the date
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ add the new “due_date” field:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<extend tag="form" for="Task">
+\end_layout
+
+\begin_layout Code
+  <old-form merge>
+\end_layout
+
+\begin_layout Code
+    <field-list: fields="name, due_date, users"/>
+\end_layout
+
+\begin_layout Code
+  </old-form>
+\end_layout
+
+\begin_layout Code
+</extend>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/error_from_entering_invalid_date.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Error message from trying to enter a date earlier than today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
