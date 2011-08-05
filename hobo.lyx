@@ -7,15 +7,15 @@
 \begin_modules
 logicalmkup
 \end_modules
-\maintain_unincluded_children false
+\maintain_unincluded_children true
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
+\font_roman times
 \font_sans default
-\font_typewriter default
-\font_default_family default
+\font_typewriter cmtt
+\font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -64,7 +64,8 @@ logicalmkup
 \quotes_language english
 \papercolumns 1
 \papersides 2
-\paperpagestyle default
+\paperpagestyle fancy
+\bullet 1 0 9 -1
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -119,11 +120,15 @@ filename "p0ch0preface.lyx"
 \end_layout
 
 \begin_layout Part
-Section I - INTRODUCTION AND INSTALLATION
+INTRODUCTION AND INSTALLATION
 \end_layout
 
 \begin_layout Chapter
-Chapter 1 - INTRODUCTION
+Chapter 1
+\begin_inset Newline newline
+\end_inset
+
+INTRODUCTION
 \end_layout
 
 \begin_layout Standard
@@ -137,7 +142,11 @@ filename "p1ch1intro.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chaper 2 – INSTALLATION
+Chaper 2
+\begin_inset Newline newline
+\end_inset
+
+INSTALLATION
 \end_layout
 
 \begin_layout Standard
@@ -151,11 +160,15 @@ filename "p1ch2installation.lyx"
 \end_layout
 
 \begin_layout Part
-Section II - TUTORIALS
+TUTORIALS
 \end_layout
 
 \begin_layout Chapter
-Chapter 3 - INTRODUCTORY TUTORIALS
+Chapter 3
+\begin_inset Newline newline
+\end_inset
+
+INTRODUCTORY TUTORIALS
 \end_layout
 
 \begin_layout Standard
@@ -169,13 +182,402 @@ filename "p2c3basictut.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 4 - INTERMEDIATE TUTORIALS
+Chapter 4
+\begin_inset Newline newline
+\end_inset
+
+INTERMEDIATE TUTORIALS
+\end_layout
+
+\begin_layout Subsubsection*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 9 - Editing Auto-Generated Tag
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 10 - DRYML I:  A First Look at DRYML 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 11 - DRYML
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 12 - Rapid, DRYML
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 13 - Listing Data in Table Form
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 14 - Working with the Show Page 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 15 - New and Edit Pages With The Form Tag 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 16 - The <a> Tag Hyperlink
+\end_layout
+
+\begin_layout Standard
+	
+\end_layout
+
+\begin_layout Section*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Standard
+In Chapter 3 we deliberately focused on helping you get something done without
+ spending much time looking under the hood--or should we say--behind the
+ “Magic Curtain.” 
+\end_layout
+
+\begin_layout Standard
+When Jeff and I first discovered Hobo, we were impressed by what seemed
+ like little magic tricks that Tom had Hobo perform for us:  dynamic AJAX
+ without coding; automatic page flow; automatic checking and executing changes
+ to the database when declarations change; built-in permissions system and
+ data lifecycles; high-level declarative markup language: you can do so
+ much that looks and acts great.
+\end_layout
+
+\begin_layout Standard
+Of course, there will ALWAYS be something you need to do that doesn’t come
+ ready-made out-of-the-box.
+ So--just like learning magic tricks--you can learn how Hobo works and create
+ some new magic tricks of your own to impress and help your clients in 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Rapid
+\end_layout
+
+\end_inset
+
+ time.
+\end_layout
+
+\begin_layout Standard
+No magician worth his salt will reveal his tricks to an apprentice all at
+ once.
+  There is only so much we can absorb at one time.
+ The trick to learning--as well as developing software--is to do it incrementall
+y.
+ Get grounded at each step.
+ Most magic tricks use the same knowledge of human perception, habits and
+ expectations to create the illusions.
+  
+\end_layout
+
+\begin_layout Standard
+Learning one trick helps you learn another faster.
+ Then you learn the patterns.
+  And after that, you learn to make more patterns that you and others can
+ use again and again.
+\end_layout
+
+\begin_layout Standard
+So, in this chapter we will start revealing how “Rapid” (Hobo’s process
+ of automatically rendering forms, views and routing) works in a way we
+ think it can best be absorbed.
+\end_layout
+
+\begin_layout Standard
+One of the ways is to examine the code that the author has written that
+ runs the application itself.
+  In the early versions of Hobo, the rendering of pages, forms, and navigation
+ flow was done “auto-magically” by Rapid.
+  You couldn’t see how it worked until version  0.8.0.
+  It was in this release that Tom Locke made visible the DRYML code that
+ was being executed in the background, invisibly.
+\end_layout
+
+\begin_layout Standard
+So now you can look, learn, and copy the DRYML that “Rapid” actually uses
+ to generate Pages, Cards, Forms and the Main Navigation Menu.
+\end_layout
+
+\begin_layout Standard
+Take a close look at 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+apps
+\backslash
+views
+\backslash
+taglibs
+\backslash
+auto
+\backslash
+rapid
+\end_layout
+
+\end_inset
+
+ folder of any of your Hobo apps:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch4/taglibs_auto_rapid_folder.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Folder view of 
+\backslash
+taglibs
+\backslash
+auto
+\backslash
+rapid 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that there are three DRYML files: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ These files include the DRYML XML-like formatted tags that are the declarative
+ statements used as templates to render web page views and forms.
+ They provide the logic to render a combination of HTML, JavaScript, and
+ CSS code when needed.
+\end_layout
+
+\begin_layout Standard
+DRYML provides a high-level of abstraction for formatting web pages and
+ dealing with all aspects of data-driven applications.
+  Listing, displaying, creating, editing and deleting records are simplified
+ without the necessity of specifying the granular level of detail that other
+ frameworks require, such as Rails with its ERB (embedded Ruby) pages that
+ are a hybrid of Ruby and HTML.
+\end_layout
+
+\begin_layout Standard
+In this chapter we will explore:
+\end_layout
+
+\begin_layout Enumerate
+The Hobo Rapid library of tags
+\end_layout
+
+\begin_layout Enumerate
+The auto-generated DRYML files that expose the Rapid process
+\end_layout
+
+\begin_layout Enumerate
+User-defined tags that you can use to extend Hobo
+\end_layout
+
+\begin_layout Paragraph*
+Hobo Rapid Library of Tags.
+\end_layout
+
+\begin_layout Standard
+Hobo comes with a pre-coded set of tags that you can use to build other
+ tags.
+ It provides tags to handle forms, display collections of records, and render
+ a table of records.
+ Hobo uses these to build the Rapid default web pages.
+  You will learn to use some of the more common Rapid tags in this chapter.
+\end_layout
+
+\begin_layout Paragraph*
+Auto-generated DRYML.
+ 
+\end_layout
+
+\begin_layout Standard
+These DRYML files are saved replicas of Hobo’s way of coding the view associated
+ with all of the web site actions.
+ For example, there is a <show-page> tag involved with displaying a single
+ record, and <index-page> tag to display a list of records, and a <new-page>
+ tag involved with generating the form to accept the data for a new record.
+\end_layout
+
+\begin_layout Paragraph*
+User-defined Tags.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to create your own tags, Hobo provides tag definition language
+ elements.
+ You can build custom tags that include HTML, DRYML tags defined in Hobo’s
+ Rapid library, and even imbedded custom Ruby code.
+ There is great flexibility.
+ The end result can be simple tag that you use in a Hobo view template to
+ include in the definition of a web page.
+\end_layout
+
+\begin_layout Section*
+Tutorial 9 – Editing Auto-Generated Tags 
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "p2c4inttut.lyx"
+filename "ch4tut9.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 10 – DRYML I:  A First Look at DRYML
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut10.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 11 – DRYML II: Creating Tags from Tags
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut11.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 12 – Rapid, DRYML and Record Collections
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut12.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 13 – Listing Data in Table Form
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut13.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 14 – Working with the Show Page Tag
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut14.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 15 – New and Edit Pages with The Form Tag	
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut15.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 16 – The <a> Hyperlink Tag 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch4tut16.lyx"
 
 \end_inset
 
@@ -183,13 +585,200 @@ filename "p2c4inttut.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 5 - ADVANCED TUTORIALS
+Chapter 5
+\begin_inset Newline newline
+\end_inset
+
+ADVANCED TUTORIALS
+\end_layout
+
+\begin_layout Subsubsection*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 17 – The Agile Project Manager
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 18 – Using CKEditor (Rich Text) with Hobo
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 19 – Using FusionCharts with Hobo
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 20 – Adding User Comments to Models
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 21 – Replicating the Look and Feel of a Site
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 22 – Using Hobo Lifecycles for Workflow
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 23 – Using Hobo Lifecycles for Workflow
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 24 – Creating an Administration Sub-Site
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial 25 – Using Hobo Database Index Generation
+\end_layout
+
+\begin_layout Section*
+Introductory Concepts and Comments
+\end_layout
+
+\begin_layout Standard
+This set of tutorials builds on the expertise you have developed so far
+ with the Beginning Tutorials and Intermediate Tutorials.
+ 
+\end_layout
+
+\begin_layout Standard
+You should be able to flex your muscles a bit, at rich text editing, charting,,
+ or even completely change the look and feel of a site.
+\end_layout
+
+\begin_layout Standard
+The “Agile Project Manager” implements a large range of Hobo features into
+ a fairly substantial and useful application.
+  Try out enhancing and modifying it to fit your needs.
+\end_layout
+
+\begin_layout Standard
+At the end of the Advanced Tutorials you will have the expertise to build,
+ customize, and have your data-rich  application ready to go into production.
+  Enjoy!
+\end_layout
+
+\begin_layout Section*
+Tutorial 17 – The Agile Project Manager
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "p2c5advtut.lyx"
+filename "ch5tut17.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 18 – Using CKEditor (Rich Text) with Hobo
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut18.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 19 – Using FusionCharts with Hobo
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut19.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 20 – Adding User Comments to Models
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut20.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 21 – Replicating the Look and Feel of a Site
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut21.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 22 - Creating a “Look and Feel” Plugin for Hobo
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut22.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 23 – Using Hobo Lifecycles for Workflow
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut23.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 24 – Creating an Administration Sub-Site
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut24.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tutorial 25 – Using Hobo Database Index Generation
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "ch5tut25.lyx"
 
 \end_inset
 
@@ -197,7 +786,11 @@ filename "p2c5advtut.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 6 - DEPLOYING YOUR APPLICATIONS
+Chapter 6
+\begin_inset Newline newline
+\end_inset
+
+DEPLOYING YOUR APPLICATIONS
 \end_layout
 
 \begin_layout Standard
@@ -211,15 +804,15 @@ filename "p2c6deployment.lyx"
 \end_layout
 
 \begin_layout Part
-Section III - HOBO UNDER THE HOOD
+HOBO UNDER THE HOOD
 \end_layout
 
 \begin_layout Chapter
-Chapter 7 - HOBO GENERATORS
-\end_layout
+Chapter 7
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-
+HOBO GENERATORS
 \end_layout
 
 \begin_layout Standard
@@ -236,12 +829,14 @@ filename "hobogenerators.lyx"
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Chapter
-Chapter 8 - THE HOBO PERMISSIONS SYSTEM
+Chapter 8
+\begin_inset Newline newline
+\end_inset
+
+
+\size largest
+THE HOBO PERMISSIONS SYSTEM
 \end_layout
 
 \begin_layout Standard
@@ -267,7 +862,11 @@ filename "hobopermissions.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 9 - HOBO CONTROLLERS AND ROUTING
+Chapter 9
+\begin_inset Newline newline
+\end_inset
+
+HOBO CONTROLLERS AND ROUTING
 \end_layout
 
 \begin_layout Standard
@@ -289,7 +888,11 @@ filename "hobocontrollers.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 10 - HOBO LIFECYCLES
+Chapter 10
+\begin_inset Newline newline
+\end_inset
+
+HOBO LIFECYCLES
 \end_layout
 
 \begin_layout Standard
@@ -319,7 +922,13 @@ filename "hobolifecycles.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 11 - HOBO VIEW HINTS AND LOCALES
+Chapter 11
+\size largest
+
+\begin_inset Newline newline
+\end_inset
+
+HOBO VIEW HINTS AND LOCALES
 \end_layout
 
 \begin_layout Standard
@@ -337,7 +946,11 @@ filename "hoboviewhints.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 12 - HOBO SCOPES
+Chapter 12
+\begin_inset Newline newline
+\end_inset
+
+HOBO SCOPES
 \end_layout
 
 \begin_layout Standard
@@ -351,7 +964,11 @@ filename "hoboscopes.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 13 - THE HOBO DRYML GUIDE
+Chapter 13
+\begin_inset Newline newline
+\end_inset
+
+THE HOBO DRYML GUIDE
 \end_layout
 
 \begin_layout Standard
@@ -365,7 +982,11 @@ filename "hobodrymlguide.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 14 - THE HOBO RAPID TAG LIBRARY
+Chapter 14
+\begin_inset Newline newline
+\end_inset
+
+THE HOBO RAPID TAG LIBRARY
 \end_layout
 
 \begin_layout Standard

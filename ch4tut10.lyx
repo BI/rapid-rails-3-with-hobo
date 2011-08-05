@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section*
-Tutorial 10 – DRYML I:  A First Look at DRYML
+
 \end_layout
 
 \begin_layout Standard
@@ -641,10 +641,6 @@ The entire /views/front/index.dryml contents at the end of this tutorial
 
 \begin_layout Standard
 </page>
-\end_layout
-
-\begin_layout Section*
-
 \end_layout
 
 \end_body

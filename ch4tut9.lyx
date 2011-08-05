@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section*
-Tutorial 9 – Editing Auto-Generated Tags 
+
 \end_layout
 
 \begin_layout Standard
@@ -1072,10 +1072,6 @@ lication directory.
 So instead of having one large application.dryml file, you can organize your
  application specific tag definitions into multiple files and place them
  in the app/views/application directory.
-\end_layout
-
-\begin_layout Section*
-
 \end_layout
 
 \end_body
