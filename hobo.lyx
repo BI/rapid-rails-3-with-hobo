@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass hobo
+\begin_preamble
+\usepackage{tocbibind}
+\end_preamble
 \use_default_options true
 \begin_modules
 logicalmkup
@@ -75,20 +78,43 @@ logicalmkup
 
 \begin_body
 
-\begin_layout Date
+\begin_layout Title
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename cover.png
+	width 100page%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Title
-Rapid Rails 3 with Hobo
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frontmatter
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -105,14 +131,26 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Chapter
-Preface
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "p0ch0preface.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
 
 \end_inset
 
@@ -472,10 +510,6 @@ In order to create your own tags, Hobo provides tag definition language
  include in the definition of a web page.
 \end_layout
 
-\begin_layout Section
-Tutorial 9 – Editing Auto-Generated Tags 
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -484,10 +518,6 @@ filename "ch4tut9.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 10 – DRYML I:  A First Look at DRYML
 \end_layout
 
 \begin_layout Standard
@@ -500,10 +530,6 @@ filename "ch4tut10.lyx"
 
 \end_layout
 
-\begin_layout Section
-Tutorial 11 – DRYML II: Creating Tags from Tags
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -512,10 +538,6 @@ filename "ch4tut11.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 12 – Rapid, DRYML and Record Collections
 \end_layout
 
 \begin_layout Standard
@@ -528,10 +550,6 @@ filename "ch4tut12.lyx"
 
 \end_layout
 
-\begin_layout Section
-Tutorial 13 – Listing Data in Table Form
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -540,10 +558,6 @@ filename "ch4tut13.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 14 – Working with the Show Page Tag
 \end_layout
 
 \begin_layout Standard
@@ -556,10 +570,6 @@ filename "ch4tut14.lyx"
 
 \end_layout
 
-\begin_layout Section
-Tutorial 15 – New and Edit Pages with The Form Tag	
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -568,10 +578,6 @@ filename "ch4tut15.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 16 – The <a> Hyperlink Tag 
 \end_layout
 
 \begin_layout Standard
@@ -659,10 +665,6 @@ At the end of the Advanced Tutorials you will have the expertise to build,
   Enjoy!
 \end_layout
 
-\begin_layout Section
-Tutorial 17 – The Agile Project Manager
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -671,10 +673,6 @@ filename "ch5tut17.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 18 – Using CKEditor (Rich Text) with Hobo
 \end_layout
 
 \begin_layout Standard
@@ -687,10 +685,6 @@ filename "ch5tut18.lyx"
 
 \end_layout
 
-\begin_layout Section
-Tutorial 19 – Using FusionCharts with Hobo
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -699,10 +693,6 @@ filename "ch5tut19.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 20 – Adding User Comments to Models
 \end_layout
 
 \begin_layout Standard
@@ -715,10 +705,6 @@ filename "ch5tut20.lyx"
 
 \end_layout
 
-\begin_layout Section
-Tutorial 21 – Replicating the Look and Feel of a Site
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -727,10 +713,6 @@ filename "ch5tut21.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 22 - Creating a “Look and Feel” Plugin for Hobo
 \end_layout
 
 \begin_layout Standard
@@ -743,10 +725,6 @@ filename "ch5tut22.lyx"
 
 \end_layout
 
-\begin_layout Section
-Tutorial 23 – Using Hobo Lifecycles for Workflow
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -757,10 +735,6 @@ filename "ch5tut23.lyx"
 
 \end_layout
 
-\begin_layout Section
-Tutorial 24 – Creating an Administration Sub-Site
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -769,10 +743,6 @@ filename "ch5tut24.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Tutorial 25 – Using Hobo Database Index Generation
 \end_layout
 
 \begin_layout Standard
