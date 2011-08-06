@@ -75,7 +75,15 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 15 – New and Edit Pages with The Form Tag	
+Tutorial 15 
+\begin_inset Newline newline
+\end_inset
+
+New and Edit Pages
+\end_layout
+
+\begin_layout Subsection*
+(with the form tag)	
 \end_layout
 
 \begin_layout Standard

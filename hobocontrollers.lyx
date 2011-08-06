@@ -66,6 +66,14 @@ logicalmkup
 
 \begin_body
 
+\begin_layout Chapter
+Chapter 9 
+\begin_inset Newline newline
+\end_inset
+
+HOBO CONTROLLERS AND ROUTING
+\end_layout
+
 \begin_layout Standard
 This chapter of the Hobo Manual describes Hobo’s 
 \begin_inset Flex Emph
@@ -1125,7 +1133,11 @@ A good test is to ask: is this related to http? No? Then it probably shouldn’t
 \end_layout
 
 \begin_layout Section
-Writing an action from scratch
+Writing an action 
+\begin_inset Newline newline
+\end_inset
+
+from scratch
 \end_layout
 
 \begin_layout Standard

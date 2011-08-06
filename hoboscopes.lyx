@@ -64,6 +64,14 @@ logicalmkup
 
 \begin_body
 
+\begin_layout Chapter
+Chapter 12 
+\begin_inset Newline newline
+\end_inset
+
+HOBO SCOPES
+\end_layout
+
 \begin_layout Standard
 Hobo scopes are an extension of the 
 \begin_inset Flex Emph
@@ -299,7 +307,7 @@ Scoping Associations
 Chaining
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Preparation
 \end_layout
 

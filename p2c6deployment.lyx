@@ -66,6 +66,14 @@ logicalmkup
 
 \begin_body
 
+\begin_layout Chapter
+Chapter 6 
+\begin_inset Newline newline
+\end_inset
+
+DEPLOYING YOUR APPLICATIONS
+\end_layout
+
 \begin_layout Subsubsection*
 Introductory Comments
 \end_layout
@@ -110,7 +118,11 @@ Of course, if you are an experienced Rails developer you can publish any
 \end_layout
 
 \begin_layout Section
-Tutorial 26 – Installing and Using Git 
+Tutorial 26 
+\begin_inset Newline newline
+\end_inset
+
+Installing and Using Git 
 \end_layout
 
 \begin_layout Standard
@@ -920,7 +932,11 @@ Now you are ready to use Git.
 \end_layout
 
 \begin_layout Section
-Tutorial 27 – Rapid Deployment with Heroku
+Tutorial 27 
+\begin_inset Newline newline
+\end_inset
+
+Rapid Deployment with Heroku
 \end_layout
 
 \begin_layout Standard

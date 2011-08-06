@@ -161,14 +161,6 @@ mainmatter
 INTRODUCTION AND INSTALLATION
 \end_layout
 
-\begin_layout Chapter
-Chapter 1 
-\begin_inset Newline newline
-\end_inset
-
-INTRODUCTION
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -177,14 +169,6 @@ filename "p1ch1intro.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-Chaper 2 
-\begin_inset Newline newline
-\end_inset
-
-INSTALLATION
 \end_layout
 
 \begin_layout Standard
@@ -244,7 +228,7 @@ Tutorial 11 - DRYML
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 12 - Rapid, DRYML
+Tutorial 12 - Rapid, DRYML and Collections
 \end_layout
 
 \begin_layout Subsubsection*
@@ -256,7 +240,7 @@ Tutorial 14 - Working with the Show Page
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 15 - New and Edit Pages With The Form Tag 
+Tutorial 15 - New and Edit Pages 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -268,7 +252,11 @@ Tutorial 16 - The <a> Tag Hyperlink
 \end_layout
 
 \begin_layout Section
-Introductory Concepts and Comments
+Introductory Concepts 
+\begin_inset Newline newline
+\end_inset
+
+and Comments
 \end_layout
 
 \begin_layout Standard
@@ -755,14 +743,6 @@ filename "ch5tut25.lyx"
 
 \end_layout
 
-\begin_layout Chapter
-Chapter 6 
-\begin_inset Newline newline
-\end_inset
-
-DEPLOYING YOUR APPLICATIONS
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -777,14 +757,6 @@ filename "p2c6deployment.lyx"
 HOBO UNDER THE HOOD
 \end_layout
 
-\begin_layout Chapter
-Chapter 7 
-\begin_inset Newline newline
-\end_inset
-
-HOBO GENERATORS
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -792,22 +764,6 @@ filename "hobogenerators.lyx"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Chapter
-Chapter 8 
-\begin_inset Newline newline
-\end_inset
-
-THE HOBO PERMISSION SYSTEM
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -822,30 +778,6 @@ filename "hobopermissions.lyx"
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Chapter
-Chapter 9 
-\begin_inset Newline newline
-\end_inset
-
-HOBO CONTROLLERS AND ROUTING
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "hobocontrollers.lyx"
@@ -853,18 +785,6 @@ filename "hobocontrollers.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-Chapter 10 
-\begin_inset Newline newline
-\end_inset
-
-HOBO LIFECYCLES
-\end_layout
-
-\begin_layout Standard
-  
 \end_layout
 
 \begin_layout Standard
@@ -878,30 +798,6 @@ filename "hobolifecycles.lyx"
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Chapter
-Chapter 11 
-\begin_inset Newline newline
-\end_inset
-
-HOBO VIEW HINTS AND LOCALES
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "hoboviewhints.lyx"
@@ -909,14 +805,6 @@ filename "hoboviewhints.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-Chapter 12 
-\begin_inset Newline newline
-\end_inset
-
-HOBO SCOPES
 \end_layout
 
 \begin_layout Standard
@@ -929,14 +817,6 @@ filename "hoboscopes.lyx"
 
 \end_layout
 
-\begin_layout Chapter
-Chapter 13 
-\begin_inset Newline newline
-\end_inset
-
-THE HOBO DRYML GUIDE
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -945,14 +825,6 @@ filename "hobodrymlguide.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-Chapter 14 
-\begin_inset Newline newline
-\end_inset
-
-THE HOBO RAPID TAG LIBRARY
 \end_layout
 
 \begin_layout Standard

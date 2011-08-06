@@ -68,6 +68,14 @@ logicalmkup
 
 \begin_body
 
+\begin_layout Chapter
+Chapter 14 
+\begin_inset Newline newline
+\end_inset
+
+THE HOBO RAPID TAG LIBRARY
+\end_layout
+
 \begin_layout Standard
 This section of the book serves as reference for all of the pre-defined
  DRYML tags used by Hobo to provide the “magic” rendering of pages and forms
