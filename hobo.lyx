@@ -39,7 +39,7 @@ logicalmkup
 \pdf_bookmarksopen false
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks false
-\pdf_pdfborder false
+\pdf_pdfborder true
 \pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
