@@ -1,0 +1,1408 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass hobo
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\boxbgcolor #e0e0e8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth -1
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Tutorial 20 
+\begin_inset Newline newline
+\end_inset
+
+Adding Comments to Models
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+By Kevin Potter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial Application:  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+comments_recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Say you're developing some big social site with a ton of different models
+ that 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+all
+\end_layout
+
+\end_inset
+
+ need to have comments.
+ The question is, how can we do this so we don't have to repeat any code?
+ Also, how can we make it so that adding it to a new model is easy when
+ that happens down the road?
+\end_layout
+
+\begin_layout Standard
+Let's see what sort of requirements we have:
+\end_layout
+
+\begin_layout Itemize
+Comments will come from a signed in user and be attached to them
+\end_layout
+
+\begin_layout Itemize
+Comments should be able to be attached to 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+any
+\end_layout
+
+\end_inset
+
+ model now or down the road
+\end_layout
+
+\begin_layout Itemize
+Guests can't comment but can see comments
+\end_layout
+
+\begin_layout Itemize
+Users can't edit or delete their comments but admins can
+\end_layout
+
+\begin_layout Standard
+There's several different potential approaches but we'll go with 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+polymorphism
+\end_layout
+
+\end_inset
+
+.
+ The comments model will have a polymorphic association to the parent, the
+ one that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :comments
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So, let's start with a blank app.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> hobo new comment_test_app
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After, we'll need a run of the mill Post model for testing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+> cd comment_test_app
+\end_layout
+
+\begin_layout Code
+> hobo g resource Post subject:string body:text
+\end_layout
+
+\begin_layout Code
+> hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+The Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+hobo g resource Comment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, let's set the fields and the association up in in the model file, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/models/comment.rb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Comment < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    body :text, :required
+\end_layout
+
+\begin_layout Code
+    timestamps
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  belongs_to :commentable, :polymorphic => true
+\end_layout
+
+\begin_layout Code
+  belongs_to :owner, :class_name => "User", 
+\end_layout
+
+\begin_layout Code
+      :creator => true
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ set_default_order "created_at desc"
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  ...
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fairly standard stuff here except the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:polymorphic => true
+\end_layout
+
+\end_inset
+
+ bit.
+ This is actually from rails, but really can shine with some dryml magic
+ attached.
+ What this does, once you migrate, is adds a 'type' column to the comments
+ table.
+ Now, when you attach a comment to another model, in addition to the model's
+ id, it also stores the type (id on it's own is not enough to guarantee
+ finding the right model).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+How does one setup the other side of the association though?
+\begin_inset Quotes erd
+\end_inset
+
+ you might ask.
+ That's the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:commentable
+\end_layout
+
+\end_inset
+
+ part.
+ To add the comments association to another model you just add:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+has_many :comments, :as => :commentable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: It doesn't have to be comments but for our example, it's going to
+ be a requirement for proper activation in the code.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, let's run that migration:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, we have an owner for each comment, which is actually a User.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:creator => true
+\end_layout
+
+\end_inset
+
+ flag takes care of setting the owner association as the current_user when
+ creating a comment.
+\end_layout
+
+\begin_layout Standard
+Let's go ahead and take care of the permissions while we're thinking about
+ the model:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+# --- Permissions --- #
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+def create_permitted?
+\end_layout
+
+\begin_layout Code
+  owner_is? acting_user
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We don't need to change the other permissions as they're already what we
+ want (only admins can edit or delete comments).
+ Here, we're using a helper method from the permissions system, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+owner_is?
+\end_layout
+
+\end_inset
+
+, which is letting us bypass loading the owner model (if we did 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+owner == acting_user
+\end_layout
+
+\end_inset
+
+, it'd load the owner association unnecessarily) or having the less clear
+ code of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+owner_id == acting_user.id
+\end_layout
+
+\end_inset
+
+.
+ Also, by having it so that the only allowed creation is when the owner
+ is the acting_user, Rapid will remove the owner from the form.
+ Pretty slick.
+\end_layout
+
+\begin_layout Subsubsection*
+The Controller
+\end_layout
+
+\begin_layout Standard
+True to Hobo style, we're just popping in the comment controller to take
+ out the unneeded actions changing:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/controllers/comments_controller.rb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :all
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+auto_actions :write_only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We'll be embedding the very simple comment form in our commentable's show-page,
+ but I'm getting ahead of myself.
+\end_layout
+
+\begin_layout Subsubsection*
+The Target(s)
+\end_layout
+
+\begin_layout Standard
+Now add 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :comments, :as => :commentable
+\end_layout
+
+\end_inset
+
+ to both the Post and User model.
+\end_layout
+
+\begin_layout Standard
+We don't need to migrate as there's no new columns on either Post or User.
+\end_layout
+
+\begin_layout Subsubsection*
+The View
+\end_layout
+
+\begin_layout Standard
+We have the data side setup but no way of adding comments or seeing them
+ currently.
+ Let's remedy that.
+ In 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/taglibs/application.dryml
+\end_layout
+
+\end_inset
+
+ add this extension:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<extend tag="show-page">
+\end_layout
+
+\begin_layout Code
+  <old-show-page merge>
+\end_layout
+
+\begin_layout Code
+    <append-content-body:>
+\end_layout
+
+\begin_layout Code
+      <do:comments if="&this.respond_to? :comments">
+\end_layout
+
+\begin_layout Code
+        <h4 param="comment-header">Comments</h4>
+\end_layout
+
+\begin_layout Code
+        <collection part="comments-collection" />
+\end_layout
+
+\begin_layout Code
+        <h5 param="comment-form-label">
+\end_layout
+
+\begin_layout Code
+          Add a comment
+\end_layout
+
+\begin_layout Code
+        </h5>
+\end_layout
+
+\begin_layout Code
+        <form with="&this.user_new(current_user)"
+\end_layout
+
+\begin_layout Code
+         update="comments-collection" reset-form param >
+\end_layout
+
+\begin_layout Code
+          <field-list: fields="body" without-body-label />
+\end_layout
+
+\begin_layout Code
+        </form>
+\end_layout
+
+\begin_layout Code
+      </do>
+\end_layout
+
+\begin_layout Code
+    </append-content-body:>
+\end_layout
+
+\begin_layout Code
+  </old-show-page>
+\end_layout
+
+\begin_layout Code
+</extend>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That's a lot to take in there, but let's break it down.
+ First, we're extending the show-page.
+ Since we're not targetting a particular model's show-page (with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+for
+\end_layout
+
+\end_inset
+
+ attribute) this is modifying the show-page that 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+every
+\end_layout
+
+\end_inset
+
+ model's show-page is defined against.
+ So, we'll see the next part inside the end of the content-body 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ on every page...
+ if, it responds to the comments method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<do:comments if=
+\begin_inset Quotes erd
+\end_inset
+
+&this.respond_to? :comments
+\begin_inset Quotes erd
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, this switches context to comments if the current context (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+) has a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+comments
+\end_layout
+
+\end_inset
+
+ method, which the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :comments
+\end_layout
+
+\end_inset
+
+ provides.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: We couldn't just use an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if:comments
+\end_layout
+
+\end_inset
+
+ shortcut since 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+if
+\end_layout
+
+\end_inset
+
+ tests for 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+blankness
+\end_layout
+
+\end_inset
+
+, not 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+response
+\end_layout
+
+\end_inset
+
+.
+ We need the form to be visible even if there are no comments.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The header is pretty standard with an added 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ call so if need be it can be changed on specific pages.
+ Unfortunately we can't add param on the next line:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<collection part=
+\begin_inset Quotes erd
+\end_inset
+
+comments-collection
+\begin_inset Quotes erd
+\end_inset
+
+ />
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We're defining the collection as a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+part
+\end_layout
+
+\end_inset
+
+.
+ A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+part
+\end_layout
+
+\end_inset
+
+ is a way to mark content for later update via AJAX callbacks.
+ Since it's using the current definition to make a javascript updatable
+ piece, you can't have the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ flexibility with parts like you do with other dryml content.
+\end_layout
+
+\begin_layout Standard
+The form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<form with=
+\begin_inset Quotes erd
+\end_inset
+
+&this.user_new(current_user)
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+         update=
+\begin_inset Quotes erd
+\end_inset
+
+comments-collection
+\begin_inset Quotes erd
+\end_inset
+
+ reset-form>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The with, creates a new comment (unsaved) using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+current_user
+\end_layout
+
+\end_inset
+
+ as the owner.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+update
+\end_layout
+
+\end_inset
+
+ attribute, tells the form what 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+DOM id
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+not part name
+\end_layout
+
+\end_inset
+
+ which can be confusing as they're usually the same) to stick the updated
+ content.
+ The last bit, tells it to reset the form to a blank state after successful
+ submission.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<field-list: fields=
+\begin_inset Quotes erd
+\end_inset
+
+body
+\begin_inset Quotes erd
+\end_inset
+
+ without-body-label />
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We didn't want the body label since it's only the one field.
+ Also, because the commentable_type and id fields aren't your standard fields,
+ it breaks the standard dryml form trying to render them.
+ We only need the body input anyway.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename figures/ch5/comment_form.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The comment form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename figures/ch5/comment_added.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Comment posted
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wow, almost there...
+\end_layout
+
+\begin_layout Subsubsection*
+The Card
+\end_layout
+
+\begin_layout Standard
+We just need to update the comment card so that it shows the appropriate
+ information in a more logical layout.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<extend tag="card" for="Comment">
+\end_layout
+
+\begin_layout Code
+	<old-card merge>
+\end_layout
+
+\begin_layout Code
+    <creator-link: replace>
+\end_layout
+
+\begin_layout Code
+      <h5><a:owner><You /></a>
+\end_layout
+
+\begin_layout Code
+        posted at <view:created_at />
+\end_layout
+
+\begin_layout Code
+      </h5>
+\end_layout
+
+\begin_layout Code
+    </creator-link:>
+\end_layout
+
+\begin_layout Code
+  </old-card>
+\end_layout
+
+\begin_layout Code
+</extend>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/comment_card.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Updated comment card
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice too that we already have comments on user pages from this as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/ch5/comment_user_page.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+User page comments
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There's still room for improvement but I'll leave that up to you.
+ Some suggestions:
+\end_layout
+
+\begin_layout Itemize
+Change the date format
+\end_layout
+
+\begin_layout Itemize
+Add a summary of user comments with links to the commented items on the
+ user page
+\end_layout
+
+\begin_layout Itemize
+Add avatar support (hint: it's quite simple with the gravatar tag.)
+\end_layout
+
+\end_body
+\end_document
