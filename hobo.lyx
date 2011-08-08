@@ -686,7 +686,7 @@ filename "ch5tut19.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "ch5tut20.lyx"
+filename "ch5tut20alt.lyx"
 
 \end_inset
 
