@@ -790,7 +790,11 @@ status open
 \end_layout
 
 \begin_layout Code
-          <field-list: fields="body" without-body-label />
+          <field-list: skip="commentable"
+\end_layout
+
+\begin_layout Code
+             without-body-label />
 \end_layout
 
 \begin_layout Code
@@ -1178,11 +1182,11 @@ height_special "totalheight"
 status open
 
 \begin_layout Code
-<field-list: fields=
+<field-list: skip=
 \begin_inset Quotes erd
 \end_inset
 
-body
+commentable
 \begin_inset Quotes erd
 \end_inset
 
@@ -1196,8 +1200,8 @@ body
 
 \begin_layout Standard
 We didn't want the body label since it's only the one field.
- Also, because the commentable_type and id fields aren't your standard fields,
- it breaks the standard dryml form trying to render them.
+ Also, because the commentable field isn't your standard fields, it breaks
+ the standard dryml form trying to render them.
  We only need the body input anyway.
 \end_layout
 
