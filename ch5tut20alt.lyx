@@ -1304,7 +1304,7 @@ status open
 \end_layout
 
 \begin_layout Code
-	<old-card merge>
+  <old-card merge>
 \end_layout
 
 \begin_layout Code
@@ -1449,7 +1449,7 @@ Add avatar support (hint: it's quite simple with the gravatar tag.)
 \end_layout
 
 \begin_layout Itemize
-We didn't put in edit support for admins yet
+We didn't put in edit support for admins yet (hint: think controller)
 \end_layout
 
 \begin_layout Itemize
@@ -1458,8 +1458,8 @@ The point it's inserting the comment list and form is potentially problematic
 \end_layout
 
 \begin_layout Itemize
-Think about how this design could be used elsewhere.
- Personally I've used a similar pattern with tags, categories and ratings.
+Think about how this design pattern could be used elsewhere.
+ Personally I've used something similar with tags, categories and ratings.
  And don't forget you can use it with lifecycle transitions, such as by
  replacing delete buttons with a lifecycle link on edit-pages when a merge_and_d
 elete method is present.
