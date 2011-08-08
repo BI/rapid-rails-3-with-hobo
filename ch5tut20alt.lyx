@@ -686,6 +686,30 @@ has_many :comments, :as => :commentable
 We don't need to migrate as there's no new columns on either Post or User.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: If you doing this on an existing app, you can add this to any model
+ you want to be commentable.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 The View
 \end_layout
@@ -1386,6 +1410,26 @@ User page comments
 
 \end_layout
 
+\begin_layout Subsubsection*
+In Closing
+\end_layout
+
+\begin_layout Standard
+Notice, that as you add new models, you can add comment support simply by
+ declaring that the model 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :comments, :as => :commentable
+\end_layout
+
+\end_inset
+
+.
+ No view/controller changes required!
+\end_layout
+
 \begin_layout Standard
 There's still room for improvement but I'll leave that up to you.
  Some suggestions:
@@ -1402,6 +1446,23 @@ Add a summary of user comments with links to the commented items on the
 
 \begin_layout Itemize
 Add avatar support (hint: it's quite simple with the gravatar tag.)
+\end_layout
+
+\begin_layout Itemize
+We didn't put in edit support for admins yet
+\end_layout
+
+\begin_layout Itemize
+The point it's inserting the comment list and form is potentially problematic
+ depending on what other customizations you have on any particular show-page
+\end_layout
+
+\begin_layout Itemize
+Think about how this design could be used elsewhere.
+ Personally I've used a similar pattern with tags, categories and ratings.
+ And don't forget you can use it with lifecycle transitions, such as by
+ replacing delete buttons with a lifecycle link on edit-pages when a merge_and_d
+elete method is present.
 \end_layout
 
 \end_body
