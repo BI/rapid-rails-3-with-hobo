@@ -5370,23 +5370,153 @@ In this tutorial you will learn some elementary aspects of Hobo’s permission
  system by changing what the admin user and users can do.
  Specifically, you will determine whether a user is permitted to view, create,
  edit or delete records in the database.
- Topics Experiment with altering user permissions.
- Naming conventions for database tables, models, controllers and views.
- Tutorial Application: one_table Steps 1.
- Create the Hobo application.
- Create the one_table Hobo application by issuing the following command
- at the command prompt.
- By adding the --setup command line parameter the application will bypass
- the setup wizard and create the application with default settings, Then
- change directory to the subdirectory one_table: 
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Topics 
+\end_layout
+
+\begin_layout Itemize
+Experiment with altering user permissions.
+ 
+\end_layout
+
+\begin_layout Itemize
+Naming conventions for database tables, models, controllers and views.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Tutorial Application:
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ one_table
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Steps 
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create the Hobo application.
+\end_layout
+
+\end_inset
+
+ Create the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one_table
+\end_layout
+
+\end_inset
+
+ Hobo application by issuing the following command at the command prompt.
+ By adding the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+--setup
+\end_layout
+
+\end_inset
+
+ command line parameter the application will bypass the setup wizard and
+ create the application with default settings, Then change directory to
+ the subdirectory 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one_table:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
 \backslash
 tutorials> hobo new one_table --setup 
+\end_layout
+
+\begin_layout LyX-Code
+
 \backslash
 tutorials> cd one_table 
+\end_layout
+
+\begin_layout LyX-Code
+
 \backslash
-one_table> Recall from Tutorial 1 that this sets up the Hobo directory tree
- and the user model and controller.
- Note: Look at the file 
+one_table> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recall from Tutorial 1 that this sets up the Hobo directory tree and the
+ user model and controller.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Look at the file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 one_table
 \backslash
@@ -5394,30 +5524,118 @@ app
 \backslash
 models
 \backslash
-user.rb and at the database schema file 
+user.rb
+\end_layout
+
+\end_inset
+
+ and at the database schema file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 one_table
 \backslash
 db
 \backslash
-schema.rb.
+schema.rb
+\end_layout
+
+\end_inset
+
+.
  There are more fields in the users table than in the user model.
  This is because Hobo creates several user model fields for you automatically.
  This will not be the case for models you create.
- 3.
- Start the web server.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Start the web server.
+\end_layout
+
+\end_inset
+
  Open a new command prompt and navigate to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 tutorials
 \backslash
-one_table directory.
+one_table
+\end_layout
+
+\end_inset
+
+ directory.
  Fire up your web server by issuing the following command.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
 \backslash
-one_table> rails server 4.
- Initiate the web application.
- Enter the local URL for the application in your browser’s URL window: http://lo
-calhost:3000/
+one_table> rails server 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Initiate the web application.
+\end_layout
+
+\end_inset
+
+ Enter the local URL for the application in your browser’s URL window: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5425,109 +5643,679 @@ You should now see the following displayed on your browser.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure86.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Welcome to One Table in the Permissions tutorial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 5.
- Create user accounts.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create user accounts.
+\end_layout
+
+\end_inset
+
  You will need a couple of accounts to exercise the functions of the One
  Table application.
  Let’s do this now like you did in Tutorial 1.
- Click Register Administrator to create the administrator account.
- We refer to this account as the admin account.
+ 
+\end_layout
+
+\begin_layout Standard
+Click 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Register Administrator
+\end_layout
+
+\end_inset
+
+ to create the administrator account.
+ We refer to this account as the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+admin
+\end_layout
+
+\end_inset
+
+ account.
  Logout and create a second account.
- We will refer to this second account as the user account in the following
- tutorials.
- By default, the user account does not have administrative privileges.
- Later in the tutorial, you will learn to customize the default permission
+ We will refer to this second account as the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+user
+\end_layout
+
+\end_inset
+
+ account in the following tutorials.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+By default, the user account does not have administrative privileges.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Later in the tutorial, you will learn to customize the default permission
  features.
- Log out of the user account and login to the admin account for now.
+ 
+\end_layout
+
+\begin_layout Standard
+Log out of the user account and login to the admin account for now.
  Remember that you will use the admin email address and password to login,
  not the name.
- 6.
- Create the recipe model.
- Next create a model using the hobo:resource generator, which will be called
- Recipe.
+ 
+\end_layout
+
+\begin_layout Standard
+6.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create the recipe model.
+\end_layout
+
+\end_inset
+
+ Next create a model using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:resource
+\end_layout
+
+\end_inset
+
+ generator, which will be called 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+.
  It will contain three fields: title, body and country.
  We will complete this step by rerunning the Hobo migration from Step 3.
  This will take the model definitions and create a migration file and the
  database table recipes.
  
-\backslash
-one_table> hobo g resource recipe title:string body:text country:string
- This generator created a recipe.rb model from which the hobo:migration generator
- will create a migration file and a database table.
- Note: When we talk about a model’s name we are referring to its Ruby Class
- name that can be found at the top of the file.
- It also created the recipes_controller.rb controller, the recipes_helper.rb
- helper file, and recipes view folder.
- Run the hobo:migration generator: 
-\backslash
-one_table> hobo g migration
 \end_layout
 
 \begin_layout Standard
-IMPORTANT: Hobo is different from Rails in that the migration file and database
- table are both the result of the hobo:migration generator.
- In Rails, generators typically create both models AND migration files but
- NOT database tables.
- Refresh your browser and you should see a Recipes tab added.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+one_table> hobo g resource recipe title:string 
+\end_layout
+
+\begin_layout LyX-Code
+           body:text country:string 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This generator created a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe.rb
+\end_layout
+
+\end_inset
+
+ model from which the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:migration
+\end_layout
+
+\end_inset
+
+ generator will create a migration file and a database table.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: When we talk about a model’s name we are referring to its Ruby Class
+ name that can be found at the top of the file.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It also created the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_controller.rb
+\end_layout
+
+\end_inset
+
+ controller, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_helper.rb
+\end_layout
+
+\end_inset
+
+ helper file, and recipes view folder.
+ Run the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:migration
+\end_layout
+
+\end_inset
+
+ generator: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+one_table> hobo g migration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+IMPORTANT: Hobo is different from Rails in that the migration file and database
+ table are both the result of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:migration
+\end_layout
+
+\end_inset
+
+ generator.
+ In Rails, generators typically create both models AND migration files but
+ NOT database tables.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Refresh your browser and you should see a Recipes tab added.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure87.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Recipes tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 7.
- Confirm your login info.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Confirm your login info.
+\end_layout
+
+\end_inset
+
  Make sure you are logged in as the administrator.
- As long as you are logged in, you should see the “New Recipe” link on the
- left.
- Create three recipes and take care to add info in all three fields.
- You can create them either from the Home or Recipes tab.
- The finished recipes should be displayed in both the Home tab and the Recipes
+ As long as you are logged in, you should see the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+“New Recipe”
+\end_layout
+
+\end_inset
+
+ link on the left.
+ 
+\end_layout
+
+\begin_layout Standard
+Create three recipes and take care to add info in all three fields.
+ You can create them either from the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Home
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ tab.
+ The finished recipes should be displayed in both the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Home
+\end_layout
+
+\end_inset
+
+ tab and the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
  tab automatically.
  You can click on any of the names of the recipes to edit them.
  Try it out.
 \end_layout
 
 \begin_layout Standard
-Figure 61: Page view of created recipes 8.
- Login as a user.
- Sign out of the admin account and sign in as another.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure88.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of created recipes 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+8.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Login as a user.
+\end_layout
+
+\end_inset
+
+ Sign out of the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+admin
+\end_layout
+
+\end_inset
+
+ account and sign in as another.
  Note that you can still see the recipe title.
  Now, you can click on the recipe title and view the entire recipe record
- but you cannot create or edit a recipe.
+ but you 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+cannot
+\end_layout
+
+\end_inset
+
+ create or edit a recipe.
  This is governed by the Hobo “Permissions” module.
  In the next step, you will change the user permissions and see how the
  user interface responds by automatically providing creation and editing
  capabilities in the user interface.
- 9.
- Edit permissions: Take a look at the recipe.rb model file.
- # --- Permissions --- #
+ 
 \end_layout
 
 \begin_layout Standard
-def create_permitted? acting_user.administrator? end
+9.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Edit permissions:
+\end_layout
+
+\end_inset
+
+ Take a look at the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe.rb
+\end_layout
+
+\end_inset
+
+ model file.
 \end_layout
 
 \begin_layout Standard
-def update_permitted? acting_user.administrator? end
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+# --- Permissions --- #
+\end_layout
+
+\begin_layout LyX-Code
+def create_permitted? 
+\end_layout
+
+\begin_layout LyX-Code
+ acting_user.administrator? 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def update_permitted? 
+\end_layout
+
+\begin_layout LyX-Code
+ acting_user.administrator? 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def destroy_permitted? 
+\end_layout
+
+\begin_layout LyX-Code
+ acting_user.administrator? 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def view_permitted?(field) 
+\end_layout
+
+\begin_layout LyX-Code
+ true 
+\end_layout
+
+\begin_layout LyX-Code
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-def destroy_permitted? acting_user.administrator? end
+There are four methods that define the basic permission system: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+create_permitted?, update_permitted?, destroy_permitted?
 \end_layout
 
-\begin_layout Standard
-def view_permitted?(field) true end There are four methods that define the
- basic permission system: create_permitted?, update_permitted?, destroy_permitte
-d? and view_permitted?.
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+view_permitted?
+\end_layout
+
+\end_inset
+
+.
  In exercising the permission system, you are editing Ruby code.
  The permission methods are defined within Hobo.
  Each method evaluates a boolean-valued variable (actually a method on an
  object) that indicates whether the named action is allowed or not allowed.
- Method Refers to permission to: create_permitted? create a record update_permit
-ted? edit a record destroy_permitted? delete a record View_permitted?(field)
- view a record or field Figure 62: Table of Hobo permission methods For
- the code that is generated by the hobo:resource generator, the method is
- checking whether the acting user, which is the user that is signed on,
- is or is not the administrator.
+ 
+\end_layout
+
+\begin_layout Standard
+Method Refers to permission to: create_permitted? create a record update_permitt
+ed? edit a record destroy_permitted? delete a record View_permitted?(field)
+ view a record or field 
+\end_layout
+
+\begin_layout Standard
+Figure 62: Table of Hobo permission methods For the code that is generated
+ by the hobo:resource generator, the method is checking whether the acting
+ user, which is the user that is signed on, is or is not the administrator.
  In practice though, the boolean value may ask another question or a more
  complex question.
  For example, one could write a line of Ruby code that determined if the
