@@ -6306,6 +6306,12 @@ view_permitted?
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
 \begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
@@ -6473,8 +6479,21 @@ view a record or field
 
 \end_layout
 
-\begin_layout Standard
-Figure 62: Table of Hobo permission methods 
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Table of Hobo permission methods 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6505,13 +6524,19 @@ For example, one could write a line of Ruby code that determined if the
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="30col%">
+<column alignment="left" valignment="top" width="70col%">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6539,7 +6564,7 @@ status collapsed
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6559,7 +6584,7 @@ Meaning
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6577,7 +6602,7 @@ administrator?
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6588,7 +6613,7 @@ first user to sign up
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6606,38 +6631,18 @@ signed_up?
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-any user who is signed up (including
+any user who is signed up (including the administrator)
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multirow="3" alignment="left" valignment="middle" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-the administrator)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6655,7 +6660,7 @@ guest?
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6672,8 +6677,21 @@ any user who is not signed up
 
 \end_layout
 
-\begin_layout Standard
-Figure 63: Table of Hobo "acting_user" options 
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Table of Hobo "acting_user" options 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7170,6 +7188,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename figures/figure89.png
+	width 90col%
 
 \end_inset
 
@@ -7232,55 +7251,305 @@ signed_up?
 Tutorial 5 – Controllers
 \end_layout
 
-\begin_layout Standard
-Topics Introduce Hobo’s controller/routing system.
- Hobo automatic actions Show examples of the permission system working with
- controllers Tutorial Application: one_table 
+\begin_layout Subsubsection*
+Topics
+\end_layout
+
+\begin_layout Itemize
+Introduce Hobo’s controller/routing system.
+ 
+\end_layout
+
+\begin_layout Itemize
+Hobo automatic actions 
+\end_layout
+
+\begin_layout Itemize
+Show examples of the permission system working with controllers 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one_table
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Steps 
 \end_layout
 
 \begin_layout Standard
-Steps 1.
- Demonstrate controller actions.
+1.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Demonstrate controller actions.
+\end_layout
+
+\end_inset
+
  Hobo has a set of built in actions for responding to user-initiated requests
  from browser actions (clicks).
  For example, when Hobo displayed the Recipes in Tutorial 3, it is the result
- of the index action found in the /app/controllers/recipes_controller.rb
+ of the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+index action
+\end_layout
+
+\end_inset
+
+ found in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/app/controllers/recipes_controller.rb
+\end_layout
+
+\end_inset
+
  file.
  Open this file.
- Note: Recall that controller and model files contain Ruby code whereas
- view templates contain HTML with embedded Ruby code.
+ 
 \end_layout
 
 \begin_layout Standard
-class RecipesController < ApplicationController hobo_model_controller
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Recall that controller and model files contain Ruby code whereas view
+ templates contain HTML with embedded Ruby code.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-auto_actions :all end There is not much you can see--but there is a lot
- going on behind the scenes.
- The first line is similar to the first line of the Recipe model we told
- you about in Tutorial 1.
- It indicates that the RecipesController is part of the Rails ApplicationControl
-ler and inherits general capabilities from this master controller.
- The next line, hobo_model_controller, tells Rails to use Hobo’s controller
- functionality to control the Recipe model and views.
- It is actually short for: #Do not copy - although it won’t change anything
- if you do.
- hobo_model_controller Recipe Hobo automatically infers the model name from
- the controller name in the first line above.
- Note: The pound (or “hash”) character (#) is the symbol to indicate a Ruby
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+class RecipesController < ApplicationController    
+\end_layout
+
+\begin_layout LyX-Code
+  hobo_model_controller
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+        auto_actions :all 
+\end_layout
+
+\begin_layout LyX-Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is not much you can see--but there is a lot going on behind the scenes.
+ 
+\end_layout
+
+\begin_layout Standard
+The first line is similar to the first line of the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model we told you about in Tutorial 1.
+ It indicates that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+RecipesController
+\end_layout
+
+\end_inset
+
+ is part of the Rails 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ApplicationController
+\end_layout
+
+\end_inset
+
+ and inherits general capabilities from this master controller.
+ 
+\end_layout
+
+\begin_layout Standard
+The next line, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_model_controller
+\end_layout
+
+\end_inset
+
+, tells Rails to use Hobo’s controller functionality to control the Recipe
+ model and views.
+ It is actually short for:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+#Do not copy - although it won’t change anything if you 
+\end_layout
+
+\begin_layout LyX-Code
+do.
+ hobo_model_controller Recipe 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo automatically infers the model name from the controller name in the
+ first line above.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The pound (or “hash”) character (#) is the symbol to indicate a Ruby
  comment.
  Everything on a line following # will be ignored by Ruby.
  Code starts again on the next line.
  To create view template comments, where you are not in a Ruby file you
  must surround comments like this <!--Comment-->.
- The next line, auto_actions :all, makes all the standard actions available
- to the controller including: index (meaning “list”), show, new, create,
- edit, update, and destroy (meaning “delete”).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The next line, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions :all
+\end_layout
+
+\end_inset
+
+, makes all the standard actions available to the controller including:
+ index (meaning “list”), show, new, create, edit, update, and destroy (meaning
+ “delete”).
  If you are familiar with Rails, you will realize that Hobo has replaced
  quite a bit of Rails code in these two lines.
- 2.
- Edit the auto_actions.
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Edit the
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions
+\end_layout
+
+\end_inset
+
+.
  Clicking the Recipes tab in your app invokes the index action of the Recipes
  controller.
  The index action of the controller tells Hobo to list the records of the
@@ -7288,138 +7557,749 @@ ler and inherits general capabilities from this master controller.
  You probably noticed this as you created new records.
  Each time you created a new one, you probably clicked on the tab to see
  a list of all the records you created.
- Now notice something else that you will learn to be important.
+ 
+\end_layout
+
+\begin_layout Standard
+Now notice something else that you will learn to be important.
  When you click on the Recipes tab, the URL that is displayed in the URL
- window says: http://localhost:3000/recipes As you learn about the functions
- of the fundamental Hobo actions (listed in Step 1 above), you will learn
- that there is a unique URL entirely specified by the action and model name.
+ window says: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As you learn about the functions of the fundamental Hobo actions (listed
+ in Step 1 above), you will learn that there is a unique URL entirely specified
+ by the action and model name.
  Look at figure earlier in this book about “Actions and Routes”, and you
- will see the URL for an index action is the base URL, http://localhost:3000/
- concatenated with the plural of the model name, which in this case is “recipes”.
- We are going to further demonstrate that attempting to route to this URL
+ will see the URL for an 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+index
+\end_layout
+
+\end_inset
+
+ action is the base URL, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/"
+
+\end_inset
+
+ concatenated with the plural of the model name, which in this case is “
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+recipes
+\end_layout
+
+\end_inset
+
+”.
+ 
+\end_layout
+
+\begin_layout Standard
+We are going to further demonstrate that attempting to route to this URL
  invokes the index action by turning off the action in Hobo and then putting
  turning it back on.
  First go to your home page by clicking the Home tab.
- Then, in recipes_controller.rb, CHANGE: class RecipesController < ApplicationCon
-troller
+ Then, in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes_controller.rb
+\end_layout
+
+\end_inset
+
+, 
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+CHANGE
+\end_layout
+
+\end_inset
+
+: 
 \end_layout
 
 \begin_layout Standard
-auto_actions :all
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :all
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-end TO: class RecipesController < ApplicationController
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+TO:
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+ 
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+ 
+\end_layout
+
+\begin_layout Code
+ auto_actions :all, :except => :index
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-auto_actions :all, :except => :index
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+except
 \end_layout
 
-\begin_layout Standard
-end The except clause in this code tells the controller to turn off the
- index action.
+\end_inset
+
+ clause in this code tells the controller to turn off the index action.
  Refresh your browser and you should see this display:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure90.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Making the Recipes tab disappear
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Your Recipes tab disappeared.
- You can also try invoking the index action by typing http://localhost:3000/reci
-pes into your URL window.
+ You can also try invoking the index action by typing 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes"
+
+\end_inset
+
+ into your URL window.
  You will get a blank page.
- Hobo will no longer invoke the index action because you told it not to
- in your code.
+ 
+\end_layout
+
+\begin_layout Standard
+Hobo will no longer invoke the index action because you told it not to in
+ your code.
  Hobo decided to do more though; it changed the UI also.
- In Tutorial 3, you learned that Hobo figures out how your UI should look
+ 
+\end_layout
+
+\begin_layout Standard
+In Tutorial 3, you learned that Hobo figures out how your UI should look
  depending on your model code.
  There it changed what links were available depending on permissions you
  specified in the code.
  In this case, Hobo figures out how to change the UI depending on the controller
  code.
- Here it has removed a tab, the Recipes tab, because you disallowed the
- action that it would invoke.
- Now remove the except clause and you should get your Recipes tab back.
- Note: If you are new to Ruby you are probably noticing all the colons(:)
+ Here it has removed a tab, the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ tab, because you disallowed the action that it would invoke.
+ Now remove the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+except
+\end_layout
+
+\end_inset
+
+ clause and you should get your 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ tab back.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: If you are new to Ruby you are probably noticing all the colons(:)
  and arrows (=>).
  For now.
  Think of these two as a way of connecting a Ruby symbol (any text that
  begins with a colon) to a value (the entity after the expression “=>”).
  We recommend a companion book such as Peter Cooper’s “Beginning Ruby: From
  Novice to Professional” to learn more about Ruby symbols and their importance.
- Now turn the index action back on by deleting the :except clause.
- class RecipesController < ApplicationController
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller
+Now turn the index action back on by deleting the :
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+except 
+\end_layout
+
+\end_inset
+
+clause.
+ 
 \end_layout
 
 \begin_layout Standard
-auto_actions :all end 3.
- Remove and restore the new and show actions.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  hobo_model_controller
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  auto_actions :all
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Remove and restore the new and show actions
+\end_layout
+
+\end_inset
+
+.
  Hobo allows you to edit this in two ways.
- You can either stipulate you want all except certain actions or that you
- want only specific actions.
- In other words, you can either indicate which actions you wish to include
- or indicate which actions you wish to exclude.
+ You can either stipulate you want 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+all except certain actions
+\end_layout
+
+\end_inset
+
+ or that you want 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+only specific actions
+\end_layout
+
+\end_inset
+
+.
+ In other words, you can either indicate which actions you wish to 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+include
+\end_layout
+
+\end_inset
+
+ or indicate which actions you wish to 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+exclude
+\end_layout
+
+\end_inset
+
+.
  The former is what you did in step three.
  Let’s try the latter where you declare which actions you want.
  The following code will do exactly what you did before but in a different
  way.
- First, use the following code to include all seven actions, including the
- index action.
- This code is equivalent to the auto_actions :all statement above.
- class RecipesController < ApplicationController
+ 
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller 
+First, use the following code to 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+include
+\end_layout
+
+\end_inset
+
+ all seven actions, including the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+index
+\end_layout
+
+\end_inset
+
+ action.
+ This code is equivalent to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions :all
+\end_layout
+
+\end_inset
+
+ statement above.
+ 
 \end_layout
 
 \begin_layout Standard
-auto_actions :index, :show, :new, :create, :edit, :update, :destroy
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :index, :show, :new, :create, :edit, :update, 
+\end_layout
+
+\begin_layout Code
+      :destroy
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-end Try removing the index action.
+Try removing the index action.
  When you save your code and refresh your browser, you will obtain the same
- result using the :except => index code.
+ result using the
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ :except => index
+\end_layout
+
+\end_inset
+
+ code.
  Now put back the index action and try removing the :new option.
- class RecipesController < ApplicationController
+ 
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :index, :show, :create, :edit, :update, 
+\end_layout
+
+\begin_layout Code
+      :destroy
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-auto_actions :index, :show, :create, :edit, :update, :destroy
-\end_layout
+The result is that the New Recipe link to 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes/new"
 
-\begin_layout Standard
-end The result is that the New Recipe link to http://localhost:3000/recipes/new,
- the URL associated with the new action disappears.
+\end_inset
+
+, the URL associated with the new action disappears.
  This is because you have disallowed the new action and Hobo takes care
  of cleaning up your UI for you.
- Even if you try to go to that URL by typing http://localhost:3000/recipes/new
+ Even if you try to go to that URL by typing 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes/new"
+
+\end_inset
+
  into the browser, Hobo tells you that you can no longer go there.
 \end_layout
 
 \begin_layout Standard
-Put the :new action back in and click the Recipes tab.
- Mouse over the Recipe links and note that the URL’s look like, http://localhost
-:3000/recipes/2-omelette which are of the form http://localhost:3000/model(plura
-l)/ID-model_name_variable which is the form that we discussed earlier in
- this tutorial for the show action.
- Note: Hobo assigns a name variable to the model equal to the value of the
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure91.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Error message 
+\begin_inset Quotes eld
+\end_inset
+
+The page you were looking for could not be found
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Put the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:new
+\end_layout
+
+\end_inset
+
+ action back in and click the Recipes tab.
+ Mouse over the Recipe links and note that the URL’s look like, 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+http://localhost:3000/recipes/2-omelette
+\end_layout
+
+\end_inset
+
+ which are of the form 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+http://localhost:3000/model(plural)/ID-model_name_variable
+\end_layout
+
+\end_inset
+
+ which is the form that we discussed earlier in this tutorial for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+show
+\end_layout
+
+\end_inset
+
+ action.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Hobo assigns a name variable to the model equal to the value of the
  field it thinks is the most likely summary field.
  Hobo first looks for a field called name.
  Next it looks for the next most likely, which in this case it guesses is
@@ -7429,161 +8309,1540 @@ l)/ID-model_name_variable which is the form that we discussed earlier in
  
 \end_layout
 
-\begin_layout Standard
-Figure 67: How Hobo finds the default "name" attribute for a model You can
- also use a little “Hobo magic” to create your own version of name using
- a Ruby method as below:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 68: Creating your own custom "name" attribute
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure92.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+How Hobo finds the default "name" attribute for a model 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 69: Page view of the custom name attribute
+You can also use a little “Hobo magic” to create your own version of name
+ using a Ruby method as below:
 \end_layout
 
 \begin_layout Standard
-Now back to our original train of thought…Remove the :show action.: class
- RecipesController < ApplicationController
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure93.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Creating your own custom "name" attribute
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure94.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of the custom name attribute
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-auto_actions :index, :new, :create, :edit, :update, :destroy
+Now back to our original train of thought…Remove the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:show
+\end_layout
+
+\end_inset
+
+ action.: 
 \end_layout
 
 \begin_layout Standard
-end Now when you refresh your browser you will note that you no longer have
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :index, :new, :create, :edit, :update, 
+\end_layout
+
+\begin_layout Code
+      :destroy
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now when you refresh your browser you will note that you no longer have
  links to show(display) the details of a particular Recipe record.
- Even if you try to navigate your browser to http://localhost:3000/recipes/2-ome
-lette, you will get an error.
- Now let’s try one more but using the except version of auto_actions again
- but first make sure you are back to the all actions state.
+ Even if you try to navigate your browser to 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes/2-omelette"
+
+\end_inset
+
+, you will get an error.
+ 
+\end_layout
+
+\begin_layout Standard
+Now let’s try one more but using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+except
+\end_layout
+
+\end_inset
+
+ version of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions
+\end_layout
+
+\end_inset
+
+ again but first make sure you are back to the all actions state.
  Use the code below.
- class RecipesController < ApplicationController
+ 
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :all
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-auto_actions :all
-\end_layout
-
-\begin_layout Standard
-end Navigate to the Recipes link where you should now see a list of hyperlinks
+Navigate to the Recipes link where you should now see a list of hyperlinks
  to each recipe.
  Click on a recipe.
 \end_layout
 
 \begin_layout Standard
-Observe the Edit Recipe link on the right hand side of the display.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure95.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Viewing the edit URL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observe the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Edit Recipe
+\end_layout
+
+\end_inset
+
+ link on the right hand side of the display.
  Click or mouse over it to convince yourself that the URL associated with
- this link is: http://localhost:3000/recipes/6-hamburger/edit This is just
- the result you would expect for the edit action of the form: http://localhost:3
-000/model(plural)/ID-model_name_variable/edit Now make sure you are on the
- screen above, a particular Recipe.
- Edit your code to remove the edit action.
- class RecipesController < ApplicationController hobo_model_controller auto_acti
-ons :all, :except => :edit end Now you should see that Hobo removes the
- links to the edit action and even if you try to force Hobo to go to the
- above URL, it will not, giving you an error:
+ this link is: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes/6-hamburger/edit"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is just the result you would expect for the edit action of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/model(plural)/ID-model_name_variable/edit "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now make sure you are on the screen above, a particular 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+.
+ Edit your code to remove the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+edit
+\end_layout
+
+\end_inset
+
+ action.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :all, :except => :edit 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now you should see that Hobo removes the links to the edit action and even
+ if you try to force Hobo to go to the above URL, it will not, giving you
+ an error:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure96.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Unknown action
+\begin_inset Quotes erd
+\end_inset
+
+ error page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 1.
- Remove multiple actions.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Remove multiple actions
+\end_layout
+
+\end_inset
+
+.
  So far we have showed you how to remove one action at a time.
  You can use the two methods we have showed you to remove two or more actions
  at a time.
  If you use the listing approach and you are starting with all the actions
- as in: class RecipesController < ApplicationController 
+ as in: 
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller auto_actions :index, :show, :new, :create, :edit,
- :update, :destroy
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :index, :show, :new, :create, :edit, :update, 
+\end_layout
+
+\begin_layout Code
+      :destroy
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-end If you want to remove both the new and the create actions, just delete
- them from your list so that you have: class RecipesController < ApplicationCont
-roller
+If you want to remove both the new and the create actions, just delete them
+ from your list so that you have: 
 \end_layout
 
 \begin_layout Standard
-hobo_model_controller 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
 \end_layout
 
-\begin_layout Standard
-auto_actions :index, :show, :edit, :update, :destroy
+\begin_layout Code
+
 \end_layout
 
-\begin_layout Standard
-end If you start be specifying all actions and use the except clause, the
- equivalent code to the above will be: class RecipesController < ApplicationCont
-roller
+\begin_layout Code
+ hobo_model_controller 
 \end_layout
 
-\begin_layout Standard
-hobo_model_controller 
+\begin_layout Code
+
 \end_layout
 
-\begin_layout Standard
-auto_actions :all, :except => [:new, :create]
+\begin_layout Code
+ auto_actions :index, :show, :edit, :update, :destroy
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
 end
 \end_layout
 
-\begin_layout Standard
-Note: When removing the :new action, this actually adds a 'New' facility
- below the list of Recipes.
- When you remove the :show action, Hobo places an 'Edit' link against each
- listed item.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-You may be wondering why the :except option encloses the list of actions
- in square brackets and the listing approach does not.
- The Ruby :except method takes a Ruby array as an input and Ruby arrays
- are enclosed in square brackets.
- 5.
- Using controller short cuts.
- There is one other way to add or remove controller actions and that is
- through the use of short cuts.
- The code: auto_actions :read_only is the same as: auto_actions :index,
- :show The code: auto_actions :write_only is the same as: auto_actions :create,
- :update, :destroy
+If you start be specifying all actions and use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+except
+\end_layout
+
+\end_inset
+
+ clause, the equivalent code to the above will be: 
 \end_layout
 
 \begin_layout Standard
-Note: You can append actions or use the except actions clause with either
- of these short cuts.
- The proviso is that you must use the shortcut first and [use only one]
- and use the except clause last.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class RecipesController < ApplicationController
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ hobo_model_controller 
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+ auto_actions :all, :except => [:new, :create]
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: When removing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:new
+\end_layout
+
+\end_inset
+
+ action, this actually adds a 'New' facility below the list of Recipes.
+ When you remove the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:show
+\end_layout
+
+\end_inset
+
+ action, Hobo places an 'Edit' link against each listed item.
+\end_layout
+
+\begin_layout Plain Layout
+You may be wondering why the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:except
+\end_layout
+
+\end_inset
+
+ option encloses the list of actions in square brackets and the listing
+ approach does not.
+ The Ruby 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:except
+\end_layout
+
+\end_inset
+
+ method takes a Ruby array as an input and Ruby arrays are enclosed in square
+ brackets.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Using controller short cuts
+\end_layout
+
+\end_inset
+
+.
+ There is one other way to add or remove 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+controller
+\end_layout
+
+\end_inset
+
+ actions and that is through the use of short cuts.
+ The code: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+auto_actions :read_only 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is the same as: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+auto_actions :index, :show 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The code: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+auto_actions :write_only 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is the same as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+auto_actions :create, :update, :destroy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: You can append actions or use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+except
+\end_layout
+
+\end_inset
+
+ actions clause with either of these short cuts.
+ The proviso is that you 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+must
+\end_layout
+
+\end_inset
+
+ use the shortcut first and [use only one] and use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+except
+\end_layout
+
+\end_inset
+
+ clause last.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 6.
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
  Hobo Controller action summary.
- Below is a list of all controller actions Action Summary Meaning URL Mapping
- Example (model - recipe) index display list of records /base/model(plural)
- /base/recipes show display a single record /base/model(plural)/ID-name
- /base/recipes/2-omelette new allocate memory for a new record and open
- a form to hold it.
- /base/model(plural)/ID-name /base/recipes/new create save the new record.
- link without landing /base/recipes edit retrieve a record from the database
- and display it in a form /base/model(plural)/ID-name/edit /base/recipes
- update save the contents of an edited record lands on show /base/recipes
- destroy delete the record lands on index /base/recipes Figure 72: Hobo
- Controller action summary Tutorial 6 – Navigation Tabs
+\end_layout
+
+\end_inset
+
+ Below is a list of all controller actions 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Action
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Summary Meaning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+URL Mapping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+index
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+display list of records
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/model(plural)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/recipes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+show
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+display a single record
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/model(plural)/ID-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/recipes/2-omlette
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+new
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+allocate memory for a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/model(plural)/ID-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/recipes/new
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+new record and open
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a form to hold it.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+create
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+save the new record.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+link without landing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/recipes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+edit
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+retrieve a record from
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/model(plural)/ID-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/recipes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the database and display
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+it in a form
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+update
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+save the contents of an
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lands on show
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/recipes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+edited record
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+destroy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+delete the record
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lands on index
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/base/recipes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hobo Controller action summary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tutorial 6 – Navigation Tabs
 \end_layout
 
 \begin_layout Standard
@@ -7593,74 +9852,602 @@ This tutorial provides an introduction to Hobo’s automatically generated
  We will show you where to find them and how to make a simple edit to change
  how navigation tabs are displayed.
  We will explore this more deeply in Chapter 4.
- Topics Locate Rapid directories Edit the navigation tab Tutorial Application:
- one_table Steps 1.
- Find Hobo’s auto-generated tags.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Topics 
+\end_layout
+
+\begin_layout Itemize
+Locate Rapid directories 
+\end_layout
+
+\begin_layout Itemize
+Edit the navigation tab 
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one_table
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Steps 
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Find Hobo’s auto-generated tags.
+\end_layout
+
+\end_inset
+
  Open up the views directory and navigate to the rapid directory by following
- this tree: views/taglibs/auto/rapid.
- You will see three files called: pages.dryml, forms.dryml, and cards.dryml.
+ this tree: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/auto/rapid
+\end_layout
+
+\end_inset
+
+.
+ You will see three files called: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+.
  It is here that Hobo keeps its default definition of the tags its uses
  to generate view templates.
- 2.
- Open the pages.dryml.
- file.
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Open the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ file
+\end_layout
+
+\end_inset
+
+.
  Take a quick look through this file and you will see tag definitions such
- as: <def tag="main-nav"> .
+ as: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="main-nav"> .
  .
  .
- <def tag="index-page" for="Recipe"> <def tag="new-page" for="Recipe"> <def
- tag="show-page" for="Recipe"> <def tag="edit-page" for="Recipe"> Notice
- how, except for the <main-nav> tag these correspond to the actions of Hobo
- Controller action summary above in Tutorial 5.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+<def tag="index-page" for="Recipe"> 
+\end_layout
+
+\begin_layout LyX-Code
+<def tag="new-page" for="Recipe"> 
+\end_layout
+
+\begin_layout LyX-Code
+<def tag="show-page" for="Recipe"> 
+\end_layout
+
+\begin_layout LyX-Code
+<def tag="edit-page" for="Recipe"> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice how, except for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<main-nav>
+\end_layout
+
+\end_inset
+
+ tag these correspond to the actions of Hobo Controller action summary above
+ in Tutorial 5.
  You will further note that these are just the actions that require a view
  (remember index means list).
  The other actions, create, update, and destroy only needed a hyperlink.
  We are only mentioning this now to pique your curiosity for Chapter 4 where
  you will delve deeply into Hobo’s way of creating and editing view templates.
- 3.
- Edit the <main-nav> tag.
- Copy the following code and paste it into your views/taglibs/application.dryml
+ 
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<main-nav>
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\end_inset
+
+.
+ Copy the following code and paste it into your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/application.dryml
+\end_layout
+
+\end_inset
+
  file.
- Hobo automatically uses code in this file instead of what it finds in pages.drym
-l.
- In other words, application.dryml overrides pages.dryml and further makes
- it available to the entire application.
- <def tag="main-nav"> <navigation class="main-nav" merge-attrs param="default">
- <nav-item href="#{base_url}/">Home</nav-item> <nav-item with="&Recipe"><ht
- key="recipe.nav_item" count="100"><model-name-human count="100"/></ht></nav-item
-> </navigation> </def> 5.
- Rename a Navigation Tab.
+ Hobo automatically uses code in this file instead of what it finds in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ In other words, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ overrides 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ and further makes it available to the entire application.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="main-nav">
+\end_layout
+
+\begin_layout LyX-Code
+  <navigation class="main-nav" merge-attrs 
+\end_layout
+
+\begin_layout LyX-Code
+          param="default">
+\end_layout
+
+\begin_layout LyX-Code
+    <nav-item href="#{base_url}/">Home</nav-item>
+\end_layout
+
+\begin_layout LyX-Code
+    <nav-item with="&Recipe">
+\end_layout
+
+\begin_layout LyX-Code
+      <ht key="recipe.nav_item" count="100">
+\end_layout
+
+\begin_layout LyX-Code
+        <model-name-human count="100"/>
+\end_layout
+
+\begin_layout LyX-Code
+      </ht>
+\end_layout
+
+\begin_layout LyX-Code
+    </nav-item>
+\end_layout
+
+\begin_layout LyX-Code
+  </navigation>
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5.
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+ Rename a Navigation Tab
+\end_layout
+
+\end_inset
+
+.
  By convention, Hobo names tabs, other than the Home tab with the plural
  of the model name.
  In this case, that is ‘Recipes’ Let’s try renaming this to ‘My Recipes’.
- There are a couple of ways to do this: Use Hobo’s i18n module to specify
- a new value for the recipe.nav_item key Override the main-nav tag in application.
-dryml and rewrite it to specify ‘My Recipes’ as the Recipe tab label The
- preferred way of doing this is the first option and specify a new value
- for the recipe.nav_item key, the reason for this is that this maintains
- the application’s ability to handle multiple languages.
- If we overrode the main-nav tag in application.dryml, this would be a ‘hard-code
-d’ solution and would always show ‘My Recipes’ regardless of the current
- locale/language.
- Just add the following to your config/locales/app.en.yml file: en: recipe:
- nav_item: "My Recipes" Refresh your browser and you will see a renamed
- tab:
+ There are a couple of ways to do this: 
+\end_layout
+
+\begin_layout Itemize
+Use Hobo’s i18n module to specify a new value for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe.nav_item
+\end_layout
+
+\end_inset
+
+ key 
+\end_layout
+
+\begin_layout Itemize
+Override the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+main-nav
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ and rewrite it to specify ‘My Recipes’ as the Recipe tab label 
+\end_layout
+
+\begin_layout Standard
+The preferred way of doing this is the first option and specify a new value
+ for the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe.nav_item
+\end_layout
+
+\end_inset
+
+ key, the reason for this is that this maintains the application’s ability
+ to handle multiple languages.
+ If we overrode the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+main-nav
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+, this would be a ‘hard-coded’ solution and would always show ‘My Recipes’
+ regardless of the current locale/language.
+ 
+\end_layout
+
+\begin_layout Standard
+Just add the following to your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/locales/app.en.yml
+\end_layout
+
+\end_inset
+
+ file:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+en: 
+\end_layout
+
+\begin_layout LyX-Code
+  recipe: 
+\end_layout
+
+\begin_layout LyX-Code
+    nav_item: "My Recipes" 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Refresh your browser and you will see a renamed tab:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure97.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Customizing the name of a tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 6.
- Remove the Home Tab.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Remove the Home Tab
+\end_layout
+
+\end_inset
+
+.
  Instead of deleting the Home tab, just comment it out by surrounding it
  with <!-- ...-->.
- Note: Since view files are essentially HTML and not Ruby code, you use
- the HTML commenting syntax instead of the Ruby comment syntax.
+ 
 \end_layout
 
 \begin_layout Standard
-<def tag="main-nav"> <navigation class="main-nav" merge-attrs> <!--<nav-item
- href="#{base_url}/">Home</nav-item>--> <nav-item with="&Recipe"><ht key="recipe.
-nav_item" count="100"><model-name-human count="100"/></ht></nav-item> </navigati
-on> </def>
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Since view files are essentially HTML and not Ruby code, you use the
+ HTML commenting syntax instead of the Ruby comment syntax.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="main-nav">
+\end_layout
+
+\begin_layout LyX-Code
+	<navigation class="main-nav" merge-attrs>
+\end_layout
+
+\begin_layout LyX-Code
+		<!--<nav-item href="#{base_url}/">Home</nav-item>-->
+\end_layout
+
+\begin_layout LyX-Code
+		<nav-item with="&Recipe">
+\end_layout
+
+\begin_layout LyX-Code
+<ht key="recipe.nav_item" count="100">
+\end_layout
+
+\begin_layout LyX-Code
+        <model-name-human count="100"/>
+\end_layout
+
+\begin_layout LyX-Code
+      </ht>
+\end_layout
+
+\begin_layout LyX-Code
+    </nav-item>
+\end_layout
+
+\begin_layout LyX-Code
+  </navigation>
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7668,17 +10455,119 @@ Now refresh your browser and you will see the Home tab has been removed:
 \end_layout
 
 \begin_layout Standard
-7.
- Reset the tabs.
- Since editing the application.dryml file will interfere with future tutorials,
- delete the code you copied above.
- <def tag="main-nav"> <navigation class="main-nav" merge-attrs> <!--<nav-item
- href="#{base_url}/">Home</nav-item>--> <nav-item with="&Recipe"><ht key="recipe.
-nav_item" count="100"><model-name-human count="100"/></ht></nav-item> </navigati
-on> </def>
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure98.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Removing the default Home tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+7.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Reset the tabs.
+\end_layout
+
+\end_inset
+
+ Since editing the application.dryml file will interfere with future tutorials,
+ delete the code you copied above.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<def tag="main-nav"> 
+\end_layout
+
+\begin_layout LyX-Code
+  <navigation class="main-nav" merge-attrs>       
+\end_layout
+
+\begin_layout LyX-Code
+<!--<nav-item href="#{base_url}/">Home</nav-item>--> 
+\end_layout
+
+\begin_layout LyX-Code
+   <nav-item with="&Recipe">
+\end_layout
+
+\begin_layout LyX-Code
+    <ht key="recipe.nav_item" count="100">
+\end_layout
+
+\begin_layout LyX-Code
+      <model-name-human count="100"/>
+\end_layout
+
+\begin_layout LyX-Code
+    </ht>
+\end_layout
+
+\begin_layout LyX-Code
+   </nav-item> 
+\end_layout
+
+\begin_layout LyX-Code
+ </navigation> 
+\end_layout
+
+\begin_layout LyX-Code
+</def>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Tutorial 7 – Model Relationships: Part 1 
 \end_layout
 
@@ -7688,31 +10577,133 @@ You will learn how to create a new model that is related to another table.
  linked to a foreign key in order to select values.
  You will see how Hobo automatically creates a drop-down control to select
  values that you have entered.
- You will also make some controller action edits [and some permissions changes]
- to refine the user interface.
- More specifically, you will add a new model to hold the names of countries
- that a user will select from the New Recipe page.
- The application will identify the foreign key for that country and place
- it in the recipes table.
- Topics Model relationships Foreign keys Drop-down list boxes
 \end_layout
 
 \begin_layout Standard
-Tutorial Application: one_table Steps
+You will also make some controller action edits [and some permissions changes]
+ to refine the user interface.
+ 
+\end_layout
+
+\begin_layout Standard
+More specifically, you will add a new model to hold the names of countries
+ that a user will select from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+New Recipe
+\end_layout
+
+\end_inset
+
+ page.
+ The application will identify the foreign key for that country and place
+ it in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes
+\end_layout
+
+\end_inset
+
+ table.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Topics 
+\end_layout
+
+\begin_layout Itemize
+Model relationships 
+\end_layout
+
+\begin_layout Itemize
+Foreign keys 
+\end_layout
+
+\begin_layout Itemize
+Drop-down list boxes
+\end_layout
+
+\begin_layout Subsubsection*
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+one_table
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Steps
 \end_layout
 
 \begin_layout Standard
 1.
- Copy the Application.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Copy the Application.
+\end_layout
+
+\end_inset
+
  If you would like to preserve your application in its state as of the end
  of Tutorial 6, you may wish to copy the application and work on the new
  version.
  Copy the entire application directory and paste it into a folder called
- two_table in your tutorials directory.
- To change the application name, make the following change to config/application.
-rb: Figure 75: Changing the Application Name Shut down the web server by
- issuing a <control-c> in the command window where you issued the rails
- server command.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+two_table
+\end_layout
+
+\end_inset
+
+ in your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tutorials 
+\end_layout
+
+\end_inset
+
+directory.
+ 
+\end_layout
+
+\begin_layout Standard
+To change the application name, make the following change to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/application.rb
+\end_layout
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+Figure 75: Changing the Application Name Shut down the web server by issuing
+ a <control-c> in the command window where you issued the rails server command.
  Restart the web server and you are ready to go.
  
 \backslash
