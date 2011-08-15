@@ -14411,8 +14411,20 @@ app/models/recipe.rb
 \end_inset
 
  file.
- Enter the code (in bold italics below) to tell Hobo explicitly to use categorie
-s as the child of recipes in its displays.
+ Enter the code (in 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+red italics
+\end_layout
+
+\end_inset
+
+ below) to tell Hobo explicitly to use categories as the child of recipes
+ in its displays.
  
 \end_layout
 
@@ -14474,21 +14486,19 @@ class Recipe < ActiveRecord::Base
   has_many :category_assignments, :dependent => :destroy
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout LyX-Code
+
+\color red
+  
+\color inherit
+
 \begin_inset Flex Emph
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Flex Strong
-status collapsed
 
-\begin_layout Plain Layout
+\color red
 children :categories
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -14570,15 +14580,14 @@ class Country < ActiveRecord::Base
   has_many :recipes 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Flex Strong
-status collapsed
-
-\begin_layout Plain Layout
+\begin_layout LyX-Code
+  
 \begin_inset Flex Emph
 status collapsed
 
 \begin_layout Plain Layout
+
+\color red
 children :recipes
 \end_layout
 
@@ -14587,13 +14596,8 @@ children :recipes
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout LyX-Code
-[ ...
+  [ ...
  ]
 \end_layout
 
@@ -14781,21 +14785,15 @@ class Category < ActiveRecord::Base
   has_many :category_assignments, :dependent => :destroy 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Code
+  
 \begin_inset Flex Emph
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Flex Strong
-status collapsed
 
-\begin_layout Plain Layout
+\color red
 children :recipes
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
