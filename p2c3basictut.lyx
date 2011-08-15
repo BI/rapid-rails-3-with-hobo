@@ -10702,42 +10702,276 @@ config/application.rb
 \end_layout
 
 \begin_layout Standard
-Figure 75: Changing the Application Name Shut down the web server by issuing
- a <control-c> in the command window where you issued the rails server command.
- Restart the web server and you are ready to go.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure99.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Changing the Application Name 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Shut down the web server by issuing a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<control-c>
+\end_layout
+
+\end_inset
+
+ in the command window where you issued the rails server command.
  
+\end_layout
+
+\begin_layout Standard
+Restart the web server and you are ready to go.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
 \backslash
-two_table> rails server 2.
- Add drop down control for preset selections.
+two_table> rails server 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Add drop down control for preset selections.
+\end_layout
+
+\end_inset
+
  This tutorial is about adding associations between tables.
  In subsequent steps, we are going to show you how to create a new Countries
  table to store the values of country names to associate with your recipes.
  Hobo will take care of the user interface rendering, as you will soon see.
- Before we do that though, let’s demonstrate the simpler approach.
+ 
+\end_layout
+
+\begin_layout Standard
+Before we do that though, let’s demonstrate the simpler approach.
  This is the easy way to go for applications when you know at design time
  all the possible values of a category.
  In this case, you would not need to add the additional complexity of creating
  a table to maintain all values for countries.
  All that is needed is to specify in the model the list of possible values
- using the enum_string attribute of a field.
+ using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ attribute of a field.
  In this tutorial let’s assume the only values for country will be: American,
  French & Chinese.
- Your recipe.rb model code should now look like: class Recipe < ActiveRecord::Bas
-e
+ 
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+Your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe.rb
+\end_layout
+
+\end_inset
+
+ model code should now look like: 
 \end_layout
 
 \begin_layout Standard
-fields do title :string body :text #country :string country enum_string(:America
-n, :French, :Chinese) timestamps end We have used the enum_string field
- method to declare the possible values for country.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+class Recipe < ActiveRecord::Base
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+ hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+ fields do 
+\end_layout
+
+\begin_layout LyX-Code
+   title :string 
+\end_layout
+
+\begin_layout LyX-Code
+   body :text 
+\end_layout
+
+\begin_layout LyX-Code
+   #country :string 
+\end_layout
+
+\begin_layout LyX-Code
+   country enum_string(:American, :French, :Chinese)    
+\end_layout
+
+\begin_layout LyX-Code
+   timestamps 
+\end_layout
+
+\begin_layout LyX-Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have used the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ field method to declare the possible values for country.
  So we can easily see what we have done, we have commented out the old version
- of the country field declaration by preceding it with a ‘#’ (hash).
+ of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field declaration by preceding it with a ‘#’ (hash).
  Now refresh your browser and click ‘New Recipe’ and you will see a drop-down
  control that lets you select values for country.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure100.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using 
+\begin_inset Quotes eld
+\end_inset
+
+enum_string
+\begin_inset Quotes erd
+\end_inset
+
+ to create a drop-down list of Countries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10747,106 +10981,736 @@ This is fine as long as you don’t have to change the possible values.
  in your GUI.
  You will not have to write any queries.
  Hobo will take care of everything for you.
- 3.
- Remove drop down control.
+ 
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Remove drop down control.
+\end_layout
+
+\end_inset
+
  First let’s get back to where we started before adding a new table.
  Edit your code to look like this.
- class Recipe < ActiveRecord::Base
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Recipe < ActiveRecord::Base
 \end_layout
 
-\begin_layout Standard
-fields do title :string body :text country :string #country enum_string(:America
-n, :French, :Chinese) timestamps end
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  fields do 
+\end_layout
+
+\begin_layout Code
+    title :string 
+\end_layout
+
+\begin_layout Code
+    body :text 
+\end_layout
+
+\begin_layout Code
+    country :string 
+\end_layout
+
+\begin_layout Code
+    #country enum_string(:American, :French, :Chinese) 
+\end_layout
+
+\begin_layout Code
+    timestamps 
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The drop-down control will now be gone when you refresh your browser.
- Note: Remove the custom name attribute you created in the last tutorial
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Remove the custom name attribute you created in the last tutorial
  before continuing.
- 4.
- Creating model associations.
- In the next several steps, we will add a Country model, set up a relationship
- between the Country model and the recipe model and then run a Hobo migration
- to create the Countries table.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Creating model associations
+\end_layout
+
+\end_inset
+
+.
+ In the next several steps, we will add a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ model, set up a relationship between the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ model and the recipe model and then run a Hobo migration to create the
+ Countries table.
  This last step will also set up the foreign key in the Recipe model that
- will maintain the association to the index of the new Country model, country_id.
- When you look in the db/schema file to review the fields in your tables,
- you will not see the ID’s of any table listed but they are there.
+ will maintain the association to the index of the new Country model, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+When you look in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+db/schema
+\end_layout
+
+\end_inset
+
+ file to review the fields in your tables, you will not see the ID’s of
+ any table listed but they are there.
  Every time you create a table using a migration in Hobo, it will also create
  the table index with a name defined by convention to be the model name
- with ‘_ID’ appended.
- 5.
- Add a new model.
- We will use Hobo’s hobo:resource generator to create a new model with one
- field to store a country’s name.
+ with ‘
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+_ID
+\end_layout
+
+\end_inset
+
+’ appended.
+ 
+\end_layout
+
+\begin_layout Standard
+5.
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+ Add a new model
+\end_layout
+
+\end_inset
+
+.
+ We will use Hobo’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:resource
+\end_layout
+
+\end_inset
+
+ generator to create a new model with one field to store a country’s name.
  If you do not have a command prompt window open besides the window you
  used to start your web server, open a new one now and navigate to the root
  of the application.
- 
-\backslash
-two_table> Execute the following command from your command prompt.
- 
-\backslash
-two_table> hobo g resource country name:string Check the models directory
- and you should see a country.rb file with the following contents defining
- the Country name field.
- class Country < ActiveRecord::Base
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+two_table> 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-fields do name :string timestamps end If you look in the db/schema file,
- however, you will not see a countries table because you have not run the
- migration yet.
+Execute the following command from your command prompt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
+\backslash
+two_table> hobo g resource country name:string 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Check the models directory and you should see a country.rb file with the
+ following contents defining the Country name field.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Country < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  fields do 
+\end_layout
+
+\begin_layout Code
+    name :string 
+\end_layout
+
+\begin_layout Code
+    timestamps 
+\end_layout
+
+\begin_layout Code
+end 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you look in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+db/schema
+\end_layout
+
+\end_inset
+
+ file, however, you will not see a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+countries
+\end_layout
+
+\end_inset
+
+ table because you have not run the migration yet.
  Let’s define our relationships now.
- The hobo:resource generator also created some other files.
- An important one is the controller file called countries_controller.rb.
- Note that the class names (how Hobo refers to them) are CountriesController
- for the controller and Country for the model, which you can see, in the
- first line of code in the respective files.
- Note: The controller has a file and class name that is the plural of the
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo:resource
+\end_layout
+
+\end_inset
+
+ generator also created some other files.
+ An important one is the controller file called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+countries_controller.rb
+\end_layout
+
+\end_inset
+
+.
+ Note that the class names (how Hobo refers to them) are 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CountriesController
+\end_layout
+
+\end_inset
+
+ for the controller and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ for the model, which you can see, in the first line of code in the respective
+ files.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The controller has a file and class name that is the plural of the
  model name.
  The file names use underscores in the file names and removes them for class
  names.
- 6.
- Remove a field.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Remove a field
+\end_layout
+
+\end_inset
+
+.
  In preparation for setting up a relationship between the Recipe and Country
- models, you must delete the country field in the Recipe model.
+ models, you must delete the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field in the Recipe model.
  It will not be needed any more since it is replaced by the name field in
  the Country model.
- Open the recipe.rb model file and delete the country field from the fields…do
+ 
+\end_layout
+
+\begin_layout Standard
+Open the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe.rb
+\end_layout
+
+\end_inset
+
+ model file and delete the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields…do
+\end_layout
+
+\end_inset
+
  block at the beginning of the file.
  So you can see what you have done, it would easiest to comment it out.
- Change this: … fields do title :string body :text # country enum_string
- (:American, :French, :Chinese) timestamps end … 7.
- Add a belongs_to relationship.
- The Recipe model will have what is called a belongs_to relationship with
- the new Country model.
+ Change this: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+… 
+\end_layout
+
+\begin_layout LyX-Code
+  fields do 
+\end_layout
+
+\begin_layout LyX-Code
+    title :string 
+\end_layout
+
+\begin_layout LyX-Code
+    body :text 
+\end_layout
+
+\begin_layout LyX-Code
+    # country enum_string (:American, :French, :Chinese) 
+\end_layout
+
+\begin_layout LyX-Code
+    timestamps 
+\end_layout
+
+\begin_layout LyX-Code
+  end 
+\end_layout
+
+\begin_layout LyX-Code
+… 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+7.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Add a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ relationship
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model will have what is called a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ relationship with the new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ model.
  This relationship or association requires that every recipe have at the
  most one country associated with it.
- Add the belongs_to declaration just before the #permissions comment.
- Any belongs_to declarations must be added after the fields…do block.
- class Recipe < ActiveRecord::Base
+ Add the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ declaration just before the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+#permissions
+\end_layout
+
+\end_inset
+
+ comment.
+ Any 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ declarations must be added after the
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ fields…do
+\end_layout
+
+\end_inset
+
+ block.
+ 
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+class Recipe < ActiveRecord::Base
 \end_layout
 
-\begin_layout Standard
-fields do title :string body :text # country enum_string (:American, :French,
- :Chinese) timestamps end belongs_to :country 
+\begin_layout LyX-Code
+
 \end_layout
 
-\begin_layout Standard
-validates_presence_of :country …
+\begin_layout LyX-Code
+ hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+ fields do 
+\end_layout
+
+\begin_layout LyX-Code
+   title :string 
+\end_layout
+
+\begin_layout LyX-Code
+   body :text 
+\end_layout
+
+\begin_layout LyX-Code
+  # country enum_string (:American, :French, :Chinese) 
+\end_layout
+
+\begin_layout LyX-Code
+   timestamps 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  end 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+ belongs_to :country 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+ validates_presence_of :country 
+\end_layout
+
+\begin_layout LyX-Code
+…
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10855,142 +11719,1029 @@ We have also added validation so that the country is always specified for
 \end_layout
 
 \begin_layout Standard
-Note: It is useful to read belongs_to as ‘refers to’ to remind yourself
- that when this relationship is declared, it causes the creation of a key
- field named country_id in the recipes table to “refer to” the country table,
- which contains the name field.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: It is useful to read 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
 \end_layout
 
-\begin_layout Standard
-In the above belongs_to statement, :country is the name of a relationship.
+\end_inset
+
+ as ‘refers to’ to remind yourself that when this relationship is declared,
+ it causes the creation of a key field named 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes
+\end_layout
+
+\end_inset
+
+ table to “refer to” the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ table, which contains the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ field.
+\end_layout
+
+\begin_layout Plain Layout
+In the above 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ statement, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:country
+\end_layout
+
+\end_inset
+
+ is the name of a relationship.
  It is not the name of a field.
  Through its naming conventions, Hobo determines that the model to relate
- to is named Country.
+ to is named 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+.
  For the case when naming conventions fail, you can force the relationship
  as in the following code:
 \end_layout
 
-\begin_layout Standard
-belongs_to :country, :class_name=>"Some_other_model" 8.
- Add a has_many relationship.
- The Country model needs the inverse relationship to the belongs_to in the
- Recipe model:.
- class Country < ActiveRecord::Base
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+belongs_to :country, :class_name=>"Some_other_model" 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-fields do name :string timestamps end has_many :recipes ...
- When you learn to do more sophisticated programming, this feature of naming
+8.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Add a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ relationship
+\end_layout
+
+\end_inset
+
+.
+ The Country model needs the inverse relationship to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ in the Recipe model:.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Country < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  fields do 
+\end_layout
+
+\begin_layout Code
+    name :string 
+\end_layout
+
+\begin_layout Code
+    timestamps 
+\end_layout
+
+\begin_layout Code
+  end 
+\end_layout
+
+\begin_layout Code
+ has_many :recipes 
+\end_layout
+
+\begin_layout Code
+...
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When you learn to do more sophisticated programming, this feature of naming
  relationships, which Hobo inherits from Rails, will become a powerful tool.
  Unlike standard relational database relationships, this capability essentially
  adds meaning to the relationship.
- 9.
- Run the Hobo migration.
- Now you have done everything needed for Hobo’s intelligence to take over
- and create the new countries table and set up the proper foreign keys.
- Now, go to your command prompt and run the Hobo migration.
- By doing this you will allow Hobo to accomplish several things.
- Hobo will: Create the migration file for the new table, countries Remove
- the country field from the recipes table Set up a foreign key to handle
- the relationship between Recipe and Country Execute the migration to create
- the new database table, Countries.
- For every recipe record with a country entered, there will now be a country_id
- value written in the recipestable that corresponds to a country_id in a
- country record.
  
+\end_layout
+
+\begin_layout Standard
+9.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Run the Hobo migration
+\end_layout
+
+\end_inset
+
+.
+ Now you have done everything needed for Hobo’s intelligence to take over
+ and create the new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+countries
+\end_layout
+
+\end_inset
+
+ table and set up the proper foreign keys.
+ 
+\end_layout
+
+\begin_layout Standard
+Now, go to your command prompt and run the Hobo migration.
+ By doing this you will allow Hobo to accomplish several things.
+ Hobo will: 
+\end_layout
+
+\begin_layout Itemize
+Create the migration file for the new table, countries 
+\end_layout
+
+\begin_layout Itemize
+Remove the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes
+\end_layout
+
+\end_inset
+
+ table 
+\end_layout
+
+\begin_layout Itemize
+Set up a foreign key to handle the relationship between 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Execute the migration to create the new database table, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Countries
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For every recipe record with a country entered, there will now be a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+ value written in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe
+\end_layout
+
+\end_inset
+
+ stable that corresponds to a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+ in a country record.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
 \backslash
-two_table> hobo g migration You will get the following response: DROP or
- RENAME?: column recipes.country Rename choices: country_id Enter either
- 'drop country' or one of the rename choices: Hobo has noticed that there
- is an ambiguity you have created that needs to be resolved.
- There is both a country field and a Country model.
- It knows you need a foreign key, country_id, to relate to the Countries
+two_table> hobo g migration 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You will get the following response: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+DROP or RENAME?: column recipes.country 
+\end_layout
+
+\begin_layout LyX-Code
+Rename choices: country_id 
+\end_layout
+
+\begin_layout LyX-Code
+Enter either 'drop country' or one of the rename 
+\end_layout
+
+\begin_layout LyX-Code
+        choices: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hobo has noticed that there is an ambiguity you have created that needs
+ to be resolved.
+ There is both a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field and a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ model.
+ It knows you need a foreign key, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+, to relate to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Countries
+\end_layout
+
+\end_inset
+
  table.
- So it gives you a choice to rename country to country_id or drop the country
- field and create a new country_id field.
- Since country has real country names in it, not foreign key integer values,
- it is best to drop it and let Hobo create a new field for the foreign key.
- Enter ‘drop country’ (without quotation marks) in response.
- Next the migration will respond as follows: What now: [g]enerate migration,
- generate and [m]igrate now or [c]ancel? You should type ‘m’.
- Last it will prompt you to name the migration file: Filename [hobo_migration_3]
-: Just hit the ‘enter’ key and it will take the default name, hobo_migration_3.
- 10.
- Review the results of your migration.
- Let’s take a look at the database schema in db/schema.rb: ActiveRecord::Schema.de
-fine(:version => 20100313165708) do
+ So it gives you a choice to rename country to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+ or drop the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field and create a new 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+ field.
+ Since 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ has real country names in it, not foreign key integer values, it is best
+ to drop it and let Hobo create a new field for the foreign key.
+ 
 \end_layout
 
 \begin_layout Standard
-create_table "countries", :force => true do |t| t.string "name" t.datetime
- "created_at" t.datetime "updated_at" end
+Enter ‘drop country’ (without quotation marks) in response.
+ 
 \end_layout
 
 \begin_layout Standard
-create_table "recipes", :force => true do |t| t.string "title" t.text "body"
- t.datetime "created_at" t.datetime "updated_at" t.integer "country_id" end
+Next the migration will respond as follows: 
 \end_layout
 
 \begin_layout Standard
-add_index "recipes", ["country_id"], :name => "index_recipes_on_country_id"
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+What now: [g]enerate migration, generate and [m]igrate 
+\end_layout
+
+\begin_layout LyX-Code
+       now or [c]ancel? 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-create_table "users", :force => true do |t| t.string "crypted_password",
- :limit => 40 t.string "salt", :limit => 40 t.string "remember_token" t.datetime
- "remember_token_expires_at" t.string "name" t.string "email_address" t.boolean
- "administrator", :default => false t.datetime "created_at" t.datetime "updated_at
-" t.string "state", :default => "active" t.datetime "key_timestamp" end
+You should type ‘m’.
+ 
 \end_layout
 
 \begin_layout Standard
-add_index "users", ["state"], :name => "index_users_on_state"
+Last it will prompt you to name the migration file: 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+Filename [hobo_migration_3]: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Just hit the ‘enter’ key and it will take the default name, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_migration_3
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+10.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Review the results of your migration
+\end_layout
+
+\end_inset
+
+.
+ Let’s take a look at the database schema in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+db/schema.rb
+\end_layout
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+   ActiveRecord::Schema.define(:version => 20100313165708) do
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  create_table "countries", :force => true do |t|
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "name"
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "created_at"
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "updated_at"
+\end_layout
+
+\begin_layout LyX-Code
+  end
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  create_table "recipes", :force => true do |t|
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "title"
+\end_layout
+
+\begin_layout LyX-Code
+    t.text     "body" 
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "created_at"
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "updated_at"
+\end_layout
+
+\begin_layout LyX-Code
+    t.integer  "country_id"
+\end_layout
+
+\begin_layout LyX-Code
+  end
+\end_layout
+
+\begin_layout LyX-Code
+  add_index "recipes", ["country_id"], :name => "index_recipes_on_country_id"
+\end_layout
+
+\begin_layout LyX-Code
+  create_table "users", :force => true do |t|
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "crypted_password",          :limit => 40
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "salt",                      :limit => 40
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "remember_token"
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "remember_token_expires_at"
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "name"
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "email_address"
+\end_layout
+
+\begin_layout LyX-Code
+    t.boolean  "administrator",                           :default => false
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "created_at"
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "updated_at"
+\end_layout
+
+\begin_layout LyX-Code
+    t.string   "state",                                   :default => "active"
+\end_layout
+
+\begin_layout LyX-Code
+    t.datetime "key_timestamp"
+\end_layout
+
+\begin_layout LyX-Code
+  end
+\end_layout
+
+\begin_layout LyX-Code
+  add_index "users", ["state"], :name => "index_users_on_state"
+\end_layout
+
+\begin_layout LyX-Code
 end
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: Hobo automatically creates appropriate indexes for table relationships
  with foreign keys.
  We will discuss how to enhance or disable this feature in a later tutorial.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 11.
- Double-check the tab code before refreshing your browser.
- Back in Tutorial 6 #7, we asked you to delete the <navigation> tag.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Double-check the tab code before refreshing your browser
+\end_layout
+
+\end_inset
+
+.
+ Back in Tutorial 6 #7, we asked you to delete the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<navigation>
+\end_layout
+
+\end_inset
+
+ tag.
  Go back there and make sure you completed that step before refreshing your
  browser.
  You should see a new tab for Countries.
- 12.
- Review a few features of the UI.
+ 
+\end_layout
+
+\begin_layout Standard
+12.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Review a few features of the UI
+\end_layout
+
+\end_inset
+
+.
  Make sure you are signed in as the admin.
  Go to the Countries tab and click through to enter a few countries.
  
 \end_layout
 
 \begin_layout Standard
-Then go to the Recipes tab and click through to edit one of your recipes.
- You should now see a drop down box just as you saw when you used the enum_strin
-g option for your attribute:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure101.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Index page for Countries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The difference is that you are now actually selecting a country_id foreign
- key behind the scenes.
- Hobo takes care of querying the countries table (Country model) and displaying
- the actual country names.
+Then go to the Recipes tab and click through to edit one of your recipes.
+ You should now see a drop down box just as you saw when you used the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ option for your attribute:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure102.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Selecting a Country for a Recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The difference is that you are now actually selecting a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country_id
+\end_layout
+
+\end_inset
+
+ foreign key behind the scenes.
+ Hobo takes care of querying the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+countries
+\end_layout
+
+\end_inset
+
+ table (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ model) and displaying the actual country names.
  When you save this Recipe record, Hobo maintains all of the necessary related
  keys automatically.
- After you do the save, note that the Country value in the page is an active
- hyperlink: .
  
+\end_layout
+
+\begin_layout Standard
+After you do the save, note that the Country value in the page is an active
+ hyperlink:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure103.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Active link on Country name in the Recipe show page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10999,58 +12750,259 @@ If you click it, you will see a screen that allows you to edit the Country
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure104.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Country show page access from the Recipe show page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 You can edit a country record because you are logged in as the “administrator”.
- If you check the countries.rb file, you will see that the permission to
- edit the Country field is limited to the administrator.
+ If you check the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+countries.rb
+\end_layout
+
+\end_inset
+
+ file, you will see that the permission to edit the Country field is limited
+ to the administrator.
  This means that if you log in as a regular user, Hobo should not allow
  the edit.
  Log out from the administrator account and login as regular user.
- class Country < ActiveRecord::Base
-\end_layout
-
-\begin_layout Standard
-.
- .
- .
- # --- Permissions --- #
-\end_layout
-
-\begin_layout Standard
-def create_permitted? acting_user.administrator? end
-\end_layout
-
-\begin_layout Standard
-def update_permitted? acting_user.administrator? end
-\end_layout
-
-\begin_layout Standard
-.
- .
- .
- Now go to the Recipes tab, click on a recipe link and edit the recipe.
- Next click on the country name on the page.
- Now you see that the Edit Country link is no longer available.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Country < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+.
+ .
+ .
+ 
+\end_layout
+
+\begin_layout Code
+  # --- Permissions --- #
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  def create_permitted? 
+\end_layout
+
+\begin_layout Code
+    acting_user.administrator? 
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  def update_permitted? 
+\end_layout
+
+\begin_layout Code
+    acting_user.administrator? 
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+.
+ .
+ .
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now go to the Recipes tab, click on a recipe link and edit the recipe.
+ Next click on the country name on the page.
+ Now you see that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Edit Country
+\end_layout
+
+\end_inset
+
+ link is no longer available.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure105.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Only an Administrator is provided the Country Edit link
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 12.
- One-to-many relationship discussion.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+One-to-many relationship discussion
+\end_layout
+
+\end_inset
+
+.
  The relationship or association that you have just implemented is known
  as a one-to-many relationship.
  In this particular situation, we have an individual country that is related
  to many recipes.
- More specifically, there is one record in the Countries table with the
- name ‘American,’ but potentially many American recipes.
- Tutorial 8 – Model Relationships: Part II
+ More specifically, there is one record in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Countries
+\end_layout
+
+\end_inset
+
+ table with the name ‘American,’ but potentially many American recipes.
+ 
+\end_layout
+
+\begin_layout Section*
+Tutorial 8 – Model Relationships: Part II
 \end_layout
 
 \begin_layout Standard
 In this tutorial you will learn to implement many-to-many relationships.
  These relationships are useful, for example, in categorizing a model’s
  records.
- You will implement the relationship using the “has_many”, “has_many =>:through”
-, and “belongs_to” relationship declarations of Rails.
+ You will implement the relationship using the “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+”, “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many =>:through
+\end_layout
+
+\end_inset
+
+”, and “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+” relationship declarations of Rails.
  You will learn how Hobo establishes a direct relationship between model
  relationships and the features of the UI.
 \end_layout
@@ -11061,141 +13013,1079 @@ In terms of our tutorial application, you will be adding recipe categories
  You will implement an architecture where it is easy to invert the relationships
  so that you can display both which categories a recipe belongs to and which
  recipes are classified in a particular category.
- PREREQUISITES: Tutorials 1-6.
- Topics Many-to-many relationships Using the has_many, has_many =>:through,
- and belongs_to rails relationship declarations Fixing a UI assumption by
- Hobo when it is not the optimum.
+ 
 \end_layout
 
 \begin_layout Standard
-Tutorial Application: four_table Steps 1.
- Copy the Application.
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+PREREQUISITES
+\end_layout
+
+\end_inset
+
+: Tutorials 1-6.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Topics 
+\end_layout
+
+\begin_layout Itemize
+Many-to-many relationships 
+\end_layout
+
+\begin_layout Itemize
+Using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many =>:through
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ rails relationship declarations 
+\end_layout
+
+\begin_layout Itemize
+Fixing a UI assumption by Hobo when it is not the optimum.
+\end_layout
+
+\begin_layout Subsubsection
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Steps 
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Copy the Application
+\end_layout
+
+\end_inset
+
+.
  Just like you did in Tutorial 7, we suggest you copy your application from
  Tutorial 7 in order to easily go back to its state at the end of that tutorial.
  Shut down the web server by issuing a <Control-C> in the command window
  where you issued the rails server command.
- Then, do a copy in whatever operating system you are using.
- We have called the new application directory four_table.
+ 
+\end_layout
+
+\begin_layout Standard
+Then, do a copy in whatever operating system you are using.
+ We have called the new application directory 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+.
  Navigate to the new directory.
  Restart the web server and you are ready to go.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
 \backslash
-four_table> rails server You may wish to change the name of your application
- as displayed in the UI.
+four_table> rails server 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You may wish to change the name of your application as displayed in the
+ UI.
  Go to config/application.rb.
- Change the key config.hobo.app_name to read: config.hobo.app_name = "Four Table"
- Now refresh your browser and you will see the new name.
- 2.
- Create the models.
+ Change the key config.hobo.app_name to read: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+config.hobo.app_name = "Four Table" 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now refresh your browser and you will see the new name.
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create the models
+\end_layout
+
+\end_inset
+
+.
  We are going to add two new models to our original application and keep
- the original Recipe and Country models.
- The first will be a Category model and the second will be a CategoryAssignment
+ the original 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ models.
+ The first will be a Category model and the second will be a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignment
+\end_layout
+
+\end_inset
+
  model.
- CategoryAssignment will have the two fields, category_id and recipe_id
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignment
+\end_layout
+
+\end_inset
+
+ will have the two fields, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_id
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe_id
+\end_layout
+
+\end_inset
+
  that correspond to keys of the same name in the Category and Recipe models.
- Note: If you review the schema in the app/db directory, you will not see
- these fields listed in the Categories and Recipes table.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: If you review the schema in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/db
+\end_layout
+
+\end_inset
+
+ directory, you will not see these fields listed in the Categories and Recipes
+ table.
  They are the default keys for these tables.
  Rails does not list them.
- As you will see shortly, you do not have to worry about creating or naming
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As you will see shortly, you do not have to worry about creating or naming
  any of these fields, the Hobo generators will take care of it all for you.
- Go to your command prompt and issue the following two commands: 
+\end_layout
+
+\begin_layout Standard
+Go to your command prompt and issue the following two commands: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
 \backslash
 four_table> hobo g resource category name:string 
+\end_layout
+
+\begin_layout LyX-Code
+
 \backslash
-four_table> hobo g model category_assignment The first command will create
- both a controller and model, Category being the name of the model.
- The second will create a CategoryAssignment model but no controller.
- When you implement the relationships below, you will see that CategoryAssignmen
-t sits in between the Recipe and Category models.
- You do not need a CategoryAssignments controller because you will be accessing
- recipes and categories through these models directly and need no actions
- that pull data directly from the intermediary CategoryAssignment model.
- 3.
- Add relationships to your models.
+four_table> hobo g model category_assignment 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first command will create both a controller and model, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Category
+\end_layout
+
+\end_inset
+
+ being the name of the model.
+ The second will create a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignment
+\end_layout
+
+\end_inset
+
+ model but no controller.
+ 
+\end_layout
+
+\begin_layout Standard
+When you implement the relationships below, you will see that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignment
+\end_layout
+
+\end_inset
+
+ sits in between the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Category
+\end_layout
+
+\end_inset
+
+ models.
+ You do not need a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignments
+\end_layout
+
+\end_inset
+
+ controller because you will be accessing recipes and categories through
+ these models directly and need no actions that pull data directly from
+ the intermediary 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignment model
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Add relationships to your models.
+\end_layout
+
+\end_inset
+
  Edit the models as shown below to enter model relationships.
- Note: Hobo migrations rely on both the field declarations in your models
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Hobo migrations rely on both the field declarations in your models
  AND the relationship declarations.
  The relationship declarations allows Hobo to setup all the necessary keys
  to implement real model relationships.
- recipe.rb class Recipe < ActiveRecord::Base
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe.rb 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-fields do title :string body :text #country :string timestamps end belongs_to
- :country has_many :categories, :through => :category_assignments, :accessible
- => true has_many :category_assignments, :dependent => :destroy 
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Recipe < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  fields do
+\end_layout
+
+\begin_layout Code
+    title   :string
+\end_layout
+
+\begin_layout Code
+    body    :text
+\end_layout
+
+\begin_layout Code
+    #country :string
+\end_layout
+
+\begin_layout Code
+    timestamps
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  belongs_to :country
+\end_layout
+
+\begin_layout Code
+  has_many :categories, :through => :category_assignments,  
+\end_layout
+
+\begin_layout Code
+         :accessible => true
+\end_layout
+
+\begin_layout Code
+  has_many :category_assignments, :dependent => :destroy 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-category.rb class Category < ActiveRecord::Base
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category.rb 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Category < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+  fields do 
+\end_layout
+
+\begin_layout Code
+    name :string 
+\end_layout
+
+\begin_layout Code
+    timestamps 
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+has_many :recipes, :through => :category_assignments 
+\end_layout
+
+\begin_layout Code
+has_many :category_assignments, :dependent => :destroy 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-fields do name :string timestamps end
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignment.rb 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-has_many :recipes, :through => :category_assignments has_many :category_assignme
-nts, :dependent => :destroy category_assignment.rb class CategoryAssignment
- < ActiveRecord::Base
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class CategoryAssignment < ActiveRecord::Base
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  hobo_model # Don't put anything above this
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+  fields do 
+\end_layout
+
+\begin_layout Code
+    timestamps 
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
+belongs_to :category 
+\end_layout
+
+\begin_layout Code
+belongs_to :recipe 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+4.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Discussion of model relationships
+\end_layout
+
+\end_inset
+
+.
+ Note above that you used the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ relationships.
+ You further used a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ relationship with a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:through
+\end_layout
+
+\end_inset
+
+ option.
+ 
 \end_layout
 
 \begin_layout Standard
-fields do timestamps end
+Let’s start with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ relationship, which we used in Tutorial 7 and declared in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignment
+\end_layout
+
+\end_inset
+
+ model above.
+ 
 \end_layout
 
 \begin_layout Standard
-belongs_to :category belongs_to :recipe 4.
- Discussion of model relationships.
- Note above that you used the has_many and the belongs_to relationships.
- You further used a has_many relationship with a :through option.
- Let’s start with the belongs_to relationship, which we used in Tutorial
- 7 and declared in the CategoryAssignment model above.
- Recall that when you see belongs_to, think refers to, and you will understand
- that these declarations cause the category_id and recipe_id fields to be
- placed in the category_assignments table.
- The has_many :through statements instructs Hobo/Rails to setup the necessary
- functions to access a category from a recipe or a recipe from a category.
- The vanilla has_many statements set up the one to many relationships between
- the recipes table and the category_assignments tables and between the categorie
-s and category_assignments tables.
- The :dependent => destroy option makes sure that when either a recipe or
- category is deleted that the corresponding records in the category_assignments
+Recall that when you see 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+, think refers to, and you will understand that these declarations cause
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_id
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe_id
+\end_layout
+
+\end_inset
+
+ fields to be placed in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignments
+\end_layout
+
+\end_inset
+
+ table.
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+ statements instructs Hobo/Rails to setup the necessary functions to access
+ a category from a recipe or a recipe from a category.
+ The vanilla 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ statements set up the one to many relationships between the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes
+\end_layout
+
+\end_inset
+
+ table and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignments
+\end_layout
+
+\end_inset
+
+ tables and between the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignments
+\end_layout
+
+\end_inset
+
+ tables.
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:dependent => destroy
+\end_layout
+
+\end_inset
+
+ option makes sure that when either a recipe or category is deleted that
+ the corresponding records in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignments
+\end_layout
+
+\end_inset
+
  table are removed automatically too.
- 5.
- Run the hobo g migration.
+ 
+\end_layout
+
+\begin_layout Standard
+5.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Run the hobo g migration
+\end_layout
+
+\end_inset
+
+.
  Go to your command prompt and run the following.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+
 \backslash
-four_table> hobo g migration Remember to respond ‘m’ when prompted for migration
- and just press <enter> when prompted with the migration file name.
- Note: At this point, if your web server is still running from earlier tutorials
-, you need to terminate it and restart it.
+four_table> hobo g migration 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Remember to respond ‘m’ when prompted for migration and just press <enter>
+ when prompted with the migration file name.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: At this point, if your web server is still running from earlier tutorials,
+ you need to terminate it and restart it.
  Rails and Hobo will not recognize a new database table without doing so.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 
 \backslash
-four_table> rails server 6.
- Populate the new table.
- Open up your browser to http://localhost:3000/ and you should see the following
- (since you had copied over all the files from the Two Table application,
- your database came with you so you will not see the Register Administrator
- form):
+four_table> rails server 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Populate the new table.
+ 
+\end_layout
+
+\end_inset
+
+Open up your browser to 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/"
+
+\end_inset
+
+ and you should see the following (since you had copied over all the files
+ from the Two Table application, your database came with you so you will
+ not see the Register Administrator form):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure106.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Categories tab on the Four Table app
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11203,103 +14093,562 @@ Now go to the new Categories tab and enter in some food categories:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure107.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Index page for Categories
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 7.
- Adding new records to the relationships.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Adding new records to the relationships
+\end_layout
+
+\end_inset
+
+.
  Go to the Recipes tab.
  Click on one of the recipes and you should get this.
 \end_layout
 
 \begin_layout Standard
-Notice there is no category assignment.
- Then click Edit Recipe on the right.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure108.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Category Assignments
+\begin_inset Quotes erd
+\end_inset
+
+ on the Recipe show page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Now you can see a new drop-down box that lets you add categories to your
- recipe.
- Hobo has taken care of this for you by inferring that you need it from
- your model relationship declarations.
- Note: Here is a good example of the DRY (Don’t Repeat Yourself) notion
- playing out.
- If the necessary UI controls can be directly inferred from model structure,
- there should be no need to directly code it yourself.
- You may wish to use a different control but Hobo picks a reasonable one
- for you so you do not have to bother unless you want to.
- Take a look at the URL that activated the page.
- You will see that the URL is of the form for a “controller edit” action.
- If you need to remind yourself of the form look at the Hobo Controller
- Action Summary figure in Tutorial 5 step 6.
- Try adding a couple of categories and save the changes.
+Notice there is no category assignment.
  
 \end_layout
 
 \begin_layout Standard
-Here, on the Edit Recipe screen, you can see that Hobo is displaying the
- entries for the Recipe categories you have chosen to associate with the
- recipe, namely hot and sour.
+Then click 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Edit Recipe
+\end_layout
+
+\end_inset
+
+ on the right.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure109.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Assignment multiple Categories to a Recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now you can see a new drop-down box that lets you add 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ to your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipe
+\end_layout
+
+\end_inset
+
+.
+ Hobo has taken care of this for you by inferring that you need it from
+ your model relationship declarations.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Here is a good example of the DRY (Don’t Repeat Yourself) notion playing
+ out.
+ If the necessary UI controls can be directly inferred from model structure,
+ there should be no need to directly code it yourself.
+ You may wish to use a different control but Hobo picks a reasonable one
+ for you so you do not have to bother unless you want to.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Take a look at the URL that activated the page.
+ You will see that the URL is of the form for a “controller edit” action.
+ If you need to remind yourself of the form look at the Hobo Controller
+ Action Summary figure in Tutorial 5 step 6.
+ 
+\end_layout
+
+\begin_layout Standard
+Try adding a couple of categories and save the changes.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure110.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Edit page view of a Recipe with multiple Categories assigned
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, on the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Edit Recipe
+\end_layout
+
+\end_inset
+
+ screen, you can see that Hobo is displaying the entries for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe categories
+\end_layout
+
+\end_inset
+
+ you have chosen to associate with the recipe, namely hot and sour.
  So far, Hobo is doing just what we would expect.
- 8.
- Add information to the model in order to display the associations.
+ 
+\end_layout
+
+\begin_layout Standard
+8.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Add information to the model in order to display the associations
+\end_layout
+
+\end_inset
+
+.
  Hobo, before version 1.3, used ViewHints to indicate to the application
  how you would like to display related information on a model’s show page.
  To simplify things, this functionality has been moved into the model itself
  and ViewHints are no longer used as of Hobo 1.3.
  So now you modify the ActiveRecord model itself.
- Edit the app/models/recipe.rb file.
+ 
+\end_layout
+
+\begin_layout Standard
+Edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/models/recipe.rb
+\end_layout
+
+\end_inset
+
+ file.
  Enter the code (in bold italics below) to tell Hobo explicitly to use categorie
 s as the child of recipes in its displays.
- class Recipe < ActiveRecord::Base
+ 
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+class Recipe < ActiveRecord::Base
 \end_layout
 
-\begin_layout Standard
-fields do name :string body :text timestamps end
+\begin_layout LyX-Code
+  hobo_model # Don't put anything above this
 \end_layout
 
-\begin_layout Standard
-belongs_to :country has_many :categories, :through => :category_assignments,
- :accessible => true has_many :category_assignments, :dependent => :destroy
+\begin_layout LyX-Code
+  fields do
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+    name   :string
+\end_layout
+
+\begin_layout LyX-Code
+    body    :text
+\end_layout
+
+\begin_layout LyX-Code
+    timestamps
+\end_layout
+
+\begin_layout LyX-Code
+  end
+\end_layout
+
+\begin_layout LyX-Code
+  belongs_to :country
+\end_layout
+
+\begin_layout LyX-Code
+  has_many :categories, :through => 
+\end_layout
+
+\begin_layout LyX-Code
+     :category_assignments,  :accessible => true
+\end_layout
+
+\begin_layout LyX-Code
+  has_many :category_assignments, :dependent => :destroy
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
 children :categories
 \end_layout
 
-\begin_layout Standard
-[ ...
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+  [ ...
  ]
 \end_layout
 
-\begin_layout Standard
-Now edit country.rb:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Now edit 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country.rb
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 class Country < ActiveRecord::Base
 \end_layout
 
-\begin_layout Standard
-hobo_model # Don't put anything above this
+\begin_layout LyX-Code
+
 \end_layout
 
-\begin_layout Standard
-fields do name :string timestamps end
+\begin_layout LyX-Code
+  hobo_model # Don't put anything above this
 \end_layout
 
-\begin_layout Standard
-has_many :recipes children :recipes
+\begin_layout LyX-Code
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
+  fields do 
+\end_layout
+
+\begin_layout LyX-Code
+    name :string 
+\end_layout
+
+\begin_layout LyX-Code
+    timestamps 
+\end_layout
+
+\begin_layout LyX-Code
+  end
+\end_layout
+
+\begin_layout LyX-Code
+  has_many :recipes 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+children :recipes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
 [ ...
  ]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now refresh your browser and choose a recipe to view:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure111.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the Hobo 
+\begin_inset Quotes eld
+\end_inset
+
+children
+\begin_inset Quotes erd
+\end_inset
+
+ declaration to enhance the view of related records
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11309,29 +14658,208 @@ If you wish to see all the recipes, which are ‘hot’, you would click on
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure112.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Show page for a Category before using ViewHints
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Now let’s enhance this view.
- Edit app/models/category.rb: Enter the code (in italics and bold below)
- to tell Hobo explicitly to use recipes as the child of categories in its
- displays.
- class Category < ActiveRecord::Base
+ Edit 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/models/category.rb
+\end_layout
+
+\end_inset
+
+: 
 \end_layout
 
 \begin_layout Standard
-hobo_model # Don't put anything above this
+Enter the code (in italics and bold below) to tell Hobo explicitly to use
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+recipes
+\end_layout
+
+\end_inset
+
+ as the child of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ in its displays.
+ 
 \end_layout
 
 \begin_layout Standard
-fields do name :string timestamps end
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+class Category < ActiveRecord::Base
 \end_layout
 
-\begin_layout Standard
-has_many :recipes, :through => :category_assignments has_many :category_assignme
-nts, :dependent => :destroy children :recipes
+\begin_layout Code
+  hobo_model # Don't put anything above this
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+  fields do 
+\end_layout
+
+\begin_layout Code
+    name :string 
+\end_layout
+
+\begin_layout Code
+    timestamps 
+\end_layout
+
+\begin_layout Code
+  end
+\end_layout
+
+\begin_layout Code
+  has_many :recipes, :through => :category_assignments     
+\end_layout
+
+\begin_layout Code
+  has_many :category_assignments, :dependent => :destroy 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+children :recipes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
 [ ...
- ] Refresh your browser.
+ ] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Refresh your browser.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure113.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Category page view after adding the ViewHints 
+\begin_inset Quotes eld
+\end_inset
+
+children :recipes
+\begin_inset Quotes erd
+\end_inset
+
+ declaration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11341,22 +14869,127 @@ Now you can see all of the “children” of the category “Hot” on the Categ
 
 \begin_layout Standard
 9.
- Comments on the many-to-many relationship.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Comments on the many-to-many relationship
+\end_layout
+
+\end_inset
+
+.
  Now let’s review how you got this all to work.
  The end product is that you can see the categories associated with each
  recipe and the recipes associated with each category.
- In each case you can click through to look at individual categories or
- recipes and edit them if you wish.
- All of this is a result of having a recipe model related to a category_assignme
-nt model, which is, in turn, related to the category, model and vice versa.
- We will call the category_assignment model the intermediary model and the
- other two, “outer” models.
- You have created a symmetrical set of model relationships where the two
- outer models have has_many relationships with the intermediary model and
- has_many :through relationships with each other.
- Conversely, the intermediary model has a belongs_to relationship with each
- of the outer models.
  
+\end_layout
+
+\begin_layout Standard
+In each case you can click through to look at individual categories or recipes
+ and edit them if you wish.
+ 
+\end_layout
+
+\begin_layout Standard
+All of this is a result of having a recipe model related to a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignment
+\end_layout
+
+\end_inset
+
+ model, which is, in turn, related to the category, model and vice versa.
+ We will call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignment
+\end_layout
+
+\end_inset
+
+ model the intermediary model and the other two, “outer” models.
+ 
+\end_layout
+
+\begin_layout Standard
+You have created a symmetrical set of model relationships where the two
+ outer models have 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+ relationships with the intermediary model and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+ relationships with each other.
+ Conversely, the intermediary model has a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+ relationship with each of the outer models.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure114.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Model Relationships Structure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
