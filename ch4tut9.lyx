@@ -1335,185 +1335,496 @@ View of the taglibs/auto/rapid folder
 \end_layout
 
 \begin_layout Standard
-The next place Hobo goes is the views/taglibs/application.dryml file.
- The last place Hobo goes is the views/taglibs/auto/rapid/pages.dryml file.
+The next place Hobo goes is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/application.dryml
+\end_layout
+
+\end_inset
+
+ file.
+ The last place Hobo goes is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/auto/rapid/pages.dryml
+\end_layout
+
+\end_inset
+
+ file.
  
 \end_layout
 
 \begin_layout Standard
-You are going to put the recipe index tag definition in application.dryml
+You are going to put the recipe index tag definition in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
  causing Hobo to use level 2.
- So take the code above from pages.dryml beginning with 
+ So take the code above from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ beginning with 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="index-page" for="Recipe">
 \end_layout
 
-\begin_layout Standard
-and paste it into /views/taglibs/application.dryml file.
- Paste it below the following code in views/taglibs/application.dryml file.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+and paste it into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/views/taglibs/application.dryml
+\end_layout
+
+\end_inset
+
+ file.
+ Paste it below the following code in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/application.dryml
+\end_layout
+
+\end_inset
+
+ file.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <include src="rapid" plugin="hobo"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
 <include src="taglibs/auto/rapid/cards"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <include src="taglibs/auto/rapid/pages"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <include src="taglibs/auto/rapid/forms"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\end_layout
+
+\begin_layout Code
 <set-theme name="clean"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
 <def tag="index-page" for="Recipe">
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
 .
  .
  .
  
 \end_layout
 
-\begin_layout Standard
-	The line in bold italics above is the first line from your copied code.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+	The line in 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+bold italics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ above is the first line from your copied code.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure120.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the definition of index-page into the application.dryml file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: As you learn Hobo you might get confused between tag definitions and
  tags.
  This is often the case because Hobo does not need you to specifically invoke
- the tags that are defined in the Rapid files (pages.dryml,forms.dryml etc…)
- or in the application.dryml file.
+ the tags that are defined in the Rapid files (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml,forms.dryml
+\end_layout
+
+\end_inset
+
+ etc…) or in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file.
  If the tags have the default names “index”, “new”,” show”, or “edit”, then
  Hobo creates the template on the fly.
  You do not have to put tag code in a template yourself unless you do not
  want to use Hobo’s default template.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 First, refresh your browser to confirm that the UI has not changed.
- Simply copying a tag definition from pages.dryml to application.dryml with
- no changes to the tag definition should not change the page rendering.
+ Simply copying a tag definition from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ with no changes to the tag definition should not change the page rendering.
  It is a good idea to double check in case you copied something wrong so
  you won’t confuse a copy mistake with a coding mistake.
 \end_layout
 
 \begin_layout Standard
 Let’s make a minor change to convince you that this is what is happening.
- Note that the line in bold italics below is what has changed.
+ Note that the line in 
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+red italics
+\end_layout
+
+\end_inset
+
+
+\color inherit
+ below is what has changed.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="index-page" for="Recipe">
 \end_layout
 
-\begin_layout Standard
-  <page merge title="#{ht 'recipe.index.title', :default=>[model.model_name.human(:c
-ount=>100)] }">
+\begin_layout Code
+  <page merge title="#{ht 'recipe.index.title', 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+:default=>[model.model_name.human(:count=>100)] }">
+\end_layout
+
+\begin_layout Code
     <body: class="index-page recipe" param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <content: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <header param="content-header">
 \end_layout
 
-\begin_layout Standard
-        <h2 param="heading">
+\begin_layout Code
+        
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<h2 param="heading">
 \end_layout
 
-\begin_layout Standard
-          My Recipes
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-        </h2>
+\begin_layout Code
+
+\color red
+          
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+My Recipes
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
+
+\color red
+        
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+</h2>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
         <p param="count" if>
 \end_layout
 
-\begin_layout Standard
-          <ht key="recipe.collection.count" count="&this.size">
+\begin_layout Code
+          <ht key="recipe.collection.count" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+                count="&this.size">
+\end_layout
+
+\begin_layout Code
             <count summary/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         </p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </header>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section param="content-body">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <a action="new" to="&model" param="new-link">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           <ht key="recipe.actions.new">New Recipe</ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         </a>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <page-nav param="top-page-nav"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <collection param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <page-nav param="bottom-page-nav"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1522,7 +1833,40 @@ Now refresh your browser and you will see that Hobo has changed the template
 \end_layout
 
 \begin_layout Standard
-Figure 98: Page view of "My Recipes" after modifying the <index-page> tag
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure121.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of "My Recipes" after modifying the <index-page> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1535,31 +1879,107 @@ Let us describe what happened.
  
 \end_layout
 
-\begin_layout Standard
-Step 1: Hobo looked for a template in the views/recipes/ directory called
- index.dryml.
+\begin_layout Itemize
+Step 1: Hobo looked for a template in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes/
+\end_layout
+
+\end_inset
+
+ directory called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
-\begin_layout Standard
-Step 2: Since views/recipes/index.dryml did not exist, Hobo next looked in
- views/taglib/application.dryml where it found the tag definition for the
- index page.
+\begin_layout Itemize
+Step 2: Since 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes/index.dryml
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ did not exist, Hobo next looked in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglib/application.dryml
+\end_layout
+
+\end_inset
+
+ where it found the tag definition for the index page.
+\end_layout
+
+\begin_layout Itemize
 Step 3: Hobo used this tag definition to generate the contents of the “index”
  page.
 \end_layout
 
 \begin_layout Standard
-5.	Change the index page(method 2).
+5.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Change the index page(method 2)
+\end_layout
+
+\end_inset
+
+.
  If you want to change the index page directly, you can create a new file
- in the views/recipes directory called index.dryml.
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes
+\end_layout
+
+\end_inset
+
+ directory called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-	We haven’t given you enough information for you to build your own index.dryml
+	We haven’t given you enough information for you to build your own 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
  template using Hobo’s tag library yet.
   We said above that Hobo will look there first for a page to render when
  the index action is invoked.
@@ -1568,172 +1988,617 @@ Step 3: Hobo used this tag definition to generate the contents of the “index�
 
 \begin_layout Standard
 So if you place an empty file here, you get a blank page rendered.
- Go ahead and create a file called index.dryml in the views/recipes directory.
+ Go ahead and create a file called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes
+\end_layout
+
+\end_inset
+
+ directory.
  Confirm for yourself that you get a blank page.
 \end_layout
 
 \begin_layout Standard
 Now let’s do something a little more useful.
- Add the single line of code below to the index.dryml file: 
+ Add the single line of code below to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+ file: 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <index-page/> 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure122.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the <index-page/> tag to index.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: The Hobo tag syntax is just like you would expect from HTML or XML.
- The code <index-page/> is equivalent to <index-page></index-page>.
+ The code 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page/>
+\end_layout
+
+\end_inset
+
+ is equivalent to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page></index-page>
+\end_layout
+
+\end_inset
+
+.
  Watch your placement of “/”.
  It was our most frequent error when we started with DRYML.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now refresh your browser and you will see the same page rendered as in Step
  4.
- What has happened is that Hobo has checked in the views/recipes directory
- for a file called index.dryml, found one and rendered it.
- When it encountered the <index-page/> tag, it first checked in index.dryml
+ What has happened is that Hobo has checked in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes
+\end_layout
+
+\end_inset
+
+ directory for a file called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+, found one and rendered it.
+ When it encountered the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page/>
+\end_layout
+
+\end_inset
+
+ tag, it first checked in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
  for a tag definition.
  Not finding one there, it checked in application.dryml where it found one
- to use in rendering the <index-page/> tag in index.dryml.
- If it had not found a tag definition in application.dryml, Hobo would have
- gone back to pages.dryml for the default <index-page> definition.
+ to use in rendering the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page/>
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+.
+ If it had not found a tag definition in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+, Hobo would have gone back to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ for the default 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ definition.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: You can put a tag definition in either a view template file or in
  application.dryml but Hobo will ignore tags in application.dryml.
  The application.dryml file is for tag definitions only.
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-6.	Edit an individual record’s view in the index page.
+6.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Edit an individual record’s view in the index page.
+\end_layout
+
+\end_inset
+
  By now, you should have entered a couple of recipes.
  Be sure to do that if you have not.
 \end_layout
 
 \begin_layout Standard
-In Table 1 above, we indicated that the <index-page> tag calls <card> tags
- to render individual records.
- We can demonstrate this process by changing a <card> tag.
- Go to the cards.dryml file in the rapid directory and copy the <card> definition
- for recipe cards into the application.dryml file below the <index-page>
+In Table 1 above, we indicated that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag calls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tags to render individual records.
+ We can demonstrate this process by changing a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag.
+ Go to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+ file in the rapid directory and copy the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ definition for recipe cards into the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file below the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
  definition.
- Hobo will now use this version of the <card> tag when it uses the  <index-page>.
+ Hobo will now use this version of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag when it uses the  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="card" for="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	 <card class="recipe" param="default" merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <header: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <h4 param="heading"><a><name/></a></h4>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </header:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <body: param>
 \end_layout
 
-\begin_layout Standard
-      <ht key="category.collection.count" count="&this.categories.size">
+\begin_layout Code
+      <ht key="category.collection.count" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+           count="&this.categories.size">
+\end_layout
+
+\begin_layout Code
          <count:categories param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </card>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Again, we will not explain the detailed syntax of this tag yet.
- Let’s just make a simple change (in bold italics below) to demonstrate
- how Hobo works:
+ Let’s just make a simple change (in 
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+red italics
+\end_layout
+
+\end_inset
+
+
+\color inherit
+ below) to demonstrate how Hobo works:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="card" for="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	 <card class="recipe" param="default" merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <header: param>
 \end_layout
 
-\begin_layout Standard
-      <h4 param="heading"><a><name/></a>…test</h4>
+\begin_layout Code
+      
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<h4 param="heading"><a><name/></a>…test</h4>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
     </header:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <body: param>
 \end_layout
 
-\begin_layout Standard
-      <ht key="category.collection.count" count="&this.categories.size">
+\begin_layout Code
+      <ht key="category.collection.count" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+          count="&this.categories.size">
+\end_layout
+
+\begin_layout Code
          <count:categories param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </card>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now refresh your browser.
- Click the ‘Recipes’ tab to invoke the index action using the <index-page>
+ Click the ‘Recipes’ tab to invoke the index action using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
  tag.
 \end_layout
 
 \begin_layout Standard
-Figure 100: How a change to the <index-page> tag affects a collection
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure123.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+How a change to the <index-page> tag affects a collection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1741,26 +2606,112 @@ You see how each record displayed has been changed.
  You didn’t need to iterate through a loop.
  Iterating through all records in a collection is built in to Hobo’s tag
  processing.
- If you look back to Step 4 to see the <index-page> tag definition, you
- will see the following line:
+ If you look back to Step 4 to see the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag definition, you will see the following line:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <collection param/>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-It is here that the <card> tag is called.
- The <collection> tag refers to a collection of records from a data model.
+It is here that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag is called.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag refers to a collection of records from a data model.
  
 \end_layout
 
 \begin_layout Standard
-Now click on one of the recipe name hyperlinks, which will invoke the <show-page
-> tag in pages.dryml.
- Since you haven’t changed this tag and since it does not use the <card>
+Now click on one of the recipe name hyperlinks, which will invoke the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ Since you haven’t changed this tag and since it does not use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
  tag, you will NOT see ‘....test’ appended to recipe names as you do when Hobo
- lists recipes using the <index-page> tag.
+ lists recipes using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
@@ -1769,17 +2720,86 @@ To finish up this step, remove the text ‘....test’ to keep things looking ni
 \end_layout
 
 \begin_layout Standard
-6.	Editing a form.
- To modify a form, you can do something similar to editing the <card> tag
- above.
- In this case, the relevant page tag is the <new-page> tag in pages.dryml.
- It calls the <form> tag.
- You can see that in the forms.dryml file.
+6.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Editing a form
+\end_layout
+
+\end_inset
+
+.
+ To modify a form, you can do something similar to editing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag above.
+ In this case, the relevant page tag is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
+ It calls the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag.
+ You can see that in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+ file.
  
 \end_layout
 
 \begin_layout Standard
-7.	Editing navigation tabs and their order.
+7.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Editing navigation tabs and their order
+\end_layout
+
+\end_inset
+
+.
  As you have seen, Hobo provides a predefined tab-based user interface.
  By default, it arranges the tabs alphabetically by model.
  This is probably not what you want.
@@ -1789,84 +2809,207 @@ To finish up this step, remove the text ‘....test’ to keep things looking ni
 
 \begin_layout Standard
 This is readily done.
- Find the <main-nav> tag definition in the pages.dryml file and copy it into
- application.dryml right after the <app-name> tag definition.
+ Find the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<main-nav>
+\end_layout
+
+\end_inset
+
+ tag definition in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file and copy it into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ right after the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<app-name>
+\end_layout
+
+\end_inset
+
+ tag definition.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="main-nav">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <navigation class="main-nav" merge-attrs param="default">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="#{base_url}/">Home</nav-item>
 \end_layout
 
-\begin_layout Standard
-    <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-nam
-e-human count="100"/></ht></nav-item>
+\begin_layout Code
+    <nav-item with="&Category"><ht key="category.nav_item" 
 \end_layout
 
-\begin_layout Standard
-    <nav-item with="&Country"><ht key="country.nav_item" count="100"><model-name-
-human count="100"/></ht></nav-item>
+\begin_layout Code
+count="100"><model-name-human count="100"/></ht></nav-item>
 \end_layout
 
-\begin_layout Standard
-    <nav-item with="&Recipe"><ht key="recipe.nav_item" count="100"><model-name-hu
-man count="100"/></ht></nav-item>
+\begin_layout Code
+    <nav-item with="&Country"><ht key="country.nav_item" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+count="100"><model-name-human count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Code
+    <nav-item with="&Recipe"><ht key="recipe.nav_item" 
+\end_layout
+
+\begin_layout Code
+count="100"><model-name-human count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Code
   </navigation>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now let’s change the order of the tabs in your UI.
  Change the order of your tabs by moving the Recipes tab up to the position
- noted below in bold italics.
+ noted below in 
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+red italics
+\end_layout
+
+\end_inset
+
+
+\color inherit
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="main-nav">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <navigation class="main-nav" merge-attrs param="default">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <nav-item href="#{base_url}/">Home</nav-item>
 \end_layout
 
-\begin_layout Standard
-	   <nav-item with="&Recipe"><ht key="recipe.nav_item" count="100"><model-name-hu
-man count="100"/></ht></nav-item>
+\begin_layout Code
+	   
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<nav-item with="&Recipe"><ht key="recipe.nav_item" count="100"><model-name-human
+ count="100"/></ht></nav-item>
 \end_layout
 
-\begin_layout Standard
-    <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-nam
-e-human count="100"/></ht></nav-item>
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-    <nav-item with="&Country"><ht key="country.nav_item" count="100"><model-name-
-human count="100"/></ht></nav-item> 
+\begin_layout Code
+    <nav-item with="&Category"><ht key="category.nav_item" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+count="100"><model-name-human count="100"/></ht></nav-item>
+\end_layout
+
+\begin_layout Code
+    <nav-item with="&Country"><ht key="country.nav_item" 
+\end_layout
+
+\begin_layout Code
+count="100"><model-name-human count="100"/></ht></nav-item> 
+\end_layout
+
+\begin_layout Code
   </navigation>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1874,34 +3017,205 @@ Now refresh your browser and you will see the new tab order:
 \end_layout
 
 \begin_layout Standard
-8.	Editing an application name.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure124.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Changing the tab order for the main navigation menus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+8.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Editing an application name
+\end_layout
+
+\end_inset
+
+.
  If you want to change the name of the application that appears on all the
  UI web pages, you can do this easily also.
- The config.hobo.app_name key is found in the config/application.rb file and
- can be edited to change the application name.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config.hobo.app_name
+\end_layout
+
+\end_inset
+
+ key is found in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+config/application.rb
+\end_layout
+
+\end_inset
+
+ file and can be edited to change the application name.
   Make the following change, then restart the application, and then refresh
  your browser:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 config.hobo.app_name = "Four Tables, No Waiting"	
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure125.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Changing the application name with the app-name tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 9.
-  Summary.
+  
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Summary
+\end_layout
+
+\end_inset
+
+.
  The Hobo Rapid generator creates tag definitions and places them in the
  files of the Rapid directory.
- The programmer overrides, redefines, and defines new tags in application.dryml.
+ The programmer overrides, redefines, and defines new tags in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
  These definitions are available throughout the application.
  So far, you have just learned how to override tags.
 \end_layout
 
 \begin_layout Standard
-There are no tag calls in application.dryml except within a tag definition
- because application.dryml is NOT a template file (see it as a library file).
+There are no tag calls in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ except within a tag definition because 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ is NOT a template file (see it as a library file).
  The programmer invokes--that is--calls tags in template files placed in
- the view/<model_name> directories.
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+view/<model_name>
+\end_layout
+
+\end_inset
+
+ directories.
  
 \end_layout
 
@@ -1912,15 +3226,62 @@ The programmer may also override, redefine, or define a new tag within a
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: A new feature of Hobo 1.3 is that application tag definitions can be
- organized into multiple dryml files as long as they reside in the app/views/app
-lication directory.
+ organized into multiple dryml files as long as they reside in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/application
 \end_layout
 
-\begin_layout Standard
-So instead of having one large application.dryml file, you can organize your
- application specific tag definitions into multiple files and place them
- in the app/views/application directory.
+\end_inset
+
+ directory.
+\end_layout
+
+\begin_layout Plain Layout
+So instead of having one large 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file, you can organize your application specific tag definitions into multiple
+ files and place them in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/views/application
+\end_layout
+
+\end_inset
+
+ directory.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
