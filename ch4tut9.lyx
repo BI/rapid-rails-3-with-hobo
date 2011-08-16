@@ -104,19 +104,19 @@ The most important lesson you will learn in this tutorial is how Hobo associates
  actions: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 index for listing collections of records
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 show for displaying a single record
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 new for creating records
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 edit for editing a single record
 \end_layout
 
@@ -128,49 +128,117 @@ The other fundamental actions of saving new and edited records and deleting
  defines certain parts of the navigation interface.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Topics
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Edit an index page tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Edit a card tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Edit a form tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Edit the Navigation tags 
 \end_layout
 
-\begin_layout Standard
-Tutorial Application: four_table
+\begin_layout Subsubsection*
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
 Steps
 \end_layout
 
 \begin_layout Standard
-1.	Start your web server.
- We are going to continue on from Chapter 3 and use the four_table application.
- If you don’t have it started, navigate to your four_table directory, in
- tutorials/four_table, and start the application.
+1.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Start your web server
+\end_layout
+
+\end_inset
+
+.
+ We are going to continue on from Chapter 3 and use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+ application.
+ If you don’t have it started, navigate to your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+ directory, in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+tutorials/four_table
+\end_layout
+
+\end_inset
+
+, and start the application.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 
 \backslash
 four_table> rails server
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -178,57 +246,343 @@ You should now have a UI that looks like this:
 \end_layout
 
 \begin_layout Standard
-Now open your editor and navigate to the views/taglibs/auto/rapid directory:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure115.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Front page view of the Four Table application
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Figure 92: Folder view of the rapid DRYML files
+Now open your editor and navigate to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/auto/rapid
+\end_layout
+
+\end_inset
+
+ directory:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure116.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Folder view of the rapid DRYML files
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Take a look at this directory structure.
- Focus on the files in the views/taglibs/auto/rapid directory.
+ Focus on the files in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/auto/rapid
+\end_layout
+
+\end_inset
+
+ directory.
  The Rapid auto-generated tags are stored in these files.
- Hobo updates the three Rapid directory files, pages.dryml, forms.dryml and
- cards.dryml every time you run a hobo g migration.
+ Hobo updates the three Rapid directory files, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+ every time you run a hobo g migration.
  Don’t edit these files because Hobo will overwrite them.
   You can copy and paste pieces, and therefore override them, with code
- placed in either the application.dryml file or in a template file in a view
- directory named for a specific model, e.g., views/recipes.
+ placed in either the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file or in a template file in a view directory named for a specific model,
+ e.g., 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes
+\end_layout
+
+\end_inset
+
+.
  This will be explained below in this tutorial.
 \end_layout
 
 \begin_layout Standard
-2.	Familiarize yourself with the Rapid auto-generated files.
- Let’s look at the pages.dryml file first.
- Open up the views/taglibs/auto/rapid/pages.dryml file.
+2.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Familiarize yourself with the Rapid auto-generated files
+\end_layout
+
+\end_inset
+
+.
+ Let’s look at the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file first.
+ Open up the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/auto/rapid/pages.dryml
+\end_layout
+
+\end_inset
+
+ file.
  You will see a series of tag definitions.
  Look through the file.
- Notice that there is a Main Navigation section, a Recipes section and a
- Users section.
+ Notice that there is a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Main Navigation
+\end_layout
+
+\end_inset
+
+ section, a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ section and a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Users
+\end_layout
+
+\end_inset
+
+ section.
   There are also sections  related to the app’s other models.
 \end_layout
 
 \begin_layout Standard
-We will be talking about the Recipes and Navigation section in this tutorial.
+We will be talking about the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Navigation
+\end_layout
+
+\end_inset
+
+ section in this tutorial.
 \end_layout
 
 \begin_layout Standard
-Open up the forms.dryml and cards.dryml files and page through them.
+Open up the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+ files and page through them.
  You will see similar structures.
- You will see a section describing Recipes and the other models we have
- built so far.
+ You will see a section describing 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ and the other models we have built so far.
 \end_layout
 
 \begin_layout Standard
 Now that you have familiarized yourself with the three Rapid auto-generated
- tag files, go back to the pages.dryml file.
+ tag files, go back to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file.
  
 \end_layout
 
 \begin_layout Standard
-3.	Understanding the pages.dryml file.
- We are not going to explain every detail about what you see in pages.dryml
+3.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Understanding the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file
+\end_layout
+
+\end_inset
+
+.
+ We are not going to explain every detail about what you see in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
  at this point.
  In subsequent tutorials in this chapter, you will learn most of the key
  points.
@@ -238,54 +592,83 @@ Now that you have familiarized yourself with the three Rapid auto-generated
 \end_layout
 
 \begin_layout Standard
-Now focus in on the Recipes section.
+Now focus in on the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ section.
  You will see four tag definitions: <index-page>, <show-page>, <new-page>
  and <edit-page>:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <!-- ====== Recipe Pages ====== -->
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <def tag="index-page" for="Recipe"> .
  .
  .
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <def tag="new-page" for="Recipe"> .
  .
  .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <def tag="show-page" for="Recipe"> .
  .
  .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <def tag="edit-page" for="Recipe"> .
  .
  .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -295,112 +678,340 @@ The following table explains what each of these does.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="22col%">
+<column alignment="center" valignment="top" width="23col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="15col%">
+<column alignment="center" valignment="top" width="30col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
 Tag
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
 Meaning
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
 Calls
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
 Controller Action
 \end_layout
 
-\begin_layout Standard
-Route (URL)
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Route(URL)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 <index-page>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 renders a list of model records
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 Cards
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 index
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 */model_name(plural)
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 <new-page>
 \end_layout
 
-\begin_layout Standard
-renders a data entry page for a new record.
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+renders a data entry for a new record
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 Forms
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 new
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 */model_name/new
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 <show-page>
 \end_layout
 
-\begin_layout Standard
-renders a single record.
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+renders a single record
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 None
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 show
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 */model_name/ID-record_name
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 <edit-page>
 \end_layout
 
-\begin_layout Standard
-renders a data entry page for an existing record.
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+renders a data entry for an existing record
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 Forms
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 edit
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 */model_name/edit/ID-record_name
 \end_layout
 
-\begin_layout Standard
-Figure 93: Hobo Page Action Tag definitions
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Hobo Page Action Tag Definitions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-You cannot see it explicitly in the pages.dryml file, but the <index-page>
- tag calls the Recipe <card> tag.
+You cannot see it explicitly in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file, but the <index-page> tag calls the Recipe <card> tag.
  We will demonstrate this by editing them shortly.
  The <new-page> and <edit-page> tags call the Recipe <form> tags.
  
@@ -409,8 +1020,18 @@ You cannot see it explicitly in the pages.dryml file, but the <index-page>
 \begin_layout Standard
 These auto-generated tags, each of the four tags above as well as the <form>
  and <card> tags, are built from tags defined in the Rapid library of tags.
- The four page tags are built from the Rapid <page> tag, the form tag from
- the Rapid <form> tag and the card tag from the Rapid <card> tag.
+ The four 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+page
+\end_layout
+
+\end_inset
+
+ tags are built from the Rapid <page> tag, the form tag from the Rapid <form>
+ tag and the card tag from the Rapid <card> tag.
  
 \end_layout
 
@@ -438,26 +1059,175 @@ The controller action can be executed by navigating to the browser route
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note:  The asterisk (*) refers to the route URL for your app, which is usually
  http://localhost:3000 for Ruby on Rails development setups.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-4.	Edit the index page (method 1).
- Open up the pages.dryml file and look at the <index-page> tag definition.
+4.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Edit the index page (method 1)
+\end_layout
+
+\end_inset
+
+.
+ Open up the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ file and look at the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag definition.
  Here is what it looks like:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure117.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Hobo Rapid <index-page> tag definition in the pages.dryml file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 You invoke the index action by clicking on a tab with a particular model
- name, which is Recipes in this example.
+ name, which is 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ in this example.
  Go ahead and click the Recipes tab to remind yourself where you left off
  in Tutorial 6 of Chapter 3: 
 \end_layout
 
 \begin_layout Standard
-Note that the URL that generates the “Recipes Index” page, http://localhost:3000
-/recipes, has the form of an index action.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure118.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Recipes Index page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that the URL that generates the “Recipes Index” page, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes"
+
+\end_inset
+
+, has the form of an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index
+\end_layout
+
+\end_inset
+
+ action.
  (Refer to the Hobo Page Action Tag definitions figure earlier in this tutorial.)
  You can see three lines of text in the body of the tab beginning with the
  ‘Recipes’ title, then ‘There are 3 Recipes’, a ‘New Recipe’ hyperlink,
@@ -473,20 +1243,95 @@ There are three levels of overriding.
 
 \begin_layout Standard
 The first place Hobo looks to find the information it needs to render a
- view template corresponding to a particular model is the /views directory
- corresponding to that model.
+ view template corresponding to a particular model is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/views
+\end_layout
+
+\end_inset
+
+ directory corresponding to that model.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: Prior to Hobo 1.3, a view folder for each generated model was created.
   This is no longer the case.
  In the figure below, the categories, countries, and recipes folders were
  created manually.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-In this case, note that /views/recipes is empty.
+In this case, note that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/views/recipes
+\end_layout
+
+\end_inset
+
+ is empty.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure119.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+View of the taglibs/auto/rapid folder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
