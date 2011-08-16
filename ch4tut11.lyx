@@ -89,71 +89,232 @@ You will go to the next step in your understanding of DRYML.
  from the tags they are based on.
 \end_layout
 
-\begin_layout Standard
-Tutorial Application: four_table
+\begin_layout Subsubsection
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Topics
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Defining tags from tags using the merge tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Defining tags from tags using the extend tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Replacing tag parameters (not tag content)
 \end_layout
 
 \begin_layout Standard
-1.	Define a tag based on another tag: Method 1.
- In Tutorial 10, you learned how to define a tag called <messages> that
- output three lines of HTML.
- Now you will define a new tag based on <messages> called <more-messages>.
- Place the following code below the <messages> tag definition.
+1.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Define a tag based on another tag: Method 1
+\end_layout
+
+\end_inset
+
+.
+ In Tutorial 10, you learned how to define a tag called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ that output three lines of HTML.
+ Now you will define a new tag based on 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+.
+ Place the following code below the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag definition.
  (The order of tag definitions does not matter.
  This was just a recommendation for neatness.) 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="more-messages">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<messages merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<msg2: param>Message 2 Changed</msg2:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	</messages>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-What you have done here is to edit the <msg2:> parameter tag of the <messages>
+What you have done here is to edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg2:>
+\end_layout
+
+\end_inset
+
+ parameter tag of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
  tag so that it has different default content.
  By using the merge attribute, you have told Hobo to use everything from
- the <messages> tag except for the change.
+ the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag except for the change.
  Now let’s invoke this tag.
  Place the following code below your last code from the previous tutorial.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <more-messages/>
 \end_layout
 
+\end_inset
+
+	
+\end_layout
+
 \begin_layout Standard
-		
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure131.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the custom <more-messages> tag to front
+\backslash
+index.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -162,152 +323,524 @@ Refresh your browser to see the change the below.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure132.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page rendering with <more-messages>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: Later in this Chapter you will also learn how to add attributes to
  tags in addition to parameters.
  Merge means merge parameters AND attributes.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Remember that the text, ‘Message 1’ and ‘Message 3’ is the default text
- from the <messages> tag.
+ from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
 2.
- Define a tag based on another tag: Method 2.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Define a tag based on another tag: Method 2
+\end_layout
+
+\end_inset
+
+.
  In the last example, you learned how to define a new tag based on an old
  tag.
- The new tag is defined with a new name, <more-messages>.
+ The new tag is defined with a new name, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+.
  You cannot use the merge method to define a tag from a tag without changing
  the name.
 \end_layout
 
 \begin_layout Standard
-Go ahead and change <more-messages> to <messages> to convince yourself that
- you will get an error.
+Go ahead and change 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ to convince yourself that you will get an error.
 \end_layout
 
 \begin_layout Standard
 However, Hobo does have a way of preserving tag names while creating tags
  from tags.
  It is called extending a tag.
- It works basically the same way as merging tags, except it uses the <extend>
- tag instead of the <def> tag to define the new tag.
+ It works basically the same way as merging tags, except it uses the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ tag instead of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+ tag to define the new tag.
 \end_layout
 
 \begin_layout Standard
 Now let’s create an extended tag.
- We will begin by creating a new tag called <messagex> and then extend it
- using the same name.
+ We will begin by creating a new tag called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messagex>
+\end_layout
+
+\end_inset
+
+ and then extend it using the same name.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <def tag="messagex">
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <br/> <br/>
 \end_layout
 
-\begin_layout Standard
-	<ul>
+\begin_layout LyX-Code
+     <ul>
 \end_layout
 
-\begin_layout Standard
-		<li param="msg1">Message 1</li>
+\begin_layout LyX-Code
+        <li param="msg1">Message 1</li>
 \end_layout
 
-\begin_layout Standard
-		<li param="msg2">Message 2</li>
+\begin_layout LyX-Code
+        <li param="msg2">Message 2</li>
 \end_layout
 
-\begin_layout Standard
-		<li param="msg3">Message 3</li>
+\begin_layout LyX-Code
+        <li param="msg3">Message 3</li>
 \end_layout
 
-\begin_layout Standard
-	</ul>
+\begin_layout LyX-Code
+     </ul>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 <extend tag="messagex">
 \end_layout
 
-\begin_layout Standard
-	<old-messagex merge>
+\begin_layout LyX-Code
+    <old-messagex merge>
 \end_layout
 
-\begin_layout Standard
-		<msg2: param>Message 2 Extended</msg2:>
+\begin_layout LyX-Code
+       <msg2: param>Message 2 Extended</msg2:>
 \end_layout
 
-\begin_layout Standard
-	</old-messagex>
+\begin_layout LyX-Code
+    </old-messagex>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </extend>	
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Instead of placing the code above in front
+Instead of placing the code above in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+front
 \backslash
-.index.dryml, you need to put it in views/taglibs/application.dryml.
+.index.dryml
+\end_layout
+
+\end_inset
+
+, you need to put it in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/taglibs/application.dryml
+\end_layout
+
+\end_inset
+
+.
  Recall this will make the tag definition available throughout your application.
  But there is another reason for putting it here.
- You cannot use the <extend> tag in a view template, you can only use it
- within application.dryml.
+ You cannot use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ tag in a view template, you can only use it within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
   
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: To extend this tag and have the original one still available, you
  can use the Hobo “alias-of” parameter:
 \end_layout
 
-\begin_layout Standard
-     <def tag="new-messagex” alias-of="messagex"/>
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def tag="new-messagex” alias-of="messagex"/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 And then extend “new-messagex” with the functionality you need.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
- 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure133.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Extending the tag <messagex> in application.dryml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure134.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the extended <messagex> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Before trying this out, you should delete (or comment out) the code for
-  <more-messages> so you will not get confused.
+  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ so you will not get confused.
  
 \end_layout
 
 \begin_layout Standard
-In the code example above, we created a new tag <messagex> just like the
- old <messages> tag.
+In the code example above, we created a new tag 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messagex>
+\end_layout
+
+\end_inset
+
+ just like the old 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag.
  We then extended it so that it would look just like the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ tag from Step 1.
 \end_layout
 
 \begin_layout Standard
-<more-messages> tag from Step 1.
+Now call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messagex>
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+front/index.dryml
+\end_layout
+
+\end_inset
+
+ to confirm that it yields output like the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
-Now call the <messagex> tag in front/index.dryml to confirm that it yields
- output like the <more-messages> tag.
-\end_layout
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
-\begin_layout Standard
+\begin_layout LyX-Code
 	<messagex/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -315,82 +848,337 @@ You should see the following rendering:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure135.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of the next additions to <messagex>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 3.
-  Edit the merged tag in more ways.
- Let’s modify our <more-messages> tag of Step 1,  which is defined in front/inde
-x.dryml.
- Remove or comment out the <messagex> tag so you won’t get confused.
+  
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Edit the merged tag in more ways
+\end_layout
+
+\end_inset
+
+.
+ Let’s modify our 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ tag of Step 1,  which is defined in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+front/index.dryml
+\end_layout
+
+\end_inset
+
+.
+ Remove or comment out the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messagex>
+\end_layout
+
+\end_inset
+
+ tag so you won’t get confused.
 \end_layout
 
 \begin_layout Standard
 We are going to show you now that DRYML can do lots of things within the
  same tag definition with ease.
- First we will add a new parameter tag before the merge line to demonstrate
- that you do not have to have the merge line right after your <def> line.
+ First we will add a new parameter tag before the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+ line to demonstrate that you do not have to have the merge line right after
+ your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+ line.
  
 \end_layout
 
 \begin_layout Standard
 Next we will show you that you can put both parameter tags and non-parameter
- HTML after merge markup.
+ HTML after 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+ markup.
  Let’s do this in two steps.
 \end_layout
 
 \begin_layout Standard
-Edit your <more-messages> tag to look like the following:
-\end_layout
+Edit your 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
-<def tag="more-messages">
-\end_layout
-
-\begin_layout Standard
-	<br/><br/>
-\end_layout
-
-\begin_layout Standard
-	<li param="msg0">Message 0</li>
-\end_layout
-
-\begin_layout Standard
-	<messages merge>
-\end_layout
-
-\begin_layout Standard
-		<msg2: param>Message 2 changed in merge.</msg2:>
-\end_layout
-
-\begin_layout Standard
-	</messages>
-\end_layout
-
-\begin_layout Standard
-</def> 
-\end_layout
-
-\begin_layout Standard
-Make sure you call your <more-messages> tag and refresh your browser.
-\end_layout
-
-\begin_layout Standard
-Figure 115: Page view of the <more-messages> tag usage
-\end_layout
-
-\begin_layout Standard
-Let’s demonstrate that <msg0:> is a real parameter tag with the following
- code where you call the <more-messages> tag.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 <more-messages>
 \end_layout
 
-\begin_layout Standard
-	<msg0:> Message 0 changed with parameter tag.</msg0:>
+\end_inset
+
+ tag to look like the following:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<def tag="more-messages">
+\end_layout
+
+\begin_layout Code
+    <br/><br/>
+\end_layout
+
+\begin_layout Code
+
+\color red
+    <li param="msg0">Message 0</li>
+\end_layout
+
+\begin_layout Code
+    <messages merge>
+\end_layout
+
+\begin_layout Code
+        <msg2: param>Message 2 changed in merge.</msg2:>
+\end_layout
+
+\begin_layout Code
+    </messages>
+\end_layout
+
+\begin_layout Code
+</def> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Make sure you call your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ tag and refresh your browser.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure136.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of the <more-messages> tag usage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let’s demonstrate that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg0:>
+\end_layout
+
+\end_inset
+
+ is a real parameter tag with the following code where you call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<more-messages>
+\end_layout
+
+\begin_layout Code
+    <msg0:> Message 0 changed with parameter tag.</msg0:>
+\end_layout
+
+\begin_layout Code
 </more-messages> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure137.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of overriding the default message 0.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -399,80 +1187,213 @@ We have chosen this exercise to remind you that you have changed the text
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 You changed the third block of messages by changing the tag definition within
- a merge.
+ a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 You changed the second block (Message 0) by calling a parameter tag within
  a tag.
 \end_layout
 
 \begin_layout Standard
-Now let’s edit the <more-messages> definition after the merge is closed
- with </messages>.
+Now let’s edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ definition after the merge is closed with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+</messages>
+\end_layout
+
+\end_inset
+
+.
  We have added two lines of DRYML.
- The first is a parameter tag, <msg4:>.
+ The first is a parameter tag, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg4:>
+\end_layout
+
+\end_inset
+
+.
  The second is pure HTML without any parameterization.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="more-messages">
 \end_layout
 
-\begin_layout Standard
-	<li param="msg0">Message 0</li>
+\begin_layout Code
+   <li param="msg0">Message 0</li>
 \end_layout
 
-\begin_layout Standard
-	<messages merge>
+\begin_layout Code
+    <messages merge>
 \end_layout
 
-\begin_layout Standard
-		<msg2: param>Message 2 changed in merge.</msg2:>
+\begin_layout Code
+        <msg2: param>Message 2 changed in merge.</msg2:>
 \end_layout
 
-\begin_layout Standard
-	</messages>
+\begin_layout Code
+    </messages>
 \end_layout
 
-\begin_layout Standard
-	<li param="msg4">Message 4</li>
+\begin_layout Code
+    <li param="msg4">Message 4</li>
 \end_layout
 
-\begin_layout Standard
-	<li>No Parameter Here</li>
+\begin_layout Code
+    <li>No Parameter Here</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Now let’s invoke <more-messages> and change the default content of the <msg4:>
+Now let’s invoke 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<more-messages>
+\end_layout
+
+\end_inset
+
+ and change the default content of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg4:>
+\end_layout
+
+\end_inset
+
  parameter tag.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <more-messages>
 \end_layout
 
-\begin_layout Standard
-	<msg0:> Message 0 changed with parameter tag.</msg0:>
+\begin_layout Code
+  <msg0:> Message 0 changed with parameter tag.</msg0:>
 \end_layout
 
-\begin_layout Standard
-	<msg4:> Message 4 has changed with parameter tag too.</msg4:>
+\begin_layout Code
+   msg4:> Message 4 has changed with parameter tag 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+        too.</msg4:>
+\end_layout
+
+\begin_layout Code
 </more-messages> 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Figure 117: More parameter magic
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure138.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+More parameter magic
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
