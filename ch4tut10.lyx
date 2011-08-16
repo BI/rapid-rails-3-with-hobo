@@ -88,98 +88,279 @@ You will be introduced to the concept of a user-defined tag, called a DRYML
  The tutorial shows you how to make minor changes to the home page template
  by defining DRYML tags.
  You will also learn how to parameterize tags with the DRYML parameter attribute
-, param.
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Note: Be sure not to confuse the DRYML param with the Rails params object.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Be sure not to confuse the DRYML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+ with the Rails 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+ object.
  
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Topics
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Define a DRYML tag in the front/index.dryml template
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Call the DRYML tag in the front/index.dryml template
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Add a parameter to the DRYML tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Add an attribute to the DRYML tag
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Tutorial Application: four_table
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 Steps
 \end_layout
 
 \begin_layout Standard
-1.	Define a tag.
-  Open up the views/front/index.dryml file of the four_table application.
+1.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Define a tag
+\end_layout
+
+\end_inset
+
+.
+  Open up the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/front/index.dryml
+\end_layout
+
+\end_inset
+
+ file of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
+\end_layout
+
+\end_inset
+
+ application.
  This is Hobo’s home page.
 \end_layout
 
 \begin_layout Standard
 At the top of the file enter the following code.
- The <def> tag below is Hobo’s DRYML tag for defining a custom tag.
- The code below defines a <messages> tag.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+ tag below is Hobo’s DRYML tag for defining a custom tag.
+ The code below defines a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="messages">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<br/><br/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<ul>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<li >Message 1</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<li >Message 2</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<li >Message 3</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	</ul>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
-The entire markup between the <def> tags is standard HTML.
- When called, this <messages> tag will emit a three-line list.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-2.	Call the tag.
+The entire markup between the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+ tags is standard 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+HTML
+\end_layout
+
+\end_inset
+
+.
+ When called, this 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag will emit a three-line list.
+\end_layout
+
+\begin_layout Standard
+2.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Call the tag
+\end_layout
+
+\end_inset
+
+.
  Go to the line that reads:
 \end_layout
 
 \begin_layout Standard
-<h3>Congratulations! Your Hobo Rails App is up and running</h3>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<h3>Congratulations! Your Hobo Rails App is up and 
+\end_layout
+
+\begin_layout Code
+    running</h3>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -187,17 +368,102 @@ Add a line after this one so that it reads:
 \end_layout
 
 \begin_layout Standard
-<h3>Congratulations! Your Hobo Rails App is up and running</h3>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<h3>Congratulations! Your Hobo Rails App is up and 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+      running</h3>
+\end_layout
+
+\begin_layout Code
 <messages/>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: The correct syntax is to place the forward slash after the tag name
  when you use the tag as a single tag rather than in the form of an opening
  and closing tag with no content in between.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure126.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The 
+\backslash
+views
+\backslash
+front
+\backslash
+index.dryml file after the first modification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -205,10 +471,57 @@ Then refresh your browser:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure127.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Home page with the first set of custom messages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 One of the things that is different from Tutorial 1, is that you are now
  working both with a DRYML tag definition and with a DRYML tag.
  In the previous tutorial, you edited the tag definitions but you did not
- invoke a tag such as <index-page> explicitly.
+ invoke a tag such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ explicitly.
 \end_layout
 
 \begin_layout Standard
@@ -224,20 +537,59 @@ In this tutorial you will be defining new tags unknown to Hobo, so you of
 \end_layout
 
 \begin_layout Standard
-3.	Parameterize the tag.
- Change the following code in the <messages> tag definition from:
+3.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Parameterize the tag
+\end_layout
+
+\end_inset
+
+.
+ Change the following code in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag definition from:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 		<li >Message 1</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 		<li >Message 2</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 		<li >Message 3</li>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -245,15 +597,34 @@ In this tutorial you will be defining new tags unknown to Hobo, so you of
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 		<li param="msg1">Message 1</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 		<li param="msg2">Message 2</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 		<li param="msg3">Message 3</li>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -262,74 +633,294 @@ You have now created three parameters, which can be invoked in the following
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <msg1:>message text</msg1:> 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-<msg1:> is called a parameter tag.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg1:>
+\end_layout
+
+\end_inset
+
+ is called a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+parameter tag
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: The colon (:) suffix indicates that the tag is a defined parameter
  tag.
  Later you will learn that some parameter tags are defined for you in the
  Rapid library.
 \end_layout
 
-\begin_layout Standard
-4.	Use a parameter.
- Let’s invoke the <messages> tag but change the third message by addressing
- the <msg3:> parameter tag.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-<h3>Congratulations! Your Hobo Rails App is up and running</h3>
+4.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Use a parameter
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+.
+ Let’s invoke the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 <messages>
 \end_layout
 
-\begin_layout Standard
-	<msg3:>This is the third message passed as a parameter.</msg3>
+\end_inset
+
+ tag but change the third message by addressing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg3:>
+\end_layout
+
+\end_inset
+
+ parameter tag.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<h3>Congratulations! Your Hobo Rails App is up and 
+\end_layout
+
+\begin_layout Code
+       running</h3>
+\end_layout
+
+\begin_layout Code
+<messages>
+\end_layout
+
+\begin_layout Code
+	<msg3:>This is the third message passed as a 
+\end_layout
+
+\begin_layout Code
+          parameter.</msg3>
+\end_layout
+
+\begin_layout Code
 </messages>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The first two lines will remain the same while the third changes due to
- the use of the <msg3:> parameter tag.
- You have used a tag to pass data from the <msg3:> parameter tag into the
- <messages> tag.
+ the use of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg3:>
+\end_layout
+
+\end_inset
+
+ parameter tag.
+ You have used a tag to pass data from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg3:>
+\end_layout
+
+\end_inset
+
+ parameter tag into the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure128.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+How the passed parameter displays on the page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 5.
- Use some more parameters.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Use some more parameters
+\end_layout
+
+\end_inset
+
+.
  Change the other two message lines likewise to:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <messages>
 \end_layout
 
-\begin_layout Standard
-	<msg1:>This is the first message called as a parameter</msg1>
+\begin_layout Code
+  <msg1:>This is the first message called as a 
 \end_layout
 
-\begin_layout Standard
-	<msg2:>This is the second message called as a parameter.</msg2>
+\begin_layout Code
+         parameter</msg1>
 \end_layout
 
-\begin_layout Standard
-	<msg3:>This is the third message called as a parameter.</msg3>
+\begin_layout Code
+  <msg2:>This is the second message called as a 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+         parameter.</msg2>
+\end_layout
+
+\begin_layout Code
+  <msg3:>This is the third message called as a 
+\end_layout
+
+\begin_layout Code
+         parameter.</msg3>
+\end_layout
+
+\begin_layout Code
 </messages>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -337,167 +928,593 @@ and you should see:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure129.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Passing three parameters to you <messages> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 6.
- Reverse the order of the parameter call.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Reverse the order of the parameter call
+\end_layout
+
+\end_inset
+
+.
  Now try the following code.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <messages>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<msg2:>This is the second message.</msg2:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<msg1:>This is the first message.</msg1:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<msg3:>This is the third message.</msg3:>
 \end_layout
 
-\begin_layout Standard
-<messages>
+\begin_layout Code
+</messages>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 You will see that this edit will not change the order of the list because
  the order is defined by the tag definition not by its call.
  The tag calls the messages in the order set in the tag definition, namely
- <msg1:>, then <msg2:> and then <msg3:>.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg1:>
+\end_layout
+
+\end_inset
+
+, then 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg2:>
+\end_layout
+
+\end_inset
+
+ and then 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<msg3:>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-7.	Create an html-like tag using param = ”default”.
+7.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create an html-like tag 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+using param = ”default”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
  In the preceding steps, you learned how to reach into a tag with three
- parameter tags and change the default message text of the defined <messages>
+ parameter tags and change the default message text of the defined 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<messages>
+\end_layout
+
+\end_inset
+
  tag.
- Next you will emulate a regular HTML formatting tag using the param=”default”
+ Next you will emulate a regular HTML formatting tag using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param=”default”
+\end_layout
+
+\end_inset
+
  attribute.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: We have referred to an attribute above rather than a parameter because
  a change will be made by setting param to a value rather than by using
  a parameter tag.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Go back to the top of the views/front/index.dryml file and enter the following
- code after the first <def> .
+Go back to the top of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/front/index.dryml
+\end_layout
+
+\end_inset
+
+ file and enter the following code after the first 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def> .
  .
  .
- </def> tags.
+ </def>
+\end_layout
+
+\end_inset
+
+ tags.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="bd-it">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<br/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<b><i><span param>stuff</span></i></b>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
-Here we have redefined the HTML <span> tag to format the tag content with
- bold AND italic formatting.
- Since the <span> tag is now parameterized, you can now replace the ‘stuff’
- continent with something you might want to format.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Call the <bd-it> tag right after the closing </messages> tag without using
- the <span:> parameter.
- This will demonstrate that the tag will just emit the formatted default
- word stuff.
+Here we have redefined the HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span>
+\end_layout
+
+\end_inset
+
+ tag to format the tag content with bold AND italic formatting.
+ Since the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span>
+\end_layout
+
+\end_inset
+
+ tag is now parameterized, you can now replace the ‘stuff’ continent with
+ something you might want to format.
 \end_layout
 
 \begin_layout Standard
-<messages>
+Call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<bd-it>
 \end_layout
 
-\begin_layout Standard
-	<msg2:>This is the second message.</msg2:>
-\end_layout
+\end_inset
 
-\begin_layout Standard
-	<msg1:>This is the first message.</msg1:>
-\end_layout
+ tag right after the closing 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
-	<msg3:>This is the third message.</msg3:>
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 </messages>
 \end_layout
 
-\begin_layout Standard
-<bd-it/>
+\end_inset
+
+ tag without using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span:>
+\end_layout
+
+\end_inset
+
+ parameter.
+ This will demonstrate that the tag will just emit the formatted default
+ word 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+stuff
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-If you use the <span:> parameter tag, you will format your content.
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<messages>
+\end_layout
+
+\begin_layout Code
+	<msg2:>This is the second message.</msg2:>
+\end_layout
+
+\begin_layout Code
+	<msg1:>This is the first message.</msg1:>
+\end_layout
+
+\begin_layout Code
+	<msg3:>This is the third message.</msg3:>
+\end_layout
+
+\begin_layout Code
+</messages>
+\end_layout
+
+\begin_layout Code
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+<bd-it/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span:>
+\end_layout
+
+\end_inset
+
+ parameter tag, you will format your content.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <bd-it/>	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <bd-it><span:>More stuff</span:></bd-it>
 \end_layout
 
-\begin_layout Standard
-	
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-But the second line is a kind of clumsy looking way to get: More stuff.
- Instead, change your <def> code to:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure130.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Calling <span:> explicitly within to your <bd-it> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+But the second line is a kind of clumsy looking way to get: 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+More stuff
+\end_layout
+
+\end_inset
+
+.
+ Instead, change your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+ code to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="bd-it">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <br/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <b><i><span param="default">stuff</span></i></b>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-The param=”default” text is saying is that the <span:> parameter is automaticall
-y assumed when you call the <bd-it> tag.
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+param=”default”
+\end_layout
+
+\end_inset
+
+ text is saying is that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span:>
+\end_layout
+
+\end_inset
+
+ parameter is automatically assumed when you call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<bd-it>
+\end_layout
+
+\end_inset
+
+ tag.
  You do not have to explicitly call it.
  Now change your call to:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <bd-it/>	
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <bd-it>More Stuff</bd-it>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -506,145 +1523,219 @@ So now you have created a DRYML tag that looks just like an HTML tag.
 \end_layout
 
 \begin_layout Standard
-Note: Once you change the <span:> parameter to the default parameter, Hobo
- will ignore explicit uses of it and only emit the default content if you
- call it explicitly.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: Once you change the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<span:>
+\end_layout
+
+\end_inset
+
+ parameter to the default parameter, Hobo will ignore explicit uses of it
+ and only emit the default content if you call it explicitly.
  Once you use the default parameter attribute you are committed to the more
  compact notation.
- There can only be one “default” parameter in a tag definition.
+ There can only be one “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+default
+\end_layout
+
+\end_inset
+
+” parameter in a tag definition.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The entire /views/front/index.dryml contents at the end of this tutorial
- is as follows:
+The entire 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+/views/front/index.dryml
+\end_layout
+
+\end_inset
+
+ contents at the end of this tutorial is as follows:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="messages">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<br/><br/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<ul>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<li param="msg1">Message 1</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<li param="msg2">Message 2</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<li param="msg3">Message 3</li>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	</ul>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <def tag="bd-it">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <br/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <b><i><span param="default">stuff</span></i></b>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <page title="Home">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<body: class="front-page"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <header class="content-header">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <h1>Welcome to <app-name/></h1>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section class="welcome-message">
 \end_layout
 
-\begin_layout Standard
-        <h3>Congratulations! Your Hobo Rails App is up and running</h3>
+\begin_layout Code
+        <h3>Congratulations! Your Hobo Rails 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+              App is up and running</h3>
+\end_layout
+
+\begin_layout Code
          <messages>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           <msg2:>This is the seond message.</msg2>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           <msg1:>This is the first messsage.</msg1>
 \end_layout
 
-\begin_layout Standard
-          <msg3:>This is the third message passed as a parameter.</msg3>
+\begin_layout Code
+          <msg3:>This is the third message passed as a 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+              parameter.</msg3>
+\end_layout
+
+\begin_layout Code
          </messages>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
          <bd-it/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
          <bd-it>More stuff</bd-it>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	  </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </header>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <section class="content-body">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
