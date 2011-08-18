@@ -90,69 +90,138 @@ You will learn how to display your data in a sortable, searchable table.
  completeness.
 \end_layout
 
-\begin_layout Standard
-Tutorial Application: four_table
+\begin_layout Subsubsection
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Topics
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Display model data in table form.
 \end_layout
 
-\begin_layout Standard
-Use the replace attribute to change the content of a parameter tag.
+\begin_layout Itemize
+Use the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+replace
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ attribute to change the content of a parameter tag.
+\end_layout
+
+\begin_layout Itemize
 Display associated record counts in the table
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Add search and sort to the table.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 Steps
 \end_layout
 
 \begin_layout Standard
-1.	Display model in table form.
+1.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Display model in table form
+\end_layout
+
+\end_inset
+
+.
  In the following code, we use another built in feature of Hobo’s parameter
  tags, the ability to replace what the parameter does with new tag code.
- The code below should be entered into your views/recipes/index.dryml file.
- Delete or comment out the <index-page> tag from Tutorial 12.
+ The code below should be entered into your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes/index.dryml
+\end_layout
+
+\end_inset
+
+ file.
+ Delete or comment out the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag from Tutorial 12.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page >
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<collection: replace>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	      <table-plus fields="title,country"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	  </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -160,8 +229,65 @@ Refresh your browser to see your new table:
 \end_layout
 
 \begin_layout Standard
-The fields attribute of the <table-plus> tag lets you specify a list of
- fields that will become the columns of a table.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure150.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using <table-plus> to display a columnar list
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ attribute of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<table-plus>
+\end_layout
+
+\end_inset
+
+ tag lets you specify a list of fields that will become the columns of a
+ table.
  
 \end_layout
 
@@ -170,17 +296,76 @@ So essentially one line of code sets up a pretty good table for you in Hobo.
 \end_layout
 
 \begin_layout Standard
-2.	Make your data hyperlinked.
+2.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Make your data hyperlinked
+\end_layout
+
+\end_inset
+
+.
  You might have noticed that the country names are clickable but the titles
  are not.
- Hobo provides a way to do this using the this keyword.
- This refers to the object currently in scope.
+ Hobo provides a way to do this using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ keyword.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+This
+\end_layout
+
+\end_inset
+
+ refers to the object currently in scope.
 \end_layout
 
 \begin_layout Standard
- Note: The  this keyword actually has a far deeper meaning that will be
- explored in more depth later.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+ Note: The  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+this
+\end_layout
+
+\end_inset
+
+ keyword actually has a far deeper meaning that will be explored in more
+ depth later.
  For now we will just outline how to use it.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -188,40 +373,92 @@ Make the following change to your code and refresh your browser.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page >
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<collection: replace>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<div>
 \end_layout
 
-\begin_layout Standard
-	      <table-plus fields="this, country"/>
+\begin_layout Code
+	      <table-plus fields="
+\color red
+this
+\color inherit
+, country"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	  </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
 \end_layout
 
-\begin_layout Standard
-Now your recipes are hyperlinked to the show route that displays individual
- recipe records.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-3.	Show associated record counts.
+Now your 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+recipes
+\end_layout
+
+\end_inset
+
+ are hyperlinked to the show route that displays individual 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+recipe
+\end_layout
+
+\end_inset
+
+ records.
+\end_layout
+
+\begin_layout Standard
+3.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Show associated record counts
+\end_layout
+
+\end_inset
+
+.
  It would be nice to display how many associated category records there
  are.
  Again, since Hobo knows all about the relationships between records, you
@@ -238,37 +475,128 @@ However, if you are familiar with database programming, you know queries
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page >
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<collection: replace>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<div>
 \end_layout
 
-\begin_layout Standard
-			<table-plus fields="this, categories.count, country"/>
+\begin_layout Code
+			<table-plus fields="this, 
+\color red
+categories.count
+\color inherit
+, 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+                   country"/>
+\end_layout
+
+\begin_layout Code
 	    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	  </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure151.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding a 
+\begin_inset Quotes eld
+\end_inset
+
+Categories Count
+\begin_inset Quotes erd
+\end_inset
+
+ to <table-plus>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 That was pretty straightforward.
- Before we refresh our browser again, let’s also display the actual categories
- in addition to the count.
+ Before we refresh our browser again, let’s also display the actual 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ in addition to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+count
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -276,87 +604,305 @@ That was pretty straightforward.
 Again, with other frameworks this would be a bit more complicated, but Hobo
  makes this easy.
  In the previous tutorial, you learned a few ways to display the categories
- associated with an individual recipe, the simplest of which was the <view>
+ associated with an individual recipe, the simplest of which was the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
  tag.
  
 \end_layout
 
 \begin_layout Standard
-Here it is even easier--just add categories to the fields attribute:
+Here it is even easier--just add 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ attribute:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page >
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<collection: replace>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<div>
 \end_layout
 
-\begin_layout Standard
-			<table-plus fields="this, categories.count, categories, country"/>
+\begin_layout Code
+			<table-plus fields="this, 
+\color red
+categories.count, 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\color red
+           categories
+\color inherit
+, country"/>
+\end_layout
+
+\begin_layout Code
 	    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	  </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure152.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding a comma-delimited list within a <table-plus> column
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 4.
- Add search and sort capability to the table.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Add search and sort capability to the table
+\end_layout
+
+\end_inset
+
+.
  Until now we have worked with controllers relatively little.
  If you think about it a bit, you will quickly realize that to add search
- and sort, we will have to make a change in the recipe controller.
+ and sort, we will have to make a change in the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+recipe
+\end_layout
+
+\end_inset
+
+ controller.
  You can understand this by realizing that we want our application to respond
- to a click with two specific actions: one is a sort and the other is a
- search.
+ to a click with two specific actions: one is a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+sort
+\end_layout
+
+\end_inset
+
+ and the other is a 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+search
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Go to your controllers/recipes_controller.rb file.
+Go to your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+controllers/recipes_controller.rb
+\end_layout
+
+\end_inset
+
+ file.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: This is actually an advanced topic since we are adding some Ruby code.
  You will learn more about the meaning of all the unfamiliar syntax in subsequen
 t chapters.
  But for now, let’s polish off this table functionality.
 \end_layout
 
-\begin_layout Standard
-To get the search feature working, we need to update the controller side.
- Add an index method to app/controllers/recipes_controller.rb like this:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+To get the search feature working, we need to update the controller side.
+ Add an index method to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+app/controllers/recipes_controller.rb
+\end_layout
+
+\end_inset
+
+ like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 def index
 \end_layout
 
-\begin_layout Standard
- hobo_index Recipe.apply_scopes(:search => [params[:search],:title,:body],
- :joins=>:country, :order_by  => parse_sort_param(:title, :country, :count))
+\begin_layout Code
+ hobo_index Recipe.apply_scopes(:search => [params[:search],
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+:title,:body], :joins=>:country, :order_by  => 
+\end_layout
+
+\begin_layout Code
+parse_sort_param(:title, :country, :count))
+\end_layout
+
+\begin_layout Code
 end
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: The “apply scopes” for the search facility can only contain fields
  within the recipe model—not related models at this time, but the “order
   by” can.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -365,11 +911,89 @@ cal order:
 \end_layout
 
 \begin_layout Standard
-	
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure153.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding a search facility to <table-plus> using Hobo's apply_scopes method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now search/filter by “French” in the title or body:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure154.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Found Recipes seaching for 
+\begin_inset Quotes eld
+\end_inset
+
+French
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
