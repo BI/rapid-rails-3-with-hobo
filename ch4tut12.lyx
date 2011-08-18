@@ -89,101 +89,392 @@ You will learn how to create a new index page that will replace the default
  
 \end_layout
 
-\begin_layout Standard
-Tutorial Application: four_table
+\begin_layout Subsubsection
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Topics
 \end_layout
 
-\begin_layout Standard
-Learn how to create your own index template in a view/model directory.
+\begin_layout Itemize
+Learn how to create your own index template in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+view/model
 \end_layout
 
-\begin_layout Standard
-Work on using the application.dryml directory to override auto-generated
+\end_inset
+
+ directory.
+\end_layout
+
+\begin_layout Itemize
+Work on using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ directory to override auto-generated tags.
+\end_layout
+
+\begin_layout Itemize
+Learn about the Rapid 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+collection
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Itemize
+Get introduced to the Rapid 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Itemize
+Learn how to use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
  tags.
 \end_layout
 
-\begin_layout Standard
-Learn about the Rapid collection tag.
-\end_layout
-
-\begin_layout Standard
-Get introduced to the Rapid <a> tag.
-\end_layout
-
-\begin_layout Standard
-Learn how to use the <repeat>, <if> and <else> tags.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Subsubsection
 Steps
 \end_layout
 
 \begin_layout Standard
-1.	Click the model(Recipes) tab.
+1.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Click the model(Recipes) tab
+\end_layout
+
+\end_inset
+
+.
   Load your browser again with the Four Table application we ended up with
  in Tutorial 11.
-  Click the Recipes tag to remind yourself how Hobo automatically creates
- a list of your recipes.
- This is different than the Home tab you were working with in Tutorial 11.
- When you click the Recipes tab, Hobo goes through the three-step check
- you learned about in Tutorial 1 to locate a template or template definition.
+  Click the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ tag to remind yourself how Hobo automatically creates a list of your recipes.
+ This is different than the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Home
+\end_layout
+
+\end_inset
+
+ tab you were working with in Tutorial 11.
+ When you click the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipes
+\end_layout
+
+\end_inset
+
+ tab, Hobo goes through the three-step check you learned about in Tutorial
+ 1 to locate a template or template definition.
 \end_layout
 
 \begin_layout Standard
-Since we have already moved the <index-page> tag for recipes to 
+Since we have already moved the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag for recipes to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 taglibs
 \backslash
-application.dryml, Hobo will obtain its tag definition for generation of
- a view template here.
+application.dryml
+\end_layout
+
+\end_inset
+
+, Hobo will obtain its tag definition for generation of a view template
+ here.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: You learned back in Tutorial 1 that each of Hobo’s tabs, named with
  the plural of the model name by default, invoke the index action and list
  the records in the model.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Since there is not a file called views
+Since there is not a file called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views
 \backslash
 recipes
 \backslash
-index.dryml, Hobo will create its own template on the fly from the <index-page>
+index.dryml
+\end_layout
+
+\end_inset
+
+, Hobo will create its own template on the fly from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
  tag definition in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
 \backslash
 taglibs
 \backslash
-application.dryml.
- (We created a views
+application.dryml
+\end_layout
+
+\end_inset
+
+.
+ (We created a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views
 \backslash
 recipes
 \backslash
-index.dryml in Step 1 but we asked you to remove it.
+index.dryml
+\end_layout
+
+\end_inset
+
+ in Step 1 but we asked you to remove it.
  If you did not do that, do it now so you do not have any conflicts as we
  proceed).
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure139.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Four Tables application as we left it
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 2.
- Create a new template file.
- Now, create the new file called index.dryml in the views/recipes folder.
- This is the folder automatically created when you did the hobo g resource
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create a new template file
+\end_layout
+
+\end_inset
+
+.
+ Now, create the new file called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes
+\end_layout
+
+\end_inset
+
+ folder.
+ This is the folder automatically created when you did the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g resource
+\end_layout
+
+\end_inset
+
  generation in Tutorial 1.
  This file is called a DRYML template.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
 Note: We have used the word template quite frequently now but it is still
  worth reminding you not to be confused by it.
  It is a file used to render a specific web page, not a framework for creating
  one as the word may imply.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -192,165 +483,428 @@ Now that this file exists, Hobo will use it when it finds it so let’s put
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <index-page/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure140.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Creating the /views/recipes/index.dryml file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Refresh your browser.
  It should look just like it did in Step 1.
- This is because <index-page> is exactly the tag that Hobo is calling to
- display this page.
+ This is because 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ is exactly the tag that Hobo is calling to display this page.
  Instead of doing it automatically, you have added one step.
- Before, since there was no file in views
+ Before, since there was no file in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views
 \backslash
-recipes, Hobo created its own version of the page using this tag.
- Now it looks in the folder, finds the index.dryml file and does what it
- would have done anyways, namely use the <index-page> tag.
+recipes
+\end_layout
+
+\end_inset
+
+, Hobo created its own version of the page using this tag.
+ Now it looks in the folder, finds the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+ file and does what it would have done anyways, namely use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
-3.	Work with the <collection> tag.
+3.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Work with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\end_inset
+
+.
  From here on in this tutorial we will be moving back and forth between
- the template views/recipes/index.dryml and the <index-page> definition in
- views
+ the template 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes/index.dryml
+\end_layout
+
+\end_inset
+
+ and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ definition in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views
 \backslash
 taglibs
 \backslash
-application.dryml.
+application.dryml
+\end_layout
+
+\end_inset
+
+.
  Keep this in mind so you do not get confused.
 \end_layout
 
 \begin_layout Standard
-Go to the application.dryml and find the <index-page> tag definition for
- the Recipe model.
- Note the <collection> tag in italics and bold below.
+Go to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ and find the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+ tag definition for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model.
+ Note the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag in italics and red below.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="index-page" for="Recipe">
 \end_layout
 
-\begin_layout Standard
-  <page merge title="#{ht 'recipe.index.title', :default=>[model.model_name.human(:c
-ount=>100)] }">
+\begin_layout Code
+  <page merge title="#{ht 'recipe.index.title', 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+:default=>[model.model_name.human(:count=>100)] }">
+\end_layout
+
+\begin_layout Code
     <body: class="index-page recipe" param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <content: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <header param="content-header">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <h2 param="heading">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           My Recipes
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         </h2>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <p param="count" if>
 \end_layout
 
-\begin_layout Standard
-          <ht key="recipe.collection.count" count="&this.size">
+\begin_layout Code
+          <ht key="recipe.collection.count
+\begin_inset Quotes erd
+\end_inset
+
+  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+               count="&this.size">
+\end_layout
+
+\begin_layout Code
             <count summary/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         </p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </header>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section param="content-body">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <a action="new" to="&model" param="new-link">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           <ht key="recipe.actions.new">New Recipe</ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         </a>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <page-nav param="top-page-nav"/>
 \end_layout
 
-\begin_layout Standard
-        <collection param/>
+\begin_layout Code
+
+\color red
+        
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<collection param/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
         <page-nav param="bottom-page-nav"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 To remind yourself that this is the tag responsible for listing the recipe
  records, delete it and refresh your browser.
  You will still see a template rendered but without the list of recipes.
- OK, now let’s put back the <collection> tag so that your file still reads
- like the above code.
+ OK, now let’s put back the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag so that your file still reads like the above code.
 \end_layout
 
 \begin_layout Standard
-Now let’s move back to the  views/recipes/index.dryml template and explicitly
- call the collection tag.
+Now let’s move back to the  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes/index.dryml
+\end_layout
+
+\end_inset
+
+ template and explicitly call the collection tag.
  Change your code to read like this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:/>
+\begin_layout Code
+  <collection:/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -358,12 +912,51 @@ Your Recipes template should still look exactly like the one in Step 1.
 \end_layout
 
 \begin_layout Standard
-You are now calling the <collection> tag.
+You are now calling the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag.
  Notice the trailing colon (:).
  This colon is here because you are calling a parameter tag.
- You can see above that the <collection> tag was parameterized in application.dry
-ml by adding the param attribute to the declaration.
- You might be wondering where the <collection> tag is defined.
+ You can see above that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag was parameterized in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ by adding the param attribute to the declaration.
+ You might be wondering where the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag is defined.
  
 \end_layout
 
@@ -374,23 +967,23 @@ Actually, it is a member of the Rapid library of tags that we have mentioned.
  Here is a list of tag situations you will encounter:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 HTML tags which are often parameterized
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Rapid library tags which are often parameterized
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Rapid parameter tags, not defined in your app
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 User-defined tags which are often parameterized
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Rapid auto-generated tags which are not usually parameterized
 \end_layout
 
@@ -400,18 +993,76 @@ As we go forward, you will gradually learn how the auto-generated tags are
 \end_layout
 
 \begin_layout Standard
-OK, let’s learn a little more about the <collection> tag.
- The <collection> tag does the following:
+OK, let’s learn a little more about the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
 \end_layout
 
-\begin_layout Standard
-Repeats the body (stuff between the tags) of the tag inside a <ul> list
- with one item for each object in the collection of records.
+\end_inset
+
+ tag.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
 \end_layout
 
-\begin_layout Standard
-If there is no content for the body, it renders a <card> inside the <li>
- tag nested within the <ul> tags.
+\end_inset
+
+ tag does the following:
+\end_layout
+
+\begin_layout Itemize
+Repeats the body (stuff between the tags) of the tag inside a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+ list with one item for each object in the collection of records.
+\end_layout
+
+\begin_layout Itemize
+If there is no content for the body, it renders a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ inside the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<li>
+\end_layout
+
+\end_inset
+
+ tag nested within the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<ul>
+\end_layout
+
+\end_inset
+
+ tags.
 \end_layout
 
 \begin_layout Standard
@@ -419,7 +1070,26 @@ The following code corresponds to "no body":
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <collection:/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -427,7 +1097,26 @@ and this code corresponds to an empty or blank body:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <collection:></collection:>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -439,7 +1128,40 @@ You have already seen what the former will do, namely list your records
 \end_layout
 
 \begin_layout Standard
-Figure 120: page view of using a blank "<collection:></collection:>" tag
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure141.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+page view of using a blank "<collection:></collection:>" tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -447,12 +1169,77 @@ Now try the following code.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <collection:>Hello!</collection:>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Since there is a body, the ‘Hello!’ will be repeated and the <card> will
- no longer be called.
+Since there is a body, the ‘Hello!’ will be repeated and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ will no longer be called.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure142.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+How the <collection> tag iterates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -465,15 +1252,100 @@ There are three records in our Recipes table so ‘Hello!’ is repeated three
 
 \begin_layout Standard
 Now let’s get some content displayed.
- We are going to use Rapid’s <a> tag, which is similar to the HTML <a> tag
- but has been redefined.
- The <a> tag is extended in Rapid to automatically provide a hyperlink to
- the route to show a particular record of the model.
+ We are going to use Rapid’s 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag, which is similar to the HTML 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag but has been redefined.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag is extended in Rapid to automatically provide a hyperlink to the route
+ to show a particular record of the model.
  Let’s try this out with the following code.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <collection:><a/></collection:>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure143.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the <a> hyperlink tag within a collection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -482,129 +1354,357 @@ If you mouse over or click on one of the links you will discover a route
 \end_layout
 
 \begin_layout Standard
-http://localhost:3000/recipes/2-omelette
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes/2-omelette"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The <a> link has created this route, which is the route for a show action.
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ link has created this route, which is the route for a show action.
 \end_layout
 
 \begin_layout Standard
-Let’s do a comparison with the <card> tag that Hobo would call if you were
- not overriding it.
- Here is the <card> tag definition.
+Let’s do a comparison with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag that Hobo would call if you were not overriding it.
+ Here is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag definition.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="card" for="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <card class="recipe" param="default" merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <header: param>
 \end_layout
 
-\begin_layout Standard
-      <h4 param="heading"><a><name/></a></h4>
+\begin_layout Code
+      
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<h4 param="heading"><a><name/></a></h4>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
     </header:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <body: param>
 \end_layout
 
-\begin_layout Standard
-      <ht key="category.collection.count" count="&this.categories.size">
+\begin_layout Code
+      <ht key="category.collection.count" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+            count="&this.categories.size">
+\end_layout
+
+\begin_layout Code
          <count:categories param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </card>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-The <card> tag uses an <h4> heading tag which bolds and applies a larger
- font according to Hobo’s CSS files.
- It also uses the <a> tag with a body provided by the <name> tag, which
- renders the field that Hobo figures out automatically to be the most likely
- field you want to display.
- The <name> tag will pick out field names such as title, for example, which
- is the name of the field in our Recipe model.
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag uses an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h4>
+\end_layout
+
+\end_inset
+
+ heading tag which bolds and applies a larger font according to Hobo’s CSS
+ files.
+ It also uses the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag with a body provided by the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name>
+\end_layout
+
+\end_inset
+
+ tag, which renders the field that Hobo figures out automatically to be
+ the most likely field you want to display.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name>
+\end_layout
+
+\end_inset
+
+ tag will pick out field names such as title, for example, which is the
+ name of the field in our Recipe model.
 \end_layout
 
 \begin_layout Standard
 If you wish to explicitly display a different field other than the one that
- Hobo provides by default, you can use the Rapid <view> tag.
+ Hobo provides by default, you can use the Rapid 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag.
  The syntax for this tag is different than you have encountered so far.
  Right now we are just going to give you a simplified description of the
  syntax and postpone a more detailed discussion for a later chapter:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><view:title/></collection:>
+\begin_layout Code
+  <collection:><view:title/></collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Note: You will observe the trailing colon (:) with the <view> tag.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: You will observe the trailing colon (:) with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag.
  This is an entirely different use of colon (:) than you have seen with
  parameter tags.
  Here the colon (:) is telling Hobo to figure out what model you are referring
  to and display the field from that particular model.
- This called implicit context, Hobo’s ability to know at all times what
- model you are working with in a particular view.
+ This called 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+implicit context
+\end_layout
+
+\end_inset
+
+, Hobo’s ability to know at all times what model you are working with in
+ a particular view.
  In a later chapter you will learn how to change the implicit context.
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 If you refresh your browser, you will note that the recipes displayed are
  not clickable.
- That is because of the way that the <collection> tag works.
- Remember that when you add a body to the tag, it no longer uses the <card>
+ That is because of the way that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag works.
+ Remember that when you add a body to the tag, it no longer uses the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
  tag so you are only asking Hobo to display the title field, not create
  a hyperlink.
  That is easily remedied by doing the following.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><a><view:title/></a></collection:>
+\begin_layout Code
+  <collection:><a><view:title/></a></collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -612,39 +1712,166 @@ Refresh your browser and see what you’ve got now:
 \end_layout
 
 \begin_layout Standard
-This looks pretty close to the default version of the <collection> tag.
- With the following use of the <h4> HTML tag, you can almost bring back
- the default appearance.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure144.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Specifying what <collection> tag will display
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This looks pretty close to the default version of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag.
+ With the following use of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h4>
+\end_layout
+
+\end_inset
+
+ HTML tag, you can almost bring back the default appearance.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><h4><a><view:title/></a></h4></collection:>
+\begin_layout Code
+  <collection:><h4><a><view:title/></a></h4></collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The only difference is the background provided to the record that you see
  above in Step 1 and the lack of the category count.
  The background is Hobo’s default CSS formatting which in this case is associate
-d with the <card> tag and since you are not using it, the formatting does
- not appear.
+d with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag and since you are not using it, the formatting does not appear.
  Understanding how Hobo utilizes CSS files is covered in a later Chapter.
 \end_layout
 
 \begin_layout Standard
-	
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure145.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Changing the display style within <collection>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-4.	Display the associated record collection.
+4.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Display the associated record collection
+\end_layout
+
+\end_inset
+
+.
  Now that you see how to display collections of records, let’s go a bit
  deeper.
  Our Recipe model has a many-to-many relationship with the Category Model.
@@ -654,34 +1881,154 @@ d with the <card> tag and since you are not using it, the formatting does
 
 \begin_layout Standard
 You can do this in several different ways.
- First we will do it in views/recipes/index.dryml template.
- Then we will try it in a <card> definition in application.dryml.
+ First we will do it in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes/index.dryml
+\end_layout
+
+\end_inset
+
+ template.
+ Then we will try it in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ definition in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
  Try out the following code.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><h4><a><view:title/></a></h4>
+\begin_layout Code
+  <collection:><h4><a><view:title/></a></h4>
 \end_layout
 
-\begin_layout Standard
-	<view:categories/>
+\begin_layout Code
+  
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<view:categories/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
 </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-What we did here with the <view> tag was to tell Hobo to change its implicit
- context to the Categories model.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure146.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Changing the implicit context within <collection>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What we did here with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag was to tell Hobo to change its implicit context to the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Categories
+\end_layout
+
+\end_inset
+
+ model.
  The colon(:) is what did the trick and, of course, all the machinery inside
  Hobo which keeps it informed about the relationship between models that
  we set up.
@@ -689,57 +2036,164 @@ What we did here with the <view> tag was to tell Hobo to change its implicit
 
 \begin_layout Standard
 Now we are going to do this slightly differently by using another Rapid
- library tag called <repeat>.
+ library tag called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><h4><a><view:title/></a></h4>
+\begin_layout Code
+  <collection:><h4><a><view:title/></a></h4>
 \end_layout
 
-\begin_layout Standard
-	<repeat:categories><a/></repeat>
+\begin_layout Code
+  
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<repeat:categories><a/></repeat>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
 </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The repeat tag with the colon (:) tells Hobo to loop through the records
  in the implicit context and to display what is in the body of the tag,
- namely <a/>.
- Try it and you will see the categories as hyperlinks but all run together.
- Fortunately, <repeat> has a join attribute to put in some additional character
- punctuation.
+ namely 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a/>
+\end_layout
+
+\end_inset
+
+.
+ Try it and you will see the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ as hyperlinks but all run together.
+ Fortunately, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ has a join attribute to put in some additional character punctuation.
  Try this.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><h4><a><view:title/></a></h4>
+\begin_layout Code
+  <collection:><h4><a><view:title/></a></h4>
 \end_layout
 
-\begin_layout Standard
-	<repeat:categories join=", "><a/></repeat>
+\begin_layout Code
+  
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<repeat:categories join=", "><a/></repeat>
 \end_layout
 
-\begin_layout Standard
-	</collection:>
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+ </collection:>
+\end_layout
+
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -747,27 +2201,98 @@ Now you get this:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure147.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Creating comma-delimited multi-valued lists in a <collection>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 If you don’t want to have your categories linked you could do this,
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><h4><a><view:title/></a></h4>
+\begin_layout Code
+  <collection:><h4><a><view:title/></a></h4>
 \end_layout
 
-\begin_layout Standard
-	<repeat:categories join=", "><name/></repeat>
+\begin_layout Code
+  
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<repeat:categories join=", "><name/></repeat>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
 </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -775,50 +2300,213 @@ or you could do this.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <index-page>
 \end_layout
 
-\begin_layout Standard
-	<collection:><h4><a><view:title/></a></h4>
+\begin_layout Code
+  <collection:><h4><a><view:title/></a></h4>
 \end_layout
 
-\begin_layout Standard
-	<repeat:categories join=", "><view:name/></repeat>
+\begin_layout Code
+  
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<repeat:categories join=", "><view:name/></repeat>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
 </collection:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </index-page>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Note: The <name/> tag and the name attribute in <view:name/> are not the
- same.
- In the former, Hobo looks at the Category model to find a candidate field
- to output from the <name> tag.
- We made it easy for Hobo since there is a field called name, which it picks,
- and displays.
- In the second example, we explicitly tell Hobo to display the name field
- of the categories model.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name/>
+\end_layout
+
+\end_inset
+
+ tag and the name attribute in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view:name/>
+\end_layout
+
+\end_inset
+
+ are not the same.
+ In the former, Hobo looks at the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Category
+\end_layout
+
+\end_inset
+
+ model to find a candidate field to output from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<name>
+\end_layout
+
+\end_inset
+
+ tag.
+ We made it easy for Hobo since there is a field called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+, which it picks, and displays.
+ In the second example, we explicitly tell Hobo to display the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+ field of the categories model.
   
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Now we are going to try the same thing within a tag definition so put your
- template, views/recipes/index.dryml back to the following:
+ template, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes/index.dryml
+\end_layout
+
+\end_inset
+
+ back to the following:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <index-page/>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Now go into application.dryml and find the recipe <card> definition.
+Now go into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ and find the recipe 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ definition.
  It should be there from Tutorial 1.
- If it is not there copy it from views
+ If it is not there copy it from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views
 \backslash
 taglibs
 \backslash
@@ -826,7 +2514,12 @@ auto
 \backslash
 rapid
 \backslash
-cards.dryml.
+cards.dryml
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -834,60 +2527,108 @@ cards.dryml.
 Edit it to look like the below.
  Not the added code in italics and bold.
  We have added the same code we put in the template above.
- Since the code is now in the <card> tag definition, we should get all the
- formatting set up pre-defined in Hobo.
+ Since the code is now in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ tag definition, we should get all the formatting set up pre-defined in
+ Hobo.
+\end_layout
+
+\begin_layout Code
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="card" for="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <card class="recipe" param="default" merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <header: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <h4 param="heading"><a><name/></a></h4>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </header:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <body: param>
 \end_layout
 
-\begin_layout Standard
-      <ht key="category.collection.count" count="&this.categories.size">
+\begin_layout Code
+      <ht key="category.collection.count" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+              count="&this.categories.size">
+\end_layout
+
+\begin_layout Code
          <count:categories param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </ht>
 \end_layout
 
-\begin_layout Standard
-		 <br/><view:categories/>
+\begin_layout Code
+		 
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<br/><view:categories/>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
     </body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </card>
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -895,93 +2636,335 @@ Refresh your browser.
 \end_layout
 
 \begin_layout Standard
-Now you have succeeded in editing the recipe <card> tag to drill down to
- assigned categories for your recipes.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure148.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the count of values in the <card> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-5.	Use the <if> and <else> tags.
+Now you have succeeded in editing the recipe 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag to drill down to assigned categories for your recipes.
+\end_layout
+
+\begin_layout Standard
+5.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+ tags
+\end_layout
+
+\end_inset
+
+.
  We are going to show you one more version way of displaying the recipe
  records and the categories assigned to them.
- Notice that when there are no categories assigned, the <view> tag puts
- out the text, ‘none’.
+ Notice that when there are no categories assigned, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag puts out the text, ‘none’.
  Let’s try to make this look a little nicer.
 \end_layout
 
 \begin_layout Standard
-The <if> tag checks for null records in a record collection and outputs
- the body of the tag when the record exists.
- You use the <else> tag for the case when the record does not exist.
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ tag checks for null records in a record collection and outputs the body
+ of the tag when the record exists.
+ You use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+ tag for the case when the record does not exist.
  Try this.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="card" for="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <card class="recipe" param="default" merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <header: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <h4 param="heading"><a><name/></a></h4>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </header:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <body: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       
 \end_layout
 
-\begin_layout Standard
-	  <if:categories><view/></if>
+\begin_layout Code
+	  
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<if:categories><view/></if>	  <else>There are no assigned categories yet.</else>
 \end_layout
 
-\begin_layout Standard
-	  <else>There are no assigned categories yet.</else>
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </card>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure149.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using 
+\begin_inset Quotes eld
+\end_inset
+
+if--else
+\begin_inset Quotes erd
+\end_inset
+
+ within a tag to display a custom message
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 In the examples above, we used the trailing colon (:) syntax to tell Hobo
- what model context we wanted in the <view> or <repeat> tags.
- In this example, we take care of changing the context with the <if> tag
- so there is no need to do it again.
+ what model context we wanted in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+ tags.
+ In this example, we take care of changing the context with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+ tag so there is no need to do it again.
  In fact, if we introduced this redundancy, as in the code below, we would
  get an error:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <!--THIS CODE PRODUCES AN ERROR-->
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+
+\family typewriter
+\color red
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
 <if:categories><view:categories/></if>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
 <else>There are no assigned categories yet.</else>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
