@@ -88,59 +88,182 @@ In this tutorial you will learn to develop sophisticated data-driven hyperlinks
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 Tutorial Application: four_table
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 Topics
 \end_layout
 
-\begin_layout Standard
-The <a> “hyperlink” tag for calling data-driven pages
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+ “hyperlink” tag for calling data-driven pages
+\end_layout
+
+\begin_layout Subsubsection
 Steps
 \end_layout
 
 \begin_layout Standard
 1.
- Review the <a> tag usage within Hobo’s auto-generated tags.
- Let’s take a look at the <a> tag usage in the auto-generated tags for the
- Recipe model.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Review the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag usage within Hobo’s auto-generated tags
+\end_layout
+
+\end_inset
+
+.
+ Let’s take a look at the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+ tag usage in the auto-generated tags for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <!--New Page Link from the Index Page Tag-->
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <a action="new" to="&model" param="new-link"/>
 \end_layout
 
-\begin_layout Standard
-This tag results in the ‘New Recipe’ hyperlink with the route ‘http://localhost:
-3000/recipes/new’.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+This tag results in the ‘New Recipe’ hyperlink with the route ‘
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes/new"
+
+\end_inset
+
+’.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <!--Edit Page Link from the Show Page Tag-->
 \end_layout
 
-\begin_layout Standard
-<a action="edit" if="&can_edit?" param="edit-link">Edit Recipe</a>
+\begin_layout Code
+<a action="edit" if="&can_edit?" param="edit-link">Edit 
+\end_layout
+
+\begin_layout Code
+      Recipe</a>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-This tag results in the ‘Edit Recipe’ hyperlink with a route like http://localho
-st:3000/recipes/2-omelette/edit.
+This tag results in the ‘Edit Recipe’ hyperlink with a route like 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://localhost:3000/recipes/2-omelette/edit"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 2.
- Construct a link to an index (record listing) page.
- Let’s work in the home page in the file views/front/index.html.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Construct a link to an index (record listing) page
+\end_layout
+
+\end_inset
+
+.
+ Let’s work in the home page in the file 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/front/index.html
+\end_layout
+
+\end_inset
+
+.
  We will place our test code after the “Congratulations .
  .
  .
@@ -149,15 +272,38 @@ st:3000/recipes/2-omelette/edit.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <br/><h4>
 \end_layout
 
-\begin_layout Standard
-<a to="&Country" action="index" >List My Countries</a><br/>
+\begin_layout Code
+<a to="&Country" action="index" >List My     
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+      Countries</a><br/>
+\end_layout
+
+\begin_layout Code
 </h4>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -166,17 +312,99 @@ This code will generate a link to a listing of countries in your database.
 \end_layout
 
 \begin_layout Standard
-	
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure167.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Generating an active link to a list of Countries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Note: The to attribute defines the model to be used in the listing.
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Description
+Note: The 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+to
+\end_layout
+
+\end_inset
+
+ attribute defines the model to be used in the listing.
  It is always prefixed by the & character.
- The action attribute defines the controller action, which in the above
- case uses Hobo’s built-in index action.
+ The 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+action
+\end_layout
+
+\end_inset
+
+ attribute defines the controller action, which in the above case uses Hobo’s
+ built-in 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+index
+\end_layout
+
+\end_inset
+
+ action.
  As you get more sophisticated, you will learn to define your own controller
  actions.
  These can be referred to by the action attribute too.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -185,12 +413,123 @@ Of course, if you click on the ‘List My Countries’ link, you will now see
 \end_layout
 
 \begin_layout Standard
-3.	Construct a link to a new record page.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure168.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Countries index page activated by your custom link
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Construct a link to a new record page
+\end_layout
+
+\end_inset
+
+.
  We can construct a link to create new countries in much the same way.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <a to="&Country" action="new" >New Country</a><br/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure169.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Constructing a custom link to the 
+\begin_inset Quotes eld
+\end_inset
+
+New County
+\begin_inset Quotes erd
+\end_inset
+
+ page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -198,7 +537,17 @@ Now you’ve got another link to try out.
 \end_layout
 
 \begin_layout Standard
-4.	Construct a link to an edit record page.
+4.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Construct a link to an edit record page
+\end_layout
+
+\end_inset
+
+.
  If you want to create a custom link to an edit page, you have to be sure
  you are in the right context.
  Hobo can implicitly figure out which record you wish to edit, but only
@@ -206,40 +555,146 @@ Now you’ve got another link to try out.
 \end_layout
 
 \begin_layout Standard
-     In the example from Step 1 above, the ‘edit page’ link occurs in a
- <show-page> tag definition so Hobo knows what record you want to edit.
+In the example from Step 1 above, the ‘edit page’ link occurs in a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag definition so Hobo knows what record you want to edit.
 \end_layout
 
 \begin_layout Standard
-Let’s create our own link on the Country <show-page> tag by using the <content-b
-ody:> parameter tag that is defined in the auto-generated <show-page> tag
- for the Country model.
- Create a new file called show.dryml in your views/countries directory.
+Let’s create our own link on the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag by using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<content-body:>
+\end_layout
+
+\end_inset
+
+ parameter tag that is defined in the auto-generated 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Country
+\end_layout
+
+\end_inset
+
+ model.
+ Create a new file called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+ in your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/countries
+\end_layout
+
+\end_inset
+
+ directory.
 \end_layout
 
 \begin_layout Standard
 You need to use the parameter tag or Hobo will ignore your code.
- This is just how the <show-page> tag was defined.
-\end_layout
+ This is just how the 
+\begin_inset Flex Code
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 <show-page>
 \end_layout
 
-\begin_layout Standard
-	<content-body:>
+\end_inset
+
+ tag was defined.
 \end_layout
 
 \begin_layout Standard
-		<a action="edit" >Edit My Country</a><br/>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
+<show-page>
 \end_layout
 
-\begin_layout Standard
-	</content-body:>
+\begin_layout Code
+  <content-body:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+    <a action="edit" >Edit My Country</a><br/>
+\end_layout
+
+\begin_layout Code
+  </content-body:>
+\end_layout
+
+\begin_layout Code
 </show-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -248,14 +703,67 @@ Go ahead and refresh your browser, click on the ‘Country’ tab and click
 \end_layout
 
 \begin_layout Standard
-Figure 150: Page view of custom <show-page> tag
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure170.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of custom <show-page> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 5.
-   Construct a link to a specific record.
+   
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Construct a link to a specific record
+\end_layout
+
+\end_inset
+
+.
  In general, Hobo takes care of linking to specific records for you by setting
- up the links implicitly in the <index-page>.
+ up the links implicitly in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+.
  If you need to link to a specific record, that will require a little Ruby
  to address a specific record in the database.
  
