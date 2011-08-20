@@ -87,255 +87,666 @@ New and Edit Pages
 \end_layout
 
 \begin_layout Standard
-In this tutorial you will be introduced to the <new-page> and <edit-page>
+In this tutorial you will be introduced to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
  auto-generated tags.
- Both of these tags utilize the Rapid <form> tag as their basic building
- block.
- You will learn how the <form> tag utilizes both the <field-list> and <input>
+ Both of these tags utilize the Rapid 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag as their basic building block.
+ You will learn how the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag utilizes both the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
  tags.
  You will also learn about the concept of a “polymorphic” tag, which renders
  form components based on field type and model structure.
 \end_layout
 
-\begin_layout Standard
-Tutorial Application: four_table
+\begin_layout Subsubsection
+Tutorial Application:
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ four_table
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Topics
 \end_layout
 
-\begin_layout Standard
-The <new-page> and <edit-page> tags
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
 \end_layout
 
-\begin_layout Standard
-The <field-list> tag
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
 \end_layout
 
-\begin_layout Standard
-The <input-tag>
+\end_inset
+
+ tags
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input-tag>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Steps
 \end_layout
 
 \begin_layout Standard
-1.	Get introduced to the <new-page> and <edit-page> tags.
- Go into pages.dryml and take a look at the code for both of these tags.
- Here is the  <new-page> definition:
+1.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Get introduced to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ tags
+\end_layout
+
+\end_inset
+
+.
+ Go into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ and take a look at the code for both of these tags.
+ Here is the  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+ definition:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="new-page" for="Recipe">
 \end_layout
 
-\begin_layout Standard
-  <page merge title="#{ht 'recipe.new.title', :default=>[' New Recipe'] }">
+\begin_layout Code
+  <page merge title="#{ht 'recipe.new.title', 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+         :default=>[' New Recipe'] }">
+\end_layout
+
+\begin_layout Code
     <body: class="new-page recipe" param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <content: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section param="content-header">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <h2 param="heading">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           <ht key="recipe.new.heading">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
             New Recipe
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         </h2>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section param="content-body">
 \end_layout
 
-\begin_layout Standard
-        <form param>
+\begin_layout Code
+        
+\color red
+<form param>
 \end_layout
 
-\begin_layout Standard
-          <submit: label="#{ht 'recipe.actions.create', :default=>['Create
- Recipe']}"/>
+\begin_layout Code
+          
+\color red
+<submit: label="#{ht 'recipe.actions.create',
+\color inherit
+ 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+              
+\color red
+:default=>['Create Recipe']}"/>
+\end_layout
+
+\begin_layout Code
         </form>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
-And here is the <edit-page> definition:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+And here is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ definition:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="edit-page" for="Recipe">
 \end_layout
 
-\begin_layout Standard
-  <page merge title="#{ht 'recipe.edit.title', :default=>['Edit Recipe'] }">
+\begin_layout Code
+  <page merge title="#{ht 'recipe.edit.title', 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+         :default=>['Edit Recipe'] }">
+\end_layout
+
+\begin_layout Code
     <body: class="edit-page recipe" param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section param="content-header">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         <h2 param="heading">
 \end_layout
 
-\begin_layout Standard
-          <ht key="recipe.edit.heading" name="&this.respond_to?(:name) ? this.name
- : ''">
+\begin_layout Code
+          <ht key="recipe.edit.heading" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+name="&this.respond_to?(:name) ? this.name : ''">
+\end_layout
+
+\begin_layout Code
             Edit Recipe
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
         </h2>
 \end_layout
 
-\begin_layout Standard
-        <delete-button label="#{ht 'recipe.actions.delete', :default=>['Remove
- This Recipe']}" param/>
+\begin_layout Code
+        <delete-button label="#{ht 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+'recipe.actions.delete', :default=>['Remove This 
+\end_layout
+
+\begin_layout Code
+Recipe']}" param/>
+\end_layout
+
+\begin_layout Code
       </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       <section param="content-body">
 \end_layout
 
-\begin_layout Standard
-        <form param/>
+\begin_layout Code
+        
+\color red
+<form param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
       </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
-The components that we are going to focus on are shown in bold italics.
- Let’s also take a look at the <form> tag that both of these tags call.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+The components that we are going to focus on are shown in 
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+red italics
+\end_layout
+
+\end_inset
+
+
+\color inherit
+.
+ Let’s also take a look at the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag that both of these tags call.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="form" for="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   <form merge param="default">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <error-messages param/>	
 \end_layout
 
-\begin_layout Standard
-    <field-list fields="title, body, categories, category_assignments, country"
- param/>
+\begin_layout Code
+    
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<field-list fields="title, body, categories,
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\family default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Code
+       
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+category_assignments, country" param/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
     <div param="actions">
 \end_layout
 
-\begin_layout Standard
-      <submit label="Save" param/><or-cancel param="cancel"/>
+\begin_layout Code
+      
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<submit label="Save" param/><or-cancel
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\family default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Code
+           
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+param="cancel"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
     </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </form>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 In a nutshell, you can see that each of these auto-generated tags call the
- auto-generated  <form> tag which is defined by merging the Rapid <form>
+ auto-generated  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag which is defined by merging the Rapid 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
  tag in addition to other tags.
  The specific fields that will be used in the form are declared within the
- fields attribute of the <field-list> tag that you learned about in Tutorial
- 14 on the <show-page> tag.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ attribute of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag that you learned about in Tutorial 14 on the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
-You no doubt are noticing that the <field-list> tag is doing something different
- here.
+You no doubt are noticing that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag is doing something different here.
  Instead of displaying a two-column table consisting of field labels in
  the first column and field data in the second, it is putting the appropriate
  data entry control in the second column.
@@ -344,62 +755,342 @@ You no doubt are noticing that the <field-list> tag is doing something different
 \end_layout
 
 \begin_layout Standard
-Hobo puts a one-line data entry box for the title field, which is a string
- field and a larger box for the body field, which is a text field.
-  Notice that Hobo also creates drop-down combo controls for the country
- field and for the categories collection.
+Hobo puts a one-line data entry box for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+title
+\end_layout
+
+\end_inset
+
+ field, which is a string field and a larger box for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+body
+\end_layout
+
+\end_inset
+
+ field, which is a text field.
+  Notice that Hobo also creates drop-down combo controls for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field and for the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ collection.
  
 \end_layout
 
 \begin_layout Standard
 Hobo does this from inspecting table relationships.
-  The recipe model is related to both the country model and the category
- model.
+  The 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+recipe
+\end_layout
+
+\end_inset
+
+ model is related to both the
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+ country
+\end_layout
+
+\end_inset
+
+ model and the category model.
  This is a pretty powerful capability for just one tag, especially given
- that the Category model is related to the Recipe model through a many-to-many
- relationship through the CategoryAssignment model.
+ that the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Category
+\end_layout
+
+\end_inset
+
+ model is related to the Recipe model through a many-to-many relationship
+ through the
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+ CategoryAssignment
+\end_layout
+
+\end_inset
+
+ model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure163.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Default Hobo form rendering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 All of this capability results from Hobo’s implementation of tag polymorphism,
- an ability to do what is necessary from the context of the code.
+ an ability to do what is necessary from the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+context
+\end_layout
+
+\end_inset
+
+ of the code.
  Polymorphism means ‘many forms (not data entry form)’ or ‘many structures’.
  It is a hallmark feature of the Ruby language.
 \end_layout
 
 \begin_layout Standard
-(There is even more going on in the <field-list> tag but we will wait to
- discuss it until the next step.)
+(There is even more going on in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag but we will wait to discuss it until the next step.)
 \end_layout
 
 \begin_layout Standard
 Before moving on, let’s take care of a detail by using your knowledge of
  parameter tags.
- You will note that the <new-page> tag calls the <submit:> parameter tag
- and that the <edit-page> tag does not.
+ You will note that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+ tag calls the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<submit:>
+\end_layout
+
+\end_inset
+
+ parameter tag and that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ tag does not.
  But there is still a submit button on the edit page.
- The explanation can be found in the definition of the <form> tag.
- There you will see that the <submit> tag is declared as a parameter tag
- as is the <or-cancel> tag.
+ The explanation can be found in the definition of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag.
+ There you will see that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<submit>
+\end_layout
+
+\end_inset
+
+ tag is declared as a parameter tag as is the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<or-cancel>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
-The <new-page> tag calls the <submit:> parameter tag and changes the label
- from its default value of ‘Save’ to a new value of ‘Create Recipe’.
- There is no need to call the <or-cancel> tag with its parameterized name,
- <cancel>, because it is not changed.
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+ tag calls the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<submit:>
+\end_layout
+
+\end_inset
+
+ parameter tag and changes the label from its default value of ‘Save’ to
+ a new value of ‘Create Recipe’.
+ There is no need to call the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<or-cancel>
+\end_layout
+
+\end_inset
+
+ tag with its parameterized name,
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ <cancel>
+\end_layout
+
+\end_inset
+
+, because it is not changed.
 \end_layout
 
 \begin_layout Standard
-On the other hand, the <edit-page> tag just relies on the default for both
- of these tags so there are no calls to them in the <edit-page> tag definition.
+On the other hand, the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ tag just relies on the default for both of these tags so there are no calls
+ to them in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+ tag definition.
 \end_layout
 
 \begin_layout Standard
-2.	Working with the <field-list> tag.
+2.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Working with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\end_inset
+
+.
  You have already done some work with this tag in the last tutorial.
   Experiment with removing a field by editing the tag’s fields attribute.
- First copy the three tags above into application.dryml
+ First copy the three tags above into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -410,14 +1101,70 @@ On the other hand, the <edit-page> tag just relies on the default for both
 \end_layout
 
 \begin_layout Standard
-Let’s remove the categories drop-down box as an experiment.
- Working in application.dryml, edit the <form> definition code.
+Let’s remove the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ drop-down box as an experiment.
+ Working in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+, edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ definition code.
  Change 
 \end_layout
 
 \begin_layout Standard
-<field-list fields="title, body, categories, category_assignments, country"
- param/>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<field-list fields="title, body, 
+\color red
+categories
+\color inherit
+, 
+\end_layout
+
+\begin_layout LyX-Code
+   category_assignments, country" param/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -425,53 +1172,354 @@ to:
 \end_layout
 
 \begin_layout Standard
-<field-list fields="title, body, category_assignments, country" param/>
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
+<field-list fields="title, body, 
+\end_layout
+
+\begin_layout LyX-Code
+   category_assignments, country" param/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Now your categories drop-down box is gone.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure164.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Modifying the <field-list> tag to remove fields on a page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-You may be wondering why we did not remove the category_assignments attribute
- also or for that matter why it is there at all.
- First, try removing category_assignments without removing categories.
+Now your 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ drop-down box is gone.
+\end_layout
+
+\begin_layout Standard
+You may be wondering why we did not remove the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignments
+\end_layout
+
+\end_inset
+
+ attribute also or for that matter why it is there at all.
+ First, try removing 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+category_assignments
+\end_layout
+
+\end_inset
+
+ without removing 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+.
  There is no effect.
  Try removing both.
- You get the same result as with removing categories alone.
- This is just how the <field-list> tag works.
- On the other hand, the model structure that connects the Recipe model to
- the Category model through the CategoryAssignments model must, of course,
- be there for the drop-down box to be there at all.
+ You get the same result as with removing 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ alone.
+ This is just how the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag works.
+ On the other hand, the model structure that connects the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model to the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Category
+\end_layout
+
+\end_inset
+
+ model through the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+CategoryAssignments
+\end_layout
+
+\end_inset
+
+ model must, of course, be there for the drop-down box to be there at all.
  Put back the categories drop-down box to end this step of the tutorial.
 \end_layout
 
 \begin_layout Standard
 3.
-  Working with the  <field-list> and <input> tags.
- In the same way that <field-list> calls the <view> tag when it is showing
- a record’s data, <field-list> calls the <input> tag when it is creating
- an empty form to enter a record or populating a form for editing a record.
+  
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Working with the  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ tags.
+\end_layout
+
+\end_inset
+
+ In the same way that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ calls the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag when it is showing a record’s data, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ calls the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ tag when it is creating an empty form to enter a record or populating a
+ form for editing a record.
  This is an illustration of tag polymorphism.
- That is, <field-list> does many different things depending on the context
- of its use.
+ That is, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ does many different things depending on the context of its use.
 \end_layout
 
 \begin_layout Standard
-The overall syntax of the <input> tag is the same as the <view> tag.
+The overall syntax of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ tag is the same as the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag.
  When you wish to create an input control on a form, one at a time, you
  can invoke the control in the following way.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <input:title>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 In the code above you are requesting that an input field be created for
- the title field of the Recipe model.
- Hobo knows to use the Recipe model as long as you are in the context of
- the Recipe model, which in this case is set by working within the Recipe
+ the title field of the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model.
+ Hobo knows to use the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model as long as you are in the context of the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
+ model, which in this case is set by working within the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Recipe
+\end_layout
+
+\end_inset
+
  form.
  Further, as you’ve seen before, Hobo knows just what kind of control you
  are likely to need.
@@ -479,34 +1527,139 @@ In the code above you are requesting that an input field be created for
 
 \begin_layout Standard
 Below we are going to show you how to construct essentially the same form
- out of <input> tags that you created with the <field-list> tag in the previous
- step.
+ out of 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ tags that you created with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag in the previous step.
 \end_layout
 
 \begin_layout Standard
 Let’s be a bit more rigorous now in constructing tags from tags.
- First remove the form definition tag from application.dryml.
- You will now use the <extend> tag to redefine an auto-generated <form>
+ First remove the form definition tag from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
+ You will now use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ tag to redefine an auto-generated 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
  tag with the same name.
 \end_layout
 
 \begin_layout Standard
-First, let’s create the skeleton of an extend tag so we can watch what happens
- one step at a time.
- The following code placed in application.dryml will cause no change because
- it substitutes this  <form> tag for the original <form> tag.
+First, let’s create the skeleton of an 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+extend
+\end_layout
+
+\end_inset
+
+ tag so we can watch what happens one step at a time.
+ The following code placed in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ will cause no change because it substitutes this  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag for the original 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <extend tag="form" for ="Recipe">
 \end_layout
 
-\begin_layout Standard
-	<old-form merge/>
+\begin_layout Code
+  <old-form merge/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -515,67 +1668,131 @@ The following code, which might seem to be identical, actually is not.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <extend tag="form" for ="Recipe">
 \end_layout
 
-\begin_layout Standard
-	<old-form merge>
+\begin_layout Code
+  <old-form merge>
 \end_layout
 
-\begin_layout Standard
-	</old-form>
+\begin_layout Code
+  </old-form>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 In the above case, Hobo replaced the default content of the parameterized
- <form> tag with blank content resulting in a blank form.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tag with blank content resulting in a blank form.
  Go to the ‘Recipes’ tab and pick a recipe.
  Then click ‘New Recipe’ to see the blank form.
 \end_layout
 
 \begin_layout Standard
 Now let’s get some content into the parameter tag.
- Copy the following code into application.dryml:
+ Copy the following code into 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <extend tag="form" for ="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<old-form merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<error-messages param/>
 \end_layout
 
-\begin_layout Standard
-		<p><input:title/><p/>
+\begin_layout Code
+		<p>
+\color red
+<input:title/><p/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	    <div param="actions">
 \end_layout
 
-\begin_layout Standard
-	      <submit label="Save" param/><or-cancel param="cancel"/>
+\begin_layout Code
+	      <submit label="Save" param/><or-cancel 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+              param="cancel"/>
+\end_layout
+
+\begin_layout Code
 	    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	</old-form>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -583,53 +1800,187 @@ Refresh your browser.
 \end_layout
 
 \begin_layout Standard
-We’ve got an entry control but <input> has no built in labeling like <field-list
->.
- We need to add it like we did with the <view> tag.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure165.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+First step using the <Input> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+We’ve got an entry control but 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ has no built in labeling like 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+.
+ We need to add it like we did with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <extend tag="form" for ="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	<old-form merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 			<error-messages param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<p><b>Title</b></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 		<p><input:title/><p/><br/><br/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	    <div param="actions">
 \end_layout
 
-\begin_layout Standard
-	      <submit label="Save" param/><or-cancel param="cancel"/>
+\begin_layout Code
+	      <submit label="Save" param/><or-cancel 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+               param="cancel"/>
+\end_layout
+
+\begin_layout Code
 	    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 	</old-form>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Refresh your browser:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure166.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Adding the label for the field 
+\begin_inset Quotes eld
+\end_inset
+
+Title
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -639,77 +1990,118 @@ Do the same thing for the rest of the fields.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <extend tag="form" for ="Recipe">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
  <old-form merge>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <error-messages param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><b>Title</b></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><input:title/></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><b>Recipe</b></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><input:body/></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><b>Categories</b></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><input:categories/></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><b>Country</b></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <p><input:country/></p>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <div param="actions">
 \end_layout
 
-\begin_layout Standard
-     <submit label="Save" param/><or-cancel param="cancel"/>
+\begin_layout Code
+     <submit label="Save" param/><or-cancel 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+         param="cancel"/>
+\end_layout
+
+\begin_layout Code
    </div>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
  </old-form>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </extend>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Now you have succeeded in reconstructing a form with the <input> tag and
- a little bit of additional HTML formatting.
+Now you have succeeded in reconstructing a form with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+ tag and a little bit of additional HTML formatting.
  
 \end_layout
 
 \begin_layout Standard
-Summary.
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Summary
+\end_layout
+
+\end_inset
+
+.
  Hobo provides some great functionality for fine-tuning your application
  when the default rendering is not quite what you would like.
  You can experiment with them by going through the documentation on the
