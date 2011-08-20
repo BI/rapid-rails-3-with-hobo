@@ -91,178 +91,391 @@ In this tutorial you will learn the options for displaying details about
  
 \end_layout
 
-\begin_layout Standard
-Tutorial Application: four_table
+\begin_layout Subsubsection
+Tutorial Application: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+four_table
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Topics
 \end_layout
 
-\begin_layout Standard
-Edit the <show-page> tag.
+\begin_layout Itemize
+Edit the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
 \end_layout
 
-\begin_layout Standard
-Create and work with the show.dryml template.
+\end_inset
+
+ tag.
 \end_layout
 
-\begin_layout Standard
-Work with <field-list>, <fieldname-label> and <view> tags.
+\begin_layout Itemize
+Create and work with the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+ template.
+\end_layout
+
+\begin_layout Itemize
+Work with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<fieldname-label>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tags.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 Steps
 \end_layout
 
 \begin_layout Standard
-1.	Copy the <show-page> tag.
- Go to pages.dryml and copy the <show-page> tag for Recipes to application.dryml.
+1.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Copy the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\end_inset
+
+.
+ Go to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+ and copy the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag for Recipes to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="show-page" for="Recipe">
 \end_layout
 
-\begin_layout Standard
-  <page merge title="#{ht 'recipe.show.title', :default=>['Recipe'] }">
+\begin_layout Code
+  <page merge title="#{ht 'recipe.show.title', 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+         :default=>['Recipe'] }">
+\end_layout
+
+\begin_layout Code
     <body: class="show-page recipe" param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <content: param>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           <header param="content-header">
 \end_layout
 
-\begin_layout Standard
-            <a:country param="parent-link">&laquo; <ht key="recipe.actions.back_to
-_parent" parent="Country" name="&this">Back to <name/></ht></a:country>
+\begin_layout Code
+            <a:country param="parent-link">&laquo; <ht 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+                key="recipe.actions.back_to_parent" 
+\end_layout
+
+\begin_layout Code
+                 parent="Country" 
+\end_layout
+
+\begin_layout Code
+                 name="&this">Back to 
+\end_layout
+
+\begin_layout Code
+                 <name/></ht></a:country>
+\end_layout
+
+\begin_layout Code
             <h2 param="heading">
 \end_layout
 
-\begin_layout Standard
-              <ht key="recipe.show.heading" name="&this.respond_to?(:name)
- ? this.name : ''">
+\begin_layout Code
+              <ht key="recipe.show.heading" 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+                 name="&this.respond_to?(:name)
+\end_layout
+
+\begin_layout Code
+                 ? this.name : ''">
+\end_layout
+
+\begin_layout Code
                 <name/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
               </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
             </h2>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
             <record-flags fields="" param/>
 \end_layout
 
-\begin_layout Standard
-            <a action="edit" if="&can_edit?" param="edit-link">
+\begin_layout Code
+            <a action="edit" if="&can_edit?" 
 \end_layout
 
-\begin_layout Standard
-              <ht key="recipe.actions.edit" name="&this.respond_to?(:name)
- ? this.name : ''">
+\begin_layout Code
+               param="edit-link">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+              <ht key="recipe.actions.edit" 
+\end_layout
+
+\begin_layout Code
+                  name="&this.respond_to?(:name) 
+\end_layout
+
+\begin_layout Code
+                  ? this.name : ''">
+\end_layout
+
+\begin_layout Code
                 Edit Recipe
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
               </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
             </a>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           </header>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           <section param="content-body">
 \end_layout
 
-\begin_layout Standard
-            <view:body param="description"/>
+\begin_layout Code
+            
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<view:body param="description"/>
 \end_layout
 
-\begin_layout Standard
-            <field-list fields="country" param/>
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+            
+\family typewriter
+\color red
+
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+
+\color red
+<field-list fields="country" param/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Code
             <section param="collection-section">
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
               <h3 param="collection-heading">
 \end_layout
 
-\begin_layout Standard
-                <ht key="category.collection.heading" count="&this.categories.count"
- >
+\begin_layout Code
+                <ht key="category.collection.heading" 
 \end_layout
 
-\begin_layout Standard
-                  <human-collection-name collection="categories" your/>
+\begin_layout Code
+                   count="&this.categories.count" >
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
+                  <human-collection-name 
+\end_layout
+
+\begin_layout Code
+                   collection="categories" your/>
+\end_layout
+
+\begin_layout Code
                 </ht>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
               </h3>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
               <collection:categories param/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
             </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
           </section>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     </content:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
   </page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 We are going to focus in on three display components of this tag, noted
  in bold italics above, to help you understand how to change the display
  of individual records.
-  (Add the ‘<field-list fields="country" param/>’ if it is not present.)
+  (Add the ‘
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list fields="country" param/>
+\end_layout
+
+\end_inset
+
+’ if it is not present.)
 \end_layout
 
 \begin_layout Standard
@@ -270,14 +483,101 @@ Click on the Recipes tab and then click on an individual recipe.
 \end_layout
 
 \begin_layout Standard
-Now comment out the three lines above in bold italics using <!-- ...
- -->, and confirm that you have removed the display of the individual recipe
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure155.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Recipe show page before modification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now comment out the three lines above in bold italics using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<!-- ...
+ -->
+\end_layout
+
+\end_inset
+
+, and confirm that you have removed the display of the individual recipe
  record.
 \end_layout
 
 \begin_layout Standard
-2.	Create the show.dryml template.
- Go to views/recipes and create a new template file called show.dryml.
+2.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Create the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+ template
+\end_layout
+
+\end_inset
+
+.
+ Go to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes
+\end_layout
+
+\end_inset
+
+ and create a new template file called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+.
  When a user invokes the show action by requesting the display of a single
  record, this is the first of the three places Hobo looks to determine how
  to display the record.
@@ -285,19 +585,66 @@ Now comment out the three lines above in bold italics using <!-- ...
 \end_layout
 
 \begin_layout Standard
-As with the index action, its next two stops are the application.dryml file
- to look for application wide tag definitions and finally in pages.dryml
+As with the index action, its next two stops are the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file to look for application wide tag definitions and finally in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
  for the auto-generated tag definitions which are based on model and controller
  code.
 \end_layout
 
 \begin_layout Standard
-Place the following code in show.dryml to invoke your show page.
+Place the following code in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+ to invoke your show page.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <show-page/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -305,86 +652,387 @@ Refresh your browser and you should see the following:
 \end_layout
 
 \begin_layout Standard
-3.	Use the <field-list> tag.
- The <field-list> tag allows you to display rows of data in two columns.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure156.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Recipe show page after removing three critical lines of code
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag allows you to display rows of data in two columns.
  The first column contains the name of the field and the second column contains
  the contents of that field.
- The <field-list> tag has been parameterized in the <show-page> tag so we
- need to invoke it with a trailing colon (:).
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag has been parameterized in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag so we need to invoke it with a trailing colon (:).
  
 \end_layout
 
 \begin_layout Standard
-Remove the comments around the <field-list> tag in application.dryml and
- try the following in show.dryml.
+Remove the comments around the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml 
+\end_layout
+
+\end_inset
+
+and try the following in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <show-page>
 \end_layout
 
-\begin_layout Standard
-	<field-list: fields = "body, country"/>
+\begin_layout Code
+  <field-list: fields = "body, country"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </show-page>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Here you are using the attribute  fields to declare which fields in your
- model you wish to display.
+Here you are using the attribute  
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+fields
+\end_layout
+
+\end_inset
+
+ to declare which fields in your model you wish to display.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure157.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the <field=list> tag to choose which fields to display
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Hobo can even reach into the associated table and display the categories
- using <field-list>.
+ using 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+.
  Try this.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <show-page>
 \end_layout
 
-\begin_layout Standard
-	<field-list: fields = "body, country, categories"/>
+\begin_layout Code
+  <field-list: fields = "body, country, 
+\color red
+categories
+\color inherit
+"/>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </show-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 You can remove the collection heading since you no longer need it by observing
- that the <show-page> tag has a parameterized <h3> tag renamed as the <collectio
-n-heading:> parameter tag.
- You will see the following code in the <show-page> definition.
+ that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag has a parameterized 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<h3>
+\end_layout
+
+\end_inset
+
+ tag renamed as the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection-heading:>
+\end_layout
+
+\end_inset
+
+ parameter tag.
+ You will see the following code in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ definition.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <h3 param="collection-heading">Categories</h3>
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Now go into your show.dryml file and replace the default contents of the
- tag with nothing.
+Now go into your 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+ file and replace the default contents of the tag with nothing.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <show-page>
 \end_layout
 
-\begin_layout Standard
-	<field-list: fields = "body, country, categories"/>
+\begin_layout Code
+  <field-list: fields = "body, country, categories"/>
 \end_layout
 
-\begin_layout Standard
-	<collection-heading:></collection-heading:>
+\begin_layout Code
+  
+\color red
+<collection-heading:></collection-heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </show-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -392,62 +1040,281 @@ Now you should have the following after refreshing your browser.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure158.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the <collection-heading:> tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 4.
- Changing the <field-list> labels.
- We can now see that the <field-list> tag does a nice job of formatting
- the display of the fields of a record.
- The default display pictured in Step 1 uses a combination of the <view>
- and <field-list> tags.
- However the <view> tag does not automatically provide a label like the
- <field-list> tag.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Changing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ labels
+\end_layout
+
+\end_inset
+
+.
+ We can now see that the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag does a nice job of formatting the display of the fields of a record.
+ The default display pictured in Step 1 uses a combination of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tags.
+ However the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag does not automatically provide a label like the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag.
  We will cover this further in Step 5.
  Now let’s learn how to change the labels.
 \end_layout
 
 \begin_layout Standard
-Try the following code to change the body label to ‘Recipe’.
+Try the following code to change the 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+body
+\end_layout
+
+\end_inset
+
+ label to ‘Recipe’.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <show-page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
  <collection-heading:></collection-heading:>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    <field-list: fields = "body, country, categories"> 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
     <body-label:>Recipe</body-label:>  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
    </field-list>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <show-page>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure159.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the <body-label:> parameter tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 There are a few new things going on here that you have not seen before.
 \end_layout
 
-\begin_layout Standard
-The <body-label:> tag is a parameter tag defined in the Rapid Library.
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body-label:>
+\end_layout
+
+\end_inset
+
+ tag is a parameter tag defined in the Rapid Library.
  
 \end_layout
 
-\begin_layout Standard
-The <body-label:> tag is a user customized Rapid library tag derived from
- the generic <fieldname-label> tag.
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body-label:>
 \end_layout
 
-\begin_layout Standard
-The <body-label:> tag is nested within the <field-list> tag.
+\end_inset
+
+ tag is a user customized Rapid library tag derived from the generic 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<fieldname-label>
+\end_layout
+
+\end_inset
+
+ tag.
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body-label:>
+\end_layout
+
+\end_inset
+
+ tag is nested within the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
@@ -455,8 +1322,26 @@ Let’s go through these points one at a time.
 \end_layout
 
 \begin_layout Standard
-Rapid Parameter Tag.
- This the tag is used with a trailing colon (:), meaning that <body-label:>
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Rapid Parameter Tag
+\end_layout
+
+\end_inset
+
+.
+ This the tag is used with a trailing colon (:), meaning that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body-label:>
+\end_layout
+
+\end_inset
+
  is a parameter tag.
  However, it is not defined anywhere within either your code or the auto-generat
 ed code.
@@ -471,69 +1356,206 @@ If you have done any coding besides this tutorial, you have probably run
 \begin_layout Standard
 If there were not a Rapid parameter tag to use here and you tried to use
  a regular Rapid tag, you would get an error.
- Try deleting the colon (:) from <body-label:> to confirm this.
+ Try deleting the colon (:) from 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<body-label:>
+\end_layout
+
+\end_inset
+
+ to confirm this.
 \end_layout
 
 \begin_layout Standard
-User-customized tags.
- The tag name is dynamic depending on what field in the <field-list> is
- being addressed.
- For example, to change the label of the country field, you would use the
- <country-label> tag.
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+User-customized tags
+\end_layout
+
+\end_inset
+
+.
+ The tag name is dynamic depending on what field in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ is being addressed.
+ For example, to change the label of the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+country
+\end_layout
+
+\end_inset
+
+ field, you would use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<country-label>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
-Tag nesting.
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Tag nesting
+\end_layout
+
+\end_inset
+
+.
  The feature that you see here is the ability to nest tags in order to pass
  data.
  Here you are passing the content of the tag to the label variable of the
- <field-list> tag.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
 Let’s go one step further and re-label the other two fields displayed on
  our page.
- You can just nest each <fieldname-label> tag after the other within <field-list
-> and Hobo will pass the content into the <field-list> tag.
+ You can just nest each 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<fieldname-label>
+\end_layout
+
+\end_inset
+
+ tag after the other within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ and Hobo will pass the content into the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
-You might be noticing that categories is not a field at all; it is a collection.
+You might be noticing that 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+categories
+\end_layout
+
+\end_inset
+
+ is not a field at all; it is a collection.
  That is not a problem for Hobo.
- Hobo can address the label using the <categories-label> just as if it was
- a field: 
+ Hobo can address the label using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<categories-label>
+\end_layout
+
+\end_inset
+
+ just as if it was a field: 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <show-page>
 \end_layout
 
-\begin_layout Standard
-   <collection-heading:></collection-heading:>
+\begin_layout Code
+  <collection-heading:></collection-heading:>
 \end_layout
 
-\begin_layout Standard
-	<field-list: fields = "body, country, categories">
+\begin_layout Code
+    <field-list: fields = "body, country, categories">
 \end_layout
 
-\begin_layout Standard
-		<body-label:>Recipe</body-label:>
+\begin_layout Code
+        <body-label:>Recipe</body-label:>
 \end_layout
 
-\begin_layout Standard
-		<country-label:>Origin</country-label:>
+\begin_layout Code
+
+\color red
+        <country-label:>Origin</country-label:>
 \end_layout
 
-\begin_layout Standard
-		<categories-label:>Flavors</categories-label:>
+\begin_layout Code
+
+\color red
+        <categories-label:>Flavors</categories-label:>
 \end_layout
 
-\begin_layout Standard
-	</field-list>
+\begin_layout Code
+    </field-list>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <show-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -541,96 +1563,308 @@ Refresh your browser and try this out.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure160.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Using the <country-label:> parameter to change the label on the page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 5.
- Using the <view> tag to display a record.
+ 
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag to display a record
+\end_layout
+
+\end_inset
+
+.
  There is still another way to work with the fields of an individual record
- and its associated records using the <view> tag.
+ and its associated records using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag.
 \end_layout
 
 \begin_layout Standard
-Let’s make a tag from the <show-page> tag within application.dryml.
+Let’s make a tag from the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
  Recall that you can use the merge attribute within a template although
- you can’t use the <extend> tag in a template, only in application.dryml.
+ you can’t use the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+ tag in a template, only in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Let’s try out the following code in application.dryml.
+Let’s try out the following code in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Code
 <def tag="show-page-new">
 \end_layout
 
-\begin_layout Standard
-	<show-page merge>
+\begin_layout Code
+  <show-page merge>
 \end_layout
 
-\begin_layout Standard
-		<content-body:>
+\begin_layout Code
+    <content-body:>
 \end_layout
 
-\begin_layout Standard
-			<h2>Title:</h2>
+\begin_layout Code
+      <h2>Title:</h2>
 \end_layout
 
-\begin_layout Standard
-			<view:title/><br/>
+\begin_layout Code
+      <view:title/><br/>
 \end_layout
 
-\begin_layout Standard
-			<h2>Recipe:</h2>
+\begin_layout Code
+      <h2>Recipe:</h2>
 \end_layout
 
-\begin_layout Standard
-			<view:body/>
+\begin_layout Code
+      <view:body/>
 \end_layout
 
-\begin_layout Standard
-			<h2>Categories:</h2>
+\begin_layout Code
+      <h2>Categories:</h2>
 \end_layout
 
-\begin_layout Standard
-			<view:categories/>
+\begin_layout Code
+      <view:categories/>
 \end_layout
 
-\begin_layout Standard
-			<h2>Country:</h2>
+\begin_layout Code
+      <h2>Country:</h2>
 \end_layout
 
-\begin_layout Standard
-			<view:country/>
+\begin_layout Code
+      <view:country/>
 \end_layout
 
-\begin_layout Standard
-		</content-body:>
+\begin_layout Code
+    </content-body:>
 \end_layout
 
-\begin_layout Standard
-	</show-page>
+\begin_layout Code
+  </show-page>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 </def>
 \end_layout
 
-\begin_layout Standard
+\begin_layout Code
 <show-page-new/>
 \end_layout
 
-\begin_layout Standard
-In the above code, we are using the parameter tag <content-body:> defined
- from a parameterized <section> tag in the <show-page> tag:
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+In the above code, we are using the parameter tag 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<content-body:>
+\end_layout
+
+\end_inset
+
+ defined from a parameterized 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<section>
+\end_layout
+
+\end_inset
+
+ tag in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <section param="content-body">
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-By placing new HTML and Rapid library tags within the <content-body:> tags,
- we are changing the default content defined in the <show-page> tag to the
- new content and preserving everything else in the <show-page> tag.
+By placing new HTML and Rapid library tags within the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<content-body:>
+\end_layout
+
+\end_inset
+
+ tags, we are changing the default content defined in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag to the new content and preserving everything else in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag.
  We are not only preserving the content but also the formatting.
  Hobo has predefined CSS formatting as you probably have gathered that correspon
 d to the Rapid tags.
@@ -638,12 +1872,50 @@ d to the Rapid tags.
 \end_layout
 
 \begin_layout Standard
-If, for example, we had used the replace attribute in the <content-body:>
+If, for example, we had used the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+replace
+\end_layout
+
+\end_inset
+
+ attribute in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<content-body:>
+\end_layout
+
+\end_inset
+
  tag like this…
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout LyX-Code
 <content-body: replace>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -652,30 +1924,214 @@ If, for example, we had used the replace attribute in the <content-body:>
 \end_layout
 
 \begin_layout Standard
-Remove the last code in show.dryml  and put <show-page-new/> at the top.
+Remove the last code in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+  and put 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page-new/>
+\end_layout
+
+\end_inset
+
+ at the top.
 \end_layout
 
 \begin_layout Standard
-Refresh your browser without using the replace attribute and then try it
- with the attribute to see confirm that the formatting will be removed.
+Refresh your browser without using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+replace
+\end_layout
+
+\end_inset
+
+ attribute and then try it with the attribute to see confirm that the formatting
+ will be removed.
 \end_layout
 
 \begin_layout Standard
-Here is what happens when you add the replace attribute.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure161.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+A new show page for Recipes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here is what happens when you add the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+replace
+\end_layout
+
+\end_inset
+
+ attribute.
  
 \end_layout
 
 \begin_layout Standard
-Now take out the replace attribute before proceeding.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/figure162.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Page view of using the replace attribute in the <content-body:> parameter
+ tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-6.	Summary.
- You have now learned to create a new template called show.dryml in the views/rec
-ipes directory that is used whenever there is an action to display an individual
- recipe record.
+Now take out the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+replace
+\end_layout
+
+\end_inset
+
+ attribute before proceeding.
+\end_layout
+
+\begin_layout Standard
+6.	
+\begin_inset Flex Strong
+status collapsed
+
+\begin_layout Plain Layout
+Summary
+\end_layout
+
+\end_inset
+
+.
+ You have now learned to create a new template called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+views/recipes
+\end_layout
+
+\end_inset
+
+ directory that is used whenever there is an action to display an individual
+ 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+recipe
+\end_layout
+
+\end_inset
+
+ record.
  Before you created this file, Hobo was constructing the template on the
- fly from the auto-generated <show-page> tag in pages.dryml.
+ fly from the auto-generated 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+ tag in 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_body
