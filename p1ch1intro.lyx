@@ -83,18 +83,33 @@ By Tom Locke
 \end_layout
 
 \begin_layout Standard
-Hobo is a software framework that radically reduces the effort required
+Hobo is a software framework that radically reduces the required effort
  to develop database-driven, interactive web sites and web-based applications.
- Strictly speaking it’s more of a “half-framework” — Hobo builds on the
- amazingly successful Ruby on Rails and that’s where much of the functionality
- comes from.
- The original motivation for the Hobo project can be summed up pretty succinctly
- with a single sentiment: “Do I really have to code all this stuff up again?".
+ Strictly speaking, it’s more of a “half-framework” — Hobo builds on the
+ amazingly successful 
+\begin_inset Quotes eld
+\end_inset
+
+Ruby on Rails
+\begin_inset Quotes erd
+\end_inset
+
+ and that’s where much of the functionality comes from.
+ The motivation for the Hobo project can be summed up with a single sentiment:
+ “Do I really have to code all this stuff up again?"
 \end_layout
 
 \begin_layout Standard
-In other words Hobo is about not re-inventing the wheel.
- In software-engineer-speak, we call that code reuse.
+In other words Hobo is about NOT re-inventing the wheel.
+ In software-engineer-speak, we call that 
+\begin_inset Quotes eld
+\end_inset
+
+code reuse
+\begin_inset Quotes erd
+\end_inset
+
+.
  If you mention that term in a room full of experienced programmers you’ll
  probably find yourself the recipient of various frowns and sighs; you might
  even get laughed at.
@@ -114,25 +129,26 @@ Except they don’t.
  Ask any programmer to list the existing software technologies they drew
  upon to create their Amazing New Thing and you had better have a lot of
  time to spare.
- Modern programming languages ship with huge class libraries, we rely on
+ Modern programming languages ship with huge class libraries, We rely on
  databases that have unthinkable amounts of engineering time invested in
  them, and our web browsers have been growing more and more sophisticated
  for years.
  Nowadays we also draw upon very sophisticated online services, for example
- web based mapping and geo-location, and we add features to our products
- that would otherwise have been far beyond our reach.
+ web based mapping and geo-location.
+ We add features to our products that would otherwise have been far beyond
+ our reach.
 \end_layout
 
 \begin_layout Standard
-So it turns out the quest for re-use has been a great success after all—we
+It turns out the quest for re-use has been a great success after all—we
  just have to change our perspective slightly, and look at the infrastructure
- our application is built on rather than the application code itself.
+ our application is built on, rather than the application code.
  This is probably because our attitude to infrastructure is different—you
  like it or lump it.
  If your mapping service doesn’t provide a certain feature, you just do
  without.
- You can’t dream of coding up your own mapping service, and some maps is
- better than no maps.
+ You can’t dream of coding up your own mapping service and having some maps
+ is better than no maps.
  
 \end_layout
 
@@ -163,7 +179,7 @@ In part, this is what Hobo is about.
  If you’re prepared for your app to sit firmly inside the box of Hobo’s
  “standard database app”, you can be up and running with startlingly little
  effort.
- So little, in fact, that you can just about squeeze by without even knowing
+ So little, in fact, that you can almost squeeze by without even knowing
  how to program.
  But that’s only one part of Hobo.
  The other part comes from the fact that nobody likes to be boxed in.
@@ -190,24 +206,24 @@ This, we believe, is where Hobo is a real step forward.
  running in your first afternoon.
  You can then identify the things you’d like to tweak and decide if you
  want to invest programming effort in them.
- You can do this, bit by bit, on any aspect of your application, from tiny
- touches to the user-interface, all the way up to full-blown custom features.
+ You can do this, bit by bit, on any aspect of your application from tiny
+ touches to the user-interface all the way up to full-blown custom features.
 \end_layout
 
 \begin_layout Standard
 In the long run, and we’re very much still on the journey, we hope you will
  never again have to say “Do I really have to code all this up again?”,
- because you’ll only ever be coding the things that are unique to this particula
-r project.
- To be honest that’s probably a bit of a utopian dream, and some readers
+ You’ll only ever be coding the things that are unique to this particular
+ project.
+ To be honest, that’s probably a bit of a utopian dream, and some readers
  will probably be scoffing at this point—you’ve heard it all before.
  But if we can make some progress, any progress in that direction, that’s
- got to be good, right? Well we think we’ve made a ton of progress already,
+ got to be good, right? Well, we think we’ve made a ton of progress already,
  and there’s plenty more to come!
 \end_layout
 
 \begin_layout Subsection*
-Background
+Pre-Hobo
 \end_layout
 
 \begin_layout Standard
@@ -223,8 +239,7 @@ eered technology that was designed by committee and is painful to program
  Suffice it to say that many programmers felt that they were spending way
  to much time writing repetitive “boilerplate” code and the dreaded XML
  configuration files, instead of focusing on the really creative stuff that
- was unique to their project.
- Not fun and definitely not efficient.
+ was unique to their project- not fun and definitely not efficient.
 \end_layout
 
 \begin_layout Standard
@@ -270,7 +285,7 @@ In the previous section we talked about trading flexibility for reach.
  We’re finding out just how far the idea of convention over configuration
  can be pushed.
  For my part, the experience of learning Rails was a real eye-opener, but
- I immediately wanted more.
+ I, immediately, wanted more.
 \end_layout
 
 \begin_layout Standard
@@ -281,7 +296,7 @@ I found that certain aspects of Rails development were a real joy.
  We call this “declarative programming”.
  Instead of spelling out the details of a process that would achieve the
  desired result, you just declare what you want, and the framework makes
- it happen: “what” not “how”.
+ it happen.
 \end_layout
 
 \begin_layout Standard
@@ -381,12 +396,11 @@ The Difference
 There are a number of projects out there that bear an external resemblance
  to Hobo.
  To name a few, in the Rails world we have Active Scaffold and Streamlined,
- and the Python language has Django, a web framework with some similar features.
+ The Python language has Django, a web framework with some similar features.
 \end_layout
 
 \begin_layout Standard
-There is some genuine overlap between these projects and Hobo.
- All of them (including Hobo) can be used to create so called “admin interfaces”.
+All of them (including Hobo) can be used to create so called “admin interfaces”.
  That is, they are very good at providing a straightforward user-interface
  for creating, editing and deleting records in our various database tables.
  The idea is that the site administrator, who has a good understanding of
@@ -432,14 +446,14 @@ This difference leads to something very significant: it gets you out of
  making a difficult all-or-nothing decision.
  An admin site builder does one thing well, but stops there.
  For every piece of your site you need to decide: admin interface or custom
- code? With Hobo you can start off using the out-of-the-box UI as a rough
- prototype, and then gradually replace as much or as little as you need
- in order to get the exact user experience you are after.
+ code? With Hobo you can start using the out-of-the-box UI as a rough prototype,
+ and then gradually replace as much or as little as you need in order to
+ get the exact desired user experience.
 \end_layout
 
 \begin_layout Standard
-Once again we find ourselves back at the original idea: making a tradeoff
- between flexibility and reach.
+Again, we find ourselves back at the original idea: making a tradeoff between
+ flexibility and reach.
  The crucial difference with Hobo, is that you get to make this trade-off
  in a very fine-grained way.
  Instead of all-or-nothing decisions (admin-site-builder vs.
@@ -460,12 +474,12 @@ x solution at one end to a fully tailored application at the other.
 \end_layout
 
 \begin_layout Standard
-The previous section posed the question: “how can the ideas of declarative
- programming be taken to higher and higher levels?”.
- We mentioned before that one particular answer to this question has stood
- out as crucial: it is the approach we have taken to customization.
- It’s not what your components can do, it’s how they can be changed that
- matters.
+Let's get back to the question: “How can the ideas of declarative programming
+ be taken to higher and higher levels?”.
+ We mentioned before that one answer to this question is crucial: The approach
+ we have taken to customization.
+ It’s not what your components can do.
+ It’s how they can be changed that matters.
  This makes sense—software development is a creative activity.
  Developers need to take what you’re giving them and do something new with
  it.
@@ -473,7 +487,8 @@ The previous section posed the question: “how can the ideas of declarative
 
 \begin_layout Standard
 It is this difficulty of customization that lies at the heart of concerns
- with high-level components: David Heinemeier Hansson again:
+ with high-level components.
+ David Heinemeier Hansson again:
 \end_layout
 
 \begin_layout Standard
@@ -520,13 +535,21 @@ The typical story goes like this: you need to build something that “surely
 \end_layout
 
 \begin_layout Standard
-To the optimistic however, a problem is just an opportunity waiting to be
+To the optimist however, a problem is just an opportunity waiting to be
  taken.
  We’re hitting a limit on the size of the components we can build—too big
- and the effort to tailor them makes it counterproductive.
- Turn that around and you get this: if you can find a way to make customization
- easier, then you can build bigger components.
+ and the effort to tailor them makes it counter-productive.
+ Turn that around and you get this.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+If you can find a way to make customization easier, then you can build bigger
+ components.
  If it’s the “fitting” that’s the problem, let’s make them easier to fit!
+\begin_inset Quotes erd
+\end_inset
+
  That’s exactly what we’re doing.
 \end_layout
 
@@ -540,14 +563,13 @@ Bigger library
 
 \begin_layout Standard
 Obviously the whole point in discovering the secrets of how to build high-level
- components, is that you want to build some high level components! In other
- words there are two distinct aspects to the Hobo project: getting the underlyin
-g technology right, and then building some cool stuff with it.
+ components, is to build high level components! In other words there are
+ two distinct aspects to the Hobo project: getting the underlying technology
+ right and then building some cool stuff with it.
  Hobo 1.3 will ship with a decent library of useful “building blocks” to
- get your app up and running quickly, but there’s so much more we’d like
- to see.
+ get your app up and running quickly, but there’s so much more to see.
  This is where the magic of open-source needs to come into play.
- The better Hobo gets, the more developers will want to jump on board, and
+ The better Hobo gets, the more developers will want to jump on-board, and
  the bigger the library will grow.
 \end_layout
 
@@ -555,8 +577,8 @@ g technology right, and then building some cool stuff with it.
 Although the underlying framework is the most technically challenging part
  of the project, in the long run there’s much more work to be done in the
  libraries.
- And writing the code is just part of the story.
- All these contributions will need to be documented and catalogued too.
+ Writing the code is just part of the story.
+ All these contributions will need to be documented and catalogued, too.
  
 \end_layout
 
@@ -584,27 +606,26 @@ It would be remiss not to mention that all these wonderful productivity
  Hobo to prototype, or to create a very niche application for a small audience.
  In these cases the performance overhead just doesn’t matter.
  If you do have a more serious application that may need to scale, there
- are well known techniques to apply, such as prudent use of caching.
+ are well known techniques to apply, like prudent use of caching.
 \end_layout
 
 \begin_layout Standard
-The argument is pretty much the same as that told by early Rails coders
+This argument is pretty much the same as that told by early Rails coders
  to their Java based critics.
  It’s much better to save a ton of development time, even if it costs you
  some of your raw performance.
  The time saved can be used to work on performance improvements in the architect
 ure of the app.
- You typically end up with an app that’s actually faster than something
+ You, typically, end up with an app that’s actually faster than something
  built in a lower-level, “faster” language.
 \end_layout
 
 \begin_layout Standard
-Another way to look at it—it was about four our five years ago that Rails
- was getting a lot of pushback about performance.
+From another perspective—it was four or five years ago that Rails was getting
+ a lot of pushback about performance.
  In those four or five years, Moore’s Law has made our servers somewhere
  between five and ten times faster.
- If Rails was fast enough in 2005 (it was), Hobo is certainly fast enough
- today.
+ Since Rails was fast enough in 2005, Hobo is, certainly, fast enough today.
 \end_layout
 
 \begin_layout Standard
@@ -621,22 +642,20 @@ Less magic
 \begin_layout Standard
 One of the most common criticisms leveled against Hobo is that it is “too
  magic”.
- This tends to come from very experienced developers who like to know exactly
- how everything is working.
- Because Hobo gives you so much out-of-the-box, it’s inevitable that you’ll
- be scratching your head a bit about where it all comes from in the early
- days.
- Fortunately this is mostly just a matter of the learning curve.
+ This usually comes from very experienced developers who like to know exactly
+ how everything works.
+ Because Hobo gives you so much out-of-the-box, initially you’ll be scratching
+ your head about where it all comes from.
+ Fortunately, this is just a matter of the learning curve.
  Once you’ve oriented yourself, it’s pretty easy to understand where the
- various features come from, and hence where to look when you need to customize.
+ various features come from and where to look when you need to customize.
 \end_layout
 
 \begin_layout Standard
-As Hobo has developed, we’ve definitely learnt how important it is to make
- things as clear and transparent as we can.
- The changes from Hobo 0.7 to 0.8 removed a great deal of hard to understand
- “magical” code.
- This is definitely a trend that will continue.
+As Hobo has developed, we’ve definitely learned how important it is to make
+ things clear and transparent.
+ The changes from Hobo 0.7 to 0.8 removed a great deal of hard-to-understand
+ “magical” code, a trend that will continue.
  We’re very confident that future versions will be able to do even more
  for you, while at the same time being easier to understand.
  It’s a challenge—we like challenges!
@@ -652,26 +671,25 @@ One of the really interesting things we’ve learnt through releasing Hobo
  It is very common for a post to the “hobo users” discussion group to start
  “I am new to web programming” or “This is my first attempt to create a
  web app”.
- It seems that, with Hobo, people can see that a finished result is within
- their reach.
- That is a powerful motivator.
+ With Hobo people can see a finished result is within their reach, a powerful
+ motivator!
 \end_layout
 
 \begin_layout Standard
-Now that we’ve seen that appeal, it’s really interesting to find out how
- far we can push it.
+Now that we’ve seen the appeal to beginners, it’s really interesting to
+ find out how far we can push.
  We’ve already seen simple Hobo applications created by people that don’t
- really know computer programming at all.
- Right now these people are really rather limited, but perhaps they can
+ really know computer programming.
+ Right now, these people are really rather limited, but perhaps they can
  go further.
 \end_layout
 
 \begin_layout Standard
 Hobo has ended up serving two very different audiences: experienced programmers
  looking for higher productivity, and beginners looking to achieve things
- they otherwise couldn’t.
- Trying to serve both audiences might sound like a mistake, but in fact
- it captures what Hobo is all about.
+ they, otherwise, couldn’t.
+ Trying to serve both audiences might sound like a mistake, but, in fact
+ it captures the essence of Hobo.
  Our challenge is to allow the programmer to choose his or her own position
  on a continuous spectrum from “incredibly easy” to “perfectly customized”.
 \end_layout
@@ -682,7 +700,7 @@ Hopefully this introduction has whetted your appetite and you’re keen to
  While this section has been a bit on the philosophical side, the rest of
  the book is eminently practical.
  From now on we’ll dispense with all the highbrow pontificating and teach
- you how to make stuff.
+ you how to develop stuff.
  Enjoy!
 \end_layout
 
@@ -722,7 +740,7 @@ Powerful mark-up language, DRYML, combines rapid development with ultimate
 \end_layout
 
 \begin_layout Standard
-The DRY paradigm is all about finding the right 
+The DRY paradigm is about finding the right 
 \begin_inset Flex Emph
 status collapsed
 
@@ -739,12 +757,12 @@ level of abstraction
 
 \begin_layout Standard
 Rails starts with a Model-View-Controller (MVC) architecture built with
- Ruby code, using the metaprogramming power that Ruby provides.
+ Ruby code, using the Ruby metaprogramming power.
  
 \end_layout
 
 \begin_layout Standard
-Hobo takes this paradigm further and it does it in two directions.
+Hobo takes this paradigm further and in two directions.
  It provides rapid prototyping with modules that provide an integrated user
  login and permissions system, automated page generation, automated routing,
  built-in style sheets, and an automated database migration and synchronization
@@ -756,7 +774,7 @@ Hobo takes this paradigm further and it does it in two directions.
 
 \begin_layout Standard
 Sometimes these patterns are at a very high level such as the need for a
- user login capability and sometimes they are at a lower level such the
+ user login capability and othertimes they are at a lower level such the
  requirement to grab a set of records for display.
 \end_layout
 
@@ -773,10 +791,9 @@ The Hobo framework philosophy is that many of the features of a data-driven
 \end_layout
 
 \begin_layout Standard
-The Hobo view is that this is a ubiquitous repetitive pattern that should
- be addressed.
- So Hobo lets you just declare that you want to display a collection of
- records in a single command.
+Hobo views writing this kind of code as a ubiquitous repetitive pattern.
+ This, Hobo allows you to declare that you want to display a collection
+ of records in a single command.
 \end_layout
 
 \begin_layout Standard
