@@ -83,8 +83,8 @@ DRYML II: Creating Tags from Tags
 \end_layout
 
 \begin_layout Standard
-You will go to the next step in your understanding of DRYML.
- You will learn how to define tags from other tags.
+Going to the next step in your understanding of DRYML, you will learn how
+ to define tags from other tags.
  Specifically, you will learn how to create new tags that inherit parameters
  from the tags they are based on.
 \end_layout
@@ -125,12 +125,11 @@ Replacing tag parameters (not tag content)
 status collapsed
 
 \begin_layout Plain Layout
-Define a tag based on another tag: Method 1
+Define a tag based on another tag:
 \end_layout
 
 \end_inset
 
-.
  In Tutorial 10, you learned how to define a tag called 
 \begin_inset Flex Code
 status collapsed
@@ -251,7 +250,7 @@ status collapsed
 \end_inset
 
  tag except for the change.
- Now let’s invoke this tag.
+ Let’s invoke this tag.
  Place the following code below your last code from the previous tutorial.
 \end_layout
 
@@ -308,10 +307,6 @@ index.dryml
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -347,10 +342,6 @@ Page rendering with <more-messages>
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -406,7 +397,15 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-Define a tag based on another tag: Method 2
+Define a tag based on another tag: 
+\begin_inset Quotes eld
+\end_inset
+
+Extending
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -481,8 +480,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Now let’s create an extended tag.
- We will begin by creating a new tag called 
+To create an extended tag we will begin by creating a new tag called 
 \begin_inset Flex Code
 status collapsed
 
@@ -591,7 +589,7 @@ views/taglibs/application.dryml
 
 .
  Recall this will make the tag definition available throughout your application.
- But there is another reason for putting it here.
+ There is another reason for putting it here.
  You cannot use the 
 \begin_inset Flex Code
 status collapsed
@@ -646,10 +644,6 @@ status collapsed
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -726,10 +720,6 @@ Using the extended <messagex> tag
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -747,7 +737,7 @@ status collapsed
 
 \end_inset
 
- so you will not get confused.
+, so you will not get confused.
  
 \end_layout
 
@@ -787,7 +777,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Now call the 
+Call the 
 \begin_inset Flex Code
 status collapsed
 
@@ -875,10 +865,6 @@ Page view of the next additions to <messagex>
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -934,7 +920,7 @@ status collapsed
 \begin_layout Standard
 We are going to show you now that DRYML can do lots of things within the
  same tag definition with ease.
- First we will add a new parameter tag before the 
+ Add a new parameter tag before the 
 \begin_inset Flex Code
 status collapsed
 
@@ -960,8 +946,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Next we will show you that you can put both parameter tags and non-parameter
- HTML after 
+You can put both parameter tags and non-parameter HTML after 
 \begin_inset Flex Code
 status collapsed
 
@@ -1209,7 +1194,7 @@ You changed the second block (Message 0) by calling a parameter tag within
 \end_layout
 
 \begin_layout Standard
-Now let’s edit the 
+Edit the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1297,7 +1282,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now let’s invoke 
+Invoke 
 \begin_inset Flex Code
 status collapsed
 

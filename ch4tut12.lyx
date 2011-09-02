@@ -83,9 +83,9 @@ Rapid, DRYML and Collections
 \end_layout
 
 \begin_layout Standard
-You will learn how to create a new index page that will replace the default
- index page that Hobo generates on the fly, and learn how to display data
- on this index page that is related through a many-to-many relationship.
+Learn how to: create a new index page that will replace the default index
+ page that Hobo generates on the fly, learn how to display data on this
+ index page that is related through a many-to-many relationship.
  
 \end_layout
 
@@ -478,7 +478,7 @@ Note: We have used the word template quite frequently now but it is still
 \end_layout
 
 \begin_layout Standard
-Now that this file exists, Hobo will use it when it finds it so let’s put
+Now that this file exists, Hobo will use it when it finds it, so let’s put
  a tag in it to make sure Hobo has a template to render.
 \end_layout
 
@@ -533,10 +533,6 @@ Creating the /views/recipes/index.dryml file
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -555,7 +551,7 @@ status collapsed
 
 \end_inset
 
- is exactly the tag that Hobo is calling to display this page.
+ is the exact tag that Hobo is calling to display this page.
  Instead of doing it automatically, you have added one step.
  Before, since there was no file in 
 \begin_inset Flex Code
@@ -570,7 +566,7 @@ recipes
 \end_inset
 
 , Hobo created its own version of the page using this tag.
- Now it looks in the folder, finds the 
+ Now Hobo looks in the folder, finds the 
 \begin_inset Flex Code
 status collapsed
 
@@ -862,7 +858,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Now let’s move back to the  
+Move back to the  
 \begin_inset Flex Code
 status collapsed
 
@@ -993,18 +989,7 @@ As we go forward, you will gradually learn how the auto-generated tags are
 \end_layout
 
 \begin_layout Standard
-OK, let’s learn a little more about the 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-<collection>
-\end_layout
-
-\end_inset
-
- tag.
- The 
+The 
 \begin_inset Flex Code
 status collapsed
 
@@ -1124,7 +1109,7 @@ You have already seen what the former will do, namely list your records
  in a bolded hyperlinked format, which it derives from the <card> tag.
  Now try the latter.
  You will get the blank repeated as many times as there are recipe records,
- that is, nothing.
+ which equals zero.
 \end_layout
 
 \begin_layout Standard
@@ -1155,17 +1140,13 @@ page view of using a blank "<collection:></collection:>" tag
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Now try the following code.
+Try the following code.
 \end_layout
 
 \begin_layout Standard
@@ -1251,7 +1232,7 @@ There are three records in our Recipes table so ‘Hello!’ is repeated three
 \end_layout
 
 \begin_layout Standard
-Now let’s get some content displayed.
+Let’s get some content displayed.
  We are going to use Rapid’s 
 \begin_inset Flex Code
 status collapsed
@@ -1561,8 +1542,8 @@ status collapsed
 
  tag.
  The syntax for this tag is different than you have encountered so far.
- Right now we are just going to give you a simplified description of the
- syntax and postpone a more detailed discussion for a later chapter:
+ In this section we are just going to give you a simplified description
+ of the syntax and postpone a more detailed discussion for a later chapter:
 \end_layout
 
 \begin_layout Standard
@@ -1851,10 +1832,6 @@ Changing the display style within <collection>
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1874,9 +1851,24 @@ Display the associated record collection
 .
  Now that you see how to display collections of records, let’s go a bit
  deeper.
- Our Recipe model has a many-to-many relationship with the Category Model.
- It would be nice to see this relationship without having to click through
- to an individual recipe.
+ Our 
+\begin_inset Quotes eld
+\end_inset
+
+Recipe
+\begin_inset Quotes erd
+\end_inset
+
+ model has a many-to-many relationship with the 
+\begin_inset Quotes eld
+\end_inset
+
+Category
+\begin_inset Quotes erd
+\end_inset
+
+ Model, but it is possible to see this relationship without having to click
+ through to an individual recipe.
 \end_layout
 
 \begin_layout Standard
@@ -2127,7 +2119,7 @@ categories
 
 \end_inset
 
- as hyperlinks but all run together.
+ as hyperlinks, but they all run together.
  Fortunately, 
 \begin_inset Flex Code
 status collapsed
@@ -2238,7 +2230,7 @@ Creating comma-delimited multi-valued lists in a <collection>
 \end_layout
 
 \begin_layout Standard
-If you don’t want to have your categories linked you could do this,
+If you don’t want to have your categories linked you could do this:
 \end_layout
 
 \begin_layout Standard
@@ -2296,7 +2288,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-or you could do this.
+or you could do this:
 \end_layout
 
 \begin_layout Standard
@@ -2420,7 +2412,7 @@ name
 
 \end_inset
 
-, which it picks, and displays.
+ which it picks, and displays.
  In the second example, we explicitly tell Hobo to display the 
 \begin_inset Flex Code
 status collapsed
@@ -2479,7 +2471,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now go into 
+Go into 
 \begin_inset Flex Code
 status collapsed
 
@@ -2524,8 +2516,8 @@ cards.dryml
 \end_layout
 
 \begin_layout Standard
-Edit it to look like the below.
- Not the added code in italics and bold.
+Edit it to look like the figure below.
+ Not like the added code in italics and bold.
  We have added the same code we put in the template above.
  Since the code is now in the 
 \begin_inset Flex Code

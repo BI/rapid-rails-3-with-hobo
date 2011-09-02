@@ -457,17 +457,13 @@ index.dryml file after the first modification
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Then refresh your browser:
+Then refresh your browser: To display the home page.
 \end_layout
 
 \begin_layout Standard
@@ -510,8 +506,8 @@ The Home page with the first set of custom messages
 \begin_layout Standard
 One of the things that is different from Tutorial 1, is that you are now
  working both with a DRYML tag definition and with a DRYML tag.
- In the previous tutorial, you edited the tag definitions but you did not
- invoke a tag such as 
+ In the previous tutorial, you edited the tag definitions, but you did not
+ explicitly invoke a tag such as 
 \begin_inset Flex Code
 status collapsed
 
@@ -521,19 +517,19 @@ status collapsed
 
 \end_inset
 
- explicitly.
+ 
 \end_layout
 
 \begin_layout Standard
 Hobo took care of invoking the tags for you on-the-fly.
  Since Hobo’s Rapid component knows what the basic structure of a data driven
- web page is, it does not require you to code the template explicitly except
- when you want something different than the Hobo default.
+ web page is, it does not require you to explicitly code the template explicitly
+ except when you want something different than the Hobo default.
 \end_layout
 
 \begin_layout Standard
 In this tutorial you will be defining new tags unknown to Hobo, so you of
- course must invoke them explicitly.
+ course must explicitly invoke them.
 \end_layout
 
 \begin_layout Standard
@@ -727,7 +723,7 @@ status collapsed
 
 \end_inset
 
- tag but change the third message by addressing the 
+ tag, but change the third message by addressing the 
 \begin_inset Flex Code
 status collapsed
 
@@ -844,10 +840,6 @@ How the passed parameter displays on the page
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -977,7 +969,7 @@ Reverse the order of the parameter call
 \end_inset
 
 .
- Now try the following code.
+ Now, try the following code.
 \end_layout
 
 \begin_layout Standard
@@ -1090,7 +1082,7 @@ status collapsed
 \end_inset
 
  tag.
- Next you will emulate a regular HTML formatting tag using the 
+ In this step you will emulate a regular HTML formatting tag using the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1395,12 +1387,19 @@ Calling <span:> explicitly within to your <bd-it> tag
 \end_layout
 
 \begin_layout Standard
-But the second line is a kind of clumsy looking way to get: 
+However, the second line is a clumsy way to get: 
 \begin_inset Flex Strong
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 More stuff
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1455,7 +1454,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-The 
+What the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1486,8 +1485,8 @@ status collapsed
 \end_inset
 
  tag.
- You do not have to explicitly call it.
- Now change your call to:
+ You do not have to explicitly name it.
+ Change your call to:
 \end_layout
 
 \begin_layout Standard
@@ -1548,7 +1547,7 @@ status collapsed
 \end_inset
 
  parameter to the default parameter, Hobo will ignore explicit uses of it
- and only emit the default content if you call it explicitly.
+ Hobo will only emit the default content if you name it explicitly.
  Once you use the default parameter attribute you are committed to the more
  compact notation.
  There can only be one “

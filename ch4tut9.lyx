@@ -95,7 +95,15 @@ In this tutorial, you will learn about Hobo’s auto-generated tags that render
 Hobo’s Rapid component handles the generation of an application’s auto-generated
  tags.
  The auto-generated tags are built from both HTML and Hobo’s internal library
- of XML tags called the Rapid Library.
+ of XML tags called the 
+\begin_inset Quotes eld
+\end_inset
+
+Rapid Library
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -283,7 +291,7 @@ Front page view of the Four Table application
 \end_layout
 
 \begin_layout Standard
-Now open your editor and navigate to the 
+Open your editor and navigate to the 
 \begin_inset Flex Code
 status collapsed
 
@@ -592,7 +600,7 @@ pages.dryml
 \end_layout
 
 \begin_layout Standard
-Now focus in on the 
+Focus in on the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -1043,9 +1051,8 @@ You might be confused at first because the auto-generated tags <form> and
 \end_layout
 
 \begin_layout Standard
-The last important point to realize is that there is a one-to-one association
- between these four tags and both controller actions and their associated
- routes.
+There is a one-to-one association between these four tags and both controller
+ actions and their associated routes.
  Routes are the URLs related to the web pages resulting from a particular
  controller action.
  Hobo automatically defines the routes, although they can be user-defined
@@ -1322,10 +1329,6 @@ View of the taglibs/auto/rapid folder
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1828,7 +1831,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Now refresh your browser and you will see that Hobo has changed the template
+Refresh your browser and you will see that Hobo has changed the template
  it generated dynamically:
 \end_layout
 
@@ -1860,10 +1863,6 @@ Page view of "My Recipes" after modifying the <index-page> tag
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1875,8 +1874,7 @@ You should see that the first line of the page has changed from “Recipes”
 \end_layout
 
 \begin_layout Standard
-Let us describe what happened.
- 
+Here is what happened:
 \end_layout
 
 \begin_layout Itemize
@@ -2592,10 +2590,6 @@ How a change to the <index-page> tag affects a collection
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -3044,10 +3038,6 @@ Changing the tab order for the main navigation menus
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -3140,10 +3130,6 @@ Changing the application name with the app-name tag
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

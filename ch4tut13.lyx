@@ -256,10 +256,6 @@ Using <table-plus> to display a columnar list
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -575,8 +571,8 @@ Categories Count
 \end_layout
 
 \begin_layout Standard
-That was pretty straightforward.
- Before we refresh our browser again, let’s also display the actual 
+That was straightforward.
+ Before we refresh our browser again, let’s display the actual 
 \begin_inset Flex Emph
 status collapsed
 
@@ -749,9 +745,9 @@ Add search and sort capability to the table
 \end_inset
 
 .
- Until now we have worked with controllers relatively little.
- If you think about it a bit, you will quickly realize that to add search
- and sort, we will have to make a change in the 
+ Until now we have worked very little with controllers.
+ You will quickly realize that to add search and sort, we will have to make
+ a change in the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -762,8 +758,8 @@ recipe
 \end_inset
 
  controller.
- You can understand this by realizing that we want our application to respond
- to a click with two specific actions: one is a 
+ Understand this by realizing that we want our application to respond to
+ a click with two specific actions: one is a 
 \begin_inset Flex Emph
 status collapsed
 
@@ -906,8 +902,15 @@ Note: The “apply scopes” for the search facility can only contain fields
 \end_layout
 
 \begin_layout Standard
-Clicking on the Country label twice will trigger sorting in descending alphabeti
-cal order:
+Clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Country
+\begin_inset Quotes erd
+\end_inset
+
+ label twice will trigger sorting in descending alphabetical order:
 \end_layout
 
 \begin_layout Standard
@@ -935,10 +938,6 @@ Adding a search facility to <table-plus> using Hobo's apply_scopes method
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

@@ -796,22 +796,20 @@ Levels of Abstraction
 \end_layout
 
 \begin_layout Standard
-As we discussed above, finding the right level of abstraction in implementing
- coding constructs is the key to programming productivity and application
- maintainability.
- But anyone who has ever coded knows that programming is a messy business.
- Sometimes it is just easier to code at a low level of abstraction.
- This is the dominant way of developing applications today.
+Finding the right level of abstraction in implementing coding constructs
+ is the key to programming productivity and application maintainability.
+ However, anyone who has ever coded knows that programming is a messy business.
+ Sometimes it is just easier to code at a low level of abstraction, today's
+ dominant way of developing applications.
  It is simpler not to create reusable components or snippets because something
- always seems to need changing.
- You think you will waste more time fixing your components than just starting
- over.
+ always needs changing.
+ You will waste more time fixing your components than just starting over.
 \end_layout
 
 \begin_layout Standard
 The approach that Rails takes, and Hobo even more so, is to have code that
- lets multiple levels of abstractions coexist in the code.
- This is potentially the best of both approaches.
+ lets multiple levels of abstractions coexist in the code, the best of both
+ approaches.
  
 \end_layout
 
@@ -918,10 +916,6 @@ Data flow for a typical Application using a MVC framework
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1204,13 +1198,13 @@ Views take the most time to develop in any application and Hobo provides
 \end_layout
 
 \begin_layout Standard
-Hobo views are developed entirely differently than in Rails.
+Hobo views are developed with no similarities to those developed in Rails.
  Once you define your models and controllers, Hobo is capable of automatically
  generating an entire set of views on the fly.
  This means that at the beginning of your development process you do not
- have to code a view template at all.
- Hobo automatically creates them whenever the user requests that data be
- rendered.
+ have to code a view template.
+ Hobo automatically creates view templates whenever the user requests that
+ data be rendered.
 \end_layout
 
 \begin_layout Paragraph*

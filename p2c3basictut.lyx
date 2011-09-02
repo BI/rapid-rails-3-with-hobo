@@ -107,15 +107,16 @@ Introductory Concepts and Comments
 \end_layout
 
 \begin_layout Standard
-If you explain a magic trick before it is performed, you risk spoiling the
+A magic trick is explained before it is performed, you risk spoiling the
  enjoyment.
- There will be plenty of time after you work through a few of the tutorials
- to learn what is going on “behind the curtain.” 
+ After you work through the tutorials there will be plenty of time after
+ you work through a few of the tutorials to learn what is going on “behind
+ the curtain.” 
 \end_layout
 
 \begin_layout Standard
-So, in the spirit of this adventure we will explain just enough right now
- to allow you to dive in head first… 
+So, in the spirit of this adventure we will explain just enough, allowing
+ you to dive in head first… 
 \end_layout
 
 \begin_layout Section*
@@ -746,8 +747,15 @@ not
 
  return you to your command prompt.
  As you run your application, it logs what it is doing to this shell.
- You can terminate the web server by typing control-c and restart it the
- same way you started it above, but do not terminate the server.
+ You can terminate the web server by typing 
+\begin_inset Quotes eld
+\end_inset
+
+control-c
+\begin_inset Quotes erd
+\end_inset
+
+ and restart it the same way you started it above Do not terminate the server.
  
 \end_layout
 
@@ -1338,7 +1346,7 @@ pages.dryml
  We are going to show you a few things to pique your curiosity but we will
  not cover how Hobo handles views in any detail until the intermediate tutorials.
  We will just make a few high level comments here in case you know something
- about Ruby on Rails and so you know what is coming.
+ about Ruby on Rails and so you know what is coming next.
  
 \end_layout
 
@@ -1571,7 +1579,7 @@ taglibs/application
 
 \end_inset
 
- directory will automatically loaded and its tags will be available application
+ directory will automatically load and its tags will be available application
  wide.
  When you want them to be available only in a particular view you can put
  them in a 
@@ -4013,10 +4021,6 @@ Modified entry in "application.css" to shorten text prompts
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -4150,18 +4154,32 @@ validates_presence_of :name
 \begin_layout Standard
 By default Hobo will provide a message if a user fails to enter data.
  Try it out by trying to create a contact record with no data in it.
- Click the Contacts tab and then 
+ Click the 
+\begin_inset Quotes eld
+\end_inset
+
+Contacts
+\begin_inset Quotes erd
+\end_inset
+
+ tab and then 
 \begin_inset Flex Emph
 status collapsed
 
 \begin_layout Plain Layout
-New Contact
+\begin_inset Quotes eld
+\end_inset
+
+New Contacts
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -4170,7 +4188,14 @@ Without entering anything in the form, click
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Create Contact
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4203,10 +4228,6 @@ Page view of validation presence of name
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4255,12 +4276,27 @@ address_1 :string, :required
 \end_layout
 
 \begin_layout Standard
-Click the Contacts tab and then 
+Click the 
+\begin_inset Quotes eld
+\end_inset
+
+Contacts
+\begin_inset Quotes erd
+\end_inset
+
+ tab and then 
 \begin_inset Flex Emph
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 New Contact
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4271,7 +4307,14 @@ New Contact
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Create Contact
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4304,10 +4347,6 @@ Page view of double validation error
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -5369,7 +5408,7 @@ Tutorial 4 – Permissions
 In this tutorial you will learn some elementary aspects of Hobo’s permission
  system by changing what the admin user and users can do.
  Specifically, you will determine whether a user is permitted to view, create,
- edit or delete records in the database.
+ edit, or delete records in the database.
  
 \end_layout
 
@@ -5412,7 +5451,14 @@ Steps
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Create the Hobo application.
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5422,7 +5468,14 @@ Create the Hobo application.
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 one_table
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5445,7 +5498,14 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 one_table:
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5703,7 +5763,14 @@ Click
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Register Administrator
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5714,7 +5781,14 @@ Register Administrator
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 admin
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5726,7 +5800,14 @@ admin
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 user
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5737,7 +5818,15 @@ user
 status collapsed
 
 \begin_layout Plain Layout
-By default, the user account does not have administrative privileges.
+By default, the 
+\begin_inset Quotes eld
+\end_inset
+
+user
+\begin_inset Quotes erd
+\end_inset
+
+ account does not have administrative privileges.
 \end_layout
 
 \end_inset
@@ -5775,7 +5864,14 @@ Create the recipe model.
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 hobo:resource
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5785,7 +5881,14 @@ hobo:resource
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Recipe
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5794,7 +5897,15 @@ Recipe
  It will contain three fields: title, body and country.
  We will complete this step by rerunning the Hobo migration from Step 3.
  This will take the model definitions and create a migration file and the
- database table recipes.
+ database table 
+\begin_inset Quotes eld
+\end_inset
+
+recipes
+\begin_inset Quotes erd
+\end_inset
+
+.
  
 \end_layout
 
@@ -6143,7 +6254,14 @@ Login as a user.
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 admin
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6803,9 +6921,9 @@ Note: The ‘?’ after signed up indicates the method is a Boolean method.
 \end_layout
 
 \begin_layout Standard
-The meaning of the default permissions code can be summarized simply now.
- Only the administrator is permitted to create, update or destroy records
- and anyone can view records.
+The meaning of the default permissions code can be summarized: Only the
+ administrator is permitted to create, update or destroy records and anyone
+ can view records.
  Using the 
 \begin_inset Flex Code
 status collapsed
@@ -6816,7 +6934,7 @@ view_permitted?
 
 \end_inset
 
- method is a little more involved so we will wait until the intermediate
+ method is a little more involved, so we will wait until the intermediate
  tutorials to tell you about it.
 \end_layout
 
@@ -6848,12 +6966,12 @@ When there is no destroy permission, there is no “Remove this Record?” link.
 This will make more sense when you learn about controller actions in the
  next tutorial.
  Hobo permissions essentially turn controller actions (what users do in
- the UI) on or off depending on defined logical conditions.
+ the UI) on or off, depending on defined logical conditions.
  
 \end_layout
 
 \begin_layout Standard
-Let’s try something out now.
+Let’s try something out.
  
 \end_layout
 
@@ -7207,10 +7325,6 @@ Page view of a Recipe
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -7550,8 +7664,15 @@ auto_actions
 \end_inset
 
 .
- Clicking the Recipes tab in your app invokes the index action of the Recipes
- controller.
+ Clicking the 
+\begin_inset Quotes eld
+\end_inset
+
+Recipes
+\begin_inset Quotes erd
+\end_inset
+
+ tab in your app invokes the index action of the Recipes controller.
  The index action of the controller tells Hobo to list the records of the
  model.
  You probably noticed this as you created new records.
@@ -7616,7 +7737,7 @@ recipes
 We are going to further demonstrate that attempting to route to this URL
  invokes the index action by turning off the action in Hobo and then putting
  turning it back on.
- First go to your home page by clicking the Home tab.
+ First, go to your home page by clicking the Home tab.
  Then, in 
 \begin_inset Flex Code
 status collapsed
@@ -7793,10 +7914,6 @@ Making the Recipes tab disappear
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -7805,10 +7922,18 @@ Making the Recipes tab disappear
 \begin_layout Standard
 Your Recipes tab disappeared.
  You can also try invoking the index action by typing 
+\begin_inset Quotes eld
+\end_inset
+
+
 \begin_inset CommandInset href
 LatexCommand href
 target "http://localhost:3000/recipes"
 
+\end_inset
+
+
+\begin_inset Quotes erd
 \end_inset
 
  into your URL window.
@@ -7835,18 +7960,32 @@ In Tutorial 3, you learned that Hobo figures out how your UI should look
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Recipes
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  tab, because you disallowed the action that it would invoke.
- Now remove the 
+ Now, remove the 
 \begin_inset Flex Emph
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 except
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7856,7 +7995,14 @@ except
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Recipes
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8111,13 +8257,27 @@ Try removing the index action.
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
  :except => index
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  code.
- Now put back the index action and try removing the :new option.
+ Now, put back the index action and try removing the 
+\begin_inset Quotes eld
+\end_inset
+
+:new option.
+\begin_inset Quotes erd
+\end_inset
+
  
 \end_layout
 
@@ -8436,7 +8596,14 @@ Now back to our original train of thought…Remove the
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 :show
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8492,7 +8659,7 @@ end
 \end_layout
 
 \begin_layout Standard
-Now when you refresh your browser you will note that you no longer have
+Now, when, you refresh your browser you will note that you no longer have
  links to show(display) the details of a particular Recipe record.
  Even if you try to navigate your browser to 
 \begin_inset CommandInset href
@@ -8506,7 +8673,7 @@ target "http://localhost:3000/recipes/2-omelette"
 \end_layout
 
 \begin_layout Standard
-Now let’s try one more but using the 
+Now, let’s try one more but using the 
 \begin_inset Flex Code
 status collapsed
 
@@ -8612,10 +8779,6 @@ Viewing the edit URL
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -8662,7 +8825,7 @@ target "http://localhost:3000/model(plural)/ID-model_name_variable/edit "
 \end_layout
 
 \begin_layout Standard
-Now make sure you are on the screen above, a particular 
+Now, make sure you are on the screen above, a particular 
 \begin_inset Flex Emph
 status collapsed
 
@@ -8775,10 +8938,6 @@ Unknown action
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -8852,8 +9011,23 @@ end
 \end_layout
 
 \begin_layout Standard
-If you want to remove both the new and the create actions, just delete them
- from your list so that you have: 
+If you want to remove both the 
+\begin_inset Quotes eld
+\end_inset
+
+new
+\begin_inset Quotes erd
+\end_inset
+
+ and the 
+\begin_inset Quotes eld
+\end_inset
+
+create
+\begin_inset Quotes erd
+\end_inset
+
+ actions, just delete them from your list so that you have: 
 \end_layout
 
 \begin_layout Standard
@@ -10309,7 +10483,15 @@ en:
 \end_layout
 
 \begin_layout Standard
-Refresh your browser and you will see a renamed tab:
+Refresh your browser and you will see the renamed tab:- 
+\begin_inset Quotes eld
+\end_inset
+
+My Recipes
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10337,10 +10519,6 @@ Customizing the name of a tab
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -10479,10 +10657,6 @@ Removing the default Home tab
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -10729,10 +10903,6 @@ Changing the Application Name
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -10819,7 +10989,7 @@ enum_string
 \end_inset
 
  attribute of a field.
- In this tutorial let’s assume the only values for country will be: American,
+ For this tutorial let’s assume the only values for country will be: American,
  French & Chinese.
  
 \end_layout
@@ -10925,7 +11095,7 @@ country
 \end_inset
 
  field declaration by preceding it with a ‘#’ (hash).
- Now refresh your browser and click ‘New Recipe’ and you will see a drop-down
+ Now, refresh your browser and click ‘New Recipe,’ and you will see a drop-down
  control that lets you select values for country.
 \end_layout
 
@@ -10962,10 +11132,6 @@ enum_string
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -11226,7 +11392,7 @@ two_table>
 \end_layout
 
 \begin_layout Standard
-Execute the following command from your command prompt.
+Execute the following command from your command prompt:
 \end_layout
 
 \begin_layout Standard
@@ -11256,8 +11422,7 @@ two_table> hobo g resource country name:string
 
 \begin_layout Standard
 Check the models directory and you should see a country.rb file with the
- following contents defining the Country name field.
- 
+ following contents defining the Country name field:
 \end_layout
 
 \begin_layout Standard
@@ -11333,8 +11498,7 @@ countries
 \end_inset
 
  table because you have not run the migration yet.
- Let’s define our relationships now.
- 
+ Now let’s define our relationships.
 \end_layout
 
 \begin_layout Standard
@@ -11988,7 +12152,7 @@ countries
 \end_layout
 
 \begin_layout Standard
-Now, go to your command prompt and run the Hobo migration.
+Go to your command prompt and run the Hobo migration.
  By doing this you will allow Hobo to accomplish several things.
  Hobo will: 
 \end_layout
@@ -12121,7 +12285,7 @@ two_table> hobo g migration
 \end_layout
 
 \begin_layout Standard
-You will get the following response: 
+You will get the following response: , showing a problem
 \end_layout
 
 \begin_layout Standard
@@ -12287,12 +12451,20 @@ What now: [g]enerate migration, generate and [m]igrate
 \end_layout
 
 \begin_layout Standard
-You should type ‘m’.
+You should type 
+\begin_inset Quotes eld
+\end_inset
+
+m
+\begin_inset Quotes erd
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-Last it will prompt you to name the migration file: 
+Lastly it will prompt you to name the migration file: 
 \end_layout
 
 \begin_layout Standard
@@ -12319,12 +12491,27 @@ Filename [hobo_migration_3]:
 \end_layout
 
 \begin_layout Standard
-Just hit the ‘enter’ key and it will take the default name, 
+Hit the 
+\begin_inset Quotes eld
+\end_inset
+
+enter
+\begin_inset Quotes erd
+\end_inset
+
+ key and it will take the default name, 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 hobo_migration_3
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12571,7 +12758,15 @@ Review a few features of the UI
 
 .
  Make sure you are signed in as the admin.
- Go to the Countries tab and click through to enter a few countries.
+ Go to the 
+\begin_inset Quotes eld
+\end_inset
+
+Countries
+\begin_inset Quotes erd
+\end_inset
+
+ tab and click through to enter a few countries.
  
 \end_layout
 
@@ -12600,10 +12795,6 @@ Index page for Countries
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -12655,17 +12846,13 @@ Selecting a Country for a Recipe
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-The difference is that you are now actually selecting a 
+The difference is that you are actually selecting a 
 \begin_inset Flex Code
 status collapsed
 
@@ -12697,14 +12884,36 @@ Country
 \end_inset
 
  model) and displaying the actual country names.
- When you save this Recipe record, Hobo maintains all of the necessary related
- keys automatically.
+ When you save this 
+\begin_inset Quotes eld
+\end_inset
+
+Recipe
+\begin_inset Quotes erd
+\end_inset
+
+ record, Hobo automatically maintains all of the necessary related keys.
  
 \end_layout
 
 \begin_layout Standard
-After you do the save, note that the Country value in the page is an active
- hyperlink:
+After you do the 
+\begin_inset Quotes eld
+\end_inset
+
+save
+\begin_inset Quotes erd
+\end_inset
+
+, note that the 
+\begin_inset Quotes eld
+\end_inset
+
+Country
+\begin_inset Quotes erd
+\end_inset
+
+ value in the page is an active hyperlink:
 \end_layout
 
 \begin_layout Standard
@@ -12735,17 +12944,20 @@ Active link on Country name in the Recipe show page
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-If you click it, you will see a screen that allows you to edit the Country
+If you click it, you will see a screen that allows you to edit the 
+\begin_inset Quotes eld
+\end_inset
+
+Country
+\begin_inset Quotes erd
+\end_inset
+
  record.
 \end_layout
 
@@ -12777,10 +12989,6 @@ The Country show page access from the Recipe show page
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -12798,8 +13006,15 @@ countries.rb
 
 \end_inset
 
- file, you will see that the permission to edit the Country field is limited
- to the administrator.
+ file, you will see that the permission to edit the 
+\begin_inset Quotes eld
+\end_inset
+
+Country
+\begin_inset Quotes erd
+\end_inset
+
+ field is limited to the administrator.
  This means that if you log in as a regular user, Hobo should not allow
  the edit.
  Log out from the administrator account and login as regular user.
@@ -12880,14 +13095,29 @@ class Country < ActiveRecord::Base
 \end_layout
 
 \begin_layout Standard
-Now go to the Recipes tab, click on a recipe link and edit the recipe.
+Go to the Recipes tab, click on 
+\begin_inset Quotes eld
+\end_inset
+
+recipe
+\begin_inset Quotes erd
+\end_inset
+
+ link and edit the recipe.
  Next click on the country name on the page.
- Now you see that the 
+ The 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Edit Country
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12924,10 +13154,6 @@ Only an Administrator is provided the Country Edit link
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -12955,12 +13181,19 @@ One-to-many relationship discussion
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Countries
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
- table with the name ‘American,’ but potentially many American recipes.
+ table with the name ‘American,’ but, potentially, many American recipes.
  
 \end_layout
 
@@ -13121,7 +13354,14 @@ Then, do a copy in whatever operating system you are using.
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 four_table
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13188,7 +13428,7 @@ config.hobo.app_name = "Four Table"
 \end_layout
 
 \begin_layout Standard
-Now refresh your browser and you will see the new name.
+Refresh your browser and you will see the new name.
 \end_layout
 
 \begin_layout Standard
@@ -13226,12 +13466,27 @@ Country
 \end_inset
 
  models.
- The first will be a Category model and the second will be a 
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Category
+\begin_inset Quotes erd
+\end_inset
+
+ model and a 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 CategoryAssignment
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13313,7 +13568,7 @@ app/db
 
 \begin_layout Standard
 As you will see shortly, you do not have to worry about creating or naming
- any of these fields, the Hobo generators will take care of it all for you.
+ any of these fields, The Hobo generators will take care of it.
 \end_layout
 
 \begin_layout Standard
@@ -13719,7 +13974,7 @@ Discussion of model relationships
 \end_inset
 
 .
- Note above that you used the 
+ Above you used the 
 \begin_inset Flex Code
 status collapsed
 
@@ -13790,7 +14045,7 @@ CategoryAssignment
 \end_layout
 
 \begin_layout Standard
-Recall that when you see 
+When you see 
 \begin_inset Flex Code
 status collapsed
 
@@ -13971,7 +14226,22 @@ four_table> hobo g migration
 \end_layout
 
 \begin_layout Standard
-Remember to respond ‘m’ when prompted for migration and just press <enter>
+Remember to respond 
+\begin_inset Quotes eld
+\end_inset
+
+m’
+\begin_inset Quotes erd
+\end_inset
+
+ when prompted for migration and just press 
+\begin_inset Quotes eld
+\end_inset
+
+enter
+\begin_inset Quotes erd
+\end_inset
+
  when prompted with the migration file name.
  
 \end_layout
@@ -14079,17 +14349,13 @@ The Categories tab on the Four Table app
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Now go to the new Categories tab and enter in some food categories:
+Now, go to the new Categories tab and enter in some food categories:
 \end_layout
 
 \begin_layout Standard
@@ -14120,10 +14386,6 @@ The Index page for Categories
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -14142,7 +14404,15 @@ Adding new records to the relationships
 \end_inset
 
 .
- Go to the Recipes tab.
+ Go to the 
+\begin_inset Quotes eld
+\end_inset
+
+Recipes
+\begin_inset Quotes erd
+\end_inset
+
+ tab.
  Click on one of the recipes and you should get this.
 \end_layout
 
@@ -14181,10 +14451,6 @@ Category Assignments
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -14201,7 +14467,14 @@ Then click
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Edit Recipe
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14234,10 +14507,6 @@ Assignment multiple Categories to a Recipe
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -14343,10 +14612,6 @@ Edit page view of a Recipe with multiple Categories assigned
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -14391,11 +14656,19 @@ Add information to the model in order to display the associations
 \end_inset
 
 .
- Hobo, before version 1.3, used ViewHints to indicate to the application
- how you would like to display related information on a model’s show page.
+ Hobo, before version 1.3, used 
+\begin_inset Quotes eld
+\end_inset
+
+ViewHints
+\begin_inset Quotes erd
+\end_inset
+
+ to indicate to the application how you would like to display related informatio
+n on a model’s show page.
  To simplify things, this functionality has been moved into the model itself
  and ViewHints are no longer used as of Hobo 1.3.
- So now you modify the ActiveRecord model itself.
+ Now you modify the ActiveRecord model itself.
  
 \end_layout
 
@@ -14517,7 +14790,7 @@ children :categories
 \end_layout
 
 \begin_layout Standard
-Now edit 
+Edit 
 \begin_inset Flex Code
 status collapsed
 
@@ -14607,7 +14880,7 @@ children :recipes
 \end_layout
 
 \begin_layout Standard
-Now refresh your browser and choose a recipe to view:
+Refresh your browser and choose a recipe to view:
 \end_layout
 
 \begin_layout Standard
@@ -14878,7 +15151,7 @@ Comments on the many-to-many relationship
 \end_inset
 
 .
- Now let’s review how you got this all to work.
+ Let’s review how you got this all to work.
  The end product is that you can see the categories associated with each
  recipe and the recipes associated with each category.
  

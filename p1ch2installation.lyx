@@ -121,18 +121,18 @@ To encourage the widest audience possible, the following instructions are
 \end_layout
 
 \begin_layout Standard
-Although we include detailed instructions for configuring MySQL and Oracle
- databases with Hobo, we encourage you to start the tutorials using the
- lightweight and self-configuring database engine, SQLite3, which is the
- default engine used by Hobo and Rails when in development mode.
+Although we give included detailed instructions for configuring MySQL and
+ Oracle databases with Hobo, we encourage you to start the tutorials using
+ the lightweight and self-configuring database engine, SQLite3.
+ It is the default engine used by Hobo and Rails when in development mode.
  This allows you to focus on learning Hobo, not configuring a database.
  
 \end_layout
 
 \begin_layout Standard
-Most books and online tutorials on Ruby and Rails are tailored to Mac users,
+Most books and online tutorials for Ruby and Rails are tailored to Mac users
  and pay lip service to Windows, assuming the reader is already facile with
- web development tools and uses the MacBook Pro as the “weapon of choice”.
+ web development tools and uses the MacBook Pro as the “weapon of choice.”
  This book also assumes that many of you are trying out Hobo, Ruby, and
  Rails for the first time and that a large percentage will also be using
  either Windows XP, Vista, or Windows 7 on a day-to-day basis.
@@ -165,8 +165,8 @@ ed.
 \end_layout
 
 \begin_layout Itemize
-If you are using a PC with Linux, see this link for installing Ruby and
- Rails on Ubuntu and Debian Linux, and then skip to step #3: 
+If you are using a PC with Linux, First see this link for installing Ruby
+ and Rails on Ubuntu and Debian Linux, and then skip to step #3: 
 \end_layout
 
 \begin_deeper
@@ -229,10 +229,6 @@ Download Site for the Rails Installer
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1186,7 +1182,7 @@ Step 4.
 \begin_layout Standard
 Choose and configure a text editor (optional) You can work through the tutorials
  in this book using Textpad or your favorite editor.
- However, For years TextMate (
+ However, for years TextMate (
 \begin_inset CommandInset href
 LatexCommand href
 target "http://macromates.com/"
@@ -1234,10 +1230,6 @@ TextMate Webpage
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1426,10 +1418,6 @@ Using the downloaded .msi file to install MySQL on Windows
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1466,10 +1454,6 @@ Choose the “Custom” setup type
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1559,10 +1543,6 @@ MySQL" for the server software
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1606,10 +1586,6 @@ data" to hold MySQL data
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1646,10 +1622,6 @@ MySQL Enterprise Monitor
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1692,10 +1664,6 @@ The MySQL Instance Configuration Wizard
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1732,10 +1700,6 @@ MySQL Instance Configuration Wizard
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2140,24 +2104,21 @@ Ruby.exe Error
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-You will find this DLL in the following MySQL directory:
+If you have this problem, you will find this DLL in the following MySQL
+ directory:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -2330,7 +2291,7 @@ The automatically created database.yml file
 \end_layout
 
 \begin_layout Standard
-Notice it is pre-filled with the proper parameter structure for MySQL.
+Note: It is pre-filled with the proper parameter structure for MySQL.
  
 \end_layout
 
@@ -2379,10 +2340,10 @@ MySQL Command Line
 \end_layout
 
 \begin_layout Standard
-Notice that Hobo and Rails make some assumptions about the naming of the
- development and test database names.
+Note: Hobo and Rails make some assumptions about the naming of the development
+ and test database names.
  You can change these as needed, but is useful to understand the default
- convention used Rails, which is what Hobo uses.
+ convention used is Rails, which is what Hobo uses.
  
 \end_layout
 
@@ -2573,8 +2534,8 @@ database.yml
 
  file is the place to configure your database connections.
  Creating a new application using the hobo command with the “d” switch allows
- you to stipulate which database you will be using, and allows Hobo and
- Rails to build a 
+ you to stipulate which database you will be using and allows Hobo and Rails
+ to build a 
 \begin_inset Flex Code
 status collapsed
 
@@ -2656,10 +2617,6 @@ The generated database.yml file for Oracle
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -3535,7 +3492,7 @@ will_paginate
 \end_layout
 
 \begin_layout Standard
-Now you are ready for the tutorials!
+Now You are ready for the tutorials!
 \end_layout
 
 \end_body
