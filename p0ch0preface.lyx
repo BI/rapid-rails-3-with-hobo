@@ -96,10 +96,10 @@ Jeff Lapides
 Jeff Lapides was educated as a physicist and has worked as a CIO and senior
  operating executive in a large public corporation.
  For most of the past decade, he consulted with private industry in information
- technology, business management and science.
+ technology, business management, and science.
  He is currently engaged at a nationally ranked research university where
  he develops relationships between research scientists in engineering, informati
-on technology, physical and life sciences and foundations and corporations.
+on technology, physical, and life sciences, foundations and corporations.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -112,8 +112,8 @@ Tom is the founder and original developer of the Hobo project.
  company exploring commercial opportunities around Hobo and other open-source
  projects.
  Prior to founding Artisan Technology Tom has been a freelance software
- developer for over ten years, and has been experimenting with innovative
- and agile approaches to web development since as early as 1996.
+ developer for over ten years and has been experimenting with innovative
+ and agile approaches to web development since 1996.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -122,8 +122,8 @@ Bryan Larsen
 
 \begin_layout Standard
 Bryan sold his first video game in 1987 and has never stopped.
-  Joining the ranks of fathers this year has slowed him down, but he's still
- having fun.
+ Becoming a father this year has slowed him down, but he's still having
+ fun.
   He lives in Ottawa with his wife and daughter.
  Bryan is a key contributor to Hobo and has nursed it along to a mature
  1.0 version.
@@ -148,11 +148,11 @@ Venka Ashtakala
 \begin_layout Standard
 Venka is a Software Engineering Consultant with over 10 years experience
  in the Information Technology industry.   His expertise lies in the fields
- of rapid development of data driven web solutions, search, reporting and
+ of rapid development of data driven web solutions,as well as search, reporting,
  data warehousing solutions for both structured and non structured data
- and implementing the latest in open source technologies. He has consulted
- on a variety of projects in both the Private and Public sectors, most recently
- with the National Institute of Food and Agriculture.
+ and implementing the latest in open source technologies is another expertise. He
+ has consulted on a variety of projects in both the Private and Public sectors
+ most recently with the National Institute of Food and Agriculture.
 \end_layout
 
 \begin_layout Section
@@ -189,12 +189,11 @@ Marcelo Giorgi
 \end_layout
 
 \begin_layout Standard
-Marcelo is a software engineer with over seven years of experience with
- standalone Java and Java web development frameworks.
- He’s been working with Ruby on Rails for more than two years, and had the
- opportunity to work with (and make some contributions to) Hobo during last
- year.
- 
+Marcelo is a software engineer with over seven years of experience in standalone
+ Java and Java web development frameworks.
+ He’s been working with Ruby on Rails for more than two years and had the
+ opportunity to work with (and make some contributions to) Hobo during the
+ last year, 2011.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -212,19 +211,19 @@ Matt is a software engineer who can remember when Real Web Programmers wrote
 \end_layout
 
 \begin_layout Section
-PREFACE TO THE HOBO 1.3 VERSION FOR RAILS 3
+PREFACE TO RAPDID RAILS 3 WITH HOBO
 \end_layout
 
 \begin_layout Standard
-It has been a little over a year since we published the first PDF books
- “Rapid Rails with Hobo” and “Hobo at Work”.
+It has been a little over a year since we published the first PDF “Rapid
+ Rails with Hobo” and “Hobo at Work”.
  We are pleased that there have been over 20,000 downloads since that time.
 \end_layout
 
 \begin_layout Standard
 The current “Rapid Rails 3 with Hobo” combines both “Rapid Rails with Hobo”
  and “Hobo at Work”.
- We felt that having all of the material in one indexed volume would prove
+ We hope that having all of the material in one indexed volume would prove
  more valuable.
 \end_layout
 
@@ -269,12 +268,12 @@ target "http://portal.nifa.usda.gov"
 \end_inset
 
 ) and the Leadership Management Dashboard (LMD), as well as other initiatives
- that will be revealed later this year.
+ that will be revealed later.
  
 \end_layout
 
 \begin_layout Standard
-So, please stop by Hobo Central (
+Please stop by Hobo Central (
 \begin_inset CommandInset href
 LatexCommand href
 target "http://hobocentral.net"
@@ -337,8 +336,8 @@ What was our goal?
 I starting writing this preface almost exactly a year ago, but put it aside
  while Jeff and I toiled over iterations of the book outline.
  While building and rebuilding the outline of what we thought were the book’s
- requirements, we soon realized that it would take much more focus and energy
- than we anticipated completing this project.
+ requirements, we soon realized that would take much more focus and energy
+ than we anticipated completing the project.
  Our goal seemed simple enough:
 \end_layout
 
@@ -363,9 +362,8 @@ status collapsed
 \begin_layout Standard
 Right.
  Well, you know how these things go.
- OK, so we bit off more than we could chew, at least in the timeframe we
- envisioned.
- So instead of three months it took a year…at least it comes out synchronized
+ So We bit off more than we could chew, at least in the timeframe we envisioned.
+ Instead of three months it took a year…at least it comes out synchronized
  with the release of Hobo 1.0! 
 \end_layout
 
@@ -389,9 +387,9 @@ A brief history
 \end_layout
 
 \begin_layout Standard
-The search for a new web development framework began with my frustration
- with the learning curve and the lack of agility I experienced with the
- current open source frameworks at the time.
+The search for a new web development framework began with the frustrating
+ learning curve and the lack of agility I experienced with the current open
+ source frameworks at the time.
  A major client had stipulated that we were to use a totally open source
  technology stack.
  In the early 2000’s that meant to us Linux, JBoss, Hibernate, MySQL, and
@@ -403,12 +401,12 @@ The search for a new web development framework began with my frustration
 \end_layout
 
 \begin_layout Standard
-This was particularly frustrating to me as I had experience with the “agile”
- tools of the 1980’s and 1990’s, which included Revelation and PowerBuilder,
- client-server technologies that didn’t manage to survive into the Internet
+I was frustrated since I had experience with the “agile” tools of the 1980’s
+ and 1990’s, which included Revelation and PowerBuilder.
+ These client-server technologies didn’t manage to survive into the Internet
  age.
- With Revelation we could build an application prototype that included complex
- business logic while sitting in front of a client.
+ With Revelation an application prototype that could be built in front of
+ a client.
  We didn’t call it Agile Development.
  We just did it.
  We built dozens of mission-critical applications and many shrink-wrapped
@@ -443,27 +441,26 @@ A few days after our initial discussion he emailed me about a relatively
  critical” apps we could use as references.
  I was intrigued.
  I did a search and found the first edition of “Agile Development with Rails”,
- and tried it out.
+ I tried it out.
 \end_layout
 
 \begin_layout Standard
-My first simple application worked, but I have to admit it looked very plain
- and uninspiring to me.
- I was a designer and architect, and didn’t want to code HTML and JavaScript.
+My first simple application worked, but it looked very plain and uninspiring
+ to me.
+ I was a designer and architect and didn’t want to code HTML and JavaScript.
  I didn’t want to go backward.
  “I am too old for this!” was my mantra at the time.
- I couldn’t understand why the framework didn’t take care of basic things
+ I couldn’t understand why the framework didn’t take care of the basics
  I had been using for over 20 years.
- Among other things, I was looking for a data-driven navigation system,
- user authentication, and a decent user interface baked in.
+ I was also looking for a data-driven navigation system, user authentication,
+ and a decent user interface baked in.
  
 \end_layout
 
 \begin_layout Standard
 I dropped the search for almost a year.
- I stumbled on a link on one of the major Oracle sites about interesting
- add-ons to Rails, which led to a post by the renowned Ruby evangelist,
- Peter Cooper, in January of 2007.
+ I stumbled on a link in January 2007 about interesting add-ons to Rails,
+ which led to a post by the renowned Ruby evangelist, Peter Cooper.
  Here are two short quotes.
 \end_layout
 
@@ -490,7 +487,7 @@ I watched the screen cast three times.
 status collapsed
 
 \begin_layout Plain Layout
-got it
+found a solution to web 2.0 apps
 \end_layout
 
 \end_inset
@@ -501,14 +498,14 @@ got it
 \end_layout
 
 \begin_layout Standard
-Following an open source project was something totally new to me.
- I owned my own software business for a dozen years.
- We used proprietary tools that had hefty license fees for each installation.
- I couldn’t see the source code.
- Oracle and Microsoft weren’t giving me the code to their database servers,
+Following an open source project was totally new to me.
+ I owned my own revision and deployment software business for ver a decade.
+ Proprietary tools had hefty license fees for each installation.
+ The source code wasn't available.
+ Oracle and Microsoft didn't give me the code to their database servers,
  applications servers, or WYSIWYG design tools.
- I paid support and expected THEM to fix the problems we invariably discovered
- building our vertical applications in the 1980’s and 1990’s.
+ I paid support and expected THEM to fix the problems that were discovered
+ while building our vertical applications in the 1980’s and 1990’s.
  
 \end_layout
 
@@ -516,42 +513,47 @@ Following an open source project was something totally new to me.
 The closest I came to the open source world was being a senior member of
  the Revelation Roundtable, a board of key developers and integrators for
  the Revelation and Advanced Revelation development tools.
- A few of our products were shrink-wrapped add-ons for other developers.
- This gave us clout for recommending priorities for new development and
- the ability to get the president on the phone if one of my very high profile
- customers was having an issue.
+ A few products were shrink-wrapped add-ons for other developers.
+ There was a foundation to recommend new development and the ability for
+ a client to speak with the company's president when a serious issue arose.
 \end_layout
 
 \begin_layout Standard
-So posting to a forum and waiting for an answer to my (probably) stupid
- question didn’t come easy to me.
+Posting to a forum and waiting for an answer to my (probably stupid) question
+ didn’t come easy for me.
  This was the thing (I thought) for generation X, not an aging survivor
  of decades of software wars.
  
 \end_layout
 
 \begin_layout Standard
-It was a welcome and pleasant surprise to find supportive, generous, and
- incredibly talented people willing to help.
- Even Tom Locke would answer my questions, patiently.
- Later I was lucky enough to spend time with Tom in person on a number of
- occasions, which increased my respect for his vision and capabilities.
+What a welcome and pleasant surprise to find supportive, generous, and incredibl
+y talented people who were willing to help.
+ Even Tom Locke, the creator would patiently answer my questions.
+ Later I was lucky enough to spend time with Tom increasing my respect for
+ his vision and capabilities.
 \end_layout
 
 \begin_layout Standard
 In Early 2008 an opportunity arose at one of our major clients, The National
  Institute for Food and Agriculture (Formerly CSREES), to migrate a legacy
  app to the web.
- I invited the CIO, Michel Desbois (a forward-looking open source advocate)
+ I invited the CIO, Michel Desbois, (a forward-looking open source advocate)
  to experience a demo of building an application using Hobo.
- My position at NIFA was Chief Systems Architect of the Barquin team, not
+ My position at NIFA is Chief Systems Architect of the Barquin team, not
  one of our senior developers.
- So Michel was intrigued that I was going to sit with him without a coder
- coaching.
+ Michel was intrigued that I was going to sit with him without a coder coaching.
 \end_layout
 
 \begin_layout Standard
-That demo led to a small “proof of concept” task to build a Topic Classification
+That demo led to a small “proof of concept” task to build a 
+\begin_inset Quotes eld
+\end_inset
+
+Topic Classification
+\begin_inset Quotes erd
+\end_inset
+
  system for agriculture research projects using Hobo and Oracle as a back
  end.
  Michel took a risk and started the ball rolling for us with Hobo.
@@ -559,10 +561,9 @@ That demo led to a small “proof of concept” task to build a Topic Classifica
 \end_layout
 
 \begin_layout Standard
-As this project moved forward, and additional Barquin team members became
- interested in learning, it became more and more urgent to have a solid
- resource for training not only developers, but also our requirements analysts
- and designers.
+As this project moved forward, with the addition of more intersted Barquin
+ team members,we urgently needed a solid resource for training not only
+ developers, and requirements analysts and designers.
  We were building wireframes using software (e.g., Axure) that built great
  documentation.
  It even generated HTML pages so you could simulate the page flow of an
@@ -599,10 +600,10 @@ t enhancement to Rails, we are looking forward to the great leap forward
 \end_layout
 
 \begin_layout Standard
-More recently we have two significant development efforts underway using
- Hobo that we will put in production this year.
- The new Leadership and Management Dashboard (LMD) led by Joe Barbano, the
- NIFA Reporting Portal, and the REEport (Research, Education and Economics
+More recently we have two significant Hobo development efforts underway
+ that we will put in production this year.
+ The first one is Leadership and Management Dashboard (LMD) led by Joe Barbano,
+ the NIFA Reporting Portal and The REEport (Research, Education and Economics
  Reporting) project lifecycle reporting system under the direction of John
  Mingee.
  Dennis Unglesbee, Director of the NIFA Applications Division, has had overall
