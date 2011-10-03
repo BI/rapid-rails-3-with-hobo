@@ -79,7 +79,7 @@ THE HOBO RAPID TAG LIBRARY
 \begin_layout Standard
 This section of the book serves as reference for all of the pre-defined
  DRYML tags used by Hobo to provide the “magic” rendering of pages and forms
- without you coding.
+ without coding.
  You can learn how to extend and use these tags to customize your applications.
  
 \end_layout
@@ -603,7 +603,7 @@ when
 \end_inset
 
  is true.
- Using regular DRYML conditional logic it is rather awkward to conditionally
+ Using regular DRYML conditional logic, it is rather awkward to conditionally
  wrap some tag in another tag.
  This tag makes it easy to do that.
 \end_layout
@@ -642,7 +642,7 @@ status collapsed
 
 \end_inset
 
- tag but only under certain conditions.
+ tag, but only under certain conditions.
  Say the current context has an 
 \begin_inset Flex Code
 status collapsed
@@ -1041,7 +1041,7 @@ status collapsed
 \end_inset
 
  (the else clause will be output if the collection was empty).
- It simply outputs its content if 
+ It simply outputs its content, if 
 \begin_inset Flex Code
 status collapsed
 
@@ -1052,7 +1052,7 @@ Hobo::Dryml.last_if
 \end_inset
 
  is false.
- This is pretty much a crazy hack, which violates many good principles of
+ This is pretty much a crazy hack which violates many good principles of
  language design, but it’s very useful : )
 \end_layout
 
@@ -1071,7 +1071,7 @@ status collapsed
 
 \end_inset
 
-, except the test is negated.
+ except the test is negated.
  
 \end_layout
 
@@ -1371,7 +1371,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<view>
+<view>,
 \end_layout
 
 \end_inset
@@ -1736,7 +1736,7 @@ status collapsed
  provides parameters based on the names of the fields which can be used
  to further customize the output.
  For each field a heading parameter is provided, e.g.
- name-heading, created-at-heading, description-heading.
+ name-heading, created-at-heading, and description-heading.
  These can be used to customize the headings:
 \end_layout
 
@@ -2079,7 +2079,7 @@ status collapsed
 \end_inset
 
  tag.
- The default Rapid pages include this already.
+ The default Rapid pages already includes-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2087,7 +2087,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Renders the name of the current context using a variety of methods.
+Renders the name of the current context, using a variety of methods.
 \end_layout
 
 \begin_layout Standard
@@ -2514,7 +2514,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-If no href or name is given then the 
+If no href or name is given, then the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -2536,7 +2536,7 @@ object_url
 \end_inset
 
  is used to construct the URL using restful routing: If the context is a
- class then the link will be an index page:
+ class, then the link will be an index page:
 \end_layout
 
 \begin_layout Standard
@@ -2567,7 +2567,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-If the context is a hobo model instance then the link will be a show page:
+If the context is a hobo model instance, then the link will be a show page:
 \end_layout
 
 \begin_layout Standard
@@ -2679,7 +2679,7 @@ Additional Features
 \begin_layout Itemize
 If the constructed route does not exist then the link will not be created,
  but the content of the link will still be output.
- E.g.
+ e.g.
  when 
 \begin_inset Flex Code
 status collapsed
@@ -2722,7 +2722,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-when the show action 
+When the show action 
 \begin_inset Flex Code
 status collapsed
 
@@ -2763,7 +2763,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-If no content text is provided then 
+If no content text is provided, then 
 \begin_inset Flex Code
 status collapsed
 
@@ -2880,8 +2880,8 @@ Attributes
 \end_layout
 
 \begin_layout Itemize
-action: If “new”, triggers the special behavior listed above.
- Otherwise, contains the action to be performed on the context.
+action: If “new” triggers the special behavior listed above.
+ Otherwise, it contains the action to be performed on the context.
  If neither 
 \begin_inset Flex Code
 status collapsed
@@ -2912,7 +2912,7 @@ method
 
 \end_inset
 
- are specified, the action will be “index” or “show”, as appropriate.
+ are specified, the action will be “index” or “show” as appropriate.
  
 \end_layout
 
@@ -3122,7 +3122,7 @@ prefix
 \end_inset
 
  attribute to insert words before the count.
- If the prefix is “are” or “is” then it will be pluralized if needed:
+ If the prefix is “are” or “is”, then it will be pluralized if needed:
 \end_layout
 
 \begin_layout Standard
@@ -3362,8 +3362,11 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Renders a collection of string joined with “, “, or some other string passed
- in the 
+Renders a collection of string joined with “,
+\begin_inset Quotes erd
+\end_inset
+
+ or some other string passed in the 
 \begin_inset Flex Code
 status collapsed
 
@@ -3464,9 +3467,9 @@ polymorphic
 
 \end_inset
 
- tag which means that there are a variety of definitions, each one written
+ tag which means that there are a variety of definitions each one written
  for a particular type.
- For example there are views for 
+ For example, there are views for 
 \begin_inset Flex Code
 status collapsed
 
@@ -3501,7 +3504,7 @@ Numeric
 status collapsed
 
 \begin_layout Plain Layout
-String
+String,
 \end_layout
 
 \end_inset
@@ -3988,7 +3991,7 @@ this.to_s(:long)
 status collapsed
 
 \begin_layout Plain Layout
-this.strftime(format)
+this.strftime(format),
 \end_layout
 
 \end_inset
@@ -4003,7 +4006,7 @@ format
 
 \end_inset
 
- attribute is given
+ attribute is given.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4026,7 +4029,7 @@ this.to_s(:long)
 status collapsed
 
 \begin_layout Plain Layout
-this.strftime(format)
+this.strftime(format),
 \end_layout
 
 \end_inset
@@ -4041,7 +4044,7 @@ format
 
 \end_inset
 
- attribute is given
+ attribute is given.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4064,7 +4067,7 @@ this.to_s(:long)
 status collapsed
 
 \begin_layout Plain Layout
-this.strftime(format)
+this.strftime(format),
 \end_layout
 
 \end_inset
@@ -4079,7 +4082,7 @@ format
 
 \end_inset
 
- attribute is given
+ attribute is given.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4117,7 +4120,7 @@ format
 
 \end_inset
 
- attribute is given
+ attribute is given.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4143,7 +4146,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Renders ‘Yes’ for true and ‘No’ for false
+Renders ‘Yes’ for true and ‘No’ for false.
 \end_layout
 
 \begin_layout Section

@@ -876,10 +876,6 @@ Default Hobo form rendering
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1094,8 +1090,8 @@ application.dryml
 \end_layout
 
 \begin_layout Standard
-     (As we have mentioned, you probably want to be careful about editing
- tags this way in a real application.
+(As we have mentioned, you probably want to be careful about editing tags
+ this way in a real application.
  But this is the easiest way for us to acquaint you with how Hobo works.)
  
 \end_layout
@@ -1223,10 +1219,6 @@ Modifying the <field-list> tag to remove fields on a page
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1827,10 +1819,6 @@ First step using the <Input> tag
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1971,10 +1959,6 @@ Title
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

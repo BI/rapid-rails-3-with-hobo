@@ -604,8 +604,8 @@ _is
 \begin_layout Standard
 Most Hobo scopes work by appending an appropriate query string to the field
  name.
- In this case, the hobo scope function name is the name of your database
- column, followed by 
+ In this case, the Hobo scope function name is the name of your database
+ column followed by 
 \begin_inset Flex Code
 status collapsed
 
@@ -910,10 +910,10 @@ Boolean scopes
 \end_layout
 
 \begin_layout Standard
-If you use the name of the column by itself, the column is of type boolean,
- and no function is already defined on the model class with the name, Hobo
- scopes adds a dynamic finder to return all records with the boolean column
- set to true:
+If you use the name of the column by itself, the column is of type boolean.
+ No function is defined on the model class with the name.
+ Hobo scopes adds a dynamic finder to return all records with the boolean
+ column set to true:
 \end_layout
 
 \begin_layout Standard
@@ -1006,6 +1006,7 @@ Date scopes
 \begin_layout Standard
 Date scopes work only with columns that have a name ending in ”at”.
  The ”at” is omitted when using these finders.
+ :
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1114,7 +1115,7 @@ target "http://cookbook.hobocentral.net/manual/lifecycles"
 
 \end_inset
 
- defined, each state name can be used as a dynamic finder.
+ defined, each state name can be used as a dynamic finder:
 \end_layout
 
 \begin_layout LyX-Code
@@ -1358,6 +1359,7 @@ find
 \end_inset
 
  method.
+ :
 \end_layout
 
 \begin_layout Standard
@@ -1393,6 +1395,7 @@ search
 
 \begin_layout Standard
 Search for text in the specified column(s).
+ :
 \end_layout
 
 \begin_layout Standard
@@ -1431,7 +1434,7 @@ with_
 \end_layout
 
 \begin_layout Standard
-Find the records that contain the specified record in an association
+Find the records that contain the specified record in an association :
 \end_layout
 
 \begin_layout Standard
@@ -1470,7 +1473,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-You can also specify multiple records with the plural form
+You can also specify multiple records with the plural form :
 \end_layout
 
 \begin_layout Standard

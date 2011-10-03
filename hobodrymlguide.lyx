@@ -87,15 +87,15 @@ DRYML is a template language for Ruby on Rails that you can use in place
 \begin_layout Standard
 DRYML was created in response to the observation that the vast majority
  of Rails development time seems to be spent in the view-layer.
- Rails’ models are beautifully declarative, the controllers can be made
- so pretty easily (witness the many and various “result controller” plugins),
+ Rails’ models are beautifully declarative, the controllers can easily be
+ made very easily (witness the many and various “result controller” plugins),
  but the views, ah the views…
 \end_layout
 
 \begin_layout Standard
-Given that so much of the user interaction we encounter on the web is so
- similar from one website to another, surely we don’t have to code all this
- stuff up from low-level primitives over and over again? Please, no! 
+Given that so much of the user interaction we encounter on the web is similar
+ from one website to another, surely we don’t have to code all this stuff
+ up from low-level primitives over and over again? Please, no! 
 \end_layout
 
 \begin_layout Standard
@@ -105,7 +105,7 @@ s, or widgets, which can be quickly added to our project, and easily tailored
 \end_layout
 
 \begin_layout Standard
-If you’ve been at this game for a while you’re probably frowning about now.
+If you’ve been at this game for a while you’re probably frowning now.
  Re-use is a very, very thorny problem.
  It’s one of those things that sounds straight-forward and obvious in principle,
  but turns out to be horribly difficult in practice.
@@ -117,7 +117,7 @@ If you’ve been at this game for a while you’re probably frowning about now.
 \end_layout
 
 \begin_layout Standard
-So the challenge is not in being able to re-use code, it is:
+The challenge is not in being able to re-use code, it is:
 \end_layout
 
 \begin_layout Standard
@@ -151,7 +151,7 @@ The reason we created DRYML was to see if this kind of flexibility could
 \end_layout
 
 \begin_layout Standard
-So DRYML is just a means to an end.
+DRYML is just a means to an end.
  The real goal is to create a library of reusable user-interface components
  that actually succeed in making it very quick and easy to create the view
  layer of a web application.
@@ -169,8 +169,18 @@ Rapid
 \end_inset
 
  tag library.
- You will visit this library later on in the book.
- Here we will see how DRYML provides the tools and raw materials that make
+ You will visit this library later on in the book 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insert page numbers
+\end_layout
+
+\end_inset
+
+.
+ Here, we will see how DRYML provides the tools and raw materials that make
  a library like Rapid possible.
 \end_layout
 
@@ -539,8 +549,18 @@ status collapsed
 
 \end_inset
 
- tag at the start of this section, from a “normal Rails” perspective, you
- might be wondering why the boilerplate stuff like 
+ tag at the start of this section 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Page number
+\end_layout
+
+\end_inset
+
+, from a “normal Rails” perspective, you might be wondering why the boilerplate
+ stuff like 
 \begin_inset Flex Code
 status collapsed
 
@@ -837,7 +857,7 @@ parameters
 
 \end_inset
 
- to the definition, which is accomplished with the 
+ to the definition which is accomplished with the 
 \begin_inset Flex Code
 status collapsed
 
@@ -903,7 +923,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now we can call the 
+Now, we can call the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1020,12 +1040,19 @@ status collapsed
 
 \end_inset
 
- tag, which means our page tag now has a parameter called 
+ tag which means our page tag now has a parameter called 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 body
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1036,7 +1063,15 @@ body
 status collapsed
 
 \begin_layout Plain Layout
-<page>
+<
+\begin_inset Quotes erd
+\end_inset
+
+page
+\begin_inset Quotes erd
+\end_inset
+
+>
 \end_layout
 
 \end_inset
@@ -1393,8 +1428,18 @@ height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
-Note that when you name a parameter, DRYML automatically adds a CSS class
- of the same name to the output, so the two 
+Note
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Grey box
+\end_layout
+
+\end_inset
+
+ that When you name a parameter, DRYML automatically adds a CSS class of
+ the same name to the output, so the two 
 \begin_inset Flex Code
 status collapsed
 
@@ -1448,7 +1493,7 @@ param
 \end_inset
 
  attribute on empty tags.
- That’s not required though.
+ However, that’s not required.
  If you declare a non-empty tag as a parameter, the content of that tag
  becomes the default when the call does not provide that parameter.
  This means you can easily add a parameter to any part of the template that
@@ -2007,9 +2052,9 @@ status collapsed
 \end_inset
 
  tag is now indistinguishable from a normal HTML tag.
- Some find this aspect of DRYML disconcerting at first – how can you tell
- what is an HTML tag and what it a defined DRYML tag? The answer is – you
- can’t, and that’s quite deliberate.
+ Some find this aspect of DRYML disconcerting at first.
+ How can you tell what is an HTML tag and what it a defined DRYML tag? The
+ answer is – you can’t and that’s quite deliberate.
  This allows you to do nice tricks like define your own smart 
 \begin_inset Flex Code
 status collapsed
@@ -2038,8 +2083,9 @@ status collapsed
  From the start we put a very high priority on making DRYML templates compact
  and elegant.
  When you’re new to DRYML you might have to do a lot of looking things up,
- as you would with any new language or API, but things gradually become
- familiar and then view templates can be read and understood very easily.
+ as you would with any new language or API.
+ Things gradually become familiar and then view templates can be read and
+ understood very easily.
 \end_layout
 
 \begin_layout Section
@@ -2047,16 +2093,22 @@ The Implicit Context
 \end_layout
 
 \begin_layout Standard
-In addition to the most important goal behind DRYML - creating a template
+In addition to the most important goal behind DRYML, creating a template
  language that would encourage re-use in the view layer, a secondary goal
  is for templates to be concise, elegant and readable.
- One aspect of DRYML that helps a lot in this regard is something called
- the 
+ One aspect of DRYML that helps in this regard is called the 
 \begin_inset Flex Emph
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 implicit context
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2085,13 +2137,14 @@ BlogPost
  Then we have the comments.
  The list of comments as a whole is also a “piece” of the BlogPost.
  Within that we have each of the individual comments, and the whole thing
- starts again: the comment title, date, author… This can carry on even further,
- for example some blogs are set up so that you can comment on comments.
+ starts again: the comment title, date, author… This can be learned on even
+ further.
+ For example some blogs are set up so that you can comment on comments.
 \end_layout
 
 \begin_layout Standard
-This structure is incredibly common, perhaps even universal, as it seems
- to be intrinsically tied to the way we visually parse information.
+This structure is incredibly common, perhaps even universal.
+ It seems to be intrinsically tied to the way we visually parse information.
  DRYML’s implicit context takes advantage of this fact to make templates
  extremely concise while remaining readable and clear.
  The object that you are rendering in any part of the page is known as the
@@ -2110,7 +2163,14 @@ context
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 this
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2135,20 +2195,20 @@ We’ll dive straight into some examples, but first a quick general point
  about this guide.
  If you like to use the full Hobo framework, you will probably always use
  DRYML and the Rapid tag library together.
- DRYML and Rapid have grown up together, and the design of each is heavily
+ DRYML and Rapid have grown up together and the design of each is heavily
  influenced by the other.
  Having said that, this is the DRYML Guide, not the Rapid Guide.
- We won’t be using any Rapid tags in this guide, because we want to document
- DRYML the language properly.
- That will possibly be a source of confusion if you’re very used to working
+ We won’t be using any Rapid tags in this guide because we want to properly
+ document DRYML the language.
+ That will possibly be a source of confusion, if you’re used to working
  with Rapid.
- Just keep in mind that we’re not allowed to use any Rapid tags in this
+ If you keep in mind that we’re not allowed to use any Rapid tags in this
  guide and you’ll be fine.
 \end_layout
 
 \begin_layout Standard
-In order to see the implicit context in its best light, we’ll start by defining
- a 
+In order to clearly see the implicit context, we’ll start by defining a
+ 
 \begin_inset Flex Code
 status collapsed
 
@@ -2243,7 +2303,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now let’s use these tags in a page template.
+Now,let’s use these tags in a page template.
  We’ll stick with the comfortingly boring blog post example.
  In order to set the initial context, our controller action would need to
  do something like this:
@@ -2286,12 +2346,19 @@ The DRYML template handler looks for the
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 @this
 \end_layout
 
 \end_inset
 
- instance variable for the initial context.
+ instance
+\begin_inset Quotes erd
+\end_inset
+
+ variable for the initial context.
  It’s quite nice to also set the more conventionally named instance variable
  as we’ve done here.
  Now we’ll create the page.
@@ -2481,7 +2548,7 @@ this
 \end_inset
 
  is not assignable).
- But really you just think of it as “view the title”.
+ Just think of it as “view the title”.
  Of what? Of whatever is in context, in this case the blog post.
 \end_layout
 
@@ -2511,7 +2578,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-When the tag ends, the context is set back to what it was.
+When the tag ends, the context is set back to what it was before.
  In the case of 
 \begin_inset Flex Code
 status collapsed
@@ -2522,7 +2589,7 @@ status collapsed
 
 \end_inset
 
- which is a self-closing tag familiar from XML, that happens immediately.
+ which is a self-closing tag familiar from XML that happens immediately.
  The 
 \begin_inset Flex Code
 status collapsed
@@ -2546,7 +2613,7 @@ status collapsed
 
 \end_inset
 
- that context remains in place so we just need 
+ that context remains in place, so we just need 
 \begin_inset Flex Code
 status collapsed
 
@@ -2597,7 +2664,7 @@ with
  result of any Ruby expression before the tag is called.
  In DRYML any attribute value that starts with ’&’ is interpreted as a Ruby
  expression.
- Here’s the same example as above using only the 
+ Here’s the same example as above, but using only the 
 \begin_inset Flex Code
 status collapsed
 
@@ -2686,7 +2753,17 @@ status open
 \end_layout
 
 \begin_layout Standard
-Note that we could have used 
+Note
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Grey Box
+\end_layout
+
+\end_inset
+
+ that we could have used 
 \begin_inset Flex Code
 status collapsed
 
@@ -2785,6 +2862,16 @@ with
 
  does not.
  This is discussed later in more detail).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insert page numbers
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2793,7 +2880,14 @@ The same template again, this time using
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 field
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2874,7 +2968,15 @@ status open
 
 \begin_layout Standard
 If you compare that example to the first one, you should notice that the
- : syntax is just a shorthand for the 
+ 
+\begin_inset Quotes eld
+\end_inset
+
+:
+\begin_inset Quotes erd
+\end_inset
+
+ syntax is just a shorthand for the 
 \begin_inset Flex Code
 status collapsed
 
@@ -2928,7 +3030,14 @@ field
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 :
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3034,12 +3143,15 @@ this_field
 status collapsed
 
 \begin_layout Plain Layout
-with="..."
+\begin_inset Quotes eld
+\end_inset
+
+with="...,"
 \end_layout
 
 \end_inset
 
-, these values are not available.
+ these values are not available.
  That means the following apparently identical tag calls are not quite the
  same:
 \end_layout

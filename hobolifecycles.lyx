@@ -78,9 +78,9 @@ HOBO LIFECYCLES
 This chapter of the Hobo manual describes Hobo’s “lifecycle” mechanism.
  This is an extension that lets you define a lifecycle for any Active Record
  model.
- Defining a lifecycle is like a finite state machine – a pattern which turns
- out to be extremely useful for modeling all sorts of processes that crop
- up in the world that we’re trying to model.
+ Defining a lifecycle is like a finite state machine, a pattern which turns
+ out to be extremely useful for modeling all sorts of processes that appear
+ in the world that we’re trying to model.
 \end_layout
 
 \begin_layout Standard
@@ -94,8 +94,9 @@ acts_as_state_machine
 
 \end_inset
 
- plugin, and in a way they are, but with Hobo style.
- The big win comes from the fact that, like many things in Hobo:
+ plugin.
+ In a way they are, but with Hobo style.
+ The big win comes from the fact that:
 \end_layout
 
 \begin_layout Standard
@@ -120,10 +121,10 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-In the REST style, which is popular with Rails coders, we view our objects
- a bit like documents: you can post them to a website, get them again later,
- make changes to them and delete them.
- Of course, these objects also have behavior, which we often implement by
+In the REST style which is popular with Rails coders, we view our objects
+ a bit like documents; you can post them to a website, get them again later,
+ make changes to them, and delete them.
+ Of course, these objects also have behavior which we often implement by
  hooking functionality to the create / update / delete events (like using
  callbacks such as 
 \begin_inset Flex Code
@@ -140,7 +141,7 @@ after_create
 \end_layout
 
 \begin_layout Standard
-In a pinch we may have to fall back to the RPC style, which Hobo has support
+In a pinch we may have to fall back to the RPC style which Hobo has support
  for with the “Web Method” feature.
 \end_layout
 
@@ -260,9 +261,10 @@ cancelled
 \end_layout
 
 \begin_layout Standard
-Not a “create”, “update” or “delete” in sight.
- Those bold words capture the way we think about the friendship much better.
- Of course we 
+Not a “create,” “update,” or “delete” in sight.
+ The bolded words capture the way we think about the friendship process
+ much better.
+ Of course, we 
 \begin_inset Flex Emph
 status collapsed
 
@@ -272,8 +274,7 @@ could
 
 \end_inset
 
- implement friendship in a RESTful style, but we’d be doing just that –
- 
+ implement friendship in a RESTful style, but we’d be
 \begin_inset Flex Emph
 status collapsed
 
@@ -298,7 +299,7 @@ declaring
 
 \begin_layout Standard
 The life-cycle of the friendship would be hidden in our code, scattered
- across a bunch of callbacks, permission methods and state variables.
+ across a bunch of callbacks, permission methods, and state variables.
  Experience has shown this type of code to be tedious to write, 
 \begin_inset Flex Emph
 status collapsed
@@ -309,7 +310,7 @@ extremely
 
 \end_inset
 
- error prone and fragile when changing.
+ error prone, and fragile when changing.
 \end_layout
 
 \begin_layout Standard
@@ -332,11 +333,11 @@ REST vs.
  Some models will support both styles.
  A good example is a content management system with some kind of editorial
  workflow.
- An application like that might have an Article model, which can be created,
- updated and deleted like any other REST resource.
+ An application like that might have an Article model which can be created,
+ updated, and deleted like any other REST resource.
  The Article might also feature a lifecycle that defines how the article
- goes from newly authored, through one or more stages of review (possibly
- being rejected at any stage) before finally becoming accepted, and later
+ goes from being newly authored, through one or more stages of review (possibly
+ being rejected at any stage), before finally becoming accepted, and later
  published.
 \end_layout
 
@@ -345,8 +346,8 @@ An Example
 \end_layout
 
 \begin_layout Standard
-Everyone loves an example, so here is one.
- We’ll stick with the friendship idea.
+Everyone loves an example, so here is one: We’ll stick with the friendship
+ idea.
  If you want to try this out, create a blank app and add a model:
 \end_layout
 
@@ -416,17 +417,13 @@ Defining the Friendship model
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Usually, the lifecycle can be represented as a graph, just as we would draw
+Usually, the lifecycle can be represented as a graph just as we would draw
  a finite state machine:
 \end_layout
 
@@ -477,7 +474,14 @@ Because
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Friendship
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -488,18 +492,33 @@ Friendship
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 Friendship::Lifecycle
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 .
  Each instance of 
+\begin_inset Quotes eld
+\end_inset
+
+
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
 Friendship
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -509,7 +528,14 @@ Friendship
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
 my_friendship.lifecycle
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1033,7 +1059,8 @@ status collapsed
 
 \end_inset
 
- option was set to a class name, here it is set to a method (a 
+ option was set to a class name.
+ Here it is set to a method (a 
 \begin_inset Flex Code
 status collapsed
 
@@ -1069,7 +1096,17 @@ status collapsed
 
 \end_inset
 
- can be used, which will be discussed in detail later.
+ can be used which will be discussed in detail later.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insert page numbers
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1101,7 +1138,7 @@ acting_user
 
 \begin_layout Standard
 Hopefully that worked example has clarified what lifecycles are all about.
- We’ll move on and look at the details now.
+ We’ll move on and look at the details.
 \end_layout
 
 \begin_layout Section
@@ -1113,8 +1150,17 @@ Before getting into the API we’ll recap some of the key concepts very briefly.
 \end_layout
 
 \begin_layout Standard
-As mentioned in the introduction, the lifecycle is essentially a finite
- state machine.
+As mentioned in the introduction,
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insert page numbers
+\end_layout
+
+\end_inset
+
+ the lifecycle is essentially a finite state machine.
  It consists of:
 \end_layout
 
@@ -1130,8 +1176,8 @@ states
 \end_inset
 
 .
- Each has a name, and the current state is stored in a simple string field
- in the record.
+ Each has a name.
+ The current state is stored in a simple string field in the record.
  If you like to think of a finite state machine as a graph, these are the
  nodes.
 \end_layout
@@ -1148,8 +1194,9 @@ creators
 \end_inset
 
 .
- Each has a name, and they define actions that can start the lifecycle,
- setting the state to be some start-state.
+ Each has a name.
+ They define actions that can start the lifecycle, setting the state to
+ be some start-state.
 \end_layout
 
 \begin_layout Itemize
@@ -1164,7 +1211,8 @@ transitions
 \end_inset
 
 .
- Each has a name, and they define actions that can change the state.
+ Each has a name.
+ They define actions that can change the state.
  Again, thinking in terms of a graph, these are the arcs between the nodes.
 \end_layout
 
@@ -1184,8 +1232,9 @@ The creators and the transitions are together known as the steps of the
 
 \begin_layout Standard
 There are a variety of ways to limit which users are allowed to perform
- which steps, and there are ways to attach custom actions (e.g., send an email)
- both to steps and to states.
+ which steps.
+ There are ways to attach custom actions (e.g., send an email) both to steps
+ and to states.
 \end_layout
 
 \begin_layout Section
@@ -1193,7 +1242,7 @@ Defining a lifecycle
 \end_layout
 
 \begin_layout Standard
-Any Hobo model can be given a lifecycle like this:
+Any Hobo model can be given a lifecycle like the one below:
 \end_layout
 
 \begin_layout Standard
@@ -1406,7 +1455,17 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Note that both of these fields are declared 
+Note:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Grey box
+\end_layout
+
+\end_inset
+
+ that both of these fields are declared 
 \begin_inset Flex Code
 status collapsed
 
@@ -1595,8 +1654,8 @@ Defining creators
 
 \begin_layout Standard
 A creator is the starting point for a lifecycle.
- They provide a way for the record to be created (in addition to the regular
- 
+ A creator provides a way for the record to be created (in addition to the
+ regular 
 \begin_inset Flex Code
 status collapsed
 
@@ -1655,7 +1714,7 @@ end
 
 \begin_layout Standard
 The name is a symbol.
- It should be a valid ruby name that does not conflict with the class methods
+ It should be a valid Ruby name that does not conflict with the class methods
  already present on the 
 \begin_inset Flex Code
 status collapsed
@@ -1691,8 +1750,8 @@ A symbol – the name of the state
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument it is called with the record, if
- it takes none it is 
+A proc – if the proc takes one argument it is called with the record.
+ If it takes none it is 
 \begin_inset Flex Code
 status collapsed
 
@@ -1722,12 +1781,12 @@ A symbol – the name of a method to be called on the record
 \end_layout
 
 \begin_layout Itemize
-A string – a Ruby expression, evaluated in the context of the record 
+A string – a Ruby expression evaluated in the context of the record 
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument it is called with the record, if
- it takes none it is 
+A proc – if the proc takes one argument it is called with the record.
+ If it takes none, it is 
 \begin_inset Flex Code
 status collapsed
 
@@ -1741,13 +1800,24 @@ instance_eval
 \end_layout
 
 \begin_layout Standard
-Note that the precondition is evaluated before any changes are made to the
- record using the parameters to the lifecycle step.
+Note:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Grey Box
+\end_layout
+
+\end_inset
+
+ that the precondition is evaluated before any changes are made to the record
+ using the parameters to the lifecycle step.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-:new_key – generate a new lifecycle key for this record by setting the 
+:new_key – generates a new lifecycle key for this record by setting the
+ 
 \begin_inset Flex Code
 status collapsed
 
@@ -1817,7 +1887,17 @@ status collapsed
 
 \end_inset
 
- option, discussed later on.
+ option, discussed in
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Section number
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1832,8 +1912,8 @@ create
 \end_inset
 
  provides a callback which will be called after the record has been created.
- You can give a block with a single argument, in which case it will be passed
- the record, or with no arguments in which case it will be 
+ You can give a block with a single argument in which case it will be passed
+ to the record, or with no arguments in which case it will be 
 \begin_inset Flex Code
 status collapsed
 
@@ -1883,8 +1963,8 @@ transition name, { from => to }, options do ...
 \end_layout
 
 \begin_layout Standard
-The name is a symbol.
- It should be a valid Ruby name
+(The name is a symbol.
+ It should be a valid Ruby name.)
 \end_layout
 
 \begin_layout Standard
@@ -1925,7 +2005,7 @@ status collapsed
 
 \end_inset
 
- is quite nice to indicate a transition)
+ is nice to indicate a transition)
 \end_layout
 
 \begin_layout Standard
@@ -1939,7 +2019,7 @@ from
 
 \end_inset
 
-, which can be either a symbol or an array of symbols.
+ which can be either a symbol or an array of symbols.
  On completion of this transition, the record will be in the state give
  as 
 \begin_inset Flex Code
@@ -1959,8 +2039,8 @@ A symbol – the name of the state
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument it is called with the record, if
- it takes none it is 
+A proc – if the proc takes one argument, it is called with the record.
+ If it takes none it is 
 \begin_inset Flex Code
 status collapsed
 
@@ -2003,8 +2083,8 @@ A string – a Ruby expression, evaluated in the context of the record
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument it is called with the record, if
- it takes none it is 
+A proc – If the proc takes one argument, it is called with the record.
+ If it takes none it is 
 \begin_inset Flex Code
 status collapsed
 
@@ -2139,7 +2219,7 @@ status collapsed
 , each starting from a different start state.
  You could achieve a similar effect by listing all the start states in a
  single transition, but by defining separate transitions, each one could,
- for example, be given a different action (block).
+ be given a different action (block).
 \end_layout
 
 \begin_layout Subsection*
@@ -2206,7 +2286,17 @@ record.lifecycle.provided_key
 \end_inset
 
  is set to the correct key.
- Discussed in detail later.
+ Discussed in 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Section number
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2343,7 +2433,7 @@ Some examples:
 \end_layout
 
 \begin_layout Standard
-Say a model has an owner:
+A model has an owner:
 \end_layout
 
 \begin_layout Standard
@@ -2370,7 +2460,7 @@ belongs_to :owner, :class_name => "User"
 \end_layout
 
 \begin_layout Standard
-You can just give the name of the relationship (since it is also a method)
+You can only give the name of the relationship (since it is also a method)
  to restrict the transition to that user:
 \end_layout
 
@@ -2484,7 +2574,7 @@ status collapsed
 
 \end_inset
 
- and then say, for example:
+ and then:
 \end_layout
 
 \begin_layout Standard
@@ -2590,9 +2680,9 @@ Controller actions and routes
 
 \begin_layout Standard
 As well as providing the lifecycle mechanism in the model, Hobo also supports
- the lifecycle in the controller layer, and provides an automatic user interface
+ the lifecycle in the controller layer and provides an automatic user interface
  in the view layer.
- All of this can be fully customized of course.
+ All of this can be fully customized.
  In this section we’ll look at the controller layer features, including
  the routes that get generated.
 \end_layout
@@ -2619,7 +2709,7 @@ publishable
 \end_inset
 
 .
- It is these that Hobo generates controller actions for.
+ It is for these that Hobo generates controller actions.
  Any step that does not have the 
 \begin_inset Flex Code
 status collapsed
@@ -2630,12 +2720,20 @@ status collapsed
 
 \end_inset
 
- option can be thought of as ‘internal’.
+ option can be thought of as 
+\begin_inset Quotes eld
+\end_inset
+
+internal
+\begin_inset Quotes erd
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-Of course you can call those create steps and transitions from your own
+Of course, you can call those create steps and transitions from your own
  code, but Hobo will never do that for you.
 \end_layout
 
@@ -2986,7 +3084,7 @@ This action is where the form should POST to.
 \end_layout
 
 \begin_layout Standard
-Again you can implement this action yourself:
+You can implement this action yourself:
 \end_layout
 
 \begin_layout Standard
@@ -3021,7 +3119,7 @@ end
 \end_layout
 
 \begin_layout Standard
-You can give a block to customize the response, or pass the redirect option:
+You can give a block to customize the response or pass the redirect option:
 \end_layout
 
 \begin_layout Itemize
@@ -3077,7 +3175,8 @@ provided_key
 
 \end_inset
 
- on the lifecycle, so transitions that are 
+ on the lifecycle.
+ Thus, transitions that are 
 \begin_inset Flex Code
 status collapsed
 
@@ -3204,7 +3303,7 @@ end
 
 \begin_layout Standard
 As usual, you can customize the response by passing a block.
- And you can pass the following option:
+ Also, you can pass the following option:
 \end_layout
 
 \begin_layout Itemize
@@ -3304,7 +3403,7 @@ end
 
 \begin_layout Standard
 As usual, you can customize the response by passing a block.
- And you can pass the following options: 
+ You can pass the following options: 
 \end_layout
 
 \begin_layout Itemize
@@ -3355,11 +3454,11 @@ Keys and secure links
 
 \begin_layout Standard
 Hobo’s lifecycles also provide support for the “secure link” pattern.
- By “secure” we mean that on one other than the holder of the link can access
- the page or feature in question.
- This is achieved by including some kind of cryptographic key in the URL,
+ By “secure” we mean that someone other than the holder of the link can
+ access the page or feature in question.
+ This is achieved by including some kind of cryptographic key in the URL
  which is typically sent in an email address.
- The two very common examples are:
+ Two very common examples are:
 \end_layout
 
 \begin_layout Itemize
@@ -3377,7 +3476,7 @@ Email activation – by following the link, the user has effectively proved
 \end_layout
 
 \begin_layout Standard
-In fact the idea of a secure link is more general than that.
+In fact the idea of a secure link is even more general.
  It can be applied in any situation where you want a particular person to
  participate in a process, but that person does not have an account on the
  site.
@@ -3392,8 +3491,8 @@ For example, in a CMS workflow application, you might want to email a particular
  signing up.
  Your app could provide a page with “approve”/”reject” buttons, and access
  to that page could be protected using the secure link pattern.
- In this way, the person you email the secure link to, and no one else,
- would be able to accept or reject the article.
+ In this way, the person you email the secure link, and no one else would
+ be able to accept or reject the article.
 \end_layout
 
 \begin_layout Standard
@@ -3562,8 +3661,8 @@ Stringing this all together, we would typically implement the secure-link
 \end_layout
 
 \begin_layout Standard
-We’re assuming some knowledge of Rails mailers here, so you may need to
- read up on those.
+We’re assuming some knowledge of Rails mailers, so you may need to read
+ up on those.
 \end_layout
 
 \begin_layout Itemize
@@ -3694,10 +3793,10 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
-The mailer should include a link in the email, and they key should be part
- of this link as a query parameter.
- Hobo creates a named route for each transition page, so there will be a
- URL helper available.
+The mailer should include a link in the email, The key should be part of
+ this link as a query parameter.
+ Hobo creates a named route for each transition page, so there will be an
+ available URL helper.
  For example, if the transition is on 
 \begin_inset Flex Code
 status collapsed

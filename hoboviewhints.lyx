@@ -104,9 +104,10 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-One of the main attractions of Hobo is its ability to give you a pretty
- decent starting point for you app’s UI, entirely automatically based on
- information extracted from your models and controllers.
+One of the main attractions of Hobo is its ability to give you a decent
+ starting point for your app’s UI.
+ This is automatically based on information extracted from your models and
+ controllers.
  The more information available to Hobo, the better job it can do, but some
  such information doesn’t properly belong in either the model or the controller.
  For example, we might want to declare that a particular field should have
@@ -119,7 +120,17 @@ This functionality used to be handled in the ViewHints module in Hobo 1.
  module.
  For those of you who are upgrading your Hobo 1 applications, a section
  on migrating ViewHints to Internationalization is available at the end
- of this chapter.
+ of this 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insert section 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -132,8 +143,8 @@ The old view hints renaming has been moved into the locale files.
  (i18n) and have their own conventions.
  They are perfect and already working English to English customizations
  as well.
- So Hobo now uses this Rails-standard tool and established conventions to
- provide model, field name, and field help customization.
+ Hobo now uses this Rails-standard tool and established conventions to provide
+ model, field name, and field help customization.
  For more detail see the Rails Internationalization (I18n) API Guide at
  
 \begin_inset CommandInset href
@@ -310,7 +321,7 @@ Name and input help
 \end_layout
 
 \begin_layout Standard
-Just be careful: don't mess up the indentation! 
+Just be careful: Don't mess up the indentation! 
 \end_layout
 
 \begin_layout Standard
@@ -379,10 +390,6 @@ hobo.en.yml
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -406,6 +413,16 @@ status open
 Note: Members of the Hobo community have created versions for Spanish, Italian,
  German, Russian, etc.
  Check out the latest by joining the Hobo Google Users Group.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Address?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -468,8 +485,8 @@ children
 
 \end_inset
 
- declaration only influences Rapid‘s show-page – it governs the display
- of collections of 
+ declaration only influences Rapid‘s show-page; it governs the display of
+ collections of 
 \begin_inset Flex Code
 status collapsed
 
@@ -543,7 +560,7 @@ users/show
 
 \begin_layout Standard
 You can declare additional child relationships.
- The order is significant, with the first in the list being the ―primary
+ The order is significant with the first in the list being the ―primary
  collection.‖ For example: 
 \end_layout
 
@@ -592,7 +609,7 @@ end
 
 \begin_layout Standard
 With this declaration, the user’s show-page will be given an aside section
- (sidebar), in which cards for the 
+ (sidebar) in which cards for the 
 \begin_inset Flex Code
 status collapsed
 
@@ -856,9 +873,9 @@ Locale (I18n) Friendly Tags
 \end_layout
 
 \begin_layout Standard
-In hobo 1.3.x all the code not compatible by the Ruby i18n standard has been
+In Hobo 1.3.x all the code not compatible by the Ruby i18n standard has been
  removed.
- As a result a few Hobo tags have changed internally and accept more attributes,
+ As a result a few Hobo tags have changed internally and accept more attributes
  or deprecate others.
  A few Hobo tags have been deprecated and replaced with relevant i18n-specific
  tags that are included in the auto-generated taglibs.
@@ -882,7 +899,7 @@ status open
 Note: Many internal Hobo tags have been transparently internationalized,
  i.e., the strings they use are automatically translated to the current locale
  language.
- We are only documenting here the tags that you might use in application
+ Here,We are only documenting the tags that you might use in application
  development.
 \end_layout
 
@@ -929,9 +946,9 @@ boolean
 \end_layout
 
 \begin_layout Standard
-A convenience tag used to output a count summary with a correctly localized
+A convenience tag is used to output a count summary with a correctly localized
  and pluralized label.
- Works with any kind of collection such as an 
+ It works with any kind of collection such as an 
 \begin_inset Flex Code
 status collapsed
 
@@ -1004,6 +1021,7 @@ label
 \end_inset
 
  attribute, e.g.
+ :
 \end_layout
 
 \begin_layout Standard
@@ -1034,13 +1052,13 @@ status open
 \end_layout
 
 \begin_layout Standard
-You can pass a summary attribute, which will generate a complete localized
+You can pass a summary attribute which will generate a complete localized
  sentence.
  It allows two options:
 \end_layout
 
 \begin_layout Itemize
-boolean (e.g., 
+Boolean (e.g., 
 \begin_inset Flex Code
 status collapsed
 
@@ -1382,7 +1400,7 @@ Additional Notes
 \end_layout
 
 \begin_layout Itemize
-The 
+If the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1449,7 +1467,7 @@ if-any
 
 \end_inset
 
- attribute to output nothing if the count is zero.
+ attribute to output nothing, if the count is zero.
  This can be followed by an 
 \begin_inset Flex Code
 status collapsed
@@ -1492,7 +1510,7 @@ status open
 
 \begin_layout Standard
 Convenience tag to help with the common situation where you need to address
- the current user as "you", and refer to other users by name
+ the current user as "you" and refer to other users by name
 \end_layout
 
 \begin_layout Standard
@@ -1520,7 +1538,7 @@ this == current_user
 
 \end_inset
 
- the "you" form is rendered, otherwise the form with the user's name:
+ the "you" form is rendered, otherwise use the form with the user's name:
 \end_layout
 
 \begin_layout Standard
@@ -1576,10 +1594,11 @@ her_user".
 \end_layout
 
 \begin_layout Standard
-Each namespace can contain the legacy keys "have", "are", "do" used for
- the respective attributes, and "nothing" used when no attribute is passed.
- But you can also use your own keys, providing that you add the keys in
- the correct namespaces.
+Each namespace can contain the legacy keys "have," "are," "do" used for
+ the respective attributes.
+ "Nothing" is used when no attribute is passed.
+ However, you can also use your own keys, providing that you add the keys
+ in the correct namespaces.
 \end_layout
 
 \begin_layout Standard
@@ -1884,7 +1903,7 @@ status collapsed
 
 \end_inset
 
- variable is added by default as an interpolable variable
+ variable is added by default as an interpolable variable.
 \end_layout
 
 \begin_layout Itemize
@@ -1897,7 +1916,7 @@ the Your/Jim's string, joined to the tag content.
 \end_layout
 
 \begin_layout Itemize
-If you pass an explicit 'default' attribute you will override the automatic
+If you pass an explicit 'default' attribute, you will override the automatic
  default.
 \end_layout
 
@@ -2184,8 +2203,18 @@ first_value
 \end_inset
 
 .
- The passed attributes are used as a default in case the lookups fail.
- (see the documentation of filter-menu tag for a similar example).
+ The passed attributes are used as a default if the lookups fail.
+ (See the documentation of filter-menu tag for a similar example),
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insert page numbers
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2308,6 +2337,16 @@ See
 LatexCommand href
 name "Filtering stories by status"
 target "http://cookbook.hobocentral.net/tutorials/agility#filtering_stories_by_status"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insert page numbers
+\end_layout
 
 \end_inset
 
@@ -2702,7 +2741,7 @@ Adds some conventions for easier hobo translation.
 \end_layout
 
 \begin_layout Itemize
-Assumes the first part of the key to be a model name (e.g.: 
+Assumes the first part of the key is a model name (e.g.: 
 \begin_inset Flex Code
 status collapsed
 
@@ -2731,7 +2770,7 @@ user-> activerecord.models.user
 
 \begin_layout Itemize
 Adds a default fallback to the beginning of the fallback chain by replacing
- the first part of the key with "hobo" and using the translated model name
+ the first part of the key with "hobo" and uses the translated model name
  as additional attribute.
  This allows us to have default translations (e.g.: 
 \begin_inset Flex Code
@@ -2747,7 +2786,7 @@ hobo.index.title: "{{model}} Index"
 \end_layout
 
 \begin_layout Standard
-Is also used as a tag in the dryml-view files.
+It is also used as a tag in the dryml-view files.
  The syntax is:
 \end_layout
 
@@ -2786,6 +2825,7 @@ my.app
 \end_inset
 
  key for your locale and replaces the "My Application" content if found.
+ :
 \end_layout
 
 \begin_layout Standard
@@ -3459,7 +3499,7 @@ Inline Booleans: allows you to force Hobo to show boolean fields in the
 \end_layout
 
 \begin_layout Standard
-Renaming the model name, field names and specifying field help can be specified
+Renaming the model name, field names, and specifying field help can be specified
  in the localization file.
  In this section’s examples, the localization file we will be using is the
  
@@ -3624,18 +3664,34 @@ recipe: Enter keywords from the name of a recipe
 
 \begin_layout Standard
 Since different languages handle pluralization in different ways, simply
- specifying another name for a model is no longer feasible, instead, we
- have to specify at least the models’s new name for it in a single instance,
- and, for plural instances.
- So above, we have renamed ‘Answer’ to ‘Response’ when there is only 1 model
- present, and, ‘Responses’ in all other cases.
+ specifying another name for a model is no longer feasible.
+ Instead, we have to specify at least the models’s new name for it in a
+ single instance and for plural instances.
+ Above we have renamed ‘Answer’ to ‘Response’ when there is only 1 model
+ present and ‘Responses’ in all other cases.
  
 \end_layout
 
 \begin_layout Standard
 To specify Child relationships, this declaration should be moved from the
- ViewHints file to the Model.
- So:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+ViewHints
+\begin_inset Quotes erd
+\end_inset
+
+ file to the 
+\begin_inset Quotes eld
+\end_inset
+
+Model
+\begin_inset Quotes erd
+\end_inset
+
+.
+ :
 \end_layout
 
 \begin_layout Standard
@@ -4107,7 +4163,7 @@ enum_string
 \end_inset
 
 .
- (Note the lower-case first letter, and the pluralization.)
+ (Note the lower-case first letter and the pluralization.)
 \end_layout
 
 \begin_layout Standard
