@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 24 
+2.3.9 Tutorial 24 
 \begin_inset Newline newline
 \end_inset
 
@@ -103,12 +103,8 @@ This tutorial will show how you can create an administrative sub-site for
  
 \end_layout
 
-\begin_layout Subsubsection*
-Generator steps 
-\end_layout
-
 \begin_layout Standard
-Let’s add an admin sub-site to the project we created in the “Agile Project
+Let’s add an admin sub-site to the project created in the “Agile Project
  Manager” tutorial.
   
 \end_layout
@@ -211,8 +207,8 @@ RequirementStatus
 \end_layout
 
 \begin_layout Standard
-Let’s first change all of the permissions for this model to “true”, as only
- an administrator will be able to access this sub-site:
+First change all of the permissions for this model to “true”, as only an
+ administrator will be able to access this sub-site:
 \end_layout
 
 \begin_layout Standard
@@ -258,7 +254,7 @@ Controller Modifications
 
 \begin_layout Standard
 We need to move the controller for RequirementStatus to the admin folder
- and modify it to be:
+ and modify to:
 \end_layout
 
 \begin_layout Standard

@@ -577,55 +577,51 @@ filename "ch4tut16.lyx"
 \end_layout
 
 \begin_layout Chapter
-Chapter 5 
-\begin_inset Newline newline
-\end_inset
-
-ADVANCED TUTORIALS
+Section 2.3 ADVANCED TUTORIALS
 \end_layout
 
 \begin_layout Subsubsection*
-Introductory Concepts and Comments
+2.3.1 Introductory Concepts and Comments
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 17 – The Agile Project Manager
+2.3.2 Tutorial 17 – The Agile Project Manager
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 18 – Using CKEditor (Rich Text) with Hobo
+2.3.3 Tutorial 18 – Using CKEditor (Rich Text) with Hobo
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 19 – Using FusionCharts with Hobo
+2.3.4 Tutorial 19 – Using FusionCharts with Hobo
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 20 – Adding User Comments to Models
+2.3.5 Tutorial 20 – Adding User Comments to Models
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 21 – Replicating the Look and Feel of a Site
+2.3.6 Tutorial 21 – Replicating the Look and Feel of a Site
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 22 – Using Hobo Lifecycles for Workflow
+2.3.7 Tutorial 22 – Using Hobo Lifecycles for Workflow
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 23 – Using Hobo Lifecycles for Workflow
+2.3.8 Tutorial 23 – Using Hobo Lifecycles for Workflow
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 24 – Creating an Administration Sub-Site
+2.3.9 Tutorial 24 – Creating an Administration Sub-Site
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 25 – Using Hobo Database Index Generation
+2.3.10 Tutorial 25 – Using Hobo Database Index Generation
 \end_layout
 
 \begin_layout Section
-Introductory Concepts and Comments
+2.3.1 Introductory Concepts and Comments
 \end_layout
 
 \begin_layout Standard
@@ -635,8 +631,8 @@ This set of tutorials builds on the expertise you have developed so far
 \end_layout
 
 \begin_layout Standard
-You should be able to flex your muscles a bit, at rich text editing, charting,,
- or even completely change the look and feel of a site.
+2.3.1 You should be able to flex your muscles a bit, at rich text editing,
+ charting, or even completely change the look and feel of a site.
 \end_layout
 
 \begin_layout Standard

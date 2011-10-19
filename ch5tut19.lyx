@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 19 
+2.3.4 Tutorial 19 
 \begin_inset Newline newline
 \end_inset
 
@@ -100,7 +100,7 @@ Overview
 \end_layout
 
 \begin_layout Standard
-Presenting data in a visual informative way is a powerful too.
+Presenting data in a visual informative way is a powerful.
  A widely-used charting and graphing library that includes lots of special
  effects is FusionCharts from InfoSoft (
 \begin_inset CommandInset href
@@ -118,7 +118,7 @@ FusionCharts offers a wide range of flash components for rendering data-driven
  charts, graphs, and maps.
  The way to feed those flash components with our data is to create an XML
  file (with a specific format and semantics understood by FusionCharts)
- and then setting the URL for that file so that the Flash component (running
+ and then set the URL for that file so that the Flash component (running
  on the client browser) can reach it.
 \end_layout
 
@@ -133,8 +133,8 @@ four_table
 
 \end_inset
 
- project you completed earlier so we can leverage the existing models and
- just focus on the chart functionality.
+ project completed earlier, so we can leverage the existing models and focus
+ on the chart's functionality.
 \end_layout
 
 \begin_layout Standard
@@ -242,7 +242,7 @@ Download page for FusionCharts
 
 \begin_layout Standard
 Click on the ‘Download FusionCharts v3 (Evaluation)’ link, save and unzip
- the file into a safe location, such as, 
+ the file into a safe location such as, 
 \begin_inset Flex Code
 status collapsed
 
@@ -263,7 +263,7 @@ Next:
 \end_layout
 
 \begin_layout Enumerate
-Create a new folder under the hobo “public” folder called FusionCharts.
+Create a new folder under the Hobo “public” folder called FusionCharts.
   Copy all the 
 \begin_inset Flex Code
 status collapsed
@@ -343,7 +343,7 @@ Target location for the FusionCharts SWF files
 
 \end_deeper
 \begin_layout Enumerate
-Next, copy the file 
+Copy the file 
 \begin_inset Flex Code
 status collapsed
 
@@ -379,8 +379,8 @@ javascripts
 \end_layout
 
 \begin_layout Enumerate
-Finally, we are ready to reference the JavaScript file (copied in Step 2)
- in our 
+Now we are ready to reference the JavaScript file (copied in Step 2) in
+ our 
 \begin_inset Flex Code
 status collapsed
 
@@ -441,7 +441,7 @@ application.dryml
 
 \end_inset
 
-,we extend the ‘page’ view so that we always include the JavaScript file
+,we extended the ‘page’ view so that we always included the JavaScript file
  
 \begin_inset Flex Code
 status collapsed
@@ -453,8 +453,8 @@ FusionCharts.debug.js
 \end_inset
 
 .
- We could include this JavaScript at a page level, but for the purposes
- of this tutorial seemed more practical to do it this way.
+ We could include this JavaScript at a page level, but for this tutorial's
+ purpose it was more practical to do it this way.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -462,8 +462,7 @@ Adding sample data
 \end_layout
 
 \begin_layout Standard
-Before implementing the chart functionality, create some sample data to
- use:
+Before implementing the chart functionality, create sample data to use:
 \end_layout
 
 \begin_layout Standard
@@ -504,8 +503,8 @@ Screen shot of sample recipe data for the tutorial
 \end_layout
 
 \begin_layout Standard
-It is probably better to first use the data presented here to make sure
- your charts will look the same as the tutorial.
+It is better to use the data presented above to make sure your charts will
+ look the same as the tutorial.
  
 \end_layout
 
@@ -541,7 +540,8 @@ recipes_controller.rb
 
 \end_inset
 
- in order to save the data (XML file) needed by the FusionCharts Flash component.
+.
+ This will save the data (XML file) needed by the FusionCharts Flash component.
  We will activate the chart within the 
 \begin_inset Flex Code
 status collapsed
@@ -552,12 +552,12 @@ recipes/index.dryml
 
 \end_inset
 
- file view as the data needed will be derived from the collection Recipes.
+ file view since the needed data will be derived from the collection Recipes.
 \end_layout
 
 \begin_layout Standard
 To get this to work, we will need to add a filter method to the controller,
- and a method to render XML.
+ as well as a method to render XML.
  Take a look at the completed program below:
 \end_layout
 
@@ -599,9 +599,9 @@ Enhancements to RecipesController to provide data to FusionCharts
 \end_layout
 
 \begin_layout Standard
-As you can see (modifications are highlighted in bold italics below), we
- add a new filter to store the XML file only when we receive a request for
- the index page.
+(modifications are highlighted in bold italics below).
+ We added a new filter to store the XML file, but only when receiving a
+ request for the index page.
 \end_layout
 
 \begin_layout Standard
@@ -666,7 +666,7 @@ before_filter :save_fusion_chart_data, :only => [:index]
 \end_layout
 
 \begin_layout Standard
-Now we must define the ruby method 
+We must define the ruby method 
 \begin_inset Flex Code
 status collapsed
 
@@ -716,7 +716,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-In this line we define an instance variable (
+In the above line we defined an instance variable (
 \begin_inset Flex Code
 status collapsed
 
@@ -764,8 +764,8 @@ filename =
 \end_layout
 
 \begin_layout Standard
-In this line we define the local path (from the Server point of view) where
- the XML data file will be stored.
+In the above line we define the local path (from the Server point of view)
+ where the XML data file will be stored.
  As you can see, we are pointing to the 
 \begin_inset Flex Code
 status collapsed
@@ -776,9 +776,9 @@ public
 
 \end_inset
 
- directory of the Hobo application, and that’s necessary because the file
- must be available so that the FusionCharts Flash component (on the client
- side) can load it.
+ directory of the Hobo application,.
+ That’s necessary because the file must be available so that the FusionCharts
+ Flash component (on the client side) can load it.
 \end_layout
 
 \begin_layout Standard
@@ -809,9 +809,9 @@ xml_string = render_to_string(:partial =>
 \end_layout
 
 \begin_layout Standard
-This line uses the Rails “render_to_string” method using the template with
- the semantics needed by FusionCharts that is included in the “chart_data_genera
-tor_for_count_by_country” .
+The line above imploments the Rails “render_to_string” method using the
+ template and needed semantics by FusionCharts included in the “chart_data_gener
+ator_for_count_by_country” .
  This will be discussed below.
 \end_layout
 
@@ -839,8 +839,8 @@ save_xml_file(filename, xml_string)
 \end_layout
 
 \begin_layout Standard
-The final line calls the save_xml_file method passing the filename and the
- string stored in the variable 
+The final line above calls the save_xml_file method passing the filename
+ and the string stored in the variable 
 \begin_inset Flex Code
 status collapsed
 
@@ -1094,8 +1094,8 @@ Configure the Flash Component to retrieve the generated data
 
 \begin_layout Standard
 Now that we have the data needed by our FusionCharts Flash Component, we
- need to instruct our FusionCharts Flash Component, by means of the JavaScript
- API available (thanks to the included file 
+ need to instruct our FusionCharts Flash Component, by using the available
+ JavaScript API (thanks to the included file 
 \begin_inset Flex Code
 status collapsed
 
@@ -1119,7 +1119,7 @@ recipes/index.dryml
 
 \end_inset
 
- that demonstrates how we can accomplish that:
+ that demonstrating how we can accomplish that:
 \end_layout
 
 \begin_layout Standard
@@ -1208,7 +1208,15 @@ The third and forth parameters indicate the dimensions (width and height
 
 \begin_layout Itemize
 Finally, in line #13, we instruct FusionCharts to render the chart within
- the DOM element with id equal to 
+ the DOM element with 
+\begin_inset Quotes eld
+\end_inset
+
+id
+\begin_inset Quotes erd
+\end_inset
+
+ = to 
 \begin_inset Flex Code
 status collapsed
 
@@ -1275,11 +1283,11 @@ Recipes By Category
 \end_layout
 
 \begin_layout Standard
-Now let’s try a different type of Chart.
+Let’s try a different type of Chart.
  A typical choice would be a pie chart.
  The good news is that it’s pretty much the same effort as the previous
  chart, because it uses the same type of XML data as input.
- For that reason, I’ll be focusing on the differences for this new chart.
+ For that reason, I’ll be focusing on the differences of the new chart.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1470,11 +1478,10 @@ status open
 \end_layout
 
 \begin_layout Standard
-Again, statements marked with italics represent the modifications to the
- previous code.
- As you can see, these new lines just implement the same functionality as
- before, but using a different collection as input, this time we are using
- 
+Again, the statement above marked with italics represent the modifications
+ to the previous code.
+ These new lines implement the same functionality as before, but by using
+ a different collection as input, this time we are using 
 \begin_inset Flex Code
 status collapsed
 
@@ -1575,7 +1582,15 @@ You can tell that the only significant difference (apart from the caption
 
 \begin_layout Standard
 After adding this we’ll be generating both XML data files each time a request
- to Recipes index arrives.
+ to the 
+\begin_inset Quotes eld
+\end_inset
+
+Recipes
+\begin_inset Quotes erd
+\end_inset
+
+ index arrives.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1583,8 +1598,8 @@ Configure the Flash Component to retrieve the generated data
 \end_layout
 
 \begin_layout Standard
-The only thing missing now to render this second chart is to add a placeholder
- for the flash and invoke the proper JavaScript to do the job for us.
+The only thing missing to render the second chart is a placeholder for the
+ flash and the proper JavaScript.
  Below we show the last piece of the puzzle:
 \end_layout
 
@@ -1667,7 +1682,7 @@ Screen shot of the rendered FusionCharts bar and pie charts
 \end_layout
 
 \begin_layout Standard
-Have fun with FusionCharts!! And explore the different options here:
+Have fun with FusionCharts!! Explore the different options here:
 \end_layout
 
 \begin_layout Standard

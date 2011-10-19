@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 16 
+2.2.9 Tutorial 16 
 \begin_inset Newline newline
 \end_inset
 
@@ -115,7 +115,7 @@ Steps
 \end_layout
 
 \begin_layout Standard
-1.
+Step 1.
  
 \begin_inset Flex Strong
 status collapsed
@@ -241,7 +241,7 @@ target "http://localhost:3000/recipes/2-omelette/edit"
 \end_layout
 
 \begin_layout Standard
-2.
+Step 2.
  
 \begin_inset Flex Strong
 status collapsed
@@ -374,7 +374,15 @@ to
 \end_inset
 
  attribute defines the model to be used in the listing.
- It is always prefixed by the & character.
+ It is always prefixed by the 
+\begin_inset Quotes eld
+\end_inset
+
+&
+\begin_inset Quotes erd
+\end_inset
+
+ character.
  The 
 \begin_inset Flex Emph
 status collapsed
@@ -385,7 +393,7 @@ action
 
 \end_inset
 
- attribute defines the controller action, which in the above case uses Hobo’s
+ attribute defines the controller action which in the above case uses Hobo’s
  built-in 
 \begin_inset Flex Emph
 status collapsed
@@ -399,7 +407,7 @@ index
  action.
  As you get more sophisticated, you will learn to define your own controller
  actions.
- These can be referred to by the action attribute too.
+ These can also be referred to by the action attribute.
 \end_layout
 
 \end_inset
@@ -450,7 +458,7 @@ The Countries index page activated by your custom link
 \end_layout
 
 \begin_layout Standard
-3.	
+Step 3.	
 \begin_inset Flex Strong
 status collapsed
 
@@ -533,11 +541,11 @@ New County
 \end_layout
 
 \begin_layout Standard
-Now you’ve got another link to try out.
+Now, you’ve got another link to try out.
 \end_layout
 
 \begin_layout Standard
-4.	
+Step4.	
 \begin_inset Flex Strong
 status collapsed
 
@@ -619,8 +627,7 @@ Country
 
 \end_inset
 
- model.
- Create a new file called 
+ model and create a new file called 
 \begin_inset Flex Code
 status collapsed
 
@@ -740,7 +747,7 @@ Page view of custom <show-page> tag
 \end_layout
 
 \begin_layout Standard
-5.
+Step 5.
    
 \begin_inset Flex Strong
 status collapsed

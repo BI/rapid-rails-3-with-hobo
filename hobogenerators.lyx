@@ -67,15 +67,11 @@ logicalmkup
 \begin_body
 
 \begin_layout Chapter
-Chapter 7 
-\begin_inset Newline newline
-\end_inset
-
-HOBO GENERATORS
+Section 3.1.1HOBO GENERATORS
 \end_layout
 
 \begin_layout Section
-Changes from Hobo 1.0 to 1.3
+3.3.1 Changes from Hobo 1.0 to 1.3
 \end_layout
 
 \begin_layout Subsubsection*
@@ -361,7 +357,7 @@ setup_wizard
 \end_inset
 
 , and to be more DRY.
- indeed they often invoke each other from the inside when needed.
+ Indeed when needed they often invoke each other from the inside.
  
 \end_layout
 
@@ -536,7 +532,7 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: If you use the hobo command you can omit the 'hobo:' namespace prepended
+Note: If you use the hobo command, you can omit the 'hobo:' namespace prepended
  to hobo generators.
  
 \end_layout
@@ -625,8 +621,8 @@ status collapsed
 \end_inset
 
  option that can be passed to all generators.
- It will run the generator without actually produce any change, so it is
- very useful to see what a generator would do without eventually messing
+ It will run the generator without actually producing any change, so it
+ is very useful to see what a generator would do without eventually messing
  up your app.
 \end_layout
 
@@ -640,8 +636,8 @@ hobo:setup_wizard
 \end_layout
 
 \begin_layout Standard
-This is the generator that the hobo command invokes after creating the rails
- infrastructure.
+The above command is the generator that the hobo command invokes after creating
+ the Rails infrastructure.
  It calls others generators in the background, in order to customize the
  new application.
 \end_layout
@@ -657,9 +653,9 @@ status collapsed
 
 \end_inset
 
- options of the hobo command) or re-invoke it in order to overwrite any
- file of the original installation, but its common use is to be called internall
-y by the hobo command.
+ options of the Hobo command) or re-invoke it in order to overwrite any
+ file of the original installation.
+ Its common use is to be called internally by the Hobo command.
 \end_layout
 
 \begin_layout Standard
@@ -2665,7 +2661,7 @@ pages.dryml
 
 \end_inset
 
- that you might not fully understand yet.
+ that you might not fully understand.
  This includes calls to HTML tags with parameterization syntax (you see
  
 \begin_inset Flex Code
@@ -3056,7 +3052,7 @@ Controller Action:
 \end_layout
 
 \begin_layout Standard
-indicates the action that calls the particular tag, which is rendered as
+Indicates the action that calls the particular tag, which is rendered as
  a Hobo view template.
 \end_layout
 
@@ -3074,7 +3070,7 @@ Actions Linked:
 \end_layout
 
 \begin_layout Standard
-indicates which actions have tags which link to other actions.
+indicates which actions have tags that link to other actions.
  
 \end_layout
 
@@ -3225,7 +3221,7 @@ status collapsed
 
 \end_inset
 
- tags to display lists or individual records but DO NOT do so explicitly.
+ tags to display lists or individual records, but DO NOT do so explicitly.
  
 \end_layout
 
@@ -3507,8 +3503,8 @@ Template Processing Order
 
 \begin_layout Standard
 The diagram below outlines the precedence logic for Hobo rendering of templates.
- One very important issue to keep straight is the difference between tag
- definitions and tag usage.
+ One very important issue is the difference between tag definitions and
+ tag usage.
  
 \end_layout
 

@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 23 
+2.3.8 Tutorial 23 
 \begin_inset Newline newline
 \end_inset
 
@@ -96,9 +96,9 @@ By Venka Ashtakala
 \end_layout
 
 \begin_layout Standard
-Now that we have our “Four Table” application working the way we want, let’s
- add an approval process so that new recipes need to be approved by a user
- before they are published to the web.
+Now we have our “Four Table” application working the way we want.
+ Let’s add an approval process, so that new recipes require approval by
+ a user before they are published to the web.
   
 \end_layout
 
@@ -115,7 +115,7 @@ To do this we can take advantage of ‘Hobo Lifecycles‘, which is the Hobo
 \begin_layout Standard
 The “Publish” transaction will move the Recipe from the “Not Published”
  to “Published” state, while the “Not Publish” transaction will do the opposite.
-   Lastly we’ll make controller and view changes as necessary.
+   Lastly, we’ll make controller and view changes as necessary.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -141,7 +141,7 @@ Steps
 \end_layout
 
 \begin_layout Subsubsection*
-1.
+Step 1.
  Setup the lifecycle.
   
 \end_layout
@@ -277,7 +277,7 @@ end
 \end_layout
 
 \begin_layout Standard
-So what did we add exactly?  The 
+So what exactly did we add exactly?  The 
 \begin_inset Flex Code
 status collapsed
 
@@ -317,7 +317,7 @@ lifecycle_state
 \begin_layout Standard
 We define our states by using the ‘state’ keyword, which takes the state
  name and options as arguments.
-  So in this manner we have defined two states:
+  In this manner we have defined two states:
 \end_layout
 
 \begin_layout LyX-Code
@@ -484,7 +484,7 @@ Select ‘m’ when prompted to migrate now, and then specify a name for this
 \end_layout
 
 \begin_layout Subsubsection*
-2.
+Step 2.
  Setup the lifecycle controls in your view.
   
 \end_layout
@@ -502,7 +502,7 @@ status collapsed
 
 \end_inset
 
- and we’ll use this tag on our Recipe listing page.
+ We’ll use this tag on our Recipe listing page.
 \end_layout
 
 \begin_layout Standard
@@ -617,7 +617,7 @@ status collapsed
 \end_layout
 
 \begin_layout Subsubsection*
-3.
+Step 3.
  Setup the lifecycle actions in the controller.
   
 \end_layout
@@ -629,7 +629,7 @@ We need to make a couple of changes to our Recipes controller:
 \begin_layout Standard
 The lifecycle actions need to be added to the controller so that the transition-
 buttons added above work correctly.
-  To do this, just open up: 
+  To do this open up: 
 \begin_inset Flex Code
 status collapsed
 
@@ -690,7 +690,7 @@ status collapsed
 \end_layout
 
 \begin_layout Subsubsection*
-4.
+Step 4.
  Modify the Recipes Index page.
  
 \end_layout
@@ -765,7 +765,7 @@ lifecycle_state='published'" }
 \end_layout
 
 \begin_layout Standard
-…which returns all Recipes for logged in users, and only published recipes
+…which returned all Recipes for logged-in users and only published recipes
  to Guest users.
  
 \end_layout
@@ -897,7 +897,7 @@ status collapsed
 \end_layout
 
 \begin_layout Subsubsection*
-5.
+Step 5.
  Try it out.
   
 \end_layout
@@ -947,7 +947,7 @@ Guest view Recipes - All recipes are in state "Not Published"
 \end_layout
 
 \begin_layout Standard
-If you login as a user you should see your recipes showing with ‘Publish’
+If you login as a user, you should see your recipes showing with ‘Publish’
  buttons next to each row:
 \end_layout
 
@@ -990,8 +990,8 @@ Recipes ready to Publish.
 
 \begin_layout Standard
 To publish a Recipe just click on the ‘Publish’ button.
-  For this example, I’ll publish the Omelet recipe.
-  After clicking on the button, I’ll get the show page for the Omelet.
+  For this example, let's publish the Omelet recipe.
+  After clicking on the button, we will get the show page for the Omelet.
 \end_layout
 
 \begin_layout Standard
@@ -1032,7 +1032,7 @@ Omelet recipe after being placed in the "Published" state
 \end_layout
 
 \begin_layout Standard
-And if I go back to my Recipe listing page I see:
+Going back to the Recipe listing page the following is listed.
 \end_layout
 
 \begin_layout Standard
@@ -1073,13 +1073,12 @@ Recipe index with buttons for "Publish" and "Not Publish"
 \end_layout
 
 \begin_layout Standard
-Since my Omelet recipe has been published, the only available action for
- it is to ‘Not Publish’ it.
+Since the Omelet recipe has been published, the only available action that
+ is left is to ‘Not Publish’ it.
 \end_layout
 
 \begin_layout Standard
-If I go to the Recipe listing page as a Guest user, I should now see my
- Omelet recipe:
+Going to the Recipe listing page as a Guest user, theOmelet recipe is visable:
 \end_layout
 
 \begin_layout Standard
@@ -1120,27 +1119,28 @@ Guest user can only see the published Recipe
 \end_layout
 
 \begin_layout Subsubsection*
-6.
+Step 6.
  Improve the navigation.
  
 \end_layout
 
 \begin_layout Standard
-So at this point we are able to Publish and Not Publish our recipes, so
- our workflow is behaving as we expect.
-  But the navigation can be improved and would be cleaner if after we clicked
- on a transition button the page would just refresh instead of taking us
- to the show screen for the recipe.
+At this point we are able to either Publish or Not Publish our recipes.
+ Our workflow is behaving as we expect.
+  However, the navigation can be improved for clarity, if after on a transition
+ button the page would just refresh instead of taking us to the show screen
+ for the recipe.
   To do this, we will need to override the default lifecycle actions in
  the Recipes controller.
   
 \end_layout
 
 \begin_layout Standard
-For each transition we define, hobo creates 2 controller actions, 1 for
- a GET request and 1 for a PUT request.
-  So, for the Publish transition action, hobo creates a publish action for
- GET requests, and a 
+For each defined transition.
+ Hobo creates 2 controller actions: 1 for a GET request and 1 for a PUT
+ request.
+  For the Publish transition action, Hobo creates a publish action for GET
+ requests and a 
 \begin_inset Flex Code
 status collapsed
 
@@ -1151,16 +1151,16 @@ do_publish
 \end_inset
 
  action for PUT  requests.
-  The publish action would be used if we wanted to show a form before executing
+  The publish action would be used if you wanted to show a form before executing
  the transition action, i.e.
-  if we wanted to collect comments from the user before he/she Publishes
- or Not Publishes, we could show a form with a comments box and a Publish/Not
+  If you wanted to collect comments from the user before he/she Publishes
+ or Not Publishes, you could show a form with a comments box and a Publish/Not
  Publish submit button.
-  But in this example, we just want to configure the application so that
- after a Recipe is Published or Not Published, the browser should redirect
- back to the Recipe listing page.
-  To do this we’ll add the following 2 actions to our Recipe controller
- just after the index action:
+  However, in this example, only configure the application so that after
+ a Recipe is Published or Not Published, the browser redirects back to the
+ Recipe listing page.
+  To do this add the following 2 actions to the Recipe controller just after
+ the index action:
 \end_layout
 
 \begin_layout Standard
@@ -1223,11 +1223,28 @@ end
 \end_layout
 
 \begin_layout Standard
-These actions override the default hobo actions so that we can specify the
- page redirect after the transition has been executed.
-  Once you have added these actions, if you access the Recipe index page
- and click on a Publish or Not Publish button, you’ll just see the page
- get refreshed.
+These actions override the default Hobo actions so that the page redirect
+ can be specified after the transition has been executed.
+  Once these actions are decided, if you access the Recipe index page and
+ click on a Publish or Not Publish button, you’ll see the page get refreshed.
+ Once these actions are added, the page will be refreshed, if the recipe
+ indexpage has been accessed, and the 
+\begin_inset Quotes eld
+\end_inset
+
+publish
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+ not publish
+\begin_inset Quotes erd
+\end_inset
+
+ buttons have been selected.
   
 \end_layout
 
@@ -1254,7 +1271,7 @@ status open
 Note:  This example is a basic implementation of Hobo lifecycles, but, it
  does serve as a good introduction to its various features.
   It is possible to implement workflows with numerous states and transitions,
- and the ability to implement more fine-grained security for each transition
+ have the ability to implement more fine-grained security for each transition
  using the 
 \begin_inset Flex Code
 status collapsed

@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 18 
+2.3.3 Tutorial 18 
 \begin_inset Newline newline
 \end_inset
 
@@ -115,7 +115,7 @@ Overview
 
 \begin_layout Standard
 CKEditor is the new rich text editor that replaces the popular FCKeditor
- used by many web developers for years.
+ used by many web developers.
 \end_layout
 
 \begin_layout Standard
@@ -486,7 +486,7 @@ standardToolbarConfig
 \end_inset
 
 ” portion of this JavaScript customizes the CKEditor toolbar options.
-  Read the CKEditor documentation for more options you may wish to add.
+  Read the CKEditor documentation if you wish to add more.
 \end_layout
 
 \begin_layout Standard
@@ -534,7 +534,8 @@ status collapsed
 
 \end_inset
 
- symbol in the model, so, open your 
+ symbol in the model.
+ Open your 
 \begin_inset Flex Code
 status collapsed
 
@@ -660,8 +661,16 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now access the Edit page for any requirement you have defined and the body
- field should look as follows:
+Now access the 
+\begin_inset Quotes eld
+\end_inset
+
+Edit
+\begin_inset Quotes erd
+\end_inset
+
+ page for any requirement you have defined and the body field should look
+ as follows:
 \end_layout
 
 \begin_layout Standard

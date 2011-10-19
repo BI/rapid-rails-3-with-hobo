@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 21 
+2.3.6 Tutorial 21 
 \begin_inset Newline newline
 \end_inset
 
@@ -100,20 +100,22 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Say we want a new Hobo app to have the same look-and-feel of an existing
+Let's say we want a new Hobo app to have the same look-and-feel of an existing
  site.
- The really big win is if we can have this look and feel happen to our new
- app almost ‘automatically’.
- We want to be able to develop at “Hobo speed”, and have the look and feel
- “just happen”.
- This is not trivial to set up, but once it is, the payback in terms of
- development agility will be more than worth it.
- That is the topic of this chapter.
+ The really big win is if we can have the same look and feel happen app
+ almost ‘automatically’.
+ We want to be able to develop at “Hobo
+\begin_inset Quotes erd
+\end_inset
+
+ speed, and have the look-and-feel “just happen”.
+ This is not easy to set-up, but once set-up, the payback in terms of developmen
+t agility is more than worth it.
 \end_layout
 
 \begin_layout Standard
-We’ll use the example of the standard web design used throughout all agencies
- within the U.S.
+We’ll invoke the standard web design used throughout all agencies within
+ the U.S.
  Department of Agriculture.
  The authors have done substantial work with NIFA, The Cooperative State
  Research, Education, and Extension Service, so we will use their website
@@ -165,7 +167,7 @@ Screen shot of the nifa.usda.gov home page
 \end_layout
 
 \begin_layout Standard
-Note that, for now at least, this recipe will document how to create a 
+Note that, for now, this recipe will document how to create a 
 \begin_inset Flex Emph
 status collapsed
 
@@ -175,17 +177,16 @@ close approximation
 
 \end_inset
 
- to this theme.
- In particular, we’re going to skip some of the details that cannot be implement
-ed without resorting to images.
- This is just to keep the recipe getting too long and complicated.
+ to the above theme.
+ We’re going to skip some of the details that cannot be implemented without
+ resorting to images to keep the recipe from getting too complex and lengthy.
 \end_layout
 
 \begin_layout Standard
 This will be as much a guide to general web-development best practices as
  it will be a lesson in Hobo and DRYML.
- The mantra when working with themes in Hobo is something already familiar
- to skilled web developers:
+ The mantra when working with themes in Hobo is already familiar to skilled
+ web developers:
 \end_layout
 
 \begin_layout Subsubsection*
@@ -195,8 +196,8 @@ Separate content from presentation
 \begin_layout Standard
 The vast majority of common mistakes that are made in styling a web-app
  come under this heading.
- If this one idea can be understood and applied, you’re well on the way
- to:
+ If seperating content from presentation can be understood and applied,
+ you're well on your way to:
 \end_layout
 
 \begin_layout Itemize
@@ -210,8 +211,8 @@ Being able to change the theme in the future, without having to modify the
 
 \begin_layout Standard
 Since CSS has been widely adopted, most web developers are familiar with
- this principle.
- So this is probably just a recap, but as a reminder about how this works:
+ seperating content from presentation here is a reminder about how this
+ works:
 \end_layout
 
 \begin_layout Description
@@ -222,9 +223,9 @@ Since CSS has been widely adopted, most web developers are familiar with
 
 \begin_layout Description
 “Presentation” describes how the page should look.
- That is, it describes fonts, colors, margins, borders, images and so on.
+ That is, it describes fonts, colors, margins, borders, images and ect..
  In a Hobo app the presentation is handled essentially the same way as with
- any app, with CSS stylesheets and image assets.
+ any app, using CSS stylesheets and image assets.
 \end_layout
 
 \begin_layout Standard
@@ -232,8 +233,8 @@ Having said that, we need to inject a note of pragmatism:
 \end_layout
 
 \begin_layout Itemize
-Humans being visual animals, information can never truly be separated from
- the way it is displayed.
+Humans beings are visual animals.
+ Information can never truly be separated from the way it is displayed.
  The line is sometimes blurred and there are often judgment calls to be
  made.
 \end_layout
@@ -254,8 +255,7 @@ The current site
 \end_layout
 
 \begin_layout Standard
-We’ll start with a look at the elements of the existing site that we’ll
- need to replicate.
+To begin look at the elements of the existing site we need to replicate.
  The main ones are:
 \end_layout
 
@@ -476,7 +476,7 @@ NIFA footer navigation
 \end_layout
 
 \begin_layout Standard
-One of the important things to notice at this stage, is that this is 
+An important thing to notice is that this site is 
 \begin_inset Flex Emph
 status collapsed
 
@@ -488,12 +488,12 @@ not
 
  just a “theme” in the Hobo sense of the word.
  Hobo themes are purely about presentation, whereas the “look and feel”
- of this site is a mixture of content elements and presentation.
+ of this site is a mixture of contents, elements, and presentation.
 \end_layout
 
 \begin_layout Standard
-That means we’re going to be creating three things to capture this look-and-feel
-:
+That means we’re going to be creating three things to capture the site's
+ look-and-feel:
 \end_layout
 
 \begin_layout Itemize
@@ -513,8 +513,8 @@ The current markup
 \end_layout
 
 \begin_layout Standard
-The existing site makes extensive use of HTML tables for layout, and the
- various images in the page are present in the markup as 
+The existing site makes extensive use of HTML tables for layout.
+ The various images in the page are present in the markup as 
 \begin_inset Flex Code
 status collapsed
 
@@ -539,15 +539,15 @@ presentational
 \end_layout
 
 \begin_layout Standard
-So rather than create tag definitions out of the existing markup, we’ll
- be recreating the site using clean, semantic markup and CSS.
+Rather than create tag definitions out of the existing markup, we’ll be
+ recreating the site using clean, semantic markup and CSS.
 \end_layout
 
 \begin_layout Standard
 The other advantage of re-creating the markup is that it will be easier
  to follow Hobo conventions.
- There’s no particular need to do this, but it makes it a great deal easier
- to jump from one Hobo app to the next.
+ There’s no particular need to do this, but it will be easier to jump from
+ one Hobo app to the next.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -555,11 +555,11 @@ Building the new app
 \end_layout
 
 \begin_layout Standard
-Let’s do this properly and actually follow along in a blank Hobo app.
+Let’s do this properly and follow along in a blank Hobo app.
  At the end of the recipe we’ll see how we could package this look-and-feel
  up and re-use it another app.
- To follow along, you should use Firefox and the Firebug extension you can
- find at 
+ To follow along, use Firefox and the Firebug extension you can find at
+ 
 \begin_inset CommandInset href
 LatexCommand href
 target "http://getfirebug.com"
@@ -698,7 +698,7 @@ Using the "app-name" tag to change the default application name
 \end_layout
 
 \begin_layout Standard
-Now we can start to make it look like the page we’re after.
+Now, we can start to make it look like the page we’re after.
  We’ll take it step by step.
 \end_layout
 
@@ -759,9 +759,9 @@ Using Firebug to locate the background color
 \end_layout
 
 \begin_layout Standard
-Now switching to the Hobo NIFA Demo application, Firebug tells us (click
- the inspect button, then click on the background) that the CSS rule that
- sets the current background comes from 
+Switching to the Hobo NIFA Demo application, Firebug tells us (click the
+ inspect button, then click on the background) that the CSS rule that sets
+ the current background comes from 
 \begin_inset Flex Code
 status collapsed
 
@@ -948,7 +948,7 @@ body { ...
 \begin_layout Standard
 Back in NIFA, I can right click the banner image and chose “View Image”,
  and Firefox tells me its width is 766 pixels.
- So in 
+ In 
 \begin_inset Flex Code
 status collapsed
 
@@ -985,7 +985,7 @@ body { width: 766px; }
 \end_layout
 
 \begin_layout Standard
-Note we’ve not changed any markup yet - that’s how we like it.
+Note: we’ve not changed any markup - that’s how we like it.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -993,9 +993,10 @@ Account navigation
 \end_layout
 
 \begin_layout Standard
-These are the log-in and sign-up links in the top right.
- They are not on the NIFA site, but if the app needed them, the place they
- are in now would be fine, so we’ll leave them where they are.
+The log-in and sign-up links are in the top right.
+ They are not on the NIFA site.
+ The app needed them, the place they are in now would be fine, so we’ll
+ leave them where they are.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1100,7 +1101,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-So now we 
+Now we 
 \begin_inset Flex Emph
 status collapsed
 
@@ -1110,7 +1111,7 @@ have
 
 \end_inset
 
- made a change to the markup, but that makes perfect sense, because here
+ made a change to the markup, but that makes perfect sense because here
  we wanted to change 
 \begin_inset Flex Emph
 status collapsed
@@ -1192,8 +1193,9 @@ To add these images without changing the markup, we need to use CSS’s backgrou
 -image feature.
  One major limitation of CSS is that you can only have one background image
  per element.
- That won’t be a problem, but to understand our approach, first take a look
- at a simplified view of the page markup that we’re working with:
+ That won’t be a problem.
+ To understand our approach, first take a look at a simplified view of the
+ page markup we’re working with:
 \end_layout
 
 \begin_layout Standard
@@ -1252,21 +1254,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Notice that this image:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename figures/ch5/nifa_banner.png
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Is essentially a graphical version of that 
+Notice the image below is essentially a graphical version of that 
 \begin_inset Flex Code
 status collapsed
 
@@ -1276,7 +1264,8 @@ status collapsed
 
 \end_inset
 
- tag, so we’ll use CSS to make that same 
+ tag.
+ We’ll use CSS to render that same 
 \begin_inset Flex Code
 status collapsed
 
@@ -1286,9 +1275,9 @@ status collapsed
 
 \end_inset
 
- be rendered as an image.
- The existing text will be hidden, by moving it way out of the way with
- a 
+ as an image.
+ The existing text can be hidden, by moving it way out of the way with a
+ 
 \begin_inset Flex Code
 status collapsed
 
@@ -1299,7 +1288,7 @@ text-indent
 \end_inset
 
  rule.
- First we need to save that image into our 
+ First, we need to save that image into our 
 \begin_inset Flex Code
 status collapsed
 
@@ -1416,8 +1405,7 @@ How to reference the banner gif in "application.css"
 \end_layout
 
 \begin_layout Standard
-OK that was a bit of a leap.
- Why 
+OK that was a bit of a leap! Why 
 \begin_inset Flex Code
 status collapsed
 
@@ -1427,12 +1415,12 @@ padding: 0px
 
 \end_inset
 
- for the page-header, for example? The fact of the matter is that working
- with CSS is all about trial and error.
- Using Firebug to figure out what rules are currently in effect, flipping
+ for the page-header.
+ The fact is that working with CSS is all about trial and error.
+ Whether you are to figure out what rules are currently in effect or flipping
  back and forth between the stylesheet in your editor and the browser.
- Try experimenting by taking some of those rules out and you’ll see why
- each is needed.
+ Try experimenting by taking some rules out, and you’ll see why each rule
+ is needed.
 \end_layout
 
 \begin_layout Standard
@@ -1551,8 +1539,7 @@ View of the NIFA Demo login page
 \end_layout
 
 \begin_layout Standard
-Taking shape now, except the main navigation panel (“Home” tag) is hovering
- on top of the photos:
+The main navigation panel (“Home” tag) is hovering on top of the photos:
 \end_layout
 
 \begin_layout Standard
@@ -1607,16 +1594,15 @@ The existing navigation bar is created entirely with images.
 \begin_layout Standard
 This doesn’t sit very well with our goal to be able to make changes quickly
  and easily.
- So for this recipe we’re going to go implement the navigation bar without
+ For this recipe we’re going to go implement the navigation bar without
  resorting to images.
  We’ll lose the bevel effect, but some might think the end result is actually
- better - cleaner, clearer and more professional looking.
+ cleaner, clearer, and more professional.
  
 \end_layout
 
 \begin_layout Standard
-Our app only has a home page right now, so first let’s define a fake navigation
- bar to work with.
+Our app only has a home page, so first let’s define a fake navigation bar.
  In application.dryml:
 \end_layout
 
@@ -1732,10 +1718,9 @@ status collapsed
 
 \end_inset
 
- list, which is generally considered good practice; it is a list of links
- after all.
- There are several things wrong with the appearance of the navigation at
- this point:
+ list, which is generally considered good practice.
+ It is a list of links after all.
+ There are several things wrong with the appearance of the navigation:
 \end_layout
 
 \begin_layout Itemize
@@ -1743,11 +1728,11 @@ It’s in the wrong place - we want to move it down and to the right.
 \end_layout
 
 \begin_layout Itemize
-Needs to be shorter, and the spacing of the items needs fixing
+Needs to be shorter and the spacing of the items need to be fixed.
 \end_layout
 
 \begin_layout Itemize
-The font needs to be smaller, and not bold
+Smaller font not bold
 \end_layout
 
 \begin_layout Itemize
@@ -1756,10 +1741,10 @@ The background color needs to change, as do the colors when you mouse-over
 \end_layout
 
 \begin_layout Standard
-Now this is not a CSS tutorial, so we’re not going to explain every last
- detail, but we’ll build it up in a few steps which will help to illustrate
- what does what.
- First update the rules for 
+This is not a CSS tutorial, so we’re not going to explain every last detail.
+ We’ll build it up in a few steps which will help to illustrate what does
+ what.
+ First, update the rules for 
 \begin_inset Flex Code
 status collapsed
 
@@ -1914,8 +1899,7 @@ Still need more to fix the top navigation menu...
 \end_layout
 
 \begin_layout Standard
-The nav-bar still looks wrong.
-  We’ll now fix the sizing and placement.
+The nav-bar still looks wrong, so we’ll fix the sizing and placement.
  Update the new rule (
 \begin_inset Flex Code
 status collapsed
@@ -1926,7 +1910,7 @@ div.page-header .main-nav
 
 \end_inset
 
-) and add new ones, and colors.
+) and add new ones and colors.
   The entire 
 \begin_inset Flex Code
 status collapsed
@@ -2296,7 +2280,7 @@ div.page-header .navigation.main-nav li a:hover {
 \end_layout
 
 \begin_layout Standard
-Note that we had to make the last two selectors a bit more specific, in
+Note: that we had to make the last two selectors a bit more specific, in
  order to ensure that they take precedence over rules in the “Clean” theme.
 \end_layout
 
@@ -2347,8 +2331,8 @@ The sidebars
 
 \begin_layout Standard
 The existing site has both left and right sidebars.
- We’ll add those now.
- The first step is to add the three content sections to the 
+ Wich we will add those now.
+ First step is to add the three content sections to the 
 \begin_inset Flex Code
 status collapsed
 
@@ -2490,7 +2474,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-To try this out, we’ll insert some dummy content in 
+To try this out, insert some dummy content in 
 \begin_inset Flex Code
 status collapsed
 
@@ -2589,10 +2573,10 @@ View of the default three-column formatting
 \end_layout
 
 \begin_layout Standard
-Obviously we’ve got a bunch of styling to do.
- First though, let’s add the content for the left sidebar.
- This is the “search and browse” panel, which is on every page of the site,
- so let’s define it as a tag in 
+Obviously, there is a bunch of styling to do.
+ First, though, let’s add the content for the left sidebar.
+ This is the “search and browse” panel which is on every page of the site.
+ Let’s define it as a tag in 
 \begin_inset Flex Code
 status collapsed
 
@@ -2931,7 +2915,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Then remove the 
+Remove the 
 \begin_inset Flex Code
 status collapsed
 
@@ -2992,7 +2976,7 @@ View of the left panel contact without styling
 \end_layout
 
 \begin_layout Standard
-Now we need to style this panel.
+We need to style this panel.
  After a good deal of experimentation, we get to the following CSS:
 \end_layout
 
@@ -3255,8 +3239,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-It seems like a good idea to define a tag that creates one of these panels,
- say:
+It seems like a good idea to define a tag that creates one of these panels:
 \end_layout
 
 \begin_layout Standard
@@ -3341,11 +3324,11 @@ status collapsed
 
 \end_inset
 
- which is just what we need here.
+ which is just what we need.
 \end_layout
 
 \begin_layout Standard
-Now add the definition of 
+Add the definition of 
 \begin_inset Flex Code
 status collapsed
 
@@ -3739,8 +3722,8 @@ Main content
 
 \begin_layout Standard
 The main content varies a lot from page to page, so let’s just make sure
- that the margins are OK, and leave it at that.
- First we need some content to work with, so in 
+ that the margins are OK.
+ First we need content to work with, so in 
 \begin_inset Flex Code
 status collapsed
 
@@ -3863,7 +3846,7 @@ The footer
 
 \begin_layout Standard
 The footer is the same throughout the site.
- Let’s define it as a tag and add it to our main 
+ Define it as a tag and add it to our main 
 \begin_inset Flex Code
 status collapsed
 
@@ -3981,7 +3964,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-And add this parameter to the 
+Add this parameter to the 
 \begin_inset Flex Code
 status collapsed
 
@@ -4047,9 +4030,10 @@ Note: Since Hobo already includes a page-footer div out-of-the-box, we don’t
 \end_layout
 
 \begin_layout Standard
-And finally, the CSS.
- To get the corner graphic that we’ve used here, you need to right-click
- and “Save Image As” on the bottom left corner in the existing site:
+Finally we have the CSS.
+ To get the corner graphic that we’ve used.
+ you need to right-click and “Save Image As” on the bottom left corner in
+ the existing site:
 \end_layout
 
 \begin_layout Standard
@@ -4156,7 +4140,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-There’s one CSS trick in there that is work a mention.
+There’s one CSS trick in that is worth mentioning.
  In the 
 \begin_inset Flex Code
 status collapsed
@@ -4195,8 +4179,16 @@ overflow: hidden; height: 100%;
 
 \begin_layout Standard
 This is the famous “self clearing” trick.
- Because all the content in the footer is floated, without this trick the
- footer looses its height.
+ Since all the content in the footer is floated, the footer looses its height,
+ without the 
+\begin_inset Quotes eld
+\end_inset
+
+self clearing
+\begin_inset Quotes erd
+\end_inset
+
+ trick.
 \end_layout
 
 \begin_layout Standard
@@ -4237,17 +4229,16 @@ NIFA Demo with final footer styling
 \end_layout
 
 \begin_layout Standard
-That pretty much brings us to the end of the work of reproducing the look
- and feel.
+That brings us to the end of how to reproduce a look-and-feel.
  We should now be able to build out our application, and it will look right
  “automatically”.
- In practice you always run into small problems here and there and need
- to dive back into CSS to tweak things, but the bulk of the job is done.
+ In practice you always run into small problems and need to dive back into
+ CSS to tweak things, but the bulk of the job is done.
 \end_layout
 
 \begin_layout Standard
 The next question is - how could we make several apps look like this without
- repeating all this code?  That is the subject of our next tutorial.
+ repeating all the code?  That is the subject of our next tutorial.
  
 \end_layout
 

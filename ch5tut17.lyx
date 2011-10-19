@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 17 
+2.3.2 Tutorial 17 
 \begin_inset Newline newline
 \end_inset
 
@@ -137,7 +137,7 @@ This tutorial is adapted from the classic “Agility” tutorial created by
 \end_layout
 
 \begin_layout Standard
-Here is a quick summary of our goals for this application:
+Summary of the goals for this application:
 \end_layout
 
 \begin_layout Enumerate
@@ -183,7 +183,7 @@ There will be a simple role facility that will allow an Administrator to
  assign roles to users.
  Both the Administrator and Coordinator roles can create and update projects,
  requirements, and tasks and assign team members to a task.
-  Analysts, Developers, and Testers can change the status of a Requirement.
+  Analysts, Developers, and Testers can change the status of a requirement.
 \end_layout
 
 \begin_layout Enumerate
@@ -205,7 +205,8 @@ Getting Started
 \end_layout
 
 \begin_layout Standard
-Create the application like you have for the other tutorials:
+Step 1.
+ Create the application like you have for the other tutorials:
 \end_layout
 
 \begin_layout Standard
@@ -232,7 +233,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now look again about what we want this app to do:
+Look again at what we want this app to do:
 \end_layout
 
 \begin_layout Itemize
@@ -284,7 +285,8 @@ User has many tasks (through task-assignments)
 \end_layout
 
 \begin_layout Standard
- Now we need to create the models outlined above using the Hobo generator:
+Step 2.
+ Now, we need to create the models outlined above using the Hobo generator:
 \end_layout
 
 \begin_layout Standard
@@ -339,7 +341,7 @@ hobo:resource
  needed for any model requiring a web-font end.
   The “task assignments” model is simply the table required to support many-to-m
 any relationships behind the scenes.
-  So a view or controller is not needed, so we only need the hobo model
+  Thus, a view or controller is not needed, so we only need the hobo model
  generator:
 \end_layout
 
@@ -531,9 +533,10 @@ belongs_to
 
  declaration in the Requirement model.
   We did this in case we might want to port this app to Oracle at some point,
- and Oracle has this irritating limitation of 30 characters for table, column,
+ but Oracle has this irritating limitation of 30 characters for table, column,
  and index names.
-  If we had not specified the index name, Rails would chose a default name,
+  If we had not specified the index name, Rails would have chosen a default
+ name.
  which is often longer than 30 characters.
 \end_layout
 
@@ -637,7 +640,7 @@ Adding the "has_many" declarations to the User model
 \end_layout
 
 \begin_layout Standard
-Now Hobo will create a single migration for all of these changes:
+Hobo will create a single migration for all of these changes:
 \end_layout
 
 \begin_layout Standard
@@ -734,7 +737,7 @@ View of indexes created by the migration
 \end_layout
 
 \begin_layout Standard
-In the figure above you can see the indexes that were created in an Oracle
+In the figure below you can see the indexes that were created in an Oracle
  environment.
   Notice that in addition to our custom indexes, all of the tables have
  a unique identifier column called “ID” that is also indexed.
@@ -1053,7 +1056,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Here is what you app should look like now:
+Here is what you app should look like:
 \end_layout
 
 \begin_layout Standard
@@ -1098,7 +1101,7 @@ ts and tasks.
 \end_layout
 
 \begin_layout Standard
-Now enter a few projects like this:
+Enter a few projects like this:
 \end_layout
 
 \begin_layout Standard
@@ -1205,7 +1208,7 @@ Index view for Requirements
 \end_layout
 
 \begin_layout Standard
-And enter some tasks for one of the requirements:
+Enter some tasks for one of the requirements:
 \end_layout
 
 \begin_layout Standard
@@ -1332,7 +1335,7 @@ Model Associations
 \end_layout
 
 \begin_layout Standard
-The following are screen shots of the Projects application so far.
+The following are screen shots of the Projects application.
   Notice that the development environment we have been using is Oracle.
 \end_layout
 
@@ -1485,7 +1488,8 @@ Removing actions
 \begin_layout Standard
 By default Hobo has given us a full set of restful actions for every single
  model/controller pair.
- But many of these page flows (“routes”) are not optimal for our application.
+ However, many of these page flows (“routes”) are not optimal for our applicatio
+n.
 \end_layout
 
 \begin_layout Standard
@@ -1519,8 +1523,8 @@ height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
-There’s an interesting change of approach here that often crops up with
- Hobo development.
+Note: There’s an interesting change of approach here that often crops up
+ with Hobo development.
  Normally you’d expect to have to build everything yourself.
  With Hobo, you often are given everything you want and more besides.
  Your job is to take away the parts that 
@@ -1542,7 +1546,8 @@ you don’t
 \end_layout
 
 \begin_layout Standard
-Here’s how we would remove, for example, the index action from TasksController.
+Step 1.
+ Here’s how we would remove, for example, the index action from TasksController.
  
 \end_layout
 
@@ -1611,7 +1616,8 @@ auto_actions :all, :except => :index
 \end_layout
 
 \begin_layout Standard
-Next, refresh the browser and you’ll notice that “Tasks” has been removed
+Step 2.
+ Next, refresh the browser and you’ll notice that “Tasks” has been removed
  from the main nav-bar.
  
 \end_layout
@@ -1720,7 +1726,8 @@ There is an “Edit Project” link, but no obvious way to add a requirement
 \end_layout
 
 \begin_layout Standard
-Add the following declaration to the requirements controller:
+Step 3.
+ Add the following declaration to the requirements controller:
 \end_layout
 
 \begin_layout Standard
@@ -1819,8 +1826,9 @@ View of the "New Requirement" page
 \end_layout
 
 \begin_layout Standard
-Create a requirement and you’ll see the requirement has the same issue with
- an associated task – there is no obvious way to create one.
+Step 4.
+ Create a requirement and you’ll see the requirement has the same issue
+ with an associated task – there is no obvious way to create one.
  Again, we can add the 
 \begin_inset Flex Code
 status collapsed
@@ -1907,8 +1915,7 @@ View of the in-line "Add a Task" form
 \end_layout
 
 \begin_layout Standard
-Now we can continue to configure the available actions for all of the controller
-s.
+We can continue to configure the available actions for all of the controllers.
  So far we’ve seen the “black-list” style where you list what you don’t
  want:
 \end_layout
@@ -1937,7 +1944,7 @@ auto_actions :all, :except => :index
 \end_layout
 
 \begin_layout Standard
-There’s also “white-list” style where you list what you do want, e.g.:
+The “white-list” style lists what you do want, e.g.:
 \end_layout
 
 \begin_layout Standard
@@ -1992,8 +1999,8 @@ auto_actions :read_only
 \end_layout
 
 \begin_layout Standard
-The opposite is handy for things that are manipulated by AJAX, but never
- viewed directly:
+The opposite shortcut is handy for things that are manipulated by AJAX,
+ but never viewed directly:
 \end_layout
 
 \begin_layout Standard
@@ -2024,7 +2031,8 @@ auto_actions :write_only
 \end_layout
 
 \begin_layout Standard
-Now edit each of the controllers as listed below:
+Step 5.
+ Now edit each of the controllers as listed below:
 \end_layout
 
 \begin_layout Standard
@@ -2231,9 +2239,9 @@ Modified controllers to specify which actions are available
 \end_layout
 
 \begin_layout Standard
-There’s one more thing we typically do when creating a new Hobo app, before
- we even touch the view layer.
- We modify permissions in the model layer.
+One more thing we do when creating a new Hobo app.
+ Before we even touch the view layer.
+ Here we modify permissions in the model layer.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2242,7 +2250,7 @@ Adding Roles
 
 \begin_layout Standard
 Let’s do a simple addition to the User model.
-  Here we have taken the simple route, and created a new field called “role”
+  Below we have taken the simple route, and created a new field called “role”
  along with the list of acceptable values using the Ruby 
 \begin_inset Flex Code
 status collapsed
@@ -2290,7 +2298,8 @@ Defining available roles using “enum_string”
 \end_layout
 
 \begin_layout Standard
-Run a 
+Step 1.
+ Run a 
 \begin_inset Flex Code
 status collapsed
 
@@ -2304,7 +2313,9 @@ hobo g migration
 \end_layout
 
 \begin_layout Standard
-Modify the create permission to allow an Administrator to create a new user:
+Step 2.
+ Modify the create permission to allow an Administrator to create a new
+ user:
 \end_layout
 
 \begin_layout Standard
@@ -2341,7 +2352,8 @@ Modifying the "create_permitted" method to the User model
 \end_layout
 
 \begin_layout Standard
-Modify your Users Controller as follows:
+Step 3.
+ Modify your Users Controller as follows:
 \end_layout
 
 \begin_layout Standard
@@ -2378,7 +2390,8 @@ Users Controller with "auto actions :all:
 \end_layout
 
 \begin_layout Standard
-Run the server again and then refresh your browser: 
+Step 4.
+ Run the server again and then refresh your browser: 
 \end_layout
 
 \begin_layout Standard
@@ -2415,7 +2428,8 @@ The Users tab is now active
 \end_layout
 
 \begin_layout Standard
-Now we can edit a user and add a role:
+Step 5.
+ Now we can edit a user and add a role:
 \end_layout
 
 \begin_layout Standard
@@ -2465,7 +2479,7 @@ An Application role as Analyst.
 \end_layout
 
 \begin_layout Standard
-Now let’s see how to use this information.
+Let’s see how to use this information.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2533,12 +2547,11 @@ Adding the use of Role in Permissions
 \end_layout
 
 \begin_layout Standard
-Notice that to create a project, the active user must be an administrator
- OR:
+To create a project, the active user must be an administrator OR:
 \end_layout
 
 \begin_layout Itemize
-The user must be signed up (not a guest)
+The user must be signed up (not a guest) or
 \end_layout
 
 \begin_layout Itemize
@@ -2556,7 +2569,7 @@ destroy_permitted?
 
 \end_inset
 
- definition.
+ Definition.
  In this case, 
 \begin_inset Flex Emph
 status collapsed
@@ -2753,12 +2766,12 @@ Permissions for data integrity
 
 \begin_layout Standard
 The permissions system is not just for providing operations to some users
- but not to others.
+ and not others.
  It is also used to prevent operations that don’t make sense for anyone.
   For example, notice default UI allows requirements to be moved from one
  project to another.
  This may or may not be a sensible operation for anyone to be doing.
-  So, if you want to stop this from happening, change the “
+ If you want to stop this from happening, change the “
 \begin_inset Flex Code
 status collapsed
 
@@ -2981,13 +2994,13 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: Without that declaration, the permission system was reporting that
- this association was not editable.
+Note: Without that declaration, i.e.
+ the permission system was reporting that the association was not editable.
  Now that the association is “accessible”, the permission system will check
  for create and destroy permissions on the join model TaskAssignment.
  As long as the current user has those permissions, the task edit page will
- now include a nice JavaScript powered control for assigning users in the
- edit-task page.
+ include a nice JavaScript powered control for assigning users in the edit-task
+ page.
  Notice you can continue to assign users to a task and not leave the page:
 \end_layout
 
@@ -3157,12 +3170,10 @@ Customizing views
 \end_layout
 
 \begin_layout Standard
-It’s pretty surprising how far you can get without even touching the view
- layer.
+It’s surprising how far you can get without touching the view layer.
  That’s the way we like to work with Hobo -- get the models and controllers
  right and the view will probably get close to what you want.
- From there you can override just those parts of the view that you need
- to.
+ From there you can override the parts of the view that you need to.
 \end_layout
 
 \begin_layout Standard
@@ -3170,17 +3181,17 @@ We do that using the DRYML template language, which is part of Hobo.
  DRYML is tag based – it allows you to define and use your own tags right
  alongside the regular HTML tags.
  Tags are like helpers, but a lot more powerful.
- DRYML is quite different to other tag-based template languages, thanks
- to features like the implicit context and nestable parameters.
+ DRYML is quite different to other tag-based template languages, to features
+ like the implicit context and nestable parameters.
  DRYML is also an extension of ERB so you can still use the ERB syntax if
  you are familiar with Rails.
 \end_layout
 
 \begin_layout Standard
 DRYML is probably the single best part of Hobo.
- It’s very good at high-level re-use because it allows you to make very
- focused changes if a given piece of pre-packaged HTML is not quite what
- you want.
+ It’s very good at high-level re-use.
+ It allows you to make very focused changes, if a given piece of pre-packaged
+ HTML is not exactly what you want.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3361,7 +3372,7 @@ index.dryml
 
 \begin_layout Standard
 This is what it looks like before you change it.
-  Now change it to the following:
+  Change it to the following:
 \end_layout
 
 \begin_layout Standard
@@ -3480,7 +3491,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now refresh your browser:
+Refresh your browser:
 \end_layout
 
 \begin_layout Standard
@@ -3677,7 +3688,7 @@ Extending the card tag for Task in "application.dryml"
 \end_layout
 
 \begin_layout Standard
-Now refresh the requirement page.
+Refresh the requirement page.
  You’ll see that in the cards for each task there is now a list of assigned
  users.
  The users are clickable - they link to each user’s home page (which doesn’t
@@ -3740,8 +3751,9 @@ status collapsed
 \end_inset
 
  is our new definition.
- It’s very common to want to base the new definition on the old one, for
- example, we often want to insert a bit of extra content as we’ve done here.
+ It’s very common to want to base the new definition on the old one.
+ For example, we often want to insert a bit of extra content as we’ve done
+ here.
  
 \end_layout
 
@@ -3777,7 +3789,7 @@ status collapsed
 
 \end_inset
 
-, which is used to append content to the body of the card.
+ which is used to append content to the body of the card.
  
 \end_layout
 
@@ -3854,17 +3866,25 @@ Add a Task Summary to the User’s Home Page
 \end_layout
 
 \begin_layout Standard
-Now that each task provides links to the assigned users, the user’s page
- is not looking great.
+Since each task provides links to the assigned users, the user’s page is
+ not looking great.
  Rapid has rendered cards for the task-assignments but there’s no meaningful
  content in them.
- What we’d like to see there is a list of all the tasks the user has been
- assigned to.
+ What we’d like to see is a list of all the tasks the user has been assigned
+ to.
  Having them grouped by requirement would be helpful too.
 \end_layout
 
 \begin_layout Standard
-To achieve this we want to create a custom template for users show page.
+To achieve this we want to create a custom template for users 
+\begin_inset Quotes eld
+\end_inset
+
+show
+\begin_inset Quotes erd
+\end_inset
+
+ page.
  If you look in 
 \begin_inset Flex Code
 status collapsed
@@ -4116,7 +4136,7 @@ contents of the pages.dryml file
 \end_layout
 
 \begin_layout Standard
-Now find the “show-page” tag for User:
+Find the “show-page” tag for User:
 \end_layout
 
 \begin_layout Standard
@@ -4297,9 +4317,9 @@ status collapsed
 
 \end_inset
 
- tag is a handy little gadget.
- It outputs “Your” if the context is the current user, otherwise it outputs
- the user’s name.
+ tag is a handy gadget.
+ It outputs “Your” if the context is the current user.
+ Otherwise it outputs the user’s name.
  You’ll see “Your Assigned Tasks” when looking at yourself, and “Fred’s
  Assigned Tasks” when looking at Fred.
 \end_layout
@@ -4425,7 +4445,7 @@ status collapsed
 \end_inset
 
  tag.
-  Now click on the Users tab to see a summary of tasks for all users:
+  Click on the Users tab to see a summary of tasks for all users:
 \end_layout
 
 \begin_layout Standard
@@ -4462,7 +4482,7 @@ The Users tab showing all assignments
 \end_layout
 
 \begin_layout Standard
-Now you can get the big picture of 
+Now, you can get the big picture of 
 \begin_inset Flex Emph
 status collapsed
 
@@ -4496,7 +4516,8 @@ Improve the Project Page with a Searchable, Sortable table
 \end_layout
 
 \begin_layout Standard
-The project page is currently workable, but we can easily improve it a lot.
+The project page is currently workable, but we can easily and vastly improve
+ it.
  Hobo Rapid provides a tag called  
 \begin_inset Flex Code
 status collapsed
@@ -4629,7 +4650,7 @@ status open
 
 \begin_layout Standard
 That’s the part we want to replace with the table.
- Note that when a 
+ Note: that when a 
 \begin_inset Flex Code
 status collapsed
 
@@ -4705,8 +4726,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-You should now see that in place of the requirement cards, we now get a
- simple comma-separated list of links to the requirements.
+You should see that in place of the requirement cards, we now get a simple
+ comma-separated list of links to the requirements.
  Not what we want of course, but it illustrates the concept of replacing
  a parameter.
  Here’s how we get the “table-plus”:
@@ -5085,7 +5106,7 @@ Enhancing the <table-plus> listing
 \end_layout
 
 \begin_layout Standard
-Now enter a word in the Search box and see how the requirement list is filtered:
+Enter a word in the Search box and see how the requirement list is filtered:
 \end_layout
 
 \begin_layout Standard
@@ -5126,15 +5147,15 @@ Other Enhancements
 \end_layout
 
 \begin_layout Standard
-We’re now going to work through some more easy but very valuable enhancements
+We’re going to work through some easier, but very valuable enhancements
  to the application.
  We will add:
 \end_layout
 
 \begin_layout Itemize
 A menu for requirement statuses.
- We’ll do this first with a hard-wired set of options, and then add the
- ability to manage the set of available statuses.
+ We’ll do this with a hard-wired set of options, and then add the ability
+ to manage the set of available statuses.
 \end_layout
 
 \begin_layout Itemize
@@ -5157,7 +5178,7 @@ Requirement Status Menu
 
 \begin_layout Standard
 We’re going to do this in two stages.
-  First using a fixed menu that will require a source-code change if you
+  First using a fixed menu that will require a source-code change, if you
  ever need to alter the available statuses.
  We’ll then remove that restriction by adding a 
 \begin_inset Flex Code
@@ -5232,7 +5253,15 @@ status enum_string(:proposed, :accepted, :rejected,
 \end_layout
 
 \begin_layout Standard
-Now the Edit Requirement page looks like this, with a select list:
+Now, the 
+\begin_inset Quotes eld
+\end_inset
+
+Edit Requirement
+\begin_inset Quotes erd
+\end_inset
+
+ page looks like this, with a select list:
 \end_layout
 
 \begin_layout Standard
@@ -5269,9 +5298,17 @@ The Edit Requirement form with selectable status codes
 \end_layout
 
 \begin_layout Standard
-The menu is working in the edit requirement page now.
- It would be nice though if we had an “AJAX-ified” editor right on the requireme
-nt page.
+The menu is working in the 
+\begin_inset Quotes eld
+\end_inset
+
+edit requirement
+\begin_inset Quotes erd
+\end_inset
+
+ now.
+ It would be nice though if we had an “AJAX-ified” editor on the requirement
+ page.
  Edit the file 
 \begin_inset Flex Code
 status collapsed
@@ -5317,7 +5354,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now the page has an in-place editor that does not require a submit button
+Now, the page has an in-place editor that does not require a submit button
  update.
   
 \end_layout
@@ -5504,7 +5541,7 @@ auto_actions :write_only, :new, :index
 \end_layout
 
 \begin_layout Standard
-Next, remove the 
+Remove the 
 \begin_inset Flex Code
 status collapsed
 
@@ -5525,7 +5562,15 @@ fields do ...
 
 \end_inset
 
- block in the Requirement model and add the following association declaration:
+ block in the 
+\begin_inset Quotes eld
+\end_inset
+
+Requirement
+\begin_inset Quotes erd
+\end_inset
+
+ model and add the following association declaration:
 \end_layout
 
 \begin_layout Standard
@@ -5556,7 +5601,7 @@ belongs_to :status, :class_name => "RequirementStatus",
 \end_layout
 
 \begin_layout Standard
-Now run the migration generator
+Run the migration generator
 \end_layout
 
 \begin_layout Standard
@@ -5616,8 +5661,8 @@ Note: Whenever there are columns removed and columns added, the migration
 \end_layout
 
 \begin_layout Standard
-So, for the case at hand, to confirm that you want to drop the ‘status’
- column, you have to type in full: “
+To confirm that you want to drop the ‘status’ column, you have to type in
+ full: “
 \begin_inset Flex Code
 status collapsed
 
@@ -5636,14 +5681,20 @@ Once you’ve done that you’ll see that the generated migration includes the
 \end_layout
 
 \begin_layout Standard
-That’s it.
- The page to manage the requirement statuses should appear in the main navigatio
-n.
+That’s it! The page to manage the requirement statuses should appear in
+ the main navigation.
 \end_layout
 
 \begin_layout Standard
-We’ve decided to revise our list while entering them using the New Requirement
- Status page:
+We’ve decided to revise our list while entering them using the 
+\begin_inset Quotes eld
+\end_inset
+
+New Requirement Status
+\begin_inset Quotes erd
+\end_inset
+
+ page:
 \end_layout
 
 \begin_layout Standard
@@ -5688,10 +5739,9 @@ Reordering Tasks
 \end_layout
 
 \begin_layout Standard
-We’re now going to add the ability to re-order a requirement’s tasks by
- drag-and-drop.
+We’regoing to add the ability to re-order a requirement’s tasks by drag-and-drop.
  There’s support for this built into Hobo, so there’s not much to do.
- First we need the acts_as_list plugin:
+ First, we need the acts_as_list plugin:
 \end_layout
 
 \begin_layout Standard
@@ -5720,7 +5770,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now two changes to our models:	
+We will make two changes to our models:	
 \end_layout
 
 \begin_layout Standard
@@ -5788,8 +5838,9 @@ acts_as_list
 
 \end_inset
 
- plugin, so you can just run it and you’ll get the new position column on
- Task which is needed to keep track of ordering for you.
+ plugin.
+ Run it and you’ll get the new position column on Task which is needed to
+ keep track of ordering for you.
 \end_layout
 
 \begin_layout Standard
@@ -5879,8 +5930,24 @@ status open
 \end_layout
 
 \begin_layout Standard
-On the task edit page you might also have noticed that Hobo Rapid didn’t
- manage to figure out a destination for the cancel link.
+On the 
+\begin_inset Quotes eld
+\end_inset
+
+task edit
+\begin_inset Quotes erd
+\end_inset
+
+ page you might also have noticed that Hobo Rapid didn’t manage to figure
+ out a destination for the 
+\begin_inset Quotes eld
+\end_inset
+
+cancel
+\begin_inset Quotes erd
+\end_inset
+
+ link.
  You can fix that by editing 
 \begin_inset Flex Code
 status collapsed
@@ -6033,8 +6100,15 @@ status open
 
 \end_deeper
 \begin_layout Standard
-Now update your Task model with a due date, and add this validation for
- that date field:
+Now update your 
+\begin_inset Quotes eld
+\end_inset
+
+Task
+\begin_inset Quotes erd
+\end_inset
+
+ model with a due date and add this validation for that date field:
 \end_layout
 
 \begin_layout Standard

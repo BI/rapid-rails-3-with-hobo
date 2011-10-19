@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 25 
+2.3.10 Tutorial 25 
 \begin_inset Newline newline
 \end_inset
 
@@ -99,8 +99,7 @@ By Matt Jones
 Defining effective indexes on your data can give massive database performance
  benefits in any application.
  To further this goal, Hobo’s migration generator attempts to provide useful
- indices without any additional code, and provides shorthand for defining
- indices.
+ indices without any additional code, using shorthand to defining indices.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -171,7 +170,7 @@ status collapsed
 \end_inset
 
  will specify a name for the generated index.
- Note that some databases require that index names be unique across the
+ Note: that some databases require that index names be unique across the
  entire database, not just the individual table.
 \end_layout
 
@@ -203,7 +202,8 @@ add_index
 
 \end_inset
 
-; unfortunately, this will break the generated down migrations (which rely
+.
+ Unfortunately, this will break the generated down migrations (which rely
  on the original index names).
  The best short-term solution is to pass a manual index name parameter wherever
  possible.
@@ -392,7 +392,7 @@ Indexing in the ‘fields do’ block
 \end_layout
 
 \begin_layout Standard
-Within the standard fields block, indexes can be declared as part of a field,
+Within the standard fields block, indexes can be declared as part of a field
  just like the 
 \begin_inset Flex Code
 status collapsed

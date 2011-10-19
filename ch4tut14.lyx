@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 14 
+2.2.7 Tutorial 14 
 \begin_inset Newline newline
 \end_inset
 
@@ -177,7 +177,11 @@ Steps
 \end_layout
 
 \begin_layout Standard
-1.	
+Step 1
+\end_layout
+
+\begin_layout Standard
+	
 \begin_inset Flex Strong
 status collapsed
 
@@ -462,9 +466,9 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-We are going to focus in on three display components of this tag, noted
- in bold italics above, to help you understand how to change the display
- of individual records.
+We are going to focus on three display components of this tag, The components
+ are noted in bold italics above, to help you understand how to change the
+ display of individual records.
   (Add the ‘
 \begin_inset Flex Code
 status collapsed
@@ -479,7 +483,15 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Click on the Recipes tab and then click on an individual recipe.
+Click on the 
+\begin_inset Quotes eld
+\end_inset
+
+Recipes
+\begin_inset Quotes erd
+\end_inset
+
+ tab and then click on an individual recipe.
 \end_layout
 
 \begin_layout Standard
@@ -520,7 +532,7 @@ The Recipe show page before modification
 \end_layout
 
 \begin_layout Standard
-Now comment out the three lines above in bold italics using 
+Comment out the three lines above in bold italics using 
 \begin_inset Flex Code
 status collapsed
 
@@ -536,7 +548,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-2.	
+Step 2.	
 \begin_inset Flex Strong
 status collapsed
 
@@ -578,9 +590,16 @@ show.dryml
 \end_inset
 
 .
- When a user invokes the show action by requesting the display of a single
- record, this is the first of the three places Hobo looks to determine how
- to display the record.
+ When a user invokes the 
+\begin_inset Quotes eld
+\end_inset
+
+show
+\begin_inset Quotes erd
+\end_inset
+
+ action by requesting the display of a single record, this is the first
+ of the three places Hobo looks to determine how to display the record.
  
 \end_layout
 
@@ -595,7 +614,7 @@ application.dryml
 
 \end_inset
 
- file to look for application wide tag definitions and finally in 
+ file to look for application wide tag definitions and ,finally, in 
 \begin_inset Flex Code
 status collapsed
 
@@ -689,7 +708,7 @@ Recipe show page after removing three critical lines of code
 \end_layout
 
 \begin_layout Standard
-3.	
+Step 3.	
 \begin_inset Flex Strong
 status collapsed
 
@@ -743,7 +762,7 @@ status collapsed
 
 \end_inset
 
- tag so we need to invoke it with a trailing colon (:).
+ tag, so we need to invoke it with a trailing colon (:).
  
 \end_layout
 
@@ -1077,7 +1096,7 @@ Using the <collection-heading:> tag
 \end_layout
 
 \begin_layout Standard
-4.
+Step 4.
  
 \begin_inset Flex Strong
 status collapsed
@@ -1153,7 +1172,7 @@ status collapsed
 
  tag.
  We will cover this further in Step 5.
- Now let’s learn how to change the labels.
+ Now, let’s learn how to change the labels.
 \end_layout
 
 \begin_layout Standard
@@ -1600,7 +1619,7 @@ Using the <country-label:> parameter to change the label on the page
 \end_layout
 
 \begin_layout Standard
-5.
+Step 5.
  
 \begin_inset Flex Strong
 status collapsed
@@ -1622,8 +1641,8 @@ status collapsed
 \end_inset
 
 .
- There is still another way to work with the fields of an individual record
- and its associated records using the 
+ There is another way to work with the fields of an individual record and
+ its associated records using the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1866,13 +1885,12 @@ status collapsed
 
  tag.
  We are not only preserving the content but also the formatting.
- Hobo has predefined CSS formatting as you probably have gathered that correspon
-d to the Rapid tags.
+ Hobo has predefined CSS formatting that correspond to the Rapid tags.
  
 \end_layout
 
 \begin_layout Standard
-If, for example, we had used the 
+If we had used the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1958,7 +1976,7 @@ replace
 
 \end_inset
 
- attribute and then try it with the attribute to see confirm that the formatting
+ attribute and then try it with the attribute to confirm that the formatting
  will be removed.
 \end_layout
 
@@ -2067,7 +2085,7 @@ replace
 \end_layout
 
 \begin_layout Standard
-6.	
+Step 6.	
 \begin_inset Flex Strong
 status collapsed
 
@@ -2078,7 +2096,7 @@ Summary
 \end_inset
 
 .
- You have now learned to create a new template called 
+ You have now learned how to create a new template called 
 \begin_inset Flex Code
 status collapsed
 
@@ -2098,8 +2116,8 @@ views/recipes
 
 \end_inset
 
- directory that is used whenever there is an action to display an individual
- 
+ directory.
+ It is used whenever there is an action to display an individual 
 \begin_inset Flex Emph
 status collapsed
 

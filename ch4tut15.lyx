@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 15 
+2.2.8 Tutorial 15 
 \begin_inset Newline newline
 \end_inset
 
@@ -229,7 +229,7 @@ Steps
 \end_layout
 
 \begin_layout Standard
-1.	
+Step 1.	
 \begin_inset Flex Strong
 status collapsed
 
@@ -270,7 +270,7 @@ pages.dryml
 
 \end_inset
 
- and take a look at the code for both of these tags.
+ and look at the code for both tags.
  Here is the  
 \begin_inset Flex Code
 status collapsed
@@ -536,7 +536,7 @@ red italics
 
 \color inherit
 .
- Let’s also take a look at the 
+ Also take a look at the 
 \begin_inset Flex Code
 status collapsed
 
@@ -736,7 +736,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-You no doubt are noticing that the 
+You will notice that the 
 \begin_inset Flex Code
 status collapsed
 
@@ -746,12 +746,12 @@ status collapsed
 
 \end_inset
 
- tag is doing something different here.
+ tag is doing something different.
  Instead of displaying a two-column table consisting of field labels in
  the first column and field data in the second, it is putting the appropriate
  data entry control in the second column.
- The data entry control choice depends on the type of field that was defined
- in the model.
+ The data entry control choice depends on the type of field defined in the
+ model.
 \end_layout
 
 \begin_layout Standard
@@ -765,7 +765,7 @@ title
 
 \end_inset
 
- field, which is a string field and a larger box for the 
+ field which is a string field and a larger box for the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -775,7 +775,7 @@ body
 
 \end_inset
 
- field, which is a text field.
+ field which is a text field.
   Notice that Hobo also creates drop-down combo controls for the 
 \begin_inset Flex Emph
 status collapsed
@@ -801,7 +801,7 @@ categories
 \end_layout
 
 \begin_layout Standard
-Hobo does this from inspecting table relationships.
+Hobo does this by inspecting table relationships.
   The 
 \begin_inset Flex Emph
 status collapsed
@@ -823,8 +823,7 @@ status collapsed
 \end_inset
 
  model and the category model.
- This is a pretty powerful capability for just one tag, especially given
- that the 
+ This is a powerful capability for one tag, especially given that the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -909,12 +908,12 @@ status collapsed
 
 \end_inset
 
- tag but we will wait to discuss it until the next step.)
+ tag, but we will wait to discuss it until the next step.)
 \end_layout
 
 \begin_layout Standard
-Before moving on, let’s take care of a detail by using your knowledge of
- parameter tags.
+Before moving on, let’s take care of a detail, using your knowledge of parameter
+ tags.
  You will note that the 
 \begin_inset Flex Code
 status collapsed
@@ -946,7 +945,23 @@ status collapsed
 \end_inset
 
  tag does not.
- But there is still a submit button on the edit page.
+ However, there is a 
+\begin_inset Quotes eld
+\end_inset
+
+submit
+\begin_inset Quotes erd
+\end_inset
+
+ button on the 
+\begin_inset Quotes eld
+\end_inset
+
+edit
+\begin_inset Quotes erd
+\end_inset
+
+ page.
  The explanation can be found in the definition of the 
 \begin_inset Flex Code
 status collapsed
@@ -1038,8 +1053,8 @@ status collapsed
 
 \end_inset
 
- tag just relies on the default for both of these tags so there are no calls
- to them in the 
+ tag only relies on the default for both tags, so there are no calls to
+ them in the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1053,7 +1068,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-2.	
+Step2.	
 \begin_inset Flex Strong
 status collapsed
 
@@ -1076,7 +1091,7 @@ status collapsed
 .
  You have already done some work with this tag in the last tutorial.
   Experiment with removing a field by editing the tag’s fields attribute.
- First copy the three tags above into 
+ First, copy the three tags above into 
 \begin_inset Flex Code
 status collapsed
 
@@ -1091,9 +1106,8 @@ application.dryml
 
 \begin_layout Standard
 (As we have mentioned, you probably want to be careful about editing tags
- this way in a real application.
- But this is the easiest way for us to acquaint you with how Hobo works.)
- 
+ this way in a real application, but this is the easiest way for us to acquaint
+ you with how Hobo works.) 
 \end_layout
 
 \begin_layout Standard
@@ -1228,7 +1242,7 @@ Modifying the <field-list> tag to remove fields on a page
 \end_layout
 
 \begin_layout Standard
-Now your 
+Now, your 
 \begin_inset Flex Emph
 status collapsed
 
@@ -1242,7 +1256,7 @@ categories
 \end_layout
 
 \begin_layout Standard
-You may be wondering why we did not remove the 
+You may be wondering why we did not also remove the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1252,7 +1266,7 @@ category_assignments
 
 \end_inset
 
- attribute also or for that matter why it is there at all.
+ attribute, or why it is there at all.
  First, try removing 
 \begin_inset Flex Code
 status collapsed
@@ -1333,7 +1347,7 @@ CategoryAssignments
 \end_layout
 
 \begin_layout Standard
-3.
+Step 3.
   
 \begin_inset Flex Strong
 status collapsed
@@ -1502,7 +1516,8 @@ Recipe
 
 \end_inset
 
- model, which in this case is set by working within the 
+ model.
+ In this case it is set by working within the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -1513,8 +1528,8 @@ Recipe
 \end_inset
 
  form.
- Further, as you’ve seen before, Hobo knows just what kind of control you
- are likely to need.
+ As you’ve seen before, Hobo knows just what kind of control you are likely
+ to need.
 \end_layout
 
 \begin_layout Standard
@@ -1579,7 +1594,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-First, let’s create the skeleton of an 
+Let’s create the skeleton of an 
 \begin_inset Flex Code
 status collapsed
 
@@ -1589,7 +1604,7 @@ extend
 
 \end_inset
 
- tag so we can watch what happens one step at a time.
+ tag, so we can watch what happens one step at a time.
  The following code placed in 
 \begin_inset Flex Code
 status collapsed
@@ -1655,7 +1670,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-The following code, which might seem to be identical, actually is not.
+The following code, which might seem to be identical, actually is not identical.
  
 \end_layout
 
@@ -1712,7 +1727,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Now let’s get some content into the parameter tag.
+Now, let’s get some content into the parameter tag.
  Copy the following code into 
 \begin_inset Flex Code
 status collapsed
@@ -1825,7 +1840,7 @@ First step using the <Input> tag
 \end_layout
 
 \begin_layout Standard
-We’ve got an entry control but 
+We’ve got an entry control, but 
 \begin_inset Flex Code
 status collapsed
 
@@ -1969,7 +1984,7 @@ Title
 
 \begin_layout Standard
 Do the same thing for the rest of the fields.
- (Some of Hobo’s tags have differing built-in breaks, which is why the number
+ (Some of Hobo’s tags have differing built-in breaks which is why the number
  of breaks varies some below.)
 \end_layout
 
@@ -2061,7 +2076,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Now you have succeeded in reconstructing a form with the 
+Now, you have succeeded in reconstructing a form with the 
 \begin_inset Flex Code
 status collapsed
 
@@ -2086,8 +2101,8 @@ Summary
 \end_inset
 
 .
- Hobo provides some great functionality for fine-tuning your application
- when the default rendering is not quite what you would like.
+ Hobo provides great functionality for fine-tuning your application when
+ the default rendering is not quite what you would like.
  You can experiment with them by going through the documentation on the
  Hobo web site or learn more about them in later chapters of this book.
 \end_layout

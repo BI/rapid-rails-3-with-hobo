@@ -67,27 +67,23 @@ logicalmkup
 \begin_body
 
 \begin_layout Chapter
-Chapter 6 
-\begin_inset Newline newline
-\end_inset
-
-DEPLOYING YOUR APPLICATIONS
+Section 4 DEPLOYING YOUR APPLICATIONS
 \end_layout
 
 \begin_layout Subsubsection*
-Introductory Comments
+2.4.1 Introductory Comments
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 26 – Installing and using the Git Version Control System
+2.4.2 Tutorial 26 – Installing and using the Git Version Control System
 \end_layout
 
 \begin_layout Subsubsection*
-Tutorial 27 – Rapid Deployment Using Heroku.com
+2.4.3 Tutorial 27 – Rapid Deployment Using Heroku.com
 \end_layout
 
 \begin_layout Section
-Introductory Concepts and Comments
+2.4.1 Introductory Concepts and Comments
 \end_layout
 
 \begin_layout Standard
@@ -113,7 +109,7 @@ Once you configure your computer to work with the source code configuration
 \begin_layout Standard
 Of course, if you are an experienced Rails developer you can publish any
  Hobo app on your existing infrastructure.
-  If you haven’t tried Heroku yet, I encourage you to do so.
+  If you haven’t tried Heroku, I encourage you to do so.
   This is the wave of the future.
 \end_layout
 
@@ -122,7 +118,7 @@ Tutorial
 \begin_inset Newline newline
 \end_inset
 
-Installing and Using Git 
+2.4.2 Installing and Using Git 
 \end_layout
 
 \begin_layout Standard
@@ -299,8 +295,8 @@ Installing Git for Mac OSX
 \end_layout
 
 \begin_layout Standard
-OK.
-  So let’s get the software we need for Git:
+Ok.
+ Let’s get the software we need for Git:
 \end_layout
 
 \begin_layout Standard
@@ -550,7 +546,7 @@ After the installation is complete, the release notes will be displayed.
 \end_layout
 
 \begin_layout Standard
-Now download the PuTTYgen RSA/DSA secure key generator from this URL:
+Now, download the PuTTYgen RSA/DSA secure key generator from this URL:
 \end_layout
 
 \begin_layout Standard
@@ -819,7 +815,7 @@ View of "no ssh public key found" error
 \end_layout
 
 \begin_layout Standard
-So Heroku was looking for the file 
+Heroku was looking for the file 
 \begin_inset Flex Code
 status collapsed
 
@@ -862,7 +858,7 @@ Administrator
 \end_layout
 
 \begin_layout Standard
-So we can move the keys as follows:
+We can move the keys as follows:
 \end_layout
 
 \begin_layout Standard
@@ -936,7 +932,7 @@ Tutorial
 \begin_inset Newline newline
 \end_inset
 
-Rapid Deployment with Heroku
+2.4.3 Rapid Deployment with Heroku
 \end_layout
 
 \begin_layout Standard
@@ -1067,18 +1063,18 @@ Using the free "Blossom" database hosting option on Heroku.com
 For this tutorial, we are going to use the free “Blossom” version for apps
  under 5MB in size.
  In addition to choosing more storage capacity, you can add “Dynos” (processing
- power) to suit your needs, and choose your replication and backup options.
+ power) to suit your needs and choose your replication and backup options.
  The database backend provided by Heroku is PostgresSQL, a rock-solid choice
  in the open source world.
  
 \end_layout
 
 \begin_layout Standard
-Of course you can always host your database elsewhere and use Heroku for
+Of course, you can always host your database elsewhere and use Heroku for
  your Hobo or Rails front end.
   The nice thing about Heroku is the database migration and setup is transparent
 , so you can develop your app using SQLite and then deploy your app to Heroku’s
- PostgresSQL back-end transparently.
+ PostgresSQL back-end.
 \end_layout
 
 \begin_layout Standard
@@ -1092,7 +1088,7 @@ four_table
 
 \end_inset
 
-” application will built in the earlier tutorials and deploy it to Heroku.
+” application built into the earlier tutorials and deploy it to Heroku.
 \end_layout
 
 \begin_layout Subsection*
@@ -1282,7 +1278,7 @@ The "Welcome to Heroku" signup page
 \end_layout
 
 \begin_layout Standard
-And then this when you finish:
+And this when you finish:
 \end_layout
 
 \begin_layout Standard
@@ -1333,7 +1329,7 @@ Step 3: Install the Heroku Gem
 \end_layout
 
 \begin_layout Standard
-Go to you command prompt and type the following command:
+Go to command prompt and type the following command:
 \end_layout
 
 \begin_layout Standard
@@ -1629,8 +1625,8 @@ status open
 
 \begin_layout Description
 Note: The first time you try to create using the heroku gem you will be
- prompted to enter your user name and password that you provided heroku
- while creating an account:
+ prompted to enter the user name and passwordyou provided heroku when creating
+ your account:
 \end_layout
 
 \end_inset
@@ -1823,7 +1819,7 @@ hobo –source gems.github.com
 \end_layout
 
 \begin_layout Standard
-Now we need to use GIT again to add these changes and push them to Heroku:
+Now, we need to use GIT again to add these changes and push them to Heroku:
 \end_layout
 
 \begin_layout Standard
@@ -2231,7 +2227,7 @@ Note: that several other dependencies are also installed along with Taps.
 \end_layout
 
 \begin_layout Standard
-Now you can use the following single command to upload your existing (local)
+You can use the following single command to upload your existing (local)
  data to your version on Heroku:
 \end_layout
 
@@ -2299,7 +2295,7 @@ Using "heroku db:push" to push data to your app on Heroku.com
 
 \begin_layout Standard
 The log indicates that six tables with a total of 23 records were sent.
- Let’s look at the live app to see:
+ Let’s look at the live app:
 \end_layout
 
 \begin_layout Standard
@@ -2344,7 +2340,7 @@ The "Four Table" app on Heroku.com with data
 \end_layout
 
 \begin_layout Standard
-Now let’s add a recipe for “Crab Cakes”:
+Let’s add a recipe for “Crab Cakes”:
 \end_layout
 
 \begin_layout Standard

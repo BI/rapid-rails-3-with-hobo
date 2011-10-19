@@ -75,7 +75,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Section
-Tutorial 22 
+2.3.7 Tutorial 22 
 \begin_inset Newline newline
 \end_inset
 
@@ -115,9 +115,9 @@ A Public directory, containing our images and stylesheets
 \end_layout
 
 \begin_layout Standard
-Somehow the idea of “creating a plugin” seems like a big deal, but it’s
- there’s really nothing to it.
- Pretty much all we’re going to do is move a few files into different places.
+The idea of “creating a plugin” seems like a big deal, but there’s really
+ nothing to it.
+ All we’re going to do is move a few files into different places.
 \end_layout
 
 \begin_layout Standard
@@ -162,7 +162,7 @@ Batch file with commands to create the plugin folders and content
 \end_layout
 
 \begin_layout Standard
-Or, as individual commands:
+Or as individual commands:
 \end_layout
 
 \begin_layout Standard
@@ -315,7 +315,8 @@ rails.png
 
 \end_inset
 
- into the plugin, which you probably want to delete).
+ into the plugin.
+ Which you probably want to delete).
 \end_layout
 
 \begin_layout Standard
@@ -329,8 +330,8 @@ application.dryml
 
 \end_inset
 
- into our plugin, because nearly everything in there belongs in the plugin,
- but it does need some editing:
+ into our plugin because nearly everything in there belongs in the plugin.
+ It does need some editing:
 \end_layout
 
 \begin_layout Standard
