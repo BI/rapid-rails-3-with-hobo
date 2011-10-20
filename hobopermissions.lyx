@@ -92,17 +92,16 @@ Hobo’s controllers and DRYML tag libraries use this information to automatical
 \end_layout
 
 \begin_layout Section
-Introduction
+3.2.1 Introduction
 \end_layout
 
 \begin_layout Standard
 One of the core pieces of the Hobo puzzle is the permission system.
  The permission system itself lives in the model layer - it is a set of
  extensions to Active Record models.
- It’s not a particularly complex set of extensions but the overall effect
+ It’s not a particularly complex set of extensions, but the overall effect
  in Hobo is very powerful.
- This comes not so much from the permission system itself, but from how
- it is 
+ This comes not from the permission system itself, but from how it is 
 \begin_inset Flex Emph
 status collapsed
 
@@ -144,8 +143,9 @@ This guide will be mostly about how it all works in the model layer, but
 \end_layout
 
 \begin_layout Standard
-At its heart, the permission system is fairly simple, it just provides methods
- on each model that allow the following four questions to be asked:
+At its heart, the permission system is fairly simple.
+ It just provides methods on each model that allow the following four questions
+ to be asked:
 \end_layout
 
 \begin_layout Standard
@@ -240,21 +240,20 @@ do something
  is closely related to update permission, but it’s not quite the same.
  In fact, you often don’t need to declare edit permissions because Hobo
  can figure them out from your update permission.
- We’ll cover this in more detail later, but for now just be aware that edit
- permission is a bit of an odd-one-out.
+ We’ll cover this in more detail later, but for now be aware that edit permissio
+n is a bit of an anomaly.
 \end_layout
 
 \begin_layout Section
-Defining permissions
+3.2.2 Defining permissions
 \end_layout
 
 \begin_layout Standard
-In a typical Hobo app, the place where the permission system is most prominent
- in your own code is your permission declarations.
+In a typical Hobo app, the permission system is most prominent in your own
+ code in your permission declarations.
  These are methods, which you define on your models, known as “permission
  methods”.
- These methods are where you tell the permission system who is allowed to
- do what.
+ These methods let you tell the permission system who is allowed to do what.
  The permission methods are called by the framework - it is unusual to call
  them yourself.
 \end_layout
@@ -264,10 +263,11 @@ The four basic permission methods
 \end_layout
 
 \begin_layout Standard
-When you generate a new Hobo model, you get stubs for the following methods.
+When you generate a new Hobo model, you get stubs the following four methods:
 \end_layout
 
 \begin_layout Itemize
+1 
 \begin_inset Flex Code
 status collapsed
 
@@ -281,6 +281,7 @@ def create_permitted?
 \end_layout
 
 \begin_layout Itemize
+2 
 \begin_inset Flex Code
 status collapsed
 
@@ -294,6 +295,7 @@ def update_permitted?
 \end_layout
 
 \begin_layout Itemize
+3 
 \begin_inset Flex Code
 status collapsed
 
@@ -307,6 +309,7 @@ def destroy_permitted?
 \end_layout
 
 \begin_layout Itemize
+4 
 \begin_inset Flex Code
 status collapsed
 
@@ -323,7 +326,7 @@ def view_permitted?(attribute)
 The methods must return true or false to indicate whether or not the operation
  is allowed.
  We’ll see some examples in a moment but we first need to look at what informati
-on the methods have access to.
+on the methods can access.
 \end_layout
 
 \begin_layout Subsection*
@@ -341,18 +344,16 @@ acting_user
 
 \begin_layout Standard
 The user performing the action is available via 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-acting_user
-\end_layout
-
+\begin_inset Quotes erd
 \end_inset
 
- method.
+ acting_user method 
+\begin_inset Quotes eld
+\end_inset
+
+.
  This method will always return a user object, even if no one is logged
- in to the app, because Hobo has a special 
+ in to the ap because Hobo has a special 
 \begin_inset Flex Code
 status collapsed
 
@@ -542,7 +543,7 @@ end
 \end_layout
 
 \begin_layout Section
-Change tracking
+3.2.3 Change tracking
 \end_layout
 
 \begin_layout Standard
@@ -1213,7 +1214,7 @@ attribute
 \end_inset
 
  will be the name of an attribute for which view permission is requested.
- So when defining this method, remember that 
+ When defining this method, remember that 
 \begin_inset Flex Code
 status collapsed
 
@@ -1297,17 +1298,17 @@ will update permission be granted if a change is made to this attribute?
 
  A common response to that question might be: it depends what you’re changing
  the attribute to.
- And therein lies the difference between update permission and edit permission.
- With update permission, we are dealing with a known quantity – we have
- a set of concrete changes to the object that may or may not be permitted.
- With edit permission, the value that the attribute will become is not known
- (because the user hasn’t submitted the form yet).
+ Therein lies the difference between update permission and edit permission.
+ With update permission, we are dealing with a known quantity: We have a
+ set of concrete changes to the object that may or may not be permitted.
+ With edit permission, the value that the attribute will become is not known,
+ because the user hasn’t submitted the form yet.
 \end_layout
 
 \begin_layout Standard
 Despite that difference edit permission and update permission are obviously
  very closely related.
- Because saving you work is what Hobo is all about, the permission system
+ Since saving you work is what Hobo is all about, the permission system
  contains a mechanism for deriving edit permission based on your 
 \begin_inset Flex Code
 status collapsed
@@ -1440,7 +1441,7 @@ edit_permitted?
 \begin_layout Standard
 Similarly, if a virtual attribute is read-only in the Ruby sense (it has
  no setter method), that tells Hobo it is not editable.
- And finally, fields that are not viewable are implicitly not editable either.
+ Finally, fields that are not viewable are implicitly not editable either.
 \end_layout
 
 \begin_layout Standard
@@ -1458,7 +1459,7 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Tip: if a particular attribute can 
+Tip: If a particular attribute can 
 \begin_inset Flex Emph
 status collapsed
 
@@ -1621,8 +1622,8 @@ edit_permitted?
 \end_inset
 
  if things don’t work out.
- Also note that if edit permission is incorrect, this does not result in
- a security hole in your application.
+ Also notice that if edit permission is incorrect, this does not result
+ in a security hole in your application.
  An edit control may be rendered when it really should not have been, but
  on submission of the form, the change to the database is policed by 
 \begin_inset Flex Code
@@ -1664,7 +1665,7 @@ Hobo::UndefinedAccessError
 
 \end_inset
 
-, which is caught by the permission system, and edit permission is denied.
+ which is caught by the permission system, and edit permission is denied.
  
 \end_layout
 
@@ -1826,13 +1827,13 @@ Defining edit permission
 If the mechanism described above is not adequate for some reason, you can
  always define edit permission yourself.
  If the derived edit permission is not correct for just one field, it’s
- possible to define edit permission manually for just that one field, and
+ possible to define edit permission manually for just that one field and
  still have the automatic edit permission for the other fields in your model.
 \end_layout
 
 \begin_layout Standard
-To define edit permission for a single attribute (and keep the automatically
- derived edit permission for the others), define 
+To define edit permission for a single attribute and keep the automatically
+ derived edit permission for the others, define 
 \begin_inset Flex Code
 status collapsed
 
@@ -1953,13 +1954,13 @@ attribute
 \end_layout
 
 \begin_layout Section
-Permissions and associations 
+3.2.4 Permissions and associations 
 \end_layout
 
 \begin_layout Standard
 So far we’ve focused on policing changes to basic data fields, but Hobo
- supports multi-model forms, so we also need to place restrictions on associated
- records.
+ supports multi-model forms.
+ So we also need to place restrictions on associated records.
  We need to specify permissions regarding:
 \end_layout
 
@@ -2000,7 +2001,7 @@ Changes to the fields of any related record
 If we think in terms of the underlying database, it’s clear that every change
  ultimately comes down to things that we have already covered - creating,
  updating and deleting rows.
- So the permission system is able to covers these cases with a simple rule:
+ The permission system is able to covers these cases with a simple rule:
 \end_layout
 
 \begin_layout Itemize
@@ -2043,7 +2044,8 @@ acting_user
 
 \end_inset
 
- is propagated to those records, and
+ is propagated to those records.
+ And
 \end_layout
 
 \begin_layout Itemize
@@ -2102,8 +2104,8 @@ has_many :through
 \end_layout
 
 \begin_layout Standard
-So there really is no special support for associations in the permission
- system, other than the rule described above for propagating the 
+There really is no special support for associations in the permission system,
+ other than the rule described above for propagating the 
 \begin_inset Flex Code
 status collapsed
 
@@ -2196,7 +2198,7 @@ user_changed?
 
 \end_inset
 
-, and in fact we can.
+, and, in fact, we can.
  For every belongs_to association, Hobo adds a 
 \begin_inset Flex Code
 status collapsed
@@ -2277,7 +2279,7 @@ belongs_to
 \end_layout
 
 \begin_layout Section
-The Permission API
+3.2.5 The Permission API
 \end_layout
 
 \begin_layout Standard
@@ -2918,8 +2920,7 @@ acting_user
 
  is set, each of these will perform a permission check prior to the actual
  operation.
- This is illustrated in the very simple implementation of, for example user
- save:
+ This is illustrated in the very simple implementation of, user save:
 \end_layout
 
 \begin_layout Standard
@@ -2974,7 +2975,8 @@ acting_user
 
 \end_inset
 
- for the duration of the block, then restores it to it’s previous value)
+ for the duration of the block.
+ It then restores it to it’s previous value)
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3081,8 +3083,8 @@ acting_user
 \end_layout
 
 \begin_layout Standard
-Often we would like to initialize some aspect of our model based on who
- the 
+We would often like to initialize some aspect of our model based on who
+ is the 
 \begin_inset Flex Code
 status collapsed
 
@@ -3092,7 +3094,7 @@ acting_user
 
 \end_inset
 
- is.
+.
  A very common example would be to set an “owner” association automatically.
  Hobo provides the 
 \begin_inset Flex Code
@@ -3361,32 +3363,34 @@ is
 
 \end_inset
 
- allowed to create an event, because the callback ensures that the event
- is in the right group, but if an attempt is made to change the group to
- a different one, that would fail.
+ allowed to create an event because the callback ensures that the event
+ is in the right group.
+ If an attempt is made to change the group to a different one, that would
+ fail.
  
 \end_layout
 
 \begin_layout Standard
-The edit permission mechanism (described in a previous section) can detect
- this, so the end result is that (by default) your app will have the “New
- Event” form, but the form control for choosing the group will be automatically
+The edit permission mechanism (described in a section) can detect this,
+ so the end result is that (by default) your app will have the “New Event”
+ form.
+ However, the form control for choosing the group will be automatically
  removed.
  The event will be automatically assigned to the logged in user’s group.
- I love it when a plan comes together!
+ (I love it when a plan comes together!)
 \end_layout
 
 \begin_layout Section
-Permissions vs.
+3.2.6 Permissions vs.
  validations
 \end_layout
 
 \begin_layout Standard
-It may have occurred to you that there is some overlap between the permission
- system and Active Record’s validations.
+It may have occurred to you that there is some overlap between the Permission
+ System and Active Record’s validations.
  To an extent that’s true: they both provide a way to prevent undesirable
  changes from making their way into the database.
- The line between them is fairly clear though:
+ The line between them is fairly clear:
 \end_layout
 
 \begin_layout Itemize
@@ -3412,8 +3416,9 @@ Your user interface should provide no means by which a “permission denied”
 \begin_layout Standard
 In Rails code, it’s not uncommon to see validations used for both of these
  reasons.
- For example, the UI may provide radio buttons to chose “Male” or “Female”,
- and the model might state:
+ For example.
+ On the hand UI may provide radio buttons to chose “Male” or “Female”.
+ The model might state:
 \end_layout
 
 \begin_layout Standard
@@ -3442,7 +3447,7 @@ validates_inclusion_of :gender, :in => %w(Male Female)
 \begin_layout Standard
 In normal usage, no one will ever see the message that gets generated when
  this validation fails.
- Effectively it’s being used as a permission.
+ Effectively, it’s being used as a permission.
  In a Hobo app it might be better to use the permission system for this
  example, but the declarative 
 \begin_inset Flex Code
@@ -3454,7 +3459,8 @@ validates_inclusion_of
 
 \end_inset
 
- is quite nice, so if you do use it we’ll turn a blind eye.
+ is quite nice.
+ If you do use it we’ll turn a blind eye.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3482,20 +3488,20 @@ administrator?
 
 \end_inset
 
- is bit of a strong assumption.
+ is slightly a strong assumption.
  It fits for many applications, but might be totally inappropriate for many
  others.
  
 \end_layout
 
 \begin_layout Standard
-Although you’ve probably seen this method a lot, it’s important to clarify
- that it’s not actually part of Hobo.
+Although you’ve probably seen this method, it’s important to clarify that
+ it’s not actually part of Hobo.
  
 \end_layout
 
 \begin_layout Standard
-Eh what?
+Eh, what?
 \end_layout
 
 \begin_layout Standard
@@ -3632,7 +3638,8 @@ User
 
 \end_inset
 
- model, and define a method instead, for example:
+ model, and define a method instead.
+ For example:
 \end_layout
 
 \begin_deeper
@@ -3669,7 +3676,15 @@ end
 
 \end_deeper
 \begin_layout Itemize
-Get rid of that field, and of all calls to 
+Get rid of 
+\begin_inset Quotes eld
+\end_inset
+
+administrater
+\begin_inset Quotes erd
+\end_inset
+
+ field, and of all calls to 
 \begin_inset Flex Code
 status collapsed
 
@@ -3680,11 +3695,11 @@ administrator?
 \end_inset
 
  from your models’ permission methods.
- Those are just stubs that you are expected to replace
+ Those are stubs that you are expected to replace
 \end_layout
 
 \begin_layout Standard
-At some point we may add an option to the generators so you will only get
+At some point we may add an option to the generators, so you will only get
  
 \begin_inset Flex Code
 status collapsed
@@ -3699,7 +3714,7 @@ administrator?
 \end_layout
 
 \begin_layout Section
-View helpers
+3.2.7 View helpers
 \end_layout
 
 \begin_layout Standard
