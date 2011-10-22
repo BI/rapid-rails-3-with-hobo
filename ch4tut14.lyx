@@ -116,6 +116,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <show-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -130,6 +140,16 @@ status collapsed
 
 \begin_layout Plain Layout
 show.dryml
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+show.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -144,6 +164,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <field-list>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -154,6 +184,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <fieldname-label>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<fieldname-label>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -838,6 +878,16 @@ status collapsed
 
 \begin_layout Plain Layout
 fields
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+fields attribute
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -890,6 +940,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <field-list>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -941,6 +1001,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <show-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1113,6 +1183,16 @@ status collapsed
 \end_inset
 
  labels
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<field-list> labels
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1346,6 +1426,16 @@ status collapsed
 
 \begin_layout Plain Layout
 Rapid Parameter Tag
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Rapid Parameter Tag
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1361,7 +1451,17 @@ status collapsed
 
 \end_inset
 
- is a parameter tag.
+ is a parameter tag
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parameter tag
+\end_layout
+
+\end_inset
+
+.
  However, it is not defined anywhere within either your code or the auto-generat
 ed code.
  (You will see user-customized tags again with pseudo tags in the next tutorial.)
@@ -1425,7 +1525,7 @@ country
 status collapsed
 
 \begin_layout Plain Layout
-<country-label>
+<country-label:>
 \end_layout
 
 \end_inset
@@ -1439,6 +1539,16 @@ status collapsed
 
 \begin_layout Plain Layout
 Tag nesting
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tag nesting
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1684,6 +1794,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <extend>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1900,7 +2020,17 @@ replace
 
 \end_inset
 
- attribute in the 
+ attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+replace attribute
+\end_layout
+
+\end_inset
+
+ in the 
 \begin_inset Flex Code
 status collapsed
 

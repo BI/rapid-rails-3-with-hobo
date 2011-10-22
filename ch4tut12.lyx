@@ -132,7 +132,17 @@ application.dryml
 
 \end_inset
 
- directory to override auto-generated tags.
+ directory to override auto-generated tags
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+override auto-generated tags
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -141,7 +151,16 @@ Learn about the Rapid
 status collapsed
 
 \begin_layout Plain Layout
-collection
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+<collection>
 \end_layout
 
 \end_inset
@@ -156,6 +175,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <a>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -170,6 +199,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <repeat>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -180,6 +219,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <if>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -190,6 +239,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <else>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -914,6 +973,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <collection>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -957,7 +1026,17 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Actually, it is a member of the Rapid library of tags that we have mentioned.
+Actually, it is a member of the Rapid library
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Rapid library
+\end_layout
+
+\end_inset
+
+ of tags that we have mentioned.
  As we go through these tutorials, we will point out where tags, and in
  particular parameters tags come from.
  Here is a list of tag situations you will encounter:
@@ -984,8 +1063,17 @@ Rapid auto-generated tags which are not usually parameterized
 \end_layout
 
 \begin_layout Standard
-As we go forward, you will gradually learn how the auto-generated tags are
- built up out of Rapid library tags.
+As we go forward, you will gradually learn how the auto-generated tags
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto-generated tags
+\end_layout
+
+\end_inset
+
+ are built up out of Rapid library tags.
 \end_layout
 
 \begin_layout Standard
@@ -1239,6 +1327,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <a>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1520,6 +1618,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <name>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<name>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1613,6 +1721,16 @@ status collapsed
 
 \begin_layout Plain Layout
 implicit context
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+implicit context
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2010,7 +2128,17 @@ status collapsed
 
 \end_inset
 
- tag was to tell Hobo to change its implicit context to the 
+ tag was to tell Hobo to change its implicit context
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+implicit context
+\end_layout
+
+\end_inset
+
+ to the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -2033,6 +2161,15 @@ Now we are going to do this slightly differently by using another Rapid
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<repeat>
+\end_layout
+
+\end_inset
+
 <repeat>
 \end_layout
 
@@ -2366,6 +2503,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <name/>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<name/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2690,6 +2837,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <if>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<if>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2700,6 +2857,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <else>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<else>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

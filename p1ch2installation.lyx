@@ -149,7 +149,17 @@ So--get your favorite web browser fired up, have a good cup of coffee handy,
 \end_layout
 
 \begin_layout Section
-Installing Ruby, Rails and Hobo 
+Installing
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Installing
+\end_layout
+
+\end_inset
+
+ Ruby, Rails and Hobo 
 \end_layout
 
 \begin_layout Itemize
@@ -620,9 +630,18 @@ target "http://www.ruby-lang.org/en/documentation/quickstart/"
 \end_layout
 
 \begin_layout Standard
-Selecting the RubyGems Documentation Server sub-menu option will start a
- web server on port 8808 that provides hyperlinked information about each
- gem you have installed:
+Selecting the RubyGems Documentation Server
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+RubyGems Documentation Server
+\end_layout
+
+\end_inset
+
+ sub-menu option will start a web server on port 8808 that provides hyperlinked
+ information about each gem you have installed:
 \end_layout
 
 \begin_layout Standard
@@ -754,7 +773,27 @@ Command Prompt
 \end_layout
 
 \begin_layout Standard
-Now type the “gem list” command:
+Now type the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+gem list
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+gem list
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ command:
 \end_layout
 
 \begin_layout Standard
@@ -783,8 +822,18 @@ Sites> gem list
 \end_layout
 
 \begin_layout Standard
-The “gem list” command provides information about which ruby gems (modules)
- are installed and what versions are available.
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+gem list
+\end_layout
+
+\end_inset
+
+ command provides information about which ruby gems (modules) are installed
+ and what versions are available.
 \end_layout
 
 \begin_layout Standard
@@ -965,7 +1014,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Code
 C:
 \backslash
 Sites> gem install hobo -v 1.3.0.pre26 --pre
@@ -1182,7 +1231,17 @@ Step 4.
 \begin_layout Standard
 Choose and configure a text editor (optional) You can work through the tutorials
  in this book using Textpad or your favorite editor.
- However, for years TextMate (
+ However, for years TextMate
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+TextMate
+\end_layout
+
+\end_inset
+
+ (
 \begin_inset CommandInset href
 LatexCommand href
 target "http://macromates.com/"
@@ -1239,8 +1298,17 @@ TextMate Webpage
 \end_layout
 
 \begin_layout Standard
-Also take a look at two popular full Integrated Development environments
- you might find useful:
+Also take a look at two popular full 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Integrated Development Environments
+\end_layout
+
+\end_inset
+
+Integrated Development Environments you might find useful:
 \end_layout
 
 \begin_layout Standard
@@ -1289,11 +1357,31 @@ Instructions for installation of these database engines are next.
 \end_layout
 
 \begin_layout Section
-Using MySQL with Hobo
+Using MySQL
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+MySQL
+\end_layout
+
+\end_inset
+
+ with Hobo
 \end_layout
 
 \begin_layout Subsection*
-Step 1: Download and install MySQL 
+Step 1: Download and install MySQL
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+install MySQL
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Note Note
 status open
 
@@ -2358,7 +2446,17 @@ Note: Hobo and Rails make some assumptions about the naming of the development
 \end_layout
 
 \begin_layout Section
-Using Oracle with Hobo
+Using Oracle
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Oracle
+\end_layout
+
+\end_inset
+
+ with Hobo
 \end_layout
 
 \begin_layout Standard
@@ -2636,8 +2734,18 @@ The generated database.yml file for Oracle
 \end_layout
 
 \begin_layout Standard
-Since we recommended using the “oracle_enhanced” adapter, we will need to
- replace the plain “oracle” with “oracle_enhanced” 
+Since we recommended using the “oracle_enhanced
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+oracle_enhanced
+\end_layout
+
+\end_inset
+
+” adapter, we will need to replace the plain “oracle” with “oracle_enhanced”
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3293,12 +3401,32 @@ status collapsed
 
 \begin_layout Plain Layout
 Ruby
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Ruby
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  language interpreter, which in this case is a Windows executable.
- This engine is called MRI for “Matz’s Ruby Interpreter”.
+ This engine is called MRI for “Matz
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Matz
+\end_layout
+
+\end_inset
+
+’s Ruby Interpreter”.
  
 \begin_inset CommandInset href
 LatexCommand href
@@ -3374,7 +3502,17 @@ Hobo
  particularly on the View and Controller portions of the (MVC) web development
  framework.
  Hobo is written in Ruby.
- One of Hobo’s secret weapons is the powerful and succinct DRYML (
+ One of Hobo’s secret weapons is the powerful and succinct DRYML
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+DRYML
+\end_layout
+
+\end_inset
+
+ (
 \begin_inset Flex Strong
 status collapsed
 
@@ -3456,7 +3594,17 @@ sqlite3-ruby
 \end_layout
 
 \begin_layout Itemize
-The Webrick 
+The Webrick
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Webrick
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Flex Strong
 status collapsed
 

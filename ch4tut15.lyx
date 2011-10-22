@@ -93,6 +93,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <new-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -103,6 +113,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <edit-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -114,6 +134,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <form>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -135,6 +165,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <field-list>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -145,13 +185,32 @@ status collapsed
 
 \begin_layout Plain Layout
 <input>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  tags.
- You will also learn about the concept of a “polymorphic” tag, which renders
- form components based on field type and model structure.
+ You will also learn about the concept of a “polymorphic
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+polymorphic tag
+\end_layout
+
+\end_inset
+
+” tag, which renders form components based on field type and model structure.
 \end_layout
 
 \begin_layout Subsubsection
@@ -686,6 +745,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <form>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -742,6 +811,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <field-list>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -881,8 +960,17 @@ Default Hobo form rendering
 \end_layout
 
 \begin_layout Standard
-All of this capability results from Hobo’s implementation of tag polymorphism,
- an ability to do what is necessary from the 
+All of this capability results from Hobo’s implementation of tag polymorphism
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+tag polymorphism
+\end_layout
+
+\end_inset
+
+, an ability to do what is necessary from the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -920,6 +1008,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <new-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -940,6 +1038,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <edit-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1079,6 +1187,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <field-list>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1359,6 +1477,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <field-list>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<field-list>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1369,6 +1497,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <input>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<input>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1398,7 +1536,7 @@ status collapsed
 
 \end_inset
 
- tag when it is showing a record’s data, 
+ tag when it is showing a record’s data, by default 
 \begin_inset Flex Code
 status collapsed
 
@@ -1418,8 +1556,17 @@ status collapsed
 
 \end_inset
 
- tag when it is creating an empty form to enter a record or populating a
- form for editing a record.
+ tag when it is inside a form and the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<view>
+\end_layout
+
+\end_inset
+
+ tag when it is not.
  This is an illustration of tag polymorphism.
  That is, 
 \begin_inset Flex Code
@@ -1576,6 +1723,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <extend>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

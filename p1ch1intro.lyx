@@ -709,19 +709,9 @@ Fundamentals
 \end_layout
 
 \begin_layout Standard
-The Hobo developers have taken the DRY
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-DRY
-\end_layout
-
-\end_inset
-
- (Don’t Repeat Yourself) paradigm to a new level by identifying repetitive
- architectural patterns in data-driven web sites and particularly within
- Rails applications.
+The Hobo developers have taken the DRY (Don’t Repeat Yourself) paradigm
+ to a new level by identifying repetitive architectural patterns in data-driven
+ web sites and particularly within Rails applications.
  
 \end_layout
 
@@ -878,7 +868,17 @@ Rails and Hobo
 \end_layout
 
 \begin_layout Standard
-Hobo is a set of Rails plug-ins, which means that Hobo adds additional custom
+Hobo
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo
+\end_layout
+
+\end_inset
+
+ is a set of Rails plug-ins, which means that Hobo adds additional custom
  code to Rails, and coexists with Rails.
  So, essentially a Hobo application is a Rails application with additional
  capabilities.
@@ -1026,7 +1026,17 @@ Here are a few talking points:
 \end_layout
 
 \begin_layout Itemize
-The Hobo Model Controller takes the place of the Action Controller in Rails.
+The Hobo Model Controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo Model Controller
+\end_layout
+
+\end_inset
+
+ takes the place of the Action Controller in Rails.
  
 \end_layout
 
@@ -1038,17 +1048,46 @@ The Hobo Model Controller has access to information from both Hobo Permissions
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo Rapid
+\end_layout
+
+\end_inset
+
 Hobo Rapid pages are rendered using DRYML, which is passed to the DRYML
  “processor” that translates more declarative DRYML into standard Rails
  eRB (embedded Ruby) that is then rendered with Action View in Rails.
 \end_layout
 
 \begin_layout Section
-Hobo Enhancement Summary
+Hobo Enhancement
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo Enhancement
+\end_layout
+
+\end_inset
+
+ Summary
 \end_layout
 
 \begin_layout Subsubsection*
-Fields 
+Fields
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo Fields
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1140,7 +1179,17 @@ status collapsed
 \end_layout
 
 \begin_layout Subsubsection*
-Indexes 
+Indexes
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Database Indexes
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1151,7 +1200,17 @@ This is one of the newest additions to Hobo thanks to Matt Jones.
 \end_layout
 
 \begin_layout Subsubsection*
-Validations 
+Validations
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Validations
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1257,6 +1316,15 @@ For those of you with a Rails background, you can think of these as similar
 \end_layout
 
 \begin_layout Paragraph*
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Rapid Tag Library
+\end_layout
+
+\end_inset
+
 Rapid Tag Library.
  
 \end_layout
@@ -1275,6 +1343,15 @@ This library is a set of tags that deal with all aspects of view template
 \end_layout
 
 \begin_layout Paragraph*
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Rapid Generator
+\end_layout
+
+\end_inset
+
 Rapid Generator.
  
 \end_layout

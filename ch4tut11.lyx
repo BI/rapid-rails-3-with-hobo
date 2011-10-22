@@ -108,15 +108,65 @@ Topics
 \end_layout
 
 \begin_layout Itemize
-Defining tags from tags using the merge tag
+Defining tags from tags using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+ attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+merge attribute
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Defining tags from tags using the extend tag
+Defining tags from tags using the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+extend
+\end_layout
+
+\end_inset
+
+ tag
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+extend tag
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Replacing tag parameters (not tag content)
+Replacing tag parameters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Replacing tag parameters
+\end_layout
+
+\end_inset
+
+ (not tag content)
 \end_layout
 
 \begin_layout Standard
@@ -572,7 +622,7 @@ status collapsed
 \begin_layout Plain Layout
 front
 \backslash
-.index.dryml
+index.dryml
 \end_layout
 
 \end_inset
@@ -596,6 +646,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <extend>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1180,6 +1240,16 @@ status collapsed
 
 \begin_layout Plain Layout
 merge
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+merge
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

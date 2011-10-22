@@ -79,14 +79,34 @@ Tutorial 9
 \begin_inset Newline newline
 \end_inset
 
-Editing Auto-Generated Tags 
+Editing Auto-Generated Tags
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Editing Auto-Generated Tags
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
 In this tutorial, you will learn about Hobo’s auto-generated tags that render
  views in response to controller actions.
  You will find your way around Hobo’s Rapid directories and files where
- the auto-generated tags are stored.
+ the auto-generated tags
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto-generated tags
+\end_layout
+
+\end_inset
+
+ are stored.
  You will also learn how to make minor edits to the auto-generated tags
  to prepare you for making tags from tags and redefining tags in later tutorials.
 \end_layout
@@ -378,7 +398,17 @@ cards.dryml
 \end_inset
 
  every time you run a hobo g migration.
- Don’t edit these files because Hobo will overwrite them.
+ 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+Don’t edit these files
+\end_layout
+
+\end_inset
+
+ because Hobo will overwrite them.
   You can copy and paste pieces, and therefore override them, with code
  placed in either the 
 \begin_inset Flex Code
@@ -790,6 +820,16 @@ Route(URL)
 
 \begin_layout Plain Layout
 <index-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -837,6 +877,16 @@ index
 
 \begin_layout Plain Layout
 <new-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<new-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -884,6 +934,16 @@ new
 
 \begin_layout Plain Layout
 <show-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<show-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -931,6 +991,16 @@ show
 
 \begin_layout Plain Layout
 <edit-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<edit-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1007,9 +1077,29 @@ pages.dryml
 
 \end_inset
 
- file, but the <index-page> tag calls the Recipe <card> tag.
+ file, but the <index-page> tag calls the Recipe <card>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
+ tag.
  We will demonstrate this by editing them shortly.
- The <new-page> and <edit-page> tags call the Recipe <form> tags.
+ The <new-page> and <edit-page> tags call the Recipe <form>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+ tags.
  
 \end_layout
 
@@ -1041,8 +1131,18 @@ You might be confused at first because the auto-generated tags <form> and
 \begin_layout Standard
 There is a one-to-one association between these four tags and both controller
  actions and their associated routes.
- Routes are the URLs related to the web pages resulting from a particular
- controller action.
+ Routes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Routes
+\end_layout
+
+\end_inset
+
+ are the URLs related to the web pages resulting from a particular controller
+ action.
  Hobo automatically defines the routes, although they can be user-defined
  and customized too.
  
@@ -1324,6 +1424,16 @@ status collapsed
 
 \begin_layout Plain Layout
 views/taglibs/application.dryml
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1998,6 +2108,16 @@ status collapsed
 
 \begin_layout Plain Layout
 index.dryml
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+index.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2268,6 +2388,15 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<card>
+\end_layout
+
+\end_inset
+
 <card>
 \end_layout
 
@@ -2577,7 +2706,17 @@ How a change to the <index-page> tag affects a collection
 
 \begin_layout Standard
 You see how each record displayed has been changed.
- You didn’t need to iterate through a loop.
+ You didn’t need to iterate through a loop
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+loop
+\end_layout
+
+\end_inset
+
+.
  Iterating through all records in a collection is built in to Hobo’s tag
  processing.
  If you look back to Step 4 to see the 
@@ -2634,6 +2773,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <collection>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2743,6 +2892,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <form>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<form>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2768,7 +2927,17 @@ forms.dryml
 status collapsed
 
 \begin_layout Plain Layout
-Editing navigation tabs and their order
+Editing navigation tabs
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+navigation tabs
+\end_layout
+
+\end_inset
+
+ and their order
 \end_layout
 
 \end_inset
@@ -2789,6 +2958,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <main-nav>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<main-nav>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2819,6 +2998,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <app-name>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<app-name>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3030,6 +3219,16 @@ status collapsed
 
 \begin_layout Plain Layout
 Editing an application name
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+application name
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -103,6 +103,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <a>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<a>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -373,7 +383,17 @@ to
 
 \end_inset
 
- attribute defines the model to be used in the listing.
+ attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+to attribute
+\end_layout
+
+\end_inset
+
+ defines the model to be used in the listing.
  It is always prefixed by the 
 \begin_inset Quotes eld
 \end_inset
@@ -393,8 +413,18 @@ action
 
 \end_inset
 
- attribute defines the controller action which in the above case uses Hobo’s
- built-in 
+ attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+action attribute
+\end_layout
+
+\end_inset
+
+ defines the controller action which in the above case uses Hobo’s built-in
+ 
 \begin_inset Flex Emph
 status collapsed
 

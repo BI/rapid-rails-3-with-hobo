@@ -320,8 +320,17 @@ One of the ways is to examine the code that the author has written that
   In the early versions of Hobo, the rendering of pages, forms, and navigation
  flow was done “auto-magically” by Rapid.
   You couldn’t see how it worked until version  0.8.0.
-  It was in this release that Tom Locke made visible the DRYML code that
- was being executed in the background.
+  It was in this release that Tom Locke made visible the DRYML
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML
+\end_layout
+
+\end_inset
+
+ code that was being executed in the background.
 \end_layout
 
 \begin_layout Standard
@@ -399,6 +408,16 @@ status collapsed
 
 \begin_layout Plain Layout
 cards.dryml
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -409,6 +428,16 @@ status collapsed
 
 \begin_layout Plain Layout
 forms.dryml
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -419,6 +448,16 @@ status collapsed
 
 \begin_layout Plain Layout
 pages.dryml
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -431,12 +470,31 @@ pages.dryml
 \end_layout
 
 \begin_layout Standard
-DRYML provides a high-level of abstraction for formatting web pages and
- dealing with all aspects of data-driven applications.
+DRYML
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML
+\end_layout
+
+\end_inset
+
+ provides a high-level of abstraction for formatting web pages and dealing
+ with all aspects of data-driven applications.
   Listing, displaying, creating, editing and deleting records are simplified
  without specifying the granular level of detail that other frameworks require,
- such as Rails with its ERB (embedded Ruby) pages that are a hybrid of Ruby
- and HTML.
+ such as Rails with its ERB
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ERB
+\end_layout
+
+\end_inset
+
+ (embedded Ruby) pages that are a hybrid of Ruby and HTML.
 \end_layout
 
 \begin_layout Standard
@@ -456,7 +514,17 @@ User-defined tags that you can use to extend Hobo
 \end_layout
 
 \begin_layout Paragraph*
-Hobo Rapid Library of Tags.
+Hobo Rapid Library
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo Rapid Library
+\end_layout
+
+\end_inset
+
+ of Tags.
 \end_layout
 
 \begin_layout Standard
@@ -469,7 +537,17 @@ Hobo comes with a pre-coded set of tags that you can use to build other
 \end_layout
 
 \begin_layout Paragraph*
-Auto-generated DRYML.
+Auto-generated DRYML
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Auto-generated DRYML
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 

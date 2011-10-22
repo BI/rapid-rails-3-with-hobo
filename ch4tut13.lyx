@@ -123,7 +123,17 @@ replace
 
 \end_inset
 
- attribute to change the content of a parameter tag.
+ attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+replace attribute
+\end_layout
+
+\end_inset
+
+ to change the content of a parameter tag.
 \end_layout
 
 \begin_layout Itemize
@@ -272,12 +282,32 @@ fields
 
 \end_inset
 
- attribute of the 
+ attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+fields attribute
+\end_layout
+
+\end_inset
+
+ of the 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
 <table-plus>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<table-plus>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -315,13 +345,23 @@ this
 
 \end_inset
 
- keyword.
+ keyword
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+this keyword
+\end_layout
+
+\end_inset
+
+.
  
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
-This
+this
 \end_layout
 
 \end_inset
@@ -745,7 +785,17 @@ Add search and sort capability to the table
 \end_inset
 
 .
- Until now we have worked very little with controllers.
+ Until now we have worked very little with controllers
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+controllers
+\end_layout
+
+\end_inset
+
+.
  You will quickly realize that to add search and sort, we will have to make
  a change in the 
 \begin_inset Flex Emph
@@ -856,7 +906,37 @@ def index
 \end_layout
 
 \begin_layout Code
- hobo_index Recipe.apply_scopes(:search => [params[:search],
+ hobo_index
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+hobo_index
+\end_layout
+
+\end_inset
+
+ Recipe.apply_scopes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+apply_scopes
+\end_layout
+
+\end_inset
+
+(:search => [params
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+[:search],
 \end_layout
 
 \begin_layout Code
@@ -864,7 +944,17 @@ def index
 \end_layout
 
 \begin_layout Code
-parse_sort_param(:title, :country, :count))
+parse_sort_param
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parse_sort_param
+\end_layout
+
+\end_inset
+
+(:title, :country, :count))
 \end_layout
 
 \begin_layout Code

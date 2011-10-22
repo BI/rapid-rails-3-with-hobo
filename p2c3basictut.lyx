@@ -285,7 +285,17 @@ tutorials>
 status collapsed
 
 \begin_layout Plain Layout
-Create a Hobo application.
+Create a Hobo application
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Create a Hobo application
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -383,8 +393,28 @@ Note: The screen captures were taken with Hobo 1.3 pre-release # 26 as of
 
 \begin_layout Standard
 You will see a log of what Hobo is creating go by within the shell window
- that you will better understand as you learn Hobo’s directory structure.
- The first prompt from the Hobo Setup Wizard will appear as follows:
+ that you will better understand as you learn Hobo’s directory structure
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo’s directory structure
+\end_layout
+
+\end_inset
+
+.
+ The first prompt from the Hobo Setup Wizard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo Setup Wizard
+\end_layout
+
+\end_inset
+
+ will appear as follows:
 \end_layout
 
 \begin_layout Standard
@@ -682,7 +712,17 @@ Completion Message
 status collapsed
 
 \begin_layout Plain Layout
-Start the web server.
+Start the web server
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+web server
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -842,7 +882,17 @@ Register Administrator Screen
 Hobo, by default, assumes the first person that launches the application
  will be an administrator.
  Go ahead and enter the information required and click on the “Register
- Administrator” button: 
+ Administrator
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Administrator
+\end_layout
+
+\end_inset
+
+” button: 
 \end_layout
 
 \begin_layout Standard
@@ -970,6 +1020,16 @@ status collapsed
 
 \begin_layout Plain Layout
 app/models
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+app/models
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1015,9 +1075,18 @@ The default User model created by Hobo
 \end_layout
 
 \begin_layout Standard
-Hobo took care of building the User model and generating the database table
- needed because we selected the “m” (generate and migrate) option for step
- 6 of the Hobo Setup Wizard: 
+Hobo took care of building the User model
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+User model
+\end_layout
+
+\end_inset
+
+ and generating the database table needed because we selected the “m” (generate
+ and migrate) option for step 6 of the Hobo Setup Wizard: 
 \end_layout
 
 \begin_layout Standard
@@ -1138,8 +1207,17 @@ Contents of the first Hobo migration file
 \end_layout
 
 \begin_layout Standard
-Take a look at the schema and you will see that it corresponds to the migration
- file:
+Take a look at the schema
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+schema
+\end_layout
+
+\end_inset
+
+ and you will see that it corresponds to the migration file:
 \end_layout
 
 \begin_layout Standard
@@ -1457,6 +1535,15 @@ Note: When Hobo makes a web page, it takes tags from the
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
 pages.dryml
 \end_layout
 
@@ -1478,6 +1565,15 @@ pages.dryml
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+form.dryml
+\end_layout
+
+\end_inset
+
 form.dryml
 \end_layout
 
@@ -1499,6 +1595,15 @@ pages.dryml
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
 cards.dryml
 \end_layout
 
@@ -1534,6 +1639,16 @@ status collapsed
 
 \begin_layout Plain Layout
 application.dryml
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1548,7 +1663,17 @@ taglibs/application
 
 \end_inset
 
- folder and save your tags to a 
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+taglibs folder
+\end_layout
+
+\end_inset
+
+folder and save your tags to a 
 \begin_inset Flex Code
 status collapsed
 
@@ -1608,9 +1733,67 @@ app/views/<model>
 
 \begin_layout Plain Layout
 So far, we only have the front (home page) and the users template directories.
- You will see after creating a new model (running hobo g resource or hobo
- g model) and running hobo g migration, that directories will be created
- and named for your new models.
+ You will see after creating a new model (running 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g resource
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+hobo g resource
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g model
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+hobo g model
+\end_layout
+
+\end_inset
+
+) and running 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+, that directories will be created and named for your new models.
  
 \end_layout
 
@@ -1649,10 +1832,16 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Code
 
 \backslash
-my-first-app> hobo g resource contact name:string company:string
+my-first-app> hobo g resource contact 
+\backslash
+
+\end_layout
+
+\begin_layout Code
+               name:string company:string
 \end_layout
 
 \end_inset
@@ -2206,7 +2395,17 @@ Try out the search facility.
 \end_inset
 
  Type the name of one your contacts to exercise the search facility.
- The default search searches “name” fields.
+ The default search
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+search
+\end_layout
+
+\end_inset
+
+ searches “name” fields.
  You need at lease three characters for a partial word search.
  
 \end_layout
@@ -2219,6 +2418,16 @@ status collapsed
 
 \begin_layout Plain Layout
 Add columns to the database.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Adding model fields
 \end_layout
 
 \end_inset
@@ -2351,6 +2560,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo g migration
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2461,6 +2680,16 @@ status collapsed
 
 \begin_layout Plain Layout
 Remove columns from the database.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Removing model fields
 \end_layout
 
 \end_inset
@@ -2628,7 +2857,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Code
 
 \backslash
 my-first-app> hobo g migration
@@ -2894,7 +3123,17 @@ You can see that address_2 is gone.
 status collapsed
 
 \begin_layout Plain Layout
-Adding and removing database tables.
+Adding and removing database tables
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+removing database tables
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -2968,6 +3207,16 @@ rake db:migrate VERSION = XXX
 
 \begin_layout Section*
 Tutorial 2 – Changing Field Names
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Changing Field Names
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3306,7 +3555,17 @@ Refresh your browser and you will now see the field labeled ‘Married Now.’
 status collapsed
 
 \begin_layout Plain Layout
-Changing field names.
+Changing field names
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Changing field names
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -3319,6 +3578,16 @@ status collapsed
 
 \begin_layout Plain Layout
 i18n
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+i18n
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3362,6 +3631,16 @@ status collapsed
 
 \begin_layout Plain Layout
 config/locales
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+config/locales
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3375,6 +3654,16 @@ status collapsed
 
 \begin_layout Plain Layout
 app.en.yml
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+app.en.yml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3398,6 +3687,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo.en.yml
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+hobo.en.yml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3752,6 +4051,16 @@ i18n
 
 \end_inset
 
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Attribute input help
+\end_layout
+
+\end_inset
+
  The application locale (
 \begin_inset Flex Code
 status collapsed
@@ -3926,6 +4235,16 @@ status collapsed
 
 \begin_layout Plain Layout
 rapid-ui.css
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+rapid-ui.css
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4028,6 +4347,16 @@ Modified entry in "application.css" to shorten text prompts
 
 \begin_layout Section*
 Tutorial 3 – Field Validation
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Field Validation
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4138,6 +4467,15 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+validates_presence_of
+\end_layout
+
+\end_inset
+
 validates_presence_of :name 
 \end_layout
 
@@ -4398,7 +4736,17 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
-validates_numericality_of :age
+validates_numericality_of
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+validates_numericality_of
+\end_layout
+
+\end_inset
+
+ :age
 \end_layout
 
 \end_inset
@@ -4549,6 +4897,16 @@ status collapsed
 
 \begin_layout Plain Layout
 Prevent the entry of duplicates.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Validate uniqueness
 \end_layout
 
 \end_inset
@@ -4731,7 +5089,17 @@ Page view of triggering a range validation error
 status collapsed
 
 \begin_layout Plain Layout
-Validate length of entry.
+Validate length
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Validate length
+\end_layout
+
+\end_inset
+
+ of entry.
 \end_layout
 
 \end_inset
@@ -4805,10 +5173,6 @@ Page view of validation of text length error
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -4821,7 +5185,17 @@ Page view of validation of text length error
 status collapsed
 
 \begin_layout Plain Layout
-Validate acceptance.
+Validate acceptance
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Validate acceptance
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -4936,7 +5310,17 @@ Summary.
 
 \end_inset
 
- Here is the list of validations we accumulated during this tutorial: 
+ Here is the list of validations
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+validations
+\end_layout
+
+\end_inset
+
+ we accumulated during this tutorial: 
 \end_layout
 
 \begin_layout Standard
@@ -5042,6 +5426,15 @@ For example, the following is a sample of the list of options for the
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+validates_length_of
+\end_layout
+
+\end_inset
+
 validates_length_of
 \end_layout
 
@@ -5053,6 +5446,16 @@ status collapsed
 
 \begin_layout Plain Layout
 validates_size_of
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+validates_size_of
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5385,8 +5788,17 @@ The method, procedure, or string should return or evaluate to a true or
 
 \end_deeper
 \begin_layout Standard
-We encourage you to read about validation helpers (what Rails calls functions)
- in the many good Ruby on Rails references.
+We encourage you to read about validation helpers
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+validation helpers
+\end_layout
+
+\end_inset
+
+ (what Rails calls functions) in the many good Ruby on Rails references.
  The following is a useful on-line reference:
 \end_layout
 
@@ -5401,7 +5813,17 @@ target "http://api.rubyonrails.org/classes/ActiveRecord/Validations/ClassMethods
 \end_layout
 
 \begin_layout Section
-Tutorial 4 – Permissions 
+Tutorial 4 – Permissions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5491,9 +5913,18 @@ status collapsed
 
 \end_inset
 
- command line parameter the application will bypass the setup wizard and
- create the application with default settings, Then change directory to
- the subdirectory 
+ command line parameter the application will bypass the setup wizard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+bypass the setup wizard
+\end_layout
+
+\end_inset
+
+ and create the application with default settings, Then change directory
+ to the subdirectory 
 \begin_inset Flex Code
 status collapsed
 
@@ -5867,7 +6298,7 @@ status collapsed
 \begin_inset Quotes eld
 \end_inset
 
-hobo:resource
+hobo resource
 \begin_inset Quotes erd
 \end_inset
 
@@ -5926,7 +6357,17 @@ status open
 \begin_layout LyX-Code
 
 \backslash
-one_table> hobo g resource recipe title:string 
+one_table> hobo g resource
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+hobo g resource
+\end_layout
+
+\end_inset
+
+ recipe title:string 
 \end_layout
 
 \begin_layout LyX-Code
@@ -5954,7 +6395,7 @@ recipe.rb
 status collapsed
 
 \begin_layout Plain Layout
-hobo:migration
+hobo migration
 \end_layout
 
 \end_inset
@@ -6014,7 +6455,7 @@ recipes_helper.rb
 status collapsed
 
 \begin_layout Plain Layout
-hobo:migration
+hobo migration
 \end_layout
 
 \end_inset
@@ -6280,7 +6721,17 @@ cannot
 \end_inset
 
  create or edit a recipe.
- This is governed by the Hobo “Permissions” module.
+ This is governed by the Hobo “Permissions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions
+\end_layout
+
+\end_inset
+
+” module.
  In the next step, you will change the user permissions and see how the
  user interface responds by automatically providing creation and editing
  capabilities in the user interface.
@@ -6331,7 +6782,17 @@ status open
 \end_layout
 
 \begin_layout LyX-Code
-def create_permitted? 
+def create_permitted?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+create_permitted?
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -6347,7 +6808,17 @@ end
 \end_layout
 
 \begin_layout LyX-Code
-def update_permitted? 
+def update_permitted?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -6363,7 +6834,17 @@ end
 \end_layout
 
 \begin_layout LyX-Code
-def destroy_permitted? 
+def destroy_permitted?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+destroy_permitted?
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -6379,7 +6860,17 @@ end
 \end_layout
 
 \begin_layout LyX-Code
-def view_permitted?(field) 
+def view_permitted?(field)
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+view_permitted?(field)
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -6570,7 +7061,7 @@ delete a record
 status collapsed
 
 \begin_layout Plain Layout
-View_permitted?(field)
+view_permitted?(field)
 \end_layout
 
 \end_inset
@@ -6620,7 +7111,7 @@ For the code that is generated by the
 status collapsed
 
 \begin_layout Plain Layout
-hobo:resource
+hobo resource
 \end_layout
 
 \end_inset
@@ -6649,30 +7140,20 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="30col%">
 <column alignment="left" valignment="top" width="70col%">
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-acting_user
-\end_layout
-
-\end_inset
-
-
 \begin_inset Flex Strong
 status collapsed
 
 \begin_layout Plain Layout
- method
+Method
 \end_layout
 
 \end_inset
@@ -6682,7 +7163,7 @@ status collapsed
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6702,6 +7183,45 @@ Meaning
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the user who is being tested for permission
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -6710,6 +7230,15 @@ Meaning
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
 administrator?
 \end_layout
 
@@ -6739,6 +7268,15 @@ first user to sign up
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+signed_up?
+\end_layout
+
+\end_inset
+
 signed_up?
 \end_layout
 
@@ -6768,6 +7306,15 @@ any user who is signed up (including the administrator)
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+guest?
+\end_layout
+
+\end_inset
+
 guest?
 \end_layout
 
@@ -6880,7 +7427,27 @@ acting_user.administrator?
 
 \end_inset
 
- equals ‘1’ if the user is the administrator and ‘0’ if the user is not.
+ is 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+true
+\end_layout
+
+\end_inset
+
+ if the user is the administrator and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+false
+\end_layout
+
+\end_inset
+
+ if the user is not.
  If we place it within the 
 \begin_inset Flex Code
 status collapsed
@@ -6911,7 +7478,7 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: The ‘?’ after signed up indicates the method is a Boolean method.
+Convention: The ‘?’ after signed up indicates the method is a Boolean method.
  
 \end_layout
 
@@ -7045,7 +7612,17 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
-def create_permitted? 
+def 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+create_permitted?
+\end_layout
+
+\end_inset
+
+create_permitted? 
 \end_layout
 
 \begin_layout LyX-Code
@@ -7168,7 +7745,17 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
-def update_permitted? 
+def 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+update_permitted?
+\end_layout
+
+\end_inset
+
+update_permitted? 
 \end_layout
 
 \begin_layout LyX-Code
@@ -7184,7 +7771,17 @@ end
 \end_layout
 
 \begin_layout LyX-Code
-def destroy_permitted? 
+def 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+destroy_permitted?
+\end_layout
+
+\end_inset
+
+destroy_permitted? 
 \end_layout
 
 \begin_layout LyX-Code
@@ -7341,9 +7938,18 @@ signed_up?
 
 \end_inset
 
- methods to guest and you will observe that you have full permissions even
- if you are not signed in.
- 
+ methods to 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+guest?
+\end_layout
+
+\end_inset
+
+ and you will observe that you have full permissions even if you are not
+ signed in and none if you are! 
 \end_layout
 
 \begin_layout Standard
@@ -7363,6 +7969,16 @@ signed_up?
 
 \begin_layout Section*
 Tutorial 5 – Controllers
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Controllers
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -7370,16 +7986,46 @@ Topics
 \end_layout
 
 \begin_layout Itemize
-Introduce Hobo’s controller/routing system.
+Introduce Hobo’s controller/routing
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+routing
+\end_layout
+
+\end_inset
+
+ system.
  
 \end_layout
 
 \begin_layout Itemize
-Hobo automatic actions 
+Hobo automatic actions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo automatic actions
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
-Show examples of the permission system working with controllers 
+Show examples of the permission system
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+permission system
+\end_layout
+
+\end_inset
+
+ working with controllers 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -7484,6 +8130,16 @@ class RecipesController < ApplicationController
 
 \begin_layout LyX-Code
   hobo_model_controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+hobo_model_controller
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout LyX-Code
@@ -7491,7 +8147,17 @@ class RecipesController < ApplicationController
 \end_layout
 
 \begin_layout LyX-Code
-        auto_actions :all 
+  auto_actions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions
+\end_layout
+
+\end_inset
+
+ :all 
 \end_layout
 
 \begin_layout LyX-Code
@@ -7536,6 +8202,16 @@ status collapsed
 
 \begin_layout Plain Layout
 ApplicationController
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+ApplicationController
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7609,12 +8285,61 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: The pound (or “hash”) character (#) is the symbol to indicate a Ruby
- comment.
+Note: The pound (or “hash”) character (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+#
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+#
+\end_layout
+
+\end_inset
+
+) is the symbol to indicate a Ruby comment
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Ruby comment
+\end_layout
+
+\end_inset
+
+.
  Everything on a line following # will be ignored by Ruby.
  Code starts again on the next line.
  To create view template comments, where you are not in a Ruby file you
- must surround comments like this <!--Comment-->.
+ must surround comments like this 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<!--Comment-->
+\end_layout
+
+\end_inset
+
+ which will be visible in the generated html source or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<%# comment %>
+\end_layout
+
+\end_inset
+
+ which will not.
 \end_layout
 
 \end_inset
@@ -7734,9 +8459,18 @@ recipes
 \end_layout
 
 \begin_layout Standard
-We are going to further demonstrate that attempting to route to this URL
- invokes the index action by turning off the action in Hobo and then putting
- turning it back on.
+We are going to further demonstrate that attempting to route
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+route
+\end_layout
+
+\end_inset
+
+ to this URL invokes the index action by turning off the action in Hobo
+ and then putting turning it back on.
  First, go to your home page by clicking the Home tab.
  Then, in 
 \begin_inset Flex Code
@@ -8026,8 +8760,27 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: If you are new to Ruby you are probably noticing all the colons(:)
- and arrows (=>).
+Note: If you are new to Ruby you are probably noticing all the colons(
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+
+) and arrows (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+=>
+\end_layout
+
+\end_inset
+
+).
  For now.
  Think of these two as a way of connecting a Ruby symbol (any text that
  begins with a colon) to a value (the entity after the expression “=>”).
@@ -8459,13 +9212,52 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: Hobo assigns a name variable to the model equal to the value of the
- field it thinks is the most likely summary field.
- Hobo first looks for a field called name.
+Note: Hobo picks a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+default model name
+\end_layout
+
+\end_inset
+
+ from the model with the value of the field it thinks is the most likely
+ summary field.
+ Hobo first looks for a field called 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+name
+\end_layout
+
+\end_inset
+
+.
  Next it looks for the next most likely, which in this case it guesses is
- title.
- You can override the automatic name assignment by adding the option :name
- => true to the field you would like displayed as the “name”.
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+title
+\end_layout
+
+\end_inset
+
+.
+ You can override the automatic name assignment by adding the option 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:name => true
+\end_layout
+
+\end_inset
+
+ to the field you would like displayed as the “name”.
  
 \end_layout
 
@@ -9200,8 +9992,17 @@ status collapsed
 
 \end_inset
 
- method takes a Ruby array as an input and Ruby arrays are enclosed in square
- brackets.
+ method takes a Ruby array
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+array
+\end_layout
+
+\end_inset
+
+ as an input and Ruby arrays are enclosed in square brackets.
  
 \end_layout
 
@@ -9252,7 +10053,17 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
-auto_actions :read_only 
+auto_actions :read_only
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions :read_only
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
@@ -9306,7 +10117,17 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
-auto_actions :write_only 
+auto_actions :write_only
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions :write_only
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
@@ -9401,7 +10222,17 @@ except
 status collapsed
 
 \begin_layout Plain Layout
- Hobo Controller action summary.
+ Hobo Controller action
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo Controller action
+\end_layout
+
+\end_inset
+
+ summary.
 \end_layout
 
 \end_inset
@@ -10017,6 +10848,16 @@ Hobo Controller action summary
 
 \begin_layout Section
 Tutorial 6 – Navigation Tabs
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Navigation Tabs
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10066,7 +10907,17 @@ Steps
 status collapsed
 
 \begin_layout Plain Layout
-Find Hobo’s auto-generated tags.
+Find Hobo’s auto-generated tags
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto-generated tags
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -10078,6 +10929,16 @@ status collapsed
 
 \begin_layout Plain Layout
 views/taglibs/auto/rapid
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+views/taglibs/auto/rapid
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10089,6 +10950,16 @@ status collapsed
 
 \begin_layout Plain Layout
 pages.dryml
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+pages.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10099,6 +10970,16 @@ status collapsed
 
 \begin_layout Plain Layout
 forms.dryml
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+forms.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10109,6 +10990,16 @@ status collapsed
 
 \begin_layout Plain Layout
 cards.dryml
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+cards.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10196,6 +11087,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <main-nav>
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+<main-nav>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10239,6 +11140,16 @@ status collapsed
 
 \begin_layout Plain Layout
 views/taglibs/application.dryml
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10361,7 +11272,17 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
-Use Hobo’s i18n module to specify a new value for the 
+Use Hobo’s i18n
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+i18n
+\end_layout
+
+\end_inset
+
+ module to specify a new value for the 
 \begin_inset Flex Code
 status collapsed
 
@@ -10541,7 +11462,17 @@ Remove the Home Tab
 
 .
  Instead of deleting the Home tab, just comment it out by surrounding it
- with <!-- ...-->.
+ with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<!-- ...-->
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -10562,6 +11493,7 @@ status open
 \begin_layout Description
 Note: Since view files are essentially HTML and not Ruby code, you use the
  HTML commenting syntax instead of the Ruby comment syntax.
+ However know that HTML comments will be visible in the generated page source.
 \end_layout
 
 \end_inset
@@ -10677,8 +11609,17 @@ Reset the tabs.
 
 \end_inset
 
- Since editing the application.dryml file will interfere with future tutorials,
- delete the code you copied above.
+ Since editing the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file will interfere with future tutorials, delete the code you copied above.
  
 \end_layout
 
@@ -10796,7 +11737,17 @@ Model relationships
 \end_layout
 
 \begin_layout Itemize
-Foreign keys 
+Foreign keys
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Foreign keys
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -10984,6 +11935,16 @@ status collapsed
 
 \begin_layout Plain Layout
 enum_string
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11350,17 +12311,8 @@ status collapsed
 \end_inset
 
 .
- We will use Hobo’s 
-\begin_inset Flex Code
-status collapsed
-
-\begin_layout Plain Layout
-hobo:resource
-\end_layout
-
-\end_inset
-
- generator to create a new model with one field to store a country’s name.
+ We will use Hobo’s resource generator to create a new model with one field
+ to store a country’s name.
  If you do not have a command prompt window open besides the window you
  used to start your web server, open a new one now and navigate to the root
  of the application.
@@ -11502,17 +12454,17 @@ countries
 \end_layout
 
 \begin_layout Standard
-The 
-\begin_inset Flex Code
-status collapsed
+The hobo resource generator
+\begin_inset Index idx
+status open
 
 \begin_layout Plain Layout
-hobo:resource
+hobo resource generator
 \end_layout
 
 \end_inset
 
- generator also created some other files.
+ also created some other files.
  An important one is the controller file called 
 \begin_inset Flex Code
 status collapsed
@@ -11706,6 +12658,16 @@ status collapsed
 
 \begin_layout Plain Layout
 belongs_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11951,7 +12913,12 @@ name
  field.
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In the above 
 \begin_inset Flex Code
 status collapsed
@@ -11990,11 +12957,6 @@ Country
  as in the following code:
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"
@@ -12031,6 +12993,16 @@ status collapsed
 
 \begin_layout Plain Layout
 has_many
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12186,7 +13158,17 @@ recipes
 \end_layout
 
 \begin_layout Itemize
-Set up a foreign key to handle the relationship between 
+Set up a foreign key
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+foreign key
+\end_layout
+
+\end_inset
+
+ to handle the relationship between 
 \begin_inset Flex Code
 status collapsed
 
@@ -12704,8 +13686,17 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: Hobo automatically creates appropriate indexes for table relationships
- with foreign keys.
+Note: Hobo automatically creates appropriate indexes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+indexes
+\end_layout
+
+\end_inset
+
+ for table relationships with foreign keys.
  We will discuss how to enhance or disable this feature in a later tutorial.
 \end_layout
 
@@ -13198,7 +14189,17 @@ Countries
 \end_layout
 
 \begin_layout Section*
-Tutorial 8 – Model Relationships: Part II
+Tutorial 8 – Model Relationships
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Model Relationships
+\end_layout
+
+\end_inset
+
+: Part II
 \end_layout
 
 \begin_layout Standard
@@ -13211,6 +14212,16 @@ status collapsed
 
 \begin_layout Plain Layout
 has_many
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13221,6 +14232,16 @@ status collapsed
 
 \begin_layout Plain Layout
 has_many =>:through
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+has_many =>:through
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13298,6 +14319,16 @@ status collapsed
 
 \begin_layout Plain Layout
 belongs_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13342,8 +14373,17 @@ Copy the Application
 .
  Just like you did in Tutorial 7, we suggest you copy your application from
  Tutorial 7 in order to easily go back to its state at the end of that tutorial.
- Shut down the web server by issuing a <Control-C> in the command window
- where you issued the rails server command.
+ Shut down the web server by issuing a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<Control-C>
+\end_layout
+
+\end_inset
+
+ in the command window where you issued the rails server command.
  
 \end_layout
 
@@ -13721,8 +14761,18 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: Hobo migrations rely on both the field declarations in your models
- AND the relationship declarations.
+Note: 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo migrations
+\end_layout
+
+\end_inset
+
+Hobo migrations rely on both the field declarations in your models AND the
+ relationship declarations.
  The relationship declarations allows Hobo to setup all the necessary keys
  to implement real model relationships.
  
@@ -14026,6 +15076,16 @@ status collapsed
 
 \begin_layout Plain Layout
 belongs_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14097,6 +15157,16 @@ status collapsed
 
 \begin_layout Plain Layout
 has_many :through
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14109,6 +15179,16 @@ status collapsed
 
 \begin_layout Plain Layout
 has_many
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14164,6 +15244,16 @@ status collapsed
 
 \begin_layout Plain Layout
 :dependent => destroy
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+:dependent => destroy
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14661,6 +15751,16 @@ Add information to the model in order to display the associations
 \end_inset
 
 ViewHints
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ViewHints
+\end_layout
+
+\end_inset
+
+
 \begin_inset Quotes erd
 \end_inset
 
@@ -14771,7 +15871,17 @@ status collapsed
 \begin_layout Plain Layout
 
 \color red
-children :categories
+children
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+children
+\end_layout
+
+\end_inset
+
+ :categories
 \end_layout
 
 \end_inset
@@ -15197,6 +16307,16 @@ status collapsed
 
 \begin_layout Plain Layout
 has_many
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+has_many
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -15207,6 +16327,16 @@ status collapsed
 
 \begin_layout Plain Layout
 has_many :through
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+has_many :through
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -15218,6 +16348,16 @@ status collapsed
 
 \begin_layout Plain Layout
 belongs_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

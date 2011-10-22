@@ -84,7 +84,17 @@ DRYML I:  A First Look at DRYML
 
 \begin_layout Standard
 You will be introduced to the concept of a user-defined tag, called a DRYML
- tag.
+ tag
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML tag
+\end_layout
+
+\end_inset
+
+.
  The tutorial shows you how to make minor changes to the home page template
  by defining DRYML tags.
  You will also learn how to parameterize tags with the DRYML parameter attribute
@@ -122,6 +132,16 @@ status collapsed
 
 \begin_layout Plain Layout
 param
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+param
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -132,6 +152,16 @@ status collapsed
 
 \begin_layout Plain Layout
 params
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+params
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -217,6 +247,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <def>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -544,6 +584,15 @@ Parameterize the tag
 \end_inset
 
 .
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+tag param
+\end_layout
+
+\end_inset
+
  Change the following code in the 
 \begin_inset Flex Code
 status collapsed
@@ -667,6 +716,16 @@ status collapsed
 
 \begin_layout Plain Layout
 parameter tag
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parameter tag
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1060,6 +1119,16 @@ status collapsed
 
 \begin_layout Plain Layout
 using param = ”default”
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+param = ”default”
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1548,8 +1617,17 @@ status collapsed
 
  parameter to the default parameter, Hobo will ignore explicit uses of it
  Hobo will only emit the default content if you name it explicitly.
- Once you use the default parameter attribute you are committed to the more
- compact notation.
+ Once you use the default parameter attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+default parameter attribute
+\end_layout
+
+\end_inset
+
+ you are committed to the more compact notation.
  There can only be one “
 \begin_inset Flex Code
 status collapsed
