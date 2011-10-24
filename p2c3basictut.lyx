@@ -398,7 +398,7 @@ You will see a log of what Hobo is creating go by within the shell window
 status open
 
 \begin_layout Plain Layout
-Hobo’s directory structure
+directory structure
 \end_layout
 
 \end_inset
@@ -1569,12 +1569,12 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-form.dryml
+forms.dryml
 \end_layout
 
 \end_inset
 
-form.dryml
+forms.dryml
 \end_layout
 
 \end_inset
@@ -13688,10 +13688,10 @@ status open
 \begin_layout Description
 Note: Hobo automatically creates appropriate indexes
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-indexes
+database indexes
 \end_layout
 
 \end_inset
@@ -14236,7 +14236,7 @@ has_many =>:through
 status collapsed
 
 \begin_layout Plain Layout
-has_many =>:through
+has_many :through
 \end_layout
 
 \end_inset
