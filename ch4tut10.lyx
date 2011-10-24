@@ -1120,10 +1120,10 @@ status collapsed
 \begin_layout Plain Layout
 using param = ”default”
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-param = ”default”
+default parameter attribute
 \end_layout
 
 \end_inset
