@@ -169,8 +169,17 @@ polymorphism
 \end_inset
 
 .
- The comments model will have a polymorphic association to the parent, the
- one that 
+ The comments model will have a polymorphic association
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+polymorphic associations
+\end_layout
+
+\end_inset
+
+ to the parent, the one that 
 \begin_inset Flex Code
 status collapsed
 
@@ -376,18 +385,28 @@ status collapsed
 
 \begin_layout Plain Layout
 :polymorphic => true
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+:polymorphic => true
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  bit.
- This is actually from rails, but really can shine with some dryml magic
+ This is actually from rails, but really can shine with some DRYML magic
  attached.
  What this does, once you migrate, is adds a 'type' column to the comments
- table.
+ table in addition to the standard commentable_id column.
  Now, when you attach a comment to another model, in addition to the model's
  id, it also stores the type (id on it's own is not enough to guarantee
- finding the right model).
+ finding the right model with a polymorphic association).
 \end_layout
 
 \begin_layout Standard
@@ -555,6 +574,15 @@ We don't need to change the other permissions as they're already what we
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+owner_is?
+\end_layout
+
+\end_inset
+
 owner_is?
 \end_layout
 
@@ -583,7 +611,7 @@ owner_id == acting_user.id
 
 .
  Also, by having it so that the only allowed creation is when the owner
- is the acting_user, Rapid will remove the owner from the form.
+ is the acting_user, Rapid will remove the owner selector from the form.
  Pretty slick.
 \end_layout
 
@@ -1042,6 +1070,16 @@ status collapsed
 
 \begin_layout Plain Layout
 part
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+DRYML parts
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1419,8 +1457,8 @@ In Closing
 \end_layout
 
 \begin_layout Standard
-Notice, that as you add new models, you can add comment support simply by
- declaring that the model 
+As you add new models, you can add comment support simply by declaring that
+ the model 
 \begin_inset Flex Code
 status collapsed
 
@@ -1444,8 +1482,8 @@ Change the date format
 \end_layout
 
 \begin_layout Itemize
-Add a summary of user comments with links to the commented items on the
- user page
+Add a summary of a User's comments with links to the commented items on
+ the user page
 \end_layout
 
 \begin_layout Itemize
@@ -1465,8 +1503,8 @@ The point it's inserting the comment list and form is potentially problematic
 Think about how this design pattern could be used elsewhere.
  Personally I've used something similar with tags, categories and ratings.
  And don't forget you can use it with lifecycle transitions, such as by
- replacing delete buttons with a lifecycle link on edit-pages when a merge_and_d
-elete method is present.
+ replacing delete buttons with a lifecycle link on edit-pages when something
+ like a merge_and_delete method is present.
 \end_layout
 
 \end_body

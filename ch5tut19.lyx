@@ -101,8 +101,27 @@ Overview
 
 \begin_layout Standard
 Presenting data in a visual informative way is a powerful.
- A widely-used charting and graphing library that includes lots of special
- effects is FusionCharts from InfoSoft (
+ A widely-used charting
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+charting
+\end_layout
+
+\end_inset
+
+ and graphing library that includes lots of special effects is FusionCharts
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+FusionCharts
+\end_layout
+
+\end_inset
+
+ from InfoSoft (
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.fusioncharts.com/"

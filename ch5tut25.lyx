@@ -79,7 +79,17 @@ logicalmkup
 \begin_inset Newline newline
 \end_inset
 
-Using Hobo Database Index Generation
+Using Hobo Database Index
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Database Index
+\end_layout
+
+\end_inset
+
+ Generation
 \end_layout
 
 \begin_layout Standard
@@ -216,6 +226,16 @@ add_index
 
 \begin_layout Subsubsection*
 Automatic Indexing
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Automatic Indexing
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -225,12 +245,32 @@ status collapsed
 
 \begin_layout Plain Layout
 belongs_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+belongs_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  associations will automatically declare an index on their foreign key field;
- polymorphic 
+ polymorphic
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+polymorphic
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Flex Code
 status collapsed
 
@@ -374,12 +414,32 @@ add_index :some_models, [:fooable_type, :fooable_id]
 \end_layout
 
 \begin_layout Standard
-Lifecycle state fields will also be automatically indexed, as will the 
+Lifecycle state
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle state
+\end_layout
+
+\end_inset
+
+ fields will also be automatically indexed, as will the 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
 inheritance_column
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+inheritance_column
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -537,7 +597,17 @@ Indexing in the model
 \begin_layout Standard
 More complicated indexes may need to be declared outside the fields block.
  For instance, specific slow-running SQL queries may benefit from a multi-field
- index.
+ index
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+multi-field index
+\end_layout
+
+\end_inset
+
+.
  The index method provides a simple interface for specifying any type of
  index on the model.
 \end_layout

@@ -98,7 +98,17 @@ By Tom Locke
 \begin_layout Standard
 In this tutorial we will start with the results of Tutorial 21.
   To re-use this work across many apps, we’ll use the standard Rails technique
- - create a plugin.
+ - create a plugin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+create a plugin
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -107,7 +117,17 @@ The plugin will contain:
 \end_layout
 
 \begin_layout Itemize
-A DRYML taglib with all of our tag definitions
+A DRYML taglib
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML taglib
+\end_layout
+
+\end_inset
+
+ with all of our tag definitions
 \end_layout
 
 \begin_layout Itemize

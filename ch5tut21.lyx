@@ -184,9 +184,28 @@ close approximation
 
 \begin_layout Standard
 This will be as much a guide to general web-development best practices as
- it will be a lesson in Hobo and DRYML.
- The mantra when working with themes in Hobo is already familiar to skilled
- web developers:
+ it will be a lesson in Hobo and DRYML
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML
+\end_layout
+
+\end_inset
+
+.
+ The mantra when working with themes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo themes
+\end_layout
+
+\end_inset
+
+ in Hobo is already familiar to skilled web developers:
 \end_layout
 
 \begin_layout Subsubsection*

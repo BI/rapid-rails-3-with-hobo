@@ -96,8 +96,17 @@ By Bryan Larsen
 \end_layout
 
 \begin_layout Standard
-This tutorial will show how you can create an administrative sub-site for
- a Hobo.
+This tutorial will show how you can create an administrative sub-site
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sub-site
+\end_layout
+
+\end_inset
+
+ for a Hobo.
    This will allow the administrator to create, update and destroy any database
  row without writing any view code.
  
@@ -126,7 +135,17 @@ status open
 \begin_layout Code
 
 \backslash
-projects> hobo g admin_subsite --make-front-site 
+projects> 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+hobo g admin_subsite
+\end_layout
+
+\end_inset
+
+hobo g admin_subsite --make-front-site 
 \end_layout
 
 \begin_layout Code

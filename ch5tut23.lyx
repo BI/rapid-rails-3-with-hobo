@@ -103,12 +103,40 @@ Now we have our “Four Table” application working the way we want.
 \end_layout
 
 \begin_layout Standard
-To do this we can take advantage of ‘Hobo Lifecycles‘, which is the Hobo
- answer to creating a workflow.
+To do this we can take advantage of ‘Hobo Lifecycles
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles
+\end_layout
+
+\end_inset
+
+‘, which is the Hobo answer to creating a workflow.
   The workflow that we will define for this application is that a Recipe
- can exist in one of 2 states: “Not Published” and “Published” and that
- there will be two transitions: “Publish” and “Not Publish” which will move
- the Recipe from one state to the other.
+ can exist in one of 2 states
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle states
+\end_layout
+
+\end_inset
+
+: “Not Published” and “Published” and that there will be two transitions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle transitions
+\end_layout
+
+\end_inset
+
+: “Publish” and “Not Publish” which will move the Recipe from one state
+ to the other.
  
 \end_layout
 
@@ -366,7 +394,17 @@ status collapsed
 
 \begin_layout Standard
 After the state declarations, we have defined two transition actions using
- the ‘transition’ keyword.
+ the ‘transition
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle transition
+\end_layout
+
+\end_inset
+
+’ keyword.
   The transition keyword requires a name, a hash that specifies the state
  transition and then options.
   The first transition, 
@@ -407,6 +445,16 @@ status collapsed
 
 \begin_layout Plain Layout
 :available_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+:available_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -448,8 +496,17 @@ status collapsed
 
 \begin_layout Standard
 By adding the lifecycle behaviour to our model, we’ll need to generate and
- run a hobo g migration since a new ‘lifecycle_state’ column will be added
- to our recipes table.
+ run a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo g migration
+\end_layout
+
+\end_inset
+
+ since a new ‘lifecycle_state’ column will be added to our recipes table.
   At the command line, in your application directory, execute the following:
 \end_layout
 
@@ -498,6 +555,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <transition-buttons/>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<transition-buttons/>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -595,6 +662,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <controls:>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+<controls:>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -785,7 +862,17 @@ height_special "totalheight"
 status open
 
 \begin_layout Description
-Note: The lambda block is used so that we can pass in a parameter to a 
+Note: The lambda
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lambda
+\end_layout
+
+\end_inset
+
+ block is used so that we can pass in a parameter to a 
 \begin_inset Flex Code
 status collapsed
 
@@ -1136,7 +1223,17 @@ At this point we are able to either Publish or Not Publish our recipes.
 \end_layout
 
 \begin_layout Standard
-For each defined transition.
+For each defined transition
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle transition
+\end_layout
+
+\end_inset
+
+.
  Hobo creates 2 controller actions: 1 for a GET request and 1 for a PUT
  request.
   For the Publish transition action, Hobo creates a publish action for GET
@@ -1278,12 +1375,32 @@ status collapsed
 
 \begin_layout Plain Layout
 :available_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+:available_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  argument.
-  Consult the full Hobo Lifecycles overview at 
+  Consult the full Hobo Lifecycles
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles
+\end_layout
+
+\end_inset
+
+ overview at 
 \begin_inset CommandInset href
 LatexCommand href
 target "http://cookbook.hobocentral.net"

@@ -114,8 +114,18 @@ Overview
 \end_layout
 
 \begin_layout Standard
-CKEditor is the new rich text editor that replaces the popular FCKeditor
- used by many web developers.
+CKEditor
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+CKEditor
+\end_layout
+
+\end_inset
+
+ is the new rich text editor that replaces the popular FCKeditor used by
+ many web developers.
 \end_layout
 
 \begin_layout Standard
