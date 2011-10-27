@@ -882,17 +882,7 @@ Register Administrator Screen
 Hobo, by default, assumes the first person that launches the application
  will be an administrator.
  Go ahead and enter the information required and click on the “Register
- Administrator
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Administrator
-\end_layout
-
-\end_inset
-
-” button: 
+ AdministratorAdministrator” button: 
 \end_layout
 
 \begin_layout Standard
@@ -1020,16 +1010,6 @@ status collapsed
 
 \begin_layout Plain Layout
 app/models
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-app/models
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -1539,7 +1519,7 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-pages.dryml
+auto-generated tags!pages.dryml
 \end_layout
 
 \end_inset
@@ -1569,7 +1549,7 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-forms.dryml
+auto-generated tags!forms.dryml
 \end_layout
 
 \end_inset
@@ -1599,7 +1579,7 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-cards.dryml
+auto-generated tags!cards.dryml
 \end_layout
 
 \end_inset
@@ -1748,7 +1728,7 @@ hobo g resource
 status open
 
 \begin_layout Plain Layout
-hobo g resource
+generators!hobo g resource
 \end_layout
 
 \end_inset
@@ -1768,7 +1748,7 @@ hobo g model
 status open
 
 \begin_layout Plain Layout
-hobo g model
+generators!hobo g model
 \end_layout
 
 \end_inset
@@ -1788,7 +1768,7 @@ hobo g migration
 status open
 
 \begin_layout Plain Layout
-hobo g migration
+generators!hobo g migration
 \end_layout
 
 \end_inset
@@ -2427,7 +2407,7 @@ Add columns to the database.
 status open
 
 \begin_layout Plain Layout
-Adding model fields
+Adding!model fields
 \end_layout
 
 \end_inset
@@ -2564,7 +2544,7 @@ hobo g migration
 status open
 
 \begin_layout Plain Layout
-hobo g migration
+generators!hobo g migration
 \end_layout
 
 \end_inset
@@ -3631,16 +3611,6 @@ status collapsed
 
 \begin_layout Plain Layout
 config/locales
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-config/locales
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -4235,16 +4205,6 @@ status collapsed
 
 \begin_layout Plain Layout
 rapid-ui.css
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-rapid-ui.css
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -4471,7 +4431,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-validates_presence_of
+Validations!validates_presence_of
 \end_layout
 
 \end_inset
@@ -4741,7 +4701,7 @@ validates_numericality_of
 status open
 
 \begin_layout Plain Layout
-validates_numericality_of
+Validations!validates_numericality_of
 \end_layout
 
 \end_inset
@@ -4906,7 +4866,7 @@ Prevent the entry of duplicates.
 status open
 
 \begin_layout Plain Layout
-Validate uniqueness
+Validations!uniqueness
 \end_layout
 
 \end_inset
@@ -5094,7 +5054,7 @@ Validate length
 status open
 
 \begin_layout Plain Layout
-Validate length
+Validations!length
 \end_layout
 
 \end_inset
@@ -5315,7 +5275,7 @@ Summary.
 status open
 
 \begin_layout Plain Layout
-validations
+Validations
 \end_layout
 
 \end_inset
@@ -5430,7 +5390,7 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-validates_length_of
+Validations!validates_length_of
 \end_layout
 
 \end_inset
@@ -5450,7 +5410,7 @@ validates_size_of
 status open
 
 \begin_layout Plain Layout
-validates_size_of
+Validations!validates_size_of
 \end_layout
 
 \end_inset
@@ -5915,10 +5875,10 @@ status collapsed
 
  command line parameter the application will bypass the setup wizard
 \begin_inset Index idx
-status open
+status collapsed
 
 \begin_layout Plain Layout
-bypass the setup wizard
+setup wizard!bypassing
 \end_layout
 
 \end_inset
@@ -6362,7 +6322,7 @@ one_table> hobo g resource
 status open
 
 \begin_layout Plain Layout
-hobo g resource
+generators!hobo g resource
 \end_layout
 
 \end_inset
@@ -6787,7 +6747,7 @@ def create_permitted?
 status open
 
 \begin_layout Plain Layout
-create_permitted?
+Permissions!create_permitted?
 \end_layout
 
 \end_inset
@@ -6808,12 +6768,12 @@ end
 \end_layout
 
 \begin_layout LyX-Code
-def update_permitted?
+def update_permitted?Permissions!
 \begin_inset Index idx
-status open
+status collapsed
 
 \begin_layout Plain Layout
-update_permitted?
+Permissions!update_permitted?
 \end_layout
 
 \end_inset
@@ -6839,7 +6799,7 @@ def destroy_permitted?
 status open
 
 \begin_layout Plain Layout
-destroy_permitted?
+Permissions!destroy_permitted?
 \end_layout
 
 \end_inset
@@ -6860,9 +6820,9 @@ end
 \end_layout
 
 \begin_layout LyX-Code
-def view_permitted?(field)
+def view_permitted?(field)Permissions!
 \begin_inset Index idx
-status open
+status collapsed
 
 \begin_layout Plain Layout
 view_permitted?(field)
@@ -7193,10 +7153,10 @@ status collapsed
 \begin_layout Plain Layout
 acting_user
 \begin_inset Index idx
-status open
+status collapsed
 
 \begin_layout Plain Layout
-acting_user
+Permissions!acting_user
 \end_layout
 
 \end_inset
@@ -7272,7 +7232,7 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-signed_up?
+Permissions!signed_up?
 \end_layout
 
 \end_inset
@@ -7310,7 +7270,7 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-guest?
+Permissions!guest?
 \end_layout
 
 \end_inset
@@ -7750,7 +7710,7 @@ def
 status open
 
 \begin_layout Plain Layout
-update_permitted?
+Permissions!update_permitted?
 \end_layout
 
 \end_inset
@@ -7991,7 +7951,7 @@ Introduce Hobo’s controller/routing
 status open
 
 \begin_layout Plain Layout
-routing
+Routes
 \end_layout
 
 \end_inset
@@ -8020,7 +7980,7 @@ Show examples of the permission system
 status open
 
 \begin_layout Plain Layout
-permission system
+Permissions
 \end_layout
 
 \end_inset
@@ -8464,7 +8424,7 @@ We are going to further demonstrate that attempting to route
 status open
 
 \begin_layout Plain Layout
-route
+Routes
 \end_layout
 
 \end_inset
@@ -9992,17 +9952,8 @@ status collapsed
 
 \end_inset
 
- method takes a Ruby array
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-array
-\end_layout
-
-\end_inset
-
- as an input and Ruby arrays are enclosed in square brackets.
+ method takes a Ruby array as an input and Ruby arrays are enclosed in square
+ brackets.
  
 \end_layout
 
@@ -10058,7 +10009,7 @@ auto_actions :read_only
 status open
 
 \begin_layout Plain Layout
-auto_actions :read_only
+auto_actions!:read_only
 \end_layout
 
 \end_inset
@@ -10122,7 +10073,7 @@ auto_actions :write_only
 status open
 
 \begin_layout Plain Layout
-auto_actions :write_only
+auto_actions!:write_only
 \end_layout
 
 \end_inset
@@ -10852,7 +10803,7 @@ Tutorial 6 – Navigation Tabs
 status open
 
 \begin_layout Plain Layout
-Navigation Tabs
+Navigation tabs
 \end_layout
 
 \end_inset
@@ -10929,16 +10880,6 @@ status collapsed
 
 \begin_layout Plain Layout
 views/taglibs/auto/rapid
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-views/taglibs/auto/rapid
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -10954,7 +10895,7 @@ pages.dryml
 status open
 
 \begin_layout Plain Layout
-pages.dryml
+auto-generated tags!pages.dryml
 \end_layout
 
 \end_inset
@@ -10974,7 +10915,7 @@ forms.dryml
 status open
 
 \begin_layout Plain Layout
-forms.dryml
+auto-generated tags!forms.dryml
 \end_layout
 
 \end_inset
@@ -10994,7 +10935,7 @@ cards.dryml
 status open
 
 \begin_layout Plain Layout
-cards.dryml
+auto-generated tags!cards.dryml
 \end_layout
 
 \end_inset
@@ -11091,7 +11032,7 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-<main-nav>
+Tags!<main-nav>
 \end_layout
 
 \end_inset
@@ -12459,7 +12400,7 @@ The hobo resource generator
 status open
 
 \begin_layout Plain Layout
-hobo resource generator
+generators!hobo resource generator
 \end_layout
 
 \end_inset
@@ -13163,7 +13104,7 @@ Set up a foreign key
 status open
 
 \begin_layout Plain Layout
-foreign key
+Foreign keys
 \end_layout
 
 \end_inset
@@ -13691,7 +13632,7 @@ Note: Hobo automatically creates appropriate indexes
 status open
 
 \begin_layout Plain Layout
-database indexes
+Database index
 \end_layout
 
 \end_inset

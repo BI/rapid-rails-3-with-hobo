@@ -72,6 +72,16 @@ Chapter 10
 \end_inset
 
 HOBO LIFECYCLES
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -90,6 +100,16 @@ status collapsed
 
 \begin_layout Plain Layout
 acts_as_state_machine
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+acts_as_state_machine plugin
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -424,7 +444,17 @@ Defining the Friendship model
 
 \begin_layout Standard
 Usually, the lifecycle can be represented as a graph just as we would draw
- a finite state machine:
+ a finite state machine
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+finite state machine
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -571,6 +601,16 @@ status collapsed
 
 \begin_layout Plain Layout
 state
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycles!state
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -579,7 +619,17 @@ state
 \end_layout
 
 \begin_layout Standard
-The lifecycle has three states: 
+The lifecycle
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles!create
+\end_layout
+
+\end_inset
+
+ has three states: 
 \end_layout
 
 \begin_layout Standard
@@ -762,7 +812,17 @@ height_special "totalheight"
 status open
 
 \begin_layout Code
-:become => :invited,
+:become
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles!:become attribute
+\end_layout
+
+\end_inset
+
+ => :invited,
 \end_layout
 
 \end_inset
@@ -793,7 +853,17 @@ height_special "totalheight"
 status open
 
 \begin_layout Code
-:available_to => "User"
+:available_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles!:available_to attribute
+\end_layout
+
+\end_inset
+
+ => "User"
 \end_layout
 
 \end_inset
@@ -823,7 +893,17 @@ height_special "totalheight"
 status open
 
 \begin_layout Code
-:user_becomes => :invitor
+:user_becomes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles!:user_becomes attribute
+\end_layout
+
+\end_inset
+
+ => :invitor
 \end_layout
 
 \end_inset
@@ -834,7 +914,17 @@ status open
 \end_deeper
 \begin_layout Itemize
 After the create step has completed (and the database updated), the block
- within do..end is executed:
+ within 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+do..end
+\end_layout
+
+\end_inset
+
+ is executed:
 \end_layout
 
 \begin_layout Standard
@@ -877,7 +967,17 @@ status open
 \end_layout
 
 \begin_layout Standard
-There are five transitions declared: 
+There are five transitions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles!transition
+\end_layout
+
+\end_inset
+
+ declared: 
 \end_layout
 
 \begin_layout Itemize
@@ -920,7 +1020,7 @@ height_special "totalheight"
 status open
 
 \begin_layout Code
-my_fiendship.lifecycle.accept!(user, attributes)
+my_friendship.lifecycle.accept!(user, attributes)
 \end_layout
 
 \end_inset
@@ -1171,6 +1271,16 @@ status collapsed
 
 \begin_layout Plain Layout
 states
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles!states
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1189,6 +1299,16 @@ status collapsed
 
 \begin_layout Plain Layout
 creators
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycles!creators
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1206,6 +1326,16 @@ status collapsed
 
 \begin_layout Plain Layout
 transitions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycles!transitions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1238,7 +1368,17 @@ There are a variety of ways to limit which users are allowed to perform
 \end_layout
 
 \begin_layout Section
-Defining a lifecycle
+Defining
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycles!Defining
+\end_layout
+
+\end_inset
+
+ a lifecycle
 \end_layout
 
 \begin_layout Standard
@@ -1329,6 +1469,16 @@ status collapsed
 
 \begin_layout Plain Layout
 Hobo::Lifecycles::Lifecycle
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo::Lifecycles::Lifecycle
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1344,7 +1494,7 @@ Every instance of the model will have an instance of this class available
 status collapsed
 
 \begin_layout Plain Layout
-#lifecycle
+lifecycle
 \end_layout
 
 \end_inset
@@ -1397,8 +1547,27 @@ lifecyle
 \end_layout
 
 \begin_layout Itemize
-:state_field - the name of the database field (a string field) to store
- the current state in.
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycles!:state_field
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:state_field
+\end_layout
+
+\end_inset
+
+ - the name of the database field (a string field) to store the current
+ state in.
  Default ’
 \begin_inset Flex Code
 status collapsed
@@ -1413,8 +1582,17 @@ state
 \end_layout
 
 \begin_layout Itemize
-:key_timestamp_field - the name of the database field (a datetime field)
- to store a timestamp for transitions that require a key (discussed later).
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:key_timestamp_field
+\end_layout
+
+\end_inset
+
+ - the name of the database field (a datetime field) to store a timestamp
+ for transitions that require a key (discussed later).
  Set to 
 \begin_inset Flex Code
 status collapsed
@@ -1440,7 +1618,16 @@ key_timestamp
 \end_layout
 
 \begin_layout Itemize
-:key_timeout - keys will expire after this amount of time.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:key_timeout
+\end_layout
+
+\end_inset
+
+ - keys will expire after this amount of time.
  Default 
 \begin_inset Flex Code
 status collapsed
@@ -1455,17 +1642,21 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Note:
-\begin_inset Note Note
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
-Grey box
-\end_layout
-
-\end_inset
-
- that both of these fields are declared 
+\begin_layout Description
+Note: Both of these fields are declared 
 \begin_inset Flex Code
 status collapsed
 
@@ -1488,6 +1679,11 @@ attr_protected
 .
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Within the 
 \begin_inset Flex Code
@@ -1506,6 +1702,15 @@ lifecycle do ...
 \end_layout
 
 \begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycle!Defining states
+\end_layout
+
+\end_inset
+
 Defining states
 \end_layout
 
@@ -1649,6 +1854,15 @@ This will take effect the next time you generate and apply a hobo migration.
 \end_layout
 
 \begin_layout Section
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycle!Defining creators
+\end_layout
+
+\end_inset
+
 Defining creators
 \end_layout
 
@@ -1729,17 +1943,44 @@ Hobo::Lifecycles::Lifecycle
 \end_layout
 
 \begin_layout Standard
-The options are: 
+The options
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle!creator options
+\end_layout
+
+\end_inset
+
+ are: 
 \end_layout
 
 \begin_layout Itemize
-:params - an array of attribute names that are parameters of this create
- step.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:params
+\end_layout
+
+\end_inset
+
+ - an array of attribute names that are parameters of this create step.
  These attributes can be set when the creator runs.
 \end_layout
 
 \begin_layout Itemize
-:become - the state to enter after running this creator.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:become
+\end_layout
+
+\end_inset
+
+ - the state to enter after running this creator.
  This does not have to be static but can depend on runtime state.
  Provide one of: 
 \end_layout
@@ -1750,7 +1991,27 @@ A symbol – the name of the state
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument it is called with the record.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ – if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ takes one argument it is called with the record.
  If it takes none it is 
 \begin_inset Flex Code
 status collapsed
@@ -1771,7 +2032,26 @@ A string – evaluated as a Ruby expression with in the context of the record
 
 \end_deeper
 \begin_layout Itemize
-:if and :unless – a precondition on the creator.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:if
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:unless
+\end_layout
+
+\end_inset
+
+ – a precondition on the creator.
  Pass either: 
 \end_layout
 
@@ -1785,7 +2065,27 @@ A string – a Ruby expression evaluated in the context of the record
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument it is called with the record.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ – if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ takes one argument it is called with the record.
  If it takes none, it is 
 \begin_inset Flex Code
 status collapsed
@@ -1800,24 +2100,41 @@ instance_eval
 \end_layout
 
 \begin_layout Standard
-Note:
-\begin_inset Note Note
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
-Grey Box
+\begin_layout Description
+Note: The precondition is evaluated before any changes are made to the record
+ using the parameters to the lifecycle step.
 \end_layout
 
 \end_inset
 
- that the precondition is evaluated before any changes are made to the record
- using the parameters to the lifecycle step.
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-:new_key – generates a new lifecycle key for this record by setting the
- 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:new_key
+\end_layout
+
+\end_inset
+
+ – generates a new lifecycle key for this record by setting the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1831,7 +2148,16 @@ key_timestamp
 \end_layout
 
 \begin_layout Itemize
-:user_becomes – the name of an attribute (typically a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:user_becomes
+\end_layout
+
+\end_inset
+
+ – the name of an attribute (typically a 
 \begin_inset Flex Code
 status collapsed
 
@@ -1855,7 +2181,16 @@ acting_user
 \end_layout
 
 \begin_layout Itemize
-:available_to – Specifies who is allowed access to the creator.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:available_to
+\end_layout
+
+\end_inset
+
+ – Specifies who is allowed access to the creator.
  This check is in addition to the precondition (
 \begin_inset Flex Code
 status collapsed
@@ -1927,6 +2262,15 @@ instance_eval
 \end_layout
 
 \begin_layout Section
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle!Defining transitions
+\end_layout
+
+\end_inset
+
 Defining transitions
 \end_layout
 
@@ -2039,7 +2383,27 @@ A symbol – the name of the state
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument, it is called with the record.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ – if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ takes one argument, it is called with the record.
  If it takes none it is 
 \begin_inset Flex Code
 status collapsed
@@ -2060,16 +2424,54 @@ A string – evaluated as a Ruby expression with in the context of the record.
 \end_layout
 
 \begin_layout Standard
-The options are: 
+The options
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle!transition options
+\end_layout
+
+\end_inset
+
+ are: 
 \end_layout
 
 \begin_layout Itemize
-:params - an array of attribute names that are parameters of this transition.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:params
+\end_layout
+
+\end_inset
+
+ - an array of attribute names that are parameters of this transition.
  These attributes can be set when the transition runs.
 \end_layout
 
 \begin_layout Itemize
-:if and :unless – a precondition on the transition.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:if
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:unless
+\end_layout
+
+\end_inset
+
+ – a precondition on the transition.
  Pass either: 
 \end_layout
 
@@ -2083,7 +2485,27 @@ A string – a Ruby expression, evaluated in the context of the record
 \end_layout
 
 \begin_layout Itemize
-A proc – If the proc takes one argument, it is called with the record.
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ – If the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ takes one argument, it is called with the record.
  If it takes none it is 
 \begin_inset Flex Code
 status collapsed
@@ -2099,7 +2521,16 @@ instance_eval
 
 \end_deeper
 \begin_layout Itemize
-:new_key – generate a new lifecycle key for this record by setting the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:new_key
+\end_layout
+
+\end_inset
+
+ – generate a new lifecycle key for this record by setting the 
 \begin_inset Flex Code
 status collapsed
 
@@ -2113,7 +2544,16 @@ key_timestamp
 \end_layout
 
 \begin_layout Itemize
-:user_becomes – the name of an attribute (typically a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:user_becomes
+\end_layout
+
+\end_inset
+
+ – the name of an attribute (typically a 
 \begin_inset Flex Code
 status collapsed
 
@@ -2137,7 +2577,16 @@ acting_user
 \end_layout
 
 \begin_layout Itemize
-:available_to – Specifies who is allowed access to the transition.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:available_to
+\end_layout
+
+\end_inset
+
+ – Specifies who is allowed access to the transition.
  This check is in addition to the precondition (
 \begin_inset Flex Code
 status collapsed
@@ -2200,6 +2649,16 @@ instance_eval
 
 \begin_layout Section
 Repeated transition names
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle!Repeated transition names
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2228,6 +2687,15 @@ The
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle!:available_to
+\end_layout
+
+\end_inset
+
 :available_to
 \end_layout
 
@@ -2270,12 +2738,29 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
-:all – anyone, including guest users, can trigger the step 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:all
+\end_layout
+
+\end_inset
+
+ – anyone, including guest users, can trigger the step 
 \end_layout
 
 \begin_layout Itemize
-:key_holder – (transitions only) anyone can trigger the transition, provided
- 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:key_holder
+\end_layout
+
+\end_inset
+
+ – (transitions only) anyone can trigger the transition, provided 
 \begin_inset Flex Code
 status collapsed
 
@@ -2334,8 +2819,28 @@ A string – a Ruby expression which is evaluated in the context of the record
 \end_layout
 
 \begin_layout Itemize
-A proc – if the proc takes one argument it is called with the record, if
- it takes none it is 
+A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ – if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+proc
+\end_layout
+
+\end_inset
+
+ takes one argument it is called with the record, if it takes none it is
+ 
 \begin_inset Flex Code
 status collapsed
 
@@ -2364,7 +2869,17 @@ acting_user
 \end_layout
 
 \begin_layout Itemize
-A class – access is granted if the acting_user is a 
+A class – access is granted if the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+acting_user
+\end_layout
+
+\end_inset
+
+ is a 
 \begin_inset Flex Code
 status collapsed
 
@@ -2602,11 +3117,31 @@ status open
 
 \begin_layout Section
 Validations
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycles!validation extensions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Validations have been extended so you can give the name of a lifecycle step
- to the :on option.
+ to the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+:on
+\end_layout
+
+\end_inset
+
+ option.
  
 \end_layout
 
@@ -2675,7 +3210,17 @@ foo
 \end_layout
 
 \begin_layout Section
-Controller actions and routes
+Controller actions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycle!Controller actions
+\end_layout
+
+\end_inset
+
+ and routes
 \end_layout
 
 \begin_layout Standard
@@ -2848,7 +3393,17 @@ auto_actions ...
 \end_layout
 
 \begin_layout Subsection*
-Create steps
+Create
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycle!Create controller actions
+\end_layout
+
+\end_inset
+
+ steps
 \end_layout
 
 \begin_layout Standard
@@ -3151,6 +3706,16 @@ redirect_to
 
 \begin_layout Section
 Transitions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Lifecycle!Transition controller actions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3449,7 +4014,17 @@ params[:key]
 \end_layout
 
 \begin_layout Section
-Keys and secure links
+Keys
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Lifecycle!Keys
+\end_layout
+
+\end_inset
+
+ and secure links
 \end_layout
 
 \begin_layout Standard

@@ -251,7 +251,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<def>
+Tags!<def>
 \end_layout
 
 \end_inset
@@ -588,7 +588,7 @@ Parameterize the tag
 status open
 
 \begin_layout Plain Layout
-tag param
+Tags!param attribute
 \end_layout
 
 \end_inset
@@ -1123,7 +1123,7 @@ using param = ”default”
 status open
 
 \begin_layout Plain Layout
-default parameter attribute
+DRYML!default parameter attribute
 \end_layout
 
 \end_inset
@@ -1622,7 +1622,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-default parameter attribute
+DRYML!default parameter attribute
 \end_layout
 
 \end_inset

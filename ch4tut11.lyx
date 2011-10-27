@@ -123,7 +123,7 @@ merge
 status collapsed
 
 \begin_layout Plain Layout
-merge attribute
+DRYML!merge attribute
 \end_layout
 
 \end_inset
@@ -147,7 +147,7 @@ extend
 status collapsed
 
 \begin_layout Plain Layout
-extend tag
+Tags!<extend>
 \end_layout
 
 \end_inset
@@ -650,7 +650,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<extend>
+Tags!<extend>
 \end_layout
 
 \end_inset
@@ -1244,7 +1244,7 @@ merge
 status collapsed
 
 \begin_layout Plain Layout
-merge
+DRYML!merge
 \end_layout
 
 \end_inset

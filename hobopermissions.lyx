@@ -72,6 +72,16 @@ Chapter 8
 \end_inset
 
 THE HOBO PERMISSION SYSTEM
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -96,7 +106,7 @@ Hobo’s controllers and DRYML tag libraries use this information to automatical
 \end_layout
 
 \begin_layout Section
-3.2.1 Introduction
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -241,6 +251,15 @@ do something
  with the record.
  It is more like asking: if, at some point in the future, the user tries
  to update this attribute, will that be allowed? Clearly edit permission
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!edit
+\end_layout
+
+\end_inset
+
  is closely related to update permission, but it’s not quite the same.
  In fact, you often don’t need to declare edit permissions because Hobo
  can figure them out from your update permission.
@@ -249,7 +268,17 @@ n is a bit of an anomaly.
 \end_layout
 
 \begin_layout Section
-3.2.2 Defining permissions
+Defining permissions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!defining
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -339,6 +368,16 @@ status collapsed
 
 \begin_layout Plain Layout
 acting_user
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!acting_user
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -377,6 +416,16 @@ status collapsed
 
 \begin_layout Plain Layout
 guest?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!guest?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -392,6 +441,16 @@ status collapsed
 
 \begin_layout Plain Layout
 signed_up?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!signed_up?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -547,7 +606,17 @@ end
 \end_layout
 
 \begin_layout Section
-3.2.3 Change tracking
+Change tracking
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!Change tracking
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -557,6 +626,16 @@ status collapsed
 
 \begin_layout Plain Layout
 update_permitted?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!update_permitted?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -717,6 +796,16 @@ end
 
 \begin_layout Subsubsection*
 Change tracking helpers
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Change tracking helpers
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -778,6 +867,16 @@ status collapsed
 
 \begin_layout Plain Layout
 only_changed?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!only_changed?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -791,6 +890,16 @@ status collapsed
 
 \begin_layout Plain Layout
 none_changed?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!none_changed?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -804,6 +913,16 @@ status collapsed
 
 \begin_layout Plain Layout
 any_changed?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!any_changed?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -817,6 +936,16 @@ status collapsed
 
 \begin_layout Plain Layout
 all_changed?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!all_changed?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1073,6 +1202,16 @@ status collapsed
 
 \begin_layout Plain Layout
 administrator?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1084,7 +1223,17 @@ administrator?
 \end_layout
 
 \begin_layout Subsection*
-Destroy permissions
+Destroy
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!Destroy
+\end_layout
+
+\end_inset
+
+ permissions
 \end_layout
 
 \begin_layout Standard
@@ -1124,12 +1273,32 @@ end
 \end_layout
 
 \begin_layout Subsection*
-View permission and 
+View
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!View
+\end_layout
+
+\end_inset
+
+ permission and 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
 never_show
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+never_show
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1144,6 +1313,16 @@ status collapsed
 
 \begin_layout Plain Layout
 view_permitted
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+view_permitted
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1278,7 +1457,17 @@ View and edit permission will always be denied for those attributes.
 \end_layout
 
 \begin_layout Subsection*
-Edit Permission
+Edit
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!Edit
+\end_layout
+
+\end_inset
+
+ Permission
 \end_layout
 
 \begin_layout Standard
@@ -1388,6 +1577,16 @@ status collapsed
 
 \begin_layout Plain Layout
 attr_protected
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+attr_protected
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1401,6 +1600,16 @@ status collapsed
 
 \begin_layout Plain Layout
 attr_accessible
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+attr_accessible
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1414,6 +1623,16 @@ status collapsed
 
 \begin_layout Plain Layout
 attr_readonly
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+attr_readonly
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1824,7 +2043,17 @@ After the edit check those singleton methods are removed again.
 \end_layout
 
 \begin_layout Subsubsection*
-Defining edit permission
+Defining edit
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!defining edit
+\end_layout
+
+\end_inset
+
+ permission
 \end_layout
 
 \begin_layout Standard
@@ -1958,7 +2187,17 @@ attribute
 \end_layout
 
 \begin_layout Section
-3.2.4 Permissions and associations 
+Permissions and associations
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!associations
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2283,7 +2522,17 @@ belongs_to
 \end_layout
 
 \begin_layout Section
-3.2.5 The Permission API
+The Permission API
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!API
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2428,7 +2677,17 @@ create
 status collapsed
 
 \begin_layout Plain Layout
-Model.user_find(user, ...)
+Model.user_find
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!user_find
+\end_layout
+
+\end_inset
+
+(user, ...)
 \end_layout
 
 \end_inset
@@ -2457,7 +2716,17 @@ record.user_view(user)
 status collapsed
 
 \begin_layout Plain Layout
-Model.user_new(user, attributes)
+Model.user_new
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!user_new
+\end_layout
+
+\end_inset
+
+(user, attributes)
 \end_layout
 
 \end_inset
@@ -2517,7 +2786,17 @@ user_view
 status collapsed
 
 \begin_layout Plain Layout
-Model.user_create(user, attributes)
+Model.user_create
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!user_create
+\end_layout
+
+\end_inset
+
+(user, attributes)
 \end_layout
 
 \end_inset
@@ -2593,7 +2872,17 @@ The instance (record) methods are:
 status collapsed
 
 \begin_layout Plain Layout
-record.user_save(user)
+record.user_save
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!user_save
+\end_layout
+
+\end_inset
+
+(user)
 \end_layout
 
 \end_inset
@@ -2634,7 +2923,17 @@ new_record?
 status collapsed
 
 \begin_layout Plain Layout
-record.user_update_attributes(user, attributes)
+record.user_update_attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!user_update_attributes
+\end_layout
+
+\end_inset
+
+(user, attributes)
 \end_layout
 
 \end_inset
@@ -2676,6 +2975,16 @@ status collapsed
 
 \begin_layout Plain Layout
 record.user_view
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!user_view
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2705,6 +3014,16 @@ status collapsed
 
 \begin_layout Plain Layout
 record.user_destroy
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!user_destroy
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2720,6 +3039,16 @@ A regular destroy with a permission check first.
 \end_deeper
 \begin_layout Subsubsection*
 Direct permission tests
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!Direct permission tests
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2734,7 +3063,17 @@ The methods mentioned in the previous section perform the appropriate permission
 status collapsed
 
 \begin_layout Plain Layout
-record.creatable_by?(user)
+record.creatable_by?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!creatable_by?
+\end_layout
+
+\end_inset
+
+(user)
 \end_layout
 
 \end_inset
@@ -2747,7 +3086,17 @@ record.creatable_by?(user)
 status collapsed
 
 \begin_layout Plain Layout
-record.updatable_by?(user)
+record.updatable_by?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!updatable_by?
+\end_layout
+
+\end_inset
+
+(user)
 \end_layout
 
 \end_inset
@@ -2760,7 +3109,17 @@ record.updatable_by?(user)
 status collapsed
 
 \begin_layout Plain Layout
-record.destroyable_by?(user)
+record.destroyable_by?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!destroyable_by?
+\end_layout
+
+\end_inset
+
+(user)
 \end_layout
 
 \end_inset
@@ -2773,7 +3132,17 @@ record.destroyable_by?(user)
 status collapsed
 
 \begin_layout Plain Layout
-record.viewable_by?(user, attribute=nil)
+record.viewable_by?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!viewable_by?
+\end_layout
+
+\end_inset
+
+(user, attribute=nil)
 \end_layout
 
 \end_inset
@@ -2786,7 +3155,17 @@ record.viewable_by?(user, attribute=nil)
 status collapsed
 
 \begin_layout Plain Layout
-record.editable_by?(user, attribute=nil)
+record.editable_by?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!editable_by?
+\end_layout
+
+\end_inset
+
+(user, attribute=nil)
 \end_layout
 
 \end_inset
@@ -2803,7 +3182,17 @@ There is also:
 status collapsed
 
 \begin_layout Plain Layout
-method_callable_by?(user, method_name)
+method_callable_by?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!method_callable_by?
+\end_layout
+
+\end_inset
+
+(user, method_name)
 \end_layout
 
 \end_inset
@@ -3069,6 +3458,16 @@ status collapsed
 
 \begin_layout Plain Layout
 after_user_new
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+after_user_new
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3195,6 +3594,16 @@ status open
 
 \begin_layout Code
 belongs_to :owner, :class_name => "User", :creator => true
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+belongs_to!:creator => true attribute
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3385,8 +3794,18 @@ The edit permission mechanism (described in a section) can detect this,
 \end_layout
 
 \begin_layout Section
-3.2.6 Permissions vs.
+Permissions vs.
  validations
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!validations
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3474,6 +3893,16 @@ status collapsed
 
 \begin_layout Plain Layout
 administrator?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+administrator?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3718,7 +4147,17 @@ administrator?
 \end_layout
 
 \begin_layout Section
-3.2.7 View helpers
+View helpers
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!View helpers
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3731,7 +4170,17 @@ This is the quick version.
 status collapsed
 
 \begin_layout Plain Layout
-can_create?(object=this)
+can_create?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!helpers can_create?
+\end_layout
+
+\end_inset
+
+(object=this)
 \end_layout
 
 \end_inset
@@ -3744,7 +4193,17 @@ can_create?(object=this)
 status collapsed
 
 \begin_layout Plain Layout
-can_update?(object=this)
+can_update?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!helpers can_update?
+\end_layout
+
+\end_inset
+
+(object=this)
 \end_layout
 
 \end_inset
@@ -3758,6 +4217,16 @@ status collapsed
 
 \begin_layout Plain Layout
 can_edit?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!helpers can_edit?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3780,7 +4249,17 @@ this
 status collapsed
 
 \begin_layout Plain Layout
-can_delete?(object=this)
+can_delete?
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Permissions!helpers can_delete?
+\end_layout
+
+\end_inset
+
+(object=this)
 \end_layout
 
 \end_inset
@@ -3794,6 +4273,16 @@ status collapsed
 
 \begin_layout Plain Layout
 can_call?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!helpers can_call?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -412,7 +412,7 @@ cards.dryml
 status collapsed
 
 \begin_layout Plain Layout
-cards.dryml
+auto-generated tags!cards.dryml
 \end_layout
 
 \end_inset
@@ -432,7 +432,7 @@ forms.dryml
 status collapsed
 
 \begin_layout Plain Layout
-forms.dryml
+auto-generated tags!forms.dryml
 \end_layout
 
 \end_inset
@@ -452,7 +452,7 @@ pages.dryml
 status collapsed
 
 \begin_layout Plain Layout
-pages.dryml
+auto-generated tags!pages.dryml
 \end_layout
 
 \end_inset
@@ -539,10 +539,10 @@ Hobo comes with a pre-coded set of tags that you can use to build other
 \begin_layout Paragraph*
 Auto-generated DRYML
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Auto-generated DRYML
+auto-generated tags
 \end_layout
 
 \end_inset

@@ -97,7 +97,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<new-page>
+Tags!<new-page>
 \end_layout
 
 \end_inset
@@ -114,10 +114,10 @@ status collapsed
 \begin_layout Plain Layout
 <edit-page>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<edit-page>
+Tags!<edit-page>
 \end_layout
 
 \end_inset
@@ -135,10 +135,10 @@ status collapsed
 \begin_layout Plain Layout
 <form>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<form>
+Tags!<form>
 \end_layout
 
 \end_inset
@@ -166,10 +166,10 @@ status collapsed
 \begin_layout Plain Layout
 <field-list>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<field-list>
+Tags!<field-list>
 \end_layout
 
 \end_inset
@@ -186,10 +186,10 @@ status collapsed
 \begin_layout Plain Layout
 <input>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<input>
+Tags!<input>
 \end_layout
 
 \end_inset
@@ -749,7 +749,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<form>
+Tags!<form>
 \end_layout
 
 \end_inset
@@ -815,7 +815,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<field-list>
+Tags!<field-list>
 \end_layout
 
 \end_inset
@@ -965,7 +965,7 @@ All of this capability results from Hobo’s implementation of tag polymorphism
 status open
 
 \begin_layout Plain Layout
-tag polymorphism
+Tags!polymorphism
 \end_layout
 
 \end_inset
@@ -1012,7 +1012,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<new-page>
+Tags!<new-page>
 \end_layout
 
 \end_inset
@@ -1039,10 +1039,10 @@ status collapsed
 \begin_layout Plain Layout
 <edit-page>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<edit-page>
+Tags!<edit-page>
 \end_layout
 
 \end_inset
@@ -1188,10 +1188,10 @@ status collapsed
 \begin_layout Plain Layout
 <field-list>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<field-list>
+Tags!<field-list>
 \end_layout
 
 \end_inset
@@ -1478,10 +1478,10 @@ status collapsed
 \begin_layout Plain Layout
 <field-list>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<field-list>
+Tags!<field-list>
 \end_layout
 
 \end_inset
@@ -1501,7 +1501,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<input>
+Tags!<input>
 \end_layout
 
 \end_inset
@@ -1727,7 +1727,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<extend>
+Tags!<extend>
 \end_layout
 
 \end_inset

@@ -120,7 +120,7 @@ Lifecycles
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle states
+Lifecycle!states
 \end_layout
 
 \end_inset
@@ -130,7 +130,7 @@ Lifecycle states
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle transitions
+Lifecycles!transitions
 \end_layout
 
 \end_inset
@@ -399,7 +399,7 @@ After the state declarations, we have defined two transition actions using
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle transition
+Lifecycles!transition
 \end_layout
 
 \end_inset
@@ -449,7 +449,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-:available_to
+Lifecyles!:available_to
 \end_layout
 
 \end_inset
@@ -559,7 +559,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<transition-buttons/>
+Tags!<transition-buttons/>
 \end_layout
 
 \end_inset
@@ -666,7 +666,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<controls:>
+DRYML!<controls:>
 \end_layout
 
 \end_inset
@@ -1379,7 +1379,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-:available_to
+Lifecyles!:available_to
 \end_layout
 
 \end_inset

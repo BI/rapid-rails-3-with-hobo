@@ -152,10 +152,10 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<collection>
+Tags!<collection>
 \end_layout
 
 \end_inset
@@ -176,10 +176,10 @@ status collapsed
 \begin_layout Plain Layout
 <a>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<a>
+Tags!<a>
 \end_layout
 
 \end_inset
@@ -200,10 +200,10 @@ status collapsed
 \begin_layout Plain Layout
 <repeat>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<repeat>
+Tags!<repeat>
 \end_layout
 
 \end_inset
@@ -220,10 +220,10 @@ status collapsed
 \begin_layout Plain Layout
 <if>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<if>
+Tags!<if>
 \end_layout
 
 \end_inset
@@ -240,10 +240,10 @@ status collapsed
 \begin_layout Plain Layout
 <else>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<else>
+Tags!<else>
 \end_layout
 
 \end_inset
@@ -977,7 +977,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<collection>
+Tags!<collection>
 \end_layout
 
 \end_inset
@@ -1331,7 +1331,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<a>
+Tags!<a>
 \end_layout
 
 \end_inset
@@ -1622,7 +1622,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<name>
+Tags!<name>
 \end_layout
 
 \end_inset
@@ -2165,7 +2165,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<repeat>
+Tags!<repeat>
 \end_layout
 
 \end_inset
@@ -2507,7 +2507,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<name/>
+Tags!<name/>
 \end_layout
 
 \end_inset
@@ -2841,7 +2841,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<if>
+Tags!<if>
 \end_layout
 
 \end_inset
@@ -2861,7 +2861,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<else>
+Tags!<else>
 \end_layout
 
 \end_inset

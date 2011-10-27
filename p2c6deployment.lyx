@@ -1626,7 +1626,7 @@ four_table> git commit –m “My first Commit”
 status collapsed
 
 \begin_layout Plain Layout
-git commit –m “My first Commit”
+git commit
 \end_layout
 
 \end_inset

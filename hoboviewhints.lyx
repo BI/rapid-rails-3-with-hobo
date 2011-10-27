@@ -71,7 +71,17 @@ Chapter 11
 \begin_inset Newline newline
 \end_inset
 
-HOBO VIEW HINTS AND LOCALES
+HOBO VIEW HINTS
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ViewHints
+\end_layout
+
+\end_inset
+
+ AND LOCALES
 \end_layout
 
 \begin_layout Standard
@@ -90,8 +100,17 @@ status open
 
 \begin_layout Description
 Note: While Hobo View Hints still operate in version 1.3, we recommend using
- the new Internationalization (I18n) Locales functionality which will be
- discussed later in this chapter.
+ the new Internationalization (I18n
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+I18n
+\end_layout
+
+\end_inset
+
+) Locales functionality which will be discussed later in this chapter.
 \end_layout
 
 \end_inset
@@ -117,10 +136,20 @@ One of the main attractions of Hobo is its ability to give you a decent
 \begin_layout Standard
 This functionality used to be handled in the ViewHints module in Hobo 1.
  As of Hobo 1.3, these features have been migrated into the Internationalization
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Internationalization
+\end_layout
+
+\end_inset
+
  module.
  For those of you who are upgrading your Hobo 1 applications, a section
  on migrating ViewHints to Internationalization is available at the end
- of this 
+ of this chapter.
+ 
 \begin_inset Note Note
 status open
 
@@ -412,17 +441,15 @@ status open
 \begin_layout Description
 Note: Members of the Hobo community have created versions for Spanish, Italian,
  German, Russian, etc.
- Check out the latest by joining the Hobo Google Users Group.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Address?
-\end_layout
+ Check out the latest by joining the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Hobo Google Users Group"
+target "http://groups.google.com/group/hobousers"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -431,7 +458,17 @@ Address?
 \end_layout
 
 \begin_layout Section
-Child relationships 
+Child relationships
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Child relationships
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -561,7 +598,11 @@ users/show
 \begin_layout Standard
 You can declare additional child relationships.
  The order is significant with the first in the list being the ―primary
- collection.‖ For example: 
+ collection.
+\end_layout
+
+\begin_layout Standard
+For example: 
 \end_layout
 
 \begin_layout Standard
@@ -633,6 +674,15 @@ answers
 \end_layout
 
 \begin_layout Section
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ViewHints!Inline Booleans
+\end_layout
+
+\end_inset
+
 Inline Booleans
 \end_layout
 
@@ -869,7 +919,17 @@ paginate?
 \end_layout
 
 \begin_layout Section
-Locale (I18n) Friendly Tags
+Locale (I18n
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+I18n
+\end_layout
+
+\end_inset
+
+) Friendly Tags
 \end_layout
 
 \begin_layout Standard
@@ -899,7 +959,7 @@ status open
 Note: Many internal Hobo tags have been transparently internationalized,
  i.e., the strings they use are automatically translated to the current locale
  language.
- Here,We are only documenting the tags that you might use in application
+ Here, we are only documenting the tags that you might use in application
  development.
 \end_layout
 
@@ -913,6 +973,15 @@ Changed tags
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<view/>
+\end_layout
+
+\end_inset
+
 <view/>
 \end_layout
 
@@ -942,6 +1011,15 @@ boolean
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<count/>
+\end_layout
+
+\end_inset
+
 <count/>
 \end_layout
 
@@ -1505,6 +1583,15 @@ status open
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<you/>
+\end_layout
+
+\end_inset
+
 <you/>
 \end_layout
 
@@ -1802,6 +1889,15 @@ The "titleize" attribute is deprecated--use "capitalize" instead.
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<your/>
+\end_layout
+
+\end_inset
+
 <your/>
 \end_layout
 
@@ -2069,6 +2165,15 @@ status open
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<select-menu/>
+\end_layout
+
+\end_inset
+
 <select-menu/>
 \end_layout
 
@@ -2218,6 +2323,15 @@ Insert page numbers
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<filter-menu/>
+\end_layout
+
+\end_inset
+
 <filter-menu/>
 \end_layout
 
@@ -2392,6 +2506,15 @@ no-filter: The text of the first option which indicates no filter is in
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<I18n/>
+\end_layout
+
+\end_inset
+
 <I18n/>
 \end_layout
 
@@ -2659,6 +2782,15 @@ These are the tag from the i18n_rapid taglib.
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<t/>
+\end_layout
+
+\end_inset
+
 <t/>
 \end_layout
 
@@ -2717,6 +2849,15 @@ all the attributes accepted by the wrapped method
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<ht/>
+\end_layout
+
+\end_inset
+
 <ht/>
 \end_layout
 
@@ -2951,6 +3092,15 @@ Mitt Program
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<model-name-human/>
+\end_layout
+
+\end_inset
+
 <model-name-human/>
 \end_layout
 
@@ -3002,6 +3152,15 @@ count: (optional) used to pick the inflected string for the model.
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<human-attribute-name/>
+\end_layout
+
+\end_inset
+
 <human-attribute-name/>
 \end_layout
 
@@ -3046,6 +3205,15 @@ count: (optional) should be an integer
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<human-collection-name/>
+\end_layout
+
+\end_inset
+
 <human-collection-name/>
 \end_layout
 
@@ -3431,6 +3599,15 @@ These tags have been deprecated because they were not compliant with i18n
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<collection-name/>
+\end_layout
+
+\end_inset
+
 <collection-name/>
 \end_layout
 
@@ -3449,6 +3626,15 @@ status collapsed
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<preview-with-more/>
+\end_layout
+
+\end_inset
+
 <preview-with-more/>
 \end_layout
 
@@ -3467,6 +3653,15 @@ status collapsed
 \end_layout
 
 \begin_layout Section*
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Migrating ViewHints to i18n
+\end_layout
+
+\end_inset
+
 Migrating ViewHints to the Internationalization Module
 \end_layout
 
@@ -3861,7 +4056,17 @@ Tim Griffin ran into an issue with localization that is worth noting here:
 \end_layout
 
 \begin_layout Itemize
-If you don't explicitly name the enum_string with the 
+If you don't explicitly name the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+enum_string
+\end_layout
+
+\end_inset
+
+ with the 
 \begin_inset Flex Code
 status collapsed
 

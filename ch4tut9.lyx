@@ -84,7 +84,7 @@ Editing Auto-Generated Tags
 status collapsed
 
 \begin_layout Plain Layout
-Editing Auto-Generated Tags
+auto-generated tags!editing
 \end_layout
 
 \end_inset
@@ -821,10 +821,10 @@ Route(URL)
 \begin_layout Plain Layout
 <index-page>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<index-page>
+Tags!<index-page>
 \end_layout
 
 \end_inset
@@ -881,7 +881,7 @@ index
 status collapsed
 
 \begin_layout Plain Layout
-<new-page>
+Tags!<new-page>
 \end_layout
 
 \end_inset
@@ -938,7 +938,7 @@ new
 status collapsed
 
 \begin_layout Plain Layout
-<show-page>
+Tags!<show-page>
 \end_layout
 
 \end_inset
@@ -990,12 +990,12 @@ show
 \begin_inset Text
 
 \begin_layout Plain Layout
-<edit-page>
+<edit-page>Tags!
 \begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
-<edit-page>
+Tags!<edit-page>
 \end_layout
 
 \end_inset
@@ -1079,10 +1079,10 @@ pages.dryml
 
  file, but the <index-page> tag calls the Recipe <card>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<card>
+Tags!<card>
 \end_layout
 
 \end_inset
@@ -1091,10 +1091,10 @@ status collapsed
  We will demonstrate this by editing them shortly.
  The <new-page> and <edit-page> tags call the Recipe <form>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<form>
+Tags!<form>
 \end_layout
 
 \end_inset
@@ -2108,16 +2108,6 @@ status collapsed
 
 \begin_layout Plain Layout
 index.dryml
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-index.dryml
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -2392,7 +2382,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<card>
+Tags!<card>
 \end_layout
 
 \end_inset
@@ -2777,7 +2767,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<collection>
+Tags!<collection>
 \end_layout
 
 \end_inset
@@ -2896,7 +2886,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<form>
+Tags!<form>
 \end_layout
 
 \end_inset
@@ -2932,7 +2922,7 @@ Editing navigation tabs
 status collapsed
 
 \begin_layout Plain Layout
-navigation tabs
+Navigation tabs
 \end_layout
 
 \end_inset
@@ -2962,7 +2952,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<main-nav>
+Tags!<main-nav>
 \end_layout
 
 \end_inset
@@ -2999,10 +2989,10 @@ status collapsed
 \begin_layout Plain Layout
 <app-name>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<app-name>
+Tags!<app-name>
 \end_layout
 
 \end_inset
@@ -3223,7 +3213,7 @@ Editing an application name
 status collapsed
 
 \begin_layout Plain Layout
-application name
+Application name
 \end_layout
 
 \end_inset

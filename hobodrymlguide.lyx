@@ -74,7 +74,17 @@ THE HOBO DRYML GUIDE
 \end_layout
 
 \begin_layout Section
-What is DRYML?
+What is DRYML
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML
+\end_layout
+
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Standard
@@ -591,8 +601,18 @@ status collapsed
 \end_inset
 
  are there.
- What happened to layouts? You don’t tend to use layouts with DRYML, instead
- you would define your own tag, typically 
+ What happened to layouts
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+layouts
+\end_layout
+
+\end_inset
+
+? You don’t tend to use layouts with DRYML, instead you would define your
+ own tag, typically 
 \begin_inset Flex Code
 status collapsed
 
@@ -649,6 +669,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <def>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<def>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -817,6 +847,16 @@ In fact, DRYML is implemented by compiling to Ruby, and that is exactly
 
 \begin_layout Section
 Parameters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Parameters
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1139,6 +1179,16 @@ status collapsed
 
 \begin_layout Plain Layout
 parameter tag
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!parameter tag
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1427,18 +1477,8 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
-Note
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Grey box
-\end_layout
-
-\end_inset
-
- that When you name a parameter, DRYML automatically adds a CSS class of
+\begin_layout Description
+Note: When you name a parameter, DRYML automatically adds a CSS class of
  the same name to the output, so the two 
 \begin_inset Flex Code
 status collapsed
@@ -1478,7 +1518,17 @@ status collapsed
 \end_layout
 
 \begin_layout Section
-Default Parameter Content
+Default Parameter
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Default Parameter
+\end_layout
+
+\end_inset
+
+ Content
 \end_layout
 
 \begin_layout Standard
@@ -1624,6 +1674,16 @@ status collapsed
 
 \begin_layout Plain Layout
 param
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Nested parameters
 \end_layout
 
 \end_inset
@@ -1909,6 +1969,16 @@ status collapsed
 
 \begin_layout Section
 The Default Parameter
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+DRYML!The Default Parameter
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2090,6 +2160,16 @@ status collapsed
 
 \begin_layout Section
 The Implicit Context
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+DRYML!Implicit Context
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2636,6 +2716,16 @@ with
 
 \end_inset
 
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!with attribute
+\end_layout
+
+\end_inset
+
  and 
 \begin_inset Flex Code
 status collapsed
@@ -2647,6 +2737,16 @@ field
 \end_inset
 
  attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!field attribute
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2753,17 +2853,21 @@ status open
 \end_layout
 
 \begin_layout Standard
-Note
-\begin_inset Note Note
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
-Grey Box
-\end_layout
-
-\end_inset
-
- that we could have used 
+\begin_layout Description
+Note: We could have used 
 \begin_inset Flex Code
 status collapsed
 
@@ -2784,6 +2888,11 @@ status collapsed
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3010,6 +3119,15 @@ status collapsed
 \end_layout
 
 \begin_layout Section
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Field chains
+\end_layout
+
+\end_inset
+
 Field chains
 \end_layout
 
@@ -3079,6 +3197,16 @@ status collapsed
 
 \begin_layout Plain Layout
 this_field
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+this_field
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3089,6 +3217,16 @@ status collapsed
 
 \begin_layout Plain Layout
 this_parent
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+this_parent
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3210,6 +3348,16 @@ this_field
 
 \begin_layout Subsubsection*
 Numeric field indices
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Numeric field indices
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3348,6 +3496,16 @@ with=
 
 \begin_layout Section
 Tag attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Tag attributes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3714,6 +3872,15 @@ status collapsed
 \end_layout
 
 \begin_layout Section
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Flag attributes
+\end_layout
+
+\end_inset
+
 Flag attributes
 \end_layout
 
@@ -3817,6 +3984,16 @@ status collapsed
 
 \begin_layout Plain Layout
 attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!attributes local variable
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3827,6 +4004,16 @@ status collapsed
 
 \begin_layout Plain Layout
 all_attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!all_attributes local variable
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3897,6 +4084,16 @@ all_attributes
 
 \begin_layout Section
 Merging Attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Merging Attributes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4095,6 +4292,16 @@ status collapsed
 
 \begin_layout Plain Layout
 merge-attrs
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!merge-attrs
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4197,8 +4404,18 @@ height "1in"
 height_special "totalheight"
 status open
 
+\begin_layout Description
+Note: The 
+\begin_inset Index idx
+status collapsed
+
 \begin_layout Plain Layout
-Note that the 
+DRYML!merge attribute
+\end_layout
+
+\end_inset
+
+
 \begin_inset Flex Code
 status collapsed
 
@@ -4249,6 +4466,16 @@ merge-params
 
 \begin_layout Section
 Merging selected attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Merging selected attributes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4572,6 +4799,16 @@ status collapsed
 
 \begin_layout Subsubsection*
 The class attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!The class attribute
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4722,7 +4959,17 @@ if
 \end_layout
 
 \begin_layout Subsubsection*
-Conditionals - 
+Conditionals
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Conditionals
+\end_layout
+
+\end_inset
+
+ - 
 \begin_inset Flex Code
 status collapsed
 
@@ -4924,6 +5171,16 @@ status collapsed
 
 \begin_layout Subsubsection*
 Repetition
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Repetition
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5027,6 +5284,16 @@ Notice that as well as the content being repeated, the implicit context
 
 \begin_layout Section
 Even/odd classes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Even/odd classes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5119,6 +5386,16 @@ status collapsed
 
 \begin_layout Plain Layout
 first_item?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!first_item?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5129,6 +5406,16 @@ status collapsed
 
 \begin_layout Plain Layout
 last_item?
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!last_item?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5214,6 +5501,16 @@ status open
 
 \begin_layout Subsubsection*
 Repeating over hashes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Repeating over hashes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5309,6 +5606,16 @@ That example has given a sneak preview of another point - using if/unless/repeat
 
 \begin_layout Section
 Using the implicit context
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!implicit context
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5588,7 +5895,7 @@ height_special "totalheight"
 status open
 
 \begin_layout LyX-Code
-<p if="this.sticky?">This post has been marked 'sticky'</p>
+<p if="&this.sticky?">This post has been marked 'sticky'</p>
 \end_layout
 
 \end_inset
@@ -5703,7 +6010,17 @@ status collapsed
 \end_layout
 
 \begin_layout Section
-Pseudo parameters - 
+Pseudo parameters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Pseudo parameters
+\end_layout
+
+\end_inset
+
+ - 
 \begin_inset Flex Code
 status collapsed
 
@@ -6149,8 +6466,8 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
-Note: we have explicitly made sure that the 
+\begin_layout Description
+Note: We have explicitly made sure that the 
 \begin_inset Flex Code
 status collapsed
 
@@ -6486,7 +6803,7 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: To make things more consistent, 
 \begin_inset Flex Code
 status collapsed
@@ -6591,6 +6908,16 @@ status open
 
 \begin_layout Section
 Nested parameters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Nested parameters
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7338,6 +7665,16 @@ With ’:’ – customize an existing call inside the definition
 
 \begin_layout Section
 Customizing and extending tags
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!extending tags
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7667,7 +8004,17 @@ Now we’ll fix the parameters, it’s going to look somewhat similar…
 status collapsed
 
 \begin_layout Plain Layout
-merge-prams
+merge-params
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!merge-params
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7681,7 +8028,7 @@ We’ll introduce
 status collapsed
 
 \begin_layout Plain Layout
-merge-prams
+merge-params
 \end_layout
 
 \end_inset
@@ -8019,6 +8366,16 @@ status collapsed
 
 \begin_layout Plain Layout
 parameters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!parameters local variable
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8033,6 +8390,16 @@ status collapsed
 
 \begin_layout Plain Layout
 all_parameters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!all_parameters local variable
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8163,6 +8530,16 @@ That’s not something you’ll use often.
 
 \begin_layout Subsubsection*
 Merge
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Merge
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8267,6 +8644,16 @@ status open
 
 \begin_layout Subsubsection*
 Merging selected parameters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Selectively merging parameters
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8338,6 +8725,16 @@ status open
 
 \begin_layout Subsubsection*
 Extending a tag
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Extending a tag
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8409,6 +8806,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <extend>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<extend>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8580,6 +8987,16 @@ status open
 
 \begin_layout Section
 Aliasing tags
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Aliasing tags
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8624,6 +9041,16 @@ So… that’s aliasing tags then…
 
 \begin_layout Section
 Polymorphic tags
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Polymorphic tags
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8827,15 +9254,11 @@ height "1in"
 height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
+\begin_layout Description
 Note: If the name in the for attribute starts with an uppercase letter,
  it is taken to be a class name.
  Otherwise it is taken to be an abbreviated name registered with HoboFields;
  e.g.:
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -9159,6 +9582,15 @@ status open
 \end_layout
 
 \begin_layout Section
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Wrapping content
+\end_layout
+
+\end_inset
+
 Wrapping content
 \end_layout
 
@@ -9281,6 +9713,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <param-content>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<param-content>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9567,7 +10009,17 @@ restore
 \end_layout
 
 \begin_layout Section
-Local and scoped variables.
+Local and scoped variables
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!scoped variables
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -9577,6 +10029,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <set>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<set>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9587,6 +10049,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <set-scoped>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<set-scoped>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10124,6 +10596,16 @@ body
 
 \begin_layout Subsubsection*
 Nested scopes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Nested scoped variables
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10176,6 +10658,16 @@ scope.current_nav_item
 
 \begin_layout Section
 Taglibs
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Taglibs
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10185,6 +10677,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <include>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<include>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -135,11 +135,31 @@ class AdvertsController < ActiveRecord::Base
 \end_layout
 
 \begin_layout Code
-  hobo_model_controller 
+  hobo_model_controller
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+hobo_model_controller
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Code
-  auto_actions :all 
+  auto_actions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions
+\end_layout
+
+\end_inset
+
+ :all 
 \end_layout
 
 \begin_layout Code
@@ -339,6 +359,16 @@ status collapsed
 
 \begin_layout Plain Layout
 :read_only
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!:read_only
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -349,6 +379,16 @@ status collapsed
 
 \begin_layout Plain Layout
 :write_only
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!:write_only
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -476,7 +516,17 @@ auto_actions :write_only, :show
 \end_layout
 
 \begin_layout Section
-Owner actions 
+Owner actions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!Owner actions
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -522,12 +572,22 @@ RecipesController
 
 \end_inset
 
- and can be added with the a
+ and can be added with the 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
-uto_actions_for
+auto_actions_for
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions_for
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -692,6 +752,16 @@ status collapsed
 
 \begin_layout Subsubsection*
 Instance Variables 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Controller Instance Variables
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -732,7 +802,17 @@ For owner actions, the owner record is made available as
 status collapsed
 
 \begin_layout Plain Layout
-@<association-name>
+@<
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+association-name
+\end_layout
+
+\end_inset
+
+>
 \end_layout
 
 \end_inset
@@ -753,6 +833,15 @@ status collapsed
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Automatic Routes
+\end_layout
+
+\end_inset
+
 Automatic Routes
 \end_layout
 
@@ -791,6 +880,16 @@ config/routes.rb
 
 \begin_layout Section
 Adding extra actions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Adding!controller actions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -807,6 +906,16 @@ It’s common to want actions beyond the basic REST defaults.
 
 \begin_layout Subsubsection*
 Show actions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Show actions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -948,6 +1057,16 @@ end
 
 \begin_layout Subsubsection*
 Index actions
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Index actions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1343,7 +1462,17 @@ def show
 \end_layout
 
 \begin_layout Code
-  hobo_show 
+  hobo_show
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_show
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Code
@@ -1421,18 +1550,27 @@ end
 \end_layout
 
 \begin_layout Standard
-Note:
-\begin_inset Note Note
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
-\begin_layout Plain Layout
-Grey box
+\begin_layout Description
+Note: Assigning to instance variables to make data available to the views
+ works exactly as it normally would in Rails.
 \end_layout
 
 \end_inset
 
- Assigning to instance variables to make data available to the views works
- exactly as it normally would in Rails.
+
 \end_layout
 
 \begin_layout Standard
@@ -1452,6 +1590,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo_new
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_new
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1462,6 +1610,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo_index
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_index
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1502,11 +1660,31 @@ def update
 \end_layout
 
 \begin_layout Code
-  hobo_update 
+  hobo_update
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions!hobo_update
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Code
-  redirect_to my_special_place # DON'T DO THIS! 
+  redirect_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+redirect_to
+\end_layout
+
+\end_inset
+
+ my_special_place # DON'T DO THIS! 
 \end_layout
 
 \begin_layout Code
@@ -1530,7 +1708,27 @@ single
 
 \end_inset
 
- redirect or render, and 
+ redirect
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+redirect
+\end_layout
+
+\end_inset
+
+ or render
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+render
+\end_layout
+
+\end_inset
+
+, and 
 \begin_inset Flex Code
 status collapsed
 
@@ -1621,8 +1819,17 @@ end
 \begin_layout Standard
 The problem this time is that we almost certainly don’t want to do that
  redirect if there were validation errors during the update.
- As with the typical Rails pattern, validation errors are handled by re-renderin
-g the form (along with the error messages).
+ As with the typical Rails pattern, validation errors
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+validation errors
+\end_layout
+
+\end_inset
+
+ are handled by re-rendering the form (along with the error messages).
  Hobo provides a method 
 \begin_inset Flex Code
 status collapsed
@@ -1723,14 +1930,33 @@ Handling different formats
 
 \begin_layout Standard
 By default, the response block is only called if an HTML response is required.
- If you want to handle other response types, declare a block with a single
- argument.
+ If you want to handle other response types
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Response types!Handling non-HTML
+\end_layout
+
+\end_inset
+
+, declare a block with a single argument.
  The “format” object from Rails’ 
 \begin_inset Flex Code
 status collapsed
 
 \begin_layout Plain Layout
 respond_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+respond_to
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1864,17 +2090,25 @@ hobo_*
 \end_inset
 
  methods.
- Note:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Grey box
+ 
 \end_layout
 
-\end_inset
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
 
- That you can also pass these options directly to the 
+\begin_layout Description
+Note: That you can also pass these options directly to the 
 \begin_inset Flex Code
 status collapsed
 
@@ -1897,6 +2131,11 @@ show_action
  declarations, e.g.:
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"
@@ -1909,7 +2148,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Code
 index_action :table, :per_page => 10
@@ -1930,7 +2169,26 @@ In this section we’ll go through each of the action implementations that
 \end_layout
 
 \begin_layout Subsubsection*
-Hobo_index
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_index
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_index
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1979,6 +2237,16 @@ has_many
 
 \begin_layout Subsubsection*
 Find options
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Controller collection selection options
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1999,6 +2267,16 @@ status collapsed
 
 \begin_layout Subsubsection*
 Pagination
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Pagination
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2098,6 +2376,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo_show
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_show
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2122,6 +2410,16 @@ status collapsed
 
 \begin_layout Plain Layout
 find_instance
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+find_instance
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2196,6 +2494,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo_new
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_new
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2233,6 +2541,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo_create
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_create
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2328,6 +2646,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo_update
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions!hobo_update
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2376,6 +2704,16 @@ status collapsed
 
 \begin_layout Plain Layout
 hobo_destroy
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_destroy
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2434,6 +2772,16 @@ The response is either a redirect or an AJAX part update as appropriate.
 
 \begin_layout Section
 Owner actions
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions!Owner actions
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2471,15 +2819,72 @@ create
 \end_layout
 
 \begin_layout Itemize
-hobo_index_for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_index_for
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+auto_actions!hobo_index_for
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
-hobo_new_for 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+hobo_new_for
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions!hobo_new_for
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
 hobo_create_for
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+auto_actions!hobo_create_for
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2551,6 +2956,16 @@ end
 
 \begin_layout Subsubsection*
 Flash messages
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Flash messages
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2590,6 +3005,16 @@ status collapsed
 
 \begin_layout Plain Layout
 flash[:notice]
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+flash[:notice]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2645,6 +3070,16 @@ hobo_destroy
 
 \begin_layout Subsubsection*
 Block Response
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Auto Actions!Customizing
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2684,7 +3119,17 @@ def update
 \end_layout
 
 \begin_layout Code
-    redirect_to my_special_place if valid? 
+    redirect_to
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+redirect_to
+\end_layout
+
+\end_inset
+
+ my_special_place if valid? 
 \end_layout
 
 \begin_layout Code
@@ -2707,6 +3152,16 @@ status collapsed
 
 \begin_layout Plain Layout
 :redirect
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Auto Actions!:redirect parameter
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2732,12 +3187,12 @@ hobo_*
 status collapsed
 
 \begin_layout Plain Layout
-:redirect option
+:redirect
 \end_layout
 
 \end_inset
 
- to 
+ option to 
 \begin_inset Flex Code
 status collapsed
 
@@ -2800,7 +3255,7 @@ The
 status collapsed
 
 \begin_layout Plain Layout
-redirect:
+:redirect
 \end_layout
 
 \end_inset
@@ -2842,6 +3297,15 @@ object_url
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Automatic redirects
+\end_layout
+
+\end_inset
+
 Automatic redirects
 \end_layout
 
@@ -2871,6 +3335,15 @@ hobo_*
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+destination_after_submit
+\end_layout
+
+\end_inset
+
 destination_after_submit
 \end_layout
 
@@ -2887,6 +3360,16 @@ status collapsed
 
 \begin_layout Plain Layout
 after_submit
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+after_submit
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2897,6 +3380,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <after-submit>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<after-submit>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2945,6 +3438,16 @@ status collapsed
 
 \begin_layout Plain Layout
 home_page
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+home_page
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2954,6 +3457,16 @@ home_page
 
 \begin_layout Section
 Autocompleters
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Autocompleters
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3285,7 +3798,17 @@ Options (the same as described above)
 \end_layout
 
 \begin_layout Section
-Drag and drop reordering 
+Drag and drop reordering
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Drag and drop reordering
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3296,6 +3819,16 @@ status collapsed
 
 \begin_layout Plain Layout
 acts_as_list
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+acts_as_list plugin
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3331,6 +3864,16 @@ status collapsed
 
 \begin_layout Plain Layout
 reorder
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+reorder action
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3435,7 +3978,17 @@ PermissionDeniedError
 \end_layout
 
 \begin_layout Subsection*
-Permission and “not-found” errors 
+Permission and “not-found” errors
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Permissions!errors
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3445,6 +3998,16 @@ status collapsed
 
 \begin_layout Plain Layout
 permission_denied
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+permission_denied action
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3456,6 +4019,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <permission-denied-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<permission-denied-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3470,6 +4043,16 @@ status collapsed
 
 \begin_layout Plain Layout
 not_found
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+not_found action
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3480,6 +4063,16 @@ status collapsed
 
 \begin_layout Plain Layout
 <not-found-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<not-found-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

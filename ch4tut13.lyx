@@ -284,10 +284,10 @@ fields
 
  attribute
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-fields attribute
+Tags!<table-plus> fields attribute
 \end_layout
 
 \end_inset
@@ -302,7 +302,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<table-plus>
+Tags!<table-plus>
 \end_layout
 
 \end_inset
@@ -790,7 +790,7 @@ Add search and sort capability to the table
 status collapsed
 
 \begin_layout Plain Layout
-controllers
+Controllers
 \end_layout
 
 \end_inset
@@ -911,7 +911,7 @@ def index
 status collapsed
 
 \begin_layout Plain Layout
-hobo_index
+auto_actions!hobo_index
 \end_layout
 
 \end_inset

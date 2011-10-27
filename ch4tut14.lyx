@@ -120,7 +120,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<show-page>
+Tags!<show-page>
 \end_layout
 
 \end_inset
@@ -144,7 +144,7 @@ show.dryml
 status collapsed
 
 \begin_layout Plain Layout
-show.dryml
+auto-generated tags!show.dryml
 \end_layout
 
 \end_inset
@@ -168,7 +168,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<field-list>
+Tags!<field-list>
 \end_layout
 
 \end_inset
@@ -188,7 +188,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<fieldname-label>
+Tags!<fieldname-label>
 \end_layout
 
 \end_inset
@@ -879,10 +879,10 @@ status collapsed
 \begin_layout Plain Layout
 fields
 \begin_inset Index idx
-status open
+status collapsed
 
 \begin_layout Plain Layout
-fields attribute
+Tags!<field-list> fields attribute
 \end_layout
 
 \end_inset
@@ -944,7 +944,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<field-list>
+Tags!<field-list>
 \end_layout
 
 \end_inset
@@ -1005,7 +1005,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<show-page>
+Tags!<show-page>
 \end_layout
 
 \end_inset
@@ -1187,7 +1187,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<field-list> labels
+Tags!<field-list> labels
 \end_layout
 
 \end_inset
@@ -1798,7 +1798,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<extend>
+Tags!<extend>
 \end_layout
 
 \end_inset

@@ -73,7 +73,17 @@ HOBO SCOPES
 \end_layout
 
 \begin_layout Standard
-Hobo scopes are an extension of the 
+Hobo scopes
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Hobo scopes
+\end_layout
+
+\end_inset
+
+ are an extension of the 
 \begin_inset Flex Emph
 status collapsed
 
@@ -107,7 +117,17 @@ named_scope
 
 \end_inset
 
- the first time they are invoked.
+ (or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+scope
+\end_layout
+
+\end_inset
+
+ in Hobo 1.3) the first time they are invoked.
  They should work at the same speed as a named scope on subsequent invocations2.
 \end_layout
 
@@ -598,6 +618,15 @@ Simple Scopes
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_is
+\end_layout
+
+\end_inset
+
 _is
 \end_layout
 
@@ -686,6 +715,16 @@ status open
 
 \begin_layout Subsubsection*
 _is_not
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_is_not
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -721,6 +760,16 @@ status open
 
 \begin_layout Subsubsection*
 _contains
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_contains
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -752,6 +801,16 @@ status open
 
 \begin_layout Subsubsection*
 _does_not_contain
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_does_not_contain
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -783,6 +842,16 @@ status open
 
 \begin_layout Subsubsection*
 _starts
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_starts
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -814,6 +883,16 @@ status open
 
 \begin_layout Subsubsection*
 _does_not_start
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_does_not_start
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -845,6 +924,16 @@ status open
 
 \begin_layout Subsubsection*
 _ends
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_ends
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -876,6 +965,16 @@ status open
 
 \begin_layout Subsubsection*
 _does_not_end
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_does_not_end
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -945,6 +1044,16 @@ status open
 
 \begin_layout Subsubsection*
 not_
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!not_
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1011,6 +1120,16 @@ Date scopes work only with columns that have a name ending in ”at”.
 
 \begin_layout Subsubsection*
 _before
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_before
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1042,6 +1161,16 @@ status open
 
 \begin_layout Subsubsection*
 _after
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_after
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1073,6 +1202,16 @@ status open
 
 \begin_layout Subsubsection*
 _between
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_between
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1104,6 +1243,16 @@ status open
 
 \begin_layout Section
 Lifecycle scopes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!Lifecycle scopes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1202,6 +1351,16 @@ These scopes do not contain the column name.
 
 \begin_layout Subsubsection*
 by_most_recent
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!by_most_recent
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1237,6 +1396,16 @@ status open
 
 \begin_layout Subsubsection*
 recent
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!recent
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1272,6 +1441,16 @@ status open
 
 \begin_layout Subsubsection*
 limit
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!limit
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1303,6 +1482,16 @@ status open
 
 \begin_layout Subsubsection*
 order_by
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!order_by
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1334,6 +1523,16 @@ status open
 
 \begin_layout Subsubsection*
 include
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!include
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1391,6 +1590,16 @@ status open
 
 \begin_layout Subsubsection*
 search
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!search
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1431,6 +1640,16 @@ Association Scopes
 
 \begin_layout Subsubsection*
 with_
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!with_
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1505,6 +1724,16 @@ status open
 
 \begin_layout Subsubsection*
 without_
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!without_
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1544,6 +1773,16 @@ status open
 
 \begin_layout Subsubsection*
 _is
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_is
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1609,6 +1848,16 @@ status open
 
 \begin_layout Subsubsection*
 _is_not
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!_is_not
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1636,6 +1885,16 @@ status open
 
 \begin_layout Section
 Scoping Associations
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!Scoping Associations
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1921,6 +2180,16 @@ status open
 
 \begin_layout Section
 Chaining
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Hobo scopes!Chaining
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout LyX-Code

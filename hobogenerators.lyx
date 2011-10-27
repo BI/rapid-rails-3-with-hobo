@@ -71,6 +71,16 @@ Chapter 7
 \begin_inset Newline newline
 \end_inset
 
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators
+\end_layout
+
+\end_inset
+
 HOBO GENERATORS
 \end_layout
 
@@ -356,6 +366,16 @@ status collapsed
 
 \begin_layout Plain Layout
 setup_wizard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+setup_wizard
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -414,75 +434,255 @@ Hobo:
 \end_layout
 
 \begin_layout Code
-  hobo:admin_subsite
+  
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:admin_subsite
+\end_layout
+
+\end_inset
+
+hobo:admin_subsite
 \end_layout
 
 \begin_layout Code
   hobo:assets
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:assets
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:controller
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:front_controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:front_controller
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:i18n
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:i18n
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:migration
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:migration
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:model
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:model
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:rapid
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:rapid
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:resource
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:resource
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:routes
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:routes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:setup_wizard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:setup_wizard
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:subsite
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:subsite
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:subsite_taglib
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:subsite_taglib
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:test_framework
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:test_framework
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:user_controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_controller
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:user_mailer
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_mailer
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:user_model
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_model
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
   hobo:user_resource
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_resource
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -547,7 +747,17 @@ Note: If you use the hobo command, you can omit the 'hobo:' namespace prepended
 \end_layout
 
 \begin_layout Standard
-The following options are common options for all the generators:
+The following options are common options for all the generators
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generators!generator options
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -620,6 +830,16 @@ status collapsed
 
 \begin_layout Plain Layout
 --pretend
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!--pretend
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -637,6 +857,16 @@ status collapsed
 
 \begin_layout Subsubsection*
 hobo:setup_wizard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:setup_wizard
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -716,9 +946,13 @@ Options:
 
 \begin_layout Code
 
+\end_layout
+
+\begin_layout Code
+
 \size small
- 						    # framework – default: true                                 
-              
+                                                 # framework – default:
+ true                                               
 \end_layout
 
 \begin_layout Code
@@ -892,7 +1126,17 @@ This shows the main title
 \end_layout
 
 \begin_layout Subsubsection*
-hobo:assets  
+hobo:assets
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:assets
+\end_layout
+
+\end_inset
+
+  
 \end_layout
 
 \begin_layout Standard
@@ -900,7 +1144,17 @@ No option / prompt: this generator copies a few asset files.
 \end_layout
 
 \begin_layout Paragraph*
-hobo:test_framework generator
+hobo:test_framework
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:test_framework
+\end_layout
+
+\end_inset
+
+ generator
 \end_layout
 
 \begin_layout Standard
@@ -1056,7 +1310,17 @@ It will pass this option to the next invoked generators in order to create
 status collapsed
 
 \begin_layout Plain Layout
---private-site  
+--private-site
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!private-site option
+\end_layout
+
+\end_inset
+
+  
 \end_layout
 
 \end_inset
@@ -1086,6 +1350,15 @@ If 'n' the wizard will print the instruction to do the same with single
 \end_layout
 
 \begin_layout Subsubsection*
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generators!hobo:rapid generator
+\end_layout
+
+\end_inset
+
 hobo:rapid generator
 \end_layout
 
@@ -1094,7 +1367,17 @@ No option / prompt: this generator copies files
 \end_layout
 
 \begin_layout Subsubsection*
-hobo:user_resource generator
+hobo:user_resource
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_resource
+\end_layout
+
+\end_inset
+
+ generator
 \end_layout
 
 \begin_layout Standard
@@ -1172,7 +1455,17 @@ The user will receive an activation email containing an activation link.
 \end_layout
 
 \begin_layout Subsubsection*
-hobo:front_controller generator
+hobo:front_controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:front_controller
+\end_layout
+
+\end_inset
+
+ generator
 \end_layout
 
 \begin_layout Standard
@@ -1207,7 +1500,17 @@ You can change the front controller name
 \end_layout
 
 \begin_layout Subsubsection*
-hobo:admin_subsite generator
+hobo:admin_subsite
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generators!hobo:admin_subsite
+\end_layout
+
+\end_inset
+
+ generator
 \end_layout
 
 \begin_layout Standard
@@ -1243,7 +1546,17 @@ You can change the admin site name and it will be passed to the next invoked
 \end_layout
 
 \begin_layout Subsubsection*
-hobo:migration generator
+hobo:migration
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generators!hobo:migration
+\end_layout
+
+\end_inset
+
+ generator
 \end_layout
 
 \begin_layout Standard
@@ -1296,7 +1609,17 @@ Generate only
 \end_layout
 
 \begin_layout Subsubsection*
-hobo:i18n generator
+hobo:i18n
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:i18n
+\end_layout
+
+\end_inset
+
+ generator
 \end_layout
 
 \begin_layout Standard
@@ -1463,8 +1786,18 @@ status collapsed
 \end_inset
 
 .
- In read-only file systems like Heroku, this feature would be counter-productive
-, so in that case is better committing also the auto generated files.
+ In read-only file systems like Heroku
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Heroku
+\end_layout
+
+\end_inset
+
+, this feature would be counter-productive, so in that case is better committing
+ also the auto generated files.
 \end_layout
 
 \begin_layout Standard
@@ -1493,6 +1826,16 @@ Note: You use any of the generators used by the Setup  Wizard in order to
 
 \begin_layout Subsubsection*
 hobo:admin_subsite
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:admin_subsite
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1596,6 +1939,16 @@ status collapsed
 
 \begin_layout Subsubsection*
 hobo:assets
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:assets
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1637,6 +1990,16 @@ setup_wizard
 
 \begin_layout Subsubsection*
 hobo:controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:controller
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1680,6 +2043,16 @@ Options:
 
 \begin_layout Subsubsection*
 hobo:front_controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:front_controller
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1793,6 +2166,16 @@ hobo:setup_wizard
 
 \begin_layout Subsubsection*
 hobo:i18n
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:i18n
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1836,6 +2219,16 @@ hobo:setup_wizard
 
 \begin_layout Subsubsection*
 hobo:migration
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generators!hobo:migration
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1910,6 +2303,16 @@ hobo_fields
 
 \begin_layout Subsubsection*
 hobo:model
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:model
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1951,6 +2354,16 @@ Creates a new hobo model and all the related files.
 
 \begin_layout Subsubsection*
 hobo:rapid
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:rapid
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1992,6 +2405,16 @@ setup_wizard
 
 \begin_layout Subsubsection*
 hobo:resource
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:resource
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2033,6 +2456,16 @@ Use this generator to create resource (model + controller + files) of called
 
 \begin_layout Subsubsection*
 hobo:routes
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:routes
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2086,6 +2519,16 @@ h
 
 \begin_layout Subsubsection*
 hobo:subsite
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:subsite
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2169,6 +2612,16 @@ You can use this generator to create a new custom subsite.
 
 \begin_layout Subsubsection*
 hobo:subsite_taglib
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generators!hobo:subsite_taglib
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2218,6 +2671,16 @@ Used internally when a subsite is generated in order to generate the subsite
 
 \begin_layout Subsubsection*
 hobo:test_framework
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:test_framework
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2325,6 +2788,16 @@ The following generators are for the user resource, and are:
 
 \begin_layout Subsubsection*
 hobo:user_controller
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_controller
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2382,6 +2855,16 @@ setup_wizard
 
 \begin_layout Subsubsection*
 hobo:user_mailer
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_mailer
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2433,6 +2916,16 @@ Used internally by the setup_wizard for the user resource
 
 \begin_layout Subsubsection*
 hobo:user_model
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_model
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2491,6 +2984,16 @@ Used internally by the setup_wizard for the user resource.
 
 \begin_layout Subsubsection*
 hobo:user_resource
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+generators!hobo:user_resource
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2533,7 +3036,17 @@ Used internally by the setup_wizard for the user resource
 \end_layout
 
 \begin_layout Section
-Automatically Generated DRYML Tags 
+Automatically Generated DRYML
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Automatically Generated Tags
+\end_layout
+
+\end_inset
+
+ Tags 
 \end_layout
 
 \begin_layout Standard
@@ -2552,18 +3065,58 @@ pages.dryml
 
 \begin_layout Code
  <index-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<index-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
  <new-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<new-page>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Code
- <show-page> 
+ <show-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<show-page>
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Code
- <edit-page> 
+ <edit-page>
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tags!<edit-page>
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3336,7 +3889,16 @@ status collapsed
 \end_layout
 
 \begin_layout Section
-Application.dryml file.
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+application.dryml
+\end_layout
+
+\end_inset
+
+ file.
  
 \end_layout
 
@@ -3450,6 +4012,16 @@ extensions
 
 \begin_layout Subsubsection*
 View templates
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+View templates
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3492,6 +4064,16 @@ status collapsed
 
 \begin_layout Subsubsection*
 View layouts
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Rails!layouts
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3503,6 +4085,16 @@ Rails has a layout file to handle markup that is common to many templates
 
 \begin_layout Subsubsection*
 Template Processing Order
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+DRYML!Template Processing Order
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

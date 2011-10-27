@@ -309,7 +309,7 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-hobo g resource
+generators!hobo g resource
 \end_layout
 
 \end_inset
@@ -536,7 +536,7 @@ Note that we have chosen to specify the index
 status collapsed
 
 \begin_layout Plain Layout
-database index
+Database index
 \end_layout
 
 \end_inset
@@ -692,7 +692,7 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-hobo g migration
+generators!hobo g migration
 \end_layout
 
 \end_inset
@@ -2338,7 +2338,7 @@ One more thing we do when creating a new Hobo app.
 status collapsed
 
 \begin_layout Plain Layout
-Adding Roles
+Adding!Roles
 \end_layout
 
 \end_inset
@@ -3731,7 +3731,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<card>
+Tags!<card>
 \end_layout
 
 \end_inset
@@ -3927,7 +3927,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<extend>
+Tags!<extend>
 \end_layout
 
 \end_inset
@@ -4006,7 +4006,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<repeat>
+Tags!<repeat>
 \end_layout
 
 \end_inset
@@ -4074,7 +4074,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<else>
+Tags!<else>
 \end_layout
 
 \end_inset
@@ -4135,7 +4135,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<show-page>
+Tags!<show-page>
 \end_layout
 
 \end_inset
@@ -4245,7 +4245,7 @@ app/views/taglibs/auto/rapid/pages.dryml
 status collapsed
 
 \begin_layout Plain Layout
-pages.dryml
+auto-generated tags!pages.dryml
 \end_layout
 
 \end_inset
@@ -4562,10 +4562,10 @@ status collapsed
 \begin_layout Plain Layout
 <Your>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<Your>
+Tags!<Your>
 \end_layout
 
 \end_inset
@@ -4590,10 +4590,10 @@ status collapsed
 \begin_layout Plain Layout
 <repeat>
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<repeat>
+Tags!<repeat>
 \end_layout
 
 \end_inset
@@ -4696,10 +4696,10 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-<collection>
+Tags!<collection>
 \end_layout
 
 \end_inset
@@ -4825,7 +4825,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<table-plus>
+Tags!<table-plus>
 \end_layout
 
 \end_inset
@@ -5116,7 +5116,7 @@ fields
 status collapsed
 
 \begin_layout Plain Layout
-fields
+Tags!<table-plus> fields attribute
 \end_layout
 
 \end_inset
@@ -5755,7 +5755,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<show-page>
+Tags!<show-page>
 \end_layout
 
 \end_inset
@@ -5775,7 +5775,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-<field-list>
+Tags!<field-list>
 \end_layout
 
 \end_inset
@@ -5859,7 +5859,7 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-hobo g resource
+generators!hobo g resource
 \end_layout
 
 \end_inset
@@ -6001,7 +6001,7 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-hobo g migration
+generators!hobo g migration
 \end_layout
 
 \end_inset
@@ -6128,10 +6128,10 @@ Reordering Tasks
 \begin_layout Standard
 We’regoing to add the ability to re-order a requirement’s tasks by drag-and-drop
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-drag-and-drop
+Drag and drop reordering
 \end_layout
 
 \end_inset
@@ -6403,7 +6403,7 @@ This is a good demonstration of DRYML’s nested parameter
 status collapsed
 
 \begin_layout Plain Layout
-nested parameters
+DRYML!nested parameters
 \end_layout
 
 \end_inset
@@ -6537,7 +6537,7 @@ status open
 status collapsed
 
 \begin_layout Plain Layout
-validates_date
+Validations!validates_date
 \end_layout
 
 \end_inset

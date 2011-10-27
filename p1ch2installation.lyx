@@ -3416,17 +3416,7 @@ Ruby
 \end_inset
 
  language interpreter, which in this case is a Windows executable.
- This engine is called MRI for “Matz
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Matz
-\end_layout
-
-\end_inset
-
-’s Ruby Interpreter”.
+ This engine is called MRI for “Matz’s Ruby Interpreter”.
  
 \begin_inset CommandInset href
 LatexCommand href
