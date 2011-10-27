@@ -120,7 +120,7 @@ Lifecycles
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle!states
+Lifecycles!state
 \end_layout
 
 \end_inset
@@ -130,7 +130,7 @@ Lifecycle!states
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycles!transitions
+Lifecycles!transition
 \end_layout
 
 \end_inset
@@ -449,7 +449,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-Lifecyles!:available_to
+Lifecycles!:available_to
 \end_layout
 
 \end_inset
@@ -1228,7 +1228,7 @@ For each defined transition
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle transition
+Lifecycles!transition
 \end_layout
 
 \end_inset
@@ -1379,7 +1379,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-Lifecyles!:available_to
+Lifecycles!:available_to
 \end_layout
 
 \end_inset

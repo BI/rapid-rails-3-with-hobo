@@ -34,6 +34,9 @@ logicalmkup
 \paperfontsize default
 \spacing single
 \use_hyperref true
+\pdf_title "Rapid Rails 3 with Hobo"
+\pdf_subject "Hobo (Ruby on Rails plugin)"
+\pdf_keywords "hobo ruby rails programming manual"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false

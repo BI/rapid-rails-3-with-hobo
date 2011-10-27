@@ -2777,7 +2777,7 @@ user_view
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_deeper
@@ -4175,7 +4175,7 @@ can_create?
 status open
 
 \begin_layout Plain Layout
-Permissions!helpers can_create?
+Permissions!View helpers!can_create?
 \end_layout
 
 \end_inset
@@ -4198,7 +4198,7 @@ can_update?
 status open
 
 \begin_layout Plain Layout
-Permissions!helpers can_update?
+Permissions!View helpers!can_update?
 \end_layout
 
 \end_inset
@@ -4221,7 +4221,7 @@ can_edit?
 status open
 
 \begin_layout Plain Layout
-Permissions!helpers can_edit?
+Permissions!View helpers!can_edit?
 \end_layout
 
 \end_inset
@@ -4254,7 +4254,7 @@ can_delete?
 status open
 
 \begin_layout Plain Layout
-Permissions!helpers can_delete?
+Permissions!View helpers!can_delete?
 \end_layout
 
 \end_inset
@@ -4274,10 +4274,10 @@ status collapsed
 \begin_layout Plain Layout
 can_call?
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Permissions!helpers can_call?
+Permissions!View helpers!can_call?
 \end_layout
 
 \end_inset

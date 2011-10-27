@@ -1272,10 +1272,10 @@ status collapsed
 \begin_layout Plain Layout
 states
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Lifecycles!states
+Lifecycles!state
 \end_layout
 
 \end_inset
@@ -1330,7 +1330,7 @@ transitions
 status open
 
 \begin_layout Plain Layout
-Lifecycles!transitions
+Lifecycles!transition
 \end_layout
 
 \end_inset
@@ -1706,7 +1706,7 @@ lifecycle do ...
 status open
 
 \begin_layout Plain Layout
-Lifecycle!Defining states
+Lifecycles!Defining states
 \end_layout
 
 \end_inset
@@ -1858,7 +1858,7 @@ This will take effect the next time you generate and apply a hobo migration.
 status open
 
 \begin_layout Plain Layout
-Lifecycle!Defining creators
+Lifecycles!Defining creators
 \end_layout
 
 \end_inset
@@ -1948,7 +1948,7 @@ The options
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle!creator options
+Lifecycles!creator options
 \end_layout
 
 \end_inset
@@ -2266,7 +2266,7 @@ instance_eval
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle!Defining transitions
+Lifecycles!Defining transitions
 \end_layout
 
 \end_inset
@@ -2429,7 +2429,7 @@ The options
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle!transition options
+Lifecycles!transition options
 \end_layout
 
 \end_inset
@@ -2653,7 +2653,7 @@ Repeated transition names
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle!Repeated transition names
+Lifecycles!Repeated transition names
 \end_layout
 
 \end_inset
@@ -2691,7 +2691,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle!:available_to
+Lifecycles!:available_to
 \end_layout
 
 \end_inset
@@ -3215,7 +3215,7 @@ Controller actions
 status open
 
 \begin_layout Plain Layout
-Lifecycle!Controller actions
+Lifecycles!Controller actions
 \end_layout
 
 \end_inset
@@ -3398,7 +3398,7 @@ Create
 status open
 
 \begin_layout Plain Layout
-Lifecycle!Create controller actions
+Lifecycles!Create controller actions
 \end_layout
 
 \end_inset
@@ -3710,7 +3710,7 @@ Transitions
 status collapsed
 
 \begin_layout Plain Layout
-Lifecycle!Transition controller actions
+Lifecycles!Transition controller actions
 \end_layout
 
 \end_inset
@@ -4019,7 +4019,7 @@ Keys
 status open
 
 \begin_layout Plain Layout
-Lifecycle!Keys
+Lifecycles!Keys
 \end_layout
 
 \end_inset

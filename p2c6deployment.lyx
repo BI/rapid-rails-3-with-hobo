@@ -75,19 +75,19 @@ DEPLOYING YOUR APPLICATIONS
 \end_layout
 
 \begin_layout Subsubsection*
-2.4.1 Introductory Comments
+Introductory Comments
 \end_layout
 
 \begin_layout Subsubsection*
-2.4.2 Tutorial 26 – Installing and using the Git Version Control System
+Tutorial 26 – Installing and using the Git Version Control System
 \end_layout
 
 \begin_layout Subsubsection*
-2.4.3 Tutorial 27 – Rapid Deployment Using Heroku.com
+Tutorial 27 – Rapid Deployment Using Heroku.com
 \end_layout
 
 \begin_layout Section
-2.4.1 Introductory Concepts and Comments
+Introductory Concepts and Comments
 \end_layout
 
 \begin_layout Standard
@@ -142,7 +142,7 @@ Tutorial
 \begin_inset Newline newline
 \end_inset
 
-2.4.2 Installing and Using Git 
+Installing and Using Git 
 \end_layout
 
 \begin_layout Standard
@@ -1016,7 +1016,7 @@ Tutorial
 \begin_inset Newline newline
 \end_inset
 
-2.4.3 Rapid Deployment with Heroku
+Rapid Deployment with Heroku
 \begin_inset Index idx
 status collapsed
 
