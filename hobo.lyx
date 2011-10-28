@@ -81,7 +81,7 @@ logicalmkup
 
 \begin_body
 
-\begin_layout Title
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -102,6 +102,14 @@ pagestyle{empty}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Title
+Rapid Rails 3 with Hobo
+\end_layout
+
+\begin_layout Author
+Owen Dall, Jeff Lapides, Tom Locke, Bryan Larsen
 \end_layout
 
 \begin_layout Standard
