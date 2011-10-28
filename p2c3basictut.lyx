@@ -119,8 +119,12 @@ So, in the spirit of this adventure we will explain just enough, allowing
  you to dive in head first… 
 \end_layout
 
-\begin_layout Section*
-Tutorial 1 – Directories and Generators 
+\begin_layout Section
+Tutorial 1
+\begin_inset Newline newline
+\end_inset
+
+Directories and Generators 
 \end_layout
 
 \begin_layout Standard
@@ -3185,8 +3189,12 @@ rake db:migrate VERSION = XXX
  
 \end_layout
 
-\begin_layout Section*
-Tutorial 2 – Changing Field Names
+\begin_layout Section
+Tutorial 2
+\begin_inset Newline newline
+\end_inset
+
+Changing Field Names
 \begin_inset Index idx
 status open
 
@@ -4305,8 +4313,12 @@ Modified entry in "application.css" to shorten text prompts
 
 \end_layout
 
-\begin_layout Section*
-Tutorial 3 – Field Validation
+\begin_layout Section
+Tutorial 3
+\begin_inset Newline newline
+\end_inset
+
+Field Validation
 \begin_inset Index idx
 status open
 
@@ -5773,7 +5785,11 @@ target "http://api.rubyonrails.org/classes/ActiveRecord/Validations/ClassMethods
 \end_layout
 
 \begin_layout Section
-Tutorial 4 – Permissions
+Tutorial 4
+\begin_inset Newline newline
+\end_inset
+
+Permissions
 \begin_inset Index idx
 status open
 
@@ -7927,8 +7943,12 @@ signed_up?
  
 \end_layout
 
-\begin_layout Section*
-Tutorial 5 – Controllers
+\begin_layout Section
+Tutorial 5
+\begin_inset Newline newline
+\end_inset
+
+Controllers
 \begin_inset Index idx
 status open
 
@@ -10798,7 +10818,11 @@ Hobo Controller action summary
 \end_layout
 
 \begin_layout Section
-Tutorial 6 – Navigation Tabs
+Tutorial 6
+\begin_inset Newline newline
+\end_inset
+
+Navigation Tabs
 \begin_inset Index idx
 status open
 
@@ -11623,8 +11647,12 @@ status open
 
 \end_layout
 
-\begin_layout Section*
-Tutorial 7 – Model Relationships: Part 1 
+\begin_layout Section
+Tutorial 7
+\begin_inset Newline newline
+\end_inset
+
+Model Relationships: Part 1 
 \end_layout
 
 \begin_layout Standard
@@ -14129,8 +14157,12 @@ Countries
  
 \end_layout
 
-\begin_layout Section*
-Tutorial 8 – Model Relationships
+\begin_layout Section
+Tutorial 8
+\begin_inset Newline newline
+\end_inset
+
+Model Relationships
 \begin_inset Index idx
 status collapsed
 
