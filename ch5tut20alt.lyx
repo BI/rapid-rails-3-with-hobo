@@ -1483,9 +1483,40 @@ Change the date format
 
 \begin_layout Itemize
 Add a summary of a User's comments with links to the commented items on
- the user page
+ the user page and perhaps even snippets of the item.
+ Here, DRYML's support for polymorphic tags can make the creation of a mixed
+ model collection easy.
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+Remember, our comments are polymorphic themselves and can be attached to
+ 
+\begin_inset Flex Emph
+status collapsed
+
+\begin_layout Plain Layout
+any model
+\end_layout
+
+\end_inset
+
+ so a list of commented upon items can be different models.
+ This isn't a big deal though as you can pass a mixed collection to the
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+<collection>
+\end_layout
+
+\end_inset
+
+ tag and it will render the appropriate card for each.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Add avatar support (hint: it's quite simple with the gravatar tag.)
 \end_layout
@@ -1502,9 +1533,30 @@ The point it's inserting the comment list and form is potentially problematic
 \begin_layout Itemize
 Think about how this design pattern could be used elsewhere.
  Personally I've used something similar with tags, categories and ratings.
- And don't forget you can use it with lifecycle transitions, such as by
- replacing delete buttons with a lifecycle link on edit-pages when something
- like a merge_and_delete method is present.
+ And don't forget you can use multipage conditional additions/replacements
+ with lifecycle transitions (and any model 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+method
+\end_layout
+
+\end_inset
+
+ really).
+ Such as by replacing delete buttons with a lifecycle link on edit-pages
+ when something like a 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+merge_and_delete
+\end_layout
+
+\end_inset
+
+ transition is available on the current context.
 \end_layout
 
 \end_body
